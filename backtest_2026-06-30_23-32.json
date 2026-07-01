@@ -1,0 +1,3189 @@
+{
+  "run_timestamp": "2026-06-30_23-07",
+  "params": {
+    "days": 60,
+    "fixed_sentiment": 1.0,
+    "weights": {
+      "accumulation": 0.35,
+      "sector_momentum": 0.2,
+      "news_sentiment": 0.3,
+      "relative_strength": 0.15
+    },
+    "position_size": 100.0
+  },
+  "summary": {
+    "total_days": 49,
+    "skipped_days": 10,
+    "total_pnl": 132.71,
+    "avg_daily_pnl": 2.71,
+    "winning_days": 25,
+    "losing_days": 24,
+    "flat_days": 0,
+    "win_day_rate": 0.5102,
+    "total_picks": 147,
+    "hit_rate_3pct": 0.2653,
+    "avg_pick_pct": 0.9031,
+    "exit_reasons": {
+      "EOD close": 93,
+      "EOD (win floor active)": 26,
+      "Stop loss (-5%)": 15,
+      "Win floor triggered": 13
+    },
+    "accumulation_return_correlation": "+0.133",
+    "best_day": {
+      "predict_date": "2026-05-28",
+      "trade_date": "2026-05-29",
+      "spy_pct": 0.55,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "DELL",
+          "sector": "Technology",
+          "score": 0.656,
+          "entry_price": 317.05,
+          "exit_price": 420.91,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 32.76,
+          "dollar_pnl": 32.76,
+          "signals": {
+            "accumulation": 1.767,
+            "sector_momentum_pct": 1.31,
+            "news_sentiment": 0.95,
+            "relative_strength_pct": 29.2
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "ADSK",
+          "sector": "Technology",
+          "score": 0.622,
+          "entry_price": 240.95,
+          "exit_price": 228.9,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 2.089,
+            "sector_momentum_pct": 1.31,
+            "news_sentiment": 0.94,
+            "relative_strength_pct": -2.41
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "CRM",
+          "sector": "Technology",
+          "score": 0.591,
+          "entry_price": 175.72,
+          "exit_price": 190.61,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 8.47,
+          "dollar_pnl": 8.47,
+          "signals": {
+            "accumulation": 1.399,
+            "sector_momentum_pct": 1.31,
+            "news_sentiment": 1.88,
+            "relative_strength_pct": -3.49
+          }
+        }
+      ],
+      "day_total_pnl": 36.23,
+      "day_avg_pct": 12.08,
+      "wins_3pct": 2
+    },
+    "worst_day": {
+      "predict_date": "2026-06-08",
+      "trade_date": "2026-06-09",
+      "spy_pct": 0.23,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "AAPL",
+          "sector": "Technology",
+          "score": 0.625,
+          "entry_price": 301.54,
+          "exit_price": 290.55,
+          "exit_reason": "EOD close",
+          "pct_change": -3.64,
+          "dollar_pnl": -3.64,
+          "signals": {
+            "accumulation": 1.196,
+            "sector_momentum_pct": 2.15,
+            "news_sentiment": 1.89,
+            "relative_strength_pct": -3.71
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "AIG",
+          "sector": "Financials",
+          "score": 0.607,
+          "entry_price": 73.61,
+          "exit_price": 73.43,
+          "exit_reason": "EOD close",
+          "pct_change": -0.24,
+          "dollar_pnl": -0.24,
+          "signals": {
+            "accumulation": 1.858,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.22,
+            "relative_strength_pct": 1.52
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "INTC",
+          "sector": "Technology",
+          "score": 0.54,
+          "entry_price": 110.27,
+          "exit_price": 104.76,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 0.966,
+            "sector_momentum_pct": 2.15,
+            "news_sentiment": 1.8,
+            "relative_strength_pct": -1.29
+          }
+        }
+      ],
+      "day_total_pnl": -8.89,
+      "day_avg_pct": -2.96,
+      "wins_3pct": 0
+    }
+  },
+  "skipped_days": [
+    {
+      "date": "2026-04-21",
+      "reason": "Regime: SPY -0.65%"
+    },
+    {
+      "date": "2026-05-15",
+      "reason": "Regime: SPY -1.20%"
+    },
+    {
+      "date": "2026-05-19",
+      "reason": "Regime: SPY -0.67%"
+    },
+    {
+      "date": "2026-06-03",
+      "reason": "Regime: SPY -0.70%"
+    },
+    {
+      "date": "2026-06-05",
+      "reason": "Regime: SPY -2.58%"
+    },
+    {
+      "date": "2026-06-10",
+      "reason": "Regime: SPY -1.58%"
+    },
+    {
+      "date": "2026-06-16",
+      "reason": "Regime: SPY -0.60%"
+    },
+    {
+      "date": "2026-06-17",
+      "reason": "Regime: SPY -1.25%"
+    },
+    {
+      "date": "2026-06-23",
+      "reason": "Regime: SPY -1.45%"
+    },
+    {
+      "date": "2026-06-26",
+      "reason": "Regime: SPY -0.72%"
+    }
+  ],
+  "daily_results": [
+    {
+      "predict_date": "2026-04-06",
+      "trade_date": "2026-04-07",
+      "spy_pct": 0.47,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "IVZ",
+          "sector": "Financials",
+          "score": 0.704,
+          "entry_price": 22.7,
+          "exit_price": 22.59,
+          "exit_reason": "EOD close",
+          "pct_change": -0.48,
+          "dollar_pnl": -0.48,
+          "signals": {
+            "accumulation": 1.675,
+            "sector_momentum_pct": 0.71,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -2.09
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "BEN",
+          "sector": "Financials",
+          "score": 0.651,
+          "entry_price": 23.17,
+          "exit_price": 23.54,
+          "exit_reason": "EOD close",
+          "pct_change": 1.62,
+          "dollar_pnl": 1.62,
+          "signals": {
+            "accumulation": 1.162,
+            "sector_momentum_pct": 0.71,
+            "news_sentiment": 1.46,
+            "relative_strength_pct": 3.65
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "TJX",
+          "sector": "Consumer Discretionary",
+          "score": 0.581,
+          "entry_price": 161.29,
+          "exit_price": 157.07,
+          "exit_reason": "EOD close",
+          "pct_change": -2.62,
+          "dollar_pnl": -2.62,
+          "signals": {
+            "accumulation": 0.806,
+            "sector_momentum_pct": 0.82,
+            "news_sentiment": 1.69,
+            "relative_strength_pct": 3.5
+          }
+        }
+      ],
+      "day_total_pnl": -1.48,
+      "day_avg_pct": -0.49,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-04-07",
+      "trade_date": "2026-04-08",
+      "spy_pct": 0.04,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "HUM",
+          "sector": "Healthcare",
+          "score": 0.793,
+          "entry_price": 196.69,
+          "exit_price": 197.92,
+          "exit_reason": "EOD close",
+          "pct_change": 0.63,
+          "dollar_pnl": 0.63,
+          "signals": {
+            "accumulation": 1.621,
+            "sector_momentum_pct": 0.2,
+            "news_sentiment": 1.51,
+            "relative_strength_pct": 18.57
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "AAPL",
+          "sector": "Technology",
+          "score": 0.662,
+          "entry_price": 253.27,
+          "exit_price": 258.66,
+          "exit_reason": "EOD close",
+          "pct_change": 2.13,
+          "dollar_pnl": 2.13,
+          "signals": {
+            "accumulation": 1.512,
+            "sector_momentum_pct": 0.48,
+            "news_sentiment": 1.29,
+            "relative_strength_pct": 2.31
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "CVS",
+          "sector": "Healthcare",
+          "score": 0.629,
+          "entry_price": 77.54,
+          "exit_price": 78.1,
+          "exit_reason": "EOD close",
+          "pct_change": 0.73,
+          "dollar_pnl": 0.73,
+          "signals": {
+            "accumulation": 1.474,
+            "sector_momentum_pct": 0.2,
+            "news_sentiment": 1.3,
+            "relative_strength_pct": 11.32
+          }
+        }
+      ],
+      "day_total_pnl": 3.49,
+      "day_avg_pct": 1.16,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-04-08",
+      "trade_date": "2026-04-09",
+      "spy_pct": 2.55,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "RSG",
+          "sector": "Industrials",
+          "score": 0.808,
+          "entry_price": 216.51,
+          "exit_price": 217.0,
+          "exit_reason": "EOD close",
+          "pct_change": 0.23,
+          "dollar_pnl": 0.23,
+          "signals": {
+            "accumulation": 1.692,
+            "sector_momentum_pct": 3.75,
+            "news_sentiment": 1.73,
+            "relative_strength_pct": -4.61
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "AWK",
+          "sector": "Utilities",
+          "score": 0.744,
+          "entry_price": 135.39,
+          "exit_price": 138.26,
+          "exit_reason": "EOD close",
+          "pct_change": 2.12,
+          "dollar_pnl": 2.12,
+          "signals": {
+            "accumulation": 1.676,
+            "sector_momentum_pct": 1.1,
+            "news_sentiment": 1.99,
+            "relative_strength_pct": -0.9
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "IFF",
+          "sector": "Materials",
+          "score": 0.737,
+          "entry_price": 73.38,
+          "exit_price": 72.75,
+          "exit_reason": "EOD close",
+          "pct_change": -0.87,
+          "dollar_pnl": -0.87,
+          "signals": {
+            "accumulation": 1.581,
+            "sector_momentum_pct": 3.33,
+            "news_sentiment": 1.57,
+            "relative_strength_pct": -1.65
+          }
+        }
+      ],
+      "day_total_pnl": 1.48,
+      "day_avg_pct": 0.49,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-04-09",
+      "trade_date": "2026-04-10",
+      "spy_pct": 0.58,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "DHI",
+          "sector": "Consumer Discretionary",
+          "score": 0.738,
+          "entry_price": 143.31,
+          "exit_price": 142.21,
+          "exit_reason": "EOD close",
+          "pct_change": -0.77,
+          "dollar_pnl": -0.77,
+          "signals": {
+            "accumulation": 1.373,
+            "sector_momentum_pct": 1.73,
+            "news_sentiment": 1.65,
+            "relative_strength_pct": 2.24
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "BF-B",
+          "sector": "Consumer Staples",
+          "score": 0.729,
+          "entry_price": 30.05,
+          "exit_price": 29.24,
+          "exit_reason": "EOD close",
+          "pct_change": -2.71,
+          "dollar_pnl": -2.71,
+          "signals": {
+            "accumulation": 1.763,
+            "sector_momentum_pct": 0.81,
+            "news_sentiment": 1.04,
+            "relative_strength_pct": 13.52
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "FOXA",
+          "sector": "Communication Services",
+          "score": 0.668,
+          "entry_price": 62.76,
+          "exit_price": 61.02,
+          "exit_reason": "EOD close",
+          "pct_change": -2.77,
+          "dollar_pnl": -2.77,
+          "signals": {
+            "accumulation": 1.853,
+            "sector_momentum_pct": 0.4,
+            "news_sentiment": 0.95,
+            "relative_strength_pct": 6.95
+          }
+        }
+      ],
+      "day_total_pnl": -6.24,
+      "day_avg_pct": -2.08,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-04-10",
+      "trade_date": "2026-04-13",
+      "spy_pct": -0.07,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "AJG",
+          "sector": "Financials",
+          "score": 0.595,
+          "entry_price": 212.84,
+          "exit_price": 221.76,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 4.19,
+          "dollar_pnl": 4.19,
+          "signals": {
+            "accumulation": 2.61,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.94,
+            "relative_strength_pct": -0.77
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "CDNS",
+          "sector": "Technology",
+          "score": 0.491,
+          "entry_price": 265.66,
+          "exit_price": 288.2,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 8.48,
+          "dollar_pnl": 8.48,
+          "signals": {
+            "accumulation": 1.446,
+            "sector_momentum_pct": 0.39,
+            "news_sentiment": 0.69,
+            "relative_strength_pct": -5.07
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "MSFT",
+          "sector": "Technology",
+          "score": 0.477,
+          "entry_price": 370.07,
+          "exit_price": 383.54,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 3.64,
+          "dollar_pnl": 3.64,
+          "signals": {
+            "accumulation": 1.081,
+            "sector_momentum_pct": 0.39,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -1.08
+          }
+        }
+      ],
+      "day_total_pnl": 16.32,
+      "day_avg_pct": 5.44,
+      "wins_3pct": 3
+    },
+    {
+      "predict_date": "2026-04-13",
+      "trade_date": "2026-04-14",
+      "spy_pct": 0.98,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "HPQ",
+          "sector": "Technology",
+          "score": 0.781,
+          "entry_price": 19.0,
+          "exit_price": 18.76,
+          "exit_reason": "EOD close",
+          "pct_change": -1.25,
+          "dollar_pnl": -1.25,
+          "signals": {
+            "accumulation": 1.756,
+            "sector_momentum_pct": 2.1,
+            "news_sentiment": 1.28,
+            "relative_strength_pct": -0.57
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "DELL",
+          "sector": "Technology",
+          "score": 0.777,
+          "entry_price": 189.2,
+          "exit_price": 179.74,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 1.66,
+            "sector_momentum_pct": 2.1,
+            "news_sentiment": 1.12,
+            "relative_strength_pct": 7.49
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "SNPS",
+          "sector": "Technology",
+          "score": 0.621,
+          "entry_price": 417.77,
+          "exit_price": 418.8,
+          "exit_reason": "EOD close",
+          "pct_change": 0.25,
+          "dollar_pnl": 0.25,
+          "signals": {
+            "accumulation": 1.519,
+            "sector_momentum_pct": 2.1,
+            "news_sentiment": 0.79,
+            "relative_strength_pct": 3.12
+          }
+        }
+      ],
+      "day_total_pnl": -6.0,
+      "day_avg_pct": -2.0,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-04-14",
+      "trade_date": "2026-04-15",
+      "spy_pct": 1.22,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "USB",
+          "sector": "Financials",
+          "score": 0.56,
+          "entry_price": 56.09,
+          "exit_price": 56.37,
+          "exit_reason": "EOD close",
+          "pct_change": 0.5,
+          "dollar_pnl": 0.5,
+          "signals": {
+            "accumulation": 1.838,
+            "sector_momentum_pct": 0.23,
+            "news_sentiment": 1.01,
+            "relative_strength_pct": 4.22
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "FSLR",
+          "sector": "Technology",
+          "score": 0.519,
+          "entry_price": 200.61,
+          "exit_price": 206.63,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 1.414,
+            "sector_momentum_pct": 1.6,
+            "news_sentiment": 1.13,
+            "relative_strength_pct": 2.72
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "A",
+          "sector": "Healthcare",
+          "score": 0.507,
+          "entry_price": 120.39,
+          "exit_price": 119.77,
+          "exit_reason": "EOD close",
+          "pct_change": -0.51,
+          "dollar_pnl": -0.51,
+          "signals": {
+            "accumulation": 1.323,
+            "sector_momentum_pct": 0.58,
+            "news_sentiment": 1.67,
+            "relative_strength_pct": 5.14
+          }
+        }
+      ],
+      "day_total_pnl": 2.98,
+      "day_avg_pct": 0.99,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-04-15",
+      "trade_date": "2026-04-16",
+      "spy_pct": 0.79,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "AIG",
+          "sector": "Financials",
+          "score": 0.617,
+          "entry_price": 76.58,
+          "exit_price": 77.7,
+          "exit_reason": "EOD close",
+          "pct_change": 1.47,
+          "dollar_pnl": 1.47,
+          "signals": {
+            "accumulation": 2.486,
+            "sector_momentum_pct": 0.75,
+            "news_sentiment": 0.81,
+            "relative_strength_pct": -1.19
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "LYV",
+          "sector": "Communication Services",
+          "score": 0.583,
+          "entry_price": 155.82,
+          "exit_price": 160.59,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 3.06,
+          "dollar_pnl": 3.06,
+          "signals": {
+            "accumulation": 1.824,
+            "sector_momentum_pct": 0.69,
+            "news_sentiment": 1.9,
+            "relative_strength_pct": -5.42
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "LRCX",
+          "sector": "Technology",
+          "score": 0.539,
+          "entry_price": 264.97,
+          "exit_price": 260.78,
+          "exit_reason": "EOD close",
+          "pct_change": -1.58,
+          "dollar_pnl": -1.58,
+          "signals": {
+            "accumulation": 1.136,
+            "sector_momentum_pct": 1.6,
+            "news_sentiment": 1.28,
+            "relative_strength_pct": 5.98
+          }
+        }
+      ],
+      "day_total_pnl": 2.94,
+      "day_avg_pct": 0.98,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-04-16",
+      "trade_date": "2026-04-17",
+      "spy_pct": 0.25,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "WEC",
+          "sector": "Utilities",
+          "score": 0.522,
+          "entry_price": 115.44,
+          "exit_price": 114.89,
+          "exit_reason": "EOD close",
+          "pct_change": -0.48,
+          "dollar_pnl": -0.48,
+          "signals": {
+            "accumulation": 1.43,
+            "sector_momentum_pct": 0.72,
+            "news_sentiment": 2.09,
+            "relative_strength_pct": -2.7
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "SCHW",
+          "sector": "Financials",
+          "score": 0.509,
+          "entry_price": 92.29,
+          "exit_price": 91.95,
+          "exit_reason": "EOD close",
+          "pct_change": -0.37,
+          "dollar_pnl": -0.37,
+          "signals": {
+            "accumulation": 2.128,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.08,
+            "relative_strength_pct": -4.51
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "WBD",
+          "sector": "Communication Services",
+          "score": 0.509,
+          "entry_price": 27.39,
+          "exit_price": 27.47,
+          "exit_reason": "EOD close",
+          "pct_change": 0.29,
+          "dollar_pnl": 0.29,
+          "signals": {
+            "accumulation": 1.263,
+            "sector_momentum_pct": 1.25,
+            "news_sentiment": 1.87,
+            "relative_strength_pct": -1.76
+          }
+        }
+      ],
+      "day_total_pnl": -0.56,
+      "day_avg_pct": -0.19,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-04-17",
+      "trade_date": "2026-04-20",
+      "spy_pct": 1.21,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "CPRT",
+          "sector": "Industrials",
+          "score": 0.756,
+          "entry_price": 33.45,
+          "exit_price": 33.76,
+          "exit_reason": "EOD close",
+          "pct_change": 0.93,
+          "dollar_pnl": 0.93,
+          "signals": {
+            "accumulation": 2.509,
+            "sector_momentum_pct": 1.87,
+            "news_sentiment": 0.92,
+            "relative_strength_pct": 0.24
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "RCL",
+          "sector": "Consumer Discretionary",
+          "score": 0.742,
+          "entry_price": 284.01,
+          "exit_price": 280.81,
+          "exit_reason": "EOD close",
+          "pct_change": -1.12,
+          "dollar_pnl": -1.12,
+          "signals": {
+            "accumulation": 2.198,
+            "sector_momentum_pct": 2.36,
+            "news_sentiment": 1.15,
+            "relative_strength_pct": 0.72
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "VTR",
+          "sector": "Real Estate",
+          "score": 0.723,
+          "entry_price": 85.1,
+          "exit_price": 84.65,
+          "exit_reason": "EOD close",
+          "pct_change": -0.53,
+          "dollar_pnl": -0.53,
+          "signals": {
+            "accumulation": 2.093,
+            "sector_momentum_pct": 1.53,
+            "news_sentiment": 1.84,
+            "relative_strength_pct": -1.36
+          }
+        }
+      ],
+      "day_total_pnl": -0.73,
+      "day_avg_pct": -0.24,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-04-20",
+      "trade_date": "2026-04-21",
+      "spy_pct": -0.2,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "MRSH",
+          "sector": "Financials",
+          "score": 0.694,
+          "entry_price": 174.59,
+          "exit_price": 179.0,
+          "exit_reason": "EOD close",
+          "pct_change": 2.53,
+          "dollar_pnl": 2.53,
+          "signals": {
+            "accumulation": 1.596,
+            "sector_momentum_pct": 0.38,
+            "news_sentiment": 1.35,
+            "relative_strength_pct": 0.22
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "CPRT",
+          "sector": "Industrials",
+          "score": 0.524,
+          "entry_price": 33.76,
+          "exit_price": 33.74,
+          "exit_reason": "EOD close",
+          "pct_change": -0.06,
+          "dollar_pnl": -0.06,
+          "signals": {
+            "accumulation": 1.475,
+            "sector_momentum_pct": 0.22,
+            "news_sentiment": 0.86,
+            "relative_strength_pct": 1.31
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "MMM",
+          "sector": "Industrials",
+          "score": 0.521,
+          "entry_price": 150.62,
+          "exit_price": 155.14,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 1.578,
+            "sector_momentum_pct": 0.22,
+            "news_sentiment": 0.71,
+            "relative_strength_pct": -1.13
+          }
+        }
+      ],
+      "day_total_pnl": 5.47,
+      "day_avg_pct": 1.82,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-04-22",
+      "trade_date": "2026-04-23",
+      "spy_pct": 1.01,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "IBM",
+          "sector": "Technology",
+          "score": 0.783,
+          "entry_price": 250.02,
+          "exit_price": 237.52,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 2.282,
+            "sector_momentum_pct": 2.2,
+            "news_sentiment": 1.14,
+            "relative_strength_pct": 0.69
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "BSX",
+          "sector": "Healthcare",
+          "score": 0.696,
+          "entry_price": 64.87,
+          "exit_price": 66.82,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 2.351,
+            "sector_momentum_pct": 0.32,
+            "news_sentiment": 1.57,
+            "relative_strength_pct": 0.09
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "TXN",
+          "sector": "Technology",
+          "score": 0.651,
+          "entry_price": 235.12,
+          "exit_price": 280.8,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 19.43,
+          "dollar_pnl": 19.43,
+          "signals": {
+            "accumulation": 1.432,
+            "sector_momentum_pct": 2.2,
+            "news_sentiment": 1.47,
+            "relative_strength_pct": 7.06
+          }
+        }
+      ],
+      "day_total_pnl": 17.43,
+      "day_avg_pct": 5.81,
+      "wins_3pct": 2
+    },
+    {
+      "predict_date": "2026-04-23",
+      "trade_date": "2026-04-24",
+      "spy_pct": -0.39,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "CDW",
+          "sector": "Technology",
+          "score": 0.544,
+          "entry_price": 135.67,
+          "exit_price": 134.52,
+          "exit_reason": "EOD close",
+          "pct_change": -0.84,
+          "dollar_pnl": -0.84,
+          "signals": {
+            "accumulation": 1.886,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.79,
+            "relative_strength_pct": 3.79
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "ADP",
+          "sector": "Industrials",
+          "score": 0.543,
+          "entry_price": 197.04,
+          "exit_price": 195.05,
+          "exit_reason": "EOD close",
+          "pct_change": -1.01,
+          "dollar_pnl": -1.01,
+          "signals": {
+            "accumulation": 1.385,
+            "sector_momentum_pct": 1.77,
+            "news_sentiment": 1.82,
+            "relative_strength_pct": -2.7
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "CMS",
+          "sector": "Utilities",
+          "score": 0.536,
+          "entry_price": 76.03,
+          "exit_price": 75.68,
+          "exit_reason": "EOD close",
+          "pct_change": -0.46,
+          "dollar_pnl": -0.46,
+          "signals": {
+            "accumulation": 1.369,
+            "sector_momentum_pct": 2.72,
+            "news_sentiment": 1.42,
+            "relative_strength_pct": -4.63
+          }
+        }
+      ],
+      "day_total_pnl": -2.31,
+      "day_avg_pct": -0.77,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-04-24",
+      "trade_date": "2026-04-27",
+      "spy_pct": 0.77,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "QCOM",
+          "sector": "Technology",
+          "score": 0.775,
+          "entry_price": 148.3,
+          "exit_price": 152.75,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 1.515,
+            "sector_momentum_pct": 2.81,
+            "news_sentiment": 1.38,
+            "relative_strength_pct": 6.48
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "DLR",
+          "sector": "Real Estate",
+          "score": 0.688,
+          "entry_price": 198.68,
+          "exit_price": 195.04,
+          "exit_reason": "EOD close",
+          "pct_change": -1.83,
+          "dollar_pnl": -1.83,
+          "signals": {
+            "accumulation": 2.079,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.26,
+            "relative_strength_pct": -1.48
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "SMCI",
+          "sector": "Technology",
+          "score": 0.65,
+          "entry_price": 29.08,
+          "exit_price": 27.63,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 1.075,
+            "sector_momentum_pct": 2.81,
+            "news_sentiment": 1.68,
+            "relative_strength_pct": -0.99
+          }
+        }
+      ],
+      "day_total_pnl": -3.83,
+      "day_avg_pct": -1.28,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-04-27",
+      "trade_date": "2026-04-28",
+      "spy_pct": 0.17,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "AIG",
+          "sector": "Financials",
+          "score": 0.837,
+          "entry_price": 73.64,
+          "exit_price": 73.67,
+          "exit_reason": "EOD close",
+          "pct_change": 0.04,
+          "dollar_pnl": 0.04,
+          "signals": {
+            "accumulation": 2.344,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 1.45,
+            "relative_strength_pct": -6.4
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "IVZ",
+          "sector": "Financials",
+          "score": 0.663,
+          "entry_price": 25.28,
+          "exit_price": 26.04,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 1.514,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 1.43,
+            "relative_strength_pct": 1.37
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "KVUE",
+          "sector": "Consumer Staples",
+          "score": 0.644,
+          "entry_price": 17.32,
+          "exit_price": 17.33,
+          "exit_reason": "EOD close",
+          "pct_change": 0.06,
+          "dollar_pnl": 0.06,
+          "signals": {
+            "accumulation": 2.062,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.56,
+            "relative_strength_pct": 0.78
+          }
+        }
+      ],
+      "day_total_pnl": 3.1,
+      "day_avg_pct": 1.03,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-04-28",
+      "trade_date": "2026-04-29",
+      "spy_pct": -0.49,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "GM",
+          "sector": "Consumer Discretionary",
+          "score": 0.593,
+          "entry_price": 78.78,
+          "exit_price": 76.45,
+          "exit_reason": "EOD close",
+          "pct_change": -2.95,
+          "dollar_pnl": -2.95,
+          "signals": {
+            "accumulation": 2.573,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.86,
+            "relative_strength_pct": 0.58
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "SJM",
+          "sector": "Consumer Staples",
+          "score": 0.55,
+          "entry_price": 96.97,
+          "exit_price": 95.74,
+          "exit_reason": "EOD close",
+          "pct_change": -1.27,
+          "dollar_pnl": -1.27,
+          "signals": {
+            "accumulation": 2.143,
+            "sector_momentum_pct": 0.9,
+            "news_sentiment": 0.53,
+            "relative_strength_pct": 1.51
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "APA",
+          "sector": "Energy",
+          "score": 0.531,
+          "entry_price": 38.65,
+          "exit_price": 40.32,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 4.32,
+          "dollar_pnl": 4.32,
+          "signals": {
+            "accumulation": 1.195,
+            "sector_momentum_pct": 1.66,
+            "news_sentiment": 1.38,
+            "relative_strength_pct": 1.82
+          }
+        }
+      ],
+      "day_total_pnl": 0.09,
+      "day_avg_pct": 0.03,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-04-29",
+      "trade_date": "2026-04-30",
+      "spy_pct": -0.02,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "SBUX",
+          "sector": "Consumer Discretionary",
+          "score": 0.682,
+          "entry_price": 104.89,
+          "exit_price": 104.72,
+          "exit_reason": "EOD close",
+          "pct_change": -0.16,
+          "dollar_pnl": -0.16,
+          "signals": {
+            "accumulation": 2.347,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.49,
+            "relative_strength_pct": 6.15
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "OKE",
+          "sector": "Energy",
+          "score": 0.565,
+          "entry_price": 88.26,
+          "exit_price": 91.37,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 3.52,
+          "dollar_pnl": 3.52,
+          "signals": {
+            "accumulation": 1.24,
+            "sector_momentum_pct": 2.29,
+            "news_sentiment": 1.76,
+            "relative_strength_pct": 1.5
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "GEHC",
+          "sector": "Healthcare",
+          "score": 0.521,
+          "entry_price": 59.49,
+          "exit_price": 60.84,
+          "exit_reason": "EOD close",
+          "pct_change": 2.28,
+          "dollar_pnl": 2.28,
+          "signals": {
+            "accumulation": 2.389,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.21,
+            "relative_strength_pct": -15.97
+          }
+        }
+      ],
+      "day_total_pnl": 5.63,
+      "day_avg_pct": 1.88,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-04-30",
+      "trade_date": "2026-05-01",
+      "spy_pct": 0.99,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "PPL",
+          "sector": "Utilities",
+          "score": 0.802,
+          "entry_price": 37.14,
+          "exit_price": 37.3,
+          "exit_reason": "EOD close",
+          "pct_change": 0.43,
+          "dollar_pnl": 0.43,
+          "signals": {
+            "accumulation": 2.908,
+            "sector_momentum_pct": 2.56,
+            "news_sentiment": 1.51,
+            "relative_strength_pct": -5.42
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "ES",
+          "sector": "Utilities",
+          "score": 0.762,
+          "entry_price": 69.87,
+          "exit_price": 70.24,
+          "exit_reason": "EOD close",
+          "pct_change": 0.52,
+          "dollar_pnl": 0.52,
+          "signals": {
+            "accumulation": 2.272,
+            "sector_momentum_pct": 2.56,
+            "news_sentiment": 1.79,
+            "relative_strength_pct": 0.25
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "AME",
+          "sector": "Industrials",
+          "score": 0.583,
+          "entry_price": 235.15,
+          "exit_price": 230.13,
+          "exit_reason": "EOD close",
+          "pct_change": -2.13,
+          "dollar_pnl": -2.13,
+          "signals": {
+            "accumulation": 2.486,
+            "sector_momentum_pct": 2.74,
+            "news_sentiment": 0.74,
+            "relative_strength_pct": -2.52
+          }
+        }
+      ],
+      "day_total_pnl": -1.18,
+      "day_avg_pct": -0.39,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-05-01",
+      "trade_date": "2026-05-04",
+      "spy_pct": 0.28,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "AAPL",
+          "sector": "Technology",
+          "score": 0.537,
+          "entry_price": 279.88,
+          "exit_price": 276.58,
+          "exit_reason": "EOD close",
+          "pct_change": -1.18,
+          "dollar_pnl": -1.18,
+          "signals": {
+            "accumulation": 1.227,
+            "sector_momentum_pct": 1.49,
+            "news_sentiment": 1.31,
+            "relative_strength_pct": 1.86
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "VEEV",
+          "sector": "Healthcare",
+          "score": 0.493,
+          "entry_price": 171.6,
+          "exit_price": 170.22,
+          "exit_reason": "EOD close",
+          "pct_change": -0.8,
+          "dollar_pnl": -0.8,
+          "signals": {
+            "accumulation": 2.488,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.29,
+            "relative_strength_pct": 7.07
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "FSLR",
+          "sector": "Technology",
+          "score": 0.487,
+          "entry_price": 211.71,
+          "exit_price": 211.39,
+          "exit_reason": "EOD close",
+          "pct_change": -0.15,
+          "dollar_pnl": -0.15,
+          "signals": {
+            "accumulation": 1.383,
+            "sector_momentum_pct": 1.49,
+            "news_sentiment": 0.56,
+            "relative_strength_pct": 7.78
+          }
+        }
+      ],
+      "day_total_pnl": -2.14,
+      "day_avg_pct": -0.71,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-05-04",
+      "trade_date": "2026-05-05",
+      "spy_pct": -0.37,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "PLTR",
+          "sector": "Technology",
+          "score": 0.633,
+          "entry_price": 146.03,
+          "exit_price": 138.73,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 1.435,
+            "sector_momentum_pct": 0.11,
+            "news_sentiment": 1.45,
+            "relative_strength_pct": 1.94
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "EFX",
+          "sector": "Industrials",
+          "score": 0.619,
+          "entry_price": 171.65,
+          "exit_price": 169.44,
+          "exit_reason": "EOD close",
+          "pct_change": -1.29,
+          "dollar_pnl": -1.29,
+          "signals": {
+            "accumulation": 2.962,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.95,
+            "relative_strength_pct": 2.12
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "ACN",
+          "sector": "Technology",
+          "score": 0.539,
+          "entry_price": 180.12,
+          "exit_price": 179.01,
+          "exit_reason": "EOD close",
+          "pct_change": -0.62,
+          "dollar_pnl": -0.62,
+          "signals": {
+            "accumulation": 1.272,
+            "sector_momentum_pct": 0.11,
+            "news_sentiment": 1.09,
+            "relative_strength_pct": 1.67
+          }
+        }
+      ],
+      "day_total_pnl": -6.91,
+      "day_avg_pct": -2.3,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-05-05",
+      "trade_date": "2026-05-06",
+      "spy_pct": 0.8,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "PLTR",
+          "sector": "Technology",
+          "score": 0.633,
+          "entry_price": 135.91,
+          "exit_price": 133.79,
+          "exit_reason": "EOD close",
+          "pct_change": -1.56,
+          "dollar_pnl": -1.56,
+          "signals": {
+            "accumulation": 1.877,
+            "sector_momentum_pct": 2.21,
+            "news_sentiment": 1.34,
+            "relative_strength_pct": -5.94
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "ANET",
+          "sector": "Technology",
+          "score": 0.589,
+          "entry_price": 170.22,
+          "exit_price": 161.71,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 1.978,
+            "sector_momentum_pct": 2.21,
+            "news_sentiment": 0.74,
+            "relative_strength_pct": 0.77
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "ON",
+          "sector": "Technology",
+          "score": 0.576,
+          "entry_price": 102.67,
+          "exit_price": 105.77,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 3.02,
+          "dollar_pnl": 3.02,
+          "signals": {
+            "accumulation": 1.579,
+            "sector_momentum_pct": 2.21,
+            "news_sentiment": 0.97,
+            "relative_strength_pct": 7.83
+          }
+        }
+      ],
+      "day_total_pnl": -3.54,
+      "day_avg_pct": -1.18,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-05-06",
+      "trade_date": "2026-05-07",
+      "spy_pct": 1.39,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "VEEV",
+          "sector": "Healthcare",
+          "score": 0.721,
+          "entry_price": 167.35,
+          "exit_price": 172.37,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 7.095,
+            "sector_momentum_pct": 0.07,
+            "news_sentiment": 1.53,
+            "relative_strength_pct": 5.7
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "FTNT",
+          "sector": "Technology",
+          "score": 0.6,
+          "entry_price": 89.95,
+          "exit_price": 107.97,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 20.03,
+          "dollar_pnl": 20.03,
+          "signals": {
+            "accumulation": 1.266,
+            "sector_momentum_pct": 2.66,
+            "news_sentiment": 1.8,
+            "relative_strength_pct": 1.8
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "GEN",
+          "sector": "Technology",
+          "score": 0.523,
+          "entry_price": 19.46,
+          "exit_price": 20.08,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 3.22,
+          "dollar_pnl": 3.22,
+          "signals": {
+            "accumulation": 1.489,
+            "sector_momentum_pct": 2.66,
+            "news_sentiment": 1.41,
+            "relative_strength_pct": -0.46
+          }
+        }
+      ],
+      "day_total_pnl": 26.25,
+      "day_avg_pct": 8.75,
+      "wins_3pct": 3
+    },
+    {
+      "predict_date": "2026-05-07",
+      "trade_date": "2026-05-08",
+      "spy_pct": -0.31,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "ABNB",
+          "sector": "Consumer Discretionary",
+          "score": 0.697,
+          "entry_price": 140.46,
+          "exit_price": 144.67,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 2.026,
+            "sector_momentum_pct": 0.01,
+            "news_sentiment": 1.73,
+            "relative_strength_pct": 0.06
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "DASH",
+          "sector": "Consumer Discretionary",
+          "score": 0.685,
+          "entry_price": 171.35,
+          "exit_price": 162.78,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 2.199,
+            "sector_momentum_pct": 0.01,
+            "news_sentiment": 1.33,
+            "relative_strength_pct": 1.59
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "EXPE",
+          "sector": "Consumer Discretionary",
+          "score": 0.668,
+          "entry_price": 252.25,
+          "exit_price": 239.64,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 2.28,
+            "sector_momentum_pct": 0.01,
+            "news_sentiment": 1.1,
+            "relative_strength_pct": 1.77
+          }
+        }
+      ],
+      "day_total_pnl": -7.0,
+      "day_avg_pct": -2.33,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-05-08",
+      "trade_date": "2026-05-11",
+      "spy_pct": 0.83,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "AXP",
+          "sector": "Financials",
+          "score": 0.558,
+          "entry_price": 316.03,
+          "exit_price": 312.32,
+          "exit_reason": "EOD close",
+          "pct_change": -1.17,
+          "dollar_pnl": -1.17,
+          "signals": {
+            "accumulation": 2.42,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.25,
+            "relative_strength_pct": -0.54
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "MCHP",
+          "sector": "Technology",
+          "score": 0.475,
+          "entry_price": 98.6,
+          "exit_price": 98.54,
+          "exit_reason": "EOD close",
+          "pct_change": -0.06,
+          "dollar_pnl": -0.06,
+          "signals": {
+            "accumulation": 1.556,
+            "sector_momentum_pct": 3.44,
+            "news_sentiment": 0.89,
+            "relative_strength_pct": 2.04
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "WYNN",
+          "sector": "Consumer Discretionary",
+          "score": 0.474,
+          "entry_price": 102.15,
+          "exit_price": 99.11,
+          "exit_reason": "EOD close",
+          "pct_change": -2.98,
+          "dollar_pnl": -2.98,
+          "signals": {
+            "accumulation": 2.14,
+            "sector_momentum_pct": 0.27,
+            "news_sentiment": 1.18,
+            "relative_strength_pct": -3.63
+          }
+        }
+      ],
+      "day_total_pnl": -4.21,
+      "day_avg_pct": -1.4,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-05-11",
+      "trade_date": "2026-05-12",
+      "spy_pct": 0.23,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "Q",
+          "sector": "Technology",
+          "score": 0.665,
+          "entry_price": 153.16,
+          "exit_price": 168.28,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 9.87,
+          "dollar_pnl": 9.87,
+          "signals": {
+            "accumulation": 1.635,
+            "sector_momentum_pct": 1.34,
+            "news_sentiment": 0.7,
+            "relative_strength_pct": 7.29
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "XEL",
+          "sector": "Utilities",
+          "score": 0.566,
+          "entry_price": 80.0,
+          "exit_price": 79.3,
+          "exit_reason": "EOD close",
+          "pct_change": -0.87,
+          "dollar_pnl": -0.87,
+          "signals": {
+            "accumulation": 1.547,
+            "sector_momentum_pct": 0.94,
+            "news_sentiment": 1.01,
+            "relative_strength_pct": -1.64
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "DELL",
+          "sector": "Technology",
+          "score": 0.537,
+          "entry_price": 247.04,
+          "exit_price": 234.69,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 1.244,
+            "sector_momentum_pct": 1.34,
+            "news_sentiment": 1.05,
+            "relative_strength_pct": 15.38
+          }
+        }
+      ],
+      "day_total_pnl": 4.0,
+      "day_avg_pct": 1.33,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-05-12",
+      "trade_date": "2026-05-13",
+      "spy_pct": -0.15,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "SJM",
+          "sector": "Consumer Staples",
+          "score": 0.674,
+          "entry_price": 99.23,
+          "exit_price": 99.76,
+          "exit_reason": "EOD close",
+          "pct_change": 0.54,
+          "dollar_pnl": 0.54,
+          "signals": {
+            "accumulation": 1.397,
+            "sector_momentum_pct": 1.28,
+            "news_sentiment": 2.3,
+            "relative_strength_pct": 2.48
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "CSX",
+          "sector": "Industrials",
+          "score": 0.469,
+          "entry_price": 44.39,
+          "exit_price": 44.26,
+          "exit_reason": "EOD close",
+          "pct_change": -0.29,
+          "dollar_pnl": -0.29,
+          "signals": {
+            "accumulation": 1.984,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.6,
+            "relative_strength_pct": -0.72
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "ZBH",
+          "sector": "Healthcare",
+          "score": 0.466,
+          "entry_price": 83.15,
+          "exit_price": 82.5,
+          "exit_reason": "EOD close",
+          "pct_change": -0.78,
+          "dollar_pnl": -0.78,
+          "signals": {
+            "accumulation": 1.164,
+            "sector_momentum_pct": 1.96,
+            "news_sentiment": 1.42,
+            "relative_strength_pct": -1.53
+          }
+        }
+      ],
+      "day_total_pnl": -0.53,
+      "day_avg_pct": -0.18,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-05-13",
+      "trade_date": "2026-05-14",
+      "spy_pct": 0.56,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "CSCO",
+          "sector": "Technology",
+          "score": 0.509,
+          "entry_price": 101.87,
+          "exit_price": 115.53,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 13.41,
+          "dollar_pnl": 13.41,
+          "signals": {
+            "accumulation": 1.129,
+            "sector_momentum_pct": 0.94,
+            "news_sentiment": 0.99,
+            "relative_strength_pct": 10.22
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "HPE",
+          "sector": "Technology",
+          "score": 0.487,
+          "entry_price": 31.98,
+          "exit_price": 34.03,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 6.42,
+          "dollar_pnl": 6.42,
+          "signals": {
+            "accumulation": 1.565,
+            "sector_momentum_pct": 0.94,
+            "news_sentiment": 0.84,
+            "relative_strength_pct": 4.66
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "ELV",
+          "sector": "Healthcare",
+          "score": 0.482,
+          "entry_price": 398.02,
+          "exit_price": 395.1,
+          "exit_reason": "EOD close",
+          "pct_change": -0.73,
+          "dollar_pnl": -0.73,
+          "signals": {
+            "accumulation": 1.224,
+            "sector_momentum_pct": 0.59,
+            "news_sentiment": 1.38,
+            "relative_strength_pct": 6.06
+          }
+        }
+      ],
+      "day_total_pnl": 19.1,
+      "day_avg_pct": 6.37,
+      "wins_3pct": 2
+    },
+    {
+      "predict_date": "2026-05-14",
+      "trade_date": "2026-05-15",
+      "spy_pct": 0.79,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "NTAP",
+          "sector": "Technology",
+          "score": 0.788,
+          "entry_price": 119.93,
+          "exit_price": 119.93,
+          "exit_reason": "EOD close",
+          "pct_change": 0.0,
+          "dollar_pnl": 0.0,
+          "signals": {
+            "accumulation": 1.673,
+            "sector_momentum_pct": 1.5,
+            "news_sentiment": 2.02,
+            "relative_strength_pct": 4.63
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "AMAT",
+          "sector": "Technology",
+          "score": 0.596,
+          "entry_price": 440.01,
+          "exit_price": 436.08,
+          "exit_reason": "EOD close",
+          "pct_change": -0.89,
+          "dollar_pnl": -0.89,
+          "signals": {
+            "accumulation": 1.688,
+            "sector_momentum_pct": 1.5,
+            "news_sentiment": 0.52,
+            "relative_strength_pct": 5.79
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "BA",
+          "sector": "Industrials",
+          "score": 0.543,
+          "entry_price": 229.21,
+          "exit_price": 220.49,
+          "exit_reason": "EOD close",
+          "pct_change": -3.8,
+          "dollar_pnl": -3.8,
+          "signals": {
+            "accumulation": 1.753,
+            "sector_momentum_pct": 0.51,
+            "news_sentiment": 1.39,
+            "relative_strength_pct": -1.3
+          }
+        }
+      ],
+      "day_total_pnl": -4.7,
+      "day_avg_pct": -1.57,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-05-18",
+      "trade_date": "2026-05-19",
+      "spy_pct": -0.07,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "D",
+          "sector": "Utilities",
+          "score": 0.709,
+          "entry_price": 66.89,
+          "exit_price": 67.45,
+          "exit_reason": "EOD close",
+          "pct_change": 0.84,
+          "dollar_pnl": 0.84,
+          "signals": {
+            "accumulation": 4.652,
+            "sector_momentum_pct": 0.16,
+            "news_sentiment": 1.22,
+            "relative_strength_pct": 7.83
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "STZ",
+          "sector": "Consumer Staples",
+          "score": 0.543,
+          "entry_price": 147.58,
+          "exit_price": 146.47,
+          "exit_reason": "EOD close",
+          "pct_change": -0.75,
+          "dollar_pnl": -0.75,
+          "signals": {
+            "accumulation": 1.164,
+            "sector_momentum_pct": 1.49,
+            "news_sentiment": 1.68,
+            "relative_strength_pct": 2.14
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "ECHO",
+          "sector": "Communication Services",
+          "score": 0.496,
+          "entry_price": 136.45,
+          "exit_price": 136.52,
+          "exit_reason": "EOD close",
+          "pct_change": 0.05,
+          "dollar_pnl": 0.05,
+          "signals": {
+            "accumulation": 1.243,
+            "sector_momentum_pct": 0.78,
+            "news_sentiment": 1.64,
+            "relative_strength_pct": 4.89
+          }
+        }
+      ],
+      "day_total_pnl": 0.14,
+      "day_avg_pct": 0.05,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-05-20",
+      "trade_date": "2026-05-21",
+      "spy_pct": 1.02,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "TGT",
+          "sector": "Consumer Staples",
+          "score": 0.753,
+          "entry_price": 122.33,
+          "exit_price": 126.15,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 3.12,
+          "dollar_pnl": 3.12,
+          "signals": {
+            "accumulation": 3.662,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.84,
+            "relative_strength_pct": 1.36
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "ABNB",
+          "sector": "Consumer Discretionary",
+          "score": 0.667,
+          "entry_price": 135.55,
+          "exit_price": 134.25,
+          "exit_reason": "EOD close",
+          "pct_change": -0.96,
+          "dollar_pnl": -0.96,
+          "signals": {
+            "accumulation": 1.656,
+            "sector_momentum_pct": 2.53,
+            "news_sentiment": 1.9,
+            "relative_strength_pct": -0.59
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "CCL",
+          "sector": "Consumer Discretionary",
+          "score": 0.569,
+          "entry_price": 26.03,
+          "exit_price": 26.18,
+          "exit_reason": "EOD close",
+          "pct_change": 0.58,
+          "dollar_pnl": 0.58,
+          "signals": {
+            "accumulation": 1.205,
+            "sector_momentum_pct": 2.53,
+            "news_sentiment": 1.5,
+            "relative_strength_pct": 2.1
+          }
+        }
+      ],
+      "day_total_pnl": 2.74,
+      "day_avg_pct": 0.91,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-05-21",
+      "trade_date": "2026-05-22",
+      "spy_pct": 0.2,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "IBM",
+          "sector": "Technology",
+          "score": 0.813,
+          "entry_price": 252.97,
+          "exit_price": 260.56,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 1.893,
+            "sector_momentum_pct": 0.82,
+            "news_sentiment": 0.93,
+            "relative_strength_pct": 15.02
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "INTU",
+          "sector": "Technology",
+          "score": 0.709,
+          "entry_price": 307.07,
+          "exit_price": 319.94,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 4.19,
+          "dollar_pnl": 4.19,
+          "signals": {
+            "accumulation": 1.756,
+            "sector_momentum_pct": 0.82,
+            "news_sentiment": 1.47,
+            "relative_strength_pct": -19.65
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "EQR",
+          "sector": "Real Estate",
+          "score": 0.667,
+          "entry_price": 65.08,
+          "exit_price": 65.52,
+          "exit_reason": "EOD close",
+          "pct_change": 0.67,
+          "dollar_pnl": 0.67,
+          "signals": {
+            "accumulation": 1.796,
+            "sector_momentum_pct": 0.16,
+            "news_sentiment": 1.33,
+            "relative_strength_pct": 0.98
+          }
+        }
+      ],
+      "day_total_pnl": 7.86,
+      "day_avg_pct": 2.62,
+      "wins_3pct": 2
+    },
+    {
+      "predict_date": "2026-05-22",
+      "trade_date": "2026-05-26",
+      "spy_pct": 0.39,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "WDAY",
+          "sector": "Technology",
+          "score": 0.596,
+          "entry_price": 128.14,
+          "exit_price": 124.02,
+          "exit_reason": "EOD close",
+          "pct_change": -3.22,
+          "dollar_pnl": -3.22,
+          "signals": {
+            "accumulation": 1.673,
+            "sector_momentum_pct": 1.0,
+            "news_sentiment": 0.85,
+            "relative_strength_pct": 1.5
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "ABBV",
+          "sector": "Healthcare",
+          "score": 0.542,
+          "entry_price": 215.7,
+          "exit_price": 213.12,
+          "exit_reason": "EOD close",
+          "pct_change": -1.2,
+          "dollar_pnl": -1.2,
+          "signals": {
+            "accumulation": 0.931,
+            "sector_momentum_pct": 1.17,
+            "news_sentiment": 1.68,
+            "relative_strength_pct": 1.35
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "HPQ",
+          "sector": "Technology",
+          "score": 0.541,
+          "entry_price": 24.94,
+          "exit_price": 24.14,
+          "exit_reason": "EOD close",
+          "pct_change": -3.21,
+          "dollar_pnl": -3.21,
+          "signals": {
+            "accumulation": 1.214,
+            "sector_momentum_pct": 1.0,
+            "news_sentiment": 0.79,
+            "relative_strength_pct": 20.29
+          }
+        }
+      ],
+      "day_total_pnl": -7.62,
+      "day_avg_pct": -2.54,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-05-26",
+      "trade_date": "2026-05-27",
+      "spy_pct": 0.66,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "HBAN",
+          "sector": "Financials",
+          "score": 0.643,
+          "entry_price": 15.92,
+          "exit_price": 15.89,
+          "exit_reason": "EOD close",
+          "pct_change": -0.19,
+          "dollar_pnl": -0.19,
+          "signals": {
+            "accumulation": 1.855,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.11,
+            "relative_strength_pct": 3.32
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "AVGO",
+          "sector": "Technology",
+          "score": 0.58,
+          "entry_price": 421.34,
+          "exit_price": 421.19,
+          "exit_reason": "EOD close",
+          "pct_change": -0.04,
+          "dollar_pnl": -0.04,
+          "signals": {
+            "accumulation": 1.194,
+            "sector_momentum_pct": 2.63,
+            "news_sentiment": 1.66,
+            "relative_strength_pct": -2.32
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "WFC",
+          "sector": "Financials",
+          "score": 0.559,
+          "entry_price": 77.52,
+          "exit_price": 76.11,
+          "exit_reason": "EOD close",
+          "pct_change": -1.82,
+          "dollar_pnl": -1.82,
+          "signals": {
+            "accumulation": 1.309,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.93,
+            "relative_strength_pct": 4.41
+          }
+        }
+      ],
+      "day_total_pnl": -2.04,
+      "day_avg_pct": -0.68,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-05-27",
+      "trade_date": "2026-05-28",
+      "spy_pct": -0.02,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "LULU",
+          "sector": "Consumer Discretionary",
+          "score": 0.67,
+          "entry_price": 131.04,
+          "exit_price": 131.33,
+          "exit_reason": "EOD close",
+          "pct_change": 0.22,
+          "dollar_pnl": 0.22,
+          "signals": {
+            "accumulation": 1.344,
+            "sector_momentum_pct": 1.76,
+            "news_sentiment": 1.37,
+            "relative_strength_pct": 8.16
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "DLTR",
+          "sector": "Consumer Staples",
+          "score": 0.629,
+          "entry_price": 95.87,
+          "exit_price": 113.0,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 17.87,
+          "dollar_pnl": 17.87,
+          "signals": {
+            "accumulation": 1.665,
+            "sector_momentum_pct": 1.14,
+            "news_sentiment": 0.9,
+            "relative_strength_pct": 4.67
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "TSCO",
+          "sector": "Consumer Discretionary",
+          "score": 0.617,
+          "entry_price": 30.67,
+          "exit_price": 31.37,
+          "exit_reason": "EOD close",
+          "pct_change": 2.28,
+          "dollar_pnl": 2.28,
+          "signals": {
+            "accumulation": 1.349,
+            "sector_momentum_pct": 1.76,
+            "news_sentiment": 1.42,
+            "relative_strength_pct": -2.47
+          }
+        }
+      ],
+      "day_total_pnl": 20.37,
+      "day_avg_pct": 6.79,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-05-28",
+      "trade_date": "2026-05-29",
+      "spy_pct": 0.55,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "DELL",
+          "sector": "Technology",
+          "score": 0.656,
+          "entry_price": 317.05,
+          "exit_price": 420.91,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 32.76,
+          "dollar_pnl": 32.76,
+          "signals": {
+            "accumulation": 1.767,
+            "sector_momentum_pct": 1.31,
+            "news_sentiment": 0.95,
+            "relative_strength_pct": 29.2
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "ADSK",
+          "sector": "Technology",
+          "score": 0.622,
+          "entry_price": 240.95,
+          "exit_price": 228.9,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 2.089,
+            "sector_momentum_pct": 1.31,
+            "news_sentiment": 0.94,
+            "relative_strength_pct": -2.41
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "CRM",
+          "sector": "Technology",
+          "score": 0.591,
+          "entry_price": 175.72,
+          "exit_price": 190.61,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 8.47,
+          "dollar_pnl": 8.47,
+          "signals": {
+            "accumulation": 1.399,
+            "sector_momentum_pct": 1.31,
+            "news_sentiment": 1.88,
+            "relative_strength_pct": -3.49
+          }
+        }
+      ],
+      "day_total_pnl": 36.23,
+      "day_avg_pct": 12.08,
+      "wins_3pct": 2
+    },
+    {
+      "predict_date": "2026-05-29",
+      "trade_date": "2026-06-01",
+      "spy_pct": 0.25,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "IT",
+          "sector": "Technology",
+          "score": 0.856,
+          "entry_price": 162.2,
+          "exit_price": 179.59,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 10.72,
+          "dollar_pnl": 10.72,
+          "signals": {
+            "accumulation": 6.224,
+            "sector_momentum_pct": 2.23,
+            "news_sentiment": 1.58,
+            "relative_strength_pct": 0.94
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "GDDY",
+          "sector": "Technology",
+          "score": 0.619,
+          "entry_price": 85.83,
+          "exit_price": 92.99,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 8.34,
+          "dollar_pnl": 8.34,
+          "signals": {
+            "accumulation": 6.592,
+            "sector_momentum_pct": 2.23,
+            "news_sentiment": 0.65,
+            "relative_strength_pct": -8.49
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "SOLV",
+          "sector": "Healthcare",
+          "score": 0.559,
+          "entry_price": 74.95,
+          "exit_price": 75.84,
+          "exit_reason": "EOD close",
+          "pct_change": 1.19,
+          "dollar_pnl": 1.19,
+          "signals": {
+            "accumulation": 6.611,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.06,
+            "relative_strength_pct": -1.41
+          }
+        }
+      ],
+      "day_total_pnl": 20.25,
+      "day_avg_pct": 6.75,
+      "wins_3pct": 2
+    },
+    {
+      "predict_date": "2026-06-01",
+      "trade_date": "2026-06-02",
+      "spy_pct": 0.27,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "GEHC",
+          "sector": "Healthcare",
+          "score": 0.466,
+          "entry_price": 62.69,
+          "exit_price": 61.99,
+          "exit_reason": "EOD close",
+          "pct_change": -1.12,
+          "dollar_pnl": -1.12,
+          "signals": {
+            "accumulation": 1.699,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.64,
+            "relative_strength_pct": -1.31
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "COP",
+          "sector": "Energy",
+          "score": 0.465,
+          "entry_price": 115.58,
+          "exit_price": 116.87,
+          "exit_reason": "EOD close",
+          "pct_change": 1.12,
+          "dollar_pnl": 1.12,
+          "signals": {
+            "accumulation": 0.986,
+            "sector_momentum_pct": 1.79,
+            "news_sentiment": 2.07,
+            "relative_strength_pct": -5.85
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "CEG",
+          "sector": "Utilities",
+          "score": 0.459,
+          "entry_price": 265.7,
+          "exit_price": 273.67,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 2.174,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.95,
+            "relative_strength_pct": -6.68
+          }
+        }
+      ],
+      "day_total_pnl": 3.0,
+      "day_avg_pct": 1.0,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-06-02",
+      "trade_date": "2026-06-03",
+      "spy_pct": 0.14,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "ARE",
+          "sector": "Real Estate",
+          "score": 0.693,
+          "entry_price": 52.74,
+          "exit_price": 51.27,
+          "exit_reason": "EOD close",
+          "pct_change": -2.79,
+          "dollar_pnl": -2.79,
+          "signals": {
+            "accumulation": 1.621,
+            "sector_momentum_pct": 0.51,
+            "news_sentiment": 0.89,
+            "relative_strength_pct": 8.3
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "CEG",
+          "sector": "Utilities",
+          "score": 0.638,
+          "entry_price": 272.65,
+          "exit_price": 267.24,
+          "exit_reason": "EOD close",
+          "pct_change": -1.98,
+          "dollar_pnl": -1.98,
+          "signals": {
+            "accumulation": 1.129,
+            "sector_momentum_pct": 1.86,
+            "news_sentiment": 1.81,
+            "relative_strength_pct": -11.45
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "FDX",
+          "sector": "Industrials",
+          "score": 0.607,
+          "entry_price": 327.77,
+          "exit_price": 323.25,
+          "exit_reason": "EOD close",
+          "pct_change": -1.38,
+          "dollar_pnl": -1.38,
+          "signals": {
+            "accumulation": 1.351,
+            "sector_momentum_pct": 1.04,
+            "news_sentiment": 1.09,
+            "relative_strength_pct": 1.03
+          }
+        }
+      ],
+      "day_total_pnl": -6.15,
+      "day_avg_pct": -2.05,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-06-04",
+      "trade_date": "2026-06-05",
+      "spy_pct": 0.38,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "GILD",
+          "sector": "Healthcare",
+          "score": 0.658,
+          "entry_price": 128.34,
+          "exit_price": 128.32,
+          "exit_reason": "EOD close",
+          "pct_change": -0.02,
+          "dollar_pnl": -0.02,
+          "signals": {
+            "accumulation": 1.37,
+            "sector_momentum_pct": 3.07,
+            "news_sentiment": 1.73,
+            "relative_strength_pct": -8.24
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "FANG",
+          "sector": "Energy",
+          "score": 0.62,
+          "entry_price": 202.94,
+          "exit_price": 192.79,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 1.511,
+            "sector_momentum_pct": 0.07,
+            "news_sentiment": 1.86,
+            "relative_strength_pct": 4.46
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "CI",
+          "sector": "Healthcare",
+          "score": 0.571,
+          "entry_price": 280.68,
+          "exit_price": 289.48,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 3.14,
+          "dollar_pnl": 3.14,
+          "signals": {
+            "accumulation": 1.275,
+            "sector_momentum_pct": 3.07,
+            "news_sentiment": 1.1,
+            "relative_strength_pct": -3.78
+          }
+        }
+      ],
+      "day_total_pnl": -1.88,
+      "day_avg_pct": -0.63,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-06-08",
+      "trade_date": "2026-06-09",
+      "spy_pct": 0.23,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "AAPL",
+          "sector": "Technology",
+          "score": 0.625,
+          "entry_price": 301.54,
+          "exit_price": 290.55,
+          "exit_reason": "EOD close",
+          "pct_change": -3.64,
+          "dollar_pnl": -3.64,
+          "signals": {
+            "accumulation": 1.196,
+            "sector_momentum_pct": 2.15,
+            "news_sentiment": 1.89,
+            "relative_strength_pct": -3.71
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "AIG",
+          "sector": "Financials",
+          "score": 0.607,
+          "entry_price": 73.61,
+          "exit_price": 73.43,
+          "exit_reason": "EOD close",
+          "pct_change": -0.24,
+          "dollar_pnl": -0.24,
+          "signals": {
+            "accumulation": 1.858,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.22,
+            "relative_strength_pct": 1.52
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "INTC",
+          "sector": "Technology",
+          "score": 0.54,
+          "entry_price": 110.27,
+          "exit_price": 104.76,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 0.966,
+            "sector_momentum_pct": 2.15,
+            "news_sentiment": 1.8,
+            "relative_strength_pct": -1.29
+          }
+        }
+      ],
+      "day_total_pnl": -8.89,
+      "day_avg_pct": -2.96,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-06-09",
+      "trade_date": "2026-06-10",
+      "spy_pct": -0.29,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "SW",
+          "sector": "Materials",
+          "score": 0.729,
+          "entry_price": 41.36,
+          "exit_price": 39.29,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 1.829,
+            "sector_momentum_pct": 1.62,
+            "news_sentiment": 1.28,
+            "relative_strength_pct": -3.7
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "HST",
+          "sector": "Real Estate",
+          "score": 0.7,
+          "entry_price": 24.47,
+          "exit_price": 23.95,
+          "exit_reason": "EOD close",
+          "pct_change": -2.13,
+          "dollar_pnl": -2.13,
+          "signals": {
+            "accumulation": 1.561,
+            "sector_momentum_pct": 2.13,
+            "news_sentiment": 1.3,
+            "relative_strength_pct": 1.33
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "AIG",
+          "sector": "Financials",
+          "score": 0.605,
+          "entry_price": 73.43,
+          "exit_price": 74.45,
+          "exit_reason": "EOD close",
+          "pct_change": 1.38,
+          "dollar_pnl": 1.38,
+          "signals": {
+            "accumulation": 1.49,
+            "sector_momentum_pct": 0.94,
+            "news_sentiment": 1.72,
+            "relative_strength_pct": -0.78
+          }
+        }
+      ],
+      "day_total_pnl": -5.75,
+      "day_avg_pct": -1.92,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-06-11",
+      "trade_date": "2026-06-12",
+      "spy_pct": 1.7,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "KDP",
+          "sector": "Consumer Staples",
+          "score": 0.601,
+          "entry_price": 31.01,
+          "exit_price": 31.49,
+          "exit_reason": "EOD close",
+          "pct_change": 1.54,
+          "dollar_pnl": 1.54,
+          "signals": {
+            "accumulation": 2.252,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.76,
+            "relative_strength_pct": 4.15
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "WY",
+          "sector": "Real Estate",
+          "score": 0.591,
+          "entry_price": 24.33,
+          "exit_price": 25.06,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 1.925,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.37,
+            "relative_strength_pct": -0.5
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "KIM",
+          "sector": "Real Estate",
+          "score": 0.581,
+          "entry_price": 25.75,
+          "exit_price": 25.91,
+          "exit_reason": "EOD close",
+          "pct_change": 0.62,
+          "dollar_pnl": 0.62,
+          "signals": {
+            "accumulation": 1.955,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.99,
+            "relative_strength_pct": 8.58
+          }
+        }
+      ],
+      "day_total_pnl": 5.16,
+      "day_avg_pct": 1.72,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-06-12",
+      "trade_date": "2026-06-15",
+      "spy_pct": 0.54,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "ECHO",
+          "sector": "Communication Services",
+          "score": 0.697,
+          "entry_price": 114.08,
+          "exit_price": 117.87,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 3.32,
+          "dollar_pnl": 3.32,
+          "signals": {
+            "accumulation": 3.8,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.65,
+            "relative_strength_pct": -1.47
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "DOW",
+          "sector": "Materials",
+          "score": 0.64,
+          "entry_price": 33.85,
+          "exit_price": 32.16,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 1.233,
+            "sector_momentum_pct": 1.87,
+            "news_sentiment": 2.14,
+            "relative_strength_pct": -2.23
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "IP",
+          "sector": "Materials",
+          "score": 0.583,
+          "entry_price": 36.15,
+          "exit_price": 37.23,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 0.953,
+            "sector_momentum_pct": 1.87,
+            "news_sentiment": 1.57,
+            "relative_strength_pct": 5.68
+          }
+        }
+      ],
+      "day_total_pnl": 1.32,
+      "day_avg_pct": 0.44,
+      "wins_3pct": 2
+    },
+    {
+      "predict_date": "2026-06-15",
+      "trade_date": "2026-06-16",
+      "spy_pct": 1.76,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "FOXA",
+          "sector": "Communication Services",
+          "score": 0.642,
+          "entry_price": 54.76,
+          "exit_price": 52.02,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 4.046,
+            "sector_momentum_pct": 0.48,
+            "news_sentiment": 1.9,
+            "relative_strength_pct": -19.29
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "CTSH",
+          "sector": "Technology",
+          "score": 0.479,
+          "entry_price": 50.82,
+          "exit_price": 51.05,
+          "exit_reason": "EOD close",
+          "pct_change": 0.45,
+          "dollar_pnl": 0.45,
+          "signals": {
+            "accumulation": 1.289,
+            "sector_momentum_pct": 3.78,
+            "news_sentiment": 1.48,
+            "relative_strength_pct": -7.88
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "TSCO",
+          "sector": "Consumer Discretionary",
+          "score": 0.474,
+          "entry_price": 30.88,
+          "exit_price": 30.21,
+          "exit_reason": "EOD close",
+          "pct_change": -2.17,
+          "dollar_pnl": -2.17,
+          "signals": {
+            "accumulation": 1.143,
+            "sector_momentum_pct": 1.69,
+            "news_sentiment": 1.91,
+            "relative_strength_pct": 0.77
+          }
+        }
+      ],
+      "day_total_pnl": -6.72,
+      "day_avg_pct": -2.24,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-06-18",
+      "trade_date": "2026-06-22",
+      "spy_pct": 1.04,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "FLEX",
+          "sector": "Technology",
+          "score": 0.827,
+          "entry_price": 147.61,
+          "exit_price": 155.81,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 5.56,
+          "dollar_pnl": 5.56,
+          "signals": {
+            "accumulation": 13.864,
+            "sector_momentum_pct": 3.04,
+            "news_sentiment": 1.22,
+            "relative_strength_pct": -5.92
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "QCOM",
+          "sector": "Technology",
+          "score": 0.57,
+          "entry_price": 226.11,
+          "exit_price": 232.89,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 2.414,
+            "sector_momentum_pct": 3.04,
+            "news_sentiment": 1.3,
+            "relative_strength_pct": 8.37
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "TER",
+          "sector": "Technology",
+          "score": 0.565,
+          "entry_price": 437.92,
+          "exit_price": 457.0,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 4.36,
+          "dollar_pnl": 4.36,
+          "signals": {
+            "accumulation": 3.901,
+            "sector_momentum_pct": 3.04,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 11.78
+          }
+        }
+      ],
+      "day_total_pnl": 12.91,
+      "day_avg_pct": 4.3,
+      "wins_3pct": 3
+    },
+    {
+      "predict_date": "2026-06-22",
+      "trade_date": "2026-06-23",
+      "spy_pct": -0.31,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "AIG",
+          "sector": "Financials",
+          "score": 0.69,
+          "entry_price": 76.37,
+          "exit_price": 76.53,
+          "exit_reason": "EOD close",
+          "pct_change": 0.21,
+          "dollar_pnl": 0.21,
+          "signals": {
+            "accumulation": 2.46,
+            "sector_momentum_pct": 0.59,
+            "news_sentiment": 1.37,
+            "relative_strength_pct": 0.91
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "BALL",
+          "sector": "Materials",
+          "score": 0.551,
+          "entry_price": 58.2,
+          "exit_price": 60.49,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 3.93,
+          "dollar_pnl": 3.93,
+          "signals": {
+            "accumulation": 2.459,
+            "sector_momentum_pct": 0.01,
+            "news_sentiment": 1.04,
+            "relative_strength_pct": 2.14
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "WMB",
+          "sector": "Energy",
+          "score": 0.475,
+          "entry_price": 74.95,
+          "exit_price": 75.79,
+          "exit_reason": "EOD close",
+          "pct_change": 1.12,
+          "dollar_pnl": 1.12,
+          "signals": {
+            "accumulation": 1.013,
+            "sector_momentum_pct": 1.26,
+            "news_sentiment": 1.39,
+            "relative_strength_pct": 2.72
+          }
+        }
+      ],
+      "day_total_pnl": 5.26,
+      "day_avg_pct": 1.75,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-06-24",
+      "trade_date": "2026-06-25",
+      "spy_pct": -0.05,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "FDX",
+          "sector": "Industrials",
+          "score": 0.741,
+          "entry_price": 316.83,
+          "exit_price": 329.44,
+          "exit_reason": "EOD (win floor active)",
+          "pct_change": 3.98,
+          "dollar_pnl": 3.98,
+          "signals": {
+            "accumulation": 2.154,
+            "sector_momentum_pct": 1.16,
+            "news_sentiment": 1.03,
+            "relative_strength_pct": -6.43
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "DRI",
+          "sector": "Consumer Discretionary",
+          "score": 0.636,
+          "entry_price": 213.45,
+          "exit_price": 212.76,
+          "exit_reason": "EOD close",
+          "pct_change": -0.32,
+          "dollar_pnl": -0.32,
+          "signals": {
+            "accumulation": 1.515,
+            "sector_momentum_pct": 1.15,
+            "news_sentiment": 1.23,
+            "relative_strength_pct": 0.95
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "KVUE",
+          "sector": "Consumer Staples",
+          "score": 0.612,
+          "entry_price": 18.8,
+          "exit_price": 18.96,
+          "exit_reason": "EOD close",
+          "pct_change": 0.85,
+          "dollar_pnl": 0.85,
+          "signals": {
+            "accumulation": 1.622,
+            "sector_momentum_pct": 0.86,
+            "news_sentiment": 1.17,
+            "relative_strength_pct": 1.15
+          }
+        }
+      ],
+      "day_total_pnl": 4.51,
+      "day_avg_pct": 1.5,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-06-25",
+      "trade_date": "2026-06-26",
+      "spy_pct": 0.14,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "TECH",
+          "sector": "Healthcare",
+          "score": 0.674,
+          "entry_price": 70.7,
+          "exit_price": 71.0,
+          "exit_reason": "EOD close",
+          "pct_change": 0.42,
+          "dollar_pnl": 0.42,
+          "signals": {
+            "accumulation": 4.735,
+            "sector_momentum_pct": 1.49,
+            "news_sentiment": 0.32,
+            "relative_strength_pct": 27.06
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "BSX",
+          "sector": "Healthcare",
+          "score": 0.5,
+          "entry_price": 44.2,
+          "exit_price": 44.23,
+          "exit_reason": "EOD close",
+          "pct_change": 0.07,
+          "dollar_pnl": 0.07,
+          "signals": {
+            "accumulation": 0.89,
+            "sector_momentum_pct": 1.49,
+            "news_sentiment": 2.12,
+            "relative_strength_pct": -3.16
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "GE",
+          "sector": "Industrials",
+          "score": 0.487,
+          "entry_price": 371.36,
+          "exit_price": 369.0,
+          "exit_reason": "EOD close",
+          "pct_change": -0.64,
+          "dollar_pnl": -0.64,
+          "signals": {
+            "accumulation": 0.886,
+            "sector_momentum_pct": 2.17,
+            "news_sentiment": 1.49,
+            "relative_strength_pct": 1.84
+          }
+        }
+      ],
+      "day_total_pnl": -0.14,
+      "day_avg_pct": -0.05,
+      "wins_3pct": 0
+    },
+    {
+      "predict_date": "2026-06-29",
+      "trade_date": "2026-06-30",
+      "spy_pct": 1.65,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "CHTR",
+          "sector": "Communication Services",
+          "score": 0.812,
+          "entry_price": 146.17,
+          "exit_price": 138.86,
+          "exit_reason": "Stop loss (-5%)",
+          "pct_change": -5.0,
+          "dollar_pnl": -5.0,
+          "signals": {
+            "accumulation": 2.141,
+            "sector_momentum_pct": 1.6,
+            "news_sentiment": 1.26,
+            "relative_strength_pct": 14.83
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "CMCSA",
+          "sector": "Communication Services",
+          "score": 0.736,
+          "entry_price": 24.22,
+          "exit_price": 24.95,
+          "exit_reason": "Win floor triggered",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 2.027,
+            "sector_momentum_pct": 1.6,
+            "news_sentiment": 1.25,
+            "relative_strength_pct": 6.91
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "ABNB",
+          "sector": "Consumer Discretionary",
+          "score": 0.635,
+          "entry_price": 147.17,
+          "exit_price": 143.1,
+          "exit_reason": "EOD close",
+          "pct_change": -2.77,
+          "dollar_pnl": -2.77,
+          "signals": {
+            "accumulation": 1.02,
+            "sector_momentum_pct": 2.4,
+            "news_sentiment": 2.08,
+            "relative_strength_pct": 3.33
+          }
+        }
+      ],
+      "day_total_pnl": -4.77,
+      "day_avg_pct": -1.59,
+      "wins_3pct": 1
+    }
+  ]
+}
