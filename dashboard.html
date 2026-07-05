@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mover Predictor</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico" />
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -494,24 +492,32 @@ function renderTodayPicks(day) {
 
   dateEl.textContent = 'Picks generated for session: ' + day.date;
 
-  const scores = day.predictions.map(p => p.score);
-  const maxScore = Math.max(...scores);
+  const scores = day.predictions.map(p => p.score).filter(s => s != null && !isNaN(s));
+  const maxScore = scores.length ? Math.max(...scores) : 0;
   const rankLabels = ['#1 — Top Pick', '#2 — Strong Signal', '#3 — Watch'];
 
   el.innerHTML = day.predictions.map((p, i) => {
-    const pct = maxScore > 0 ? (p.score / maxScore) * 100 : 50;
+    const score = p.score ?? 0;
+    const pct = maxScore > 0 ? (score / maxScore) * 100 : 50;
     const entryPrice = p.entry_price;
     const livePrice = p.live_price ?? null;
     const pnlPct = p.live_pct ?? null;
     const priceUpdated = p.price_updated ?? null;
     const explainerId = `explainer-${i}`;
+    const isSkipped = !!p.skipped_reason;
+    const isSubstitute = !!p.substitute_pick;
 
     let badges = '';
-    if (p.paper_exit_reason) {
+    if (isSkipped) {
+      badges += `<div class="exited-badge">⛔ Skipped — ${p.skipped_reason}</div>`;
+    } else if (p.paper_exit_reason) {
       badges += `<div class="exited-badge">⚪ Exited — ${p.paper_exit_reason}</div>`;
     } else if (pnlPct != null) {
       if (pnlPct >= 3) badges += `<div class="win-floor-badge">🟢 Win floor active</div>`;
       else if (pnlPct <= -5) badges += `<div class="stop-badge">🔴 Stop triggered</div>`;
+    }
+    if (isSubstitute) {
+      badges += `<div class="exited-badge">🔄 Substitute pick — ${p.substitute_note || 'bought from the candidate bench'}</div>`;
     }
 
     const signals = p.signals || {};
@@ -523,33 +529,33 @@ function renderTodayPicks(day) {
         <div class="signal-mini"><div class="signal-mini-label">Rel. Strength</div><div class="signal-mini-value">${signals.relative_strength_pct != null ? fmt(signals.relative_strength_pct) : '—'}</div></div>
       </div>`;
 
-    return `<div class="pick-card">
+    return `<div class="pick-card"${isSkipped ? ' style="opacity:0.55"' : ''}>
       <div class="pick-card-top">
         <div>
-          <div class="pick-rank">${rankLabels[i] || '#' + p.rank}</div>
+          <div class="pick-rank">${rankLabels[i] || '#' + (p.rank ?? (i + 1))}</div>
           <div class="pick-ticker"><a href="https://finance.yahoo.com/quote/${p.ticker}" target="_blank">${p.ticker} ↗</a></div>
           ${p.sector ? `<div style="font-size:11px;color:var(--muted);margin-top:2px">${p.sector}</div>` : ''}
         </div>
         <div class="pick-live-price">
           <div class="live-price-value" style="color:${livePrice ? 'var(--text)' : 'var(--muted)'}">
-            ${livePrice ? fmtPrice(livePrice) : '—'}
+            ${isSkipped ? '—' : (livePrice ? fmtPrice(livePrice) : '—')}
           </div>
-          <div class="live-price-label">LIVE PRICE</div>
+          <div class="live-price-label">${isSkipped ? 'NOT BOUGHT' : 'LIVE PRICE'}</div>
         </div>
       </div>
 
       <div class="pick-pnl-row">
         <div class="pnl-item">
           <div class="pnl-label">Entry Price</div>
-          <div class="pnl-value flat">${entryPrice ? fmtPrice(entryPrice) : '—'}</div>
+          <div class="pnl-value flat">${!isSkipped && entryPrice ? fmtPrice(entryPrice) : '—'}</div>
         </div>
         <div class="pnl-item">
           <div class="pnl-label">Change</div>
-          <div class="pnl-value ${pnlClass(pnlPct)}">${fmt(pnlPct)}</div>
+          <div class="pnl-value ${pnlClass(pnlPct)}">${isSkipped ? '—' : fmt(pnlPct)}</div>
         </div>
         <div class="pnl-item">
           <div class="pnl-label">Score</div>
-          <div class="pnl-value flat">${p.score.toFixed(3)}</div>
+          <div class="pnl-value flat">${score.toFixed(3)}</div>
         </div>
       </div>
 
@@ -559,7 +565,8 @@ function renderTodayPicks(day) {
       </div>
 
       ${p.headline ? `<div class="pick-headline">📰 ${p.headline}</div>` : ''}
-      ${priceUpdated ? `<div class="updated-at">Price as of ${priceUpdated} (updates every 15 min during market hours)</div>` : '<div class="updated-at" style="color:var(--muted)">Live price updates during market hours</div>'}
+      ${!isSkipped && priceUpdated ? `<div class="updated-at">Price as of ${priceUpdated} (updates every 15 min during market hours)</div>` : ''}
+      ${!isSkipped && !priceUpdated ? '<div class="updated-at" style="color:var(--muted)">Live price updates during market hours</div>' : ''}
       ${badges}
 
       <div class="explainer-toggle" onclick="toggleExplainer('${explainerId}')">Why this pick? ▾</div>
