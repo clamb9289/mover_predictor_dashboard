@@ -139,142 +139,103 @@
     },
     {
       "date": "2026-07-06",
-      "regime": "Market regime OK \u2014 SPY +0.84%",
+      "regime": "Market regime OK \u2014 SPY +0.49%",
       "top_sectors": [
         {
           "etf": "XLK",
           "name": "Technology",
-          "pct": 1.99
+          "pct": 2.29
         },
         {
           "etf": "XLI",
           "name": "Industrials",
-          "pct": 0.86
+          "pct": 1.13
         },
         {
-          "etf": "XLF",
-          "name": "Financials",
-          "pct": 0.71
+          "etf": "XLE",
+          "name": "Energy",
+          "pct": 0.45
         }
       ],
       "actual_top3": [
         {
-          "ticker": "AMD",
-          "pct": 7.64
+          "ticker": "WDC",
+          "pct": 8.8
         },
         {
-          "ticker": "ANET",
-          "pct": 7.63
+          "ticker": "AMD",
+          "pct": 8.35
         },
         {
           "ticker": "VRT",
-          "pct": 6.96
+          "pct": 8.21
         }
       ],
       "predictions": [
         {
           "rank": 1,
-          "ticker": "DVN",
-          "score": 0.593,
-          "entry_price": 40.58,
+          "ticker": "STT",
+          "score": 0.626,
+          "entry_price": 173.306,
           "headline": null,
-          "sector": "Energy",
-          "explainer": "Its sector (Energy) was among the day's stronger performers, giving it a tailwind.",
+          "sector": "Financials",
+          "explainer": "Its sector (Financials) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+3.6% relative strength), suggesting individual demand beyond just sector momentum.",
           "signals": {
-            "accumulation": 0.701,
-            "sector_momentum_pct": 0.01,
+            "accumulation": 0.231,
+            "sector_momentum_pct": 0.11,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -3.86
+            "relative_strength_pct": 3.6
           },
-          "live_price": 40.58,
-          "live_pct": -0.01,
-          "price_updated": "13:27 ET"
+          "prediction_price": 173.48,
+          "live_price": 174.69,
+          "live_pct": 0.8,
+          "price_updated": "12:51 ET"
         },
         {
           "rank": 2,
-          "ticker": "TSLA",
-          "score": 0.587,
-          "entry_price": 417.79,
+          "ticker": "AVGO",
+          "score": 0.624,
+          "entry_price": 380.758,
           "headline": null,
-          "sector": "Consumer Discretionary",
-          "explainer": "Its sector (Consumer Discretionary) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+9.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "sector": "Technology",
+          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+1.9% relative strength), suggesting individual demand beyond just sector momentum.",
           "signals": {
-            "accumulation": 0.568,
-            "sector_momentum_pct": 0.63,
+            "accumulation": 0.165,
+            "sector_momentum_pct": 2.29,
             "news_sentiment": 0.0,
-            "relative_strength_pct": 9.4
+            "relative_strength_pct": 1.86
           },
-          "live_price": 417.58,
-          "live_pct": -0.05,
-          "price_updated": "13:27 ET"
+          "prediction_price": 380.18,
+          "live_price": 376.43,
+          "live_pct": -1.14,
+          "price_updated": "12:51 ET"
         },
         {
           "rank": 3,
-          "ticker": "ANET",
-          "score": 0.545,
-          "entry_price": 172.2,
+          "ticker": "DELL",
+          "score": 0.612,
+          "entry_price": 420.3,
           "headline": null,
           "sector": "Technology",
-          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+7.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+2.4% relative strength), suggesting individual demand beyond just sector momentum.",
           "signals": {
-            "accumulation": 0.418,
-            "sector_momentum_pct": 1.99,
+            "accumulation": 0.16,
+            "sector_momentum_pct": 2.29,
             "news_sentiment": 0.0,
-            "relative_strength_pct": 7.27
+            "relative_strength_pct": 2.45
           },
-          "live_price": 172.27,
-          "live_pct": 0.04,
-          "price_updated": "13:27 ET"
-        },
-        {
-          "ticker": "STT",
-          "rank": null,
-          "score": 0,
-          "entry_price": 173.306,
-          "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_reason": null,
-          "live_price": 174.73,
-          "live_pct": 0.82,
-          "price_updated": "13:27 ET"
-        },
-        {
-          "ticker": "AVGO",
-          "rank": 6,
-          "score": 0.4943,
-          "entry_price": 380.758,
-          "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_reason": null,
-          "live_price": 376.7,
-          "live_pct": -1.06,
-          "price_updated": "13:27 ET"
-        },
-        {
-          "ticker": "DELL",
-          "rank": null,
-          "score": 0,
-          "entry_price": 420.3,
-          "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_reason": null,
-          "live_price": 407.38,
-          "live_pct": -3.07,
-          "price_updated": "13:27 ET"
+          "prediction_price": 418.42,
+          "live_price": 410.7,
+          "live_pct": -2.29,
+          "price_updated": "12:51 ET"
         }
       ],
       "prior_predictions_actual": [],
-      "hit_rate": 0.1667,
+      "hit_rate": 0.1111,
       "total_hits": 1,
-      "total_predictions": 6,
-      "days_tracked": 2,
-      "prices_last_updated": "13:27 ET"
+      "total_predictions": 9,
+      "days_tracked": 3,
+      "prices_last_updated": "12:51 ET"
     }
   ]
 }
