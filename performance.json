@@ -256,6 +256,124 @@
       "total_predictions": 6,
       "days_tracked": 2,
       "prices_last_updated": "19:01 ET"
+    },
+    {
+      "date": "2026-07-07",
+      "regime": "Market regime OK \u2014 SPY +0.87%",
+      "top_sectors": [
+        {
+          "etf": "XLK",
+          "name": "Technology",
+          "pct": 1.65
+        },
+        {
+          "etf": "XLF",
+          "name": "Financials",
+          "pct": 0.93
+        },
+        {
+          "etf": "XLI",
+          "name": "Industrials",
+          "pct": 0.9
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "ANET",
+          "pct": 8.31
+        },
+        {
+          "ticker": "WDC",
+          "pct": 7.14
+        },
+        {
+          "ticker": "TSLA",
+          "pct": 6.69
+        }
+      ],
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "VICI",
+          "score": 0.618,
+          "entry_price": 26.7,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.482,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.0
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "STT",
+          "score": 0.595,
+          "entry_price": 175.96,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "Its sector (Financials) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+4.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.031,
+            "sector_momentum_pct": 0.93,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.26
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "TSLA",
+          "score": 0.529,
+          "entry_price": 419.77,
+          "headline": null,
+          "sector": "Consumer Discretionary",
+          "explainer": "Its sector (Consumer Discretionary) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+9.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.944,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 9.79
+          }
+        }
+      ],
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "DVN",
+          "move_pct": -0.27,
+          "dollar_change": -0.27,
+          "position_size": 100.0,
+          "actual_rank": 183,
+          "total_ranked": 386,
+          "postmortem": "Small loss of -0.27%. Within normal volatility but worth tracking if this ticker's signals repeat. Ranked #183 of 386 stocks tracked that day."
+        },
+        {
+          "rank": 2,
+          "ticker": "TSLA",
+          "move_pct": 6.69,
+          "dollar_change": 6.69,
+          "position_size": 100.0,
+          "actual_rank": 3,
+          "total_ranked": 386,
+          "postmortem": "Strong winner \u2014 gained +6.69%, hitting the win-floor threshold. Ranked #3 of 386 stocks tracked that day."
+        },
+        {
+          "rank": 3,
+          "ticker": "ANET",
+          "move_pct": 8.31,
+          "dollar_change": 8.31,
+          "position_size": 100.0,
+          "actual_rank": 1,
+          "total_ranked": 386,
+          "postmortem": "Strong winner \u2014 gained +8.31%, hitting the win-floor threshold. Ranked #1 of 386 stocks tracked that day."
+        }
+      ],
+      "hit_rate": 0.1667,
+      "total_hits": 1,
+      "total_predictions": 6,
+      "days_tracked": 2
     }
   ]
 }
