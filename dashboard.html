@@ -20,6 +20,10 @@
     --red-bg: rgba(248,113,113,0.1);
     --gold: #fbbf24;
     --gold-bg: rgba(251,191,36,0.08);
+    --silver: #cbd5e1;
+    --silver-bg: rgba(203,213,225,0.08);
+    --bronze: #d97757;
+    --bronze-bg: rgba(217,119,87,0.08);
   }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
 
@@ -416,6 +420,19 @@ function moveClass(n) {
   return n > 0 ? 'td-pos' : n < 0 ? 'td-neg' : 'td-flat';
 }
 
+function rankBadge(actualRank, totalRanked, format = 'short') {
+  if (!actualRank || !totalRanked) return '<span style="color:var(--muted)">—</span>';
+  const medals = { 1: ['🥇', 'var(--gold)'], 2: ['🥈', 'var(--silver)'], 3: ['🥉', 'var(--bronze)'] };
+  const rankText = format === 'long'
+    ? `#${actualRank} of ${totalRanked} tracked`
+    : `#${actualRank}/${totalRanked}`;
+  if (medals[actualRank]) {
+    const [emoji, color] = medals[actualRank];
+    return `<span style="color:${color};font-weight:600">${emoji} ${rankText}</span>`;
+  }
+  return `<span style="color:var(--muted)">${rankText}</span>`;
+}
+
 function pnlClass(n) {
   if (n == null) return 'flat';
   return n > 0 ? 'pos' : n < 0 ? 'neg' : 'flat';
@@ -597,9 +614,7 @@ function renderYesterday(latest) {
   el.innerHTML = latest.prior_predictions_actual.map(p => {
     const m = p.move_pct;
     const cls = m == null ? 'flat' : m > 0 ? 'pos' : 'neg';
-    const rankText = p.actual_rank && p.total_ranked
-      ? `#${p.actual_rank} of ${p.total_ranked} tracked`
-      : '—';
+    const rankText = rankBadge(p.actual_rank, p.total_ranked, 'long');
     return `<div class="yest-card">
       <div class="yest-top-row">
         <div class="yest-move ${cls}">${m == null ? '—' : fmt(m)}</div>
@@ -634,22 +649,13 @@ function renderHistory(days) {
     return;
   }
 
-  // `days` is sorted most-recent-first (see render()). predictor.py writes
-  // each day's *own* actual outcome (dollar_change, actual_rank) into the
-  // FOLLOWING trading day's entry, under that entry's prior_predictions_actual
-  // field — it's computed the next time predictor.py runs and looks back at
-  // "yesterday's" picks. So day[i]'s actual results live in day[i-1]
-  // (the next-more-recent entry), not in day[i] itself. The most recent day
-  // (index 0) has no more-recent entry yet, so its picks are still open —
-  // that's correctly rendered as no data yet, not a bug.
   const rows = [];
-  days.forEach((day, dayIdx) => {
+  for (const day of days) {
     const preds = day.predictions || [];
-    const nextDayEntry = dayIdx > 0 ? days[dayIdx - 1] : null;
-    const actuals = nextDayEntry?.prior_predictions_actual || [];
+    const actuals = day.prior_predictions_actual || [];
     const actualMap = {};
     actuals.forEach(a => actualMap[a.ticker] = a);
-    if (!preds.length) return;
+    if (!preds.length) continue;
 
     preds.forEach((p, i) => {
       const a = actualMap[p.ticker];
@@ -659,7 +665,7 @@ function renderHistory(days) {
       const exitPrice = p.paper_exit_price ?? null;
       const exitReason = p.paper_exit_reason ?? (a ? 'End of day' : '—');
       const dollarChange = a?.dollar_change ?? null;
-      const rankText = a?.actual_rank && a?.total_ranked ? `#${a.actual_rank}/${a.total_ranked}` : '—';
+      const rankText = rankBadge(a?.actual_rank, a?.total_ranked);
 
       rows.push(`<tr>
         ${i === 0 ? `<td rowspan="${preds.length}" style="font-weight:500">${day.date}</td>` : ''}
@@ -670,11 +676,11 @@ function renderHistory(days) {
         <td style="color:var(--muted);font-size:11px">${exitReason}</td>
         <td class="${mc}">${fmt(move)}</td>
         <td class="${mc}">${fmtDollar(dollarChange)}</td>
-        <td style="color:var(--muted);font-size:12px">${rankText}</td>
+        <td style="font-size:12px">${rankText}</td>
         ${i === 0 ? `<td rowspan="${preds.length}"><span class="mode-badge ${isLive ? 'mode-live' : 'mode-paper'}">${isLive ? 'LIVE' : 'PAPER'}</span></td>` : ''}
       </tr>`);
     });
-  });
+  }
 
   tbody.innerHTML = rows.join('') || '<tr><td colspan="10" class="loading-msg">No records found.</td></tr>';
 }
@@ -961,9 +967,9 @@ function renderBacktest(data) {
         <tbody>
           ${(data.daily_results||[]).slice().reverse().map(day => {
             const cls = day.day_total_pnl > 0 ? 'td-pos' : day.day_total_pnl < 0 ? 'td-neg' : 'td-flat';
-            const wins = day.wins_3pct || 0;
-            const total = (day.picks||[]).length;
-            const wl = '🟢'.repeat(wins) + '🔴'.repeat(total - wins);
+            const wl = (day.picks||[]).map(pk =>
+              pk.pct_change > 0 ? '🟢' : pk.pct_change < 0 ? '🔴' : '⚪'
+            ).join('');
             const picksHtml = (day.picks||[]).map(pk =>
               `<strong>${pk.ticker}</strong>&nbsp;${pickPctHtml(pk.pct_change)}`
             ).join('&emsp;');
