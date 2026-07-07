@@ -634,13 +634,22 @@ function renderHistory(days) {
     return;
   }
 
+  // `days` is sorted most-recent-first (see render()). predictor.py writes
+  // each day's *own* actual outcome (dollar_change, actual_rank) into the
+  // FOLLOWING trading day's entry, under that entry's prior_predictions_actual
+  // field — it's computed the next time predictor.py runs and looks back at
+  // "yesterday's" picks. So day[i]'s actual results live in day[i-1]
+  // (the next-more-recent entry), not in day[i] itself. The most recent day
+  // (index 0) has no more-recent entry yet, so its picks are still open —
+  // that's correctly rendered as no data yet, not a bug.
   const rows = [];
-  for (const day of days) {
+  days.forEach((day, dayIdx) => {
     const preds = day.predictions || [];
-    const actuals = day.prior_predictions_actual || [];
+    const nextDayEntry = dayIdx > 0 ? days[dayIdx - 1] : null;
+    const actuals = nextDayEntry?.prior_predictions_actual || [];
     const actualMap = {};
     actuals.forEach(a => actualMap[a.ticker] = a);
-    if (!preds.length) continue;
+    if (!preds.length) return;
 
     preds.forEach((p, i) => {
       const a = actualMap[p.ticker];
@@ -665,7 +674,7 @@ function renderHistory(days) {
         ${i === 0 ? `<td rowspan="${preds.length}"><span class="mode-badge ${isLive ? 'mode-live' : 'mode-paper'}">${isLive ? 'LIVE' : 'PAPER'}</span></td>` : ''}
       </tr>`);
     });
-  }
+  });
 
   tbody.innerHTML = rows.join('') || '<tr><td colspan="10" class="loading-msg">No records found.</td></tr>';
 }
