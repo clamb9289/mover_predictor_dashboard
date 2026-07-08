@@ -313,7 +313,11 @@
           "paper_exit_price": 143.42,
           "paper_exit_pct": 0.0,
           "paper_exit_reason": "End of day close",
+<<<<<<< HEAD
           "paper_exit_time": "10:02 ET"
+=======
+          "paper_exit_time": "10:03 ET"
+>>>>>>> 74ec831 (Auto update 2026-07-08 14:06)
         },
         {
           "rank": 2,
@@ -336,7 +340,11 @@
           "paper_exit_price": 52.71,
           "paper_exit_pct": -1.97,
           "paper_exit_reason": "End of day close",
+<<<<<<< HEAD
           "paper_exit_time": "10:02 ET"
+=======
+          "paper_exit_time": "10:03 ET"
+>>>>>>> 74ec831 (Auto update 2026-07-08 14:06)
         },
         {
           "rank": 3,
@@ -359,7 +367,11 @@
           "paper_exit_price": 522.25,
           "paper_exit_pct": 0.89,
           "paper_exit_reason": "End of day close",
+<<<<<<< HEAD
           "paper_exit_time": "10:02 ET"
+=======
+          "paper_exit_time": "10:03 ET"
+>>>>>>> 74ec831 (Auto update 2026-07-08 14:06)
         }
       ],
       "prior_predictions_actual": [
@@ -398,7 +410,142 @@
       "total_hits": 1,
       "total_predictions": 9,
       "days_tracked": 3,
+<<<<<<< HEAD
       "prices_last_updated": "10:02 ET"
+=======
+      "prices_last_updated": "10:03 ET"
+    },
+    {
+      "date": "2026-07-08",
+      "regime": "Market regime OK \u2014 SPY -0.45%",
+      "top_sectors": [
+        {
+          "etf": "XLE",
+          "name": "Energy",
+          "pct": 1.05
+        },
+        {
+          "etf": "XLK",
+          "name": "Technology",
+          "pct": 0.43
+        },
+        {
+          "etf": "XLU",
+          "name": "Utilities",
+          "pct": -0.22
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "WDC",
+          "pct": 5.48
+        },
+        {
+          "ticker": "ANET",
+          "pct": 4.42
+        },
+        {
+          "ticker": "COHR",
+          "pct": 4.41
+        }
+      ],
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "OXY",
+          "score": 0.93,
+          "entry_price": 53.056,
+          "headline": null,
+          "sector": "Energy",
+          "explainer": "Its sector (Energy) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+8.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.202,
+            "sector_momentum_pct": 1.05,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 8.27
+          },
+          "prediction_price": 53.1,
+          "live_price": 53.1,
+          "live_pct": 0.08,
+          "price_updated": "10:06 ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "PLTR",
+          "score": 0.783,
+          "entry_price": 128.034,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+9.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.201,
+            "sector_momentum_pct": 0.43,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 9.55
+          },
+          "prediction_price": 128.31,
+          "live_price": 128.53,
+          "live_pct": 0.39,
+          "price_updated": "10:06 ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "DELL",
+          "score": 0.702,
+          "entry_price": 433.364,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+0.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.193,
+            "sector_momentum_pct": 0.43,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.39
+          },
+          "prediction_price": 435.0,
+          "live_price": 432.01,
+          "live_pct": -0.31,
+          "price_updated": "10:06 ET"
+        }
+      ],
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "CBRE",
+          "move_pct": -2.28,
+          "dollar_change": -2.28,
+          "position_size": 100.0,
+          "actual_rank": 287,
+          "total_ranked": 341,
+          "postmortem": "Small loss of -2.28%. Within normal volatility but worth tracking if this ticker's signals repeat. Ranked #287 of 341 stocks tracked that day."
+        },
+        {
+          "rank": 2,
+          "ticker": "FISV",
+          "move_pct": -2.58,
+          "dollar_change": -2.58,
+          "position_size": 100.0,
+          "actual_rank": 300,
+          "total_ranked": 341,
+          "postmortem": "Small loss of -2.58%. Within normal volatility but worth tracking if this ticker's signals repeat. Ranked #300 of 341 stocks tracked that day."
+        },
+        {
+          "rank": 3,
+          "ticker": "VRTX",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 100.0,
+          "actual_rank": null,
+          "total_ranked": 341,
+          "postmortem": null
+        }
+      ],
+      "hit_rate": 0.1111,
+      "total_hits": 1,
+      "total_predictions": 9,
+      "days_tracked": 3,
+      "prices_last_updated": "10:06 ET"
+>>>>>>> 74ec831 (Auto update 2026-07-08 14:06)
     }
   ]
 }
