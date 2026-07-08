@@ -559,9 +559,10 @@ function renderTodayPicks(day) {
     const score = p.score ?? 0;
     const pct = maxScore > 0 ? (score / maxScore) * 100 : 50;
     const entryPrice = p.entry_price;
-    const livePrice = p.live_price ?? null;
-    const pnlPct = p.live_pct ?? null;
-    const priceUpdated = p.price_updated ?? null;
+    const isExited = p.paper_exit_price != null;
+    const livePrice = isExited ? p.paper_exit_price : (p.live_price ?? null);
+    const pnlPct = isExited ? p.paper_exit_pct : (p.live_pct ?? null);
+    const priceUpdated = isExited ? p.paper_exit_time : (p.price_updated ?? null);
     const explainerId = `explainer-${i}`;
     const isSkipped = !!p.skipped_reason;
     const isSubstitute = !!p.substitute_pick;
@@ -599,7 +600,7 @@ function renderTodayPicks(day) {
           <div class="live-price-value" style="color:${livePrice ? 'var(--text)' : 'var(--muted)'}">
             ${isSkipped ? '—' : (livePrice ? fmtPrice(livePrice) : '—')}
           </div>
-          <div class="live-price-label">${isSkipped ? 'NOT BOUGHT' : 'LIVE PRICE'}</div>
+          <div class="live-price-label">${isSkipped ? 'NOT BOUGHT' : (isExited ? 'EXIT PRICE' : 'LIVE PRICE')}</div>
         </div>
       </div>
 
@@ -624,8 +625,9 @@ function renderTodayPicks(day) {
       </div>
 
       ${p.headline ? `<div class="pick-headline">📰 ${p.headline}</div>` : ''}
-      ${!isSkipped && priceUpdated ? `<div class="updated-at">Price as of ${priceUpdated} (updates every 15 min during market hours)</div>` : ''}
-      ${!isSkipped && !priceUpdated ? '<div class="updated-at" style="color:var(--muted)">Live price updates during market hours</div>' : ''}
+      ${!isSkipped && isExited && priceUpdated ? `<div class="updated-at">Exited at ${priceUpdated} — price locked, no longer live</div>` : ''}
+      ${!isSkipped && !isExited && priceUpdated ? `<div class="updated-at">Price as of ${priceUpdated} (updates every 15 min during market hours)</div>` : ''}
+      ${!isSkipped && !isExited && !priceUpdated ? '<div class="updated-at" style="color:var(--muted)">Live price updates during market hours</div>' : ''}
       ${badges}
 
       <div class="explainer-toggle" onclick="toggleExplainer('${explainerId}')">Why this pick? ▾</div>
