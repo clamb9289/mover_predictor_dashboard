@@ -88,20 +88,20 @@
   .archive-table th:nth-child(3), .archive-table td:nth-child(3) { width: 32%; }
   .archive-table th:nth-child(4), .archive-table td:nth-child(4) { width: 12%; }
   .archive-table th:nth-child(5), .archive-table td:nth-child(5) { width: 32%; }
-  .archive-table td { overflow-wrap: break-word; word-break: break-word; }
+  .archive-table td { overflow-wrap: anywhere; word-break: break-word; }
   .archive-row { cursor: pointer; }
   .archive-row:hover { background: var(--surface2); }
   .archive-detail-row { display: none; }
   .archive-detail-row.open { display: table-row; }
-  .archive-detail { padding: 16px; background: var(--surface2); border-radius: 8px; margin: 8px 0; max-width: 100%; overflow-wrap: break-word; }
+  .archive-detail { padding: 16px; background: var(--surface2); border-radius: 8px; margin: 8px 0; max-width: 100%; overflow-wrap: anywhere; }
   .archive-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
   .archive-cols > div { min-width: 0; }
   @media (max-width: 700px) { .archive-cols { grid-template-columns: 1fr; } }
   .archive-col-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 10px; }
-  .archive-pick { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; overflow-wrap: break-word; word-break: break-word; min-width: 0; }
+  .archive-pick { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; overflow-wrap: anywhere; min-width: 0; }
   .archive-pick:last-child { border-bottom: none; }
   .archive-pick-head { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
-  .archive-insight { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); line-height: 1.6; overflow-wrap: break-word; }
+  .archive-insight { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); line-height: 1.6; overflow-wrap: anywhere; }
   .signal-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
   .signal-mini { background: var(--surface); border-radius: 6px; padding: 8px 10px; }
   .signal-mini-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
@@ -726,9 +726,9 @@ function toggleArchiveRow(id) {
 }
 
 function renderArchive(days) {
-  const tbody = document.getElementById('archive-body');
+  const container = document.getElementById('archive-body');
   if (!days.length) {
-    tbody.innerHTML = '<tr><td colspan="5" class="loading-msg">No history yet.</td></tr>';
+    container.innerHTML = '<div class="loading-msg">No history yet.</div>';
     return;
   }
 
@@ -750,52 +750,50 @@ function renderArchive(days) {
     const mc = moveClass(avgMove);
     const rowId = `archive-detail-${i}`;
 
-    rows.push(`<tr class="archive-row" onclick="toggleArchiveRow('${rowId}')">
-      <td style="color:var(--muted)">▸</td>
-      <td style="font-weight:500">${labelDate}</td>
-      <td>${picks.map(p => p.ticker).join(', ') || '—'}</td>
-      <td class="${mc}">${fmt(avgMove)}</td>
-      <td>${winners.map(w => w.ticker).join(', ') || '—'}</td>
-    </tr>
-    <tr class="archive-detail-row" id="${rowId}">
-      <td colspan="5">
-        <div class="archive-detail">
-          <div class="archive-cols">
-            <div>
-              <div class="archive-col-title">Our Picks</div>
-              ${picks.map(p => `
-                <div class="archive-pick">
-                  <div class="archive-pick-head">
-                    <strong>${p.ticker}</strong>
-                    <span class="${moveClass(p.move_pct)}">${fmt(p.move_pct)}</span>
-                  </div>
-                  ${p.postmortem ? `<div style="color:var(--muted)">${p.postmortem}</div>` : ''}
+    rows.push(`<div class="archive-row" onclick="toggleArchiveRow('${rowId}')">
+      <div style="color:var(--muted)">▸</div>
+      <div style="font-weight:500">${labelDate}</div>
+      <div>${picks.map(p => p.ticker).join(', ') || '—'}</div>
+      <div class="${mc}">${fmt(avgMove)}</div>
+      <div>${winners.map(w => w.ticker).join(', ') || '—'}</div>
+    </div>
+    <div class="archive-detail-row" id="${rowId}">
+      <div class="archive-detail">
+        <div class="archive-cols">
+          <div>
+            <div class="archive-col-title">Our Picks</div>
+            ${picks.map(p => `
+              <div class="archive-pick">
+                <div class="archive-pick-head">
+                  <strong>${p.ticker}</strong>
+                  <span class="${moveClass(p.move_pct)}">${fmt(p.move_pct)}</span>
                 </div>
-              `).join('') || '<div style="color:var(--muted)">No pick data for this day.</div>'}
-            </div>
-            <div>
-              <div class="archive-col-title">Actual Top Movers</div>
-              ${winners.map(w => `
-                <div class="archive-pick">
-                  <div class="archive-pick-head">
-                    <strong>${w.ticker}</strong>
-                    <span class="td-pos">+${w.pct.toFixed(2)}%</span>
-                  </div>
-                  <div style="color:var(--muted)">
-                    ${w.our_rank ? `In our candidate pool at rank #${w.our_rank}` : 'Not in our candidate pool that day'}
-                    ${w.signals ? ` — accumulation ${w.signals.accumulation}, relative strength ${fmt(w.signals.relative_strength_pct)}` : ''}
-                  </div>
-                </div>
-              `).join('') || '<div style="color:var(--muted)">No actual-mover data for this day.</div>'}
-            </div>
+                ${p.postmortem ? `<div style="color:var(--muted)">${p.postmortem}</div>` : ''}
+              </div>
+            `).join('') || '<div style="color:var(--muted)">No pick data for this day.</div>'}
           </div>
-          ${day.model_insight ? `<div class="archive-insight">💡 ${day.model_insight}</div>` : ''}
+          <div>
+            <div class="archive-col-title">Actual Top Movers</div>
+            ${winners.map(w => `
+              <div class="archive-pick">
+                <div class="archive-pick-head">
+                  <strong>${w.ticker}</strong>
+                  <span class="td-pos">+${w.pct.toFixed(2)}%</span>
+                </div>
+                <div style="color:var(--muted)">
+                  ${w.our_rank ? `In our candidate pool at rank #${w.our_rank}` : 'Not in our candidate pool that day'}
+                  ${w.signals ? ` — accumulation ${w.signals.accumulation}, relative strength ${fmt(w.signals.relative_strength_pct)}` : ''}
+                </div>
+              </div>
+            `).join('') || '<div style="color:var(--muted)">No actual-mover data for this day.</div>'}
+          </div>
         </div>
-      </td>
-    </tr>`);
+        ${day.model_insight ? `<div class="archive-insight">💡 ${day.model_insight}</div>` : ''}
+      </div>
+    </div>`);
   });
 
-  tbody.innerHTML = rows.join('') || '<tr><td colspan="5" class="loading-msg">No postmortem data yet.</td></tr>';
+  container.innerHTML = rows.join('') || '<div class="loading-msg">No postmortem data yet.</div>';
 }
 
 function renderHistory(days) {
