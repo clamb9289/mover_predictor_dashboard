@@ -241,6 +241,17 @@
       <p class="updated-at" id="today-date"></p>
       <p class="updated-at" id="prices-updated"></p>
     </div>
+    <div class="card" id="bench-card" style="display:none">
+      <div class="card-title">Also Considered — Ranks #4\u2013#8</div>
+      <div class="gainer-label">The rest of today's ranked candidate pool. Only the top 3 get traded — these are here for transparency, tracked live the same way.</div>
+      <table>
+        <thead><tr>
+          <th>#</th><th>Ticker</th><th>Sector</th><th>Score</th>
+          <th>Entry</th><th>Live</th><th>Change</th><th>Why not selected</th>
+        </tr></thead>
+        <tbody id="bench-body"></tbody>
+      </table>
+    </div>
   </div>
 
   <div id="tab-yesterday" class="panel">
@@ -492,6 +503,7 @@ function render(data) {
   }
 
   renderTodayPicks(latest);
+  renderBenchCandidates(latest);
   renderYesterday(latest);
   renderHistory(days);
   if (document.getElementById('tab-history').classList.contains('active')) {
@@ -594,6 +606,40 @@ function renderTodayPicks(day) {
     </div>`;
   }).join('');
 }
+
+function renderBenchCandidates(day) {
+  const card = document.getElementById('bench-card');
+  const tbody = document.getElementById('bench-body');
+  const bench = day?.bench_candidates || [];
+
+  // A bench candidate that got substituted into the actual top-3 (opening-move
+  // filter swapped it in) will already appear in `predictions` — don't show
+  // it twice.
+  const activeTickers = new Set((day?.predictions || []).map(p => p.ticker));
+  const rows = bench.filter(b => !activeTickers.has(b.ticker));
+
+  if (!rows.length) {
+    card.style.display = 'none';
+    return;
+  }
+  card.style.display = '';
+
+  tbody.innerHTML = rows.map(b => {
+    const pct = b.live_pct ?? null;
+    const mc = moveClass(pct);
+    return `<tr>
+      <td style="color:var(--muted)">#${b.rank}</td>
+      <td class="td-ticker">${b.ticker}</td>
+      <td style="color:var(--muted);font-size:12px">${b.sector || '—'}</td>
+      <td style="color:var(--muted)">${b.score != null ? b.score.toFixed(3) : '—'}</td>
+      <td style="color:var(--muted)">${b.entry_price ? fmtPrice(b.entry_price) : '—'}</td>
+      <td style="color:var(--muted)">${b.live_price ? fmtPrice(b.live_price) : '—'}</td>
+      <td class="${mc}">${fmt(pct)}</td>
+      <td style="color:var(--muted);font-size:12px">Ranked #${b.rank} — outside the top 3 selected for trading</td>
+    </tr>`;
+  }).join('');
+}
+
 
 function renderYesterday(latest) {
   const gainersEl = document.getElementById('actual-gainers');
