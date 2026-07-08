@@ -94,7 +94,8 @@
   .archive-detail-row { display: none; }
   .archive-detail-row.open { display: table-row; }
   .archive-detail { padding: 16px; background: var(--surface2); border-radius: 8px; margin: 8px 0; max-width: 100%; overflow-wrap: break-word; }
-  .archive-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; min-width: 0; }
+  .archive-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+  .archive-cols > div { min-width: 0; }
   @media (max-width: 700px) { .archive-cols { grid-template-columns: 1fr; } }
   .archive-col-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 10px; }
   .archive-pick { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; overflow-wrap: break-word; word-break: break-word; min-width: 0; }
