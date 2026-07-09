@@ -430,7 +430,11 @@
           "signals": {},
           "live_price": 131.96,
           "live_pct": 3.07,
-          "price_updated": "15:55 ET"
+          "price_updated": "15:55 ET",
+          "paper_exit_price": 131.22,
+          "paper_exit_pct": 2.49,
+          "paper_exit_reason": "Trail stop: +3.0% floor (step) triggered (+2.5%)",
+          "paper_exit_time": "10:01 ET"
         },
         {
           "rank": 3,
@@ -443,7 +447,11 @@
           "signals": {},
           "live_price": 432.86,
           "live_pct": -0.12,
-          "price_updated": "15:55 ET"
+          "price_updated": "15:55 ET",
+          "paper_exit_price": 431.97,
+          "paper_exit_pct": -0.32,
+          "paper_exit_reason": "Retry of previously failed sell",
+          "paper_exit_time": "10:01 ET"
         }
       ],
       "prior_predictions_actual": [
@@ -482,7 +490,7 @@
       "total_hits": 1,
       "total_predictions": 9,
       "days_tracked": 3,
-      "prices_last_updated": "15:55 ET"
+      "prices_last_updated": "10:01 ET"
     }
   ]
 }
