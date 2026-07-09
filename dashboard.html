@@ -62,6 +62,9 @@
   .pick-live-price { text-align: right; }
   .live-price-value { font-size: 20px; font-weight: 700; }
   .live-price-label { font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .live-price-dollar { font-size: 13px; font-weight: 600; margin-top: 4px; }
+  .yesterday-total { font-size: 14px; margin: -4px 0 14px; }
+  .yesterday-total-label { color: var(--muted); }
   .pick-pnl-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 12px 0; }
   .pnl-item { text-align: center; flex: 1; }
   .pnl-label { font-size: 10px; color: var(--muted); margin-bottom: 3px; }
@@ -295,6 +298,7 @@
     </div>
     <div class="card">
       <div class="card-title">Our Predictions — How Did They Do?</div>
+      <div id="yesterday-total" class="yesterday-total"></div>
       <div id="yesterday-picks" class="yesterday-grid"><div class="loading-msg">Loading...</div></div>
     </div>
     <div class="card">
@@ -612,7 +616,8 @@ function renderTodayPicks(day) {
           <div class="live-price-value" style="color:${livePrice ? 'var(--text)' : 'var(--muted)'}">
             ${isSkipped ? '—' : (livePrice ? fmtPrice(livePrice) : '—')}
           </div>
-          <div class="live-price-label">${isSkipped ? 'NOT BOUGHT' : (isExited ? 'EXIT PRICE' : 'LIVE PRICE')}</div>
+          <div class="live-price-label"${isExited ? ` style="color:var(--${pnlPct > 0 ? 'green' : pnlPct < 0 ? 'red' : 'muted'})"` : ''}>${isSkipped ? 'NOT BOUGHT' : (isExited ? 'EXIT PRICE' : 'LIVE PRICE')}</div>
+          ${isExited && p.paper_exit_dollar != null ? `<div class="live-price-dollar" style="color:var(--${p.paper_exit_dollar > 0 ? 'green' : p.paper_exit_dollar < 0 ? 'red' : 'muted'})">${fmtDollar(p.paper_exit_dollar)}</div>` : ''}
         </div>
       </div>
 
@@ -696,9 +701,20 @@ function renderYesterday(latest) {
   }
 
   const el = document.getElementById('yesterday-picks');
+  const totalEl = document.getElementById('yesterday-total');
   if (!latest?.prior_predictions_actual?.length) {
     el.innerHTML = '<div class="loading-msg">No prior prediction data available.</div>';
+    totalEl.innerHTML = '';
     return;
+  }
+
+  const changes = latest.prior_predictions_actual.map(p => p.dollar_change).filter(v => v != null);
+  if (changes.length) {
+    const total = changes.reduce((a, b) => a + b, 0);
+    const cls = total > 0 ? 'pos' : total < 0 ? 'neg' : 'flat';
+    totalEl.innerHTML = `<span class="yesterday-total-label">Total from yesterday's trades:</span> <span class="pnl-value ${cls}">${fmtDollar(total)}</span>`;
+  } else {
+    totalEl.innerHTML = '';
   }
 
   el.innerHTML = latest.prior_predictions_actual.map(p => {
