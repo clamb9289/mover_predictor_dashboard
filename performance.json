@@ -417,7 +417,11 @@
           "signals": {},
           "live_price": 53.51,
           "live_pct": 0.86,
-          "price_updated": "15:55 ET"
+          "price_updated": "15:55 ET",
+          "paper_exit_price": 53.29,
+          "paper_exit_pct": 0.45,
+          "paper_exit_reason": "Trail stop: +0.5% floor (step) triggered (+0.5%)",
+          "paper_exit_time": "11:15 ET"
         },
         {
           "rank": 2,
@@ -490,7 +494,7 @@
       "total_hits": 1,
       "total_predictions": 9,
       "days_tracked": 3,
-      "prices_last_updated": "10:03 ET"
+      "prices_last_updated": "11:15 ET"
     },
     {
       "date": "2026-07-09",
@@ -564,9 +568,9 @@
             "relative_strength_pct": 1.14
           },
           "prediction_price": 296.75,
-          "live_price": 295.59,
-          "live_pct": -0.32,
-          "price_updated": "11:10 ET"
+          "live_price": 295.25,
+          "live_pct": -0.44,
+          "price_updated": "11:15 ET"
         },
         {
           "rank": 2,
@@ -583,9 +587,9 @@
             "relative_strength_pct": -10.86
           },
           "prediction_price": 337.95,
-          "live_price": 330.48,
-          "live_pct": -1.85,
-          "price_updated": "11:10 ET"
+          "live_price": 330.11,
+          "live_pct": -1.96,
+          "price_updated": "11:15 ET"
         },
         {
           "rank": 3,
@@ -602,9 +606,9 @@
             "relative_strength_pct": 0.41
           },
           "prediction_price": 556.79,
-          "live_price": 556.28,
-          "live_pct": -0.3,
-          "price_updated": "11:10 ET"
+          "live_price": 556.48,
+          "live_pct": -0.26,
+          "price_updated": "11:15 ET"
         }
       ],
       "bench_candidates": [
@@ -622,9 +626,9 @@
             "news_sentiment": 0.0,
             "relative_strength_pct": -1.08
           },
-          "live_price": 107.78,
-          "live_pct": 0.42,
-          "price_updated": "11:10 ET"
+          "live_price": 107.7,
+          "live_pct": 0.34,
+          "price_updated": "11:15 ET"
         },
         {
           "rank": 5,
@@ -640,9 +644,9 @@
             "news_sentiment": 0.0,
             "relative_strength_pct": -2.9
           },
-          "live_price": 163.3,
-          "live_pct": 0.42,
-          "price_updated": "11:10 ET"
+          "live_price": 163.25,
+          "live_pct": 0.39,
+          "price_updated": "11:15 ET"
         },
         {
           "rank": 6,
@@ -658,9 +662,9 @@
             "news_sentiment": 0.0,
             "relative_strength_pct": 1.88
           },
-          "live_price": 146.05,
-          "live_pct": -1.83,
-          "price_updated": "11:10 ET"
+          "live_price": 146.17,
+          "live_pct": -1.75,
+          "price_updated": "11:15 ET"
         },
         {
           "rank": 7,
@@ -676,9 +680,9 @@
             "news_sentiment": 0.0,
             "relative_strength_pct": -2.59
           },
-          "live_price": 589.01,
-          "live_pct": -1.5,
-          "price_updated": "11:10 ET"
+          "live_price": 591.63,
+          "live_pct": -1.07,
+          "price_updated": "11:15 ET"
         },
         {
           "rank": 8,
@@ -694,9 +698,9 @@
             "news_sentiment": 0.0,
             "relative_strength_pct": 8.76
           },
-          "live_price": 183.18,
-          "live_pct": -1.21,
-          "price_updated": "11:10 ET"
+          "live_price": 184.43,
+          "live_pct": -0.54,
+          "price_updated": "11:15 ET"
         }
       ],
       "prior_predictions_actual": [
@@ -753,7 +757,7 @@
       "total_hits": 1,
       "total_predictions": 9,
       "days_tracked": 3,
-      "prices_last_updated": "11:10 ET"
+      "prices_last_updated": "11:15 ET"
     }
   ]
 }
