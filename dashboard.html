@@ -261,6 +261,7 @@
   <div class="tab" onclick="showTab('history')">History</div>
   <div class="tab" onclick="showTab('backtest')">Backtest</div>
   <div class="tab" onclick="showTab('modelreview')">Model Review<span id="model-review-badge" class="tab-badge" style="display:none"></span></div>
+  <div class="tab" onclick="showTab('scanners')">Scanners</div>
   <div class="tab" onclick="showTab('model')">The Model</div>
 </div>
 
@@ -385,6 +386,35 @@
     </div>
   </div>
 
+  <div id="tab-scanners" class="panel">
+    <div class="card">
+      <div class="card-title">Scanners <span style="font-size:11px;font-weight:500;color:var(--gold)">TRACK-ONLY</span></div>
+      <div class="gainer-label">These do not influence live picks yet — built to track intraday accumulation patterns and pre-market/after-hours price gaps over time, for review before any live weighting. See "The Model" tab for what actually drives today's picks.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Intraday Delta Scan</div>
+      <div class="gainer-label">Hourly during market hours — relative volume vs. each stock's 50-day average, prorated for time-of-day, plus how much that's built since this morning's open.</div>
+      <p class="updated-at" id="intraday-scan-generated"></p>
+      <table>
+        <thead><tr>
+          <th>Ticker</th><th>Rel. Volume</th><th>Move from Open</th><th>Δ Since Open</th><th>Catalyst?</th>
+        </tr></thead>
+        <tbody id="intraday-scan-body"></tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">Pre-market / After-hours Gap Scan</div>
+      <div class="gainer-label">Price gap only — pre-market volume isn't reliably available from our data source, so this can't confirm volume the way the intraday scan can.</div>
+      <p class="updated-at" id="gap-scan-generated"></p>
+      <table>
+        <thead><tr>
+          <th>Ticker</th><th>Gap %</th><th>Catalyst?</th>
+        </tr></thead>
+        <tbody id="gap-scan-body"></tbody>
+      </table>
+    </div>
+  </div>
+
   <div id="tab-model" class="panel">
     <div class="card">
       <div class="card-title">How the Model Works — v2</div>
@@ -458,6 +488,8 @@
 const PERF_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/performance.json";
 const MODEL_REVIEW_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/model_review.json";
 const MODEL_REVIEW_SEEN_KEY = "model_review_last_seen";
+const INTRADAY_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/intraday_scan.json";
+const GAP_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/gap_scan.json";
 const REFRESH_INTERVAL = 60;
 
 let perfData = null;
@@ -470,7 +502,7 @@ let chartInstance = null;
 const STOCK_COLORS = ['#5b7fff', '#34d399', '#fbbf24', '#f87171', '#a78bfa', '#22d3ee', '#fb923c'];
 
 function showTab(name) {
-  const tabNames = ['today','yesterday','history','backtest','modelreview','model'];
+  const tabNames = ['today','yesterday','history','backtest','modelreview','scanners','model'];
   document.querySelectorAll('.tab').forEach((t,i) => {
     t.classList.toggle('active', tabNames[i] === name);
   });
@@ -479,6 +511,7 @@ function showTab(name) {
   if (name === 'history' && perfData) renderChart();
   if (name === 'backtest') loadBacktestResults();
   if (name === 'modelreview') loadModelReview();
+  if (name === 'scanners') loadScanners();
 }
 
 function fmt(n, decimals=2) {
@@ -1265,6 +1298,58 @@ async function loadModelReview() {
     liveEl.innerHTML = `<div class="error-msg">No model review yet — the first weekly run hasn't landed.<br><small>${e.message}</small></div>`;
     bodyEl.innerHTML = '';
     recEl.innerHTML = '';
+  }
+}
+
+function catalystCell(r) {
+  if (r.has_catalyst) return `<span style="color:var(--green)">${r.headline || 'Yes'}</span>`;
+  return '<span style="color:var(--muted)">No clear catalyst</span>';
+}
+
+async function loadScanners() {
+  const iGenEl = document.getElementById('intraday-scan-generated');
+  const iBodyEl = document.getElementById('intraday-scan-body');
+  const gGenEl = document.getElementById('gap-scan-generated');
+  const gBodyEl = document.getElementById('gap-scan-body');
+
+  try {
+    const res = await fetch(INTRADAY_SCAN_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    iGenEl.textContent = `Last scan: ${data.scan_date} ${data.scan_time} ET — ${data.scanned} of ${data.universe_size} tickers scanned`;
+    if (!data.shortlist.length) {
+      iBodyEl.innerHTML = '<tr><td colspan="5" style="color:var(--muted)">No tickers cleared the relative-volume + price-move threshold this scan.</td></tr>';
+    } else {
+      iBodyEl.innerHTML = data.shortlist.map(r => `<tr>
+        <td class="td-ticker">${r.ticker}</td>
+        <td>${r.relvol_ratio.toFixed(1)}x</td>
+        <td class="${r.price_change_from_open_pct > 0 ? 'td-pos' : 'td-neg'}">${r.price_change_from_open_pct >= 0 ? '+' : ''}${r.price_change_from_open_pct.toFixed(1)}%</td>
+        <td class="${r.delta_since_open > 0 ? 'td-pos' : r.delta_since_open < 0 ? 'td-neg' : ''}">${r.delta_since_open >= 0 ? '+' : ''}${r.delta_since_open.toFixed(2)}</td>
+        <td>${catalystCell(r)}</td>
+      </tr>`).join('');
+    }
+  } catch (e) {
+    iGenEl.textContent = '';
+    iBodyEl.innerHTML = `<tr><td colspan="5" class="error-msg">No intraday scan yet.<br><small>${e.message}</small></td></tr>`;
+  }
+
+  try {
+    const res = await fetch(GAP_SCAN_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    gGenEl.textContent = `Last scan: ${new Date(data.generated_at).toLocaleString()} (${data.window}) — ${data.scanned} of ${data.universe_size} tickers scanned`;
+    if (!data.shortlist.length) {
+      gBodyEl.innerHTML = '<tr><td colspan="3" style="color:var(--muted)">No tickers gapped enough this scan.</td></tr>';
+    } else {
+      gBodyEl.innerHTML = data.shortlist.map(r => `<tr>
+        <td class="td-ticker">${r.ticker}</td>
+        <td class="${r.gap_pct > 0 ? 'td-pos' : 'td-neg'}">${r.gap_pct >= 0 ? '+' : ''}${r.gap_pct.toFixed(1)}%</td>
+        <td>${catalystCell(r)}</td>
+      </tr>`).join('');
+    }
+  } catch (e) {
+    gGenEl.textContent = '';
+    gBodyEl.innerHTML = `<tr><td colspan="3" class="error-msg">No gap scan yet.<br><small>${e.message}</small></td></tr>`;
   }
 }
 
