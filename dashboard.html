@@ -342,14 +342,16 @@
               <th>Entry</th>
               <th>Exit</th>
               <th>Exit Reason</th>
-              <th>Move</th>
-              <th>$ Change</th>
+              <th>Stock Move</th>
+              <th>Stock $</th>
+              <th>Our Return</th>
+              <th>Our $</th>
               <th>Rank</th>
               <th>Mode</th>
             </tr>
           </thead>
           <tbody id="history-body">
-            <tr><td colspan="10" class="loading-msg">Loading history...</td></tr>
+            <tr><td colspan="12" class="loading-msg">Loading history...</td></tr>
           </tbody>
         </table>
       </div>
@@ -420,7 +422,7 @@
       <div class="card-title">How the Model Works — v2</div>
       <div class="model-section">
         <h3>Overview</h3>
-        <p>Each morning before market open, the predictor runs a series of checks before selecting any stocks. It first checks whether the overall market is healthy enough to trade. If the market passes, it scores ~500 S&P 500 stocks on four signals and selects the top 3 most likely to move during the upcoming session. Stocks with upcoming earnings are excluded entirely.</p>
+        <p>Each morning before market open, the predictor runs a series of checks before selecting any stocks. It first checks whether the overall market is healthy enough to trade. If the market passes, it scores the full S&P Composite 1500 (~1,500 large/mid/small-cap stocks) on four signals and selects the top 3 most likely to move during the upcoming session. Stocks with upcoming earnings are excluded entirely.</p>
       </div>
       <div class="model-section">
         <h3>Step 1 — Market Regime Check</h3>
@@ -428,7 +430,7 @@
       </div>
       <div class="model-section">
         <h3>Step 2 — Universe Filter</h3>
-        <p>The full S&P 500 is narrowed down before scoring begins. Stocks must have an average daily volume of at least 1.5 million shares and a price between $15 and $600. This eliminates illiquid names that can spike randomly and are hard to exit cleanly.</p>
+        <p>The full S&P Composite 1500 — the S&P 500 (large-cap) plus the S&P MidCap 400 and S&P SmallCap 600, about 1,500 tickers total — is narrowed down before scoring begins. Stocks must have an average daily volume of at least 1.5 million shares and a price between $15 and $600. This eliminates illiquid names that can spike randomly and are hard to exit cleanly, while still catching mid/small-cap movers that a large-cap-only universe would miss entirely.</p>
       </div>
       <div class="model-section">
         <h3>Step 3 — Earnings Exclusion</h3>
@@ -463,6 +465,7 @@
         <h3>Trade Execution Rules</h3>
         <div class="rule-list">
           <div class="rule"><div class="rule-icon">🕙</div><div class="rule-text"><strong>Buy at 9:35am ET</strong> — a short buffer past the 9:30am open to avoid the initial volatility spike, without giving up most of the first trading hour.</div></div>
+          <div class="rule"><div class="rule-icon">⛔</div><div class="rule-text"><strong>Opening-move filter</strong> — at buy time, a pick already down 5%+ from today's open is skipped rather than bought (still breaking down, not just normal early noise). Backtesting across our own picks showed win rates hold up fine on shallower drops and only turn bad past this depth (5%+ drops: 40% win rate), so the threshold sits there rather than shallower. A bounce-off-low override was also tested and dropped — it showed no consistent effect across any test.</div></div>
           <div class="rule"><div class="rule-icon">⏱</div><div class="rule-text"><strong>Monitor every 5 minutes</strong> from 9:35am to 3:55pm ET.</div></div>
           <div class="rule"><div class="rule-icon">🟢</div><div class="rule-text"><strong>Staircase trailing stop</strong> — the floor steps up as the stock climbs. Hit +3% → floor locks at +3%. Hit +5% → floor steps to +5%. Hit +7% → +7%. Hit +10% → +10%. Hit +15% → +15%. Beyond +15%, the floor trails dynamically 2% below the all-time intraday peak. If the stock falls back below the active floor at any 15-min check, it's sold to lock in that gain.</div></div>
           <div class="rule"><div class="rule-icon">🚀</div><div class="rule-text"><strong>No upside cap</strong> — stocks that keep running are held as long as they stay above their active floor level.</div></div>
@@ -476,7 +479,7 @@
       </div>
       <div class="model-section">
         <h3>What May Be Added Next</h3>
-        <p>A weekly Model Review (see that tab) now tracks which signals actually correlate with outcomes and backtests alternate weight presets against real historical data, flagging a candidate change if one meaningfully outperforms — reviewed by hand, never applied automatically. Other potential future improvements: pre-market gap analysis, options flow as a sentiment signal, and tighter sector concentration limits (no more than 1 pick per sector).</p>
+        <p>A weekly Model Review (see that tab) now tracks which signals actually correlate with outcomes and backtests alternate weight presets against real historical data, flagging a candidate change if one meaningfully outperforms — reviewed by hand, never applied automatically. An hourly intraday volume/momentum scanner and a pre-market/after-hours price-gap scanner (see the Scanners tab) are also live, but track-only for now — neither feeds into live picks until enough data validates them. Other potential future improvements: options flow as a sentiment signal, and tighter sector concentration limits (no more than 1 pick per sector).</p>
       </div>
     </div>
   </div>
@@ -884,17 +887,25 @@ function renderArchive(days) {
 function renderHistory(days) {
   const tbody = document.getElementById('history-body');
   if (!days.length) {
-    tbody.innerHTML = '<tr><td colspan="10" class="loading-msg">No history yet.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="12" class="loading-msg">No history yet.</td></tr>';
     return;
   }
 
   const rows = [];
-  for (const day of days) {
-    const preds = day.predictions || [];
-    const actuals = day.prior_predictions_actual || [];
+  days.forEach((day, dayIdx) => {
+    // Exclude picks the opening-move filter skipped — they were never
+    // actually purchased, so their live/last-tracked move would otherwise
+    // inflate the day's shown performance with a position we never held.
+    const preds = (day.predictions || []).filter(p => !p.skipped_reason);
+    // day.prior_predictions_actual describes the PREVIOUS day's picks
+    // (evaluated once the next day's close is known), not this day's own
+    // predictions — same day-offset as renderArchive() above. The actual
+    // outcome data for THIS day's predictions instead lives one entry
+    // newer, at days[dayIdx - 1] (days is sorted newest-first).
+    const actuals = days[dayIdx - 1]?.prior_predictions_actual || [];
     const actualMap = {};
     actuals.forEach(a => actualMap[a.ticker] = a);
-    if (!preds.length) continue;
+    if (!preds.length) return;
 
     preds.forEach((p, i) => {
       const a = actualMap[p.ticker];
@@ -905,6 +916,12 @@ function renderHistory(days) {
       const exitReason = p.paper_exit_reason ?? (a ? 'End of day' : '—');
       const dollarChange = a?.dollar_change ?? null;
       const rankText = rankBadge(a?.actual_rank, a?.total_ranked);
+      // Our actual entry-to-exit (or entry-to-now, if still open) return —
+      // distinct from "Stock Move" above, which is the ticker's own
+      // close-to-close move regardless of when we bought or sold it.
+      const ourPct = p.paper_exit_pct ?? p.live_pct ?? null;
+      const ourDollar = p.paper_exit_dollar ?? null;
+      const oc = moveClass(ourPct);
 
       rows.push(`<tr>
         ${i === 0 ? `<td rowspan="${preds.length}" style="font-weight:500">${day.date}</td>` : ''}
@@ -915,13 +932,15 @@ function renderHistory(days) {
         <td style="color:var(--muted);font-size:11px">${exitReason}</td>
         <td class="${mc}">${fmt(move)}</td>
         <td class="${mc}">${fmtDollar(dollarChange)}</td>
+        <td class="${oc}">${fmt(ourPct)}</td>
+        <td class="${oc}">${fmtDollar(ourDollar)}</td>
         <td style="font-size:12px">${rankText}</td>
         ${i === 0 ? `<td rowspan="${preds.length}"><span class="mode-badge ${isLive ? 'mode-live' : 'mode-paper'}">${isLive ? 'LIVE' : 'PAPER'}</span></td>` : ''}
       </tr>`);
     });
-  }
+  });
 
-  tbody.innerHTML = rows.join('') || '<tr><td colspan="10" class="loading-msg">No records found.</td></tr>';
+  tbody.innerHTML = rows.join('') || '<tr><td colspan="12" class="loading-msg">No records found.</td></tr>';
 }
 
 function setChartMode(mode) {
@@ -955,7 +974,7 @@ function buildDailyMoveData(days) {
   // using live_pct as a same-day proxy when prior_predictions_actual unavailable
   sorted.forEach(day => {
     const dayMoves = {};
-    (day.predictions || []).forEach(p => {
+    (day.predictions || []).filter(p => !p.skipped_reason).forEach(p => {
       const move = p.paper_exit_pct ?? p.live_pct ?? null;
       if (move != null) {
         dayMoves[p.ticker] = move;
