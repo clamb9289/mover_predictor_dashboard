@@ -510,60 +510,60 @@
     },
     {
       "date": "2026-07-09",
-      "regime": "Market regime OK \u2014 SPY +0.46%",
+      "regime": "Market regime OK \u2014 SPY +0.85%",
       "top_sectors": [
         {
           "etf": "XLK",
           "name": "Technology",
-          "pct": 2.53
+          "pct": 2.18
         },
         {
-          "etf": "XLI",
-          "name": "Industrials",
-          "pct": 0.65
+          "etf": "XLY",
+          "name": "Consumer Discretionary",
+          "pct": 1.34
         },
         {
           "etf": "XLF",
           "name": "Financials",
-          "pct": 0.55
+          "pct": 1.04
         }
       ],
       "actual_top3": [
         {
-          "ticker": "GLW",
-          "pct": 10.54,
+          "ticker": "ALGM",
+          "pct": 11.49,
           "signals": {
-            "accumulation": 0.276,
-            "sector_momentum_pct": 2.53,
+            "accumulation": 0.471,
+            "sector_momentum_pct": 2.18,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -30.48
+            "relative_strength_pct": -28.25
           },
           "our_rank": null
         },
         {
-          "ticker": "KLAC",
-          "pct": 10.54,
+          "ticker": "MXL",
+          "pct": 11.33,
           "signals": {
-            "accumulation": 0.416,
-            "sector_momentum_pct": 2.53,
+            "accumulation": 0.478,
+            "sector_momentum_pct": 2.18,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -29.22
+            "relative_strength_pct": -34.97
           },
           "our_rank": null
         },
         {
-          "ticker": "LRCX",
-          "pct": 9.77,
+          "ticker": "HPE",
+          "pct": 9.94,
           "signals": {
-            "accumulation": 0.315,
-            "sector_momentum_pct": 2.53,
+            "accumulation": 0.543,
+            "sector_momentum_pct": 2.18,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -25.65
+            "relative_strength_pct": -3.15
           },
           "our_rank": null
         }
       ],
-      "model_insight": "Actual top movers had notably lower relative strength (-28.45 vs our picks' 5.22) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably higher sector momentum (2.53 vs our picks' 1.14) \u2014 possible signal to increase weighting on sector momentum. GLW, KLAC, LRCX weren't in our candidate pool at all that day \u2014 a universe/coverage gap, not a ranking issue.",
+      "model_insight": "Actual top movers had notably lower relative strength (-22.12 vs our picks' 5.22) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably higher sector momentum (2.18 vs our picks' 1.14) \u2014 possible signal to increase weighting on sector momentum. ALGM, MXL, HPE weren't in our candidate pool at all that day \u2014 a universe/coverage gap, not a ranking issue.",
       "predictions": [
         {
           "rank": 1,
@@ -734,57 +734,56 @@
         {
           "rank": 1,
           "ticker": "CBRE",
-          "move_pct": 0.35,
-          "dollar_change": 0.35,
-          "position_size": 100.0,
-          "actual_rank": 149,
-          "total_ranked": 335,
+          "move_pct": 0.8,
+          "dollar_change": 0.77,
+          "position_size": 95.94,
+          "actual_rank": 297,
+          "total_ranked": 604,
           "signals": {
             "accumulation": 0.478,
             "sector_momentum_pct": 1.28,
             "news_sentiment": 0.0,
             "relative_strength_pct": 3.96
           },
-          "postmortem": "Modest gain (+0.35%) but didn't reach the win floor \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. Ranked #149 of 335 stocks tracked that day."
+          "postmortem": "Modest gain (+0.80%) but didn't reach the win floor \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. Ranked #297 of 604 stocks tracked that day."
         },
         {
           "rank": 2,
           "ticker": "FISV",
-          "move_pct": 0.48,
-          "dollar_change": 0.48,
-          "position_size": 100.0,
-          "actual_rank": 136,
-          "total_ranked": 335,
+          "move_pct": 2.08,
+          "dollar_change": 2.0,
+          "position_size": 95.94,
+          "actual_rank": 148,
+          "total_ranked": 604,
           "signals": {
             "accumulation": 0.358,
             "sector_momentum_pct": 0.46,
             "news_sentiment": 0.0,
             "relative_strength_pct": 9.82
           },
-          "postmortem": "Modest gain (+0.48%) but didn't reach the win floor \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. Ranked #136 of 335 stocks tracked that day."
+          "postmortem": "Modest gain (+2.08%) but didn't reach the win floor \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. Ranked #148 of 604 stocks tracked that day."
         },
         {
           "rank": 3,
           "ticker": "VRTX",
-          "move_pct": -0.4,
-          "dollar_change": -0.4,
-          "position_size": 100.0,
-          "actual_rank": 211,
-          "total_ranked": 335,
+          "move_pct": -0.39,
+          "dollar_change": -0.37,
+          "position_size": 95.94,
+          "actual_rank": 431,
+          "total_ranked": 604,
           "signals": {
             "accumulation": 0.187,
             "sector_momentum_pct": 1.69,
             "news_sentiment": 0.0,
             "relative_strength_pct": 1.88
           },
-          "postmortem": "Small loss (-0.40%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now. Ranked #211 of 335 stocks tracked that day."
+          "postmortem": "Small loss (-0.39%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now. Ranked #431 of 604 stocks tracked that day."
         }
       ],
-      "hit_rate": 0.1111,
+      "hit_rate": 0.0833,
       "total_hits": 1,
-      "total_predictions": 9,
-      "days_tracked": 3,
-      "prices_last_updated": "18:06 ET"
+      "total_predictions": 12,
+      "days_tracked": 4
     }
   ]
 }
