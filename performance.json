@@ -787,263 +787,281 @@
     },
     {
       "date": "2026-07-10",
-      "regime": "Market regime OK \u2014 SPY +0.85%",
+      "regime": "Market regime OK \u2014 SPY +0.16%",
       "top_sectors": [
         {
-          "etf": "XLK",
-          "name": "Technology",
-          "pct": 2.18
+          "etf": "XLC",
+          "name": "Communication Services",
+          "pct": 1.16
         },
         {
-          "etf": "XLY",
-          "name": "Consumer Discretionary",
-          "pct": 1.34
+          "etf": "XLB",
+          "name": "Materials",
+          "pct": 0.76
         },
         {
-          "etf": "XLF",
-          "name": "Financials",
-          "pct": 1.04
+          "etf": "XLP",
+          "name": "Consumer Staples",
+          "pct": 0.63
         }
       ],
       "actual_top3": [
         {
-          "ticker": "ALGM",
-          "pct": 11.49,
+          "ticker": "WY",
+          "pct": 4.69,
           "signals": {
-            "accumulation": 0.471,
-            "sector_momentum_pct": 2.18,
+            "accumulation": 0.569,
+            "sector_momentum_pct": 0.45,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -28.25
+            "relative_strength_pct": -4.95
           },
           "our_rank": null
         },
         {
-          "ticker": "MXL",
-          "pct": 11.33,
+          "ticker": "KMX",
+          "pct": 4.04,
           "signals": {
-            "accumulation": 0.478,
-            "sector_momentum_pct": 2.18,
+            "accumulation": 0.48,
+            "sector_momentum_pct": 0.49,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -34.97
+            "relative_strength_pct": -2.05
           },
           "our_rank": null
         },
         {
-          "ticker": "HPE",
-          "pct": 9.94,
+          "ticker": "FBIN",
+          "pct": 3.98,
           "signals": {
-            "accumulation": 0.543,
-            "sector_momentum_pct": 2.18,
+            "accumulation": 0.503,
+            "sector_momentum_pct": 0.02,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -3.15
+            "relative_strength_pct": -8.5
           },
           "our_rank": null
         }
       ],
-      "model_insight": "Actual top movers had notably higher accumulation (0.50 vs our picks' 0.22) \u2014 possible signal to increase weighting on accumulation. Actual top movers had notably lower relative strength (-22.12 vs our picks' -3.10) \u2014 possible signal to decrease weighting on relative strength. ALGM, MXL, HPE weren't in our candidate pool at all that day \u2014 a universe/coverage gap, not a ranking issue.",
+      "model_insight": "Actual top movers had notably higher accumulation (0.52 vs our picks' 0.22) \u2014 possible signal to increase weighting on accumulation. Actual top movers had notably lower relative strength (-5.17 vs our picks' -3.10) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.32 vs our picks' 2.53) \u2014 possible signal to decrease weighting on sector momentum. WY, KMX, FBIN weren't in our candidate pool at all that day \u2014 a universe/coverage gap, not a ranking issue.",
       "predictions": [
         {
           "rank": 1,
-          "ticker": "PNR",
-          "score": 0.683,
-          "entry_price": 74.57,
+          "ticker": "COIN",
+          "score": 0.667,
+          "entry_price": 161.586,
           "headline": null,
-          "sector": "Industrials",
-          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Industrials) was among the day's stronger performers, giving it a tailwind.",
+          "sector": "Financials",
+          "explainer": "Its sector (Financials) was among the day's stronger performers, giving it a tailwind.",
           "signals": {
-            "accumulation": 1.644,
-            "sector_momentum_pct": 0.38,
+            "accumulation": 0.255,
+            "sector_momentum_pct": 0.35,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -2.75
+            "relative_strength_pct": -2.45
           },
-          "live_price": 76.51,
-          "live_pct": 2.6,
-          "price_updated": "10:05 ET"
+          "prediction_price": 162.0,
+          "live_price": 161.93,
+          "live_pct": 0.21,
+          "price_updated": "10:08 ET"
         },
         {
           "rank": 2,
-          "ticker": "WDAY",
-          "score": 0.656,
-          "entry_price": 138.34,
+          "ticker": "HOOD",
+          "score": 0.663,
+          "entry_price": 111.21,
           "headline": null,
-          "sector": "Technology",
-          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+4.0% relative strength), suggesting individual demand beyond just sector momentum.",
+          "sector": "Financials",
+          "explainer": "Its sector (Financials) was among the day's stronger performers, giving it a tailwind.",
           "signals": {
-            "accumulation": 1.418,
-            "sector_momentum_pct": 2.18,
+            "accumulation": 0.252,
+            "sector_momentum_pct": 0.35,
             "news_sentiment": 0.0,
-            "relative_strength_pct": 4.02
+            "relative_strength_pct": -1.7
           },
-          "live_price": 140.08,
-          "live_pct": 1.26,
-          "price_updated": "10:05 ET"
+          "skipped_reason": "Opening-move filter: down -6.4% from today's open with no real bounce off the low (+0.8%) \u2014 skipping.",
+          "live_price": 111.28,
+          "live_pct": 0.06,
+          "price_updated": "10:08 ET"
         },
         {
           "rank": 3,
-          "ticker": "TEL",
-          "score": 0.609,
-          "entry_price": 198.91,
+          "ticker": "DAL",
+          "score": 0.631,
+          "entry_price": 86.346,
           "headline": null,
-          "sector": "Technology",
-          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind.",
+          "sector": "Industrials",
+          "explainer": "Its sector (Industrials) was among the day's stronger performers, giving it a tailwind.",
           "signals": {
-            "accumulation": 1.411,
-            "sector_momentum_pct": 2.18,
+            "accumulation": 0.269,
+            "sector_momentum_pct": 0.02,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -3.43
+            "relative_strength_pct": -5.89
           },
-          "live_price": 202.32,
-          "live_pct": 1.71,
-          "price_updated": "10:05 ET"
+          "prediction_price": 87.09,
+          "live_price": 86.0,
+          "live_pct": -0.39,
+          "price_updated": "10:08 ET"
+        },
+        {
+          "ticker": "KNX",
+          "rank": 4,
+          "score": 0.469,
+          "entry_price": 75.07,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "live_price": 74.91,
+          "live_pct": -0.21,
+          "price_updated": "10:08 ET"
         }
       ],
       "bench_candidates": [
         {
           "rank": 4,
-          "ticker": "UPS",
-          "score": 0.594,
-          "entry_price": 110.74,
+          "ticker": "KNX",
+          "score": 0.469,
+          "entry_price": 75.31,
           "headline": null,
           "sector": "Industrials",
-          "explainer": "Volume was running 1.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Industrials) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+0.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "explainer": "Its sector (Industrials) was among the day's stronger performers, giving it a tailwind.",
           "signals": {
-            "accumulation": 1.538,
-            "sector_momentum_pct": 0.38,
+            "accumulation": 0.21,
+            "sector_momentum_pct": 0.02,
             "news_sentiment": 0.0,
-            "relative_strength_pct": 0.71
+            "relative_strength_pct": -1.38
           },
-          "live_price": 112.62,
-          "live_pct": 1.7,
-          "price_updated": "10:05 ET"
+          "live_price": 74.91,
+          "live_pct": -0.53,
+          "price_updated": "10:08 ET"
         },
         {
           "rank": 5,
-          "ticker": "HR",
-          "score": 0.579,
-          "entry_price": 20.69,
+          "ticker": "NFLX",
+          "score": 0.446,
+          "entry_price": 72.89,
           "headline": null,
-          "sector": "Real Estate",
-          "explainer": "Volume was running 1.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Real Estate) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+1.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "sector": "Communication Services",
+          "explainer": "Its sector (Communication Services) was among the day's stronger performers, giving it a tailwind.",
           "signals": {
-            "accumulation": 1.536,
-            "sector_momentum_pct": 0.18,
+            "accumulation": 0.159,
+            "sector_momentum_pct": 1.16,
             "news_sentiment": 0.0,
-            "relative_strength_pct": 1.79
+            "relative_strength_pct": -7.29
           },
-          "live_price": 20.72,
-          "live_pct": 0.12,
-          "price_updated": "10:05 ET"
+          "live_price": 73.29,
+          "live_pct": 0.55,
+          "price_updated": "10:08 ET"
         },
         {
           "rank": 6,
-          "ticker": "YUM",
-          "score": 0.572,
-          "entry_price": 162.39,
+          "ticker": "MO",
+          "score": 0.436,
+          "entry_price": 70.88,
           "headline": null,
-          "sector": "Consumer Discretionary",
-          "explainer": "Its sector (Consumer Discretionary) was among the day's stronger performers, giving it a tailwind.",
+          "sector": "Consumer Staples",
+          "explainer": "Its sector (Consumer Staples) was among the day's stronger performers, giving it a tailwind.",
           "signals": {
-            "accumulation": 1.436,
-            "sector_momentum_pct": 1.34,
+            "accumulation": 0.173,
+            "sector_momentum_pct": 0.63,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -0.85
+            "relative_strength_pct": -3.15
           },
-          "live_price": 164.62,
-          "live_pct": 1.37,
-          "price_updated": "10:05 ET"
+          "live_price": 71.27,
+          "live_pct": 0.55,
+          "price_updated": "10:08 ET"
         },
         {
           "rank": 7,
-          "ticker": "PRU",
-          "score": 0.562,
-          "entry_price": 115.0,
+          "ticker": "WY",
+          "score": 0.396,
+          "entry_price": 23.56,
           "headline": null,
-          "sector": "Financials",
-          "explainer": "Its sector (Financials) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+2.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "sector": "Real Estate",
+          "explainer": "Its sector (Real Estate) was among the day's stronger performers, giving it a tailwind.",
           "signals": {
-            "accumulation": 1.437,
-            "sector_momentum_pct": 1.04,
+            "accumulation": 0.166,
+            "sector_momentum_pct": 0.45,
             "news_sentiment": 0.0,
-            "relative_strength_pct": 2.5
+            "relative_strength_pct": -1.44
           },
-          "live_price": 115.58,
-          "live_pct": 0.5,
-          "price_updated": "10:05 ET"
+          "live_price": 23.58,
+          "live_pct": 0.06,
+          "price_updated": "10:08 ET"
         },
         {
           "rank": 8,
-          "ticker": "ETR",
-          "score": 0.55,
-          "entry_price": 113.93,
+          "ticker": "TTD",
+          "score": 0.393,
+          "entry_price": 20.09,
           "headline": null,
-          "sector": "Utilities",
-          "explainer": "Volume was running 1.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "sector": "Communication Services",
+          "explainer": "Its sector (Communication Services) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+4.0% relative strength), suggesting individual demand beyond just sector momentum.",
           "signals": {
-            "accumulation": 1.526,
-            "sector_momentum_pct": 0.0,
+            "accumulation": 0.116,
+            "sector_momentum_pct": 1.16,
             "news_sentiment": 0.0,
-            "relative_strength_pct": 1.46
+            "relative_strength_pct": 4.02
           },
-          "live_price": 114.76,
-          "live_pct": 0.73,
-          "price_updated": "10:05 ET"
+          "live_price": 20.15,
+          "live_pct": 0.3,
+          "price_updated": "10:08 ET"
         }
       ],
       "prior_predictions_actual": [
         {
           "rank": 1,
           "ticker": "IBM",
-          "move_pct": -2.23,
-          "dollar_change": -2.15,
+          "move_pct": -0.15,
+          "dollar_change": -0.14,
           "position_size": 96.42,
-          "actual_rank": 580,
-          "total_ranked": 610,
+          "actual_rank": 369,
+          "total_ranked": 534,
           "signals": {
             "accumulation": 0.218,
             "sector_momentum_pct": 2.53,
             "news_sentiment": 0.0,
             "relative_strength_pct": 1.14
           },
-          "postmortem": "Small loss (-2.23%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now. Ranked #580 of 610 stocks tracked that day."
+          "postmortem": "Small loss (-0.15%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now. Ranked #369 of 534 stocks tracked that day."
         },
         {
           "rank": 2,
           "ticker": "COHR",
-          "move_pct": 3.21,
-          "dollar_change": 3.1,
+          "move_pct": -2.76,
+          "dollar_change": -2.66,
           "position_size": 96.42,
-          "actual_rank": 72,
-          "total_ranked": 610,
+          "actual_rank": 516,
+          "total_ranked": 534,
           "signals": {
             "accumulation": 0.237,
             "sector_momentum_pct": 2.53,
             "news_sentiment": 0.0,
             "relative_strength_pct": -10.86
           },
-          "postmortem": "Hit the win floor (+3.21%) \u2014 the sector momentum signal(s) that drove this pick played out well. Worth leaning into when this profile repeats. Ranked #72 of 610 stocks tracked that day."
+          "postmortem": "Small loss (-2.76%) \u2014 sector momentum didn't convert this time; within normal volatility for now. Ranked #516 of 534 stocks tracked that day."
         },
         {
           "rank": 3,
           "ticker": "AMD",
-          "move_pct": 5.66,
-          "dollar_change": 5.46,
+          "move_pct": 0.59,
+          "dollar_change": 0.57,
           "position_size": 96.42,
-          "actual_rank": 18,
-          "total_ranked": 610,
+          "actual_rank": 217,
+          "total_ranked": 534,
           "signals": {
             "accumulation": 0.214,
             "sector_momentum_pct": 2.53,
             "news_sentiment": 0.0,
             "relative_strength_pct": 0.41
           },
-          "postmortem": "Hit the win floor (+5.66%) \u2014 the relative strength and sector momentum signal(s) that drove this pick played out well. Worth leaning into when this profile repeats. Ranked #18 of 610 stocks tracked that day."
+          "postmortem": "Modest gain (+0.59%) but didn't reach the win floor \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. Ranked #217 of 534 stocks tracked that day."
         }
       ],
-      "hit_rate": 0.0833,
+      "hit_rate": 0.0667,
       "total_hits": 1,
-      "total_predictions": 12,
-      "days_tracked": 4,
-      "prices_last_updated": "10:05 ET"
+      "total_predictions": 15,
+      "days_tracked": 5,
+      "prices_last_updated": "10:08 ET"
     }
   ]
 }
