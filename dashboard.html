@@ -406,11 +406,11 @@
     </div>
     <div class="card">
       <div class="card-title">Pre-market / After-hours Gap Scan</div>
-      <div class="gainer-label">Price gap only — pre-market volume isn't reliably available from our data source, so this can't confirm volume the way the intraday scan can.</div>
+      <div class="gainer-label">Price gap from yfinance, plus extended-hours volume from Alpaca's free IEX feed (added 2026-07-10). IEX only sees ~2.5% of total volume, so treat these as directional, not confirmed heavy volume, until validated against real sessions.</div>
       <p class="updated-at" id="gap-scan-generated"></p>
       <table>
         <thead><tr>
-          <th>Ticker</th><th>Gap %</th><th>Catalyst?</th>
+          <th>Ticker</th><th>Gap %</th><th>Volume (IEX)</th><th>Catalyst?</th>
         </tr></thead>
         <tbody id="gap-scan-body"></tbody>
       </table>
@@ -1358,17 +1358,18 @@ async function loadScanners() {
     const data = await res.json();
     gGenEl.textContent = `Last scan: ${new Date(data.generated_at).toLocaleString()} (${data.window}) — ${data.scanned} of ${data.universe_size} tickers scanned`;
     if (!data.shortlist.length) {
-      gBodyEl.innerHTML = '<tr><td colspan="3" style="color:var(--muted)">No tickers gapped enough this scan.</td></tr>';
+      gBodyEl.innerHTML = '<tr><td colspan="4" style="color:var(--muted)">No tickers gapped enough this scan.</td></tr>';
     } else {
       gBodyEl.innerHTML = data.shortlist.map(r => `<tr>
         <td class="td-ticker">${r.ticker}</td>
         <td class="${r.gap_pct > 0 ? 'td-pos' : 'td-neg'}">${r.gap_pct >= 0 ? '+' : ''}${r.gap_pct.toFixed(1)}%</td>
+        <td>${r.extended_volume != null ? r.extended_volume.toLocaleString() : '—'}</td>
         <td>${catalystCell(r)}</td>
       </tr>`).join('');
     }
   } catch (e) {
     gGenEl.textContent = '';
-    gBodyEl.innerHTML = `<tr><td colspan="3" class="error-msg">No gap scan yet.<br><small>${e.message}</small></td></tr>`;
+    gBodyEl.innerHTML = `<tr><td colspan="4" class="error-msg">No gap scan yet.<br><small>${e.message}</small></td></tr>`;
   }
 }
 
