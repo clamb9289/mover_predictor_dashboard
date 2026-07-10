@@ -40,7 +40,8 @@
   .refresh-info { font-size: 11px; color: var(--muted); }
 
   .tabs { display: flex; gap: 2px; padding: 12px 24px 0; background: var(--surface); border-bottom: 1px solid var(--border); }
-  .tab { padding: 10px 18px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.15s; user-select: none; }
+  .tab { position: relative; padding: 10px 18px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.15s; user-select: none; }
+  .tab-badge { position: absolute; top: 6px; right: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
   .tab:hover { color: var(--text); }
   .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
@@ -259,6 +260,7 @@
   <div class="tab" onclick="showTab('yesterday')">Yesterday</div>
   <div class="tab" onclick="showTab('history')">History</div>
   <div class="tab" onclick="showTab('backtest')">Backtest</div>
+  <div class="tab" onclick="showTab('modelreview')">Model Review<span id="model-review-badge" class="tab-badge" style="display:none"></span></div>
   <div class="tab" onclick="showTab('model')">The Model</div>
 </div>
 
@@ -361,6 +363,28 @@
     </div>
   </div>
 
+  <div id="tab-modelreview" class="panel">
+    <div class="card">
+      <div class="card-title">Weekly Model Review</div>
+      <div class="gainer-label">Two checks, refreshed weekly: whether our scoring signals actually track outcomes so far, and whether an alternate weighting would have backtested better over real historical data.</div>
+      <p class="updated-at" id="model-review-generated"></p>
+    </div>
+    <div class="card">
+      <div class="card-title">Live Signal Correlation</div>
+      <div id="model-review-live"><div class="loading-msg">Loading...</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Backtest Weight-Preset Comparison</div>
+      <div id="model-review-recommendation"></div>
+      <table>
+        <thead><tr>
+          <th>Preset</th><th>Hit Rate (+3%)</th><th>Avg Return/Pick</th><th>Total P&amp;L</th><th>Win Days</th>
+        </tr></thead>
+        <tbody id="model-review-backtest-body"></tbody>
+      </table>
+    </div>
+  </div>
+
   <div id="tab-model" class="panel">
     <div class="card">
       <div class="card-title">How the Model Works — v2</div>
@@ -385,34 +409,34 @@
         <div class="signal-grid">
           <div class="signal-card">
             <div class="signal-name">Accumulation Signal</div>
-            <div class="signal-weight">50%</div>
+            <div class="signal-weight">60%</div>
             <div class="signal-desc">High volume WITHOUT a big price move. This is the signature of smart money quietly buying before a move. Score = volume ratio ÷ (1 + price move). A stock with 3x normal volume but a flat price scores very high.</div>
           </div>
           <div class="signal-card">
             <div class="signal-name">Sector Momentum</div>
-            <div class="signal-weight">25%</div>
+            <div class="signal-weight">20%</div>
             <div class="signal-desc">How well is the stock's sector performing today? Stocks in the top-performing sectors get a bonus. The sector tide lifts individual stocks — picking against a weak sector is an uphill battle.</div>
           </div>
           <div class="signal-card">
             <div class="signal-name">News Sentiment</div>
-            <div class="signal-weight">10%</div>
-            <div class="signal-desc">Headlines from the last 48 hours only. Used primarily as a negative filter — stocks with bad headlines (downgrades, misses, recalls) are downranked. Analyst actions count 2x.</div>
+            <div class="signal-weight">0%</div>
+            <div class="signal-desc">Headlines from the last 48 hours are still fetched and shown on each pick for context, but as of the 2026-07-10 weekly Model Review, this signal carries zero scoring weight — it no longer influences which stocks get picked.</div>
           </div>
           <div class="signal-card">
             <div class="signal-name">Relative Strength</div>
-            <div class="signal-weight">15%</div>
-            <div class="signal-desc">The stock's 5-day return vs its sector's return. A stock outperforming its own sector shows individual demand beyond market tailwinds. Validated at 15% — dropping below this level hurt backtest results.</div>
+            <div class="signal-weight">20%</div>
+            <div class="signal-desc">The stock's 5-day return vs its sector's return. A stock outperforming its own sector shows individual demand beyond market tailwinds.</div>
           </div>
         </div>
       </div>
       <div class="model-section">
         <h3>Trade Execution Rules</h3>
         <div class="rule-list">
-          <div class="rule"><div class="rule-icon">🕙</div><div class="rule-text"><strong>Buy at 10:00am ET</strong> — slightly after open to avoid the initial volatility spike.</div></div>
-          <div class="rule"><div class="rule-icon">⏱</div><div class="rule-text"><strong>Monitor every 15 minutes</strong> from 10:00am to 3:45pm ET.</div></div>
+          <div class="rule"><div class="rule-icon">🕙</div><div class="rule-text"><strong>Buy at 9:35am ET</strong> — a short buffer past the 9:30am open to avoid the initial volatility spike, without giving up most of the first trading hour.</div></div>
+          <div class="rule"><div class="rule-icon">⏱</div><div class="rule-text"><strong>Monitor every 5 minutes</strong> from 9:35am to 3:55pm ET.</div></div>
           <div class="rule"><div class="rule-icon">🟢</div><div class="rule-text"><strong>Staircase trailing stop</strong> — the floor steps up as the stock climbs. Hit +3% → floor locks at +3%. Hit +5% → floor steps to +5%. Hit +7% → +7%. Hit +10% → +10%. Hit +15% → +15%. Beyond +15%, the floor trails dynamically 2% below the all-time intraday peak. If the stock falls back below the active floor at any 15-min check, it's sold to lock in that gain.</div></div>
           <div class="rule"><div class="rule-icon">🚀</div><div class="rule-text"><strong>No upside cap</strong> — stocks that keep running are held as long as they stay above their active floor level.</div></div>
-          <div class="rule"><div class="rule-icon">🔴</div><div class="rule-text"><strong>Hard stop at -5%</strong> — position sold immediately to cap losses.</div></div>
+          <div class="rule"><div class="rule-icon">🔴</div><div class="rule-text"><strong>Hard stop at -3%</strong> — position sold immediately to cap losses.</div></div>
           <div class="rule"><div class="rule-icon">🔔</div><div class="rule-text"><strong>End-of-day close at 3:55pm ET</strong> — all remaining positions sold before market close.</div></div>
           <div class="rule"><div class="rule-icon">🛡</div><div class="rule-text"><strong>Daily loss limit: 5%</strong> — bot pauses for the rest of the day if hit.</div></div>
           <div class="rule"><div class="rule-icon">⛔</div><div class="rule-text"><strong>Total drawdown shutoff: 15%</strong> — bot disables itself permanently until manually re-enabled.</div></div>
@@ -422,7 +446,7 @@
       </div>
       <div class="model-section">
         <h3>What May Be Added Next</h3>
-        <p>As data accumulates, potential future improvements include: pre-market gap analysis, options flow as a sentiment signal, tighter sector concentration limits (no more than 1 pick per sector), and dynamic weight adjustment based on which signals have been most predictive historically.</p>
+        <p>A weekly Model Review (see that tab) now tracks which signals actually correlate with outcomes and backtests alternate weight presets against real historical data, flagging a candidate change if one meaningfully outperforms — reviewed by hand, never applied automatically. Other potential future improvements: pre-market gap analysis, options flow as a sentiment signal, and tighter sector concentration limits (no more than 1 pick per sector).</p>
       </div>
     </div>
   </div>
@@ -432,6 +456,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
 const PERF_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/performance.json";
+const MODEL_REVIEW_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/model_review.json";
+const MODEL_REVIEW_SEEN_KEY = "model_review_last_seen";
 const REFRESH_INTERVAL = 60;
 
 let perfData = null;
@@ -444,16 +470,15 @@ let chartInstance = null;
 const STOCK_COLORS = ['#5b7fff', '#34d399', '#fbbf24', '#f87171', '#a78bfa', '#22d3ee', '#fb923c'];
 
 function showTab(name) {
+  const tabNames = ['today','yesterday','history','backtest','modelreview','model'];
   document.querySelectorAll('.tab').forEach((t,i) => {
-    const names = ['today','yesterday','history','model','backtest'];
-    // find index by data or position
-    const tabNames = ['today','yesterday','history','backtest','model'];
     t.classList.toggle('active', tabNames[i] === name);
   });
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
   if (name === 'history' && perfData) renderChart();
   if (name === 'backtest') loadBacktestResults();
+  if (name === 'modelreview') loadModelReview();
 }
 
 function fmt(n, decimals=2) {
@@ -1168,7 +1193,83 @@ function renderBacktest(data) {
   `;
 }
 
+let modelReviewData = null;
+
+async function fetchModelReview() {
+  if (modelReviewData) return modelReviewData;
+  const res = await fetch(MODEL_REVIEW_URL + '?t=' + Date.now());
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  modelReviewData = await res.json();
+  return modelReviewData;
+}
+
+async function checkModelReviewBadge() {
+  try {
+    const data = await fetchModelReview();
+    const lastSeen = localStorage.getItem(MODEL_REVIEW_SEEN_KEY);
+    const badge = document.getElementById('model-review-badge');
+    if (!lastSeen || new Date(data.generated_at) > new Date(lastSeen)) {
+      badge.style.display = '';
+    }
+  } catch (e) {
+    // No model_review.json yet (e.g. first week) — nothing to badge.
+  }
+}
+
+async function loadModelReview() {
+  localStorage.setItem(MODEL_REVIEW_SEEN_KEY, new Date().toISOString());
+  document.getElementById('model-review-badge').style.display = 'none';
+
+  const liveEl = document.getElementById('model-review-live');
+  const bodyEl = document.getElementById('model-review-backtest-body');
+  const recEl = document.getElementById('model-review-recommendation');
+  const genEl = document.getElementById('model-review-generated');
+
+  try {
+    const data = await fetchModelReview();
+    genEl.textContent = 'Last generated: ' + new Date(data.generated_at).toLocaleString();
+
+    const live = data.live_signal_correlation;
+    if (live.note) {
+      liveEl.innerHTML = `<div class="loading-msg">${live.note}</div>`;
+    } else {
+      liveEl.innerHTML = `
+        <div class="gainer-label">Based on ${live.n} scored picks (top-3 + bench candidates) tracked so far.</div>
+        <table>
+          <thead><tr><th>Signal</th><th>N</th><th>Correlation with outcome</th></tr></thead>
+          <tbody>
+            ${live.signals.map(s => `<tr>
+              <td>${s.signal}</td>
+              <td style="color:var(--muted)">${s.n}</td>
+              <td class="${s.correlation > 0 ? 'td-pos' : s.correlation < 0 ? 'td-neg' : ''}">${s.correlation != null ? s.correlation.toFixed(3) : '—'}</td>
+            </tr>`).join('')}
+          </tbody>
+        </table>`;
+    }
+
+    const bt = data.backtest_comparison;
+    recEl.innerHTML = bt.recommendation
+      ? `<div class="win-floor-badge" style="display:block;margin-bottom:12px">💡 ${bt.recommendation}</div>`
+      : `<div class="gainer-label" style="margin-bottom:12px">No preset meaningfully beat the current default over the trailing ${bt.days} trading days — no change recommended.</div>`;
+
+    bodyEl.innerHTML = bt.comparisons.map(c => `
+      <tr${c.preset === 'default' ? ' style="font-weight:600"' : ''}>
+        <td>${c.preset}</td>
+        <td>${(c.hit_rate_3pct * 100).toFixed(1)}%</td>
+        <td class="${c.avg_pick_pct > 0 ? 'td-pos' : c.avg_pick_pct < 0 ? 'td-neg' : ''}">${c.avg_pick_pct >= 0 ? '+' : ''}${c.avg_pick_pct.toFixed(2)}%</td>
+        <td class="${c.total_pnl > 0 ? 'td-pos' : c.total_pnl < 0 ? 'td-neg' : ''}">${c.total_pnl >= 0 ? '+' : ''}$${c.total_pnl.toFixed(2)}</td>
+        <td>${(c.win_day_rate * 100).toFixed(0)}%</td>
+      </tr>`).join('');
+
+  } catch (e) {
+    liveEl.innerHTML = `<div class="error-msg">No model review yet — the first weekly run hasn't landed.<br><small>${e.message}</small></div>`;
+    bodyEl.innerHTML = '';
+    recEl.innerHTML = '';
+  }
+}
+
 loadPerfData().then(() => startCountdown());
+checkModelReviewBadge();
 </script>
 </body>
 </html>
