@@ -66,6 +66,10 @@
   .live-price-dollar { font-size: 13px; font-weight: 600; margin-top: 4px; }
   .yesterday-total { font-size: 14px; margin: -4px 0 14px; }
   .yesterday-total-label { color: var(--muted); }
+  .closed-market-card { text-align: center; padding: 48px 20px; }
+  .closed-market-emoji { font-size: 48px; margin-bottom: 12px; }
+  .closed-market-text { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .closed-market-sub { font-size: 13px; color: var(--muted); }
   .pick-pnl-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 12px 0; }
   .pnl-item { text-align: center; flex: 1; }
   .pnl-label { font-size: 10px; color: var(--muted); margin-bottom: 3px; }
@@ -294,6 +298,11 @@
   </div>
 
   <div id="tab-yesterday" class="panel">
+    <div class="card" id="last-session-card" style="display:none">
+      <div class="card-title">Last Trading Session — <span id="last-session-date"></span></div>
+      <div class="gainer-label">Markets are closed today, so here's how the most recent session's picks turned out.</div>
+      <div id="last-session-picks" class="picks-grid"></div>
+    </div>
     <div class="card">
       <div class="card-title">Actual Top Gainers Yesterday</div>
       <div class="gainer-label">S&P 500 biggest movers from the prior session:</div>
@@ -595,8 +604,12 @@ function render(data) {
   const days = (data.days || []).slice().sort((a,b) => b.date.localeCompare(a.date));
   const latest = days[0];
 
-  document.getElementById('header-sub').textContent =
-    latest ? `Picks for: ${latest.date}` : 'No data yet';
+  const closedInfo = getMarketClosedInfo();
+  const isStale = closedInfo.closed && latest && latest.date !== closedInfo.todayStr;
+
+  document.getElementById('header-sub').textContent = !latest ? 'No data yet'
+    : isStale ? `Markets closed — last session: ${latest.date}`
+    : `Picks for: ${latest.date}`;
 
   if (latest) {
     const hr = latest.hit_rate;
@@ -608,8 +621,15 @@ function render(data) {
     document.getElementById('s-preds').textContent = latest.total_predictions;
   }
 
-  renderTodayPicks(latest);
-  renderBenchCandidates(latest);
+  if (isStale) {
+    renderClosedMarket(closedInfo.reason, closedInfo.holidayName);
+    document.getElementById('bench-card').style.display = 'none';
+    renderLastSession(latest);
+  } else {
+    renderTodayPicks(latest);
+    renderBenchCandidates(latest);
+    document.getElementById('last-session-card').style.display = 'none';
+  }
   renderYesterday(latest);
   renderArchive(days);
   renderHistory(days);
@@ -627,12 +647,15 @@ function renderTodayPicks(day) {
   }
 
   dateEl.textContent = 'Picks generated for session: ' + day.date;
+  el.innerHTML = buildPickCards(day.predictions, 'explainer');
+}
 
-  const scores = day.predictions.map(p => p.score).filter(s => s != null && !isNaN(s));
+function buildPickCards(predictions, idPrefix) {
+  const scores = predictions.map(p => p.score).filter(s => s != null && !isNaN(s));
   const maxScore = scores.length ? Math.max(...scores) : 0;
   const rankLabels = ['#1 — Top Pick', '#2 — Strong Signal', '#3 — Watch'];
 
-  el.innerHTML = day.predictions.map((p, i) => {
+  return predictions.map((p, i) => {
     const score = p.score ?? 0;
     const pct = maxScore > 0 ? (score / maxScore) * 100 : 50;
     const entryPrice = p.entry_price;
@@ -640,7 +663,7 @@ function renderTodayPicks(day) {
     const livePrice = isExited ? p.paper_exit_price : (p.live_price ?? null);
     const pnlPct = isExited ? p.paper_exit_pct : (p.live_pct ?? null);
     const priceUpdated = isExited ? p.paper_exit_time : (p.price_updated ?? null);
-    const explainerId = `explainer-${i}`;
+    const explainerId = `${idPrefix}-${i}`;
     const isSkipped = !!p.skipped_reason;
     const isSubstitute = !!p.substitute_pick;
 
@@ -715,6 +738,71 @@ function renderTodayPicks(day) {
       </div>
     </div>`;
   }).join('');
+}
+
+const NYSE_HOLIDAYS_2026 = {
+  '2026-01-01': "New Year's Day",
+  '2026-01-19': 'Martin Luther King Jr. Day',
+  '2026-02-16': "Presidents' Day",
+  '2026-04-03': 'Good Friday',
+  '2026-05-25': 'Memorial Day',
+  '2026-06-19': 'Juneteenth',
+  '2026-07-03': 'Independence Day (observed)',
+  '2026-09-07': 'Labor Day',
+  '2026-11-26': 'Thanksgiving',
+  '2026-12-25': 'Christmas Day',
+};
+// NOTE: update this list each year (or add the next year's dates ahead of time).
+
+const WEEKEND_MESSAGES = [
+  { emoji: '🌴', text: "It's the weekend — the market's closed. Go outside and enjoy some sun." },
+  { emoji: '🐕', text: "Markets are closed for the weekend. Go play with your dog instead." },
+  { emoji: '☀️', text: "No trading today — it's the weekend. Do literally anything else." },
+  { emoji: '⚾', text: "Wall Street's closed. Go watch a game, take a walk, live a little." },
+];
+const HOLIDAY_MESSAGES = [
+  { emoji: '🎉', text: "Markets are closed for the holiday. Enjoy the day off." },
+  { emoji: '🏖️', text: "Even Wall Street takes a day off sometimes. Go relax." },
+];
+
+function getMarketClosedInfo() {
+  const fmt = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York', year: 'numeric', month: '2-digit', day: '2-digit', weekday: 'short'
+  });
+  const parts = Object.fromEntries(fmt.formatToParts(new Date()).map(p => [p.type, p.value]));
+  const todayStr = `${parts.year}-${parts.month}-${parts.day}`;
+  const isWeekend = parts.weekday === 'Sat' || parts.weekday === 'Sun';
+  const holidayName = NYSE_HOLIDAYS_2026[todayStr];
+  if (holidayName) return { todayStr, closed: true, reason: 'holiday', holidayName };
+  if (isWeekend) return { todayStr, closed: true, reason: 'weekend', holidayName: null };
+  return { todayStr, closed: false, reason: null, holidayName: null };
+}
+
+function renderClosedMarket(reason, holidayName) {
+  const el = document.getElementById('today-picks');
+  const dateEl = document.getElementById('today-date');
+  const pool = reason === 'holiday' ? HOLIDAY_MESSAGES : WEEKEND_MESSAGES;
+  const msg = pool[Math.floor(Math.random() * pool.length)];
+  dateEl.textContent = reason === 'holiday' && holidayName ? `Markets closed — ${holidayName}` : 'Markets closed for the weekend';
+  el.innerHTML = `
+    <div class="closed-market-card">
+      <div class="closed-market-emoji">${msg.emoji}</div>
+      <div class="closed-market-text">${msg.text}</div>
+      <div class="closed-market-sub">Check the Yesterday or History tab for the last trading session's results.</div>
+    </div>`;
+}
+
+function renderLastSession(day) {
+  const card = document.getElementById('last-session-card');
+  const dateEl = document.getElementById('last-session-date');
+  const el = document.getElementById('last-session-picks');
+  if (!day?.predictions?.length) {
+    card.style.display = 'none';
+    return;
+  }
+  card.style.display = '';
+  dateEl.textContent = day.date;
+  el.innerHTML = buildPickCards(day.predictions, 'last-session-explainer');
 }
 
 function renderBenchCandidates(day) {
