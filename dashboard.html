@@ -502,9 +502,11 @@ const MODEL_REVIEW_URL = "https://raw.githubusercontent.com/clamb9289/mover_pred
 const MODEL_REVIEW_SEEN_KEY = "model_review_last_seen";
 const INTRADAY_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/intraday_scan.json";
 const GAP_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/gap_scan.json";
+const MARKET_HOLIDAYS_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/market_holidays.json";
 const REFRESH_INTERVAL = 60;
 
 let perfData = null;
+let marketHolidays = new Set(); // populated by loadMarketHolidays() before first render
 let liveCountdown = REFRESH_INTERVAL;
 let countdownTimer = null;
 let chartMode = 'combined';
@@ -622,7 +624,7 @@ function render(data) {
   }
 
   if (isStale) {
-    renderClosedMarket(closedInfo.reason, closedInfo.holidayName);
+    renderClosedMarket(closedInfo.reason);
     document.getElementById('bench-card').style.display = 'none';
     renderLastSession(latest);
   } else {
@@ -740,19 +742,20 @@ function buildPickCards(predictions, idPrefix) {
   }).join('');
 }
 
-const NYSE_HOLIDAYS_2026 = {
-  '2026-01-01': "New Year's Day",
-  '2026-01-19': 'Martin Luther King Jr. Day',
-  '2026-02-16': "Presidents' Day",
-  '2026-04-03': 'Good Friday',
-  '2026-05-25': 'Memorial Day',
-  '2026-06-19': 'Juneteenth',
-  '2026-07-03': 'Independence Day (observed)',
-  '2026-09-07': 'Labor Day',
-  '2026-11-26': 'Thanksgiving',
-  '2026-12-25': 'Christmas Day',
-};
-// NOTE: update this list each year (or add the next year's dates ahead of time).
+// Holiday dates come from market_holidays.json, generated server-side by
+// predictor.py from the official NYSE calendar (pandas_market_calendars) —
+// no hardcoded list here, so this never goes stale the way a hand-typed
+// per-year list would (see market_calendar.py for the source of truth).
+async function loadMarketHolidays() {
+  try {
+    const res = await fetch(MARKET_HOLIDAYS_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    marketHolidays = new Set(data.holidays || []);
+  } catch (e) {
+    console.warn('Could not load market_holidays.json — holiday-specific closed message will be skipped (weekend detection still works).', e);
+  }
+}
 
 const WEEKEND_MESSAGES = [
   { emoji: '🌴', text: "It's the weekend — the market's closed. Go outside and enjoy some sun." },
@@ -772,18 +775,17 @@ function getMarketClosedInfo() {
   const parts = Object.fromEntries(fmt.formatToParts(new Date()).map(p => [p.type, p.value]));
   const todayStr = `${parts.year}-${parts.month}-${parts.day}`;
   const isWeekend = parts.weekday === 'Sat' || parts.weekday === 'Sun';
-  const holidayName = NYSE_HOLIDAYS_2026[todayStr];
-  if (holidayName) return { todayStr, closed: true, reason: 'holiday', holidayName };
-  if (isWeekend) return { todayStr, closed: true, reason: 'weekend', holidayName: null };
-  return { todayStr, closed: false, reason: null, holidayName: null };
+  if (marketHolidays.has(todayStr)) return { todayStr, closed: true, reason: 'holiday' };
+  if (isWeekend) return { todayStr, closed: true, reason: 'weekend' };
+  return { todayStr, closed: false, reason: null };
 }
 
-function renderClosedMarket(reason, holidayName) {
+function renderClosedMarket(reason) {
   const el = document.getElementById('today-picks');
   const dateEl = document.getElementById('today-date');
   const pool = reason === 'holiday' ? HOLIDAY_MESSAGES : WEEKEND_MESSAGES;
   const msg = pool[Math.floor(Math.random() * pool.length)];
-  dateEl.textContent = reason === 'holiday' && holidayName ? `Markets closed — ${holidayName}` : 'Markets closed for the weekend';
+  dateEl.textContent = reason === 'holiday' ? 'Markets closed for the holiday' : 'Markets closed for the weekend';
   el.innerHTML = `
     <div class="closed-market-card">
       <div class="closed-market-emoji">${msg.emoji}</div>
@@ -1461,7 +1463,7 @@ async function loadScanners() {
   }
 }
 
-loadPerfData().then(() => startCountdown());
+loadMarketHolidays().then(() => loadPerfData()).then(() => startCountdown());
 checkModelReviewBadge();
 </script>
 </body>
