@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-10T21:28:45.621973",
+  "generated_at": "2026-07-13T00:47:08.200548",
   "live_signal_correlation": {
     "n": 25,
     "signals": [
@@ -37,9 +37,9 @@
           "news_sentiment": 0.0,
           "relative_strength": 0.2
         },
-        "hit_rate_3pct": 0.2305,
-        "avg_pick_pct": 0.6584,
-        "total_pnl": 185.71,
+        "hit_rate_3pct": 0.234,
+        "avg_pick_pct": 0.665,
+        "total_pnl": 187.55,
         "win_day_rate": 0.5638
       },
       {
@@ -50,23 +50,10 @@
           "news_sentiment": 0.0,
           "relative_strength": 0.2
         },
-        "hit_rate_3pct": 0.2305,
-        "avg_pick_pct": 0.6584,
-        "total_pnl": 185.71,
+        "hit_rate_3pct": 0.234,
+        "avg_pick_pct": 0.665,
+        "total_pnl": 187.55,
         "win_day_rate": 0.5638
-      },
-      {
-        "preset": "balanced",
-        "weights": {
-          "accumulation": 0.35,
-          "sector_momentum": 0.25,
-          "news_sentiment": 0.15,
-          "relative_strength": 0.25
-        },
-        "hit_rate_3pct": 0.2305,
-        "avg_pick_pct": 0.5218,
-        "total_pnl": 147.18,
-        "win_day_rate": 0.5426
       },
       {
         "preset": "no_news",
@@ -76,10 +63,23 @@
           "news_sentiment": 0.0,
           "relative_strength": 0.25
         },
-        "hit_rate_3pct": 0.234,
-        "avg_pick_pct": 0.5103,
-        "total_pnl": 143.93,
+        "hit_rate_3pct": 0.2376,
+        "avg_pick_pct": 0.5193,
+        "total_pnl": 146.45,
         "win_day_rate": 0.5106
+      },
+      {
+        "preset": "balanced",
+        "weights": {
+          "accumulation": 0.35,
+          "sector_momentum": 0.25,
+          "news_sentiment": 0.15,
+          "relative_strength": 0.25
+        },
+        "hit_rate_3pct": 0.234,
+        "avg_pick_pct": 0.5161,
+        "total_pnl": 145.57,
+        "win_day_rate": 0.5426
       },
       {
         "preset": "accum55",
@@ -89,10 +89,10 @@
           "news_sentiment": 0.1,
           "relative_strength": 0.1
         },
-        "hit_rate_3pct": 0.2199,
-        "avg_pick_pct": 0.418,
-        "total_pnl": 117.92,
-        "win_day_rate": 0.5426
+        "hit_rate_3pct": 0.227,
+        "avg_pick_pct": 0.4606,
+        "total_pnl": 129.94,
+        "win_day_rate": 0.5532
       }
     ],
     "recommendation": null
