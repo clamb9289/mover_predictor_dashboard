@@ -1339,6 +1339,278 @@
       "total_predictions": 18,
       "days_tracked": 6,
       "prices_last_updated": "15:56 ET"
+    },
+    {
+      "date": "2026-07-14",
+      "regime": "Market regime OK \u2014 SPY +0.09%",
+      "top_sectors": [
+        {
+          "etf": "XLB",
+          "name": "Materials",
+          "pct": 1.44
+        },
+        {
+          "etf": "XLI",
+          "name": "Industrials",
+          "pct": 1.09
+        },
+        {
+          "etf": "XLU",
+          "name": "Utilities",
+          "pct": 1.07
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "SMTC",
+          "pct": 10.3,
+          "signals": {
+            "accumulation": 0.464,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -5.61
+          },
+          "our_rank": null
+        },
+        {
+          "ticker": "MXL",
+          "pct": 8.13,
+          "signals": {
+            "accumulation": 0.629,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -7.43
+          },
+          "our_rank": null
+        },
+        {
+          "ticker": "DOCN",
+          "pct": 7.02,
+          "signals": {
+            "accumulation": 0.236,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -6.89
+          },
+          "our_rank": null
+        }
+      ],
+      "model_insight": "Actual top movers had notably higher accumulation (0.44 vs our picks' 0.10) \u2014 possible signal to increase weighting on accumulation. Actual top movers had notably lower relative strength (-6.64 vs our picks' 8.97) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.76 vs our picks' 2.46) \u2014 possible signal to decrease weighting on sector momentum. SMTC, MXL, DOCN weren't in our candidate pool at all that day \u2014 a universe/coverage gap, not a ranking issue.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "IBM",
+          "score": 0.705,
+          "entry_price": 220.82,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 0.502,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -28.9
+          },
+          "prediction_price": 220.0,
+          "live_price": 222.98,
+          "live_pct": 0.98,
+          "price_updated": "10:01 ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "ETSY",
+          "score": 0.38,
+          "entry_price": 82.07,
+          "headline": null,
+          "sector": "Consumer Discretionary",
+          "explainer": "Its sector (Consumer Discretionary) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+5.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.219,
+            "sector_momentum_pct": 0.04,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 5.72
+          },
+          "live_price": 81.56,
+          "live_pct": -0.62,
+          "price_updated": "10:01 ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "NEM",
+          "score": 0.38,
+          "entry_price": 97.368,
+          "headline": null,
+          "sector": "Materials",
+          "explainer": "Its sector (Materials) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+1.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.091,
+            "sector_momentum_pct": 1.44,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.5
+          },
+          "prediction_price": 97.86,
+          "live_price": 97.2,
+          "live_pct": -0.17,
+          "price_updated": "10:01 ET"
+        },
+        {
+          "ticker": "MXL",
+          "rank": 4,
+          "score": 0.3717,
+          "entry_price": 92.876,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "live_price": 92.19,
+          "live_pct": -0.74,
+          "price_updated": "10:01 ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "MXL",
+          "score": 0.372,
+          "entry_price": 96.56,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+11.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.119,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 11.75
+          },
+          "live_price": 92.19,
+          "live_pct": -4.53,
+          "price_updated": "10:01 ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "NOW",
+          "score": 0.371,
+          "entry_price": 103.11,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 0.185,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -7.65
+          },
+          "live_price": 106.04,
+          "live_pct": 2.85,
+          "price_updated": "10:01 ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "SMTC",
+          "score": 0.344,
+          "entry_price": 145.76,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+14.6% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.089,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 14.56
+          },
+          "live_price": 142.42,
+          "live_pct": -2.29,
+          "price_updated": "10:01 ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "FTNT",
+          "score": 0.33,
+          "entry_price": 163.34,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+2.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.121,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.18
+          },
+          "live_price": 165.86,
+          "live_pct": 1.54,
+          "price_updated": "10:01 ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "WDC",
+          "score": 0.329,
+          "entry_price": 584.31,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Its sector (Technology) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+9.1% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.097,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 9.05
+          },
+          "live_price": 579.18,
+          "live_pct": -0.88,
+          "price_updated": "10:01 ET"
+        }
+      ],
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "MGM",
+          "move_pct": -0.42,
+          "dollar_change": -0.53,
+          "position_size": 125.82,
+          "actual_rank": 353,
+          "total_ranked": 489,
+          "signals": {
+            "accumulation": 0.199,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.77
+          },
+          "postmortem": "Small loss (-0.42%) \u2014 relative strength didn't convert this time; within normal volatility for now. Ranked #353 of 489 stocks tracked that day."
+        },
+        {
+          "rank": 2,
+          "ticker": "ARR",
+          "move_pct": 1.19,
+          "dollar_change": 1.5,
+          "position_size": 125.82,
+          "actual_rank": 110,
+          "total_ranked": 489,
+          "signals": null,
+          "postmortem": "Modest gain of +1.19%, but did not reach the +3% win floor. Ranked #110 of 489 stocks tracked that day."
+        },
+        {
+          "rank": 3,
+          "ticker": "NOG",
+          "move_pct": -0.42,
+          "dollar_change": -0.13,
+          "position_size": 31.46,
+          "actual_rank": 351,
+          "total_ranked": 489,
+          "signals": {
+            "accumulation": 0.099,
+            "sector_momentum_pct": 2.46,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 8.97
+          },
+          "postmortem": "Small loss (-0.42%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now. Ranked #351 of 489 stocks tracked that day."
+        }
+      ],
+      "hit_rate": 0.0556,
+      "total_hits": 1,
+      "total_predictions": 18,
+      "days_tracked": 6,
+      "prices_last_updated": "10:01 ET"
     }
   ]
 }
