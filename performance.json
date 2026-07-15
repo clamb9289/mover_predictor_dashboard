@@ -1623,6 +1623,276 @@
       "total_predictions": 18,
       "days_tracked": 6,
       "prices_last_updated": "15:56 ET"
+    },
+    {
+      "date": "2026-07-15",
+      "regime": "Could not determine regime \u2014 proceeding anyway",
+      "top_sectors": [
+        {
+          "etf": "XLC",
+          "name": "Communication Services",
+          "pct": 0.51
+        },
+        {
+          "etf": "XLRE",
+          "name": "Real Estate",
+          "pct": 0.48
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "PYPL",
+          "pct": 15.56,
+          "signals": {
+            "accumulation": 0.541,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.77
+          },
+          "our_rank": null
+        },
+        {
+          "ticker": "KTOS",
+          "pct": 13.98,
+          "signals": {
+            "accumulation": 0.639,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -12.29
+          },
+          "our_rank": null
+        },
+        {
+          "ticker": "NXT",
+          "pct": 7.97,
+          "signals": {
+            "accumulation": 0.753,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.85
+          },
+          "our_rank": null
+        }
+      ],
+      "model_insight": "Actual top movers had notably higher accumulation (0.64 vs our picks' 0.27) \u2014 possible signal to increase weighting on accumulation. Actual top movers had notably lower sector momentum (0.00 vs our picks' 0.75) \u2014 possible signal to decrease weighting on sector momentum. PYPL, KTOS, NXT weren't in our candidate pool at all that day \u2014 a universe/coverage gap, not a ranking issue.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "CPRX",
+          "score": 0.708,
+          "entry_price": 31.48,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Volume was running 1.9x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 1.925,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.06
+          },
+          "skipped_reason": "Buy order failed: {\"code\":42210000,\"message\":\"market order rejected due to trading halt on symbol: \\\"CPRX\\\", please place a limit order instead\"}"
+        },
+        {
+          "rank": 2,
+          "ticker": "PYPL",
+          "score": 0.425,
+          "entry_price": 54.344,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+22.9% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.758,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 22.93
+          },
+          "prediction_price": 54.74,
+          "live_price": 53.84,
+          "live_pct": -0.93,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "ARR",
+          "score": 0.331,
+          "entry_price": 17.13,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "Its sector (Real Estate) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+0.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.15,
+            "sector_momentum_pct": 0.48,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.31
+          },
+          "prediction_price": 17.11,
+          "live_price": 17.14,
+          "live_pct": 0.03,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "ticker": "TTD",
+          "rank": 4,
+          "score": 0.3248,
+          "entry_price": 19.42,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "live_price": 19.33,
+          "live_pct": -0.46,
+          "price_updated": "09:49 ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "TTD",
+          "score": 0.325,
+          "entry_price": 19.64,
+          "headline": null,
+          "sector": "Communication Services",
+          "explainer": "Its sector (Communication Services) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+2.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.076,
+            "sector_momentum_pct": 0.51,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.46
+          },
+          "live_price": 19.33,
+          "live_pct": -1.58,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "GOOG",
+          "score": 0.309,
+          "entry_price": 360.41,
+          "headline": null,
+          "sector": "Communication Services",
+          "explainer": "Its sector (Communication Services) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 0.059,
+            "sector_momentum_pct": 0.51,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.03
+          },
+          "live_price": 360.87,
+          "live_pct": 0.13,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "AMT",
+          "score": 0.309,
+          "entry_price": 168.25,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "Its sector (Real Estate) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+1.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.068,
+            "sector_momentum_pct": 0.48,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.33
+          },
+          "live_price": 169.15,
+          "live_pct": 0.53,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "GOOGL",
+          "score": 0.307,
+          "entry_price": 362.38,
+          "headline": null,
+          "sector": "Communication Services",
+          "explainer": "Its sector (Communication Services) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 0.073,
+            "sector_momentum_pct": 0.51,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.77
+          },
+          "live_price": 362.99,
+          "live_pct": 0.17,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "PENG",
+          "score": 0.186,
+          "entry_price": 81.0,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+3.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.257,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.22
+          },
+          "live_price": 80.37,
+          "live_pct": -0.78,
+          "price_updated": "09:49 ET"
+        }
+      ],
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "IBM",
+          "move_pct": -23.34,
+          "dollar_change": -22.08,
+          "position_size": 94.59,
+          "actual_rank": 488,
+          "total_ranked": 488,
+          "signals": {
+            "accumulation": 0.502,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -28.9
+          },
+          "postmortem": "Hit stop-loss territory (-23.34%) despite sector momentum \u2014 worth reviewing if sector momentum keeps producing false positives. Ranked #488 of 488 stocks tracked that day."
+        },
+        {
+          "rank": 3,
+          "ticker": "NEM",
+          "move_pct": 2.62,
+          "dollar_change": 2.48,
+          "position_size": 94.59,
+          "actual_rank": 69,
+          "total_ranked": 488,
+          "signals": {
+            "accumulation": 0.091,
+            "sector_momentum_pct": 1.44,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.5
+          },
+          "postmortem": "Modest gain (+2.62%) but didn't reach the win floor \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. Ranked #69 of 488 stocks tracked that day."
+        },
+        {
+          "rank": 4,
+          "ticker": "MXL",
+          "move_pct": 7.68,
+          "dollar_change": 7.26,
+          "position_size": 94.59,
+          "actual_rank": 4,
+          "total_ranked": 488,
+          "signals": {
+            "accumulation": 0.119,
+            "sector_momentum_pct": 0.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 11.75
+          },
+          "postmortem": "Hit the win floor (+7.68%) \u2014 the relative strength and sector momentum signal(s) that drove this pick played out well. Worth leaning into when this profile repeats. Ranked #4 of 488 stocks tracked that day."
+        }
+      ],
+      "hit_rate": 0.0476,
+      "total_hits": 1,
+      "total_predictions": 21,
+      "days_tracked": 7,
+      "prices_last_updated": "09:49 ET"
     }
   ]
 }
