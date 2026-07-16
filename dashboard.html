@@ -128,6 +128,12 @@
   .archive-pick:last-child { border-bottom: none; }
   .archive-pick-head { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
   .archive-insight { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); line-height: 1.6; overflow-wrap: anywhere; }
+  .aggregate-insight-box { background: rgba(91,127,255,0.08); border: 1px solid rgba(91,127,255,0.3); border-left: 3px solid var(--accent); border-radius: 8px; padding: 14px 16px; margin: 4px 0 16px; }
+  .aggregate-insight-title { font-size: 12px; font-weight: 700; letter-spacing: 0.03em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+  .aggregate-insight-box ul { margin: 0; padding-left: 18px; }
+  .aggregate-insight-box li { font-size: 13px; line-height: 1.6; margin-bottom: 4px; }
+  .aggregate-insight-box li:last-child { margin-bottom: 0; }
+  .aggregate-insight-empty { font-size: 12px; color: var(--muted); }
   .signal-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
   .signal-mini { background: var(--surface); border-radius: 6px; padding: 8px 10px; }
   .signal-mini-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
@@ -328,6 +334,7 @@
     <div class="card">
       <div class="card-title">Postmortem Archive</div>
       <div class="gainer-label">Browse past days — our picks, the actual top movers, and what the signal comparison suggests. Click a row to expand. Older days (before this feature shipped) may only show partial data.</div>
+      <div id="archive-aggregate-insight"></div>
       <div class="archive-grid-header">
         <div></div><div>Date</div><div>Our Picks</div><div>Avg Move</div><div>Actual Top Movers</div>
       </div>
@@ -1027,8 +1034,89 @@ function toggleArchiveRow(id) {
   document.getElementById(id).classList.toggle('open');
 }
 
+// Pools every day's our-picks-vs-actual-top-movers signal comparison (the
+// same underlying arithmetic as predictor.py's generate_model_insight(),
+// which explicitly documents itself as "noisy by nature... a browsable
+// data point across many days, not a standalone statistical conclusion")
+// across ALL loaded days, so the quick-glance summary is actually the
+// many-day aggregate that per-day text says to wait for, rather than just
+// concatenating one noisy day's sentence with another's.
+const AGGREGATE_MIN_SAMPLE = 15;
+
+function computeAggregateInsight(days) {
+  const ourSignals = [];
+  const winnerSignals = [];
+  let totalWinners = 0;
+  let uncoveredCount = 0;
+
+  days.forEach(day => {
+    (day.predictions || []).forEach(p => { if (p.signals) ourSignals.push(p.signals); });
+    (day.actual_top3 || []).forEach(w => {
+      totalWinners++;
+      if (w.signals) winnerSignals.push(w.signals);
+      if (w.our_rank == null) uncoveredCount++;
+    });
+  });
+
+  if (winnerSignals.length < AGGREGATE_MIN_SAMPLE || ourSignals.length < AGGREGATE_MIN_SAMPLE) {
+    return { ready: false, n: winnerSignals.length };
+  }
+
+  const avg = (key, rows) => {
+    const vals = rows.map(r => r[key]).filter(v => v != null);
+    return vals.length ? vals.reduce((a, b) => a + b, 0) / vals.length : null;
+  };
+
+  const bullets = [];
+  [
+    ["accumulation", "accumulation"],
+    ["relative_strength_pct", "relative strength"],
+    ["sector_momentum_pct", "sector momentum"],
+    ["news_sentiment", "news sentiment"],
+  ].forEach(([key, label]) => {
+    const ourAvg = avg(key, ourSignals);
+    const winAvg = avg(key, winnerSignals);
+    if (ourAvg == null || winAvg == null) return;
+    const diff = winAvg - ourAvg;
+    const threshold = Math.abs(ourAvg) * 0.5 || 0.5;
+    if (Math.abs(diff) > threshold) {
+      const direction = diff > 0 ? "higher" : "lower";
+      const action = diff > 0 ? "increasing" : "decreasing";
+      bullets.push(`Across ${winnerSignals.length} pooled actual top movers, ${label} has consistently run ${direction} than our picks' (${winAvg.toFixed(2)} vs ${ourAvg.toFixed(2)}) — worth considering ${action} its weighting.`);
+    }
+  });
+
+  if (totalWinners > 0) {
+    const pct = uncoveredCount / totalWinners;
+    if (pct > 0.3) {
+      bullets.push(`${(pct * 100).toFixed(0)}% of actual top movers across ${days.length} tracked days weren't in our candidate pool at all — a recurring universe/coverage gap, not a ranking issue.`);
+    }
+  }
+
+  if (!bullets.length) {
+    bullets.push(`No consistent directional signal gap found across ${winnerSignals.length} pooled actual top movers — current signal weighting looks reasonably aligned.`);
+  }
+
+  return { ready: true, n: winnerSignals.length, bullets };
+}
+
+function renderAggregateInsight(days) {
+  const el = document.getElementById("archive-aggregate-insight");
+  const result = computeAggregateInsight(days);
+  if (!result.ready) {
+    el.innerHTML = `<div class="aggregate-insight-box"><div class="aggregate-insight-title">📌 Aggregate Insight</div>
+      <div class="aggregate-insight-empty">Not enough pooled data yet (${result.n}/${AGGREGATE_MIN_SAMPLE} actual-top-mover signal samples) to summarize a trend across days without it just being noise.</div></div>`;
+    return;
+  }
+  el.innerHTML = `<div class="aggregate-insight-box">
+    <div class="aggregate-insight-title">📌 Top Recommended Changes — ${result.n} pooled samples across ${days.length} tracked days</div>
+    <ul>${result.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
+  </div>`;
+}
+
 function renderArchive(days) {
   const container = document.getElementById('archive-body');
+  renderAggregateInsight(days);
   if (!days.length) {
     container.innerHTML = '<div class="loading-msg">No history yet.</div>';
     return;
