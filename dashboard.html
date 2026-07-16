@@ -1048,13 +1048,30 @@ function computeAggregateInsight(days) {
   const winnerSignals = [];
   let totalWinners = 0;
   let uncoveredCount = 0;
+  // predictor.py started classifying WHY a mover was uncovered on
+  // 2026-07-17 (not eligible / eligible-but-unranked / made shortlist but
+  // missed the cut) after finding every uncovered mover checked up to then
+  // was actually fully eligible -- the old blanket "coverage gap" text was
+  // wrong. Older days predate these fields (eligible/made_shortlist come
+  // back undefined), so they're excluded from the classified counts below
+  // and only counted in the raw uncovered-% bullet.
+  let classifiedCount = 0, notEligibleCount = 0, notShortlistedCount = 0;
 
   days.forEach(day => {
     (day.predictions || []).forEach(p => { if (p.signals) ourSignals.push(p.signals); });
     (day.actual_top3 || []).forEach(w => {
       totalWinners++;
       if (w.signals) winnerSignals.push(w.signals);
-      if (w.our_rank == null) uncoveredCount++;
+      if (w.our_rank == null) {
+        uncoveredCount++;
+        if (w.eligible === false) {
+          classifiedCount++;
+          notEligibleCount++;
+        } else if (w.eligible === true) {
+          classifiedCount++;
+          if (!w.made_shortlist) notShortlistedCount++;
+        }
+      }
     });
   });
 
@@ -1089,7 +1106,13 @@ function computeAggregateInsight(days) {
   if (totalWinners > 0) {
     const pct = uncoveredCount / totalWinners;
     if (pct > 0.3) {
-      bullets.push(`${(pct * 100).toFixed(0)}% of actual top movers across ${days.length} tracked days weren't in our candidate pool at all — a recurring universe/coverage gap, not a ranking issue.`);
+      bullets.push(`${(pct * 100).toFixed(0)}% of actual top movers across ${days.length} tracked days weren't in our top picks.`);
+      if (classifiedCount > 0) {
+        const rankMissPct = notShortlistedCount / classifiedCount;
+        bullets.push(`Of the ${classifiedCount} of those checked for cause, ${notShortlistedCount} (${(rankMissPct * 100).toFixed(0)}%) were fully eligible but ranked too low on the accumulation shortlist to ever get scored — a ranking issue, not a coverage gap. Only ${notEligibleCount} were genuine coverage gaps (not in the tracked universe or filtered by volume/price).`);
+      } else {
+        bullets.push(`Cause not yet classified — this breakdown started 2026-07-17, so only days from then on report whether a miss was a real coverage gap or just a low accumulation rank.`);
+      }
     }
   }
 
@@ -1171,7 +1194,10 @@ function renderArchive(days) {
                   <span class="td-pos">+${w.pct.toFixed(2)}%</span>
                 </div>
                 <div style="color:var(--muted)">
-                  ${w.our_rank ? `In our candidate pool at rank #${w.our_rank}` : 'Not in our candidate pool that day'}
+                  ${w.our_rank ? `In our candidate pool at rank #${w.our_rank}`
+                    : w.eligible === false ? 'Not in our candidate pool that day — genuine coverage gap (not tracked / filtered out)'
+                    : w.eligible === true ? `Not in our candidate pool — eligible but ranked #${w.accumulation_rank} of ${w.eligible_pool_size} on accumulation${w.made_shortlist ? ' (made the shortlist, missed the final cut)' : ' (never cleared the shortlist)'}`
+                    : 'Not in our candidate pool that day'}
                   ${w.signals ? ` — accumulation ${w.signals.accumulation}, relative strength ${fmt(w.signals.relative_strength_pct)}` : ''}
                 </div>
               </div>
