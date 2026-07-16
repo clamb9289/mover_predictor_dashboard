@@ -1908,60 +1908,60 @@
     },
     {
       "date": "2026-07-16",
-      "regime": "Market regime OK \u2014 SPY -0.36%",
+      "regime": "Market regime OK \u2014 SPY -0.32%",
       "top_sectors": [
         {
           "etf": "XLP",
           "name": "Consumer Staples",
-          "pct": 1.55
+          "pct": 2.36
         },
         {
           "etf": "XLV",
           "name": "Healthcare",
-          "pct": 1.43
+          "pct": 2.0
         },
         {
           "etf": "XLRE",
           "name": "Real Estate",
-          "pct": 0.76
+          "pct": 1.47
         }
       ],
       "actual_top3": [
         {
-          "ticker": "ABT",
-          "pct": 11.1,
+          "ticker": "PYPL",
+          "pct": 17.2,
           "signals": {
-            "accumulation": 1.157,
-            "sector_momentum_pct": 1.43,
+            "accumulation": 0.542,
+            "sector_momentum_pct": 0.25,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -6.97
+            "relative_strength_pct": 3.52
           },
-          "our_rank": null
+          "our_rank": 2
         },
         {
-          "ticker": "UNH",
-          "pct": 8.53,
+          "ticker": "BILL",
+          "pct": 7.88,
           "signals": {
-            "accumulation": 1.329,
-            "sector_momentum_pct": 1.43,
-            "news_sentiment": 0.0,
-            "relative_strength_pct": -3.1
-          },
-          "our_rank": null
-        },
-        {
-          "ticker": "RHI",
-          "pct": 7.72,
-          "signals": {
-            "accumulation": 0.429,
+            "accumulation": 0.799,
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
-            "relative_strength_pct": 11.3
+            "relative_strength_pct": 4.03
+          },
+          "our_rank": null
+        },
+        {
+          "ticker": "AEO",
+          "pct": 7.8,
+          "signals": {
+            "accumulation": 0.87,
+            "sector_momentum_pct": 0.45,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.95
           },
           "our_rank": null
         }
       ],
-      "model_insight": "Actual top movers had notably lower relative strength (0.41 vs our picks' 7.73) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably higher sector momentum (0.95 vs our picks' 0.16) \u2014 possible signal to increase weighting on sector momentum. ABT, UNH, RHI weren't in our candidate pool at all that day \u2014 a universe/coverage gap, not a ranking issue.",
+      "model_insight": "Actual top movers had notably lower relative strength (1.87 vs our picks' 7.73) \u2014 possible signal to decrease weighting on relative strength. BILL, AEO weren't in our candidate pool at all that day \u2014 a universe/coverage gap, not a ranking issue.",
       "predictions": [
         {
           "rank": 1,
@@ -1997,9 +1997,9 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0029,
           "paper_trail_floor_active": false,
-          "live_price": 431.56,
-          "live_pct": -5.07,
-          "price_updated": "13:00 ET",
+          "live_price": 430.87,
+          "live_pct": -5.23,
+          "price_updated": "13:04 ET",
           "paper_exit_price": 438.86,
           "paper_exit_pct": -3.47,
           "paper_exit_dollar": -3.26,
@@ -2036,9 +2036,9 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0079,
           "paper_trail_floor_active": false,
-          "live_price": 26.17,
-          "live_pct": 0.4,
-          "price_updated": "13:00 ET"
+          "live_price": 26.19,
+          "live_pct": 0.46,
+          "price_updated": "13:04 ET"
         },
         {
           "ticker": "CPB",
@@ -2055,8 +2055,8 @@
           "paper_peak_pct": 0.0071,
           "paper_trail_floor_active": false,
           "live_price": 22.57,
-          "live_pct": 0.22,
-          "price_updated": "13:00 ET"
+          "live_pct": 0.21,
+          "price_updated": "13:04 ET"
         }
       ],
       "bench_candidates": [
@@ -2074,9 +2074,9 @@
             "news_sentiment": 0.0,
             "relative_strength_pct": 3.99
           },
-          "live_price": 26.17,
-          "live_pct": 0.48,
-          "price_updated": "13:00 ET"
+          "live_price": 26.19,
+          "live_pct": 0.54,
+          "price_updated": "13:04 ET"
         },
         {
           "rank": 5,
@@ -2094,7 +2094,7 @@
           },
           "live_price": 22.57,
           "live_pct": 0.8,
-          "price_updated": "13:00 ET"
+          "price_updated": "13:04 ET"
         },
         {
           "rank": 6,
@@ -2110,9 +2110,9 @@
             "news_sentiment": 0.0,
             "relative_strength_pct": 3.21
           },
-          "live_price": 107.09,
-          "live_pct": -0.46,
-          "price_updated": "13:00 ET"
+          "live_price": 107.35,
+          "live_pct": -0.21,
+          "price_updated": "13:04 ET"
         },
         {
           "rank": 7,
@@ -2128,9 +2128,9 @@
             "news_sentiment": 0.0,
             "relative_strength_pct": 0.17
           },
-          "live_price": 115.02,
-          "live_pct": 0.78,
-          "price_updated": "13:00 ET"
+          "live_price": 115.25,
+          "live_pct": 0.99,
+          "price_updated": "13:04 ET"
         },
         {
           "rank": 8,
@@ -2146,66 +2146,66 @@
             "news_sentiment": 0.0,
             "relative_strength_pct": 0.04
           },
-          "live_price": 83.37,
-          "live_pct": -0.29,
-          "price_updated": "13:00 ET"
+          "live_price": 83.36,
+          "live_pct": -0.3,
+          "price_updated": "13:04 ET"
         }
       ],
       "prior_predictions_actual": [
         {
           "rank": 2,
           "ticker": "PYPL",
-          "move_pct": 0.4,
-          "dollar_change": 0.37,
+          "move_pct": 2.15,
+          "dollar_change": 1.99,
           "position_size": 92.74,
-          "actual_rank": 282,
-          "total_ranked": 476,
+          "actual_rank": 1,
+          "total_ranked": 569,
           "signals": {
             "accumulation": 0.758,
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": 22.93
           },
-          "postmortem": "Modest gain (+0.40%) but didn't reach the win floor \u2014 relative strength pointed the right direction without enough follow-through. Ranked #282 of 476 stocks tracked that day."
+          "postmortem": "Cleared the trailing-stop floor (+2.15%) \u2014 the relative strength signal(s) that drove this pick played out well. Worth leaning into when this profile repeats. The stock itself ranked #1 of 569 tracked that day, for context."
         },
         {
           "rank": 3,
           "ticker": "ARR",
-          "move_pct": -0.2,
-          "dollar_change": -0.19,
+          "move_pct": 1.17,
+          "dollar_change": 1.08,
           "position_size": 92.74,
-          "actual_rank": 347,
-          "total_ranked": 476,
+          "actual_rank": 67,
+          "total_ranked": 569,
           "signals": {
             "accumulation": 0.15,
             "sector_momentum_pct": 0.48,
             "news_sentiment": 0.0,
             "relative_strength_pct": 0.31
           },
-          "postmortem": "Small loss (-0.20%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now. Ranked #347 of 476 stocks tracked that day."
+          "postmortem": "Cleared the trailing-stop floor (+1.17%) \u2014 the relative strength and sector momentum signal(s) that drove this pick played out well. Worth leaning into when this profile repeats. The stock itself ranked #67 of 569 tracked that day, for context."
         },
         {
           "rank": 4,
           "ticker": "TTD",
-          "move_pct": 1.16,
-          "dollar_change": 1.08,
+          "move_pct": 0.46,
+          "dollar_change": 0.43,
           "position_size": 92.74,
-          "actual_rank": 158,
-          "total_ranked": 476,
+          "actual_rank": 83,
+          "total_ranked": 569,
           "signals": {
             "accumulation": 0.076,
             "sector_momentum_pct": 0.51,
             "news_sentiment": 0.0,
             "relative_strength_pct": 2.46
           },
-          "postmortem": "Modest gain (+1.16%) but didn't reach the win floor \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. Ranked #158 of 476 stocks tracked that day."
+          "postmortem": "Modest gain (+0.46%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. The stock itself ranked #83 of 569 tracked that day, for context."
         }
       ],
-      "hit_rate": 0.0417,
+      "hit_rate": 0.037,
       "total_hits": 1,
-      "total_predictions": 24,
-      "days_tracked": 8,
-      "prices_last_updated": "13:00 ET"
+      "total_predictions": 27,
+      "days_tracked": 9,
+      "prices_last_updated": "13:04 ET"
     }
   ]
 }
