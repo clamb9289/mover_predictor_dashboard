@@ -1904,6 +1904,302 @@
       "total_predictions": 21,
       "days_tracked": 7,
       "prices_last_updated": "15:56 ET"
+    },
+    {
+      "date": "2026-07-16",
+      "regime": "Market regime OK \u2014 SPY -0.36%",
+      "top_sectors": [
+        {
+          "etf": "XLP",
+          "name": "Consumer Staples",
+          "pct": 1.55
+        },
+        {
+          "etf": "XLV",
+          "name": "Healthcare",
+          "pct": 1.43
+        },
+        {
+          "etf": "XLRE",
+          "name": "Real Estate",
+          "pct": 0.76
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "ABT",
+          "pct": 11.1,
+          "signals": {
+            "accumulation": 1.157,
+            "sector_momentum_pct": 1.43,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -6.97
+          },
+          "our_rank": null
+        },
+        {
+          "ticker": "UNH",
+          "pct": 8.53,
+          "signals": {
+            "accumulation": 1.329,
+            "sector_momentum_pct": 1.43,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.1
+          },
+          "our_rank": null
+        },
+        {
+          "ticker": "RHI",
+          "pct": 7.72,
+          "signals": {
+            "accumulation": 0.429,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 11.3
+          },
+          "our_rank": null
+        }
+      ],
+      "model_insight": "Actual top movers had notably lower relative strength (0.41 vs our picks' 7.73) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably higher sector momentum (0.95 vs our picks' 0.16) \u2014 possible signal to increase weighting on sector momentum. ABT, UNH, RHI weren't in our candidate pool at all that day \u2014 a universe/coverage gap, not a ranking issue.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "GTLS",
+          "score": 0.691,
+          "entry_price": 209.9,
+          "headline": null,
+          "sector": "Industrials",
+          "explainer": "Volume was running 4.4x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+0.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 4.352,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.38
+          },
+          "skipped_reason": "Buy order failed: {\"code\":40010001,\"message\":\"asset GTLS is not active\"}"
+        },
+        {
+          "rank": 2,
+          "ticker": "UNH",
+          "score": 0.325,
+          "entry_price": 454.628,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+3.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.28,
+            "sector_momentum_pct": 1.43,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.78
+          },
+          "prediction_price": 454.2,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0029,
+          "paper_trail_floor_active": false,
+          "live_price": 455.95,
+          "live_pct": 0.29,
+          "price_updated": "09:45 ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "ABT",
+          "score": 0.31,
+          "entry_price": 99.18,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+4.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.151,
+            "sector_momentum_pct": 1.43,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.37
+          },
+          "skipped_reason": "Opening-gap filter: gapped +1.3% from the $99.17 close signals were scored on \u2014 skipping."
+        },
+        {
+          "ticker": "KHC",
+          "rank": 4,
+          "score": 0.3097,
+          "entry_price": 26.07,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 26.0,
+          "live_pct": -0.29,
+          "price_updated": "09:45 ET"
+        },
+        {
+          "ticker": "CPB",
+          "rank": 5,
+          "score": 0.3029,
+          "entry_price": 22.52,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 22.47,
+          "live_pct": -0.24,
+          "price_updated": "09:45 ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "KHC",
+          "score": 0.31,
+          "entry_price": 26.05,
+          "headline": null,
+          "sector": "Consumer Staples",
+          "explainer": "Its sector (Consumer Staples) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+4.0% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.059,
+            "sector_momentum_pct": 1.55,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.99
+          },
+          "live_price": 26.0,
+          "live_pct": -0.21,
+          "price_updated": "09:45 ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "CPB",
+          "score": 0.303,
+          "entry_price": 22.39,
+          "headline": null,
+          "sector": "Consumer Staples",
+          "explainer": "Its sector (Consumer Staples) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+2.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.057,
+            "sector_momentum_pct": 1.55,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.74
+          },
+          "live_price": 22.47,
+          "live_pct": 0.33,
+          "price_updated": "09:45 ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "CVS",
+          "score": 0.292,
+          "entry_price": 107.58,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+3.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.067,
+            "sector_momentum_pct": 1.43,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.21
+          },
+          "live_price": 107.75,
+          "live_pct": 0.15,
+          "price_updated": "09:45 ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "WMT",
+          "score": 0.291,
+          "entry_price": 114.13,
+          "headline": null,
+          "sector": "Consumer Staples",
+          "explainer": "Its sector (Consumer Staples) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+0.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.069,
+            "sector_momentum_pct": 1.55,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.17
+          },
+          "live_price": 114.9,
+          "live_pct": 0.67,
+          "price_updated": "09:45 ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "MDT",
+          "score": 0.277,
+          "entry_price": 83.61,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+0.0% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 0.075,
+            "sector_momentum_pct": 1.43,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.04
+          },
+          "live_price": 83.94,
+          "live_pct": 0.39,
+          "price_updated": "09:45 ET"
+        }
+      ],
+      "prior_predictions_actual": [
+        {
+          "rank": 2,
+          "ticker": "PYPL",
+          "move_pct": 0.4,
+          "dollar_change": 0.37,
+          "position_size": 92.74,
+          "actual_rank": 282,
+          "total_ranked": 476,
+          "signals": {
+            "accumulation": 0.758,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 22.93
+          },
+          "postmortem": "Modest gain (+0.40%) but didn't reach the win floor \u2014 relative strength pointed the right direction without enough follow-through. Ranked #282 of 476 stocks tracked that day."
+        },
+        {
+          "rank": 3,
+          "ticker": "ARR",
+          "move_pct": -0.2,
+          "dollar_change": -0.19,
+          "position_size": 92.74,
+          "actual_rank": 347,
+          "total_ranked": 476,
+          "signals": {
+            "accumulation": 0.15,
+            "sector_momentum_pct": 0.48,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.31
+          },
+          "postmortem": "Small loss (-0.20%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now. Ranked #347 of 476 stocks tracked that day."
+        },
+        {
+          "rank": 4,
+          "ticker": "TTD",
+          "move_pct": 1.16,
+          "dollar_change": 1.08,
+          "position_size": 92.74,
+          "actual_rank": 158,
+          "total_ranked": 476,
+          "signals": {
+            "accumulation": 0.076,
+            "sector_momentum_pct": 0.51,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.46
+          },
+          "postmortem": "Modest gain (+1.16%) but didn't reach the win floor \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. Ranked #158 of 476 stocks tracked that day."
+        }
+      ],
+      "hit_rate": 0.0417,
+      "total_hits": 1,
+      "total_predictions": 24,
+      "days_tracked": 8,
+      "prices_last_updated": "09:45 ET"
     }
   ]
 }

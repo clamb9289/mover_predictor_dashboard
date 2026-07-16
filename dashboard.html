@@ -90,6 +90,11 @@
   .explainer-toggle:hover { text-decoration: underline; }
   .explainer-box { display: none; font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
   .explainer-box.open { display: block; }
+  .why-not-cell { white-space: normal; max-width: 150px; }
+  .why-not-toggle { font-size: 11px; color: var(--accent); cursor: pointer; user-select: none; }
+  .why-not-toggle:hover { text-decoration: underline; }
+  .why-not-text { display: none; font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 4px; white-space: normal; }
+  .why-not-text.open { display: block; }
   .archive-grid-header, .archive-row-main {
     display: grid;
     grid-template-columns: 20px minmax(0, 1.5fr) minmax(0, 3fr) minmax(0, 1fr) minmax(0, 3fr);
@@ -266,6 +271,7 @@
   <div class="tab" onclick="showTab('backtest')">Backtest</div>
   <div class="tab" onclick="showTab('modelreview')">Model Review<span id="model-review-badge" class="tab-badge" style="display:none"></span></div>
   <div class="tab" onclick="showTab('scanners')">Scanners</div>
+  <div class="tab" onclick="showTab('tax')">Tax</div>
   <div class="tab" onclick="showTab('model')">The Model</div>
 </div>
 
@@ -273,10 +279,14 @@
 
   <div id="tab-today" class="panel active">
     <div class="stats-row">
-      <div class="stat-box"><div class="stat-label">Hit Rate</div><div class="stat-value neutral" id="s-hitrate">—</div></div>
+      <div class="stat-box" title="% of picks that landed in that day's actual top-3 real gainers — a prediction-accuracy metric, not a trading outcome"><div class="stat-label">Hit Rate (Top-3 Match)</div><div class="stat-value neutral" id="s-hitrate">—</div></div>
+      <div class="stat-box" title="% of bought positions sold at a price above what we paid — an actual trading outcome, across every real exit"><div class="stat-label">Win Rate (Profitable Exits)</div><div class="stat-value neutral" id="s-winrate">—</div></div>
       <div class="stat-box"><div class="stat-label">Days Tracked</div><div class="stat-value neutral" id="s-days">—</div></div>
-      <div class="stat-box"><div class="stat-label">Total Hits</div><div class="stat-value neutral" id="s-hits">—</div></div>
+      <div class="stat-box" title="Picks that landed in that day's actual top-3 real gainers"><div class="stat-label">Total Hits</div><div class="stat-value neutral" id="s-hits">—</div></div>
+      <div class="stat-box" title="Positions sold at a price above what we paid"><div class="stat-label">Total Wins</div><div class="stat-value neutral" id="s-wins">—</div></div>
       <div class="stat-box"><div class="stat-label">Predictions Made</div><div class="stat-value neutral" id="s-preds">—</div></div>
+      <div class="stat-box" title="Combined $ P/L of today's positions that have already exited — updates as positions close"><div class="stat-label">Today's Performance</div><div class="stat-value neutral" id="s-today-pnl">—</div></div>
+      <div class="stat-box" title="Average % return across today's already-exited positions (equal-weighted, matching the roughly equal $ notional per position)"><div class="stat-label">Today's Performance %</div><div class="stat-value neutral" id="s-today-pnl-pct">—</div></div>
     </div>
     <div class="card">
       <div class="card-title">Today's Top 3 Picks <span id="live-spinner" style="display:none" class="spinning">↻</span></div>
@@ -285,15 +295,17 @@
       <p class="updated-at" id="prices-updated"></p>
     </div>
     <div class="card" id="bench-card" style="display:none">
-      <div class="card-title">Also Considered — Ranks #4\u2013#8</div>
+      <div class="card-title">Also Considered — Ranks #4–#8</div>
       <div class="gainer-label">The rest of today's ranked candidate pool. Only the top 3 get traded — these are here for transparency, tracked live the same way.</div>
-      <table>
-        <thead><tr>
-          <th>#</th><th>Ticker</th><th>Sector</th><th>Score</th>
-          <th>Entry</th><th>Live</th><th>Change</th><th>Why not selected</th>
-        </tr></thead>
-        <tbody id="bench-body"></tbody>
-      </table>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>#</th><th>Ticker</th><th>Sector</th><th>Score</th>
+            <th>Entry</th><th>Live</th><th>Change</th><th>Why not selected</th>
+          </tr></thead>
+          <tbody id="bench-body"></tbody>
+        </table>
+      </div>
     </div>
   </div>
 
@@ -426,6 +438,32 @@
     </div>
   </div>
 
+  <div id="tab-tax" class="panel">
+    <div class="card">
+      <div class="card-title">Tax Tracker</div>
+      <div class="gainer-label">Every closed trade is short-term (never held overnight), estimated at a flat 30% rate. This is a rough running estimate for your own planning, not tax advice — same P&amp;L data already shown per-trade elsewhere on this dashboard.</div>
+    </div>
+    <div class="stats-row">
+      <div class="stat-box"><div class="stat-label">Net P&amp;L</div><div class="stat-value neutral" id="tax-net-pnl">—</div></div>
+      <div class="stat-box"><div class="stat-label">Total Gains</div><div class="stat-value neutral" id="tax-gains">—</div></div>
+      <div class="stat-box"><div class="stat-label">Total Losses</div><div class="stat-value neutral" id="tax-losses">—</div></div>
+      <div class="stat-box" title="Estimated tax owed on net gains at a flat 30% short-term rate, after netting out losses"><div class="stat-label">Est. Tax Liability</div><div class="stat-value neutral" id="tax-liability">—</div></div>
+      <div class="stat-box" title="30% of every winning trade, set aside as it happens — does not get reduced by later losses the way Est. Tax Liability does"><div class="stat-label">Set Aside</div><div class="stat-value neutral" id="tax-set-aside">—</div></div>
+      <div class="stat-box"><div class="stat-label">Trades Closed</div><div class="stat-value neutral" id="tax-trade-count">—</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Closed Trades</div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>Date</th><th>Ticker</th><th>Shares</th><th>Buy Price</th><th>Sell Price</th><th>P&amp;L</th><th>Reason</th>
+          </tr></thead>
+          <tbody id="tax-trades-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
   <div id="tab-model" class="panel">
     <div class="card">
       <div class="card-title">How the Model Works — v2</div>
@@ -477,12 +515,12 @@
           <div class="rule"><div class="rule-icon">⛔</div><div class="rule-text"><strong>Opening-move filter</strong> — at buy time, a pick already down 5%+ from today's open is skipped rather than bought (still breaking down, not just normal early noise). Backtesting across our own picks showed win rates hold up fine on shallower drops and only turn bad past this depth (5%+ drops: 40% win rate), so the threshold sits there rather than shallower. A bounce-off-low override was also tested and dropped — it showed no consistent effect across any test.</div></div>
           <div class="rule"><div class="rule-icon">📈</div><div class="rule-text"><strong>Opening-gap filter</strong> — a pick that's already gapped up 1%+ from the prior close its own signals were scored on is skipped. Traced from a real trade (NEM, 2026-07-14: scored off a $93.10 close, opened at $97.81, faded back to ~$94.80 by afternoon) and confirmed across 612 historical picks — gaps of 1%+ showed a -0.38% average return and 35% win rate vs. +0.47%/51% below that threshold. This catches a different failure mode than the opening-move filter above: a move that already happened before today's open, which none of the scoring signals (based on prior daily bars) could see.</div></div>
           <div class="rule"><div class="rule-icon">⏱</div><div class="rule-text"><strong>Monitor every 5 minutes</strong> from 9:35am to 3:55pm ET.</div></div>
-          <div class="rule"><div class="rule-icon">🟢</div><div class="rule-text"><strong>Staircase trailing stop</strong> — the floor steps up as the stock climbs. Hit +3% → floor locks at +3%. Hit +5% → floor steps to +5%. Hit +7% → +7%. Hit +10% → +10%. Hit +15% → +15%. Beyond +15%, the floor trails dynamically 2% below the all-time intraday peak. If the stock falls back below the active floor at any 15-min check, it's sold to lock in that gain.</div></div>
+          <div class="rule"><div class="rule-icon">🟢</div><div class="rule-text"><strong>Staircase trailing stop</strong> — the floor steps up as the stock climbs. Hit +1% → floor locks at +0.5% (a smaller first step, deliberately asymmetric — locks in a small win once momentum shows up without giving the floor right back to ordinary noise sitting at exactly +1%). Hit +3% → +3%. Hit +5% → +5%. Hit +7% → +7%. Hit +10% → +10%. Hit +15% → +15%. Beyond +15%, the floor trails dynamically 2% below the all-time intraday peak. If the stock falls back below the active floor at any 5-min check, it's sold to lock in that gain — the active floor is shown live on each pick's card.</div></div>
           <div class="rule"><div class="rule-icon">🚀</div><div class="rule-text"><strong>No upside cap</strong> — stocks that keep running are held as long as they stay above their active floor level.</div></div>
           <div class="rule"><div class="rule-icon">🔴</div><div class="rule-text"><strong>Hard stop at -3%</strong> — position sold immediately to cap losses.</div></div>
           <div class="rule"><div class="rule-icon">🔔</div><div class="rule-text"><strong>End-of-day close at 3:55pm ET</strong> — all remaining positions sold before market close.</div></div>
-          <div class="rule"><div class="rule-icon">🛡</div><div class="rule-text"><strong>Daily loss limit: 5%</strong> — bot pauses for the rest of the day if hit.</div></div>
-          <div class="rule"><div class="rule-icon">⛔</div><div class="rule-text"><strong>Total drawdown shutoff: 15%</strong> — bot disables itself permanently until manually re-enabled.</div></div>
+          <div class="rule"><div class="rule-icon">🛡</div><div class="rule-text"><strong>Daily loss limit: 5%</strong> — any open positions are liquidated immediately and the bot pauses for the rest of the day if hit (found 2026-07-15: it used to only pause new trades, leaving already-open positions unmonitored for the rest of the day — fixed to liquidate first).</div></div>
+          <div class="rule"><div class="rule-icon">⛔</div><div class="rule-text"><strong>Total drawdown shutoff: 15%</strong> — any open positions are liquidated immediately, then the bot disables itself permanently until manually re-enabled.</div></div>
           <div class="rule"><div class="rule-icon">📅</div><div class="rule-text"><strong>No trades on bearish market days</strong> — if SPY is down more than 0.5% from prior close, no positions are opened that day.</div></div>
           <div class="rule"><div class="rule-icon">📊</div><div class="rule-text"><strong>Earnings blackout</strong> — stocks with earnings in the next 3 days are never picked regardless of their score.</div></div>
         </div>
@@ -504,6 +542,7 @@ const MODEL_REVIEW_SEEN_KEY = "model_review_last_seen";
 const INTRADAY_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/intraday_scan.json";
 const GAP_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/gap_scan.json";
 const MARKET_HOLIDAYS_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/market_holidays.json";
+const TAX_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/tax_liability.json";
 const REFRESH_INTERVAL = 60;
 
 let perfData = null;
@@ -517,7 +556,7 @@ let chartInstance = null;
 const STOCK_COLORS = ['#5b7fff', '#34d399', '#fbbf24', '#f87171', '#a78bfa', '#22d3ee', '#fb923c'];
 
 function showTab(name) {
-  const tabNames = ['today','yesterday','history','backtest','modelreview','scanners','model'];
+  const tabNames = ['today','yesterday','history','backtest','modelreview','scanners','tax','model'];
   document.querySelectorAll('.tab').forEach((t,i) => {
     t.classList.toggle('active', tabNames[i] === name);
   });
@@ -527,6 +566,7 @@ function showTab(name) {
   if (name === 'backtest') loadBacktestResults();
   if (name === 'modelreview') loadModelReview();
   if (name === 'scanners') loadScanners();
+  if (name === 'tax') loadTaxData();
 }
 
 function fmt(n, decimals=2) {
@@ -624,6 +664,54 @@ function render(data) {
     document.getElementById('s-preds').textContent = latest.total_predictions;
   }
 
+  // Win rate / total wins — a real trading-outcome metric (any position
+  // actually sold above what we paid), distinct from hit_rate above (which
+  // only measures whether a pick landed in that day's real top-3 gainers).
+  // Computed client-side across every day's exited positions (top-3 +
+  // substitutes) since nothing server-side tracks this cumulatively yet.
+  const allExited = days.flatMap(d => d.predictions || []).filter(p => p.paper_exit_price != null);
+  const wins = allExited.filter(p => (p.paper_exit_pct ?? 0) > 0).length;
+  const wrEl = document.getElementById('s-winrate');
+  if (allExited.length) {
+    const winRate = wins / allExited.length;
+    wrEl.textContent = (winRate * 100).toFixed(0) + '%';
+    wrEl.className = 'stat-value ' + (winRate > 0.5 ? 'pos' : winRate > 0 ? 'warn' : 'neg');
+  } else {
+    wrEl.textContent = '—';
+    wrEl.className = 'stat-value neutral';
+  }
+  document.getElementById('s-wins').textContent = allExited.length ? wins : '—';
+
+  // Today's overall performance — combined $ of only the positions that
+  // have actually exited so far today; stays "—" until at least one has,
+  // rather than showing a misleading $0.00.
+  const todayExited = (latest?.predictions || []).filter(p => p.paper_exit_price != null && p.paper_exit_dollar != null);
+  const pnlEl = document.getElementById('s-today-pnl');
+  const pnlPctEl = document.getElementById('s-today-pnl-pct');
+  if (todayExited.length) {
+    const todayTotal = todayExited.reduce((sum, p) => sum + p.paper_exit_dollar, 0);
+    pnlEl.textContent = fmtDollar(todayTotal);
+    pnlEl.className = 'stat-value ' + (todayTotal > 0 ? 'pos' : todayTotal < 0 ? 'neg' : 'neutral');
+
+    // Equal-weighted average of each exited position's own % return — a
+    // fair proxy for the dollar-weighted total since positions are sized
+    // to roughly equal $ notional (buying_power / NUM_POSITIONS).
+    const pctValues = todayExited.map(p => p.paper_exit_pct).filter(v => v != null);
+    if (pctValues.length) {
+      const todayPctAvg = pctValues.reduce((sum, v) => sum + v, 0) / pctValues.length;
+      pnlPctEl.textContent = fmt(todayPctAvg);
+      pnlPctEl.className = 'stat-value ' + (todayPctAvg > 0 ? 'pos' : todayPctAvg < 0 ? 'neg' : 'neutral');
+    } else {
+      pnlPctEl.textContent = '—';
+      pnlPctEl.className = 'stat-value neutral';
+    }
+  } else {
+    pnlEl.textContent = '—';
+    pnlEl.className = 'stat-value neutral';
+    pnlPctEl.textContent = '—';
+    pnlPctEl.className = 'stat-value neutral';
+  }
+
   if (isStale) {
     renderClosedMarket(closedInfo.reason);
     document.getElementById('bench-card').style.display = 'none';
@@ -676,8 +764,11 @@ function buildPickCards(predictions, idPrefix) {
     } else if (p.paper_exit_reason) {
       badges += `<div class="exited-badge">⚪ Exited — ${p.paper_exit_reason}</div>`;
     } else if (pnlPct != null) {
-      if (pnlPct >= 3) badges += `<div class="win-floor-badge">🟢 Win floor active</div>`;
-      else if (pnlPct <= -5) badges += `<div class="stop-badge">🔴 Stop triggered</div>`;
+      if (p.paper_current_floor_pct != null) {
+        badges += `<div class="win-floor-badge">🟢 Floor locked at ${fmt(p.paper_current_floor_pct * 100, 1)} — walks away with at least this</div>`;
+      } else if (pnlPct <= -3) {
+        badges += `<div class="stop-badge">🔴 Stop triggered</div>`;
+      }
     }
     if (isSubstitute) {
       badges += `<div class="exited-badge">🔄 Substitute pick — ${p.substitute_note || 'bought from the candidate bench'}</div>`;
@@ -730,7 +821,7 @@ function buildPickCards(predictions, idPrefix) {
 
       ${p.headline ? `<div class="pick-headline">📰 ${p.headline}</div>` : ''}
       ${!isSkipped && isExited && priceUpdated ? `<div class="updated-at">Exited at ${priceUpdated} — price locked, no longer live</div>` : ''}
-      ${!isSkipped && !isExited && priceUpdated ? `<div class="updated-at">Price as of ${priceUpdated} (updates every 15 min during market hours)</div>` : ''}
+      ${!isSkipped && !isExited && priceUpdated ? `<div class="updated-at">Price as of ${priceUpdated} (updates every 5 min during market hours)</div>` : ''}
       ${!isSkipped && !isExited && !priceUpdated ? '<div class="updated-at" style="color:var(--muted)">Live price updates during market hours</div>' : ''}
       ${badges}
 
@@ -825,9 +916,10 @@ function renderBenchCandidates(day) {
   }
   card.style.display = '';
 
-  tbody.innerHTML = rows.map(b => {
+  tbody.innerHTML = rows.map((b, i) => {
     const pct = b.live_pct ?? null;
     const mc = moveClass(pct);
+    const whyId = `bench-why-${i}`;
     return `<tr>
       <td style="color:var(--muted)">#${b.rank}</td>
       <td class="td-ticker">${b.ticker}</td>
@@ -836,7 +928,10 @@ function renderBenchCandidates(day) {
       <td style="color:var(--muted)">${b.entry_price ? fmtPrice(b.entry_price) : '—'}</td>
       <td style="color:var(--muted)">${b.live_price ? fmtPrice(b.live_price) : '—'}</td>
       <td class="${mc}">${fmt(pct)}</td>
-      <td style="color:var(--muted);font-size:12px">Ranked #${b.rank} — outside the top 3 selected for trading</td>
+      <td class="why-not-cell">
+        <span class="why-not-toggle" onclick="toggleExplainer('${whyId}')">Details ▾</span>
+        <div class="why-not-text" id="${whyId}">Ranked #${b.rank} — outside the top 3 selected for trading</div>
+      </td>
     </tr>`;
   }).join('');
 }
@@ -1461,6 +1556,50 @@ async function loadScanners() {
   } catch (e) {
     gGenEl.textContent = '';
     gBodyEl.innerHTML = `<tr><td colspan="4" class="error-msg">No gap scan yet.<br><small>${e.message}</small></td></tr>`;
+  }
+}
+
+async function loadTaxData() {
+  const netEl = document.getElementById('tax-net-pnl');
+  const gainsEl = document.getElementById('tax-gains');
+  const lossesEl = document.getElementById('tax-losses');
+  const liabilityEl = document.getElementById('tax-liability');
+  const setAsideEl = document.getElementById('tax-set-aside');
+  const countEl = document.getElementById('tax-trade-count');
+  const bodyEl = document.getElementById('tax-trades-body');
+
+  try {
+    const res = await fetch(TAX_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+
+    netEl.textContent = fmtDollar(data.net_pnl);
+    netEl.className = 'stat-value ' + (data.net_pnl > 0 ? 'pos' : data.net_pnl < 0 ? 'neg' : 'neutral');
+    gainsEl.textContent = fmtDollar(data.total_gains);
+    gainsEl.className = 'stat-value pos';
+    lossesEl.textContent = fmtDollar(-Math.abs(data.total_losses));
+    lossesEl.className = 'stat-value neg';
+    liabilityEl.textContent = fmtDollar(data.tax_liability);
+    setAsideEl.textContent = fmtDollar(data.set_aside);
+    countEl.textContent = data.trades?.length ?? 0;
+
+    const trades = (data.trades || []).slice().sort((a, b) => b.date.localeCompare(a.date));
+    if (!trades.length) {
+      bodyEl.innerHTML = '<tr><td colspan="7" style="color:var(--muted)">No closed trades yet.</td></tr>';
+    } else {
+      bodyEl.innerHTML = trades.map(t => `<tr>
+        <td style="color:var(--muted)">${t.date}</td>
+        <td class="td-ticker">${t.ticker}</td>
+        <td style="color:var(--muted)">${t.shares.toFixed(3)}</td>
+        <td style="color:var(--muted)">${fmtPrice(t.buy_price)}</td>
+        <td style="color:var(--muted)">${fmtPrice(t.sell_price)}</td>
+        <td class="${t.pnl > 0 ? 'td-pos' : t.pnl < 0 ? 'td-neg' : ''}">${fmtDollar(t.pnl)}</td>
+        <td style="color:var(--muted);font-size:12px">${t.reason || '—'}</td>
+      </tr>`).join('');
+    }
+  } catch (e) {
+    netEl.textContent = gainsEl.textContent = lossesEl.textContent = liabilityEl.textContent = setAsideEl.textContent = countEl.textContent = '—';
+    bodyEl.innerHTML = `<tr><td colspan="7" class="error-msg">Could not load tax data.<br><small>${e.message}</small></td></tr>`;
   }
 }
 
