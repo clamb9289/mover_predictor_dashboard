@@ -295,8 +295,8 @@
       <p class="updated-at" id="prices-updated"></p>
     </div>
     <div class="card" id="bench-card" style="display:none">
-      <div class="card-title">Also Considered — Ranks #4–#8</div>
-      <div class="gainer-label">The rest of today's ranked candidate pool. Only the top 3 get traded — these are here for transparency, tracked live the same way.</div>
+      <div class="card-title">Also Considered</div>
+      <div class="gainer-label">The rest of today's ranked candidate pool, plus any top-3 pick that got skipped (shown with its original pick #, opacity dimmed) — tracked here for transparency.</div>
       <div class="table-wrap">
         <table>
           <thead><tr>
@@ -602,6 +602,15 @@ function rankBadge(actualRank, totalRanked, format = 'short') {
   return `<span style="color:var(--muted)">${rankText}</span>`;
 }
 
+// Colors a "our pick" ticker gold/silver/bronze when it actually landed in
+// the real top-3 movers that day — leaves it blank (default text color)
+// otherwise, e.g. for entries in the "Actual Top Movers" column, which are
+// top movers by definition and don't need the extra signal.
+function medalTickerStyle(actualRank) {
+  const colors = { 1: 'var(--gold)', 2: 'var(--silver)', 3: 'var(--bronze)' };
+  return colors[actualRank] ? ` style="color:${colors[actualRank]}"` : '';
+}
+
 function pnlClass(n) {
   if (n == null) return 'flat';
   return n > 0 ? 'pos' : n < 0 ? 'neg' : 'flat';
@@ -738,7 +747,15 @@ function renderTodayPicks(day) {
   }
 
   dateEl.textContent = 'Picks generated for session: ' + day.date;
-  el.innerHTML = buildPickCards(day.predictions, 'explainer');
+  // Skipped picks move down into the "Also Considered" table (see
+  // renderBenchCandidates) so this grid only shows what was actually
+  // bought, keeping the top of the page compact.
+  const activePicks = day.predictions.filter(p => !p.skipped_reason);
+  if (!activePicks.length) {
+    el.innerHTML = '<div class="loading-msg">All of today\'s top picks were skipped — see Also Considered below.</div>';
+    return;
+  }
+  el.innerHTML = buildPickCards(activePicks, 'explainer');
 }
 
 function buildPickCards(predictions, idPrefix) {
@@ -786,7 +803,7 @@ function buildPickCards(predictions, idPrefix) {
     return `<div class="pick-card"${isSkipped ? ' style="opacity:0.55"' : ''}>
       <div class="pick-card-top">
         <div>
-          <div class="pick-rank">${rankLabels[i] || '#' + (p.rank ?? (i + 1))}</div>
+          <div class="pick-rank">${rankLabels[(p.rank ?? (i + 1)) - 1] || '#' + (p.rank ?? (i + 1))}</div>
           <div class="pick-ticker"><a href="https://finance.yahoo.com/quote/${p.ticker}" target="_blank">${p.ticker} ↗</a></div>
           ${p.sector ? `<div style="font-size:11px;color:var(--muted);margin-top:2px">${p.sector}</div>` : ''}
         </div>
@@ -907,8 +924,15 @@ function renderBenchCandidates(day) {
   // A bench candidate that got substituted into the actual top-3 (opening-move
   // filter swapped it in) will already appear in `predictions` — don't show
   // it twice.
-  const activeTickers = new Set((day?.predictions || []).map(p => p.ticker));
-  const rows = bench.filter(b => !activeTickers.has(b.ticker));
+  const activeTickers = new Set((day?.predictions || []).filter(p => !p.skipped_reason).map(p => p.ticker));
+
+  // Skipped top-3 picks move down into this table too (see renderTodayPicks),
+  // keeping their original pick # so it's clear they were a top pick that
+  // got skipped, not a bench candidate that was never in contention.
+  const skippedPicks = (day?.predictions || []).filter(p => p.skipped_reason && !activeTickers.has(p.ticker));
+
+  const rows = [...skippedPicks, ...bench.filter(b => !activeTickers.has(b.ticker))]
+    .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
   if (!rows.length) {
     card.style.display = 'none';
@@ -917,20 +941,24 @@ function renderBenchCandidates(day) {
   card.style.display = '';
 
   tbody.innerHTML = rows.map((b, i) => {
+    const isSkippedPick = !!b.skipped_reason;
     const pct = b.live_pct ?? null;
     const mc = moveClass(pct);
     const whyId = `bench-why-${i}`;
-    return `<tr>
+    const whyText = isSkippedPick
+      ? `⛔ Skipped — ${b.skipped_reason}`
+      : `Ranked #${b.rank} — outside the top 3 selected for trading`;
+    return `<tr${isSkippedPick ? ' style="opacity:0.7"' : ''}>
       <td style="color:var(--muted)">#${b.rank}</td>
       <td class="td-ticker">${b.ticker}</td>
       <td style="color:var(--muted);font-size:12px">${b.sector || '—'}</td>
       <td style="color:var(--muted)">${b.score != null ? b.score.toFixed(3) : '—'}</td>
       <td style="color:var(--muted)">${b.entry_price ? fmtPrice(b.entry_price) : '—'}</td>
-      <td style="color:var(--muted)">${b.live_price ? fmtPrice(b.live_price) : '—'}</td>
-      <td class="${mc}">${fmt(pct)}</td>
+      <td style="color:var(--muted)">${isSkippedPick ? 'Not bought' : (b.live_price ? fmtPrice(b.live_price) : '—')}</td>
+      <td class="${isSkippedPick ? 'td-flat' : mc}">${isSkippedPick ? '—' : fmt(pct)}</td>
       <td class="why-not-cell">
         <span class="why-not-toggle" onclick="toggleExplainer('${whyId}')">Details ▾</span>
-        <div class="why-not-text" id="${whyId}">Ranked #${b.rank} — outside the top 3 selected for trading</div>
+        <div class="why-not-text" id="${whyId}">${whyText}</div>
       </td>
     </tr>`;
   }).join('');
@@ -972,7 +1000,7 @@ function renderYesterday(latest) {
       <div class="yest-top-row">
         <div class="yest-move ${cls}">${m == null ? '—' : fmt(m)}</div>
         <div class="yest-info">
-          <div class="yest-ticker">${p.ticker}</div>
+          <div class="yest-ticker"${medalTickerStyle(p.actual_rank)}>${p.ticker}</div>
           <div class="yest-rank">Our Rank #${p.rank} pick</div>
         </div>
       </div>
@@ -1027,7 +1055,7 @@ function renderArchive(days) {
     rows.push(`<div class="archive-row-main" onclick="toggleArchiveRow('${rowId}')">
       <div style="color:var(--muted)">▸</div>
       <div style="font-weight:500">${labelDate}</div>
-      <div>${picks.map(p => p.ticker).join(', ') || '—'}</div>
+      <div>${picks.map(p => `<span${medalTickerStyle(p.actual_rank)}>${p.ticker}</span>`).join(', ') || '—'}</div>
       <div class="${mc}">${fmt(avgMove)}</div>
       <div>${winners.map(w => w.ticker).join(', ') || '—'}</div>
     </div>
@@ -1039,7 +1067,7 @@ function renderArchive(days) {
             ${picks.map(p => `
               <div class="archive-pick">
                 <div class="archive-pick-head">
-                  <strong>${p.ticker}</strong>
+                  <strong${medalTickerStyle(p.actual_rank)}>${p.ticker}</strong>
                   <span class="${moveClass(p.move_pct)}">${fmt(p.move_pct)}</span>
                 </div>
                 ${p.postmortem ? `<div style="color:var(--muted)">${p.postmortem}</div>` : ''}
@@ -1112,7 +1140,7 @@ function renderHistory(days) {
       rows.push(`<tr>
         ${i === 0 ? `<td rowspan="${preds.length}" style="font-weight:500">${day.date}</td>` : ''}
         <td style="color:var(--muted)">#${p.rank}</td>
-        <td class="td-ticker">${p.ticker}</td>
+        <td class="td-ticker"${medalTickerStyle(a?.actual_rank)}>${p.ticker}</td>
         <td style="color:var(--muted)">${p.entry_price ? fmtPrice(p.entry_price) : '—'}</td>
         <td style="color:var(--muted)">${exitPrice ? fmtPrice(exitPrice) : '—'}</td>
         <td style="color:var(--muted);font-size:11px">${exitReason}</td>
