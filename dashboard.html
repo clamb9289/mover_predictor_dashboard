@@ -85,6 +85,7 @@
   .win-floor-badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; background: var(--green-bg); color: var(--green); border: 1px solid rgba(52,211,153,0.2); margin-top: 6px; margin-right: 6px; }
   .stop-badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; background: var(--red-bg); color: var(--red); border: 1px solid rgba(248,113,113,0.2); margin-top: 6px; margin-right: 6px; }
   .exited-badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; background: var(--surface); color: var(--muted); border: 1px solid var(--border); margin-top: 6px; margin-right: 6px; }
+  .skip-badge { display: inline-block; font-size: 11px; padding: 3px 9px; border-radius: 10px; background: var(--red-bg); color: var(--red); border: 1px solid rgba(248,113,113,0.25); }
 
   .explainer-toggle { font-size: 11px; color: var(--accent); cursor: pointer; margin-top: 10px; user-select: none; display: inline-block; }
   .explainer-toggle:hover { text-decoration: underline; }
@@ -1160,24 +1161,34 @@ function renderArchive(days) {
   days.forEach((day, i) => {
     const picks = day.prior_predictions_actual || [];
     const winners = day.actual_top3 || [];
-    if (!picks.length && !winners.length) return;
+    const labelDayEntry = days[i + 1];
+    if (!picks.length && !winners.length && !labelDayEntry?.trading_skipped) return;
 
     // The label date is when these picks were actually MADE, not when this
     // analysis was computed — that's the chronologically-older adjacent
     // entry in this descending-sorted array (see the History tab's identical
     // day-offset logic for why prior_predictions_actual lives one entry away
     // from the date it describes).
-    const labelDate = days[i + 1]?.date || `${day.date} (prior session)`;
+    const labelDate = labelDayEntry?.date || `${day.date} (prior session)`;
+    // trading_skipped lives on the entry dated labelDate itself (the day
+    // being described), not on `day` (one entry newer) -- distinguishes a
+    // deliberate bearish-regime skip from an ordinary empty-picks gap so it
+    // doesn't just render as an unexplained "—", same confusion this was
+    // built to fix on the Today's Picks tab (see predictor.py 2026-07-17).
+    const wasSkipped = labelDayEntry?.trading_skipped === true;
 
     const moves = picks.map(p => p.move_pct).filter(m => m != null);
     const avgMove = moves.length ? moves.reduce((a, b) => a + b, 0) / moves.length : null;
     const mc = moveClass(avgMove);
     const rowId = `archive-detail-${i}`;
+    const picksCell = wasSkipped
+      ? `<span class="skip-badge" title="${(labelDayEntry.regime || '').replace(/"/g, '&quot;')}">⛔ Skipped — bearish regime</span>`
+      : (picks.map(p => `<span${medalTickerStyle(p.actual_rank)}>${p.ticker}</span>`).join(', ') || '—');
 
     rows.push(`<div class="archive-row-main" onclick="toggleArchiveRow('${rowId}')">
       <div style="color:var(--muted)">▸</div>
       <div style="font-weight:500">${labelDate}</div>
-      <div>${picks.map(p => `<span${medalTickerStyle(p.actual_rank)}>${p.ticker}</span>`).join(', ') || '—'}</div>
+      <div>${picksCell}</div>
       <div class="${mc}">${fmt(avgMove)}</div>
       <div>${winners.map(w => w.ticker).join(', ') || '—'}</div>
     </div>
@@ -1186,7 +1197,7 @@ function renderArchive(days) {
         <div class="archive-cols">
           <div>
             <div class="archive-col-title">Our Picks</div>
-            ${picks.map(p => `
+            ${wasSkipped ? `<div style="color:var(--muted)">⛔ No trades — ${labelDayEntry.regime || 'bearish market regime'}</div>` : (picks.map(p => `
               <div class="archive-pick">
                 <div class="archive-pick-head">
                   <strong${medalTickerStyle(p.actual_rank)}>${p.ticker}</strong>
@@ -1194,7 +1205,7 @@ function renderArchive(days) {
                 </div>
                 ${p.postmortem ? `<div style="color:var(--muted)">${p.postmortem}</div>` : ''}
               </div>
-            `).join('') || '<div style="color:var(--muted)">No pick data for this day.</div>'}
+            `).join('') || '<div style="color:var(--muted)">No pick data for this day.</div>')}
           </div>
           <div>
             <div class="archive-col-title">Actual Top Movers</div>
@@ -1244,7 +1255,19 @@ function renderHistory(days) {
     const actuals = days[dayIdx - 1]?.prior_predictions_actual || [];
     const actualMap = {};
     actuals.forEach(a => actualMap[a.ticker] = a);
-    if (!preds.length) return;
+    if (!preds.length) {
+      // A day the regime check skipped left zero predictions -- show it as
+      // a real record instead of silently vanishing (same reason it's
+      // handled specially in renderArchive above).
+      if (day.trading_skipped) {
+        rows.push(`<tr>
+          <td style="font-weight:500">${day.date}</td>
+          <td colspan="10" style="color:var(--muted)"><span class="skip-badge">⛔ No trades</span> — ${day.regime || 'bearish market regime'}</td>
+          <td>—</td>
+        </tr>`);
+      }
+      return;
+    }
 
     preds.forEach((p, i) => {
       const a = actualMap[p.ticker];
