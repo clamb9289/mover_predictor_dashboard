@@ -1053,9 +1053,34 @@ function toggleArchiveRow(id) {
 // across ALL loaded days, so the quick-glance summary is actually the
 // many-day aggregate that per-day text says to wait for, rather than just
 // concatenating one noisy day's sentence with another's.
+//
+// Each check below is independently gated on its own sample size and only
+// contributes bullets once it clears that bar -- one check having enough
+// data doesn't force another (thinner) one to show early. The box only
+// falls back to "not enough data" if NOTHING is ready yet.
 const AGGREGATE_MIN_SAMPLE = 15;
+// Market-regime correlation needs one datapoint per DAY (not per pick), so
+// it naturally builds much slower than the signal checks above -- N=20
+// mirrors model_review.py's existing live-signal-correlation gate, same
+// "don't present noise as signal on a thin sample" discipline.
+const REGIME_MIN_DAYS = 20;
+const REGIME_CORRELATION_THRESHOLD = 0.3;
 
-function computeAggregateInsight(days) {
+function pearsonCorrelation(xs, ys) {
+  const n = xs.length;
+  if (n < 2) return null;
+  const meanX = xs.reduce((a, b) => a + b, 0) / n;
+  const meanY = ys.reduce((a, b) => a + b, 0) / n;
+  let cov = 0, varX = 0, varY = 0;
+  for (let i = 0; i < n; i++) {
+    const dx = xs[i] - meanX, dy = ys[i] - meanY;
+    cov += dx * dy; varX += dx * dx; varY += dy * dy;
+  }
+  if (varX === 0 || varY === 0) return null;
+  return cov / Math.sqrt(varX * varY);
+}
+
+function computeSignalComparisonBullets(days) {
   const ourSignals = [];
   const winnerSignals = [];
   let totalWinners = 0;
@@ -1088,7 +1113,7 @@ function computeAggregateInsight(days) {
   });
 
   if (winnerSignals.length < AGGREGATE_MIN_SAMPLE || ourSignals.length < AGGREGATE_MIN_SAMPLE) {
-    return { ready: false, n: winnerSignals.length };
+    return [];
   }
 
   const avg = (key, rows) => {
@@ -1132,20 +1157,54 @@ function computeAggregateInsight(days) {
     bullets.push(`No consistent directional signal gap found across ${winnerSignals.length} pooled actual top movers — current signal weighting looks reasonably aligned.`);
   }
 
-  return { ready: true, n: winnerSignals.length, bullets };
+  return bullets;
+}
+
+function computeRegimeCorrelationBullets(days) {
+  // spy_regime_pct started being tracked 2026-07-17 (every day, traded or
+  // not -- see predictor.py) specifically so a real pattern here could
+  // surface once there's enough data, after the -0.5% threshold turned out
+  // to have no empirical backing (regime_threshold_calibration.py: 438
+  // real outcomes across 44 days showed no cliff, if anything the reverse
+  // -- mean reversion, same as the opening-move filter). Threshold moved to
+  // -1.5% as a conservative circuit breaker rather than removed outright,
+  // specifically so this keeps collecting real data to eventually confirm
+  // or refute that finding at a trustworthy sample size.
+  const regimeDays = days
+    .filter(d => d.spy_regime_pct != null)
+    .map(d => {
+      const exited = (d.predictions || []).filter(p => !p.skipped_reason && (p.paper_exit_pct != null || p.live_pct != null));
+      if (!exited.length) return null;
+      const avgPct = exited.reduce((s, p) => s + (p.paper_exit_pct ?? p.live_pct), 0) / exited.length;
+      return { spy: d.spy_regime_pct, outcome: avgPct };
+    })
+    .filter(Boolean);
+
+  if (regimeDays.length < REGIME_MIN_DAYS) return [];
+
+  const r = pearsonCorrelation(regimeDays.map(d => d.spy), regimeDays.map(d => d.outcome));
+  if (r == null || Math.abs(r) < REGIME_CORRELATION_THRESHOLD) return [];
+
+  const direction = r < 0
+    ? "worse SPY mornings have actually preceded BETTER days for our own picks (possible mean reversion, same pattern already found for the opening-move filter)"
+    : "worse SPY mornings have also meant worse days for our own picks -- the regime filter may be worth tightening back up";
+  return [`Across ${regimeDays.length} tracked days, SPY's morning move correlates with our own daily outcome (r=${r.toFixed(2)}) — ${direction}.`];
 }
 
 function renderAggregateInsight(days) {
   const el = document.getElementById("archive-aggregate-insight");
-  const result = computeAggregateInsight(days);
-  if (!result.ready) {
+  const bullets = [
+    ...computeSignalComparisonBullets(days),
+    ...computeRegimeCorrelationBullets(days),
+  ];
+  if (!bullets.length) {
     el.innerHTML = `<div class="aggregate-insight-box"><div class="aggregate-insight-title">📌 Aggregate Insight</div>
-      <div class="aggregate-insight-empty">Not enough pooled data yet (${result.n}/${AGGREGATE_MIN_SAMPLE} actual-top-mover signal samples) to summarize a trend across days without it just being noise.</div></div>`;
+      <div class="aggregate-insight-empty">Not enough pooled data yet to summarize a trend across days without it just being noise.</div></div>`;
     return;
   }
   el.innerHTML = `<div class="aggregate-insight-box">
-    <div class="aggregate-insight-title">📌 Top Recommended Changes — ${result.n} pooled samples across ${days.length} tracked days</div>
-    <ul>${result.bullets.map(b => `<li>${b}</li>`).join("")}</ul>
+    <div class="aggregate-insight-title">📌 Top Recommended Changes — pooled across ${days.length} tracked days</div>
+    <ul>${bullets.map(b => `<li>${b}</li>`).join("")}</ul>
   </div>`;
 }
 
