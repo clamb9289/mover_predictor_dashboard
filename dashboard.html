@@ -668,6 +668,7 @@ function render(data) {
 
   document.getElementById('header-sub').textContent = !latest ? 'No data yet'
     : isStale ? `Markets closed — last session: ${latest.date}`
+    : latest.trading_skipped ? `No trades today (${latest.date}) — bearish regime`
     : `Picks for: ${latest.date}`;
 
   if (latest) {
@@ -748,6 +749,16 @@ function render(data) {
 function renderTodayPicks(day) {
   const el = document.getElementById('today-picks');
   const dateEl = document.getElementById('today-date');
+  if (day?.trading_skipped) {
+    dateEl.textContent = '';
+    el.innerHTML = `
+      <div class="closed-market-card">
+        <div class="closed-market-emoji">📉</div>
+        <div class="closed-market-text">No trades today — bearish market regime</div>
+        <div class="closed-market-sub">${day.regime || 'SPY was down more than 0.5% from its prior close, so no positions were opened today.'}</div>
+      </div>`;
+    return;
+  }
   if (!day?.predictions?.length) {
     el.innerHTML = '<div class="loading-msg">No picks available yet for today.</div>';
     return;
