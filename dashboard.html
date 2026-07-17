@@ -481,7 +481,7 @@
       </div>
       <div class="model-section">
         <h3>Step 1 — Market Regime Check</h3>
-        <p>Before any picks are made, the model checks whether SPY (S&P 500 ETF) is down more than 0.5% from its prior close. If it is, no trades are made that day. Fighting a down market is one of the fastest ways to lose money consistently — sitting out on bad days protects capital.</p>
+        <p>Before any picks are made, the model checks whether SPY (S&P 500 ETF) is down more than 1.5% from its prior close. If it is, no trades are made that day. Fighting a down market is one of the fastest ways to lose money consistently — sitting out on bad days protects capital. (Recalibrated 2026-07-17 from an untested 0.5% — 438 real candidate outcomes across 44 trading days showed no cliff there; if anything, days that would've been skipped at 0.5% had a higher win rate. Raised to 1.5% as a still-conservative circuit breaker for genuinely extreme days rather than picking a precise number off a thin tail.)</p>
       </div>
       <div class="model-section">
         <h3>Step 2 — Universe Filter</h3>
@@ -533,7 +533,7 @@
           <div class="rule"><div class="rule-icon">🔔</div><div class="rule-text"><strong>End-of-day close at 3:55pm ET</strong> — all remaining positions sold before market close.</div></div>
           <div class="rule"><div class="rule-icon">🛡</div><div class="rule-text"><strong>Daily loss limit: 5%</strong> — any open positions are liquidated immediately and the bot pauses for the rest of the day if hit (found 2026-07-15: it used to only pause new trades, leaving already-open positions unmonitored for the rest of the day — fixed to liquidate first).</div></div>
           <div class="rule"><div class="rule-icon">⛔</div><div class="rule-text"><strong>Total drawdown shutoff: 15%</strong> — any open positions are liquidated immediately, then the bot disables itself permanently until manually re-enabled.</div></div>
-          <div class="rule"><div class="rule-icon">📅</div><div class="rule-text"><strong>No trades on bearish market days</strong> — if SPY is down more than 0.5% from prior close, no positions are opened that day.</div></div>
+          <div class="rule"><div class="rule-icon">📅</div><div class="rule-text"><strong>No trades on bearish market days</strong> — if SPY is down more than 1.5% from prior close, no positions are opened that day.</div></div>
           <div class="rule"><div class="rule-icon">📊</div><div class="rule-text"><strong>Earnings blackout</strong> — stocks with earnings in the next 3 days are never picked regardless of their score.</div></div>
         </div>
       </div>
@@ -760,7 +760,7 @@ function renderTodayPicks(day) {
       <div class="closed-market-card">
         <div class="closed-market-emoji">📉</div>
         <div class="closed-market-text">No trades today — bearish market regime</div>
-        <div class="closed-market-sub">${day.regime || 'SPY was down more than 0.5% from its prior close, so no positions were opened today.'}</div>
+        <div class="closed-market-sub">${day.regime || 'SPY was down more than 1.5% from its prior close, so no positions were opened today.'}</div>
       </div>`;
     return;
   }
