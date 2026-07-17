@@ -2208,6 +2208,237 @@
       "total_predictions": 27,
       "days_tracked": 9,
       "prices_last_updated": "15:56 ET"
+    },
+    {
+      "date": "2026-07-17",
+      "regime": "Market regime BEARISH \u2014 SPY -0.56% from prior close. Skipping today.",
+      "trading_skipped": true,
+      "top_sectors": [
+        {
+          "etf": "XLE",
+          "name": "Energy",
+          "pct": 0.54
+        },
+        {
+          "etf": "XLI",
+          "name": "Industrials",
+          "pct": 0.33
+        },
+        {
+          "etf": "XLRE",
+          "name": "Real Estate",
+          "pct": 0.2
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "MAN",
+          "pct": 32.37,
+          "signals": {
+            "accumulation": 1.136,
+            "sector_momentum_pct": 0.33,
+            "news_sentiment": 5.0,
+            "relative_strength_pct": 2.73
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 104,
+          "eligible_pool_size": 560,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "RHI",
+          "pct": 12.62,
+          "signals": {
+            "accumulation": 0.429,
+            "sector_momentum_pct": 0.33,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 10.85
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 548,
+          "eligible_pool_size": 560,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "ABT",
+          "pct": 10.71,
+          "signals": {
+            "accumulation": 1.158,
+            "sector_momentum_pct": 0.15,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -5.69
+          },
+          "our_rank": 3,
+          "eligible": true,
+          "accumulation_rank": 96,
+          "eligible_pool_size": 560,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "DXCM",
+          "pct": 7.22,
+          "signals": {
+            "accumulation": 0.767,
+            "sector_momentum_pct": 0.15,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.95
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 360,
+          "eligible_pool_size": 560,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CTAS",
+          "pct": 7.22,
+          "signals": {
+            "accumulation": 1.199,
+            "sector_momentum_pct": 0.33,
+            "news_sentiment": 9.5,
+            "relative_strength_pct": 6.44
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 75,
+          "eligible_pool_size": 560,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "IR",
+          "pct": 7.13,
+          "signals": {
+            "accumulation": 0.611,
+            "sector_momentum_pct": 0.33,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 2.84
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 489,
+          "eligible_pool_size": 560,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "REXR",
+          "pct": 7.1,
+          "signals": {
+            "accumulation": 0.8,
+            "sector_momentum_pct": 0.2,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.25
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 330,
+          "eligible_pool_size": 560,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "TNDM",
+          "pct": 6.61,
+          "signals": {
+            "accumulation": 0.761,
+            "sector_momentum_pct": 0.15,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.64
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 368,
+          "eligible_pool_size": 560,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CSGP",
+          "pct": 6.6,
+          "signals": {
+            "accumulation": 0.971,
+            "sector_momentum_pct": 0.2,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.1
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 194,
+          "eligible_pool_size": 560,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "BIIB",
+          "pct": 5.92,
+          "signals": {
+            "accumulation": 0.865,
+            "sector_momentum_pct": 0.15,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.71
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 278,
+          "eligible_pool_size": 560,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably lower sector momentum (0.23 vs our picks' 0.95) \u2014 possible signal to decrease weighting on sector momentum. Actual top movers had notably higher news sentiment (1.55 vs our picks' 0.00) \u2014 possible signal to increase weighting on news sentiment. MAN (#104 of 560), RHI (#548 of 560), DXCM (#360 of 560), CTAS (#75 of 560), IR (#489 of 560), REXR (#330 of 560), TNDM (#368 of 560), CSGP (#194 of 560), BIIB (#278 of 560) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
+      "predictions": [],
+      "bench_candidates": [],
+      "prior_predictions_actual": [
+        {
+          "rank": 2,
+          "ticker": "UNH",
+          "move_pct": -3.47,
+          "dollar_change": -3.26,
+          "position_size": 93.9,
+          "actual_rank": 288,
+          "total_ranked": 560,
+          "signals": {
+            "accumulation": 0.28,
+            "sector_momentum_pct": 1.43,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.78
+          },
+          "postmortem": "Hit the stop loss (-3.47%) despite relative strength and sector momentum \u2014 worth reviewing if relative strength keeps producing false positives. The stock itself ranked #288 of 560 tracked that day, for context."
+        },
+        {
+          "rank": 4,
+          "ticker": "KHC",
+          "move_pct": 0.31,
+          "dollar_change": 0.29,
+          "position_size": 93.9,
+          "actual_rank": 126,
+          "total_ranked": 560,
+          "signals": {
+            "accumulation": 0.059,
+            "sector_momentum_pct": 1.55,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.99
+          },
+          "postmortem": "Modest gain (+0.31%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. The stock itself ranked #126 of 560 tracked that day, for context."
+        },
+        {
+          "rank": 5,
+          "ticker": "CPB",
+          "move_pct": 0.31,
+          "dollar_change": 0.29,
+          "position_size": 93.9,
+          "actual_rank": 88,
+          "total_ranked": 560,
+          "signals": {
+            "accumulation": 0.057,
+            "sector_momentum_pct": 1.55,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.74
+          },
+          "postmortem": "Modest gain (+0.31%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. The stock itself ranked #88 of 560 tracked that day, for context."
+        }
+      ],
+      "hit_rate": 0.037,
+      "total_hits": 1,
+      "total_predictions": 27,
+      "days_tracked": 9
     }
   ]
 }
