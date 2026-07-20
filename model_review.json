@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-07-13T00:47:08.200548",
+  "generated_at": "2026-07-20T00:40:59.077489",
   "live_signal_correlation": {
-    "n": 25,
+    "n": 52,
     "signals": [
       {
         "signal": "Accumulation",
-        "n": 25,
-        "correlation": -0.06
+        "n": 52,
+        "correlation": -0.091
       },
       {
         "signal": "Sector Momentum",
-        "n": 25,
-        "correlation": -0.21
+        "n": 52,
+        "correlation": 0.021
       },
       {
         "signal": "News Sentiment",
-        "n": 25,
+        "n": 52,
         "correlation": null
       },
       {
         "signal": "Relative Strength",
-        "n": 25,
-        "correlation": -0.262
+        "n": 52,
+        "correlation": -0.122
       }
     ],
     "note": null
@@ -37,36 +37,10 @@
           "news_sentiment": 0.0,
           "relative_strength": 0.2
         },
-        "hit_rate_3pct": 0.234,
-        "avg_pick_pct": 0.665,
-        "total_pnl": 187.55,
-        "win_day_rate": 0.5638
-      },
-      {
-        "preset": "accum_heavy",
-        "weights": {
-          "accumulation": 0.6,
-          "sector_momentum": 0.2,
-          "news_sentiment": 0.0,
-          "relative_strength": 0.2
-        },
-        "hit_rate_3pct": 0.234,
-        "avg_pick_pct": 0.665,
-        "total_pnl": 187.55,
-        "win_day_rate": 0.5638
-      },
-      {
-        "preset": "no_news",
-        "weights": {
-          "accumulation": 0.5,
-          "sector_momentum": 0.25,
-          "news_sentiment": 0.0,
-          "relative_strength": 0.25
-        },
-        "hit_rate_3pct": 0.2376,
-        "avg_pick_pct": 0.5193,
-        "total_pnl": 146.45,
-        "win_day_rate": 0.5106
+        "hit_rate_3pct": 0.2212,
+        "avg_pick_pct": 0.2008,
+        "total_pnl": 68.1,
+        "win_day_rate": 0.4956
       },
       {
         "preset": "balanced",
@@ -76,10 +50,10 @@
           "news_sentiment": 0.15,
           "relative_strength": 0.25
         },
-        "hit_rate_3pct": 0.234,
-        "avg_pick_pct": 0.5161,
-        "total_pnl": 145.57,
-        "win_day_rate": 0.5426
+        "hit_rate_3pct": 0.2035,
+        "avg_pick_pct": 0.1365,
+        "total_pnl": 46.25,
+        "win_day_rate": 0.4779
       },
       {
         "preset": "accum55",
@@ -89,10 +63,23 @@
           "news_sentiment": 0.1,
           "relative_strength": 0.1
         },
-        "hit_rate_3pct": 0.227,
-        "avg_pick_pct": 0.4606,
-        "total_pnl": 129.94,
-        "win_day_rate": 0.5532
+        "hit_rate_3pct": 0.2124,
+        "avg_pick_pct": 0.0979,
+        "total_pnl": 33.18,
+        "win_day_rate": 0.4867
+      },
+      {
+        "preset": "no_news",
+        "weights": {
+          "accumulation": 0.5,
+          "sector_momentum": 0.25,
+          "news_sentiment": 0.0,
+          "relative_strength": 0.25
+        },
+        "hit_rate_3pct": 0.2153,
+        "avg_pick_pct": -0.0088,
+        "total_pnl": -2.94,
+        "win_day_rate": 0.4425
       }
     ],
     "recommendation": null
