@@ -293,8 +293,8 @@
       <div class="stat-box" title="Picks that landed in that day's actual top-3 real gainers"><div class="stat-label">Total Hits</div><div class="stat-value neutral" id="s-hits">—</div></div>
       <div class="stat-box" title="Positions sold at a price above what we paid"><div class="stat-label">Total Wins</div><div class="stat-value neutral" id="s-wins">—</div></div>
       <div class="stat-box"><div class="stat-label">Predictions Made</div><div class="stat-value neutral" id="s-preds">—</div></div>
-      <div class="stat-box" title="Combined $ P/L of today's positions that have already exited — updates as positions close"><div class="stat-label">Today's Performance</div><div class="stat-value neutral" id="s-today-pnl">—</div></div>
-      <div class="stat-box" title="Average % return across today's already-exited positions (equal-weighted, matching the roughly equal $ notional per position)"><div class="stat-label">Today's Performance %</div><div class="stat-value neutral" id="s-today-pnl-pct">—</div></div>
+      <div class="stat-box" title="Combined $ P/L across today's actually-bought positions — live for still-open ones, realized for exited ones, updates every ~5 min"><div class="stat-label">Today's Performance</div><div class="stat-value neutral" id="s-today-pnl">—</div></div>
+      <div class="stat-box" title="Average % return across today's actually-bought positions (equal-weighted, matching the roughly equal $ notional per position) — live for open, realized for exited"><div class="stat-label">Today's Performance %</div><div class="stat-value neutral" id="s-today-pnl-pct">—</div></div>
     </div>
     <div class="card">
       <div class="card-title">Today's Top 3 Picks <span id="live-spinner" style="display:none" class="spinning">↻</span></div>
@@ -705,21 +705,29 @@ function render(data) {
   }
   document.getElementById('s-wins').textContent = allExited.length ? wins : '—';
 
-  // Today's overall performance — combined $ of only the positions that
-  // have actually exited so far today; stays "—" until at least one has,
-  // rather than showing a misleading $0.00.
-  const todayExited = (latest?.predictions || []).filter(p => p.paper_exit_price != null && p.paper_exit_dollar != null);
+  // Today's overall performance — combined $ across every position actually
+  // bought today (top-3 + substitutes, excludes anything skipped by the
+  // opening-move/opening-gap filters): live_dollar/live_pct for still-open
+  // positions, paper_exit_dollar/paper_exit_pct once a position has closed.
+  // Populated as soon as the first buy fills (via live_dollar), not gated
+  // on waiting for an exit anymore.
+  const todayBought = (latest?.predictions || []).filter(p => !p.skipped_reason && p.entry_price != null);
+  const todayDollarValues = todayBought
+    .map(p => p.paper_exit_price != null ? p.paper_exit_dollar : p.live_dollar)
+    .filter(v => v != null);
   const pnlEl = document.getElementById('s-today-pnl');
   const pnlPctEl = document.getElementById('s-today-pnl-pct');
-  if (todayExited.length) {
-    const todayTotal = todayExited.reduce((sum, p) => sum + p.paper_exit_dollar, 0);
+  if (todayDollarValues.length) {
+    const todayTotal = todayDollarValues.reduce((sum, v) => sum + v, 0);
     pnlEl.textContent = fmtDollar(todayTotal);
     pnlEl.className = 'stat-value ' + (todayTotal > 0 ? 'pos' : todayTotal < 0 ? 'neg' : 'neutral');
 
-    // Equal-weighted average of each exited position's own % return — a
-    // fair proxy for the dollar-weighted total since positions are sized
-    // to roughly equal $ notional (buying_power / NUM_POSITIONS).
-    const pctValues = todayExited.map(p => p.paper_exit_pct).filter(v => v != null);
+    // Equal-weighted average of each position's own % return (live or
+    // realized) — a fair proxy for the dollar-weighted total since
+    // positions are sized to roughly equal $ notional (buying_power / NUM_POSITIONS).
+    const pctValues = todayBought
+      .map(p => p.paper_exit_price != null ? p.paper_exit_pct : p.live_pct)
+      .filter(v => v != null);
     if (pctValues.length) {
       const todayPctAvg = pctValues.reduce((sum, v) => sum + v, 0) / pctValues.length;
       pnlPctEl.textContent = fmt(todayPctAvg);
