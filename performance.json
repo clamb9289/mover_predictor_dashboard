@@ -2840,6 +2840,426 @@
       "total_predictions": 27,
       "days_tracked": 9,
       "prices_last_updated": "15:55 ET"
+    },
+    {
+      "date": "2026-07-21",
+      "regime": "Market regime OK \u2014 SPY +0.35%",
+      "trading_skipped": false,
+      "spy_regime_pct": 0.00348,
+      "top_sectors": [
+        {
+          "etf": "XLK",
+          "name": "Technology",
+          "pct": 2.09
+        },
+        {
+          "etf": "XLE",
+          "name": "Energy",
+          "pct": 0.54
+        },
+        {
+          "etf": "XLI",
+          "name": "Industrials",
+          "pct": -0.18
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "ELF",
+          "pct": 8.09,
+          "signals": {
+            "accumulation": 0.925,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.03
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 237,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "VSXY",
+          "pct": 7.32,
+          "signals": {
+            "accumulation": 0.586,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.19
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 520,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "RSI",
+          "pct": 6.22,
+          "signals": {
+            "accumulation": 0.88,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.45
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 276,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "TNDM",
+          "pct": 5.97,
+          "signals": {
+            "accumulation": 0.623,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 11.48
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 492,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "GPN",
+          "pct": 5.85,
+          "signals": {
+            "accumulation": 0.718,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 9.5,
+            "relative_strength_pct": 2.64
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 408,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "PLNT",
+          "pct": 5.52,
+          "signals": {
+            "accumulation": 0.817,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -2.0,
+            "relative_strength_pct": 2.25
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 326,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CHWY",
+          "pct": 5.06,
+          "signals": {
+            "accumulation": 0.515,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.48
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 540,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CNK",
+          "pct": 5.0,
+          "signals": {
+            "accumulation": 0.727,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 5.0,
+            "relative_strength_pct": 5.28
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 397,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "HOG",
+          "pct": 4.67,
+          "signals": {
+            "accumulation": 0.667,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 5.97
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 460,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "MXL",
+          "pct": 4.41,
+          "signals": {
+            "accumulation": 0.605,
+            "sector_momentum_pct": 2.09,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -23.4
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 505,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably lower accumulation (0.71 vs our picks' 2.46) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably higher relative strength (0.34 vs our picks' 0.16) \u2014 possible signal to increase weighting on relative strength. Actual top movers had notably higher news sentiment (1.25 vs our picks' 0.00) \u2014 possible signal to increase weighting on news sentiment. ELF (#237 of 579), VSXY (#520 of 579), RSI (#276 of 579), TNDM (#492 of 579), GPN (#408 of 579), PLNT (#326 of 579), CHWY (#540 of 579), CNK (#397 of 579), HOG (#460 of 579), MXL (#505 of 579) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "MGY",
+          "score": 0.925,
+          "entry_price": 24.55,
+          "headline": "Magnolia to Buy WildFire in $4.1 Billion Deal to Expand Eagle Ford Position",
+          "sector": "Energy",
+          "explainer": "Volume was running 2.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Energy) was among the day's stronger performers, giving it a tailwind. Recent news skewed positive, including: \u201cMagnolia to Buy WildFire in $4.1 Billion Deal to Expand Eagle Ford Position\u201d Gapped down -5.5% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 2.758,
+            "sector_momentum_pct": 0.54,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -4.92,
+            "gap_pct": -5.48
+          },
+          "prediction_price": 25.53,
+          "position_cost": 92.09,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 24.51,
+          "live_pct": -0.14,
+          "live_dollar": -0.13,
+          "price_updated": "09:53 ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "HAS",
+          "score": 0.701,
+          "entry_price": 81.59,
+          "headline": "Hasbro raises 2026 outlook after record Q2 Magic: The Gathering revenue",
+          "sector": "Consumer Discretionary",
+          "explainer": "Volume was running 2.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.8% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cHasbro raises 2026 outlook after record Q2 Magic: The Gathering revenue\u201d",
+          "signals": {
+            "accumulation": 2.848,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 5.0,
+            "relative_strength_pct": 2.83,
+            "gap_pct": 3.58
+          },
+          "skipped_reason": "Opening-gap filter: gapped +13.5% from the $81.59 close signals were scored on \u2014 skipping."
+        },
+        {
+          "rank": 3,
+          "ticker": "EFX",
+          "score": 0.61,
+          "entry_price": 167.262,
+          "headline": "Equifax (NYSE:EFX) Reports Q2 CY2026 In Line With Expectations But Stock Drops 12.1%",
+          "sector": "Industrials",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+4.5% relative strength), suggesting individual demand beyond just sector momentum. Gapped down -11.7% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.675,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -2.0,
+            "relative_strength_pct": 4.51,
+            "gap_pct": -11.74
+          },
+          "prediction_price": 180.08,
+          "position_cost": 92.09,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 167.12,
+          "live_pct": -0.09,
+          "live_dollar": -0.08,
+          "price_updated": "09:53 ET"
+        },
+        {
+          "ticker": "HAL",
+          "rank": 4,
+          "score": 0.6026,
+          "entry_price": 33.14,
+          "position_cost": 92.09,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 33.11,
+          "live_pct": -0.09,
+          "live_dollar": -0.08,
+          "price_updated": "09:53 ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "HAL",
+          "score": 0.603,
+          "entry_price": 35.11,
+          "headline": "Stock Market Today: Sandisk, Micron, AMD Jump As AI Rebounds; GM, 3M Lead Earnings Movers",
+          "sector": "Energy",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Energy) was among the day's stronger performers, giving it a tailwind. Recent news skewed positive, including: \u201cStock Market Today: Sandisk, Micron, AMD Jump As AI Rebounds; GM, 3M Lead Earnings Movers\u201d Gapped down -5.1% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.694,
+            "sector_momentum_pct": 0.54,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": -0.82,
+            "gap_pct": -5.07
+          },
+          "live_price": 33.11,
+          "live_pct": -5.7,
+          "price_updated": "09:53 ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "PEGA",
+          "score": 0.534,
+          "entry_price": 31.69,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Volume was running 2.0x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Technology) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 2.001,
+            "sector_momentum_pct": 2.09,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.87,
+            "gap_pct": -2.49
+          },
+          "live_price": 31.22,
+          "live_pct": -1.48,
+          "price_updated": "09:53 ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "ZION",
+          "score": 0.518,
+          "entry_price": 71.89,
+          "headline": "Zions Bancorp NA (ZION) Q2 2026 Earnings Call Highlights: Strong Earnings and Strategic Growth ...",
+          "sector": "Financials",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.5% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cZions Bancorp NA (ZION) Q2 2026 Earnings Call Highlights: Strong Earnings and Strategic Growth ...\u201d Gapped down -5.4% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.482,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": 2.48,
+            "gap_pct": -5.38
+          },
+          "live_price": 67.88,
+          "live_pct": -5.58,
+          "price_updated": "09:53 ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "DHR",
+          "score": 0.496,
+          "entry_price": 201.11,
+          "headline": "Danaher shares slide despite second-quarter earnings and revenue beat (DHR)",
+          "sector": "Healthcare",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.1% relative strength), suggesting individual demand beyond just sector momentum. Gapped down -16.0% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.468,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.12,
+            "gap_pct": -16.05
+          },
+          "live_price": 174.84,
+          "live_pct": -13.06,
+          "price_updated": "09:53 ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "VSXY",
+          "score": 0.36,
+          "entry_price": 87.41,
+          "headline": null,
+          "sector": "Consumer Discretionary",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+10.9% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.593,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 10.92,
+            "gap_pct": 1.33
+          },
+          "live_price": 87.76,
+          "live_pct": 0.4,
+          "price_updated": "09:53 ET"
+        }
+      ],
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "SFNC",
+          "move_pct": -1.01,
+          "dollar_change": -0.93,
+          "position_size": 93.0,
+          "actual_rank": 448,
+          "total_ranked": 579,
+          "signals": {
+            "accumulation": 2.89,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.52,
+            "gap_pct": -0.17
+          },
+          "postmortem": "Small loss (-1.01%) \u2014 accumulation/volume and relative strength didn't convert this time; within normal volatility for now. The stock itself ranked #448 of 579 tracked that day, for context."
+        },
+        {
+          "rank": 2,
+          "ticker": "FNB",
+          "move_pct": 0.11,
+          "dollar_change": 0.1,
+          "position_size": 93.0,
+          "actual_rank": 501,
+          "total_ranked": 579,
+          "signals": {
+            "accumulation": 2.38,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.88,
+            "gap_pct": -1.3
+          },
+          "postmortem": "Modest gain (+0.11%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through. The stock itself ranked #501 of 579 tracked that day, for context."
+        },
+        {
+          "rank": 3,
+          "ticker": "CNM",
+          "move_pct": -2.01,
+          "dollar_change": -1.87,
+          "position_size": 93.0,
+          "actual_rank": 550,
+          "total_ranked": 579,
+          "signals": {
+            "accumulation": 2.119,
+            "sector_momentum_pct": 0.58,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.93,
+            "gap_pct": 0.18
+          },
+          "postmortem": "Small loss (-2.01%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now. The stock itself ranked #550 of 579 tracked that day, for context."
+        }
+      ],
+      "hit_rate": 0.0333,
+      "total_hits": 1,
+      "total_predictions": 30,
+      "days_tracked": 10,
+      "prices_last_updated": "09:53 ET"
     }
   ]
 }
