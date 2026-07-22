@@ -3271,6 +3271,438 @@
       "total_predictions": 30,
       "days_tracked": 10,
       "prices_last_updated": "15:55 ET"
+    },
+    {
+      "date": "2026-07-22",
+      "regime": "Market regime OK \u2014 SPY -0.18%",
+      "trading_skipped": false,
+      "spy_regime_pct": -0.00183,
+      "top_sectors": [
+        {
+          "etf": "XLE",
+          "name": "Energy",
+          "pct": 1.55
+        },
+        {
+          "etf": "XLB",
+          "name": "Materials",
+          "pct": 1.04
+        },
+        {
+          "etf": "XLP",
+          "name": "Consumer Staples",
+          "pct": 0.98
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "MXL",
+          "pct": 14.73,
+          "signals": {
+            "accumulation": 0.568,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -15.07
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 439,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "DOCN",
+          "pct": 14.58,
+          "signals": {
+            "accumulation": 0.766,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 6.0,
+            "relative_strength_pct": -2.5
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 236,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "WDC",
+          "pct": 12.51,
+          "signals": {
+            "accumulation": 0.443,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 6.0,
+            "relative_strength_pct": -11.33
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 530,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "TER",
+          "pct": 12.07,
+          "signals": {
+            "accumulation": 0.76,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": -1.22
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 243,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "COHR",
+          "pct": 11.15,
+          "signals": {
+            "accumulation": 0.548,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.5,
+            "relative_strength_pct": -6.22
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 461,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "TTMI",
+          "pct": 10.27,
+          "signals": {
+            "accumulation": 0.69,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -1.39
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 321,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "SBRA",
+          "pct": 10.2,
+          "signals": {
+            "accumulation": 0.755,
+            "sector_momentum_pct": 0.31,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": 0.9
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 251,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "COIN",
+          "pct": 9.61,
+          "signals": {
+            "accumulation": 0.613,
+            "sector_momentum_pct": 0.21,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.73
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 406,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "SMTC",
+          "pct": 9.5,
+          "signals": {
+            "accumulation": 0.382,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.81
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 555,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "PENG",
+          "pct": 9.15,
+          "signals": {
+            "accumulation": 0.315,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -30.12
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 572,
+          "eligible_pool_size": 579,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably lower accumulation (0.58 vs our picks' 2.43) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably lower relative strength (-6.90 vs our picks' 0.81) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.05 vs our picks' 0.18) \u2014 possible signal to decrease weighting on sector momentum. MXL (#439 of 579), DOCN (#236 of 579), WDC (#530 of 579), TER (#243 of 579), COHR (#461 of 579), TTMI (#321 of 579), SBRA (#251 of 579), COIN (#406 of 579), SMTC (#555 of 579), PENG (#572 of 579) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "MGY",
+          "score": 0.774,
+          "entry_price": 25.09,
+          "headline": "Magnolia to Buy WildFire in $4.1 Billion Deal to Expand Eagle Ford Position",
+          "sector": "Energy",
+          "explainer": "Volume was running 8.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Energy) was among the day's stronger performers, giving it a tailwind. Recent news skewed positive, including: \u201cMagnolia to Buy WildFire in $4.1 Billion Deal to Expand Eagle Ford Position\u201d",
+          "signals": {
+            "accumulation": 8.469,
+            "sector_momentum_pct": 1.55,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -7.51,
+            "gap_pct": 1.43
+          },
+          "skipped_reason": "Opening-gap filter: gapped +2.3% from the $25.09 close signals were scored on \u2014 skipping."
+        },
+        {
+          "rank": 2,
+          "ticker": "NSA",
+          "score": 0.699,
+          "entry_price": 43.41,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "Volume was running 9.1x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Real Estate) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 9.121,
+            "sector_momentum_pct": 0.31,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.28,
+            "gap_pct": null
+          },
+          "skipped_reason": "Buy order failed: {\"code\":40010001,\"message\":\"asset NSA is not active\"}"
+        },
+        {
+          "rank": 3,
+          "ticker": "MOH",
+          "score": 0.562,
+          "entry_price": 226.902,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Volume was running 7.9x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 7.913,
+            "sector_momentum_pct": 0.16,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -6.37,
+            "gap_pct": 0.64
+          },
+          "prediction_price": 226.54,
+          "position_cost": 92.27,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 226.09,
+          "live_pct": -0.36,
+          "live_dollar": -0.33,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "ticker": "PEGA",
+          "rank": 4,
+          "score": 0.4201,
+          "entry_price": 26.805475,
+          "position_cost": 92.27,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 26.78,
+          "live_pct": -0.08,
+          "live_dollar": -0.07,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "ticker": "BANC",
+          "rank": 5,
+          "score": 0.3465,
+          "entry_price": 21.49,
+          "position_cost": 92.27,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 21.48,
+          "live_pct": -0.05,
+          "live_dollar": -0.05,
+          "price_updated": "09:49 ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "PEGA",
+          "score": 0.42,
+          "entry_price": 30.94,
+          "headline": "CoreWeave upgraded, IBM initiated: Wall Street's top analyst calls",
+          "sector": "Technology",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.8% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cCoreWeave upgraded, IBM initiated: Wall Street's top analyst calls\u201d Gapped down -18.2% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.415,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": 1.78,
+            "gap_pct": -18.16
+          },
+          "live_price": 26.78,
+          "live_pct": -13.43,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "BANC",
+          "score": 0.346,
+          "entry_price": 21.83,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "Volume was running 3.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Financials) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+5.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 3.595,
+            "sector_momentum_pct": 0.21,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 5.81,
+            "gap_pct": 0.05
+          },
+          "live_price": 21.48,
+          "live_pct": -1.6,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "HAL",
+          "score": 0.303,
+          "entry_price": 33.19,
+          "headline": "Halliburton Co (HAL) Q2 2026 Earnings Call Highlights: Strong International Growth Amidst ...",
+          "sector": "Energy",
+          "explainer": "Volume was running 2.3x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Energy) was among the day's stronger performers, giving it a tailwind. Recent news skewed positive, including: \u201cHalliburton Co (HAL) Q2 2026 Earnings Call Highlights: Strong International Growth Amidst ...\u201d",
+          "signals": {
+            "accumulation": 2.27,
+            "sector_momentum_pct": 1.55,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -7.84,
+            "gap_pct": 1.11
+          },
+          "live_price": 33.4,
+          "live_pct": 0.63,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "WFRD",
+          "score": 0.293,
+          "entry_price": 83.32,
+          "headline": "Weatherford (NASDAQ:WFRD) Exceeds Q2 CY2026 Expectations",
+          "sector": "Energy",
+          "explainer": "Its sector (Energy) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+0.1% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cWeatherford (NASDAQ:WFRD) Exceeds Q2 CY2026 Expectations\u201d",
+          "signals": {
+            "accumulation": 1.253,
+            "sector_momentum_pct": 1.55,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 0.05,
+            "gap_pct": 5.24
+          },
+          "live_price": 89.21,
+          "live_pct": 7.07,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "PM",
+          "score": 0.265,
+          "entry_price": 188.04,
+          "headline": "CoreWeave upgraded, IBM initiated: Wall Street's top analyst calls",
+          "sector": "Consumer Staples",
+          "explainer": "Its sector (Consumer Staples) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+5.9% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cCoreWeave upgraded, IBM initiated: Wall Street's top analyst calls\u201d",
+          "signals": {
+            "accumulation": 1.206,
+            "sector_momentum_pct": 0.98,
+            "news_sentiment": 8.0,
+            "relative_strength_pct": 5.9,
+            "gap_pct": 2.12
+          },
+          "live_price": 194.54,
+          "live_pct": 3.46,
+          "price_updated": "09:49 ET"
+        }
+      ],
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "MGY",
+          "move_pct": 0.16,
+          "dollar_change": 0.15,
+          "position_size": 92.09,
+          "actual_rank": 490,
+          "total_ranked": 579,
+          "signals": {
+            "accumulation": 2.758,
+            "sector_momentum_pct": 0.54,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -4.92,
+            "gap_pct": -5.48
+          },
+          "postmortem": "Modest gain (+0.16%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #490 of 579 tracked that day, for context."
+        },
+        {
+          "rank": 3,
+          "ticker": "EFX",
+          "move_pct": 0.16,
+          "dollar_change": 0.15,
+          "position_size": 92.09,
+          "actual_rank": 566,
+          "total_ranked": 579,
+          "signals": {
+            "accumulation": 1.675,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -2.0,
+            "relative_strength_pct": 4.51,
+            "gap_pct": -11.74
+          },
+          "postmortem": "Modest gain (+0.16%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through. The stock itself ranked #566 of 579 tracked that day, for context."
+        },
+        {
+          "rank": 4,
+          "ticker": "HAL",
+          "move_pct": 0.27,
+          "dollar_change": 0.25,
+          "position_size": 92.09,
+          "actual_rank": 578,
+          "total_ranked": 579,
+          "signals": {
+            "accumulation": 1.694,
+            "sector_momentum_pct": 0.54,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": -0.82,
+            "gap_pct": -5.07
+          },
+          "postmortem": "Modest gain (+0.27%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #578 of 579 tracked that day, for context."
+        }
+      ],
+      "hit_rate": 0.0303,
+      "total_hits": 1,
+      "total_predictions": 33,
+      "days_tracked": 11,
+      "prices_last_updated": "09:49 ET"
     }
   ]
 }
