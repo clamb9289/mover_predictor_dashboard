@@ -3710,6 +3710,414 @@
       "total_predictions": 33,
       "days_tracked": 11,
       "prices_last_updated": "15:55 ET"
+    },
+    {
+      "date": "2026-07-23",
+      "regime": "Market regime OK \u2014 SPY -0.68%",
+      "trading_skipped": false,
+      "spy_regime_pct": -0.00681,
+      "top_sectors": [
+        {
+          "etf": "XLI",
+          "name": "Industrials",
+          "pct": 2.04
+        },
+        {
+          "etf": "XLE",
+          "name": "Energy",
+          "pct": 1.31
+        },
+        {
+          "etf": "XLV",
+          "name": "Healthcare",
+          "pct": 0.59
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "SMCI",
+          "pct": 19.84,
+          "signals": {
+            "accumulation": 1.36,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 8.5,
+            "relative_strength_pct": -7.7
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 29,
+          "eligible_pool_size": 585,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "ARWR",
+          "pct": 19.03,
+          "signals": {
+            "accumulation": 0.456,
+            "sector_momentum_pct": 0.59,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": 3.04
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 537,
+          "eligible_pool_size": 585,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "DELL",
+          "pct": 9.32,
+          "signals": {
+            "accumulation": 0.509,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": -11.45
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 506,
+          "eligible_pool_size": 585,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "EQT",
+          "pct": 8.45,
+          "signals": {
+            "accumulation": 0.983,
+            "sector_momentum_pct": 1.31,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -1.33
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 102,
+          "eligible_pool_size": 585,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "BLFS",
+          "pct": 6.71,
+          "signals": {
+            "accumulation": 0.53,
+            "sector_momentum_pct": 0.59,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": 1.3
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 488,
+          "eligible_pool_size": 585,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "NRG",
+          "pct": 6.37,
+          "signals": {
+            "accumulation": 0.75,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": -4.73
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 260,
+          "eligible_pool_size": 585,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "KSS",
+          "pct": 5.24,
+          "signals": {
+            "accumulation": 0.765,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 13.44
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 243,
+          "eligible_pool_size": 585,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "EXE",
+          "pct": 5.18,
+          "signals": {
+            "accumulation": 0.678,
+            "sector_momentum_pct": 1.31,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -0.43
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 326,
+          "eligible_pool_size": 585,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CME",
+          "pct": 5.0,
+          "signals": {
+            "accumulation": 1.013,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -1.99
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 96,
+          "eligible_pool_size": 585,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CEG",
+          "pct": 4.84,
+          "signals": {
+            "accumulation": 0.692,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.5,
+            "relative_strength_pct": 2.41
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 308,
+          "eligible_pool_size": 585,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably lower accumulation (0.77 vs our picks' 8.50) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably higher relative strength (-0.74 vs our picks' -5.72) \u2014 possible signal to increase weighting on relative strength. Actual top movers had notably higher news sentiment (3.35 vs our picks' 0.33) \u2014 possible signal to increase weighting on news sentiment. ARWR (#537 of 585), DELL (#506 of 585), EQT (#102 of 585), BLFS (#488 of 585), NRG (#260 of 585), KSS (#243 of 585), EXE (#326 of 585), CME (#96 of 585), CEG (#308 of 585) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap. SMCI (accumulation #29) made the top-50 shortlist but didn't score high enough on the full composite to reach our top picks.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "BLFS",
+          "score": 0.809,
+          "entry_price": 31.51,
+          "headline": "Repligen to Buy BioLife Solutions for $1.5 Billion, Expanding Cell Therapy Reach",
+          "sector": "Healthcare",
+          "explainer": "Volume was running 7.0x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+6.3% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cRepligen to Buy BioLife Solutions for $1.5 Billion, Expanding Cell Therapy Reach\u201d",
+          "signals": {
+            "accumulation": 6.965,
+            "sector_momentum_pct": 0.59,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": 6.27,
+            "gap_pct": 0.0
+          },
+          "prediction_price": 31.15,
+          "position_cost": 91.92,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 31.49,
+          "live_pct": -0.08,
+          "live_dollar": -0.07,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "LAZ",
+          "score": 0.447,
+          "entry_price": 42.31,
+          "headline": "Lazard (LAZ) Q2 Earnings Miss Estimates",
+          "sector": "Financials",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Gapped down -5.9% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.636,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.65,
+            "gap_pct": -5.9
+          },
+          "prediction_price": 43.58,
+          "position_cost": 91.92,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 42.12,
+          "live_pct": -0.44,
+          "live_dollar": -0.4,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "GOOGL",
+          "score": 0.378,
+          "entry_price": 318.64,
+          "headline": "Stock market today: Dow, S&P 500, Nasdaq sell off as markets weigh AI capex, widening Mideast attacks",
+          "sector": "Communication Services",
+          "explainer": "Gapped down -6.1% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.141,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -2.0,
+            "relative_strength_pct": -5.46,
+            "gap_pct": -6.13
+          },
+          "prediction_price": 342.09,
+          "position_cost": 91.92,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0008,
+          "paper_trail_floor_active": false,
+          "live_price": 318.88,
+          "live_pct": 0.08,
+          "live_dollar": 0.07,
+          "price_updated": "09:49 ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "PCAR",
+          "score": 0.343,
+          "entry_price": 131.11,
+          "headline": null,
+          "sector": "Industrials",
+          "explainer": "Its sector (Industrials) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+4.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.151,
+            "sector_momentum_pct": 2.04,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.42,
+            "gap_pct": 0.07
+          },
+          "live_price": 133.14,
+          "live_pct": 1.55,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "RRC",
+          "score": 0.33,
+          "entry_price": 38.75,
+          "headline": "How Investors May Respond To Range Resources (RRC) Earnings Beat And Completed Multi\u2011Year Buyback Program",
+          "sector": "Energy",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Energy) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+6.2% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cHow Investors May Respond To Range Resources (RRC) Earnings Beat And Completed Multi\u2011Year Buyback Program\u201d",
+          "signals": {
+            "accumulation": 1.613,
+            "sector_momentum_pct": 1.31,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": 6.18,
+            "gap_pct": 1.42
+          },
+          "live_price": 38.9,
+          "live_pct": 0.39,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "ALK",
+          "score": 0.322,
+          "entry_price": 44.36,
+          "headline": "Alaska Air Group Inc (ALK) Q2 2026 Earnings Call Highlights: Strategic Growth Amidst Challenges",
+          "sector": "Industrials",
+          "explainer": "Volume was running 1.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Industrials) was among the day's stronger performers, giving it a tailwind. Recent news skewed positive, including: \u201cAlaska Air Group Inc (ALK) Q2 2026 Earnings Call Highlights: Strategic Growth Amidst Challenges\u201d",
+          "signals": {
+            "accumulation": 1.827,
+            "sector_momentum_pct": 2.04,
+            "news_sentiment": 1.5,
+            "relative_strength_pct": -9.39,
+            "gap_pct": -2.95
+          },
+          "live_price": 42.86,
+          "live_pct": -3.38,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "EQT",
+          "score": 0.315,
+          "entry_price": 54.01,
+          "headline": "EQT Corp (EQT) Q2 2026 Earnings Call Highlights: Record Operational Performance and Strategic Moves",
+          "sector": "Energy",
+          "explainer": "Its sector (Energy) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+8.4% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cEQT Corp (EQT) Q2 2026 Earnings Call Highlights: Record Operational Performance and Strategic Moves\u201d",
+          "signals": {
+            "accumulation": 1.328,
+            "sector_momentum_pct": 1.31,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 8.36,
+            "gap_pct": 0.7
+          },
+          "live_price": 53.98,
+          "live_pct": -0.06,
+          "price_updated": "09:49 ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "RTX",
+          "score": 0.305,
+          "entry_price": 194.88,
+          "headline": "RTX raises full-year outlook after strong second-quarter earnings (NYSE:RTX)",
+          "sector": "Industrials",
+          "explainer": "Its sector (Industrials) was among the day's stronger performers, giving it a tailwind. Recent news skewed positive, including: \u201cRTX raises full-year outlook after strong second-quarter earnings (NYSE:RTX)\u201d",
+          "signals": {
+            "accumulation": 1.226,
+            "sector_momentum_pct": 2.04,
+            "news_sentiment": 12.0,
+            "relative_strength_pct": -2.56,
+            "gap_pct": 5.19
+          },
+          "live_price": 210.55,
+          "live_pct": 8.04,
+          "price_updated": "09:49 ET"
+        }
+      ],
+      "prior_predictions_actual": [
+        {
+          "rank": 3,
+          "ticker": "MOH",
+          "move_pct": 0.19,
+          "dollar_change": 0.17,
+          "position_size": 92.27,
+          "actual_rank": 504,
+          "total_ranked": 585,
+          "signals": {
+            "accumulation": 7.913,
+            "sector_momentum_pct": 0.16,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -6.37,
+            "gap_pct": 0.64
+          },
+          "postmortem": "Modest gain (+0.19%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum pointed the right direction without enough follow-through. The stock itself ranked #504 of 585 tracked that day, for context."
+        },
+        {
+          "rank": 4,
+          "ticker": "PEGA",
+          "move_pct": -0.39,
+          "dollar_change": -0.36,
+          "position_size": 92.27,
+          "actual_rank": 585,
+          "total_ranked": 585,
+          "signals": {
+            "accumulation": 1.415,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": 1.78,
+            "gap_pct": -18.16
+          },
+          "postmortem": "Small loss (-0.39%) \u2014 relative strength and news sentiment didn't convert this time; within normal volatility for now. The stock itself ranked #585 of 585 tracked that day, for context."
+        },
+        {
+          "rank": 5,
+          "ticker": "BANC",
+          "move_pct": -0.93,
+          "dollar_change": -0.86,
+          "position_size": 92.27,
+          "actual_rank": 510,
+          "total_ranked": 585,
+          "signals": {
+            "accumulation": 3.595,
+            "sector_momentum_pct": 0.21,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 5.81,
+            "gap_pct": 0.05
+          },
+          "postmortem": "Small loss (-0.93%) \u2014 accumulation/volume and relative strength and sector momentum didn't convert this time; within normal volatility for now. The stock itself ranked #510 of 585 tracked that day, for context."
+        }
+      ],
+      "hit_rate": 0.0278,
+      "total_hits": 1,
+      "total_predictions": 36,
+      "days_tracked": 12,
+      "prices_last_updated": "09:49 ET"
     }
   ]
 }
