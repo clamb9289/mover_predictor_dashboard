@@ -1439,7 +1439,14 @@ function renderHistory(days) {
       return;
     }
 
-    preds.forEach((p, i) => {
+    // Same reasoning as Today's Picks/Yesterday: a slot can round-trip more
+    // than once in a day, and trade_log.json only keeps the latest round
+    // per ticker unless the earlier ones were separately captured in
+    // day.closed_rounds (see withClosedRounds() / trader.py's
+    // sell_position()). Reused here (added 2026-07-24) so History shows
+    // the full sequence too, not just whichever round happened to be last.
+    const rowPicks = withClosedRounds(preds, day);
+    rowPicks.forEach((p, i) => {
       const a = actualMap[p.ticker];
       // Prefer this day's own self-healing data (paper_exit_pct/dollar,
       // synced by trader.py's _sync_one_day() regardless of how many days
@@ -1464,9 +1471,9 @@ function renderHistory(days) {
       const oc = moveClass(ourPct);
 
       rows.push(`<tr>
-        ${i === 0 ? `<td rowspan="${preds.length}" style="font-weight:500">${day.date}</td>` : ''}
+        ${i === 0 ? `<td rowspan="${rowPicks.length}" style="font-weight:500">${day.date}</td>` : ''}
         <td style="color:var(--muted)">#${p.rank}</td>
-        <td class="td-ticker"${medalTickerStyle(a?.actual_rank)}>${p.ticker}</td>
+        <td class="td-ticker"${medalTickerStyle(a?.actual_rank)}>${p.ticker}${p.round_label ? `<div style="font-size:10px;color:var(--muted);font-weight:400">${p.round_label}</div>` : ''}</td>
         <td style="color:var(--muted)">${p.entry_price ? fmtPrice(p.entry_price) : '—'}</td>
         <td style="color:var(--muted)">${exitPrice ? fmtPrice(exitPrice) : '—'}</td>
         <td style="color:var(--muted);font-size:11px">${exitReason}</td>
@@ -1475,7 +1482,7 @@ function renderHistory(days) {
         <td class="${oc}">${fmt(ourPct)}</td>
         <td class="${oc}">${fmtDollar(ourDollar)}</td>
         <td style="font-size:12px">${rankText}</td>
-        ${i === 0 ? `<td rowspan="${preds.length}"><span class="mode-badge ${isLive ? 'mode-live' : 'mode-paper'}">${isLive ? 'LIVE' : 'PAPER'}</span></td>` : ''}
+        ${i === 0 ? `<td rowspan="${rowPicks.length}"><span class="mode-badge ${isLive ? 'mode-live' : 'mode-paper'}">${isLive ? 'LIVE' : 'PAPER'}</span></td>` : ''}
       </tr>`);
     });
   });
