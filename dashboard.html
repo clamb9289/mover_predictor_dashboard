@@ -219,6 +219,11 @@
   .loading-msg { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 14px; }
   .error-msg { text-align: center; padding: 40px 20px; color: var(--red); font-size: 13px; line-height: 1.6; }
   .updated-at { font-size: 11px; color: var(--muted); margin-top: 10px; }
+  /* Last-refreshed line reads slightly bolder/larger than the plain
+     .updated-at style above so it's easy to spot at a glance (added
+     2026-07-24). */
+  #prices-updated { font-size: 12px; font-weight: 600; color: var(--text); }
+  .after-hours-badge { color: var(--red); font-weight: 700; margin-left: 6px; }
   .spinning { animation: spin 1s linear infinite; display: inline-block; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
@@ -824,7 +829,18 @@ function renderTodayPicks(day) {
   // actually changed, so it accurately reflects true data freshness.
   // Added 2026-07-24 after the user asked how stale off-hours pricing
   // could get with no monitor job scheduled outside market hours.
-  refreshedEl.textContent = day.prices_last_updated ? `Last refreshed: ${day.prices_last_updated}` : '';
+  if (day.prices_last_updated) {
+    // day.prices_after_hours (added 2026-07-24 alongside the
+    // refresh_prices mode) flags whether THIS refresh landed while the
+    // market was closed. Called out in red since these prices are real
+    // but nothing acts on them off-hours -- no floor/stop-loss check, no
+    // buy/sell -- so today's picks are locked in regardless of what an
+    // after-hours quote does.
+    refreshedEl.innerHTML = `Last refreshed: ${day.prices_last_updated}` +
+      (day.prices_after_hours ? '<span class="after-hours-badge">Updated After Hours</span>' : '');
+  } else {
+    refreshedEl.textContent = '';
+  }
   // Skipped picks move down into the "Also Considered" table (see
   // renderBenchCandidates) so this grid only shows what was actually
   // bought, keeping the top of the page compact.
