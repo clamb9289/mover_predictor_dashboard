@@ -569,7 +569,13 @@ const GAP_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predicto
 const MARKET_HOLIDAYS_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/market_holidays.json";
 const TAX_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/tax_liability.json";
 const REFRESH_INTERVAL = 60;
-const MAX_HOLD_DAYS = 5; // kept in sync with trader.py's MAX_HOLD_DAYS -- swing-trading hold cap
+// Fallback only -- render() below overwrites this from the latest day's own
+// max_hold_days field (emitted by predictor.py, sourced from trader.py's
+// real MAX_HOLD_DAYS) whenever it's present, so this hardcoded copy can't
+// silently drift the way TRAIL_STEPS did between trader.py/backtest.py
+// (fixed 2026-07-24). Only used as-is for older day-entries from before
+// that field existed.
+let MAX_HOLD_DAYS = 5;
 
 let perfData = null;
 let marketHolidays = new Set(); // populated by loadMarketHolidays() before first render
@@ -679,6 +685,7 @@ function startCountdown() {
 function render(data) {
   const days = (data.days || []).slice().sort((a,b) => b.date.localeCompare(a.date));
   const latest = days[0];
+  if (latest?.max_hold_days != null) MAX_HOLD_DAYS = latest.max_hold_days;
 
   const closedInfo = getMarketClosedInfo();
   const isStale = closedInfo.closed && latest && latest.date !== closedInfo.todayStr;
