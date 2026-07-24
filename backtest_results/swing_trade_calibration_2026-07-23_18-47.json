@@ -1,0 +1,103 @@
+{
+  "days": 120,
+  "comparisons": {
+    "1": {
+      "train": {
+        "n": 237,
+        "win_rate": 0.6878,
+        "hit_rate_3pct": 0.2911,
+        "avg_pct": 1.118,
+        "total_pnl": 264.96,
+        "avg_days_held": 1.0
+      },
+      "val": {
+        "n": 102,
+        "win_rate": 0.6667,
+        "hit_rate_3pct": 0.2451,
+        "avg_pct": 0.8246,
+        "total_pnl": 84.11,
+        "avg_days_held": 1.0
+      },
+      "exit_reasons": {
+        "Win floor triggered": 124,
+        "Max hold": 132,
+        "Stop loss": 83
+      }
+    },
+    "3": {
+      "train": {
+        "n": 237,
+        "win_rate": 0.7004,
+        "hit_rate_3pct": 0.3966,
+        "avg_pct": 1.4897,
+        "total_pnl": 353.05,
+        "avg_days_held": 1.58
+      },
+      "val": {
+        "n": 102,
+        "win_rate": 0.6961,
+        "hit_rate_3pct": 0.3627,
+        "avg_pct": 1.264,
+        "total_pnl": 128.93,
+        "avg_days_held": 1.63
+      },
+      "exit_reasons": {
+        "Win floor triggered": 205,
+        "Max hold": 42,
+        "Stop loss": 92
+      }
+    },
+    "5": {
+      "train": {
+        "n": 237,
+        "win_rate": 0.7046,
+        "hit_rate_3pct": 0.4135,
+        "avg_pct": 1.5519,
+        "total_pnl": 367.8,
+        "avg_days_held": 1.78
+      },
+      "val": {
+        "n": 102,
+        "win_rate": 0.6961,
+        "hit_rate_3pct": 0.3824,
+        "avg_pct": 1.2711,
+        "total_pnl": 129.65,
+        "avg_days_held": 1.89
+      },
+      "exit_reasons": {
+        "Win floor triggered": 223,
+        "Stop loss": 93,
+        "Max hold": 23
+      }
+    },
+    "10": {
+      "train": {
+        "n": 237,
+        "win_rate": 0.7131,
+        "hit_rate_3pct": 0.4219,
+        "avg_pct": 1.5817,
+        "total_pnl": 374.86,
+        "avg_days_held": 1.97
+      },
+      "val": {
+        "n": 102,
+        "win_rate": 0.7059,
+        "hit_rate_3pct": 0.3824,
+        "avg_pct": 1.2901,
+        "total_pnl": 131.6,
+        "avg_days_held": 2.21
+      },
+      "exit_reasons": {
+        "Win floor triggered": 232,
+        "Stop loss": 93,
+        "Max hold": 11,
+        "Ran out of data": 3
+      }
+    }
+  },
+  "recommended": [
+    3,
+    5,
+    10
+  ]
+}

@@ -450,7 +450,7 @@
   <div id="tab-tax" class="panel">
     <div class="card">
       <div class="card-title">Tax Tracker</div>
-      <div class="gainer-label">Every closed trade is short-term (never held overnight), estimated at a flat 30% rate. This is a rough running estimate for your own planning, not tax advice — same P&amp;L data already shown per-trade elsewhere on this dashboard.</div>
+      <div class="gainer-label">Every closed trade is short-term (held at most a few days under the swing-trading hold cap, well under a year), estimated at a flat 30% rate. This is a rough running estimate for your own planning, not tax advice — same P&amp;L data already shown per-trade elsewhere on this dashboard.</div>
     </div>
     <div class="stats-row">
       <div class="stat-box"><div class="stat-label">Net P&amp;L</div><div class="stat-value neutral" id="tax-net-pnl">—</div></div>
@@ -557,6 +557,7 @@ const GAP_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predicto
 const MARKET_HOLIDAYS_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/market_holidays.json";
 const TAX_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/tax_liability.json";
 const REFRESH_INTERVAL = 60;
+const MAX_HOLD_DAYS = 5; // kept in sync with trader.py's MAX_HOLD_DAYS -- swing-trading hold cap
 
 let perfData = null;
 let marketHolidays = new Set(); // populated by loadMarketHolidays() before first render
@@ -752,7 +753,7 @@ function render(data) {
     renderBenchCandidates(latest);
     document.getElementById('last-session-card').style.display = 'none';
   }
-  renderYesterday(latest);
+  renderYesterday(latest, days);
   renderArchive(days);
   renderHistory(days);
   if (document.getElementById('tab-history').classList.contains('active')) {
@@ -818,6 +819,13 @@ function buildPickCards(predictions, idPrefix) {
       } else if (pnlPct <= -3) {
         badges += `<div class="stop-badge">🔴 Stop triggered</div>`;
       }
+    }
+    // Swing trading (2026-07-24): still-open positions can now run for up
+    // to MAX_HOLD_DAYS trading days instead of always resolving same-day
+    // -- show which day of that window this position is on. days_held is
+    // synced from trade_log.json by trader.py's _sync_one_day().
+    if (!isSkipped && !isExited && p.days_held != null) {
+      badges += `<div class="exited-badge">⏳ Day ${p.days_held + 1} of ${MAX_HOLD_DAYS}</div>`;
     }
     if (isSubstitute) {
       badges += `<div class="exited-badge">🔄 Substitute pick — ${p.substitute_note || 'bought from the candidate bench'}</div>`;
@@ -997,7 +1005,7 @@ function renderBenchCandidates(day) {
 }
 
 
-function renderYesterday(latest) {
+function renderYesterday(latest, days) {
   const gainersEl = document.getElementById('actual-gainers');
   if (latest?.actual_top3?.length) {
     gainersEl.innerHTML = latest.actual_top3.map(g =>
@@ -1015,7 +1023,31 @@ function renderYesterday(latest) {
     return;
   }
 
-  const changes = latest.prior_predictions_actual.map(p => p.dollar_change).filter(v => v != null);
+  // prior_predictions_actual (used below for rank/position-size context)
+  // is a frozen snapshot computed once, the day right after these picks --
+  // it never gets revisited once a newer day becomes "yesterday" instead.
+  // days[1] is the actual origin day these picks were made on; its own
+  // predictions[] self-heal correctly no matter how many days a swing
+  // position takes to resolve (see refresh_recent_postmortems() in
+  // predictor.py). Merge the live version in over the frozen one.
+  const originDay = days?.[1];
+  const livePredsByTicker = {};
+  (originDay?.predictions || []).forEach(p => { if (p.ticker) livePredsByTicker[p.ticker] = p; });
+
+  const enriched = latest.prior_predictions_actual.map(p => {
+    const live = livePredsByTicker[p.ticker] || {};
+    const resolved = live.paper_exit_pct != null;
+    return {
+      ...p,
+      move_pct: live.paper_exit_pct ?? live.live_pct ?? p.move_pct,
+      dollar_change: resolved ? (live.paper_exit_dollar ?? p.dollar_change) : (live.live_dollar ?? p.dollar_change),
+      postmortem: live.postmortem ?? p.postmortem,
+      daysHeld: live.days_held,
+      stillOpen: !resolved && live.entry_price != null,
+    };
+  });
+
+  const changes = enriched.map(p => p.dollar_change).filter(v => v != null);
   if (changes.length) {
     const total = changes.reduce((a, b) => a + b, 0);
     const cls = total > 0 ? 'pos' : total < 0 ? 'neg' : 'flat';
@@ -1024,10 +1056,12 @@ function renderYesterday(latest) {
     totalEl.innerHTML = '';
   }
 
-  el.innerHTML = latest.prior_predictions_actual.map(p => {
+  el.innerHTML = enriched.map(p => {
     const m = p.move_pct;
     const cls = m == null ? 'flat' : m > 0 ? 'pos' : 'neg';
     const rankText = rankBadge(p.actual_rank, p.total_ranked, 'long');
+    const openNote = p.stillOpen && p.daysHeld != null
+      ? `<div class="yest-postmortem">⏳ Still open — day ${p.daysHeld + 1} of ${MAX_HOLD_DAYS}</div>` : '';
     return `<div class="yest-card">
       <div class="yest-top-row">
         <div class="yest-move ${cls}">${m == null ? '—' : fmt(m)}</div>
@@ -1051,6 +1085,7 @@ function renderYesterday(latest) {
         </div>
       </div>
       ${p.postmortem ? `<div class="yest-postmortem">📋 ${p.postmortem}</div>` : ''}
+      ${openNote}
     </div>`;
   }).join('');
 }
@@ -1231,9 +1266,32 @@ function renderArchive(days) {
 
   const rows = [];
   days.forEach((day, i) => {
-    const picks = day.prior_predictions_actual || [];
     const winners = day.actual_top3 || [];
     const labelDayEntry = days[i + 1];
+
+    // day.prior_predictions_actual (frozen the single day right after these
+    // picks, never revisited once a newer day becomes "yesterday" instead)
+    // is used here only for rank-in-universe context, which isn't tracked
+    // per-origin-day yet. The move/dollar/postmortem themselves come from
+    // labelDayEntry's own predictions[], which self-heal correctly no
+    // matter how many days a swing position takes to resolve (see
+    // refresh_recent_postmortems() in predictor.py). Falls back to the
+    // frozen list entirely for older data that predates this fix.
+    const frozenPicks = day.prior_predictions_actual || [];
+    const frozenByTicker = {};
+    frozenPicks.forEach(p => { if (p.ticker) frozenByTicker[p.ticker] = p; });
+    const originPreds = (labelDayEntry?.predictions || []).filter(p => !p.skipped_reason);
+    const picks = originPreds.length ? originPreds.map(p => {
+      const frozen = frozenByTicker[p.ticker] || {};
+      return {
+        ticker: p.ticker,
+        rank: p.rank,
+        move_pct: p.paper_exit_pct ?? p.live_pct ?? frozen.move_pct ?? null,
+        postmortem: p.postmortem ?? frozen.postmortem ?? null,
+        actual_rank: frozen.actual_rank ?? null,
+      };
+    }) : frozenPicks;
+
     if (!picks.length && !winners.length && !labelDayEntry?.trading_skipped) return;
 
     // The label date is when these picks were actually MADE, not when this
@@ -1343,12 +1401,20 @@ function renderHistory(days) {
 
     preds.forEach((p, i) => {
       const a = actualMap[p.ticker];
-      const move = a?.move_pct ?? p.live_pct ?? null;
+      // Prefer this day's own self-healing data (paper_exit_pct/dollar,
+      // synced by trader.py's _sync_one_day() regardless of how many days
+      // a swing position takes to resolve) over the adjacent-day
+      // prior_predictions_actual lookup, which only ever reflects whatever
+      // was known the single day right after this pick and never gets
+      // revisited once a position resolves later than that. actual_rank/
+      // total_ranked aren't tracked per-origin-day yet, so those still
+      // come from the adjacent lookup.
+      const move = p.paper_exit_pct ?? p.live_pct ?? a?.move_pct ?? null;
       const mc = moveClass(move);
       const isLive = day.live_trading === true;
       const exitPrice = p.paper_exit_price ?? null;
       const exitReason = p.paper_exit_reason ?? (a ? 'End of day' : '—');
-      const dollarChange = a?.dollar_change ?? null;
+      const dollarChange = p.paper_exit_dollar ?? a?.dollar_change ?? null;
       const rankText = rankBadge(a?.actual_rank, a?.total_ranked);
       // Our actual entry-to-exit (or entry-to-now, if still open) return —
       // distinct from "Stock Move" above, which is the ticker's own
@@ -1390,22 +1456,15 @@ function setChartView(view) {
 }
 
 function buildDailyMoveData(days) {
-  // Build map: date -> ticker -> move_pct, using prior_predictions_actual
-  // (which records the previous day's predictions' actual outcomes)
+  // Build map: date -> ticker -> move_pct, reading each day's own
+  // predictions[] directly (paper_exit_pct once resolved, live_pct while
+  // still open/pending) -- already correct regardless of how many days a
+  // swing position takes to resolve, unlike the adjacent-day
+  // prior_predictions_actual lookup used elsewhere on this page.
   const sorted = days.slice().sort((a,b) => a.date.localeCompare(b.date));
   const byDate = {};
   const tickersSeen = new Set();
 
-  sorted.forEach(day => {
-    (day.prior_predictions_actual || []).forEach(p => {
-      if (p.move_pct == null) return;
-      // attribute this move to the day the prediction was FOR, not the day it was scored
-      // best approximation: previous entry's date
-    });
-  });
-
-  // Simpler approach: walk predictions directly with their own date,
-  // using live_pct as a same-day proxy when prior_predictions_actual unavailable
   sorted.forEach(day => {
     const dayMoves = {};
     (day.predictions || []).filter(p => !p.skipped_reason).forEach(p => {

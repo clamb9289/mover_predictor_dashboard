@@ -1,0 +1,99 @@
+{
+  "days": 120,
+  "hold_days": 5,
+  "comparisons": {
+    "3": {
+      "train": {
+        "n": 237,
+        "win_rate": 0.7046,
+        "hit_rate_3pct": 0.4135,
+        "avg_pct": 1.5519,
+        "total_pnl": 367.8,
+        "avg_days_held": 1.78
+      },
+      "val": {
+        "n": 102,
+        "win_rate": 0.6961,
+        "hit_rate_3pct": 0.3824,
+        "avg_pct": 1.2711,
+        "total_pnl": 129.65,
+        "avg_days_held": 1.89
+      }
+    },
+    "5": {
+      "train": {
+        "n": 395,
+        "win_rate": 0.6861,
+        "hit_rate_3pct": 0.3823,
+        "avg_pct": 1.1746,
+        "total_pnl": 278.39,
+        "avg_days_held": 1.66
+      },
+      "val": {
+        "n": 170,
+        "win_rate": 0.7235,
+        "hit_rate_3pct": 0.3765,
+        "avg_pct": 1.4244,
+        "total_pnl": 145.29,
+        "avg_days_held": 1.99
+      }
+    },
+    "8": {
+      "train": {
+        "n": 632,
+        "win_rate": 0.693,
+        "hit_rate_3pct": 0.3687,
+        "avg_pct": 1.226,
+        "total_pnl": 290.57,
+        "avg_days_held": 1.67
+      },
+      "val": {
+        "n": 272,
+        "win_rate": 0.7353,
+        "hit_rate_3pct": 0.3566,
+        "avg_pct": 1.2015,
+        "total_pnl": 122.55,
+        "avg_days_held": 1.92
+      }
+    },
+    "10": {
+      "train": {
+        "n": 791,
+        "win_rate": 0.6991,
+        "hit_rate_3pct": 0.3603,
+        "avg_pct": 1.1901,
+        "total_pnl": 282.41,
+        "avg_days_held": 1.67
+      },
+      "val": {
+        "n": 339,
+        "win_rate": 0.7404,
+        "hit_rate_3pct": 0.3569,
+        "avg_pct": 1.2062,
+        "total_pnl": 122.67,
+        "avg_days_held": 1.93
+      }
+    },
+    "20": {
+      "train": {
+        "n": 1582,
+        "win_rate": 0.7092,
+        "hit_rate_3pct": 0.3464,
+        "avg_pct": 1.0396,
+        "total_pnl": 246.7,
+        "avg_days_held": 1.71
+      },
+      "val": {
+        "n": 678,
+        "win_rate": 0.7611,
+        "hit_rate_3pct": 0.3333,
+        "avg_pct": 1.0813,
+        "total_pnl": 109.97,
+        "avg_days_held": 1.85
+      }
+    }
+  },
+  "recommended": [
+    20
+  ]
+}
