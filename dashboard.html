@@ -55,6 +55,13 @@
   /* Pick cards */
   .picks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
   .pick-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  /* Subtle win/loss tint once a position has exited -- layered over
+     --surface2 via background-image rather than replacing background-color
+     outright, so it stays a tint rather than overriding the card's base
+     tone (added 2026-07-24, see buildPickCards()). */
+  .pick-card-win { background-image: linear-gradient(var(--green-bg), var(--green-bg)); }
+  .pick-card-loss { background-image: linear-gradient(var(--red-bg), var(--red-bg)); }
+  .pick-round-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
   .pick-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
   .pick-rank { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.5px; margin-bottom: 4px; }
   .pick-ticker { font-size: 28px; font-weight: 700; letter-spacing: -1px; }
@@ -761,6 +768,31 @@ function render(data) {
   }
 }
 
+// A slot can round-trip more than once in a day (a floor/stop-loss exit
+// freeing the slot, then a different ticker -- or, before the 2026-07-24
+// same-day-exclusion fix, sometimes the same ticker -- buys back in).
+// trade_log.json only ever keeps one slot per ticker per day, so trader.py's
+// _sync_one_day() separately tracks every earlier, otherwise-overwritten
+// round in day.closed_rounds. Interleaves those (oldest first) ahead of
+// each ticker's current/latest-state card so the full sequence renders as
+// one grouped run of cards. Added 2026-07-24 after tracing CHTR's real
+// Alpaca order history and finding 3 of its 4 same-day rounds had no
+// dashboard record at all. Shared by renderTodayPicks() and
+// renderLastSession() -- both build cards from a day's predictions.
+function withClosedRounds(picks, day) {
+  const closedRounds = day.closed_rounds || [];
+  const cards = [];
+  picks.forEach(p => {
+    const priorRounds = closedRounds.filter(r => r.ticker === p.ticker);
+    const totalRounds = priorRounds.length + 1;
+    priorRounds.forEach((r, idx) => {
+      cards.push({ ...r, rank: p.rank, sector: p.sector, round_label: `Round ${idx + 1} of ${totalRounds} today` });
+    });
+    cards.push(totalRounds > 1 ? { ...p, round_label: `Round ${totalRounds} of ${totalRounds} today` } : p);
+  });
+  return cards;
+}
+
 function renderTodayPicks(day) {
   const el = document.getElementById('today-picks');
   const dateEl = document.getElementById('today-date');
@@ -788,7 +820,7 @@ function renderTodayPicks(day) {
     el.innerHTML = '<div class="loading-msg">All of today\'s top picks were skipped — see Also Considered below.</div>';
     return;
   }
-  el.innerHTML = buildPickCards(activePicks, 'explainer');
+  el.innerHTML = buildPickCards(withClosedRounds(activePicks, day), 'explainer');
 }
 
 function buildPickCards(predictions, idPrefix) {
@@ -802,6 +834,13 @@ function buildPickCards(predictions, idPrefix) {
     const entryPrice = p.entry_price;
     const isExited = p.paper_exit_price != null;
     const livePrice = isExited ? p.paper_exit_price : (p.live_price ?? null);
+    // Subtle win/loss card tint once exited -- makes it easy to scan
+    // multiple same-day cards (e.g. a ticker that round-tripped several
+    // times) at a glance (added 2026-07-24).
+    let exitCardClass = '';
+    if (isExited && p.paper_exit_pct != null) {
+      exitCardClass = p.paper_exit_pct > 0 ? ' pick-card-win' : (p.paper_exit_pct < 0 ? ' pick-card-loss' : '');
+    }
     const pnlPct = isExited ? p.paper_exit_pct : (p.live_pct ?? null);
     const priceUpdated = isExited ? p.paper_exit_time : (p.price_updated ?? null);
     const explainerId = `${idPrefix}-${i}`;
@@ -840,10 +879,11 @@ function buildPickCards(predictions, idPrefix) {
         <div class="signal-mini"><div class="signal-mini-label">Rel. Strength</div><div class="signal-mini-value">${signals.relative_strength_pct != null ? fmt(signals.relative_strength_pct) : '—'}</div></div>
       </div>`;
 
-    return `<div class="pick-card"${isSkipped ? ' style="opacity:0.55"' : ''}>
+    return `<div class="pick-card${exitCardClass}"${isSkipped ? ' style="opacity:0.55"' : ''}>
       <div class="pick-card-top">
         <div>
           <div class="pick-rank">${rankLabels[(p.rank ?? (i + 1)) - 1] || '#' + (p.rank ?? (i + 1))}</div>
+          ${p.round_label ? `<div class="pick-round-label">${p.round_label}</div>` : ''}
           <div class="pick-ticker"><a href="https://finance.yahoo.com/quote/${p.ticker}" target="_blank">${p.ticker} ↗</a></div>
           ${p.sector ? `<div style="font-size:11px;color:var(--muted);margin-top:2px">${p.sector}</div>` : ''}
         </div>
@@ -953,7 +993,7 @@ function renderLastSession(day) {
   }
   card.style.display = '';
   dateEl.textContent = day.date;
-  el.innerHTML = buildPickCards(day.predictions, 'last-session-explainer');
+  el.innerHTML = buildPickCards(withClosedRounds(day.predictions, day), 'last-session-explainer');
 }
 
 function renderBenchCandidates(day) {
