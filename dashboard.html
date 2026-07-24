@@ -649,8 +649,6 @@ async function loadPerfData() {
     if (!res.ok) throw new Error('HTTP ' + res.status);
     perfData = await res.json();
     render(perfData);
-    document.getElementById('prices-updated').textContent =
-      'Data loaded: ' + new Date().toLocaleTimeString();
   } catch(e) {
     document.getElementById('today-picks').innerHTML =
       `<div class="error-msg">Could not load performance.json from GitHub.<br><small>${e.message}</small></div>`;
@@ -796,8 +794,10 @@ function withClosedRounds(picks, day) {
 function renderTodayPicks(day) {
   const el = document.getElementById('today-picks');
   const dateEl = document.getElementById('today-date');
+  const refreshedEl = document.getElementById('prices-updated');
   if (day?.trading_skipped) {
     dateEl.textContent = '';
+    refreshedEl.textContent = '';
     el.innerHTML = `
       <div class="closed-market-card">
         <div class="closed-market-emoji">📉</div>
@@ -807,11 +807,24 @@ function renderTodayPicks(day) {
     return;
   }
   if (!day?.predictions?.length) {
+    refreshedEl.textContent = '';
     el.innerHTML = '<div class="loading-msg">No picks available yet for today.</div>';
     return;
   }
 
   dateEl.textContent = 'Picks generated for session: ' + day.date;
+  // The real (server-side) time prices last actually changed -- distinct
+  // from the page's own fetch time (which used to be shown here as "Data
+  // loaded: <browser time>", misleading during any gap between monitor
+  // ticks since the page can auto-refresh and show a fresh-looking
+  // timestamp even when the underlying data hasn't changed at all, e.g.
+  // over a weekend or the overnight gap between market close and the next
+  // morning's first tick). day.prices_last_updated is set by trader.py's
+  // update_performance_prices()/_sync_one_day() only when a price/position
+  // actually changed, so it accurately reflects true data freshness.
+  // Added 2026-07-24 after the user asked how stale off-hours pricing
+  // could get with no monitor job scheduled outside market hours.
+  refreshedEl.textContent = day.prices_last_updated ? `Last refreshed: ${day.prices_last_updated}` : '';
   // Skipped picks move down into the "Also Considered" table (see
   // renderBenchCandidates) so this grid only shows what was actually
   // bought, keeping the top of the page compact.
@@ -975,6 +988,7 @@ function renderClosedMarket(reason) {
   const pool = reason === 'holiday' ? HOLIDAY_MESSAGES : WEEKEND_MESSAGES;
   const msg = pool[Math.floor(Math.random() * pool.length)];
   dateEl.textContent = reason === 'holiday' ? 'Markets closed for the holiday' : 'Markets closed for the weekend';
+  document.getElementById('prices-updated').textContent = '';
   el.innerHTML = `
     <div class="closed-market-card">
       <div class="closed-market-emoji">${msg.emoji}</div>
