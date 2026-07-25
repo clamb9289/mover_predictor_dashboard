@@ -77,6 +77,12 @@
   .closed-market-emoji { font-size: 48px; margin-bottom: 12px; }
   .closed-market-text { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
   .closed-market-sub { font-size: 13px; color: var(--muted); }
+  /* Smaller secondary notice used instead of the full closed-market-card
+     when there are still-open swing positions to show -- the positions
+     lead, this just explains why nothing new is being picked today
+     (added 2026-07-25). */
+  .closed-notice { display: flex; align-items: center; gap: 10px; margin-top: 16px; padding: 12px 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; font-size: 12px; color: var(--muted); }
+  .closed-notice-emoji { font-size: 18px; flex-shrink: 0; }
   .pick-pnl-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 12px 0; }
   .pnl-item { text-align: center; flex: 1; }
   .pnl-label { font-size: 10px; color: var(--muted); margin-bottom: 3px; }
@@ -313,6 +319,7 @@
       <div id="today-picks" class="picks-grid"><div class="loading-msg">Loading picks...</div></div>
       <p class="updated-at" id="today-date"></p>
       <p class="updated-at" id="prices-updated"></p>
+      <div id="closed-notice" style="display:none"></div>
     </div>
     <div class="card" id="bench-card" style="display:none">
       <div class="card-title">Also Considered</div>
@@ -762,12 +769,28 @@ function render(data) {
   }
 
   if (isStale) {
-    renderClosedMarket(closedInfo.reason);
+    // Swing positions (added 2026-07-24) can still be open days after the
+    // session that bought them, including straight through a weekend --
+    // so "market's closed" no longer means "nothing to show." If any of
+    // latest's positions are still live, lead with those (same rendering
+    // as a normal trading day, last-refreshed timestamp included) and
+    // demote the weekend/holiday message to a small notice underneath,
+    // instead of the old full-card takeover that hid real open positions
+    // entirely (added 2026-07-25).
+    const openPositions = (latest?.predictions || []).filter(p => !p.skipped_reason && p.entry_price != null && p.paper_exit_price == null);
+    if (openPositions.length) {
+      renderTodayPicks(latest);
+      renderClosedNotice(closedInfo.reason);
+    } else {
+      renderClosedMarket(closedInfo.reason);
+      hideClosedNotice();
+    }
     document.getElementById('bench-card').style.display = 'none';
     renderLastSession(latest);
   } else {
     renderTodayPicks(latest);
     renderBenchCandidates(latest);
+    hideClosedNotice();
     document.getElementById('last-session-card').style.display = 'none';
   }
   renderYesterday(latest, days);
@@ -1018,6 +1041,18 @@ function renderClosedMarket(reason) {
       <div class="closed-market-text">${msg.text}</div>
       <div class="closed-market-sub">Check the Yesterday or History tab for the last trading session's results.</div>
     </div>`;
+}
+
+function renderClosedNotice(reason) {
+  const el = document.getElementById('closed-notice');
+  const pool = reason === 'holiday' ? HOLIDAY_MESSAGES : WEEKEND_MESSAGES;
+  const msg = pool[Math.floor(Math.random() * pool.length)];
+  el.style.display = '';
+  el.innerHTML = `<span class="closed-notice-emoji">${msg.emoji}</span><span>${msg.text} No new picks today — showing your open position(s) above.</span>`;
+}
+
+function hideClosedNotice() {
+  document.getElementById('closed-notice').style.display = 'none';
 }
 
 function renderLastSession(day) {
