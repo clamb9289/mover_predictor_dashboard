@@ -224,6 +224,9 @@
 
   .loading-msg { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 14px; }
   .error-msg { text-align: center; padding: 40px 20px; color: var(--red); font-size: 13px; line-height: 1.6; }
+  .llm-alert { background: rgba(248,113,113,0.12); border: 1px solid var(--red); color: var(--red);
+    padding: 10px 20px; font-size: 12.5px; line-height: 1.5; }
+  .llm-alert b { color: var(--red); }
   .updated-at { font-size: 11px; color: var(--muted); margin-top: 10px; }
   /* Last-refreshed line reads slightly bolder/larger than the plain
      .updated-at style above so it's easy to spot at a glance (added
@@ -289,6 +292,8 @@
     <img src="https://healthchecks.io/badge/01f3b7af-43c0-4f1b-8998-362504/KN9SHfC3-2.svg" alt="Runner status" title="Self-hosted runner health (Healthchecks.io)" height="20">
   </div>
 </div>
+
+<div id="llm-sentiment-alert" class="llm-alert" style="display:none"></div>
 
 <div class="tabs">
   <div class="tab active" onclick="showTab('today')">Today's Picks</div>
@@ -575,6 +580,7 @@ const MODEL_REVIEW_SEEN_KEY = "model_review_last_seen";
 const INTRADAY_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/intraday_scan.json";
 const GAP_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/gap_scan.json";
 const MARKET_HOLIDAYS_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/market_holidays.json";
+const LLM_SENTIMENT_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/llm_sentiment_tracking.json";
 const TAX_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/tax_liability.json";
 const REFRESH_INTERVAL = 60;
 // Fallback only -- render() below overwrites this from the latest day's own
@@ -1002,6 +1008,34 @@ async function loadMarketHolidays() {
     marketHolidays = new Set(data.holidays || []);
   } catch (e) {
     console.warn('Could not load market_holidays.json — holiday-specific closed message will be skipped (weekend detection still works).', e);
+  }
+}
+
+// Checks llm_sentiment_tracking.json's `status` field (written by
+// llm_news_sentiment.py) and surfaces a banner if the last run failed —
+// most importantly a billing/insufficient-credit error, since that step's
+// GitHub Actions failure is otherwise silent (continue-on-error: true, by
+// design, so an API outage can never block a real buy). A missing file or
+// fetch failure is treated as "nothing to report" (not an error) since the
+// file may simply not have synced yet — this banner is only for a real
+// `status: "error"` recorded by the script itself.
+async function checkLlmSentimentStatus() {
+  const banner = document.getElementById('llm-sentiment-alert');
+  try {
+    const res = await fetch(LLM_SENTIMENT_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    if (data.status !== 'error') { banner.style.display = 'none'; return; }
+    const isBilling = data.error_type === 'billing_error' || /credit|balance|billing/i.test(data.error_message || '');
+    const action = isBilling
+      ? 'Reload credits at <a href="https://console.anthropic.com" target="_blank" style="color:inherit;text-decoration:underline">console.anthropic.com</a> to resume it.'
+      : 'Check the ANTHROPIC_API_KEY secret / API status to resume it.';
+    banner.innerHTML = `⚠️ <b>LLM news sentiment tracker (track-only) is failing</b> as of ${data.date}: ` +
+      `${data.error_message || data.error_type || 'unknown error'}. ${action} ` +
+      `This does not affect real trading — only the experimental LLM sentiment/top-3 comparison.`;
+    banner.style.display = 'block';
+  } catch (e) {
+    banner.style.display = 'none';
   }
 }
 
@@ -2023,6 +2057,7 @@ async function loadTaxData() {
 }
 
 loadMarketHolidays().then(() => loadPerfData()).then(() => startCountdown());
+checkLlmSentimentStatus();
 checkModelReviewBadge();
 </script>
 </body>

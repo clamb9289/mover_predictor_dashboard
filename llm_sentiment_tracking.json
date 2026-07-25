@@ -1,0 +1,77 @@
+{
+  "date": "2026-07-24",
+  "generated_at": "2026-07-25T19:32:52.167618+00:00",
+  "model": "claude-opus-5",
+  "status": "ok",
+  "model_top3": [
+    "CHTR",
+    "TMHC",
+    "HIMS"
+  ],
+  "llm_top3": {
+    "tickers": [
+      "KMI",
+      "VNO",
+      "APG"
+    ],
+    "reasoning": "I deviate from the top three quant names because CHTR (rank 1) faces deteriorating broadband subscribers and a dilutive/questioned Cox deal, TMHC (rank 2) is already acquired at a fixed price with no upside left, and HIMS (rank 3) news is volatile and two-sided. KMI's record quarter and raised guidance, VNO's accretive Park Avenue Plaza deal plus leasing momentum, and APG's data-center-driven growth with a raised outlook are the cleanest positive catalysts."
+  },
+  "tickers": {
+    "CHTR": {
+      "rank": 1,
+      "headline_count": 40,
+      "llm_score": -3,
+      "materiality": "high",
+      "reasoning": "Record-low stock, 172k broadband losses, revenue declines and skepticism over the Cox merger dominate, despite an EPS beat and cheap valuation."
+    },
+    "TMHC": {
+      "rank": 2,
+      "headline_count": 40,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Berkshire acquisition completed and shares delisted at a fixed price, so no directional upside remains."
+    },
+    "HIMS": {
+      "rank": 3,
+      "headline_count": 40,
+      "llm_score": 1,
+      "materiality": "high",
+      "reasoning": "Mixed but net slightly positive: FDA panel narrowly backed four peptides (a strategic win) though the stock swung on peptide snub and Amazon GLP-1 competition."
+    },
+    "VNO": {
+      "rank": 4,
+      "headline_count": 40,
+      "llm_score": 3,
+      "materiality": "medium",
+      "reasoning": "Park Avenue Plaza 49% acquisition at a discount, PENN leasing strength, golden cross and 45% three-month gain, tempered by a Morgan Stanley downgrade to Underweight."
+    },
+    "EQR": {
+      "rank": 5,
+      "headline_count": 40,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Q2 FFO beat with raised guidance and $175M synergies from the AvalonBay merger of equals, offset by revenue miss, expense creep and a fairness investigation."
+    },
+    "TSCO": {
+      "rank": 6,
+      "headline_count": 40,
+      "llm_score": -4,
+      "materiality": "high",
+      "reasoning": "Q2 earnings/sales miss, comps -1.5%, guidance cut, long-term targets removed and 75 Petsense store closures with multiple price-target cuts."
+    },
+    "APG": {
+      "rank": 7,
+      "headline_count": 40,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "UBS/RBC see strong organic Q2 growth on data center demand plus a WTech acquisition close and raised FY26 outlook, though headlines are mostly routine 13F filings."
+    },
+    "KMI": {
+      "rank": 8,
+      "headline_count": 40,
+      "llm_score": 4,
+      "materiality": "high",
+      "reasoning": "Record Q2 with adjusted EPS beating by a wide margin, raised 2026 guidance, $9.6B backlog and $660M of projects in service driven by gas/data-center demand."
+    }
+  }
+}
