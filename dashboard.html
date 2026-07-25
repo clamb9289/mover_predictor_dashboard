@@ -771,20 +771,19 @@ function render(data) {
   if (isStale) {
     // Swing positions (added 2026-07-24) can still be open days after the
     // session that bought them, including straight through a weekend --
-    // so "market's closed" no longer means "nothing to show." If any of
-    // latest's positions are still live, lead with those (same rendering
-    // as a normal trading day, last-refreshed timestamp included) and
-    // demote the weekend/holiday message to a small notice underneath,
-    // instead of the old full-card takeover that hid real open positions
-    // entirely (added 2026-07-25).
+    // so "market's closed" no longer means "nothing to show." Either way,
+    // lead with a clear statement of the actual position state (open
+    // positions rendered live, or an explicit "no open positions" note if
+    // everything closed out by end of day) and demote the weekend/holiday
+    // message to a small notice underneath -- instead of the old full-card
+    // takeover that hid real open positions entirely (2026-07-25).
     const openPositions = (latest?.predictions || []).filter(p => !p.skipped_reason && p.entry_price != null && p.paper_exit_price == null);
     if (openPositions.length) {
       renderTodayPicks(latest);
-      renderClosedNotice(closedInfo.reason);
     } else {
-      renderClosedMarket(closedInfo.reason);
-      hideClosedNotice();
+      renderNoOpenPositions();
     }
+    renderClosedNotice(closedInfo.reason);
     document.getElementById('bench-card').style.display = 'none';
     renderLastSession(latest);
   } else {
@@ -1028,19 +1027,12 @@ function getMarketClosedInfo() {
   return { todayStr, closed: false, reason: null };
 }
 
-function renderClosedMarket(reason) {
+function renderNoOpenPositions() {
   const el = document.getElementById('today-picks');
   const dateEl = document.getElementById('today-date');
-  const pool = reason === 'holiday' ? HOLIDAY_MESSAGES : WEEKEND_MESSAGES;
-  const msg = pool[Math.floor(Math.random() * pool.length)];
-  dateEl.textContent = reason === 'holiday' ? 'Markets closed for the holiday' : 'Markets closed for the weekend';
+  dateEl.textContent = '';
   document.getElementById('prices-updated').textContent = '';
-  el.innerHTML = `
-    <div class="closed-market-card">
-      <div class="closed-market-emoji">${msg.emoji}</div>
-      <div class="closed-market-text">${msg.text}</div>
-      <div class="closed-market-sub">Check the Yesterday or History tab for the last trading session's results.</div>
-    </div>`;
+  el.innerHTML = '<div class="loading-msg">No open positions right now — everything closed out by end of day.</div>';
 }
 
 function renderClosedNotice(reason) {
@@ -1048,7 +1040,7 @@ function renderClosedNotice(reason) {
   const pool = reason === 'holiday' ? HOLIDAY_MESSAGES : WEEKEND_MESSAGES;
   const msg = pool[Math.floor(Math.random() * pool.length)];
   el.style.display = '';
-  el.innerHTML = `<span class="closed-notice-emoji">${msg.emoji}</span><span>${msg.text} No new picks today — showing your open position(s) above.</span>`;
+  el.innerHTML = `<span class="closed-notice-emoji">${msg.emoji}</span><span>${msg.text}</span>`;
 }
 
 function hideClosedNotice() {
