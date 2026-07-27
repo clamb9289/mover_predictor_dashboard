@@ -847,7 +847,12 @@ function withClosedRounds(picks, day) {
 // no open slot for it. Bug found 2026-07-27: the dashboard showed DOW/CHTR
 // (today's #2/#3 ranked candidates, never bought) instead of the real
 // held positions (EQR/VNO, carried over from 2026-07-24) alongside HIMS.
-const isOpenPosition = p => p.position_cost != null && p.paper_exit_price == null;
+const wasBought = p => p.position_cost != null;
+// Stricter than wasBought -- also requires it to still be open (no exit
+// recorded yet). Only used for the CARRYOVER lookback below: a prior day's
+// position that already exited (on its own origin day) shouldn't keep
+// resurfacing on every later day's card -- that's its own day's history.
+const isOpenPosition = p => wasBought(p) && p.paper_exit_price == null;
 
 // Swing positions can span multiple origin days. day.predictions only
 // lists TODAY's newly-ranked candidates -- if a slot was already held by a
@@ -860,8 +865,15 @@ const isOpenPosition = p => p.position_cost != null && p.paper_exit_price == nul
 // the stale/closed-market "anything open?" gate below, so both agree on
 // what's actually currently held.
 function getCurrentlyHeldPicks(day, days) {
-  const openToday = (day?.predictions || []).filter(isOpenPosition);
-  const seen = new Set(openToday.map(p => p.ticker));
+  // Today's own predictions: show anything actually bought today, whether
+  // still open or already exited (e.g. an EOD profit-take) -- this is
+  // today's real trading activity, not a carryover lookup, so it shouldn't
+  // require isOpenPosition's stricter "still open" check. Bug found
+  // 2026-07-27: using isOpenPosition here made HIMS -- sold for a real
+  // gain at EOD -- vanish from the dashboard entirely instead of showing
+  // its actual exit result.
+  const boughtToday = (day?.predictions || []).filter(wasBought);
+  const seen = new Set(boughtToday.map(p => p.ticker));
   const carryover = [];
   for (const d of (days || [])) {
     if (d.date === day?.date) continue;
@@ -871,7 +883,7 @@ function getCurrentlyHeldPicks(day, days) {
       seen.add(p.ticker);
     }
   }
-  return [...openToday, ...carryover];
+  return [...boughtToday, ...carryover];
 }
 
 function renderTodayPicks(day, days) {
