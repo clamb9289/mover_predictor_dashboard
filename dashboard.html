@@ -739,11 +739,14 @@ function render(data) {
 
   // Today's overall performance — combined $ across every position actually
   // bought today (top-3 + substitutes, excludes anything skipped by the
-  // opening-move/opening-gap filters): live_dollar/live_pct for still-open
-  // positions, paper_exit_dollar/paper_exit_pct once a position has closed.
-  // Populated as soon as the first buy fills (via live_dollar), not gated
-  // on waiting for an exit anymore.
-  const todayBought = (latest?.predictions || []).filter(p => !p.skipped_reason && p.entry_price != null);
+  // opening-move/opening-gap filters, and anything merely ranked but never
+  // bought because no slot was open -- see isOpenPosition/getCurrentlyHeldPicks):
+  // live_dollar/live_pct for still-open positions, paper_exit_dollar/
+  // paper_exit_pct once a position has closed. Populated as soon as the
+  // first buy fills (via live_dollar), not gated on waiting for an exit
+  // anymore. Deliberately scoped to TODAY's own predictions only (not
+  // carryover) since this stat is specifically "today's" performance.
+  const todayBought = (latest?.predictions || []).filter(p => p.position_cost != null && p.entry_price != null);
   const todayDollarValues = todayBought
     .map(p => p.paper_exit_price != null ? p.paper_exit_dollar : p.live_dollar)
     .filter(v => v != null);
@@ -783,10 +786,13 @@ function render(data) {
     // positions rendered live, or an explicit "no open positions" note if
     // everything closed out by end of day) and demote the weekend/holiday
     // message to a small notice underneath -- instead of the old full-card
-    // takeover that hid real open positions entirely (2026-07-25).
-    const openPositions = (latest?.predictions || []).filter(p => !p.skipped_reason && p.entry_price != null && p.paper_exit_price == null);
-    if (openPositions.length) {
-      renderTodayPicks(latest);
+    // takeover that hid real open positions entirely (2026-07-25). Uses the
+    // same getCurrentlyHeldPicks() helper as renderTodayPicks() so this
+    // gate and what actually renders always agree (a carryover position
+    // held from a prior origin day, not today's own predictions[], still
+    // counts as "open" here).
+    if (getCurrentlyHeldPicks(latest, days).length) {
+      renderTodayPicks(latest, days);
     } else {
       renderNoOpenPositions();
     }
@@ -794,7 +800,7 @@ function render(data) {
     document.getElementById('bench-card').style.display = 'none';
     renderLastSession(latest);
   } else {
-    renderTodayPicks(latest);
+    renderTodayPicks(latest, days);
     renderBenchCandidates(latest);
     hideClosedNotice();
     document.getElementById('last-session-card').style.display = 'none';
@@ -832,7 +838,43 @@ function withClosedRounds(picks, day) {
   return cards;
 }
 
-function renderTodayPicks(day) {
+// A prediction was actually bought only if position_cost got synced onto
+// it (trader.py's reconcile step sets this from a real trade_log.json
+// fill -- see the position_cost comment in trader.py). !skipped_reason is
+// NOT sufficient on its own: since swing trading (2026-07-24) can leave
+// 1-2 slots already held by carryover positions, a candidate ranked #2/#3
+// today can be neither bought NOR skipped by a filter -- there's simply
+// no open slot for it. Bug found 2026-07-27: the dashboard showed DOW/CHTR
+// (today's #2/#3 ranked candidates, never bought) instead of the real
+// held positions (EQR/VNO, carried over from 2026-07-24) alongside HIMS.
+const isOpenPosition = p => p.position_cost != null && p.paper_exit_price == null;
+
+// Swing positions can span multiple origin days. day.predictions only
+// lists TODAY's newly-ranked candidates -- if a slot was already held by a
+// carryover position, that position's own record lives under ITS origin
+// day, not today's. Each origin day's predictions[] self-heals with live
+// data regardless of how many days pass (see the "self-heal" comment near
+// renderYesterday), so pulling it straight from there gives fresh data --
+// merge in any still-open position from a recent prior day not already
+// covered by today's own bought picks. Shared by renderTodayPicks() and
+// the stale/closed-market "anything open?" gate below, so both agree on
+// what's actually currently held.
+function getCurrentlyHeldPicks(day, days) {
+  const openToday = (day?.predictions || []).filter(isOpenPosition);
+  const seen = new Set(openToday.map(p => p.ticker));
+  const carryover = [];
+  for (const d of (days || [])) {
+    if (d.date === day?.date) continue;
+    for (const p of (d.predictions || [])) {
+      if (seen.has(p.ticker) || !isOpenPosition(p)) continue;
+      carryover.push(p);
+      seen.add(p.ticker);
+    }
+  }
+  return [...openToday, ...carryover];
+}
+
+function renderTodayPicks(day, days) {
   const el = document.getElementById('today-picks');
   const dateEl = document.getElementById('today-date');
   const refreshedEl = document.getElementById('prices-updated');
@@ -847,7 +889,10 @@ function renderTodayPicks(day) {
       </div>`;
     return;
   }
-  if (!day?.predictions?.length) {
+
+  const activePicks = getCurrentlyHeldPicks(day, days);
+
+  if (!day?.predictions?.length && !activePicks.length) {
     refreshedEl.textContent = '';
     el.innerHTML = '<div class="loading-msg">No picks available yet for today.</div>';
     return;
@@ -877,10 +922,10 @@ function renderTodayPicks(day) {
   } else {
     refreshedEl.textContent = '';
   }
-  // Skipped picks move down into the "Also Considered" table (see
-  // renderBenchCandidates) so this grid only shows what was actually
-  // bought, keeping the top of the page compact.
-  const activePicks = day.predictions.filter(p => !p.skipped_reason);
+  // activePicks was already computed above (today's bought picks + any
+  // still-open carryover from a prior origin day). Skipped/not-bought
+  // candidates move down into the "Also Considered" table instead (see
+  // renderBenchCandidates), keeping this grid to what's actually held.
   if (!activePicks.length) {
     el.innerHTML = '<div class="loading-msg">All of today\'s top picks were skipped — see Also Considered below.</div>';
     return;
@@ -911,10 +956,22 @@ function buildPickCards(predictions, idPrefix) {
     const explainerId = `${idPrefix}-${i}`;
     const isSkipped = !!p.skipped_reason;
     const isSubstitute = !!p.substitute_pick;
+    // Ranked but never bought because no slot was open (swing trading,
+    // 2026-07-24+ -- distinct from isSkipped, which means a filter
+    // actively rejected it). Only renderLastSession() can still hand this
+    // function such an entry (it shows the full raw predictions[] as a
+    // historical record); renderTodayPicks() already excludes these via
+    // getCurrentlyHeldPicks(). Badge it explicitly either way so it's
+    // never mistaken for a real position just because it has live price
+    // data (predictor.py tracks prices for ranked candidates regardless
+    // of whether they were bought).
+    const isNotBought = !isSkipped && p.position_cost == null && p.paper_exit_price == null;
 
     let badges = '';
     if (isSkipped) {
       badges += `<div class="exited-badge">⛔ Skipped — ${p.skipped_reason}</div>`;
+    } else if (isNotBought) {
+      badges += `<div class="exited-badge">⚪ Not bought — no open slot that day</div>`;
     } else if (p.paper_exit_reason) {
       badges += `<div class="exited-badge">⚪ Exited — ${p.paper_exit_reason}</div>`;
     } else if (pnlPct != null) {
