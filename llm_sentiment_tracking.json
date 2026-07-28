@@ -1,161 +1,161 @@
 {
-  "date": "2026-07-27",
-  "generated_at": "2026-07-27T15:15:31.525459+00:00",
+  "date": "2026-07-28",
+  "generated_at": "2026-07-28T13:58:08.337808+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "HIMS",
-    "DOW",
-    "CHTR"
+    "EBC",
+    "UDR",
+    "CNC"
   ],
   "llm_top3": {
     "tickers": [
-      "DGX",
-      "RNG",
-      "UNP"
+      "CNC",
+      "DINO",
+      "CDNS"
     ],
-    "reasoning": "I deviate from the top-ranked names because HIMS news is highly contradictory/volatile and CHTR/TSCO (ranks 3-4) carry clearly negative fundamentals (subscriber losses, guidance cuts). DGX, RNG and UNP each pair beat-and-raise earnings with concrete catalysts \u2014 DGX raised guidance plus buyback at a 52-week high, RNG beat with a 67% dividend hike and OpenAI/NiCE AI momentum, and UNP secured CN's support de-risking the NSC merger \u2014 giving positive news alignment with decent quantitative standing."
+    "reasoning": "CNC delivered an enormous earnings beat with a large guidance raise and a Medicare rate tailwind, still trading below fair value estimates. DINO posted its best profit since 2022 with a dividend hike and lubricants separation catalyst amid strong refining momentum. CDNS is a genuine beat-and-raise with record backlog and broad price-target hikes on AI demand. I deviate from top-ranked EBC/UDR because their news is more modest \u2014 EBC trimmed 2026 guidance and UDR's FFO/outlook signals are mixed \u2014 while these three combine high-materiality positive catalysts with decent quant standing."
   },
   "tickers": {
-    "HIMS": {
+    "EBC": {
       "rank": 1,
       "headline_count": 40,
-      "llm_score": 1,
-      "materiality": "high",
-      "reasoning": "Mixed but net slightly positive: FDA panel backed 4 of 7 peptides and Barclays sees underestimated new-product opportunity, though other headlines flag margin hits, Amazon GLP-1 competition and a CAO exit after a 313% run."
+      "llm_score": 2.5,
+      "materiality": "medium",
+      "reasoning": "Q2 beat on revenue, record earnings, dividend hike, buyback of 11.35M shares and multiple price-target raises, tempered by trimmed 2026 guidance."
     },
-    "DOW": {
+    "UDR": {
       "rank": 2,
       "headline_count": 40,
-      "llm_score": 2,
+      "llm_score": 0.5,
       "materiality": "medium",
-      "reasoning": "Q2 earnings beat on pricing and cost actions, though most other headlines are generic Dow Jones index chatter and the stock has an 'epic losing streak' narrative."
+      "reasoning": "Mixed: FFO/revenue beat leasing strength and monthly dividend start plus Jefferies upgrade, but conflicting reports of FFO decrease and lowered FY26 outlook."
     },
-    "CHTR": {
+    "CNC": {
       "rank": 3,
       "headline_count": 40,
-      "llm_score": -3,
+      "llm_score": 4,
       "materiality": "high",
-      "reasoning": "Earnings beat overshadowed by loss of 172,000 internet subscribers, revenue decline, stock at record low and multiple price-target cuts (UBS to $140 from $235)."
+      "reasoning": "Massive Q2 beat (adj EPS $2.51 vs $1.07), HBR better than feared, and FY EPS guidance raised to >$4.80 from >$3.40, plus Medicare Advantage rate tailwind."
     },
-    "TSCO": {
+    "NE": {
       "rank": 4,
       "headline_count": 40,
-      "llm_score": -3,
+      "llm_score": -4,
       "materiality": "high",
-      "reasoning": "Q2 sales/EPS miss, guidance cut, removal of long-term targets, 75 Petsense store closures and multiple analyst target cuts."
+      "reasoning": "Adjusted EPS $0.01 vs $0.19 consensus, swing to net loss, Brazil rig suspensions and cut FY26 revenue/EBITDA guidance drove a sharp selloff."
     },
-    "PCG": {
+    "INCY": {
       "rank": 5,
       "headline_count": 40,
-      "llm_score": 3,
+      "llm_score": 1.5,
       "materiality": "medium",
-      "reasoning": "Q2 EPS beat, $73B grid capex plan and 12.7 GW data-center pipeline support a cheap-valuation case, tempered by slight revenue miss and insider sales."
+      "reasoning": "Strong Q2 beat and raised FY sales guidance with Vega acquisition and Halozyme deal, though one report flags full-year guidance disappointment and valuation concerns after a 93% rally."
     },
-    "KMI": {
+    "TRU": {
       "rank": 6,
       "headline_count": 40,
       "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "Record Q2 results, raised 2026 guidance, $10B backlog and $660M of projects in service, though EPS outlook still trails consensus."
+      "reasoning": "Q2 revenue +15% beat and raised full-year guidance to 12-13% revenue growth with higher EPS range."
     },
-    "MTDR": {
+    "AMKR": {
       "rank": 7,
       "headline_count": 40,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Accretive $1.275B Paloma Permian acquisition and repeated CEO open-market buying are positives, offset by Moody's outlook cut to stable on ~75% higher debt."
+      "llm_score": -1.5,
+      "materiality": "high",
+      "reasoning": "Record Q2 beat and Nvidia packaging partnership overshadowed by flat/weak Q3 guidance, sending shares down ~10%."
     },
-    "VNO": {
+    "TSN": {
       "rank": 8,
       "headline_count": 40,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Stock up 44.9% in three months with accretive 49% Park Avenue Plaza purchase and PENN leasing strength, but Morgan Stanley downgraded to Underweight on valuation."
+      "reasoning": "Stock rose on USDA plan to reopen Mexican cattle imports and pork antitrust settlements reducing legal risk, ahead of earnings."
     },
-    "SHC": {
+    "NSA": {
       "rank": 9,
-      "headline_count": 40,
-      "llm_score": -1,
-      "materiality": "low",
-      "reasoning": "Mostly generic 'risky small-cap' screens plus a Warburg Pincus $289.7M secondary sale, no strong fundamental catalyst."
-    },
-    "DGX": {
-      "rank": 10,
-      "headline_count": 40,
-      "llm_score": 4,
-      "materiality": "high",
-      "reasoning": "Q2 beat, raised 2026 guidance, bigger buyback, 52-week high and multiple price-target hikes."
-    },
-    "LVS": {
-      "rank": 11,
-      "headline_count": 40,
-      "llm_score": -3,
-      "materiality": "high",
-      "reasoning": "Q2 revenue and EPS miss with weak Macau hold, estimate cuts and stock 'buried' after the report despite a larger buyback."
-    },
-    "EQR": {
-      "rank": 12,
-      "headline_count": 40,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 FFO beat and raised revenue guidance, but shares fell on expense pressure and the AvalonBay merger of equals leaves valuation/fairness questions (Halper Sadeh investigation)."
-    },
-    "PNFP": {
-      "rank": 13,
-      "headline_count": 40,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 EPS beat with heavy insider buying by the founder and chief banking officer, offset by revenue miss, rising nonperforming loans and a Benchmark target cut."
-    },
-    "FNF": {
-      "rank": 14,
       "headline_count": 40,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Only generic skeptical screens, housing headwinds and Q1 miss commentary with no fresh material catalyst."
+      "reasoning": "Public Storage acquisition has closed; remaining headlines are merger-conversion and 13F administrivia with no forward upside."
     },
-    "HBAN": {
+    "PLNT": {
+      "rank": 10,
+      "headline_count": 40,
+      "llm_score": -2,
+      "materiality": "medium",
+      "reasoning": "Ongoing securities class actions with September deadline and prior guidance cut dominate, though valuation looks discounted."
+    },
+    "DINO": {
+      "rank": 11,
+      "headline_count": 40,
+      "llm_score": 3.5,
+      "materiality": "high",
+      "reasoning": "Q2 adj EPS $5.31 vs $4.49 est, highest profit since 2022, dividend hike, planned lubricants separation and 52-week high on an 8-day rally."
+    },
+    "DOCS": {
+      "rank": 12,
+      "headline_count": 40,
+      "llm_score": -1.5,
+      "materiality": "medium",
+      "reasoning": "Shares down 8% on softer billings raising demand/competition concerns, plus a $31M securities settlement overhang."
+    },
+    "NLY": {
+      "rank": 13,
+      "headline_count": 40,
+      "llm_score": 1.5,
+      "materiality": "medium",
+      "reasoning": "Q2 earnings beat, EAD covering the dividend for a ninth straight quarter, dividend hike and record credit purchases."
+    },
+    "IVZ": {
+      "rank": 14,
+      "headline_count": 40,
+      "llm_score": 3,
+      "materiality": "medium",
+      "reasoning": "Big Q2 beat with record $45.1B net inflows and revenue well above estimates, though GF Value flags overvaluation."
+    },
+    "KHC": {
       "rank": 15,
       "headline_count": 40,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Q2 earnings merely met estimates with higher deposit costs and charge-offs, plus a BofA downgrade to Neutral."
+      "llm_score": 0.5,
+      "materiality": "low",
+      "reasoning": "Disney partnership and staples rotation are modest positives ahead of Aug 5 earnings; no hard numbers yet."
     },
-    "IFF": {
+    "KVUE": {
       "rank": 16,
       "headline_count": 40,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "$4.3B food ingredients divestiture and S&P upgrade to BBB support deleveraging, but a 7-day 11% slide and weak organic growth outlook temper it."
+      "reasoning": "FDA approval of Tylenol-naproxen combination and pending Kimberly-Clark acquisition support, offset by revived Tylenol autism lawsuits."
     },
-    "RNG": {
+    "KO": {
       "rank": 17,
       "headline_count": 40,
-      "llm_score": 4,
+      "llm_score": 3,
       "materiality": "high",
-      "reasoning": "Stock soared ~27% on Q2 beat, raised full-year outlook, 67% dividend hike and OpenAI/NiCE AI partnerships."
+      "reasoning": "Q2 beat and raised full-year profit guidance drove a notable surge in a defensive megacap."
     },
-    "UNP": {
+    "CDNS": {
       "rank": 18,
       "headline_count": 40,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Strong Q2 plus CN support agreement removing a key obstacle to the Norfolk Southern merger drove a 52-week high and a wave of target hikes."
+      "llm_score": 3.5,
+      "materiality": "high",
+      "reasoning": "Beat-and-raise quarter with record backlog and $125M FY guidance raise, multiple price target hikes on AI-driven EDA demand."
     },
-    "ELS": {
+    "NOV": {
       "rank": 19,
       "headline_count": 40,
-      "llm_score": 2,
+      "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Q2 FFO and revenue beat with maintained guidance and a Jefferies upgrade to Strong Buy, but magnitude is modest for a stable REIT."
+      "reasoning": "Equinor flexible pipe contract win and a multi-day winning streak, but Q2 results still pending and mixed analyst views."
     },
-    "LW": {
+    "WBS": {
       "rank": 20,
       "headline_count": 40,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Q4 earnings and revenue beat with upbeat FY27 outlook, 7% volume growth and multiple target raises, tempered by EMEA war impact and margin pressure."
+      "llm_score": -0.5,
+      "materiality": "low",
+      "reasoning": "Q2 earnings and revenue missed with expenses up, but upside is largely capped by the pending $48.75 cash Santander acquisition."
     }
   }
 }

@@ -4422,7 +4422,8 @@
           "live_pct": 1.02,
           "live_dollar": 0.93,
           "price_updated": "12:15 PM ET",
-          "paper_exit_time": "12:20 PM ET"
+          "paper_exit_time": "12:20 PM ET",
+          "postmortem": "Modest gain of +0.74%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "EQR",
@@ -4440,10 +4441,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0009,
           "paper_trail_floor_active": false,
-          "live_price": 67.82,
-          "live_pct": -1.02,
-          "live_dollar": -0.93,
-          "price_updated": "9:48 AM ET"
+          "live_price": 67.93,
+          "live_pct": -0.86,
+          "live_dollar": -0.78,
+          "price_updated": "9:56 AM ET"
         }
       ],
       "bench_candidates": [
@@ -4600,7 +4601,7 @@
       "total_hits": 1,
       "total_predictions": 39,
       "days_tracked": 13,
-      "prices_last_updated": "9:48 AM ET",
+      "prices_last_updated": "9:56 AM ET",
       "closed_rounds": [],
       "prices_after_hours": false
     },
@@ -4794,7 +4795,8 @@
           "paper_exit_pct": 2.23,
           "paper_exit_dollar": 2.02,
           "paper_exit_reason": "EOD sell (winning position, +2.3%)",
-          "paper_exit_time": "4:00 PM ET"
+          "paper_exit_time": "4:00 PM ET",
+          "postmortem": "Cleared the trailing-stop floor (+2.23%) \u2014 the accumulation/volume signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
         },
         {
           "rank": 2,
@@ -4825,7 +4827,8 @@
           "paper_exit_pct": 0.09,
           "paper_exit_dollar": 0.08,
           "paper_exit_reason": "EOD sell (winning position, +0.1%)",
-          "paper_exit_time": "4:10 PM ET"
+          "paper_exit_time": "4:10 PM ET",
+          "postmortem": "Modest gain (+0.09%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
         },
         {
           "rank": 3,
@@ -5005,6 +5008,414 @@
       "closed_rounds": [],
       "prices_last_updated": "11:00 PM ET",
       "prices_after_hours": true
+    },
+    {
+      "date": "2026-07-28",
+      "regime": "Market regime OK \u2014 SPY -0.21%",
+      "trading_skipped": false,
+      "max_hold_days": 5,
+      "spy_regime_pct": -0.00211,
+      "top_sectors": [
+        {
+          "etf": "XLP",
+          "name": "Consumer Staples",
+          "pct": 3.3
+        },
+        {
+          "etf": "XLV",
+          "name": "Healthcare",
+          "pct": 2.67
+        },
+        {
+          "etf": "XLB",
+          "name": "Materials",
+          "pct": 1.85
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "BSY",
+          "pct": 11.92,
+          "signals": {
+            "accumulation": 0.82,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -6.0
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 249,
+          "eligible_pool_size": 602,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "RNG",
+          "pct": 11.16,
+          "signals": {
+            "accumulation": 1.208,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": 19.95
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 74,
+          "eligible_pool_size": 602,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "TRMB",
+          "pct": 10.76,
+          "signals": {
+            "accumulation": 0.693,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.3
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 356,
+          "eligible_pool_size": 602,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "PTC",
+          "pct": 10.76,
+          "signals": {
+            "accumulation": 0.486,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -8.21
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 536,
+          "eligible_pool_size": 602,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "ADSK",
+          "pct": 10.06,
+          "signals": {
+            "accumulation": 0.502,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.41
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 526,
+          "eligible_pool_size": 602,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "SHAK",
+          "pct": 9.97,
+          "signals": {
+            "accumulation": 0.961,
+            "sector_momentum_pct": 0.77,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -6.24
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 153,
+          "eligible_pool_size": 602,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "PEGA",
+          "pct": 9.96,
+          "signals": {
+            "accumulation": 0.302,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -17.96
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 599,
+          "eligible_pool_size": 602,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CTSH",
+          "pct": 9.39,
+          "signals": {
+            "accumulation": 0.754,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.45
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 296,
+          "eligible_pool_size": 602,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "WDAY",
+          "pct": 9.01,
+          "signals": {
+            "accumulation": 0.583,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -3.49
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 465,
+          "eligible_pool_size": 602,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "BILL",
+          "pct": 8.82,
+          "signals": {
+            "accumulation": 0.407,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -4.58
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 580,
+          "eligible_pool_size": 602,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably lower accumulation (0.67 vs our picks' 2.45) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably lower relative strength (-3.27 vs our picks' -0.82) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably higher news sentiment (0.70 vs our picks' 0.00) \u2014 possible signal to increase weighting on news sentiment. BSY (#249 of 602), RNG (#74 of 602), TRMB (#356 of 602), PTC (#536 of 602), ADSK (#526 of 602), SHAK (#153 of 602), PEGA (#599 of 602), CTSH (#296 of 602), WDAY (#465 of 602), BILL (#580 of 602) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "EBC",
+          "score": 0.73,
+          "entry_price": 23.12,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "Volume was running 2.2x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Financials) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 2.152,
+            "sector_momentum_pct": 0.55,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.11,
+            "gap_pct": -0.52
+          },
+          "prediction_price": 23.1,
+          "position_cost": 92.04,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 23.12,
+          "live_pct": 0.02,
+          "live_dollar": 0.02,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "UDR",
+          "score": 0.678,
+          "entry_price": 39.55,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "Volume was running 2.1x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Real Estate) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 2.054,
+            "sector_momentum_pct": 1.11,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.35,
+            "gap_pct": -2.01
+          },
+          "prediction_price": 39.27,
+          "position_cost": 92.04,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 39.53,
+          "live_pct": -0.05,
+          "live_dollar": -0.05,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "CNC",
+          "score": 0.661,
+          "entry_price": 64.08,
+          "headline": "Centene Raises Full-Year Outlook After Strong Second-Quarter Earnings Beat",
+          "sector": "Healthcare",
+          "explainer": "Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind. Recent news skewed positive, including: \u201cCentene Raises Full-Year Outlook After Strong Second-Quarter Earnings Beat\u201d Gapped down -7.1% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.456,
+            "sector_momentum_pct": 2.67,
+            "news_sentiment": 6.0,
+            "relative_strength_pct": -5.35,
+            "gap_pct": -7.14
+          },
+          "live_price": 58.12,
+          "live_pct": -9.29,
+          "live_dollar": null,
+          "price_updated": "9:56 AM ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "NE",
+          "score": 0.532,
+          "entry_price": 43.11,
+          "headline": "Noble Corporation PLC (NE) Misses Q2 Earnings Estimates",
+          "sector": "Energy",
+          "explainer": "Its sector (Energy) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+6.0% relative strength), suggesting individual demand beyond just sector momentum. Gapped down -6.6% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.277,
+            "sector_momentum_pct": 0.23,
+            "news_sentiment": -3.0,
+            "relative_strength_pct": 5.95,
+            "gap_pct": -6.63
+          },
+          "live_price": 40.81,
+          "live_pct": -5.34,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "INCY",
+          "score": 0.529,
+          "entry_price": 118.87,
+          "headline": "Incyte (NASDAQ:INCY) Posts Better-Than-Expected Sales In Q2 CY2026 But Full-Year Sales Guidance Misses Expectations Significantly",
+          "sector": "Healthcare",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 1.648,
+            "sector_momentum_pct": 2.67,
+            "news_sentiment": -2.0,
+            "relative_strength_pct": -1.29,
+            "gap_pct": 0.0
+          },
+          "live_price": 122.45,
+          "live_pct": 3.01,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "TRU",
+          "score": 0.509,
+          "entry_price": 77.24,
+          "headline": "TransUnion (TRU) Beats Q2 Earnings and Revenue Estimates",
+          "sector": "Industrials",
+          "explainer": "Volume was running 1.9x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Recent news skewed positive, including: \u201cTransUnion (TRU) Beats Q2 Earnings and Revenue Estimates\u201d",
+          "signals": {
+            "accumulation": 1.904,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.5,
+            "relative_strength_pct": -2.91,
+            "gap_pct": -0.44
+          },
+          "live_price": 84.07,
+          "live_pct": 8.85,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "AMKR",
+          "score": 0.491,
+          "entry_price": 60.71,
+          "headline": "Amkor Technology Inc (AMKR) Q2 2026 Earnings Call Highlights: Record Revenue and Strategic ...",
+          "sector": "Technology",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.1% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cAmkor Technology Inc (AMKR) Q2 2026 Earnings Call Highlights: Record Revenue and Strategic ...\u201d Gapped down -14.5% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.343,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 6.0,
+            "relative_strength_pct": 0.07,
+            "gap_pct": -14.52
+          },
+          "live_price": 46.76,
+          "live_pct": -22.98,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "TSN",
+          "score": 0.474,
+          "entry_price": 60.71,
+          "headline": "JBS, Tyson Stocks Jump on U.S. Plans to Resume Mexican Cattle Imports",
+          "sector": "Consumer Staples",
+          "explainer": "Its sector (Consumer Staples) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+1.4% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cJBS, Tyson Stocks Jump on U.S. Plans to Resume Mexican Cattle Imports\u201d",
+          "signals": {
+            "accumulation": 1.452,
+            "sector_momentum_pct": 3.3,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": 1.37,
+            "gap_pct": 1.47
+          },
+          "live_price": 62.21,
+          "live_pct": 2.46,
+          "price_updated": "9:56 AM ET"
+        }
+      ],
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "HIMS",
+          "move_pct": 2.23,
+          "dollar_change": 2.02,
+          "position_size": 90.28,
+          "actual_rank": 24,
+          "total_ranked": 602,
+          "signals": {
+            "accumulation": 3.108,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.79,
+            "gap_pct": -12.25
+          },
+          "postmortem": "Cleared the trailing-stop floor (+2.23%) \u2014 the accumulation/volume signal(s) that drove this pick played out well. Worth leaning into when this profile repeats. The stock itself ranked #24 of 602 tracked that day, for context."
+        },
+        {
+          "rank": 2,
+          "ticker": "DOW",
+          "move_pct": 0.09,
+          "dollar_change": 0.08,
+          "position_size": 91.72,
+          "actual_rank": 550,
+          "total_ranked": 602,
+          "signals": {
+            "accumulation": 1.59,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 5.46,
+            "gap_pct": -6.38
+          },
+          "postmortem": "Modest gain (+0.09%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through. The stock itself ranked #550 of 602 tracked that day, for context."
+        },
+        {
+          "rank": 3,
+          "ticker": "CHTR",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 100.0,
+          "actual_rank": 125,
+          "total_ranked": 602,
+          "signals": {
+            "accumulation": 2.661,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -5.12,
+            "gap_pct": -0.8
+          },
+          "postmortem": null
+        }
+      ],
+      "hit_rate": 0.0222,
+      "total_hits": 1,
+      "total_predictions": 45,
+      "days_tracked": 15,
+      "closed_rounds": [],
+      "prices_last_updated": "9:56 AM ET",
+      "prices_after_hours": false
     }
   ]
 }
