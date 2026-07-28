@@ -988,7 +988,7 @@ function buildPickCards(predictions, idPrefix) {
       badges += `<div class="exited-badge">⚪ Exited — ${p.paper_exit_reason}</div>`;
     } else if (pnlPct != null) {
       if (p.paper_current_floor_pct != null) {
-        badges += `<div class="win-floor-badge">🟢 Floor locked at ${fmt(p.paper_current_floor_pct * 100, 1)} — walks away with at least this</div>`;
+        badges += `<div class="win-floor-badge">🟢 Floor locked at ${fmt(p.paper_current_floor_pct * 100, 2)} — walks away with at least this</div>`;
       } else if (pnlPct <= -3) {
         badges += `<div class="stop-badge">🔴 Stop triggered</div>`;
       }
