@@ -320,7 +320,13 @@
       <div class="stat-box" title="Average % return across today's actually-bought positions (equal-weighted, matching the roughly equal $ notional per position) — live for open, realized for exited"><div class="stat-label">Today's Performance %</div><div class="stat-value neutral" id="s-today-pnl-pct">—</div></div>
     </div>
     <div class="card">
-      <div class="card-title">Today's Top 3 Picks <span id="live-spinner" style="display:none" class="spinning">↻</span></div>
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+        <div class="card-title" style="margin-bottom:0">Today's Top 3 Picks <span id="live-spinner" style="display:none" class="spinning">↻</span></div>
+        <div class="chart-toggle-group" title="Switch between per-share price and actual position $ value">
+          <div class="chart-toggle-btn active" data-cardview="price" onclick="setCardViewMode('price')">Price</div>
+          <div class="chart-toggle-btn" data-cardview="value" onclick="setCardViewMode('value')">Position $</div>
+        </div>
+      </div>
       <div id="today-picks" class="picks-grid"><div class="loading-msg">Loading picks...</div></div>
       <p class="updated-at" id="today-date"></p>
       <p class="updated-at" id="prices-updated"></p>
@@ -593,6 +599,11 @@ let MAX_HOLD_DAYS = 5;
 
 let perfData = null;
 let marketHolidays = new Set(); // populated by loadMarketHolidays() before first render
+// 'price' (per-share entry/live/exit price) or 'value' (actual $ cost basis/
+// market value) -- toggled via setCardViewMode(), shared by every card grid
+// that goes through buildPickCards() (Today's Picks, Last Session, Yesterday's
+// carryover, etc.) since they all funnel through that one template function.
+let cardViewMode = 'price';
 let liveCountdown = REFRESH_INTERVAL;
 let countdownTimer = null;
 let chartMode = 'combined';
@@ -968,6 +979,25 @@ function buildPickCards(predictions, idPrefix) {
     const explainerId = `${idPrefix}-${i}`;
     const isSkipped = !!p.skipped_reason;
     const isSubstitute = !!p.substitute_pick;
+    // Position-$ view (added 2026-07-29): same underlying data, just shown
+    // as actual $ invested/held instead of per-share price -- costBasis is
+    // exactly what trader.py's position_cost already tracks (real $ spent,
+    // synced from the real Alpaca fill), and marketValue is derived from it
+    // plus the $ P/L that's already computed server-side (live_dollar/
+    // paper_exit_dollar), not a new calculation.
+    const costBasis = p.position_cost ?? null;
+    const dollarPnl = isExited ? p.paper_exit_dollar : (p.live_dollar ?? null);
+    const marketValue = (costBasis != null && dollarPnl != null) ? costBasis + dollarPnl : null;
+    const showValue = cardViewMode === 'value';
+    const topValue = showValue ? marketValue : livePrice;
+    const topLabel = isSkipped ? 'NOT BOUGHT' : (showValue
+      ? (isExited ? 'FINAL VALUE' : 'MARKET VALUE')
+      : (isExited ? 'EXIT PRICE' : 'LIVE PRICE'));
+    // Existing behavior only ever showed the $ delta under the price for an
+    // EXITED pick -- in value mode it's shown for open picks too, since the
+    // market value figure alone doesn't convey direction/size of the move.
+    const topDollarLine = showValue ? (isSkipped ? null : dollarPnl) : (isExited ? p.paper_exit_dollar : null);
+    const bottomLeftValue = showValue ? costBasis : entryPrice;
     // Ranked but never bought because no slot was open (swing trading,
     // 2026-07-24+ -- distinct from isSkipped, which means a filter
     // actively rejected it). Only renderLastSession() can still hand this
@@ -1022,18 +1052,18 @@ function buildPickCards(predictions, idPrefix) {
           ${p.sector ? `<div style="font-size:11px;color:var(--muted);margin-top:2px">${p.sector}</div>` : ''}
         </div>
         <div class="pick-live-price">
-          <div class="live-price-value" style="color:${livePrice ? 'var(--text)' : 'var(--muted)'}">
-            ${isSkipped ? '—' : (livePrice ? fmtPrice(livePrice) : '—')}
+          <div class="live-price-value" style="color:${topValue != null ? 'var(--text)' : 'var(--muted)'}">
+            ${isSkipped ? '—' : (topValue != null ? fmtPrice(topValue) : '—')}
           </div>
-          <div class="live-price-label"${isExited ? ` style="color:var(--${pnlPct > 0 ? 'green' : pnlPct < 0 ? 'red' : 'muted'})"` : ''}>${isSkipped ? 'NOT BOUGHT' : (isExited ? 'EXIT PRICE' : 'LIVE PRICE')}</div>
-          ${isExited && p.paper_exit_dollar != null ? `<div class="live-price-dollar" style="color:var(--${p.paper_exit_dollar > 0 ? 'green' : p.paper_exit_dollar < 0 ? 'red' : 'muted'})">${fmtDollar(p.paper_exit_dollar)}</div>` : ''}
+          <div class="live-price-label"${isExited ? ` style="color:var(--${pnlPct > 0 ? 'green' : pnlPct < 0 ? 'red' : 'muted'})"` : ''}>${topLabel}</div>
+          ${topDollarLine != null ? `<div class="live-price-dollar" style="color:var(--${topDollarLine > 0 ? 'green' : topDollarLine < 0 ? 'red' : 'muted'})">${fmtDollar(topDollarLine)}</div>` : ''}
         </div>
       </div>
 
       <div class="pick-pnl-row">
         <div class="pnl-item">
-          <div class="pnl-label">Entry Price</div>
-          <div class="pnl-value flat">${!isSkipped && entryPrice ? fmtPrice(entryPrice) : '—'}</div>
+          <div class="pnl-label">${showValue ? 'Cost Basis' : 'Entry Price'}</div>
+          <div class="pnl-value flat">${!isSkipped && bottomLeftValue != null ? fmtPrice(bottomLeftValue) : '—'}</div>
         </div>
         <div class="pnl-item">
           <div class="pnl-label">Change</div>
@@ -1667,6 +1697,12 @@ function renderHistory(days) {
   });
 
   tbody.innerHTML = rows.join('') || '<tr><td colspan="12" class="loading-msg">No records found.</td></tr>';
+}
+
+function setCardViewMode(mode) {
+  cardViewMode = mode;
+  document.querySelectorAll('[data-cardview]').forEach(b => b.classList.toggle('active', b.dataset.cardview === mode));
+  if (perfData) render(perfData); // re-render everything from cached data -- no re-fetch needed
 }
 
 function setChartMode(mode) {
