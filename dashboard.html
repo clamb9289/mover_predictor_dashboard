@@ -1245,13 +1245,23 @@ function renderYesterday(latest, days) {
   const enriched = latest.prior_predictions_actual.map(p => {
     const live = livePredsByTicker[p.ticker] || {};
     const resolved = live.paper_exit_pct != null;
+    // A pick that was ranked but never actually bought (no open slot that
+    // day -- e.g. CHTR on 2026-07-27, rank #3 when only 2 slots were open)
+    // still carries a snapshot entry_price with no paper_exit_pct, which
+    // used to be indistinguishable from a genuinely still-open swing
+    // position -- it displayed a fabricated live %-move as if it were a
+    // real trade. skipped_reason (same convention as buildPickCards/
+    // renderBenchCandidates elsewhere on this page) is the authoritative
+    // signal that no real position ever existed.
+    const wasSkipped = !!live.skipped_reason;
     return {
       ...p,
-      move_pct: live.paper_exit_pct ?? live.live_pct ?? p.move_pct,
-      dollar_change: resolved ? (live.paper_exit_dollar ?? p.dollar_change) : (live.live_dollar ?? p.dollar_change),
+      move_pct: wasSkipped ? null : (live.paper_exit_pct ?? live.live_pct ?? p.move_pct),
+      dollar_change: wasSkipped ? null : (resolved ? (live.paper_exit_dollar ?? p.dollar_change) : (live.live_dollar ?? p.dollar_change)),
       postmortem: live.postmortem ?? p.postmortem,
       daysHeld: live.days_held,
-      stillOpen: !resolved && live.entry_price != null,
+      stillOpen: !wasSkipped && !resolved && live.entry_price != null,
+      skippedReason: wasSkipped ? live.skipped_reason : null,
     };
   });
 
@@ -1285,13 +1295,14 @@ function renderYesterday(latest, days) {
         </div>
         <div class="yest-detail-item">
           <span>Position</span>
-          <strong>${p.position_size ? '$' + p.position_size.toFixed(2) : '—'}</strong>
+          <strong>${p.skippedReason ? '—' : (p.position_size ? '$' + p.position_size.toFixed(2) : '—')}</strong>
         </div>
         <div class="yest-detail-item">
           <span>Actual Rank</span>
           <strong>${rankText}</strong>
         </div>
       </div>
+      ${p.skippedReason ? `<div class="yest-postmortem">⛔ Skipped — ${p.skippedReason}</div>` : ''}
       ${p.postmortem ? `<div class="yest-postmortem">📋 ${p.postmortem}</div>` : ''}
       ${openNote}
     </div>`;
