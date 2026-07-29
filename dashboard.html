@@ -508,7 +508,7 @@
       <div class="card-title">How the Model Works — v2</div>
       <div class="model-section">
         <h3>Overview</h3>
-        <p>Each morning before market open, the predictor runs a series of checks before selecting any stocks. It first checks whether the overall market is healthy enough to trade. If the market passes, it scores the full S&P Composite 1500 (~1,500 large/mid/small-cap stocks) on four weighted signals, then applies an overnight gap-down boost to the top-50 shortlist before selecting the top 3 most likely to move during the upcoming session. Stocks with upcoming earnings are excluded entirely.</p>
+        <p>Each morning before market open, the predictor runs a series of checks before selecting any stocks. It first checks whether the overall market is healthy enough to trade. If the market passes, it scores the full S&P Composite 1500 (~1,500 large/mid/small-cap stocks) on four weighted signals, then applies an overnight gap-down boost to the top-50 shortlist before selecting the top 3 most likely to move during the upcoming session. Stocks with upcoming earnings or excessive recent volatility are excluded entirely.</p>
       </div>
       <div class="model-section">
         <h3>Step 1 — Market Regime Check</h3>
@@ -521,6 +521,10 @@
       <div class="model-section">
         <h3>Step 3 — Earnings Exclusion</h3>
         <p>Any stock with an earnings announcement within the next 3 days is automatically excluded. Earnings are a coin flip — a stock is just as likely to drop 10% as gain 10% on an earnings surprise. For a strategy targeting consistent 1–5% daily gains, earnings events are pure unnecessary risk.</p>
+      </div>
+      <div class="model-section">
+        <h3>Step 4 — Volatility Exclusion <span style="font-weight:normal; font-size:0.8em; color:var(--text-secondary,#888);">(added 2026-07-29)</span></h3>
+        <p>Any candidate whose trailing 10-day Average True Range exceeds 4.0% of its price is excluded, regardless of how well it otherwise scores. Calibrated across 250 real trading days (714 real substitution-simulated trades, chronological train/validation split): the highest-volatility candidates lose noticeably more often than calmer ones without a corresponding gain in average return — a real cost to consistency with no offsetting upside, not just a correlation with rare big winners. Filtering them out and promoting the next-ranked candidate instead raised win rate from 71.7%/67.1% (train/validation) to 75.7%/80.1%, holding on both halves of the data, with average return essentially unchanged.</p>
       </div>
       <div class="model-section">
         <h3>Scoring Signals</h3>
@@ -567,11 +571,12 @@
           <div class="rule"><div class="rule-icon">⛔</div><div class="rule-text"><strong>Total drawdown shutoff: 15%</strong> — any open positions are liquidated immediately, then the bot disables itself permanently until manually re-enabled.</div></div>
           <div class="rule"><div class="rule-icon">📅</div><div class="rule-text"><strong>No trades on bearish market days</strong> — if SPY is down more than 1.5% from prior close, no positions are opened that day.</div></div>
           <div class="rule"><div class="rule-icon">📊</div><div class="rule-text"><strong>Earnings blackout</strong> — stocks with earnings in the next 3 days are never picked regardless of their score.</div></div>
+          <div class="rule"><div class="rule-icon">〰️</div><div class="rule-text"><strong>Volatility exclusion</strong> (added 2026-07-29) — a candidate with trailing 10-day ATR above 4.0% of its price is skipped and the next-ranked candidate is promoted instead. Backtested across 714 real substitution-simulated trades over 250 days: raised win rate from 71.7%/67.1% (train/validation) to 75.7%/80.1%, with average return essentially unchanged — high-volatility picks lose more often without winning bigger on average to compensate.</div></div>
         </div>
       </div>
       <div class="model-section">
         <h3>What May Be Added Next</h3>
-        <p>A weekly Model Review (see that tab) now tracks which signals actually correlate with outcomes and backtests alternate weight presets against real historical data, flagging a candidate change if one meaningfully outperforms — reviewed by hand, never applied automatically. An hourly intraday volume/momentum scanner and a pre-market/after-hours price-gap scanner (see the Scanners tab) are also live, but track-only for now — neither feeds into live picks until enough data validates them. Other potential future improvements: options flow as a sentiment signal, and tighter sector concentration limits (no more than 1 pick per sector).</p>
+        <p>A weekly Model Review (see that tab) now tracks which signals actually correlate with outcomes and backtests alternate weight presets against real historical data, flagging a candidate change if one meaningfully outperforms — reviewed by hand, never applied automatically. An hourly intraday volume/momentum scanner and a pre-market/after-hours price-gap scanner (see the Scanners tab) are also live, but track-only for now — neither feeds into live picks until enough data validates them. A news-volume/LLM-sentiment correlation check is also being tracked (see the LLM sentiment data) but needs a few more weeks to accumulate before it's meaningful. Other potential future improvements: options flow as a sentiment signal. (Sector concentration limits and partial profit-taking were both tested against real historical data in 2026-07 and didn't hold up — not pursued further without new evidence.)</p>
       </div>
     </div>
   </div>
