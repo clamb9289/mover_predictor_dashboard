@@ -1,0 +1,79 @@
+{
+  "days": 40,
+  "max_hold_days": 3,
+  "comparisons": {
+    "1.0": {
+      "train": {
+        "n": 77,
+        "win_rate": 0.7013,
+        "hit_rate_3pct": 0.3377,
+        "avg_pct": 1.1379,
+        "total_pnl": 87.62,
+        "avg_days_held": 1.53
+      },
+      "val": {
+        "n": 34,
+        "win_rate": 0.6765,
+        "hit_rate_3pct": 0.4118,
+        "avg_pct": 2.509,
+        "total_pnl": 85.31,
+        "avg_days_held": 1.47
+      }
+    },
+    "0.75": {
+      "train": {
+        "n": 77,
+        "win_rate": 0.5974,
+        "hit_rate_3pct": 0.1948,
+        "avg_pct": 0.8924,
+        "total_pnl": 68.71,
+        "avg_days_held": 2.43
+      },
+      "val": {
+        "n": 34,
+        "win_rate": 0.6765,
+        "hit_rate_3pct": 0.3529,
+        "avg_pct": 2.3199,
+        "total_pnl": 78.88,
+        "avg_days_held": 2.26
+      }
+    },
+    "0.5": {
+      "train": {
+        "n": 77,
+        "win_rate": 0.5195,
+        "hit_rate_3pct": 0.1818,
+        "avg_pct": 0.6468,
+        "total_pnl": 49.81,
+        "avg_days_held": 2.43
+      },
+      "val": {
+        "n": 34,
+        "win_rate": 0.5882,
+        "hit_rate_3pct": 0.3529,
+        "avg_pct": 2.1308,
+        "total_pnl": 72.45,
+        "avg_days_held": 2.26
+      }
+    },
+    "0.25": {
+      "train": {
+        "n": 77,
+        "win_rate": 0.4805,
+        "hit_rate_3pct": 0.1558,
+        "avg_pct": 0.4013,
+        "total_pnl": 30.9,
+        "avg_days_held": 2.43
+      },
+      "val": {
+        "n": 34,
+        "win_rate": 0.5294,
+        "hit_rate_3pct": 0.3529,
+        "avg_pct": 1.9417,
+        "total_pnl": 66.02,
+        "avg_days_held": 2.26
+      }
+    }
+  },
+  "recommended": []
+}
