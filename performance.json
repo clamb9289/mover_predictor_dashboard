@@ -5623,10 +5623,15 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0013,
           "paper_trail_floor_active": false,
-          "live_price": 23.28,
-          "live_pct": 0.11,
-          "live_dollar": 0.1,
-          "price_updated": "12:30 PM ET"
+          "live_price": 23.27,
+          "live_pct": 0.04,
+          "live_dollar": 0.04,
+          "price_updated": "12:39 PM ET",
+          "paper_exit_price": 23.3,
+          "paper_exit_pct": 0.17,
+          "paper_exit_dollar": 0.16,
+          "paper_exit_reason": "Closed manually (not by the bot)",
+          "paper_exit_time": "12:38 PM ET"
         },
         {
           "rank": 2,
@@ -5643,16 +5648,21 @@
             "relative_strength_pct": -1.23,
             "gap_pct": -0.1
           },
-          "live_price": 39.35,
-          "live_pct": -0.01,
-          "live_dollar": -0.01,
-          "price_updated": "12:30 PM ET",
+          "live_price": 39.36,
+          "live_pct": 0.0,
+          "live_dollar": 0.0,
+          "price_updated": "12:39 PM ET",
           "prediction_price": 39.27,
           "position_cost": 91.62,
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0001,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "paper_exit_price": 39.35,
+          "paper_exit_pct": -0.03,
+          "paper_exit_dollar": -0.02,
+          "paper_exit_reason": "Closed manually (not by the bot)",
+          "paper_exit_time": "12:38 PM ET"
         },
         {
           "rank": 3,
@@ -5675,10 +5685,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.004,
           "paper_trail_floor_active": false,
-          "live_price": 39.99,
-          "live_pct": 0.67,
-          "live_dollar": 0.61,
-          "price_updated": "12:30 PM ET",
+          "live_price": 39.97,
+          "live_pct": 0.62,
+          "live_dollar": 0.57,
+          "price_updated": "12:39 PM ET",
           "paper_exit_price": 39.86,
           "paper_exit_pct": 0.35,
           "paper_exit_dollar": 0.32,
@@ -5701,10 +5711,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0002,
           "paper_trail_floor_active": false,
-          "live_price": 24.17,
-          "live_pct": -1.53,
-          "live_dollar": -1.4,
-          "price_updated": "12:30 PM ET",
+          "live_price": 24.14,
+          "live_pct": -1.67,
+          "live_dollar": -1.53,
+          "price_updated": "12:39 PM ET",
           "headline": null,
           "sector": "Industrials",
           "explainer": "Gapped down -5.1% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
@@ -5739,14 +5749,41 @@
           "paper_exit_pct": null,
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
-          "live_price": 90.09,
-          "live_pct": -0.16,
-          "live_dollar": -0.15,
-          "price_updated": "12:30 PM ET",
+          "live_price": 89.96,
+          "live_pct": -0.3,
+          "live_dollar": -0.28,
+          "price_updated": "12:39 PM ET",
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false
+        },
+        {
+          "ticker": "TSN",
+          "rank": 10,
+          "score": 0.408,
+          "entry_price": 61.154,
+          "position_cost": 91.1,
+          "headline": "JBS, Tyson Stocks Jump on U.S. Plans to Resume Mexican Cattle Imports",
+          "sector": "Consumer Staples",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+4.7% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cJBS, Tyson Stocks Jump on U.S. Plans to Resume Mexican Cattle Imports\u201d",
+          "signals": {
+            "accumulation": 1.452,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.5,
+            "relative_strength_pct": 4.67,
+            "gap_pct": 0.18
+          },
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "live_price": 61.14,
+          "live_pct": -0.02,
+          "live_dollar": -0.02,
+          "price_updated": "12:39 PM ET"
         }
       ],
       "bench_candidates": [
@@ -5765,9 +5802,9 @@
             "relative_strength_pct": -1.63,
             "gap_pct": -5.12
           },
-          "live_price": 24.17,
-          "live_pct": -9.73,
-          "price_updated": "12:30 PM ET"
+          "live_price": 24.14,
+          "live_pct": -9.86,
+          "price_updated": "12:39 PM ET"
         },
         {
           "rank": 5,
@@ -5784,9 +5821,9 @@
             "relative_strength_pct": 3.55,
             "gap_pct": 3.12
           },
-          "live_price": 56.21,
-          "live_pct": 3.67,
-          "price_updated": "12:30 PM ET"
+          "live_price": 56.06,
+          "live_pct": 3.39,
+          "price_updated": "12:39 PM ET"
         },
         {
           "rank": 6,
@@ -5803,9 +5840,9 @@
             "relative_strength_pct": 1.38,
             "gap_pct": 8.41
           },
-          "live_price": 126.14,
-          "live_pct": 6.12,
-          "price_updated": "12:30 PM ET"
+          "live_price": 126.54,
+          "live_pct": 6.45,
+          "price_updated": "12:39 PM ET"
         },
         {
           "rank": 7,
@@ -5822,9 +5859,9 @@
             "relative_strength_pct": 0.41,
             "gap_pct": 0.01
           },
-          "live_price": 90.09,
-          "live_pct": -0.76,
-          "price_updated": "12:30 PM ET"
+          "live_price": 89.96,
+          "live_pct": -0.9,
+          "price_updated": "12:39 PM ET"
         },
         {
           "rank": 8,
@@ -5843,7 +5880,7 @@
           },
           "live_price": 43.41,
           "live_pct": -2.45,
-          "price_updated": "12:30 PM ET"
+          "price_updated": "12:39 PM ET"
         },
         {
           "rank": 9,
@@ -5860,9 +5897,9 @@
             "relative_strength_pct": -0.57,
             "gap_pct": 2.75
           },
-          "live_price": 23.12,
-          "live_pct": 2.44,
-          "price_updated": "12:30 PM ET"
+          "live_price": 23.16,
+          "live_pct": 2.59,
+          "price_updated": "12:39 PM ET"
         },
         {
           "rank": 10,
@@ -5879,9 +5916,9 @@
             "relative_strength_pct": 4.67,
             "gap_pct": 0.18
           },
-          "live_price": 61.03,
-          "live_pct": 0.53,
-          "price_updated": "12:30 PM ET"
+          "live_price": 61.14,
+          "live_pct": 0.71,
+          "price_updated": "12:39 PM ET"
         }
       ],
       "prior_predictions_actual": [
@@ -5942,7 +5979,7 @@
       "total_predictions": 48,
       "days_tracked": 16,
       "closed_rounds": [],
-      "prices_last_updated": "12:30 PM ET",
+      "prices_last_updated": "12:39 PM ET",
       "prices_after_hours": false
     }
   ]
