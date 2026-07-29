@@ -5247,7 +5247,8 @@
           "paper_exit_pct": -0.46,
           "paper_exit_dollar": -0.42,
           "paper_exit_reason": "Closed manually (not by the bot)",
-          "paper_exit_time": "12:24 PM ET"
+          "paper_exit_time": "12:24 PM ET",
+          "postmortem": "Small loss (-0.46%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now."
         },
         {
           "rank": 3,
@@ -5459,8 +5460,8 @@
           },
           "our_rank": null,
           "eligible": true,
-          "accumulation_rank": 249,
-          "eligible_pool_size": 602,
+          "accumulation_rank": 247,
+          "eligible_pool_size": 603,
           "made_shortlist": false
         },
         {
@@ -5474,8 +5475,8 @@
           },
           "our_rank": null,
           "eligible": true,
-          "accumulation_rank": 74,
-          "eligible_pool_size": 602,
+          "accumulation_rank": 73,
+          "eligible_pool_size": 603,
           "made_shortlist": false
         },
         {
@@ -5484,13 +5485,13 @@
           "signals": {
             "accumulation": 0.693,
             "sector_momentum_pct": 0.0,
-            "news_sentiment": 0.0,
+            "news_sentiment": 2.0,
             "relative_strength_pct": -6.33
           },
           "our_rank": null,
           "eligible": true,
-          "accumulation_rank": 356,
-          "eligible_pool_size": 602,
+          "accumulation_rank": 354,
+          "eligible_pool_size": 603,
           "made_shortlist": false
         },
         {
@@ -5504,8 +5505,8 @@
           },
           "our_rank": null,
           "eligible": true,
-          "accumulation_rank": 536,
-          "eligible_pool_size": 602,
+          "accumulation_rank": 534,
+          "eligible_pool_size": 603,
           "made_shortlist": false
         },
         {
@@ -5519,8 +5520,8 @@
           },
           "our_rank": null,
           "eligible": true,
-          "accumulation_rank": 526,
-          "eligible_pool_size": 602,
+          "accumulation_rank": 525,
+          "eligible_pool_size": 603,
           "made_shortlist": false
         },
         {
@@ -5534,8 +5535,8 @@
           },
           "our_rank": null,
           "eligible": true,
-          "accumulation_rank": 153,
-          "eligible_pool_size": 602,
+          "accumulation_rank": 152,
+          "eligible_pool_size": 603,
           "made_shortlist": false
         },
         {
@@ -5549,8 +5550,8 @@
           },
           "our_rank": null,
           "eligible": true,
-          "accumulation_rank": 599,
-          "eligible_pool_size": 602,
+          "accumulation_rank": 598,
+          "eligible_pool_size": 603,
           "made_shortlist": false
         },
         {
@@ -5559,13 +5560,13 @@
           "signals": {
             "accumulation": 0.754,
             "sector_momentum_pct": 0.0,
-            "news_sentiment": -2.0,
+            "news_sentiment": 1.0,
             "relative_strength_pct": -3.48
           },
           "our_rank": null,
           "eligible": true,
-          "accumulation_rank": 296,
-          "eligible_pool_size": 602,
+          "accumulation_rank": 294,
+          "eligible_pool_size": 603,
           "made_shortlist": false
         },
         {
@@ -5579,8 +5580,8 @@
           },
           "our_rank": null,
           "eligible": true,
-          "accumulation_rank": 465,
-          "eligible_pool_size": 602,
+          "accumulation_rank": 464,
+          "eligible_pool_size": 603,
           "made_shortlist": false
         },
         {
@@ -5594,12 +5595,12 @@
           },
           "our_rank": null,
           "eligible": true,
-          "accumulation_rank": 580,
-          "eligible_pool_size": 602,
+          "accumulation_rank": 578,
+          "eligible_pool_size": 603,
           "made_shortlist": false
         }
       ],
-      "model_insight": "Actual top movers had notably lower accumulation (0.67 vs our picks' 1.89) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably lower relative strength (-5.92 vs our picks' -2.60) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.00 vs our picks' 1.44) \u2014 possible signal to decrease weighting on sector momentum. Actual top movers had notably lower news sentiment (0.55 vs our picks' 2.00) \u2014 possible signal to decrease weighting on news sentiment. BSY (#249 of 602), RNG (#74 of 602), TRMB (#356 of 602), PTC (#536 of 602), ADSK (#526 of 602), SHAK (#153 of 602), PEGA (#599 of 602), CTSH (#296 of 602), WDAY (#465 of 602), BILL (#580 of 602) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
+      "model_insight": "Actual top movers had notably lower accumulation (0.67 vs our picks' 1.89) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably lower relative strength (-5.92 vs our picks' -2.60) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.00 vs our picks' 1.44) \u2014 possible signal to decrease weighting on sector momentum. BSY (#247 of 603), RNG (#73 of 603), TRMB (#354 of 603), PTC (#534 of 603), ADSK (#525 of 603), SHAK (#152 of 603), PEGA (#598 of 603), CTSH (#294 of 603), WDAY (#464 of 603), BILL (#578 of 603) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
       "predictions": [
         {
           "rank": 1,
@@ -5623,10 +5624,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0013,
           "paper_trail_floor_active": false,
-          "live_price": 23.25,
-          "live_pct": -0.04,
-          "live_dollar": -0.04,
-          "price_updated": "1:02 PM ET",
+          "live_price": 23.24,
+          "live_pct": -0.09,
+          "live_dollar": -0.08,
+          "price_updated": "1:09 PM ET",
           "paper_exit_price": 23.3,
           "paper_exit_pct": 0.17,
           "paper_exit_dollar": 0.16,
@@ -5648,10 +5649,10 @@
             "relative_strength_pct": -1.23,
             "gap_pct": -0.1
           },
-          "live_price": 39.49,
-          "live_pct": 0.34,
-          "live_dollar": 0.31,
-          "price_updated": "1:02 PM ET",
+          "live_price": 39.47,
+          "live_pct": 0.27,
+          "live_dollar": 0.25,
+          "price_updated": "1:09 PM ET",
           "prediction_price": 39.27,
           "position_cost": 91.62,
           "days_held": 0,
@@ -5685,10 +5686,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.004,
           "paper_trail_floor_active": false,
-          "live_price": 40.23,
-          "live_pct": 1.28,
-          "live_dollar": 1.17,
-          "price_updated": "1:02 PM ET",
+          "live_price": 40.38,
+          "live_pct": 1.65,
+          "live_dollar": 1.51,
+          "price_updated": "1:09 PM ET",
           "paper_exit_price": 39.86,
           "paper_exit_pct": 0.35,
           "paper_exit_dollar": 0.32,
@@ -5711,10 +5712,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0002,
           "paper_trail_floor_active": false,
-          "live_price": 24.28,
-          "live_pct": -1.1,
-          "live_dollar": -1.01,
-          "price_updated": "1:02 PM ET",
+          "live_price": 24.23,
+          "live_pct": -1.3,
+          "live_dollar": -1.19,
+          "price_updated": "1:09 PM ET",
           "headline": null,
           "sector": "Industrials",
           "explainer": "Gapped down -5.1% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
@@ -5749,10 +5750,10 @@
           "paper_exit_pct": null,
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
-          "live_price": 90.02,
-          "live_pct": -0.24,
-          "live_dollar": -0.22,
-          "price_updated": "1:02 PM ET",
+          "live_price": 90.06,
+          "live_pct": -0.2,
+          "live_dollar": -0.18,
+          "price_updated": "1:09 PM ET",
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
@@ -5780,10 +5781,10 @@
           "paper_exit_pct": null,
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
-          "live_price": 60.92,
-          "live_pct": -0.37,
-          "live_dollar": -0.34,
-          "price_updated": "1:02 PM ET",
+          "live_price": 60.87,
+          "live_pct": -0.46,
+          "live_dollar": -0.42,
+          "price_updated": "1:09 PM ET",
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0008,
@@ -5806,9 +5807,9 @@
             "relative_strength_pct": -1.63,
             "gap_pct": -5.12
           },
-          "live_price": 24.28,
-          "live_pct": -9.33,
-          "price_updated": "1:02 PM ET"
+          "live_price": 24.23,
+          "live_pct": -9.52,
+          "price_updated": "1:09 PM ET"
         },
         {
           "rank": 5,
@@ -5825,9 +5826,9 @@
             "relative_strength_pct": 3.55,
             "gap_pct": 3.12
           },
-          "live_price": 56.22,
-          "live_pct": 3.68,
-          "price_updated": "1:02 PM ET"
+          "live_price": 56.59,
+          "live_pct": 4.37,
+          "price_updated": "1:09 PM ET"
         },
         {
           "rank": 6,
@@ -5844,9 +5845,9 @@
             "relative_strength_pct": 1.38,
             "gap_pct": 8.41
           },
-          "live_price": 126.86,
-          "live_pct": 6.72,
-          "price_updated": "1:02 PM ET"
+          "live_price": 126.69,
+          "live_pct": 6.58,
+          "price_updated": "1:09 PM ET"
         },
         {
           "rank": 7,
@@ -5863,9 +5864,9 @@
             "relative_strength_pct": 0.41,
             "gap_pct": 0.01
           },
-          "live_price": 90.02,
-          "live_pct": -0.84,
-          "price_updated": "1:02 PM ET"
+          "live_price": 90.06,
+          "live_pct": -0.79,
+          "price_updated": "1:09 PM ET"
         },
         {
           "rank": 8,
@@ -5884,7 +5885,7 @@
           },
           "live_price": 43.41,
           "live_pct": -2.45,
-          "price_updated": "1:02 PM ET"
+          "price_updated": "1:09 PM ET"
         },
         {
           "rank": 9,
@@ -5901,9 +5902,9 @@
             "relative_strength_pct": -0.57,
             "gap_pct": 2.75
           },
-          "live_price": 23.21,
-          "live_pct": 2.84,
-          "price_updated": "1:02 PM ET"
+          "live_price": 23.18,
+          "live_pct": 2.7,
+          "price_updated": "1:09 PM ET"
         },
         {
           "rank": 10,
@@ -5920,9 +5921,9 @@
             "relative_strength_pct": 4.67,
             "gap_pct": 0.18
           },
-          "live_price": 60.92,
-          "live_pct": 0.35,
-          "price_updated": "1:02 PM ET"
+          "live_price": 60.87,
+          "live_pct": 0.26,
+          "price_updated": "1:09 PM ET"
         }
       ],
       "prior_predictions_actual": [
@@ -5933,7 +5934,7 @@
           "dollar_change": 0.72,
           "position_size": 92.04,
           "actual_rank": 248,
-          "total_ranked": 602,
+          "total_ranked": 603,
           "signals": {
             "accumulation": 2.152,
             "sector_momentum_pct": 0.55,
@@ -5941,16 +5942,16 @@
             "relative_strength_pct": -0.11,
             "gap_pct": -0.52
           },
-          "postmortem": "Modest gain (+0.78%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum pointed the right direction without enough follow-through. The stock itself ranked #248 of 602 tracked that day, for context."
+          "postmortem": "Modest gain (+0.78%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum pointed the right direction without enough follow-through. The stock itself ranked #248 of 603 tracked that day, for context."
         },
         {
           "rank": 2,
           "ticker": "UDR",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": -0.46,
+          "dollar_change": -0.42,
           "position_size": 92.04,
           "actual_rank": 450,
-          "total_ranked": 602,
+          "total_ranked": 603,
           "signals": {
             "accumulation": 2.054,
             "sector_momentum_pct": 1.11,
@@ -5958,7 +5959,7 @@
             "relative_strength_pct": -2.35,
             "gap_pct": -2.01
           },
-          "postmortem": null
+          "postmortem": "Small loss (-0.46%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now. The stock itself ranked #450 of 603 tracked that day, for context."
         },
         {
           "rank": 3,
@@ -5966,8 +5967,8 @@
           "move_pct": 0.05,
           "dollar_change": 0.05,
           "position_size": 92.76,
-          "actual_rank": 330,
-          "total_ranked": 602,
+          "actual_rank": 331,
+          "total_ranked": 603,
           "signals": {
             "accumulation": 1.456,
             "sector_momentum_pct": 2.67,
@@ -5975,15 +5976,15 @@
             "relative_strength_pct": -5.35,
             "gap_pct": -7.14
           },
-          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 sector momentum and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #330 of 602 tracked that day, for context."
+          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 sector momentum and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #331 of 603 tracked that day, for context."
         }
       ],
-      "hit_rate": 0.0208,
+      "hit_rate": 0.0196,
       "total_hits": 1,
-      "total_predictions": 48,
-      "days_tracked": 16,
+      "total_predictions": 51,
+      "days_tracked": 17,
       "closed_rounds": [],
-      "prices_last_updated": "1:02 PM ET",
+      "prices_last_updated": "1:09 PM ET",
       "prices_after_hours": false
     }
   ]
