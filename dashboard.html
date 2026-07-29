@@ -318,6 +318,10 @@
       <div class="stat-box"><div class="stat-label">Predictions Made</div><div class="stat-value neutral" id="s-preds">—</div></div>
       <div class="stat-box" title="Combined $ P/L across today's actually-bought positions — live for still-open ones, realized for exited ones, updates every ~5 min"><div class="stat-label">Today's Performance</div><div class="stat-value neutral" id="s-today-pnl">—</div></div>
       <div class="stat-box" title="Average % return across today's actually-bought positions (equal-weighted, matching the roughly equal $ notional per position) — live for open, realized for exited"><div class="stat-label">Today's Performance %</div><div class="stat-value neutral" id="s-today-pnl-pct">—</div></div>
+      <div class="stat-box" title="Combined $ P/L across every actually-bought position since tracking began — live for still-open positions, realized for exited ones"><div class="stat-label">Total Performance</div><div class="stat-value neutral" id="s-total-pnl">—</div></div>
+      <div class="stat-box" title="Average % return across every actually-bought position since tracking began (equal-weighted, same convention as Today's Performance %)"><div class="stat-label">Total Performance %</div><div class="stat-value neutral" id="s-total-pnl-pct">—</div></div>
+      <div class="stat-box" title="Average of each tracked day's own total $ P/L across its actually-bought positions"><div class="stat-label">Avg Daily Performance</div><div class="stat-value neutral" id="s-avgday-pnl">—</div></div>
+      <div class="stat-box" title="Average of each tracked day's own equal-weighted % return across its actually-bought positions"><div class="stat-label">Avg Daily Performance %</div><div class="stat-value neutral" id="s-avgday-pnl-pct">—</div></div>
     </div>
     <div class="card">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:16px">
@@ -792,6 +796,74 @@ function render(data) {
     pnlEl.className = 'stat-value neutral';
     pnlPctEl.textContent = '—';
     pnlPctEl.className = 'stat-value neutral';
+  }
+
+  // Total / Avg Daily Performance -- same wasBought/dollar/pct convention as
+  // Today's Performance above, just pooled across EVERY tracked day instead
+  // of only today's. Total Performance ($/%) is a flat pool of every
+  // actually-bought position ever (equal-weighted %, same house convention
+  // as Win Rate/Today's Performance % -- NOT return-on-starting-capital,
+  // which nothing else on this dashboard computes either). Avg Daily
+  // Performance ($/%) instead computes each day's own $ sum / % average
+  // first, THEN averages those per-day numbers -- a genuinely different
+  // lens from Total (weights each DAY equally rather than each TRADE
+  // equally, which differs whenever a day has fewer than 3 fresh picks,
+  // e.g. a swing-carryover day). Added 2026-07-29.
+  const perDayBought = days
+    .map(d => (d.predictions || []).filter(p => p.position_cost != null && p.entry_price != null))
+    .filter(picks => picks.length);
+  const allBought = perDayBought.flat();
+  const allDollarValues = allBought
+    .map(p => p.paper_exit_price != null ? p.paper_exit_dollar : p.live_dollar)
+    .filter(v => v != null);
+  const allPctValues = allBought
+    .map(p => p.paper_exit_price != null ? p.paper_exit_pct : p.live_pct)
+    .filter(v => v != null);
+
+  const totalPnlEl = document.getElementById('s-total-pnl');
+  const totalPnlPctEl = document.getElementById('s-total-pnl-pct');
+  if (allDollarValues.length) {
+    const totalDollar = allDollarValues.reduce((sum, v) => sum + v, 0);
+    totalPnlEl.textContent = fmtDollar(totalDollar);
+    totalPnlEl.className = 'stat-value ' + (totalDollar > 0 ? 'pos' : totalDollar < 0 ? 'neg' : 'neutral');
+  } else {
+    totalPnlEl.textContent = '—';
+    totalPnlEl.className = 'stat-value neutral';
+  }
+  if (allPctValues.length) {
+    const totalPctAvg = allPctValues.reduce((sum, v) => sum + v, 0) / allPctValues.length;
+    totalPnlPctEl.textContent = fmt(totalPctAvg);
+    totalPnlPctEl.className = 'stat-value ' + (totalPctAvg > 0 ? 'pos' : totalPctAvg < 0 ? 'neg' : 'neutral');
+  } else {
+    totalPnlPctEl.textContent = '—';
+    totalPnlPctEl.className = 'stat-value neutral';
+  }
+
+  const perDayDollarSums = [];
+  const perDayPctAvgs = [];
+  perDayBought.forEach(picks => {
+    const dVals = picks.map(p => p.paper_exit_price != null ? p.paper_exit_dollar : p.live_dollar).filter(v => v != null);
+    const pVals = picks.map(p => p.paper_exit_price != null ? p.paper_exit_pct : p.live_pct).filter(v => v != null);
+    if (dVals.length) perDayDollarSums.push(dVals.reduce((sum, v) => sum + v, 0));
+    if (pVals.length) perDayPctAvgs.push(pVals.reduce((sum, v) => sum + v, 0) / pVals.length);
+  });
+  const avgDayPnlEl = document.getElementById('s-avgday-pnl');
+  const avgDayPnlPctEl = document.getElementById('s-avgday-pnl-pct');
+  if (perDayDollarSums.length) {
+    const avgDayDollar = perDayDollarSums.reduce((sum, v) => sum + v, 0) / perDayDollarSums.length;
+    avgDayPnlEl.textContent = fmtDollar(avgDayDollar);
+    avgDayPnlEl.className = 'stat-value ' + (avgDayDollar > 0 ? 'pos' : avgDayDollar < 0 ? 'neg' : 'neutral');
+  } else {
+    avgDayPnlEl.textContent = '—';
+    avgDayPnlEl.className = 'stat-value neutral';
+  }
+  if (perDayPctAvgs.length) {
+    const avgDayPct = perDayPctAvgs.reduce((sum, v) => sum + v, 0) / perDayPctAvgs.length;
+    avgDayPnlPctEl.textContent = fmt(avgDayPct);
+    avgDayPnlPctEl.className = 'stat-value ' + (avgDayPct > 0 ? 'pos' : avgDayPct < 0 ? 'neg' : 'neutral');
+  } else {
+    avgDayPnlPctEl.textContent = '—';
+    avgDayPnlPctEl.className = 'stat-value neutral';
   }
 
   if (isStale) {
