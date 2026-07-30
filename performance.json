@@ -2,25 +2,25 @@
   "days": [
     {
       "date": "2026-07-30",
-      "regime": "Market regime BEARISH \u2014 SPY -1.54% from prior close. Skipping today.",
-      "trading_skipped": true,
+      "regime": "Market regime OK \u2014 SPY +1.16%",
+      "trading_skipped": false,
       "max_hold_days": 3,
-      "spy_regime_pct": -0.01539,
+      "spy_regime_pct": 0.01158,
       "top_sectors": [
         {
-          "etf": "XLE",
-          "name": "Energy",
-          "pct": 1.88
+          "etf": "XLK",
+          "name": "Technology",
+          "pct": 4.85
         },
         {
-          "etf": "XLP",
-          "name": "Consumer Staples",
-          "pct": 0.34
+          "etf": "XLI",
+          "name": "Industrials",
+          "pct": 0.8
         },
         {
-          "etf": "XLRE",
-          "name": "Real Estate",
-          "pct": -0.11
+          "etf": "XLB",
+          "name": "Materials",
+          "pct": 0.46
         }
       ],
       "actual_top3": [
@@ -29,9 +29,9 @@
           "pct": 17.88,
           "signals": {
             "accumulation": 0.769,
-            "sector_momentum_pct": 0.0,
+            "sector_momentum_pct": 0.8,
             "news_sentiment": 6.5,
-            "relative_strength_pct": 14.82
+            "relative_strength_pct": 10.83
           },
           "our_rank": null,
           "eligible": true,
@@ -46,7 +46,7 @@
             "accumulation": 0.842,
             "sector_momentum_pct": 0.0,
             "news_sentiment": 2.5,
-            "relative_strength_pct": -6.66
+            "relative_strength_pct": -5.29
           },
           "our_rank": null,
           "eligible": true,
@@ -59,9 +59,9 @@
           "pct": 13.63,
           "signals": {
             "accumulation": 0.602,
-            "sector_momentum_pct": 0.0,
-            "news_sentiment": -1.5,
-            "relative_strength_pct": 3.0
+            "sector_momentum_pct": 0.42,
+            "news_sentiment": -0.5,
+            "relative_strength_pct": 1.81
           },
           "our_rank": null,
           "eligible": true,
@@ -76,7 +76,7 @@
             "accumulation": 1.146,
             "sector_momentum_pct": 0.0,
             "news_sentiment": 6.0,
-            "relative_strength_pct": 4.0
+            "relative_strength_pct": 5.37
           },
           "our_rank": null,
           "eligible": true,
@@ -89,9 +89,9 @@
           "pct": 11.25,
           "signals": {
             "accumulation": 0.733,
-            "sector_momentum_pct": 0.0,
-            "news_sentiment": 2.0,
-            "relative_strength_pct": 17.95
+            "sector_momentum_pct": 4.85,
+            "news_sentiment": 1.5,
+            "relative_strength_pct": 10.46
           },
           "our_rank": null,
           "eligible": true,
@@ -104,9 +104,9 @@
           "pct": 6.98,
           "signals": {
             "accumulation": 0.343,
-            "sector_momentum_pct": 1.88,
-            "news_sentiment": 0.0,
-            "relative_strength_pct": -9.85
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -7.43
           },
           "our_rank": null,
           "eligible": true,
@@ -119,9 +119,9 @@
           "pct": 6.97,
           "signals": {
             "accumulation": 0.147,
-            "sector_momentum_pct": 1.88,
+            "sector_momentum_pct": 0.0,
             "news_sentiment": 3.0,
-            "relative_strength_pct": -8.61
+            "relative_strength_pct": -6.19
           },
           "our_rank": null,
           "eligible": true,
@@ -135,8 +135,8 @@
           "signals": {
             "accumulation": 1.352,
             "sector_momentum_pct": 0.0,
-            "news_sentiment": 6.0,
-            "relative_strength_pct": 4.35
+            "news_sentiment": 4.0,
+            "relative_strength_pct": 5.71
           },
           "our_rank": null,
           "eligible": true,
@@ -149,9 +149,9 @@
           "pct": 6.43,
           "signals": {
             "accumulation": 0.853,
-            "sector_momentum_pct": 0.0,
-            "news_sentiment": 1.0,
-            "relative_strength_pct": 10.6
+            "sector_momentum_pct": 4.85,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.11
           },
           "our_rank": null,
           "eligible": true,
@@ -164,9 +164,9 @@
           "pct": 6.07,
           "signals": {
             "accumulation": 0.689,
-            "sector_momentum_pct": 0.0,
+            "sector_momentum_pct": 0.8,
             "news_sentiment": 0.0,
-            "relative_strength_pct": 17.87
+            "relative_strength_pct": 13.88
           },
           "our_rank": null,
           "eligible": true,
@@ -176,13 +176,229 @@
         }
       ],
       "model_insight": null,
-      "predictions": [],
-      "bench_candidates": [],
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "LEN",
+          "score": 0.691,
+          "entry_price": 83.304,
+          "headline": null,
+          "sector": "Consumer Discretionary",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Consumer Discretionary) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+2.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.622,
+            "sector_momentum_pct": 0.42,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.51,
+            "gap_pct": 0.5
+          },
+          "prediction_price": 84.56,
+          "position_cost": 99.99,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 83.25,
+          "live_pct": -0.06,
+          "live_dollar": -0.06,
+          "price_updated": "10:00 AM ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "NVST",
+          "score": 0.64,
+          "entry_price": 27.95,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+9.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.554,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 9.31,
+            "gap_pct": -1.3
+          },
+          "prediction_price": 28.37,
+          "position_cost": 99.99,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 27.88,
+          "live_pct": -0.25,
+          "live_dollar": -0.25,
+          "price_updated": "10:00 AM ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "NTAP",
+          "score": 0.626,
+          "entry_price": 173.484,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Volume was running 1.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Technology) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 1.543,
+            "sector_momentum_pct": 4.85,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.83,
+            "gap_pct": 0.0
+          },
+          "prediction_price": 173.23,
+          "position_cost": 99.99,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 173.07,
+          "live_pct": -0.24,
+          "live_dollar": -0.24,
+          "price_updated": "10:00 AM ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "TECH",
+          "score": 0.436,
+          "entry_price": 72.03,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Volume was running 1.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.523,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.32,
+            "gap_pct": -0.03
+          },
+          "live_price": 72.07,
+          "live_pct": 0.05,
+          "price_updated": "10:00 AM ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "TRV",
+          "score": 0.421,
+          "entry_price": 389.01,
+          "headline": "New Strong Buy Stocks for July 30th",
+          "sector": "Financials",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+4.7% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cNew Strong Buy Stocks for July 30th\u201d",
+          "signals": {
+            "accumulation": 1.498,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 6.5,
+            "relative_strength_pct": 4.65,
+            "gap_pct": -0.7
+          },
+          "live_price": 376.41,
+          "live_pct": -3.24,
+          "price_updated": "10:00 AM ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "BROS",
+          "score": 0.353,
+          "entry_price": 64.61,
+          "headline": "Dutch Bros vs. Beyond Meat: Which Consumer Stock Is a Better Buy in 2026?",
+          "sector": "Consumer Discretionary",
+          "explainer": "Volume was running 1.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Consumer Discretionary) was among the day's stronger performers, giving it a tailwind. Recent news skewed positive, including: \u201cDutch Bros vs. Beyond Meat: Which Consumer Stock Is a Better Buy in 2026?\u201d",
+          "signals": {
+            "accumulation": 1.506,
+            "sector_momentum_pct": 0.42,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": -0.94,
+            "gap_pct": 1.8
+          },
+          "live_price": 65.72,
+          "live_pct": 1.73,
+          "price_updated": "10:00 AM ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "BKR",
+          "score": 0.222,
+          "entry_price": 58.72,
+          "headline": "BKR Q2 Deep Dive: Chart Acquisition and Power Demand Drive Strategic Shift",
+          "sector": "Energy",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+4.3% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cBKR Q2 Deep Dive: Chart Acquisition and Power Demand Drive Strategic Shift\u201d",
+          "signals": {
+            "accumulation": 1.416,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 4.29,
+            "gap_pct": 0.8
+          },
+          "live_price": 59.24,
+          "live_pct": 0.89,
+          "price_updated": "10:00 AM ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "JEF",
+          "score": 0.181,
+          "entry_price": 55.1,
+          "headline": "Is Jefferies Financial Group (JEF) Reasonable Or Stretched After The Probe?",
+          "sector": "Financials",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.444,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -0.5,
+            "relative_strength_pct": -1.44,
+            "gap_pct": 1.16
+          },
+          "live_price": 54.66,
+          "live_pct": -0.8,
+          "price_updated": "10:00 AM ET"
+        },
+        {
+          "rank": 9,
+          "ticker": "CAH",
+          "score": 0.136,
+          "entry_price": 229.12,
+          "headline": "GEHC Q2 Earnings & Revenues Beat Estimates, Stock Up in Pre-Market",
+          "sector": "Healthcare",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+5.9% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cGEHC Q2 Earnings & Revenues Beat Estimates, Stock Up in Pre-Market\u201d",
+          "signals": {
+            "accumulation": 1.367,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": 5.86,
+            "gap_pct": -1.24
+          },
+          "live_price": 226.3,
+          "live_pct": -1.23,
+          "price_updated": "10:00 AM ET"
+        },
+        {
+          "rank": 10,
+          "ticker": "PNC",
+          "score": 0.134,
+          "entry_price": 248.49,
+          "headline": "BOH Q2 Earnings Beat on Strong NII, Stock Dips on Lower Fee Income",
+          "sector": "Financials",
+          "explainer": "Recent news skewed positive, including: \u201cBOH Q2 Earnings Beat on Strong NII, Stock Dips on Lower Fee Income\u201d",
+          "signals": {
+            "accumulation": 1.424,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -1.49,
+            "gap_pct": 0.52
+          },
+          "live_price": 248.33,
+          "live_pct": -0.06,
+          "price_updated": "10:00 AM ET"
+        }
+      ],
       "prior_predictions_actual": [],
       "hit_rate": 0.0,
       "total_hits": 0,
       "total_predictions": 0,
-      "days_tracked": 0
+      "days_tracked": 0,
+      "closed_rounds": [],
+      "prices_last_updated": "10:00 AM ET",
+      "prices_after_hours": false
     }
   ]
 }
