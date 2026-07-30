@@ -300,6 +300,7 @@
   <div class="tab" onclick="showTab('yesterday')">Yesterday</div>
   <div class="tab" onclick="showTab('history')">History</div>
   <div class="tab" onclick="showTab('backtest')">Backtest</div>
+  <div class="tab" onclick="showTab('research')">Research</div>
   <div class="tab" onclick="showTab('modelreview')">Model Review<span id="model-review-badge" class="tab-badge" style="display:none"></span></div>
   <div class="tab" onclick="showTab('scanners')">Scanners</div>
   <div class="tab" onclick="showTab('tax')">Tax</div>
@@ -427,6 +428,15 @@
       <div class="card-title">Backtest Results</div>
       <div id="backtest-run-tabs" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px"></div>
       <div id="backtest-content"><div class="loading-msg">Loading backtest results...</div></div>
+    </div>
+  </div>
+
+  <div id="tab-research" class="panel">
+    <div class="card">
+      <div class="card-title">Research &amp; Calibration Results</div>
+      <div class="gainer-label">One-off investigations into whether a new signal, threshold, or model change would actually help — most get rejected by design, that's the point. Shipped changes and rejected hypotheses both show up here.</div>
+      <div id="research-run-tabs" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px"></div>
+      <div id="research-content"><div class="loading-msg">Loading research results...</div></div>
     </div>
   </div>
 
@@ -630,6 +640,7 @@ function showTab(name) {
   document.getElementById('tab-' + name).classList.add('active');
   if (name === 'history' && perfData) renderChart();
   if (name === 'backtest') loadBacktestResults();
+  if (name === 'research') loadResearchResults();
   if (name === 'modelreview') loadModelReview();
   if (name === 'scanners') loadScanners();
   if (name === 'tax') loadTaxData();
@@ -2074,6 +2085,106 @@ function renderBacktest(data) {
         </tbody>
       </table>
     </div>
+  `;
+}
+
+const RESEARCH_BASE_URL = "https://api.github.com/repos/clamb9289/mover_predictor_dashboard/contents/research_results";
+let allResearchFiles = [];
+let researchCache = {};
+
+async function loadResearchResults() {
+  const el = document.getElementById('research-content');
+  const tabsEl = document.getElementById('research-run-tabs');
+  el.innerHTML = '<div class="loading-msg">Fetching research results...</div>';
+  tabsEl.innerHTML = '';
+
+  try {
+    const apiRes = await fetch(RESEARCH_BASE_URL + '?t=' + Date.now());
+    if (!apiRes.ok) throw new Error('No research results found yet.');
+    const files = await apiRes.json();
+    allResearchFiles = files.filter(f => f.name.endsWith('.json')).sort((a,b) => b.name.localeCompare(a.name));
+    if (!allResearchFiles.length) throw new Error('No research result files found.');
+
+    allResearchFiles.forEach((f, i) => {
+      const label = f.name.replace('.json', '');
+      const btn = document.createElement('div');
+      btn.className = 'bt-run-tab' + (i === 0 ? ' active' : '');
+      btn.textContent = label;
+      btn.onclick = () => selectResearchRun(f, btn);
+      tabsEl.appendChild(btn);
+    });
+
+    await selectResearchRun(allResearchFiles[0], tabsEl.children[0]);
+  } catch(e) {
+    el.innerHTML = `<div class="error-msg">${e.message}</div>`;
+  }
+}
+
+async function selectResearchRun(file, btnEl) {
+  document.querySelectorAll('#research-run-tabs .bt-run-tab').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+
+  const el = document.getElementById('research-content');
+  if (researchCache[file.name]) {
+    renderResearch(researchCache[file.name]);
+    return;
+  }
+
+  el.innerHTML = '<div class="loading-msg">Loading run...</div>';
+  try {
+    const res = await fetch(file.download_url + '?t=' + Date.now());
+    const data = await res.json();
+    researchCache[file.name] = data;
+    renderResearch(data);
+  } catch(e) {
+    el.innerHTML = `<div class="error-msg">Failed to load ${file.name}: ${e.message}</div>`;
+  }
+}
+
+function researchVerdictBadge(conclusion) {
+  if (!conclusion || !conclusion.verdict) return '';
+  const v = conclusion.verdict.toUpperCase();
+  const colorMap = { SHIPPED: 'var(--green)', REJECTED: 'var(--red)', PROMISING: 'var(--gold)',
+                      INCONCLUSIVE: 'var(--muted)', 'NEEDS MORE DATA': 'var(--muted)' };
+  const color = colorMap[v] || 'var(--muted)';
+  return `<span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;
+    color:${color};border:1px solid ${color};background:rgba(255,255,255,0.03)">${v}</span>`;
+}
+
+function renderResearchTable(t) {
+  if (!t.rows || !t.rows.length) return `<div class="loading-msg">No rows.</div>`;
+  return `
+    <div style="font-size:13px;font-weight:600;margin:16px 0 8px">${t.name || ''}</div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr>${t.columns.map(c => `<th>${c}</th>`).join('')}</tr></thead>
+        <tbody>
+          ${t.rows.map(row => `<tr>${row.map(cell => `<td>${cell ?? '—'}</td>`).join('')}</tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderResearch(data) {
+  const el = document.getElementById('research-content');
+  const params = data.params && Object.keys(data.params).length
+    ? Object.entries(data.params).map(([k,v]) => `${k}=${v}`).join(', ')
+    : '';
+
+  el.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px">
+      <div>
+        <div style="font-size:15px;font-weight:600;margin-bottom:4px">${data.title || data.script_name}</div>
+        <div style="font-size:12px;color:var(--muted)">
+          ${data.script_name} &nbsp;|&nbsp; ${new Date(data.run_timestamp).toLocaleString()} ${params ? '&nbsp;|&nbsp; ' + params : ''}
+        </div>
+      </div>
+      ${researchVerdictBadge(data.conclusion)}
+    </div>
+    ${data.conclusion && data.conclusion.summary ? `<div style="font-size:13px;margin:12px 0;padding:10px 12px;background:var(--surface2);border-radius:8px;border-left:3px solid var(--accent)">${data.conclusion.summary}</div>` : ''}
+    ${(data.tables || []).map(renderResearchTable).join('')}
+    ${data.notes ? `<div style="font-size:12px;color:var(--muted);margin-top:16px;white-space:pre-wrap">${data.notes}</div>` : ''}
   `;
 }
 
