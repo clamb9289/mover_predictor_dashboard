@@ -299,7 +299,6 @@
   <div class="tab active" onclick="showTab('today')">Today's Picks</div>
   <div class="tab" onclick="showTab('yesterday')">Yesterday</div>
   <div class="tab" onclick="showTab('history')">History</div>
-  <div class="tab" onclick="showTab('backtest')">Backtest</div>
   <div class="tab" onclick="showTab('research')">Research</div>
   <div class="tab" onclick="showTab('modelreview')">Model Review<span id="model-review-badge" class="tab-badge" style="display:none"></span></div>
   <div class="tab" onclick="showTab('scanners')">Scanners</div>
@@ -423,20 +422,12 @@
     </div>
   </div>
 
-  <div id="tab-backtest" class="panel">
-    <div class="card">
-      <div class="card-title">Backtest Results</div>
-      <div id="backtest-run-tabs" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px"></div>
-      <div id="backtest-content"><div class="loading-msg">Loading backtest results...</div></div>
-    </div>
-  </div>
-
   <div id="tab-research" class="panel">
     <div class="card">
-      <div class="card-title">Research &amp; Calibration Results</div>
-      <div class="gainer-label">One-off investigations into whether a new signal, threshold, or model change would actually help — most get rejected by design, that's the point. Shipped changes and rejected hypotheses both show up here.</div>
+      <div class="card-title">Research &amp; Backtest Results</div>
+      <div class="gainer-label">One-off investigations into whether a new signal, threshold, or model change would actually help — most get rejected by design, that's the point. Shipped changes and rejected hypotheses both show up here, alongside raw weight-preset backtest runs.</div>
       <div id="research-run-tabs" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px"></div>
-      <div id="research-content"><div class="loading-msg">Loading research results...</div></div>
+      <div id="research-content"><div class="loading-msg">Loading results...</div></div>
     </div>
   </div>
 
@@ -639,7 +630,6 @@ function showTab(name) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
   if (name === 'history' && perfData) renderChart();
-  if (name === 'backtest') loadBacktestResults();
   if (name === 'research') loadResearchResults();
   if (name === 'modelreview') loadModelReview();
   if (name === 'scanners') loadScanners();
@@ -1935,63 +1925,6 @@ function renderChart() {
 }
 
 const BACKTEST_BASE_URL = "https://api.github.com/repos/clamb9289/mover_predictor_dashboard/contents/backtest_results";
-let allBacktestFiles = [];
-let backtestCache = {};
-
-async function loadBacktestResults() {
-  const el = document.getElementById('backtest-content');
-  const tabsEl = document.getElementById('backtest-run-tabs');
-  el.innerHTML = '<div class="loading-msg">Fetching backtest runs...</div>';
-  tabsEl.innerHTML = '';
-
-  try {
-    const apiRes = await fetch(BACKTEST_BASE_URL + '?t=' + Date.now());
-    if (!apiRes.ok) throw new Error('No backtest results found yet — run mode=backtest in GitHub Actions first.');
-    const files = await apiRes.json();
-    allBacktestFiles = files.filter(f => f.name.endsWith('.json')).sort((a,b) => b.name.localeCompare(a.name));
-    if (!allBacktestFiles.length) throw new Error('No backtest JSON files found.');
-
-    // Build sub-tabs
-    allBacktestFiles.forEach((f, i) => {
-      const label = f.name.replace('backtest_', '').replace('.json', '');
-      const btn = document.createElement('div');
-      btn.className = 'bt-run-tab' + (i === 0 ? ' active' : '');
-      btn.textContent = label;
-      btn.onclick = () => selectBacktestRun(f, btn);
-      tabsEl.appendChild(btn);
-    });
-
-    // Load most recent
-    await selectBacktestRun(allBacktestFiles[0], tabsEl.children[0]);
-
-  } catch(e) {
-    el.innerHTML = `<div class="error-msg">${e.message}</div>`;
-  }
-}
-
-async function selectBacktestRun(file, btnEl) {
-  // Update active tab
-  document.querySelectorAll('.bt-run-tab').forEach(b => b.classList.remove('active'));
-  if (btnEl) btnEl.classList.add('active');
-
-  const el = document.getElementById('backtest-content');
-
-  // Use cache if available
-  if (backtestCache[file.name]) {
-    renderBacktest(backtestCache[file.name]);
-    return;
-  }
-
-  el.innerHTML = '<div class="loading-msg">Loading run...</div>';
-  try {
-    const res = await fetch(file.download_url + '?t=' + Date.now());
-    const data = await res.json();
-    backtestCache[file.name] = data;
-    renderBacktest(data);
-  } catch(e) {
-    el.innerHTML = `<div class="error-msg">Failed to load ${file.name}: ${e.message}</div>`;
-  }
-}
 
 function pickPctHtml(pct) {
   if (pct == null) return '<span class="pick-flat">—</span>';
@@ -2000,7 +1933,7 @@ function pickPctHtml(pct) {
 }
 
 function renderBacktest(data) {
-  const el = document.getElementById('backtest-content');
+  const el = document.getElementById('research-content');
   const s = data.summary;
   const p = data.params;
   const winRate = ((s.win_day_rate||0)*100).toFixed(0);
@@ -2093,17 +2026,33 @@ let allResearchFiles = [];
 let researchCache = {};
 
 async function loadResearchResults() {
+  // Merged view (2026-07-30): research_results/ (curated calibration
+  // summaries) and backtest_results/ (raw weight-preset backtest.py runs,
+  // including the ones every calibration script's own bt.run_backtest()
+  // call silently drops there as a side effect) used to be two separate
+  // tabs -- confusing, since a single calibration script run produced an
+  // entry in BOTH, one labeled and one not. One combined, chronologically-
+  // sorted list instead; each file tagged with which endpoint it came from
+  // so selectResearchRun() can dispatch to the right renderer.
   const el = document.getElementById('research-content');
   const tabsEl = document.getElementById('research-run-tabs');
-  el.innerHTML = '<div class="loading-msg">Fetching research results...</div>';
+  el.innerHTML = '<div class="loading-msg">Fetching results...</div>';
   tabsEl.innerHTML = '';
 
   try {
-    const apiRes = await fetch(RESEARCH_BASE_URL + '?t=' + Date.now());
-    if (!apiRes.ok) throw new Error('No research results found yet.');
-    const files = await apiRes.json();
-    allResearchFiles = files.filter(f => f.name.endsWith('.json')).sort((a,b) => b.name.localeCompare(a.name));
-    if (!allResearchFiles.length) throw new Error('No research result files found.');
+    const [researchRes, backtestRes] = await Promise.all([
+      fetch(RESEARCH_BASE_URL + '?t=' + Date.now()),
+      fetch(BACKTEST_BASE_URL + '?t=' + Date.now()),
+    ]);
+    const researchFiles = researchRes.ok ? (await researchRes.json()) : [];
+    const backtestFiles = backtestRes.ok ? (await backtestRes.json()) : [];
+
+    const tagged = [
+      ...researchFiles.filter(f => f.name.endsWith('.json')).map(f => ({ ...f, _source: 'research' })),
+      ...backtestFiles.filter(f => f.name.endsWith('.json')).map(f => ({ ...f, _source: 'backtest' })),
+    ];
+    allResearchFiles = tagged.sort((a, b) => b.name.localeCompare(a.name));
+    if (!allResearchFiles.length) throw new Error('No results found yet.');
 
     allResearchFiles.forEach((f, i) => {
       const label = f.name.replace('.json', '');
@@ -2125,8 +2074,9 @@ async function selectResearchRun(file, btnEl) {
   if (btnEl) btnEl.classList.add('active');
 
   const el = document.getElementById('research-content');
+  const render = file._source === 'backtest' ? renderBacktest : renderResearch;
   if (researchCache[file.name]) {
-    renderResearch(researchCache[file.name]);
+    render(researchCache[file.name]);
     return;
   }
 
@@ -2135,7 +2085,7 @@ async function selectResearchRun(file, btnEl) {
     const res = await fetch(file.download_url + '?t=' + Date.now());
     const data = await res.json();
     researchCache[file.name] = data;
-    renderResearch(data);
+    render(data);
   } catch(e) {
     el.innerHTML = `<div class="error-msg">Failed to load ${file.name}: ${e.message}</div>`;
   }
