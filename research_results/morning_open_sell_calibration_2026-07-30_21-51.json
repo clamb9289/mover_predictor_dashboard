@@ -1,0 +1,100 @@
+{
+  "script_name": "morning_open_sell_calibration",
+  "run_timestamp": "2026-07-30T21:51:08.568840+00:00",
+  "title": "Does a morning-open profit-take check (on top of the existing EOD one) improve compounded returns?",
+  "params": {
+    "days": 250
+  },
+  "tables": [
+    {
+      "name": "Final equity / return by policy variant, full period + two independent halves ($300 start, 3 slots)",
+      "columns": [
+        "Period",
+        "Policy",
+        "Final equity",
+        "Return",
+        "Trades",
+        ""
+      ],
+      "rows": [
+        [
+          "Full period",
+          "eod_only (live today)",
+          "$5147.91",
+          "+1615.97%",
+          644,
+          "\u2190 winner"
+        ],
+        [
+          "Full period",
+          "eod_plus_morning_open",
+          "$1872.60",
+          "+524.20%",
+          650,
+          ""
+        ],
+        [
+          "Full period",
+          "morning_open_only",
+          "$1540.74",
+          "+413.58%",
+          609,
+          ""
+        ],
+        [
+          "First half",
+          "eod_only (live today)",
+          "$879.04",
+          "+193.01%",
+          319,
+          "\u2190 winner"
+        ],
+        [
+          "First half",
+          "eod_plus_morning_open",
+          "$534.10",
+          "+78.03%",
+          323,
+          ""
+        ],
+        [
+          "First half",
+          "morning_open_only",
+          "$472.20",
+          "+57.40%",
+          302,
+          ""
+        ],
+        [
+          "Second half",
+          "eod_only (live today)",
+          "$1458.19",
+          "+386.06%",
+          325,
+          "\u2190 winner"
+        ],
+        [
+          "Second half",
+          "eod_plus_morning_open",
+          "$889.31",
+          "+196.44%",
+          327,
+          ""
+        ],
+        [
+          "Second half",
+          "morning_open_only",
+          "$827.62",
+          "+175.87%",
+          307,
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": "live baseline = eod_only (today's actual production behavior via close_profitable_positions_eod()). A compounding equity curve is one continuous, path-dependent sequence (~n=1), so this only counts as real evidence if the SAME variant wins on both independent halves, not just the full period -- same discipline as compounding_calibration.py, which validated eod_sell_winners itself this way.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "Today's live eod_only policy wins even after compounding -- a morning-open check doesn't help."
+  }
+}
