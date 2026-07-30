@@ -2032,8 +2032,11 @@ async function loadResearchResults() {
   // call silently drops there as a side effect) used to be two separate
   // tabs -- confusing, since a single calibration script run produced an
   // entry in BOTH, one labeled and one not. One combined, chronologically-
-  // sorted list instead; each file tagged with which endpoint it came from
-  // so selectResearchRun() can dispatch to the right renderer.
+  // sorted list instead -- selectResearchRun()/renderByShape() dispatch to
+  // the right renderer by inspecting each file's actual JSON shape, not
+  // which folder it came from (backtest_results/ itself mixes true
+  // backtest.py output with older ad-hoc calibration-script JSON that
+  // predates research_report.py's standardized format).
   const el = document.getElementById('research-content');
   const tabsEl = document.getElementById('research-run-tabs');
   el.innerHTML = '<div class="loading-msg">Fetching results...</div>';
@@ -2047,11 +2050,11 @@ async function loadResearchResults() {
     const researchFiles = researchRes.ok ? (await researchRes.json()) : [];
     const backtestFiles = backtestRes.ok ? (await backtestRes.json()) : [];
 
-    const tagged = [
-      ...researchFiles.filter(f => f.name.endsWith('.json')).map(f => ({ ...f, _source: 'research' })),
-      ...backtestFiles.filter(f => f.name.endsWith('.json')).map(f => ({ ...f, _source: 'backtest' })),
+    const combined = [
+      ...researchFiles.filter(f => f.name.endsWith('.json')),
+      ...backtestFiles.filter(f => f.name.endsWith('.json')),
     ];
-    allResearchFiles = tagged.sort((a, b) => b.name.localeCompare(a.name));
+    allResearchFiles = combined.sort((a, b) => b.name.localeCompare(a.name));
     if (!allResearchFiles.length) throw new Error('No results found yet.');
 
     allResearchFiles.forEach((f, i) => {
@@ -2069,14 +2072,38 @@ async function loadResearchResults() {
   }
 }
 
+function renderRawJson(data) {
+  // Fallback for files in backtest_results/ that match neither renderResearch's
+  // {tables:[...]} schema nor backtest.py's own {summary:{...}} schema -- a
+  // real, pre-existing situation: several older calibration scripts wrote
+  // their own bespoke JSON directly into backtest.RESULTS_DIR before
+  // research_report.py existed (2026-07-30), each with a different shape.
+  // Still worth being able to open and read rather than erroring out.
+  const el = document.getElementById('research-content');
+  el.innerHTML = `
+    <div style="font-size:12px;color:var(--muted);margin-bottom:12px">
+      No matching renderer for this file's shape -- showing raw JSON.
+    </div>
+    <pre style="white-space:pre-wrap;font-size:12px;background:var(--surface2);padding:12px;border-radius:8px;overflow-x:auto">${JSON.stringify(data, null, 2)}</pre>
+  `;
+}
+
+function renderByShape(data) {
+  // Dispatch on the DATA's actual shape, not which folder it came from --
+  // backtest_results/ mixes true backtest.py output with older ad-hoc
+  // calibration-script JSON that predates the standardized formats.
+  if (data && Array.isArray(data.tables)) return renderResearch(data);
+  if (data && data.summary && data.params) return renderBacktest(data);
+  return renderRawJson(data);
+}
+
 async function selectResearchRun(file, btnEl) {
   document.querySelectorAll('#research-run-tabs .bt-run-tab').forEach(b => b.classList.remove('active'));
   if (btnEl) btnEl.classList.add('active');
 
   const el = document.getElementById('research-content');
-  const render = file._source === 'backtest' ? renderBacktest : renderResearch;
   if (researchCache[file.name]) {
-    render(researchCache[file.name]);
+    renderByShape(researchCache[file.name]);
     return;
   }
 
@@ -2085,7 +2112,7 @@ async function selectResearchRun(file, btnEl) {
     const res = await fetch(file.download_url + '?t=' + Date.now());
     const data = await res.json();
     researchCache[file.name] = data;
-    render(data);
+    renderByShape(data);
   } catch(e) {
     el.innerHTML = `<div class="error-msg">Failed to load ${file.name}: ${e.message}</div>`;
   }
