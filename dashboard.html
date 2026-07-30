@@ -2072,20 +2072,100 @@ async function loadResearchResults() {
   }
 }
 
-function renderRawJson(data) {
+function formatAutoVal(v) {
+  if (v === null || v === undefined) return '—';
+  if (typeof v === 'number') return Number.isInteger(v) ? String(v) : v.toFixed(4);
+  if (Array.isArray(v)) return v.length <= 6 ? v.join(', ') : `[${v.length} items]`;
+  if (typeof v === 'object') return JSON.stringify(v);
+  return String(v);
+}
+
+function autoTableHtml(cols, rows) {
+  return `
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr>${cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
+        <tbody>${rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function flattenObject(obj, prefix = '') {
+  const out = {};
+  for (const [k, v] of Object.entries(obj)) {
+    const key = prefix ? `${prefix}.${k}` : k;
+    if (v !== null && typeof v === 'object' && !Array.isArray(v)) Object.assign(out, flattenObject(v, key));
+    else out[key] = v;
+  }
+  return out;
+}
+
+function renderAutoValue(value) {
+  // Best-effort generic renderer for a single field's value, used when
+  // it's itself a nested object/array too complex for the top-level
+  // auto-table -- e.g. renderAutoJson's per-section breakdown below.
+  if (Array.isArray(value)) {
+    if (value.length && typeof value[0] === 'object' && value[0] !== null) {
+      const cols = [...new Set(value.flatMap(o => Object.keys(o)))];
+      return autoTableHtml(cols, value.map(o => cols.map(c => formatAutoVal(o[c]))));
+    }
+    return `<div style="font-size:12px">${formatAutoVal(value)}</div>`;
+  }
+  if (value !== null && typeof value === 'object') {
+    const entries = Object.entries(value);
+    // Common calibration-script shape: {configKey: {train:{...}, val:{...}}} --
+    // flatten each config into one row so train/val stats sit side by side.
+    const allNestedObjects = entries.length && entries.every(([, v]) => v !== null && typeof v === 'object' && !Array.isArray(v));
+    if (allNestedObjects) {
+      const flatRows = entries.map(([k, v]) => ({ key: k, ...flattenObject(v) }));
+      const cols = [...new Set(flatRows.flatMap(r => Object.keys(r)))];
+      return autoTableHtml(cols, flatRows.map(r => cols.map(c => formatAutoVal(r[c]))));
+    }
+    const flat = flattenObject(value);
+    return autoTableHtml(['Field', 'Value'], Object.entries(flat).map(([k, v]) => [k, formatAutoVal(v)]));
+  }
+  return `<div style="font-size:12px">${formatAutoVal(value)}</div>`;
+}
+
+function renderAutoJson(data) {
   // Fallback for files in backtest_results/ that match neither renderResearch's
   // {tables:[...]} schema nor backtest.py's own {summary:{...}} schema -- a
   // real, pre-existing situation: several older calibration scripts wrote
   // their own bespoke JSON directly into backtest.RESULTS_DIR before
   // research_report.py existed (2026-07-30), each with a different shape.
-  // Still worth being able to open and read rather than erroring out.
+  // Auto-flattens into readable tables on a best-effort basis rather than
+  // dumping raw JSON -- most of these share a "comparisons: {config:
+  // {train:{...}, val:{...}}}" shape that flattens cleanly. Full raw JSON
+  // stays one click away for anything the auto-formatting doesn't capture.
   const el = document.getElementById('research-content');
-  el.innerHTML = `
-    <div style="font-size:12px;color:var(--muted);margin-bottom:12px">
-      No matching renderer for this file's shape -- showing raw JSON.
-    </div>
-    <pre style="white-space:pre-wrap;font-size:12px;background:var(--surface2);padding:12px;border-radius:8px;overflow-x:auto">${JSON.stringify(data, null, 2)}</pre>
-  `;
+
+  if (data === null || typeof data !== 'object') {
+    el.innerHTML = `<pre style="white-space:pre-wrap;font-size:12px">${JSON.stringify(data)}</pre>`;
+    return;
+  }
+
+  const scalarEntries = [];
+  const complexEntries = [];
+  for (const [k, v] of Object.entries(data)) {
+    if (v !== null && typeof v === 'object') complexEntries.push([k, v]);
+    else scalarEntries.push([k, v]);
+  }
+
+  let html = `<div style="font-size:12px;color:var(--muted);margin-bottom:12px">No matching renderer for this file's shape -- auto-formatted below.</div>`;
+  if (scalarEntries.length) {
+    html += `<div style="font-size:13px;font-weight:600;margin:8px 0">Parameters</div>`;
+    html += autoTableHtml(['Field', 'Value'], scalarEntries.map(([k, v]) => [k, formatAutoVal(v)]));
+  }
+  for (const [k, v] of complexEntries) {
+    html += `<div style="font-size:13px;font-weight:600;margin:16px 0 8px">${k}</div>`;
+    html += renderAutoValue(v);
+  }
+  html += `<details style="margin-top:16px"><summary style="cursor:pointer;font-size:12px;color:var(--muted)">View raw JSON</summary>
+    <pre style="white-space:pre-wrap;font-size:11px;background:var(--surface2);padding:12px;border-radius:8px;overflow-x:auto;margin-top:8px">${JSON.stringify(data, null, 2)}</pre>
+  </details>`;
+
+  el.innerHTML = html;
 }
 
 function renderByShape(data) {
@@ -2094,7 +2174,7 @@ function renderByShape(data) {
   // calibration-script JSON that predates the standardized formats.
   if (data && Array.isArray(data.tables)) return renderResearch(data);
   if (data && data.summary && data.params) return renderBacktest(data);
-  return renderRawJson(data);
+  return renderAutoJson(data);
 }
 
 async function selectResearchRun(file, btnEl) {
