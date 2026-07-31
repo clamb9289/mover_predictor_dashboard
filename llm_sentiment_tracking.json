@@ -1,6 +1,6 @@
 {
   "date": "2026-07-31",
-  "generated_at": "2026-07-31T14:03:56.247300+00:00",
+  "generated_at": "2026-07-31T15:14:37.639532+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
@@ -14,7 +14,7 @@
       "FE",
       "FBP"
     ],
-    "reasoning": "CHD and FE both delivered clean beats with raised/reaffirmed guidance and structural tailwinds (portfolio actions; 6.4 GW data-center demand), and FBP pairs a strong quarter and target raise with high quant rank. I skip PFGC (rank 1) because its momentum is already extended into all-time highs with insider selling and a GAAP EPS decline, and avoid EA, whose buyout closes at a fixed price."
+    "reasoning": "CHD, FE and FBP all pair strong quant ranks with genuinely positive, material fundamental news: CHD accelerated organic growth and raised guidance, FE beat and reaffirmed with surging data-center demand, and FBP beat with improving credit and capital returns. I skip rank-1 PFGC because its news is largely momentum/valuation chatter with insider selling at all-time highs, and avoid DIS/HD which show clear negative momentum and EA whose buyout is effectively priced."
   },
   "tickers": {
     "PFGC": {
@@ -24,16 +24,16 @@
       "total_distinct_found": 60,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "All-time highs, multiple price target raises (Citi to $143) and an 8-day rally offset a mixed Q3 GAAP EPS decline and insider selling by the chair."
+      "reasoning": "Stock at all-time highs with price target hikes from Citigroup and Barclays and strong momentum, though a chair share sale and mixed bearish commentary temper the read."
     },
     "CHD": {
       "rank": 2,
       "headline_count": 40,
-      "mentions_24h": 25,
-      "total_distinct_found": 66,
+      "mentions_24h": 26,
+      "total_distinct_found": 67,
       "llm_score": 3,
       "materiality": "high",
-      "reasoning": "Q2 beat with organic sales accelerating to 5.8% versus 3% outlook and raised 2026 guidance, plus a JPMorgan target raise to $105."
+      "reasoning": "Q2 beat with organic sales accelerating to 5.8% versus 3% guidance and raised full-year outlook is a clear positive."
     },
     "FBP": {
       "rank": 3,
@@ -42,7 +42,7 @@
       "total_distinct_found": 60,
       "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "Q2 EPS $0.62 beat with lower charge-offs, capital returns, new 1-year high and target raised to $31, though one note flags bearish forecasts."
+      "reasoning": "Q2 EPS/revenue beat, lower charge-offs, capital returns, new 1-year high and raised price target, offset slightly by a lawsuit statement mention."
     },
     "DIS": {
       "rank": 4,
@@ -51,7 +51,7 @@
       "total_distinct_found": 109,
       "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "Stock heading for a third straight monthly decline with Jefferies cutting target to $125 and Pixar layoffs; the $1B A+E stake sale to Hearst is a modest positive but small relative to Disney."
+      "reasoning": "Third straight monthly decline, Jefferies price target cut, Pixar layoffs and analyst estimate reductions into Aug 5 earnings; A+E stake sale is modest."
     },
     "FE": {
       "rank": 5,
@@ -60,34 +60,34 @@
       "total_distinct_found": 75,
       "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "Q2 EPS/revenue beat, reaffirmed guidance, $6B capital plan and contracted data-center demand up 50% to 6.4 GW, tempered by dividend-coverage concerns."
+      "reasoning": "Q2 earnings and revenue beat, reaffirmed guidance, $6B capital plan and data-center contracted demand up 50% to 6.4 GW."
     },
     "HD": {
       "rank": 6,
       "headline_count": 40,
-      "mentions_24h": 17,
-      "total_distinct_found": 94,
-      "llm_score": -2,
+      "mentions_24h": 21,
+      "total_distinct_found": 96,
+      "llm_score": -3,
       "materiality": "medium",
-      "reasoning": "Shares at 52-week lows amid housing deterioration and tariff pressure; leadership realignment is neutral-to-mildly positive but signals need for change."
+      "reasoning": "Stock hit a 52-week low with tariff pressure, weakening housing data and negative 1-year returns; leadership realignment is neutral at best."
     },
     "TROW": {
       "rank": 7,
       "headline_count": 40,
-      "mentions_24h": 26,
-      "total_distinct_found": 71,
+      "mentions_24h": 29,
+      "total_distinct_found": 74,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Q2 EPS beat with record AUM and cost control, but revenue missed estimates and the stock slid on the print."
+      "reasoning": "EPS beat with record AUM but revenue missed and stock slid on the print; private-market/crypto expansion is a longer-term positive."
     },
     "SRE": {
       "rank": 8,
       "headline_count": 40,
       "mentions_24h": 2,
       "total_distinct_found": 63,
-      "llm_score": 0,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Pre-earnings positioning with LNG/data-center demand tailwinds offset by reported damage at the ECA LNG plant and analysts flagging the stock above fair value after a 65% run."
+      "reasoning": "Positive LNG/data-center demand narrative and first ECA cargo, but damage found at ECA LNG plant and compressor delays create capex/contract risk into Aug 6 earnings."
     },
     "EA": {
       "rank": 9,
@@ -96,16 +96,16 @@
       "total_distinct_found": 65,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "The $55B Saudi PIF go-private deal has all approvals and closes Aug 4, so shares are pinned at the fixed deal price with little further upside."
+      "reasoning": "All regulatory approvals obtained and $55B go-private deal closing Aug 4 at a fixed price, leaving no further upside."
     },
     "NI": {
       "rank": 10,
       "headline_count": 40,
-      "mentions_24h": 5,
+      "mentions_24h": 6,
       "total_distinct_found": 62,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Mostly routine 13F filings and dividend notes; analysts expect a y/y earnings decline into the Aug 5 print, offset by a Zacks upgrade note."
+      "reasoning": "Mostly routine 13F filings and dividend declaration ahead of Aug 5 earnings, with analysts expecting a YoY earnings decline and valuation flagged as stretched."
     }
   }
 }

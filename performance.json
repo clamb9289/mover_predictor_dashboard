@@ -238,7 +238,8 @@
           "paper_exit_pct": -3.36,
           "paper_exit_dollar": -3.36,
           "paper_exit_reason": "Stop loss (-3.3%)",
-          "paper_exit_time": "10:12 AM ET"
+          "paper_exit_time": "10:12 AM ET",
+          "postmortem": "Hit the stop loss (-3.36%) despite accumulation/volume and relative strength \u2014 worth reviewing if accumulation/volume keeps producing false positives."
         },
         {
           "rank": 3,
@@ -294,10 +295,10 @@
           "paper_exit_pct": null,
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
-          "live_price": 72.07,
-          "live_pct": -0.05,
-          "live_dollar": -0.05,
-          "price_updated": "11:09 AM ET",
+          "live_price": 72.13,
+          "live_pct": 0.04,
+          "live_dollar": 0.04,
+          "price_updated": "11:13 AM ET",
           "days_held": 1,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0013,
@@ -325,10 +326,10 @@
           "paper_exit_pct": null,
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
-          "live_price": 377.11,
-          "live_pct": 0.26,
-          "live_dollar": 0.26,
-          "price_updated": "11:09 AM ET",
+          "live_price": 377.51,
+          "live_pct": 0.36,
+          "live_dollar": 0.36,
+          "price_updated": "11:13 AM ET",
           "days_held": 1,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0044,
@@ -476,30 +477,30 @@
       "total_predictions": 0,
       "days_tracked": 0,
       "closed_rounds": [],
-      "prices_last_updated": "11:09 AM ET",
+      "prices_last_updated": "11:13 AM ET",
       "prices_after_hours": false
     },
     {
       "date": "2026-07-31",
-      "regime": "Market regime OK \u2014 SPY +0.01%",
+      "regime": "Market regime OK \u2014 SPY -0.06%",
       "trading_skipped": false,
       "max_hold_days": 3,
-      "spy_regime_pct": 0.00013,
+      "spy_regime_pct": -0.00059,
       "top_sectors": [
         {
           "etf": "XLY",
           "name": "Consumer Discretionary",
-          "pct": 2.65
-        },
-        {
-          "etf": "XLI",
-          "name": "Industrials",
-          "pct": 0.3
+          "pct": 2.86
         },
         {
           "etf": "XLC",
           "name": "Communication Services",
-          "pct": 0.29
+          "pct": 0.57
+        },
+        {
+          "etf": "XLI",
+          "name": "Industrials",
+          "pct": 0.27
         }
       ],
       "actual_top3": [
@@ -509,8 +510,8 @@
           "signals": {
             "accumulation": 0.793,
             "sector_momentum_pct": 0.0,
-            "news_sentiment": 4.0,
-            "relative_strength_pct": 11.56
+            "news_sentiment": 3.0,
+            "relative_strength_pct": 11.31
           },
           "our_rank": null,
           "eligible": true,
@@ -525,7 +526,7 @@
             "accumulation": 1.104,
             "sector_momentum_pct": 0.0,
             "news_sentiment": 4.0,
-            "relative_strength_pct": 3.4
+            "relative_strength_pct": 2.28
           },
           "our_rank": null,
           "eligible": true,
@@ -540,7 +541,7 @@
             "accumulation": 0.667,
             "sector_momentum_pct": 0.0,
             "news_sentiment": 5.5,
-            "relative_strength_pct": -26.11
+            "relative_strength_pct": -26.4
           },
           "our_rank": null,
           "eligible": true,
@@ -553,9 +554,9 @@
           "pct": 18.1,
           "signals": {
             "accumulation": 0.465,
-            "sector_momentum_pct": 0.08,
+            "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -31.21
+            "relative_strength_pct": -31.12
           },
           "our_rank": null,
           "eligible": true,
@@ -570,7 +571,7 @@
             "accumulation": 0.546,
             "sector_momentum_pct": 0.0,
             "news_sentiment": 8.0,
-            "relative_strength_pct": -20.68
+            "relative_strength_pct": -20.97
           },
           "our_rank": null,
           "eligible": true,
@@ -585,7 +586,7 @@
             "accumulation": 0.356,
             "sector_momentum_pct": 0.0,
             "news_sentiment": 1.0,
-            "relative_strength_pct": -25.89
+            "relative_strength_pct": -26.18
           },
           "our_rank": null,
           "eligible": true,
@@ -600,7 +601,7 @@
             "accumulation": 0.146,
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -33.75
+            "relative_strength_pct": -34.04
           },
           "our_rank": null,
           "eligible": true,
@@ -614,8 +615,8 @@
           "signals": {
             "accumulation": 1.309,
             "sector_momentum_pct": 0.0,
-            "news_sentiment": 1.0,
-            "relative_strength_pct": 0.34
+            "news_sentiment": 0.5,
+            "relative_strength_pct": 0.05
           },
           "our_rank": null,
           "eligible": true,
@@ -628,9 +629,9 @@
           "pct": 15.39,
           "signals": {
             "accumulation": 0.905,
-            "sector_momentum_pct": 0.08,
+            "sector_momentum_pct": 0.0,
             "news_sentiment": 1.0,
-            "relative_strength_pct": -1.61
+            "relative_strength_pct": -1.52
           },
           "our_rank": null,
           "eligible": true,
@@ -644,8 +645,8 @@
           "signals": {
             "accumulation": 0.67,
             "sector_momentum_pct": 0.0,
-            "news_sentiment": 10.0,
-            "relative_strength_pct": -16.71
+            "news_sentiment": 9.5,
+            "relative_strength_pct": -17.0
           },
           "our_rank": null,
           "eligible": true,
@@ -654,7 +655,7 @@
           "made_shortlist": false
         }
       ],
-      "model_insight": "Actual top movers had notably lower accumulation (0.70 vs our picks' 1.55) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably lower relative strength (-14.07 vs our picks' 3.59) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.02 vs our picks' 1.05) \u2014 possible signal to decrease weighting on sector momentum. Actual top movers had notably higher news sentiment (3.45 vs our picks' 1.30) \u2014 possible signal to increase weighting on news sentiment. MKTX (#344 of 639), CORT (#120 of 639), FORM (#440 of 639), SEI (#581 of 639), LRCX (#526 of 639), PENG (#620 of 639), MXL (#638 of 639), MSFT (#60 of 639), PBF (#251 of 639), WDC (#437 of 639) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
+      "model_insight": "Actual top movers had notably lower accumulation (0.70 vs our picks' 1.55) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably lower relative strength (-14.36 vs our picks' 3.59) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.00 vs our picks' 1.05) \u2014 possible signal to decrease weighting on sector momentum. Actual top movers had notably higher news sentiment (3.25 vs our picks' 1.30) \u2014 possible signal to increase weighting on news sentiment. MKTX (#344 of 639), CORT (#120 of 639), FORM (#440 of 639), SEI (#581 of 639), LRCX (#526 of 639), PENG (#620 of 639), MXL (#638 of 639), MSFT (#60 of 639), PBF (#251 of 639), WDC (#437 of 639) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
       "predictions": [
         {
           "rank": 1,
@@ -671,10 +672,10 @@
             "relative_strength_pct": 4.65,
             "gap_pct": -0.52
           },
-          "live_price": 113.42,
-          "live_pct": -0.33,
-          "live_dollar": -0.32,
-          "price_updated": "11:09 AM ET",
+          "live_price": 113.62,
+          "live_pct": -0.15,
+          "live_dollar": -0.14,
+          "price_updated": "11:13 AM ET",
           "prediction_price": 114.75,
           "position_cost": 96.61,
           "days_held": 0,
@@ -741,9 +742,9 @@
             "relative_strength_pct": 3.3,
             "gap_pct": -0.09
           },
-          "live_price": 95.85,
-          "live_pct": -0.32,
-          "price_updated": "11:09 AM ET"
+          "live_price": 96.0,
+          "live_pct": -0.17,
+          "price_updated": "11:13 AM ET"
         },
         {
           "rank": 5,
@@ -762,7 +763,7 @@
           },
           "live_price": 48.51,
           "live_pct": -0.4,
-          "price_updated": "11:09 AM ET"
+          "price_updated": "11:13 AM ET"
         },
         {
           "rank": 6,
@@ -779,9 +780,9 @@
             "relative_strength_pct": 0.01,
             "gap_pct": -0.27
           },
-          "live_price": 330.72,
-          "live_pct": -0.79,
-          "price_updated": "11:09 AM ET"
+          "live_price": 331.06,
+          "live_pct": -0.69,
+          "price_updated": "11:13 AM ET"
         },
         {
           "rank": 7,
@@ -798,9 +799,9 @@
             "relative_strength_pct": 4.01,
             "gap_pct": -3.48
           },
-          "live_price": 112.72,
+          "live_price": 112.71,
           "live_pct": -5.5,
-          "price_updated": "11:09 AM ET"
+          "price_updated": "11:13 AM ET"
         },
         {
           "rank": 8,
@@ -817,9 +818,9 @@
             "relative_strength_pct": -3.73,
             "gap_pct": -0.04
           },
-          "live_price": 89.11,
-          "live_pct": -0.52,
-          "price_updated": "11:09 AM ET"
+          "live_price": 89.18,
+          "live_pct": -0.45,
+          "price_updated": "11:13 AM ET"
         },
         {
           "rank": 9,
@@ -836,9 +837,9 @@
             "relative_strength_pct": -0.01,
             "gap_pct": 0.12
           },
-          "live_price": 209.86,
+          "live_price": 209.85,
           "live_pct": 0.13,
-          "price_updated": "11:09 AM ET"
+          "price_updated": "11:13 AM ET"
         },
         {
           "rank": 10,
@@ -855,9 +856,9 @@
             "relative_strength_pct": -3.19,
             "gap_pct": -0.71
           },
-          "live_price": 44.64,
-          "live_pct": -0.95,
-          "price_updated": "11:09 AM ET"
+          "live_price": 44.61,
+          "live_pct": -1.02,
+          "price_updated": "11:13 AM ET"
         }
       ],
       "prior_predictions_actual": [
@@ -881,8 +882,8 @@
         {
           "rank": 2,
           "ticker": "NVST",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": -3.36,
+          "dollar_change": -3.36,
           "position_size": 99.99,
           "actual_rank": 479,
           "total_ranked": 639,
@@ -893,7 +894,7 @@
             "relative_strength_pct": 9.31,
             "gap_pct": -1.3
           },
-          "postmortem": null
+          "postmortem": "Hit the stop loss (-3.36%) despite accumulation/volume and relative strength \u2014 worth reviewing if accumulation/volume keeps producing false positives. The stock itself ranked #479 of 639 tracked that day, for context."
         },
         {
           "rank": 3,
@@ -949,11 +950,11 @@
       ],
       "hit_rate": 0.0,
       "total_hits": 0,
-      "total_predictions": 3,
-      "days_tracked": 1,
-      "prices_last_updated": "11:09 AM ET",
-      "prices_after_hours": false,
-      "closed_rounds": []
+      "total_predictions": 6,
+      "days_tracked": 2,
+      "closed_rounds": [],
+      "prices_last_updated": "11:13 AM ET",
+      "prices_after_hours": false
     }
   ]
 }
