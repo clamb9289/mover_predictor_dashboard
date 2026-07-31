@@ -1,129 +1,111 @@
 {
-  "date": "2026-07-30",
-  "generated_at": "2026-07-30T14:01:38.579215+00:00",
+  "date": "2026-07-31",
+  "generated_at": "2026-07-31T14:03:56.247300+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "LEN",
-    "NVST",
-    "NTAP"
+    "PFGC",
+    "CHD",
+    "FBP"
   ],
   "llm_top3": {
     "tickers": [
-      "BKR",
-      "NTAP",
-      "KBR"
+      "CHD",
+      "FE",
+      "FBP"
     ],
-    "reasoning": "I deviate from the top-ranked names because LEN's news is outright negative (S&P outlook cut, 8% revenue decline, margin compression, Strong Sell) and NVST's beat was undercut by unchanged guidance and weak cash flow. BKR offers the cleanest positive catalyst mix: earnings beat, record backlog, target raises and a large turbine order tied to data center power. NTAP pairs raised FY27 guidance and record all-flash revenue with the DataPelago AI acquisition and demonstrated relative strength. KBR beat with reaffirmed guidance, a swelling contract backlog and a value spin-off catalyst. PNC was a close fourth."
+    "reasoning": "CHD and FE both delivered clean beats with raised/reaffirmed guidance and structural tailwinds (portfolio actions; 6.4 GW data-center demand), and FBP pairs a strong quarter and target raise with high quant rank. I skip PFGC (rank 1) because its momentum is already extended into all-time highs with insider selling and a GAAP EPS decline, and avoid EA, whose buyout closes at a fixed price."
   },
   "tickers": {
-    "LEN": {
+    "PFGC": {
       "rank": 1,
       "headline_count": 40,
-      "mentions_24h": 6,
+      "mentions_24h": 0,
       "total_distinct_found": 60,
-      "llm_score": -3,
-      "materiality": "high",
-      "reasoning": "S&P outlook cut to stable, 8% revenue decline and gross margin compression to 15.4%, Zacks Strong Sell, Cramer pass and broad housing affordability/rate headwinds dominate."
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "All-time highs, multiple price target raises (Citi to $143) and an 8-day rally offset a mixed Q3 GAAP EPS decline and insider selling by the chair."
     },
-    "NVST": {
+    "CHD": {
       "rank": 2,
       "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q1 beat on revenue/EPS and stock up 37% over a year, but unchanged guidance, weak cash flow and a 10% post-print drop temper the positives."
+      "mentions_24h": 25,
+      "total_distinct_found": 66,
+      "llm_score": 3,
+      "materiality": "high",
+      "reasoning": "Q2 beat with organic sales accelerating to 5.8% versus 3% outlook and raised 2026 guidance, plus a JPMorgan target raise to $105."
     },
-    "NTAP": {
+    "FBP": {
       "rank": 3,
       "headline_count": 40,
-      "mentions_24h": 7,
-      "total_distinct_found": 56,
+      "mentions_24h": 1,
+      "total_distinct_found": 60,
       "llm_score": 3,
-      "materiality": "high",
-      "reasoning": "Record revenue, raised FY27 guidance, 1,100+ AI wins and the DataPelago GPU-accelerated data acquisition position NTAP as an AI infrastructure beneficiary with visible relative strength."
+      "materiality": "medium",
+      "reasoning": "Q2 EPS $0.62 beat with lower charge-offs, capital returns, new 1-year high and target raised to $31, though one note flags bearish forecasts."
     },
-    "TECH": {
+    "DIS": {
       "rank": 4,
       "headline_count": 40,
-      "mentions_24h": 12,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Bio-Techne is being acquired by Merck KGaA for $11.3B at a fixed price, so upside is largely capped despite broad tech-selloff noise in the feed."
-    },
-    "TRV": {
-      "rank": 5,
-      "headline_count": 40,
-      "mentions_24h": 6,
-      "total_distinct_found": 57,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Q2 earnings beat, repeated volume-backed 52-week highs and fair-value upgrades, though heavy insider selling and downgrades after a 30% rally signal extension."
-    },
-    "BROS": {
-      "rank": 6,
-      "headline_count": 40,
-      "mentions_24h": 9,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Strong unit growth and holding up on down days into Aug 5 earnings, but 100+ P/E leaves little room for error."
-    },
-    "BKR": {
-      "rank": 7,
-      "headline_count": 40,
-      "mentions_24h": 6,
-      "total_distinct_found": 58,
-      "llm_score": 4,
-      "materiality": "high",
-      "reasoning": "EPS beat, record IET backlog, margin expansion, multiple price-target raises, and a 76-turbine/1.3GW Dynamis order tied to data center power demand."
-    },
-    "JEF": {
-      "rank": 8,
-      "headline_count": 40,
-      "mentions_24h": 8,
-      "total_distinct_found": 60,
+      "mentions_24h": 61,
+      "total_distinct_found": 109,
       "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "DOJ/SEC scrutiny over First Brands exposure is a real overhang, only partly offset by SMFG's large insider purchase and strong underwriting pipeline."
+      "reasoning": "Stock heading for a third straight monthly decline with Jefferies cutting target to $125 and Pixar layoffs; the $1B A+E stake sale to Hearst is a modest positive but small relative to Disney."
     },
-    "CAH": {
+    "FE": {
+      "rank": 5,
+      "headline_count": 40,
+      "mentions_24h": 7,
+      "total_distinct_found": 75,
+      "llm_score": 3,
+      "materiality": "medium",
+      "reasoning": "Q2 EPS/revenue beat, reaffirmed guidance, $6B capital plan and contracted data-center demand up 50% to 6.4 GW, tempered by dividend-coverage concerns."
+    },
+    "HD": {
+      "rank": 6,
+      "headline_count": 40,
+      "mentions_24h": 17,
+      "total_distinct_found": 94,
+      "llm_score": -2,
+      "materiality": "medium",
+      "reasoning": "Shares at 52-week lows amid housing deterioration and tariff pressure; leadership realignment is neutral-to-mildly positive but signals need for change."
+    },
+    "TROW": {
+      "rank": 7,
+      "headline_count": 40,
+      "mentions_24h": 26,
+      "total_distinct_found": 71,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Q2 EPS beat with record AUM and cost control, but revenue missed estimates and the stock slid on the print."
+    },
+    "SRE": {
+      "rank": 8,
+      "headline_count": 40,
+      "mentions_24h": 2,
+      "total_distinct_found": 63,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "Pre-earnings positioning with LNG/data-center demand tailwinds offset by reported damage at the ECA LNG plant and analysts flagging the stock above fair value after a 65% run."
+    },
+    "EA": {
       "rank": 9,
       "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 59,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "$360M accretive tuck-in acquisitions in at-home diabetes/urology care plus new 52-week highs and clean breakout, tempered by valuation concerns."
+      "mentions_24h": 13,
+      "total_distinct_found": 65,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "The $55B Saudi PIF go-private deal has all approvals and closes Aug 4, so shares are pinned at the fixed deal price with little further upside."
     },
-    "PNC": {
+    "NI": {
       "rank": 10,
       "headline_count": 40,
-      "mentions_24h": 11,
-      "total_distinct_found": 60,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Record Q2 revenue with EPS $4.81 vs $4.48 est, ROTCE 17.5%, golden cross, and a wave of price-target raises to $264-$305."
-    },
-    "CALY": {
-      "rank": 11,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 55,
-      "llm_score": -1,
+      "mentions_24h": 5,
+      "total_distinct_found": 62,
+      "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Callaway's earnings pop reversed with no follow-through and retail frustration; Aug 4 results are the next catalyst but current tone is discount-driven margin strain."
-    },
-    "KBR": {
-      "rank": 12,
-      "headline_count": 40,
-      "mentions_24h": 14,
-      "total_distinct_found": 42,
-      "llm_score": 3,
-      "materiality": "high",
-      "reasoning": "Q2 EPS beat (+34% YoY), reaffirmed FY guidance, growing backlog from Rotterdam eFuels, Air Force and Iraq contracts, plus a planned national security/space spin-off."
+      "reasoning": "Mostly routine 13F filings and dividend notes; analysts expect a y/y earnings decline into the Aug 5 print, offset by a Zacks upgrade note."
     }
   }
 }
