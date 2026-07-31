@@ -1277,17 +1277,30 @@ function renderBenchCandidates(day) {
   const tbody = document.getElementById('bench-body');
   const bench = day?.bench_candidates || [];
 
-  // A bench candidate that got substituted into the actual top-3 (opening-move
-  // filter swapped it in) will already appear in `predictions` — don't show
-  // it twice.
-  const activeTickers = new Set((day?.predictions || []).filter(p => !p.skipped_reason).map(p => p.ticker));
+  // A bench candidate/top-3 pick only counts as "active" (already shown in
+  // Today's Top 3 Picks) if it was actually bought -- not just "not
+  // filter-skipped". Swing trading (2026-07-24+) means all 3 slots can
+  // already be held by carryover positions from a prior day, in which case
+  // a fresh top-3 pick has skipped_reason=null (no filter rejected it) AND
+  // no position_cost/paper_exit_price (never bought) -- the old check here
+  // treated "not skipped" as synonymous with "bought" and silently dropped
+  // these from every table (found 2026-07-31: PFGC/CHD/FBP ranked #1-3 but
+  // all 3 slots were full from yesterday's carryover, so they vanished
+  // entirely instead of showing up as next-in-line).
+  const isActuallyHeld = p => !p.skipped_reason && (p.position_cost != null || p.paper_exit_price != null);
+  const activeTickers = new Set((day?.predictions || []).filter(isActuallyHeld).map(p => p.ticker));
 
-  // Skipped top-3 picks move down into this table too (see renderTodayPicks),
-  // keeping their original pick # so it's clear they were a top pick that
-  // got skipped, not a bench candidate that was never in contention.
-  const skippedPicks = (day?.predictions || []).filter(p => p.skipped_reason && !activeTickers.has(p.ticker));
+  // Both filter-skipped AND never-bought-due-to-full-slots top-3 picks move
+  // down into this table too (see renderTodayPicks), keeping their original
+  // pick # so it's clear they were a top pick, not a bench candidate that
+  // was never in contention. Tag the no-slot case so it gets its own
+  // "next in line" messaging below instead of being mistaken for either a
+  // filter-skip or a plain outside-top-3 bench name.
+  const unboughtPicks = (day?.predictions || [])
+    .filter(p => !activeTickers.has(p.ticker))
+    .map(p => ({ ...p, _no_slot: !p.skipped_reason }));
 
-  const rows = [...skippedPicks, ...bench.filter(b => !activeTickers.has(b.ticker))]
+  const rows = [...unboughtPicks, ...bench.filter(b => !activeTickers.has(b.ticker))]
     .sort((a, b) => (a.rank ?? 99) - (b.rank ?? 99));
 
   if (!rows.length) {
@@ -1298,12 +1311,15 @@ function renderBenchCandidates(day) {
 
   tbody.innerHTML = rows.map((b, i) => {
     const isSkippedPick = !!b.skipped_reason;
+    const isNoSlotPick = !!b._no_slot;
     const pct = b.live_pct ?? null;
     const mc = moveClass(pct);
     const whyId = `bench-why-${i}`;
     const whyText = isSkippedPick
       ? `⛔ Skipped — ${b.skipped_reason}`
-      : `Ranked #${b.rank} — outside the top 3 selected for trading`;
+      : isNoSlotPick
+        ? `⏳ No open slot — all 3 positions already held; next in line if one exits`
+        : `Ranked #${b.rank} — outside the top 3 selected for trading`;
     return `<tr${isSkippedPick ? ' style="opacity:0.7"' : ''}>
       <td style="color:var(--muted)">#${b.rank}</td>
       <td class="td-ticker">${b.ticker}</td>
