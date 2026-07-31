@@ -310,6 +310,7 @@
 
   <div id="tab-today" class="panel active">
     <div class="stats-row">
+      <div class="stat-box" title="SPY's live % move vs prior close — a quick pulse on how the overall market is doing today, updates on the same ~2 min cadence as everything else"><div class="stat-label">SPY Today</div><div class="stat-value neutral" id="s-spy">—</div></div>
       <div class="stat-box" title="% of picks that landed in that day's actual top-3 real gainers — a prediction-accuracy metric, not a trading outcome"><div class="stat-label">Hit Rate (Top-3 Match)</div><div class="stat-value neutral" id="s-hitrate">—</div></div>
       <div class="stat-box" title="% of bought positions sold at a price above what we paid — an actual trading outcome, across every real exit"><div class="stat-label">Win Rate (Profitable Exits)</div><div class="stat-value neutral" id="s-winrate">—</div></div>
       <div class="stat-box"><div class="stat-label">Days Tracked</div><div class="stat-value neutral" id="s-days">—</div></div>
@@ -325,7 +326,7 @@
     </div>
     <div class="card">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:16px">
-        <div class="card-title" style="margin-bottom:0">Today's Top 3 Picks <span id="live-spinner" style="display:none" class="spinning">↻</span></div>
+        <div class="card-title" style="margin-bottom:0">Today's Open Positions <span id="live-spinner" style="display:none" class="spinning">↻</span></div>
         <div class="chart-toggle-group" title="Switch between per-share price and actual position $ value">
           <div class="chart-toggle-btn active" data-cardview="price" onclick="setCardViewMode('price')">Price</div>
           <div class="chart-toggle-btn" data-cardview="value" onclick="setCardViewMode('value')">Position $</div>
@@ -456,18 +457,7 @@
   <div id="tab-scanners" class="panel">
     <div class="card">
       <div class="card-title">Scanners <span style="font-size:11px;font-weight:500;color:var(--gold)">TRACK-ONLY</span></div>
-      <div class="gainer-label">These do not influence live picks yet — built to track intraday accumulation patterns and pre-market/after-hours price gaps over time, for review before any live weighting. See "The Model" tab for what actually drives today's picks.</div>
-    </div>
-    <div class="card">
-      <div class="card-title">Intraday Delta Scan</div>
-      <div class="gainer-label">Hourly during market hours — relative volume vs. each stock's 50-day average, prorated for time-of-day, plus how much that's built since this morning's open.</div>
-      <p class="updated-at" id="intraday-scan-generated"></p>
-      <table>
-        <thead><tr>
-          <th>Ticker</th><th>Rel. Volume</th><th>Move from Open</th><th>Δ Since Open</th><th>Catalyst?</th>
-        </tr></thead>
-        <tbody id="intraday-scan-body"></tbody>
-      </table>
+      <div class="gainer-label">Does not influence live picks yet — built to track pre-market/after-hours price gaps over time, for review before any live weighting. See "The Model" tab for what actually drives today's picks. (The Intraday Delta Scan that used to live here was retired 2026-07-31 — three weeks of real data showed no validated edge for either its shortlist trigger or its "building volume" signal, see intraday_scanner_validity_check.py.)</div>
     </div>
     <div class="card">
       <div class="card-title">Pre-market / After-hours Gap Scan</div>
@@ -593,7 +583,6 @@
 const PERF_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/performance.json";
 const MODEL_REVIEW_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/model_review.json";
 const MODEL_REVIEW_SEEN_KEY = "model_review_last_seen";
-const INTRADAY_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/intraday_scan.json";
 const GAP_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/gap_scan.json";
 const MARKET_HOLIDAYS_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/market_holidays.json";
 const LLM_SENTIMENT_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/llm_sentiment_tracking.json";
@@ -731,6 +720,22 @@ function render(data) {
     : `Picks for: ${latest.date}`;
 
   if (latest) {
+    // Prefer the live-refreshed value (updates every ~2 min, see
+    // get_spy_live_pct() in trader.py); fall back to predictor.py's
+    // one-time buy-time regime snapshot for the brief window before the
+    // first live tick of the day lands, so this never shows a blank
+    // "—" during that gap.
+    const spyPct = latest.spy_live_pct ?? latest.spy_regime_pct;
+    const spyEl = document.getElementById('s-spy');
+    if (spyPct != null) {
+      const pct = latest.spy_live_pct != null ? spyPct : spyPct * 100;
+      spyEl.textContent = fmt(pct);
+      spyEl.className = 'stat-value ' + (pct > 0 ? 'pos' : pct < 0 ? 'neg' : 'neutral');
+    } else {
+      spyEl.textContent = '—';
+      spyEl.className = 'stat-value neutral';
+    }
+
     const hr = latest.hit_rate;
     const hrEl = document.getElementById('s-hitrate');
     hrEl.textContent = (hr * 100).toFixed(0) + '%';
@@ -1046,7 +1051,15 @@ function renderTodayPicks(day, days) {
     el.innerHTML = '<div class="loading-msg">All of today\'s top picks were skipped — see Also Considered below.</div>';
     return;
   }
-  el.innerHTML = buildPickCards(withClosedRounds(activePicks, day), 'explainer');
+  // Still-open positions first, exited ones sink lower -- once a position
+  // closes it's a settled result, not something that needs to stay
+  // front-and-center next to what's still actively being managed. Stable
+  // sort (guaranteed by spec) preserves the existing rank ordering within
+  // each of the two groups. Sorted BEFORE withClosedRounds() so a
+  // same-day multi-round pick's cards all move together as one unit.
+  const sortedPicks = activePicks.slice()
+    .sort((a, b) => (a.paper_exit_price != null ? 1 : 0) - (b.paper_exit_price != null ? 1 : 0));
+  el.innerHTML = buildPickCards(withClosedRounds(sortedPicks, day), 'explainer');
 }
 
 function buildPickCards(predictions, idPrefix) {
@@ -2357,31 +2370,8 @@ function catalystCell(r) {
 }
 
 async function loadScanners() {
-  const iGenEl = document.getElementById('intraday-scan-generated');
-  const iBodyEl = document.getElementById('intraday-scan-body');
   const gGenEl = document.getElementById('gap-scan-generated');
   const gBodyEl = document.getElementById('gap-scan-body');
-
-  try {
-    const res = await fetch(INTRADAY_SCAN_URL + '?t=' + Date.now());
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
-    iGenEl.textContent = `Last scan: ${data.scan_date} ${data.scan_time} ET — ${data.scanned} of ${data.universe_size} tickers scanned`;
-    if (!data.shortlist.length) {
-      iBodyEl.innerHTML = '<tr><td colspan="5" style="color:var(--muted)">No tickers cleared the relative-volume + price-move threshold this scan.</td></tr>';
-    } else {
-      iBodyEl.innerHTML = data.shortlist.map(r => `<tr>
-        <td class="td-ticker">${r.ticker}</td>
-        <td>${r.relvol_ratio.toFixed(1)}x</td>
-        <td class="${r.price_change_from_open_pct > 0 ? 'td-pos' : 'td-neg'}">${r.price_change_from_open_pct >= 0 ? '+' : ''}${r.price_change_from_open_pct.toFixed(1)}%</td>
-        <td class="${r.delta_since_open > 0 ? 'td-pos' : r.delta_since_open < 0 ? 'td-neg' : ''}">${r.delta_since_open >= 0 ? '+' : ''}${r.delta_since_open.toFixed(2)}</td>
-        <td>${catalystCell(r)}</td>
-      </tr>`).join('');
-    }
-  } catch (e) {
-    iGenEl.textContent = '';
-    iBodyEl.innerHTML = `<tr><td colspan="5" class="error-msg">No intraday scan yet.<br><small>${e.message}</small></td></tr>`;
-  }
 
   try {
     const res = await fetch(GAP_SCAN_URL + '?t=' + Date.now());
