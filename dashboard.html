@@ -942,6 +942,17 @@ const wasBought = p => p.position_cost != null;
 // position that already exited (on its own origin day) shouldn't keep
 // resurfacing on every later day's card -- that's its own day's history.
 const isOpenPosition = p => wasBought(p) && p.paper_exit_price == null;
+// A carryover position (origin day before today) that closed TODAY --
+// distinct from isOpenPosition (still open) and from a position that
+// closed on some EARLIER day (that's the origin day's own history, already
+// shown there, not today's). Needs paper_exit_date specifically because
+// paper_exit_time is time-of-day only, no date, so there was previously no
+// way to tell "closed today" from "closed at any point since" for a
+// multi-day swing position (trader.py commit adding paper_exit_date,
+// 2026-07-31). Without this, a stop-loss/floor exit on day 2+ of a hold
+// vanished from the dashboard the moment it closed instead of showing the
+// realized result for the rest of that day (found 2026-07-31: NVST).
+const closedToday = (p, todayStr) => wasBought(p) && p.paper_exit_price != null && p.paper_exit_date === todayStr;
 
 // Swing positions can span multiple origin days. day.predictions only
 // lists TODAY's newly-ranked candidates -- if a slot was already held by a
@@ -967,7 +978,11 @@ function getCurrentlyHeldPicks(day, days) {
   for (const d of (days || [])) {
     if (d.date === day?.date) continue;
     for (const p of (d.predictions || [])) {
-      if (seen.has(p.ticker) || !isOpenPosition(p)) continue;
+      if (seen.has(p.ticker)) continue;
+      // Still open, OR a multi-day carryover that closed today (e.g. a
+      // stop-loss/floor exit on day 2+ of the hold) -- either way it's part
+      // of today's real activity and belongs on today's board.
+      if (!isOpenPosition(p) && !closedToday(p, day?.date)) continue;
       carryover.push(p);
       seen.add(p.ticker);
     }
