@@ -1,9 +1,30 @@
 {
-  "generated_at": "2026-07-30T17:55:47.299555",
+  "generated_at": "2026-08-03T00:42:36.138087",
   "live_signal_correlation": {
-    "n": 12,
-    "signals": [],
-    "note": "Only 12 scored data points so far (need 20+) \u2014 too little live history yet for a meaningful correlation. Check back after more trading days."
+    "n": 25,
+    "signals": [
+      {
+        "signal": "Accumulation",
+        "n": 25,
+        "correlation": 0.186
+      },
+      {
+        "signal": "Sector Momentum",
+        "n": 25,
+        "correlation": 0.104
+      },
+      {
+        "signal": "News Sentiment",
+        "n": 25,
+        "correlation": 0.15
+      },
+      {
+        "signal": "Relative Strength",
+        "n": 25,
+        "correlation": -0.257
+      }
+    ],
+    "note": null
   },
   "backtest_comparison": {
     "days": 120,
@@ -16,9 +37,22 @@
           "news_sentiment": 0.0,
           "relative_strength": 0.25
         },
-        "hit_rate_3pct": 0.2708,
-        "avg_pick_pct": 0.9537,
-        "total_pnl": 320.12,
+        "hit_rate_3pct": 0.2649,
+        "avg_pick_pct": 0.9291,
+        "total_pnl": 311.85,
+        "win_day_rate": 0.6429
+      },
+      {
+        "preset": "default",
+        "weights": {
+          "accumulation": 0.6,
+          "sector_momentum": 0.2,
+          "news_sentiment": 0.0,
+          "relative_strength": 0.2
+        },
+        "hit_rate_3pct": 0.2589,
+        "avg_pick_pct": 0.8817,
+        "total_pnl": 296.02,
         "win_day_rate": 0.6429
       },
       {
@@ -30,9 +64,9 @@
           "relative_strength": 0.1
         },
         "hit_rate_3pct": 0.253,
-        "avg_pick_pct": 0.9321,
-        "total_pnl": 312.89,
-        "win_day_rate": 0.6518
+        "avg_pick_pct": 0.8316,
+        "total_pnl": 279.18,
+        "win_day_rate": 0.6429
       },
       {
         "preset": "balanced",
@@ -42,23 +76,10 @@
           "news_sentiment": 0.15,
           "relative_strength": 0.25
         },
-        "hit_rate_3pct": 0.25,
-        "avg_pick_pct": 0.9143,
-        "total_pnl": 306.94,
-        "win_day_rate": 0.6339
-      },
-      {
-        "preset": "default",
-        "weights": {
-          "accumulation": 0.6,
-          "sector_momentum": 0.2,
-          "news_sentiment": 0.0,
-          "relative_strength": 0.2
-        },
-        "hit_rate_3pct": 0.2649,
-        "avg_pick_pct": 0.9063,
-        "total_pnl": 304.29,
-        "win_day_rate": 0.6429
+        "hit_rate_3pct": 0.2321,
+        "avg_pick_pct": 0.6809,
+        "total_pnl": 228.53,
+        "win_day_rate": 0.5714
       }
     ],
     "recommendation": null
