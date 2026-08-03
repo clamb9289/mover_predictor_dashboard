@@ -1,6 +1,6 @@
 {
   "date": "2026-08-03",
-  "generated_at": "2026-08-03T16:33:45.892582+00:00",
+  "generated_at": "2026-08-03T16:42:20.210846+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
@@ -10,11 +10,11 @@
   ],
   "llm_top3": {
     "tickers": [
-      "PBI",
+      "BEN",
       "ARES",
-      "AEE"
+      "PBI"
     ],
-    "reasoning": "PBI ranks mid-pack quantitatively but has the most material catalyst in the set: raised guidance, meaningful deleveraging and a board-run strategic review explicitly including a full sale, which caps downside and offers takeout upside. ARES pairs record $36B fundraising and 17% AUM growth with near-universal analyst target hikes. AEE offers a reaffirmed guidance regulated utility with a $71B data-center-driven capex pipeline and raised targets. I skip top-ranked BEN (already at a 52-week high with valuation flags) and pass on EIX/ES given wildfire-reform downgrade risk and charge-driven earnings collapse."
+    "reasoning": "BEN pairs the top quant rank with genuinely strong fundamental news \u2014 record $1.8T AUM, broad net inflows across every asset class, an EPS beat and margin expansion ahead of plan. ARES offers the cleanest secular story with record $36B quarterly fundraising, 17% AUM growth and near-universal analyst target hikes. I deviate from WY and AEE (ranks 2-3) for PBI: WY's Q3 guide is for lower EBITDA amid housing weakness, and AEE is a solid but modest utility, while PBI combines raised guidance, an EPS beat, $201M of debt paydown and an active second-phase strategic review that explicitly includes a full sale \u2014 a discrete catalyst with asymmetric upside. I avoided EIX and ES on wildfire/charge-driven negative news despite their utility-sector momentum."
   },
   "tickers": {
     "BEN": {
@@ -22,9 +22,9 @@
       "headline_count": 40,
       "mentions_24h": 5,
       "total_distinct_found": 63,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Q3 beat with record $1.79T AUM, positive net inflows across all classes and a 52-week high, though GuruFocus overvaluation flags temper it."
+      "llm_score": 4,
+      "materiality": "high",
+      "reasoning": "Record $1.8T AUM, $18.4B long-term net inflows, EPS beat ($0.72 vs $0.67), 52-week high and margin expansion ahead of plan, offset only mildly by valuation concerns."
     },
     "WY": {
       "rank": 2,
@@ -33,7 +33,7 @@
       "total_distinct_found": 69,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Q2 beat with higher lumber prices and a Raymond James upgrade to Strong Buy, but adjusted EBITDA fell y/y and Q3 guidance is slightly lower."
+      "reasoning": "Q2 beat with higher lumber prices and a Raymond James upgrade to strong buy, but guidance for slightly lower Q3 EBITDA and continued housing weakness temper it."
     },
     "AEE": {
       "rank": 3,
@@ -42,7 +42,7 @@
       "total_distinct_found": 66,
       "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "EPS up 12%, reaffirmed guidance and a $71B data-center-anchored infrastructure pipeline with price target raised to $124."
+      "reasoning": "EPS up 12% and beat, reaffirmed 2026 guidance, $71B data-center-anchored investment plan and Mizuho target raise to $124."
     },
     "LYV": {
       "rank": 4,
@@ -51,7 +51,7 @@
       "total_distinct_found": 76,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Big Q2 beat, record attendance and many raised price targets, but the stock sold off on weaker free cash flow, capex and Ticketmaster antitrust risk."
+      "reasoning": "Strong Q2 beat with record attendance and multiple target hikes, but stock sold off on FCF margin compression, capex and Ticketmaster antitrust overhang."
     },
     "AMCR": {
       "rank": 5,
@@ -60,34 +60,34 @@
       "total_distinct_found": 57,
       "llm_score": -1,
       "materiality": "low",
-      "reasoning": "Mostly routine 13F selling headlines plus BofA noting lackluster packaging demand and weak volumes ahead of earnings."
+      "reasoning": "Mostly institutional-filing noise plus BofA noting lackluster packaging demand and weak volumes; earnings not yet reported."
     },
     "ARES": {
       "rank": 6,
       "headline_count": 40,
-      "mentions_24h": 7,
+      "mentions_24h": 8,
       "total_distinct_found": 76,
       "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Record $36B quarterly fundraising, AUM up 17% to $671B and a broad sweep of price target hikes, offset slightly by a revenue miss and elevated private-credit defaults."
+      "materiality": "high",
+      "reasoning": "Record $36B quarterly fundraising, AUM +17% to $671B and a wave of price target raises, though EPS only met and revenue missed."
     },
     "PBI": {
       "rank": 7,
       "headline_count": 40,
       "mentions_24h": 2,
       "total_distinct_found": 59,
-      "llm_score": 4,
+      "llm_score": 3,
       "materiality": "high",
-      "reasoning": "Q2 beat with raised full-year guidance, $201M debt reduction and a second-phase strategic review including possible full sale \u2014 real takeout optionality."
+      "reasoning": "Raised 2026 guidance, EPS beat, $201M debt reduction and a second-phase strategic review including possible full sale \u2014 a real catalyst despite GF Value flagging overvaluation."
     },
     "LIN": {
       "rank": 8,
       "headline_count": 40,
       "mentions_24h": 5,
       "total_distinct_found": 81,
-      "llm_score": 0,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Record Q2 sales/EPS and record $8.1B electronics backlog with a Jefferies target hike, but shares slid on light guidance, margin slippage and a growing Lincare drag."
+      "reasoning": "Record Q2 sales/EPS, record $8.1B backlog and Jefferies upgrade to Buy, but shares fell on light guidance, margin slippage and a growing ~$130M Lincare drag."
     },
     "COO": {
       "rank": 9,
@@ -96,7 +96,7 @@
       "total_distinct_found": 60,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Headlines are almost entirely unrelated COO insider-sale noise plus a routine Sept. 9 results scheduling notice."
+      "reasoning": "Headline set is mostly unrelated insider-sale noise for other companies plus a routine Sept. 9 earnings call date; Citi target raise is minor."
     },
     "PFG": {
       "rank": 10,
@@ -105,7 +105,7 @@
       "total_distinct_found": 59,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Q2 operating EPS up 16% with AUM at $808B, dividend hike and buyback, though BofA downgraded to Underperform."
+      "reasoning": "Q2 operating EPS $2.50 up 16% and a beat, dividend hike and buyback, though BofA downgraded to Underperform and Voya takeover interest is only speculative."
     },
     "LTH": {
       "rank": 11,
@@ -114,16 +114,16 @@
       "total_distinct_found": 65,
       "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "Raised 2026 outlook, 13% revenue growth and a wave of price target hikes to $50-64, with the stock at fresh highs and some 'lock in gains' caution."
+      "reasoning": "Raised 2026 outlook, revenue +13%, fresh highs and a broad sweep of analyst target hikes, tempered by capex questions and stretched valuation after a 60% YTD run."
     },
     "KKR": {
       "rank": 12,
       "headline_count": 40,
-      "mentions_24h": 31,
+      "mentions_24h": 32,
       "total_distinct_found": 86,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Closed a record $19.2B infrastructure fund and announced the $5.7B Integer buyout plus TotalEnergies renewables stake \u2014 strong deployment momentum."
+      "reasoning": "Closed record $19.2B infrastructure fund and announced $5.7B Integer acquisition plus TotalEnergies renewables stake \u2014 solid deployment, though value accrues slowly."
     },
     "FHN": {
       "rank": 13,
@@ -132,7 +132,7 @@
       "total_distinct_found": 60,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Q2 EPS up 20% y/y, Cramer buy call and undervaluation narratives, though shares fell despite the beat."
+      "reasoning": "Q2 EPS $0.55 up ~20% with NII and fee growth, Cramer buy call and analysts flagging 45% undervaluation, though shares initially fell on the beat."
     },
     "ES": {
       "rank": 14,
@@ -141,34 +141,34 @@
       "total_distinct_found": 65,
       "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "Q2 GAAP EPS collapsed to $0.14 on Aquarion sale and offshore wind charges, missing both earnings and revenue, with only a neutral Mizuho target bump."
+      "reasoning": "Missed Q2 earnings and revenue with GAAP EPS down 85% on Aquarion sale and offshore wind charges; reaffirmed guidance only partly offsets."
     },
     "EIX": {
       "rank": 15,
       "headline_count": 40,
       "mentions_24h": 5,
       "total_distinct_found": 79,
-      "llm_score": -3,
+      "llm_score": -2,
       "materiality": "high",
-      "reasoning": "CEO warned of credit downgrades absent California wildfire reform by Aug 31, Barclays downgraded to Equal Weight, and revenue missed badly despite the EPS beat."
+      "reasoning": "Barclays downgrade to Equal Weight, revenue miss, and CEO warning of credit downgrades if California wildfire liability reform isn't passed by Aug 31."
     },
     "TROW": {
       "rank": 16,
       "headline_count": 40,
-      "mentions_24h": 3,
+      "mentions_24h": 4,
       "total_distinct_found": 74,
       "llm_score": 0,
       "materiality": "medium",
-      "reasoning": "EPS beat with record $1.89T AUM but revenue missed, shares fell 6%, and active equity outflows plus a tougher second half were flagged."
+      "reasoning": "Adjusted EPS beat and record $1.89T AUM, but revenue missed, shares fell 6.3%, and continued active equity outflows with a 'challenging second half' warning."
     },
     "FSLR": {
       "rank": 17,
       "headline_count": 40,
-      "mentions_24h": 34,
+      "mentions_24h": 35,
       "total_distinct_found": 69,
       "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "Stock ripped 12% on solar sentiment and an FCC ban on foreign inverters, with target raised to $282, though a securities class action lingers."
+      "reasoning": "Stock ripped 12% on Q2 earnings beat with record margins/backlog, favorable policy (FCC ban on foreign inverters) and target raise to $282, despite a securities class action."
     },
     "KEY": {
       "rank": 18,
@@ -177,7 +177,7 @@
       "total_distinct_found": 61,
       "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Mostly unrelated 'key' keyword noise; genuine items are a Q2 beat, 52-week high and routine 2027 call scheduling."
+      "reasoning": "Headlines are largely generic 'key' keyword noise plus routine earnings-date scheduling; underlying Q2 beat with NII/fee growth and 52-week high is modestly positive."
     },
     "CL": {
       "rank": 19,
@@ -186,7 +186,7 @@
       "total_distinct_found": 86,
       "llm_score": 0,
       "materiality": "medium",
-      "reasoning": "Q2 EPS beat with 4.9% sales growth and maintained guidance, but GAAP EPS fell y/y, revenue was light and gross margin guidance trimmed to roughly flat."
+      "reasoning": "Q2 EPS beat with 4.9% sales growth and margin expansion, but revenue essentially in line/missed some views, GAAP EPS fell YoY, North America soft and shares dipped."
     },
     "UDR": {
       "rank": 20,
@@ -195,7 +195,7 @@
       "total_distinct_found": 60,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Q2 FFO and revenue beat with raised 2026 guidance and a shift to monthly dividends, tempered by flat revenue and Sunbelt softness."
+      "reasoning": "Q2 FFO and revenue beat with raised 2026 guidance, shift to monthly dividends and BlackRock 9.5% stake, offset by Sunbelt weakness and a Wall Street Zen downgrade."
     }
   }
 }
