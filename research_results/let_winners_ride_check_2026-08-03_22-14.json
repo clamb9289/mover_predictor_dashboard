@@ -1,0 +1,119 @@
+{
+  "script_name": "let_winners_ride_check",
+  "run_timestamp": "2026-08-03T22:14:59.048678+00:00",
+  "title": "Should genuine running winners be held past day 3, and should stagnant/hovering positions be cut sooner?",
+  "params": {
+    "backtest_days": 150,
+    "extended_window_days": 10,
+    "first_trigger": 0.005,
+    "n_early_exit": 1466,
+    "n_running_winners": 18,
+    "n_hovering": 72
+  },
+  "tables": [
+    {
+      "name": "RUNNING WINNERS: day-3 forced exit vs held longer (day3 forced vs held longer)",
+      "columns": [
+        "Split",
+        "N",
+        "Avg day3 forced",
+        "Avg held longer",
+        "Edge (held longer - day3 forced)"
+      ],
+      "rows": [
+        [
+          "ALL",
+          18,
+          "+2.15%",
+          "+1.79%",
+          "-0.36%"
+        ],
+        [
+          "TRAIN",
+          12,
+          "+2.19%",
+          "+1.86%",
+          "-0.34%"
+        ],
+        [
+          "VAL",
+          6,
+          "+2.08%",
+          "+1.67%",
+          "-0.41%"
+        ]
+      ]
+    },
+    {
+      "name": "HOVERING/FLAT: day-3 forced exit vs cut at day1 (day3 forced (current) vs cut at day1)",
+      "columns": [
+        "Split",
+        "N",
+        "Avg day3 forced (current)",
+        "Avg cut at day1",
+        "Edge (cut at day1 - day3 forced (current))"
+      ],
+      "rows": [
+        [
+          "ALL",
+          72,
+          "-0.82%",
+          "-1.01%",
+          "-0.19%"
+        ],
+        [
+          "TRAIN",
+          49,
+          "-0.98%",
+          "-1.04%",
+          "-0.06%"
+        ],
+        [
+          "VAL",
+          23,
+          "-0.48%",
+          "-0.97%",
+          "-0.48%"
+        ]
+      ]
+    },
+    {
+      "name": "HOVERING/FLAT: day-3 forced exit vs cut at day2 (day3 forced (current) vs cut at day2)",
+      "columns": [
+        "Split",
+        "N",
+        "Avg day3 forced (current)",
+        "Avg cut at day2",
+        "Edge (cut at day2 - day3 forced (current))"
+      ],
+      "rows": [
+        [
+          "ALL",
+          72,
+          "-0.82%",
+          "-0.90%",
+          "-0.08%"
+        ],
+        [
+          "TRAIN",
+          49,
+          "-0.98%",
+          "-0.99%",
+          "-0.01%"
+        ],
+        [
+          "VAL",
+          23,
+          "-0.48%",
+          "-0.71%",
+          "-0.23%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Running winners: held-longer is worse, consistently on both TRAIN and VAL -- these tend to peak right around day 3. Hovering/flat: both earlier-cut variants (day1/day2) are worse than waiting the full 3 days, consistently on both splits -- some stagnant positions recover by day 3 rather than drifting further down.",
+  "conclusion": {
+    "verdict": "RESOLVED",
+    "summary": "Both hypotheses rejected -- current MAX_HOLD_DAYS=3 policy confirmed well-calibrated on both ends."
+  }
+}

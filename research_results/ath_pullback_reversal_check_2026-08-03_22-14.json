@@ -1,0 +1,141 @@
+{
+  "script_name": "ath_pullback_reversal_check",
+  "run_timestamp": "2026-08-03T22:14:59.040935+00:00",
+  "title": "Compound reversal setup: outperforming sector + off-ATH pullback + volume spike + bounce off a fresh low",
+  "params": {
+    "n_train_rows": 164315,
+    "n_val_rows": 81712
+  },
+  "tables": [
+    {
+      "name": "5-day forward edge by signal (present vs absent)",
+      "columns": [
+        "Signal",
+        "train.present.n",
+        "train.present.avg",
+        "train.present.win_rate",
+        "train.absent.n",
+        "train.absent.avg",
+        "train.absent.win_rate",
+        "val.present.n",
+        "val.present.avg",
+        "val.present.win_rate",
+        "val.absent.n",
+        "val.absent.avg",
+        "val.absent.win_rate"
+      ],
+      "rows": [
+        [
+          "compound_3of4",
+          5251,
+          "0.43%",
+          "53.34%",
+          159064,
+          "0.29%",
+          "52.44%",
+          2300,
+          "0.34%",
+          "51.26%",
+          79412,
+          "0.36%",
+          "51.79%"
+        ],
+        [
+          "compound_all4",
+          212,
+          "0.67%",
+          "51.89%",
+          164103,
+          "0.30%",
+          "52.47%",
+          53,
+          "-0.12%",
+          "39.62%",
+          81659,
+          "0.36%",
+          "51.78%"
+        ],
+        [
+          "low_reversal",
+          24597,
+          "0.23%",
+          "52.80%",
+          139718,
+          "0.31%",
+          "52.41%",
+          11323,
+          "0.32%",
+          "52.02%",
+          70389,
+          "0.37%",
+          "51.73%"
+        ],
+        [
+          "off_ath_pullback",
+          84944,
+          "0.35%",
+          "53.03%",
+          79371,
+          "0.24%",
+          "51.87%",
+          42966,
+          "0.32%",
+          "50.98%",
+          38746,
+          "0.41%",
+          "52.65%"
+        ],
+        [
+          "random_control",
+          41173,
+          "0.28%",
+          "52.36%",
+          123142,
+          "0.30%",
+          "52.51%",
+          20744,
+          "0.34%",
+          "51.71%",
+          60968,
+          "0.37%",
+          "51.79%"
+        ],
+        [
+          "sector_outperform",
+          80604,
+          "0.36%",
+          "52.90%",
+          83711,
+          "0.24%",
+          "52.05%",
+          40691,
+          "0.36%",
+          "51.46%",
+          41021,
+          "0.36%",
+          "52.08%"
+        ],
+        [
+          "volume_spike",
+          7733,
+          "0.29%",
+          "52.09%",
+          156582,
+          "0.30%",
+          "52.49%",
+          3345,
+          "0.54%",
+          "51.09%",
+          78367,
+          "0.35%",
+          "51.80%"
+        ]
+      ]
+    }
+  ],
+  "notes": "The exact 4-way compound looked promising on TRAIN (+0.38% edge, n=212) but flipped negative on VAL (-0.48%, n=53). Individual components don't rescue it either -- off_ath_pullback flips sign, sector_outperform shrinks to ~0, low_reversal is small-and-negative both splits, volume_spike shows nothing on TRAIN. True occurrence rate is only 0.06-0.13% of rows even at 246k-row scale -- follow-up angle chasing which piece does the work: see ath_pullback_reversal_multiwindow_check.py.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "Exact 4-way compound flips sign train-to-val; no individual component rescues it either."
+  }
+}

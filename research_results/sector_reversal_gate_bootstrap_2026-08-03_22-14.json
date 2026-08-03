@@ -1,0 +1,58 @@
+{
+  "script_name": "sector_reversal_gate_bootstrap",
+  "run_timestamp": "2026-08-03T22:14:59.042941+00:00",
+  "title": "Is the sector-reversal gate's baseline-vs-gated gap statistically distinguishable from noise?",
+  "params": {},
+  "tables": [
+    {
+      "name": "Bootstrap 95% CI + permutation test on (gated - baseline)",
+      "columns": [
+        "Split",
+        "Metric",
+        "Observed Diff",
+        "CI Low",
+        "CI High",
+        "Perm p-value"
+      ],
+      "rows": [
+        [
+          "TRAIN",
+          "avg_pct",
+          "+0.5193%",
+          "-0.1340%",
+          "+1.1994%",
+          "0.0967"
+        ],
+        [
+          "TRAIN",
+          "win_rate",
+          "+6.7404%",
+          "+0.6719%",
+          "+12.7688%",
+          "0.0405"
+        ],
+        [
+          "VAL",
+          "avg_pct",
+          "+0.0862%",
+          "-0.8977%",
+          "+1.1226%",
+          "0.8523"
+        ],
+        [
+          "VAL",
+          "win_rate",
+          "+0.2351%",
+          "-9.1950%",
+          "+9.6011%",
+          "1.0000"
+        ]
+      ]
+    }
+  ],
+  "notes": "Companion significance check to sector_reversal_gate_backtest.py's baseline-vs-gated comparison, since 'never flips sign' turned out to be necessary but not sufficient. VALIDATION avg_pct gap's 95% CI includes zero and the permutation p-value is 0.852 -- this exact result would occur from pure chance the large majority of the time.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "Validation-split edge is fully consistent with noise (p=0.85) despite never flipping sign across three independent windows and this causal gate test."
+  }
+}

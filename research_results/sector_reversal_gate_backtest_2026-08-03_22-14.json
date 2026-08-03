@@ -1,0 +1,57 @@
+{
+  "script_name": "sector_reversal_gate_backtest",
+  "run_timestamp": "2026-08-03T22:14:59.042941+00:00",
+  "title": "core+sector reversal signal as a causal gate on the model's real top-3 picks",
+  "params": {
+    "high_window": 250,
+    "pullback_min_pct": 0.12,
+    "num_positions": 3,
+    "train_gate_coverage": 0.5859872611464968,
+    "val_gate_coverage": 0.6222222222222222
+  },
+  "tables": [
+    {
+      "name": "Baseline (unfiltered top-3) vs gated (core_sector only)",
+      "columns": [
+        "Picks",
+        "train.n",
+        "train.avg_pct",
+        "train.win_rate",
+        "train.total_dollar",
+        "val.n",
+        "val.avg_pct",
+        "val.win_rate",
+        "val.total_dollar"
+      ],
+      "rows": [
+        [
+          "baseline",
+          942,
+          "0.09%",
+          "50.32%",
+          "$88.34",
+          405,
+          "-0.05%",
+          "48.40%",
+          "$-18.43"
+        ],
+        [
+          "gated",
+          340,
+          "0.61%",
+          "57.06%",
+          "$208.44",
+          146,
+          "0.04%",
+          "48.63%",
+          "$5.94"
+        ]
+      ]
+    }
+  ],
+  "notes": "Gated beats baseline on both avg_pct and win_rate, on both TRAIN and VAL -- never flips sign, unlike everything else tested this session. But the VAL margin is small (+0.09pp avg / +0.23pp win) -- see sector_reversal_gate_bootstrap.py for the statistical significance check.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "Never flips sign across train/val, but the bootstrap/permutation significance check (see sector_reversal_gate_bootstrap) confirms the validation-split edge is not distinguishable from noise (p=0.85)."
+  }
+}

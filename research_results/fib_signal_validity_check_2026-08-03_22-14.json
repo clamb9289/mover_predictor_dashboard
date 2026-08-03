@@ -1,0 +1,97 @@
+{
+  "script_name": "fib_signal_validity_check",
+  "run_timestamp": "2026-08-03T22:14:59.036809+00:00",
+  "title": "Do Fibonacci retracement/extension levels predict next-day moves?",
+  "params": {
+    "backtest_days": 300,
+    "n_train_rows": 1416,
+    "n_val_rows": 616
+  },
+  "tables": [
+    {
+      "name": "5-day forward edge by signal (present vs absent)",
+      "columns": [
+        "Signal",
+        "train.present.n",
+        "train.present.avg",
+        "train.present.win_rate",
+        "train.absent.n",
+        "train.absent.avg",
+        "train.absent.win_rate",
+        "val.present.n",
+        "val.present.avg",
+        "val.present.win_rate",
+        "val.absent.n",
+        "val.absent.avg",
+        "val.absent.win_rate"
+      ],
+      "rows": [
+        [
+          "fib_extension",
+          36,
+          "0.88%",
+          "50.00%",
+          1380,
+          "0.46%",
+          "53.33%",
+          10,
+          "-1.03%",
+          "40.00%",
+          606,
+          "0.20%",
+          "50.99%"
+        ],
+        [
+          "fib_retrace_deep",
+          18,
+          "0.67%",
+          "55.56%",
+          1398,
+          "0.47%",
+          "53.22%",
+          6,
+          "-1.50%",
+          "50.00%",
+          610,
+          "0.20%",
+          "50.82%"
+        ],
+        [
+          "fib_retrace_shallow",
+          24,
+          "-3.57%",
+          "33.33%",
+          1392,
+          "0.54%",
+          "53.59%",
+          12,
+          "-2.55%",
+          "33.33%",
+          604,
+          "0.24%",
+          "51.16%"
+        ],
+        [
+          "random_control",
+          343,
+          "0.69%",
+          "53.64%",
+          1073,
+          "0.40%",
+          "53.12%",
+          150,
+          "0.44%",
+          "53.33%",
+          466,
+          "0.10%",
+          "50.00%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Each signal's PRESENT bucket is compared against its own ABSENT bucket, TRAIN vs VALIDATION. random_control is a negative control -- it should show ~0 edge in both splits.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "Retracement/extension signals flip sign train-to-val, no edge beyond the random-control noise floor."
+  }
+}
