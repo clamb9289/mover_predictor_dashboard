@@ -737,10 +737,10 @@
             "relative_strength_pct": 0.04,
             "gap_pct": 0.8
           },
-          "live_price": 29.03,
-          "live_pct": 0.03,
-          "live_dollar": 0.03,
-          "price_updated": "12:24 PM ET",
+          "live_price": 29.0,
+          "live_pct": -0.05,
+          "live_dollar": -0.05,
+          "price_updated": "12:31 PM ET",
           "skipped_reason": null,
           "prediction_price": 28.79,
           "position_cost": 96.92,
@@ -814,7 +814,8 @@
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:34 AM ET",
-          "paper_exit_date": "2026-07-31"
+          "paper_exit_date": "2026-07-31",
+          "postmortem": "Small loss (-0.04%) \u2014 accumulation/volume and news sentiment didn't convert this time; within normal volatility for now."
         },
         {
           "ticker": "HD",
@@ -847,7 +848,8 @@
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:34 AM ET",
-          "paper_exit_date": "2026-07-31"
+          "paper_exit_date": "2026-07-31",
+          "postmortem": "Cleared the trailing-stop floor (+2.00%) \u2014 the relative strength and sector momentum and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
         }
       ],
       "bench_candidates": [
@@ -1078,32 +1080,32 @@
       "total_predictions": 6,
       "days_tracked": 2,
       "closed_rounds": [],
-      "prices_last_updated": "12:24 PM ET",
+      "prices_last_updated": "12:31 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 747.03,
       "spy_live_pct": 0.5
     },
     {
       "date": "2026-08-03",
-      "regime": "Market regime OK \u2014 SPY +0.42%",
+      "regime": "Market regime OK \u2014 SPY +1.27%",
       "trading_skipped": false,
       "max_hold_days": 3,
-      "spy_regime_pct": 0.00422,
+      "spy_regime_pct": 0.01265,
       "top_sectors": [
-        {
-          "etf": "XLY",
-          "name": "Consumer Discretionary",
-          "pct": 2.1
-        },
         {
           "etf": "XLC",
           "name": "Communication Services",
-          "pct": 1.92
+          "pct": 3.15
         },
         {
-          "etf": "XLP",
-          "name": "Consumer Staples",
-          "pct": 1.39
+          "etf": "XLY",
+          "name": "Consumer Discretionary",
+          "pct": 1.63
+        },
+        {
+          "etf": "XLK",
+          "name": "Technology",
+          "pct": 1.3
         }
       ],
       "actual_top3": [
@@ -1112,9 +1114,9 @@
           "pct": 15.32,
           "signals": {
             "accumulation": 2.089,
-            "sector_momentum_pct": 0.0,
-            "news_sentiment": 6.0,
-            "relative_strength_pct": 0.79
+            "sector_momentum_pct": 1.63,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": -0.84
           },
           "our_rank": null,
           "eligible": true,
@@ -1129,7 +1131,7 @@
             "accumulation": 1.132,
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
-            "relative_strength_pct": 5.76
+            "relative_strength_pct": 6.26
           },
           "our_rank": null,
           "eligible": true,
@@ -1142,9 +1144,9 @@
           "pct": 8.53,
           "signals": {
             "accumulation": 0.855,
-            "sector_momentum_pct": 0.0,
+            "sector_momentum_pct": 1.17,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -4.59
+            "relative_strength_pct": -5.76
           },
           "our_rank": null,
           "eligible": true,
@@ -1157,9 +1159,9 @@
           "pct": 7.32,
           "signals": {
             "accumulation": 1.157,
-            "sector_momentum_pct": 0.0,
-            "news_sentiment": 2.0,
-            "relative_strength_pct": -6.8
+            "sector_momentum_pct": 1.17,
+            "news_sentiment": 5.0,
+            "relative_strength_pct": -7.98
           },
           "our_rank": null,
           "eligible": true,
@@ -1172,9 +1174,9 @@
           "pct": 6.88,
           "signals": {
             "accumulation": 0.542,
-            "sector_momentum_pct": 0.0,
-            "news_sentiment": 6.0,
-            "relative_strength_pct": 4.82
+            "sector_momentum_pct": 3.15,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": 1.67
           },
           "our_rank": null,
           "eligible": true,
@@ -1187,9 +1189,9 @@
           "pct": 6.73,
           "signals": {
             "accumulation": 0.664,
-            "sector_momentum_pct": 0.0,
-            "news_sentiment": 5.0,
-            "relative_strength_pct": 5.03
+            "sector_momentum_pct": 3.15,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": 1.88
           },
           "our_rank": null,
           "eligible": true,
@@ -1202,9 +1204,9 @@
           "pct": 6.52,
           "signals": {
             "accumulation": 1.261,
-            "sector_momentum_pct": 0.0,
+            "sector_momentum_pct": 1.17,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -5.45
+            "relative_strength_pct": -6.62
           },
           "our_rank": null,
           "eligible": true,
@@ -1217,9 +1219,9 @@
           "pct": 6.51,
           "signals": {
             "accumulation": 1.31,
-            "sector_momentum_pct": 0.0,
+            "sector_momentum_pct": 0.3,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -0.59
+            "relative_strength_pct": -0.89
           },
           "our_rank": null,
           "eligible": true,
@@ -1232,9 +1234,9 @@
           "pct": 6.24,
           "signals": {
             "accumulation": 1.37,
-            "sector_momentum_pct": 0.0,
+            "sector_momentum_pct": 1.17,
             "news_sentiment": 0.0,
-            "relative_strength_pct": -8.68
+            "relative_strength_pct": -9.86
           },
           "our_rank": null,
           "eligible": true,
@@ -1247,9 +1249,9 @@
           "pct": 6.18,
           "signals": {
             "accumulation": 0.573,
-            "sector_momentum_pct": 0.0,
-            "news_sentiment": 4.0,
-            "relative_strength_pct": -25.17
+            "sector_momentum_pct": 1.17,
+            "news_sentiment": 8.0,
+            "relative_strength_pct": -26.35
           },
           "our_rank": null,
           "eligible": true,
@@ -1258,7 +1260,7 @@
           "made_shortlist": false
         }
       ],
-      "model_insight": "Actual top movers had notably lower relative strength (-3.49 vs our picks' 1.50) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.00 vs our picks' 0.49) \u2014 possible signal to decrease weighting on sector momentum. Actual top movers had notably higher news sentiment (2.30 vs our picks' 1.00) \u2014 possible signal to increase weighting on news sentiment. DXCM (#120 of 631), GTES (#269 of 631), ETN (#108 of 631), GOOG (#534 of 631), GOOGL (#432 of 631), KBR (#72 of 631), WY (#61 of 631), VRT (#507 of 631) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap. AMZN (accumulation #9), NVT (accumulation #50) made the top-50 shortlist but didn't score high enough on the full composite to reach our top picks.",
+      "model_insight": "Actual top movers had notably lower relative strength (-4.85 vs our picks' 1.50) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably higher sector momentum (1.41 vs our picks' 0.49) \u2014 possible signal to increase weighting on sector momentum. Actual top movers had notably higher news sentiment (2.60 vs our picks' 1.00) \u2014 possible signal to increase weighting on news sentiment. DXCM (#120 of 631), GTES (#269 of 631), ETN (#108 of 631), GOOG (#534 of 631), GOOGL (#432 of 631), KBR (#72 of 631), WY (#61 of 631), VRT (#507 of 631) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap. AMZN (accumulation #9), NVT (accumulation #50) made the top-50 shortlist but didn't score high enough on the full composite to reach our top picks.",
       "predictions": [
         {
           "rank": 1,
@@ -1315,10 +1317,10 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0093,
           "paper_trail_floor_active": true,
-          "live_price": 109.15,
-          "live_pct": -0.26,
-          "live_dollar": -0.26,
-          "price_updated": "12:24 PM ET",
+          "live_price": 109.19,
+          "live_pct": -0.23,
+          "live_dollar": -0.23,
+          "price_updated": "12:31 PM ET",
           "paper_exit_price": 109.8,
           "paper_exit_pct": 0.33,
           "paper_exit_dollar": 0.34,
@@ -1352,10 +1354,10 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0087,
           "paper_trail_floor_active": true,
-          "live_price": 115.06,
-          "live_pct": 0.48,
-          "live_dollar": 0.49,
-          "price_updated": "12:24 PM ET",
+          "live_price": 115.1,
+          "live_pct": 0.52,
+          "live_dollar": 0.53,
+          "price_updated": "12:31 PM ET",
           "paper_exit_time": "11:41 AM ET",
           "paper_exit_date": "2026-08-03"
         }
@@ -1376,9 +1378,9 @@
             "relative_strength_pct": -1.75,
             "gap_pct": 6.19
           },
-          "live_price": 180.26,
-          "live_pct": 3.52,
-          "price_updated": "12:24 PM ET",
+          "live_price": 180.47,
+          "live_pct": 3.64,
+          "price_updated": "12:31 PM ET",
           "skipped_reason": "Opening-gap filter: gapped +1.7% from the $174.13 close signals were scored on \u2014 skipping."
         },
         {
@@ -1396,9 +1398,9 @@
             "relative_strength_pct": 0.76,
             "gap_pct": 0.53
           },
-          "live_price": 45.45,
-          "live_pct": 1.27,
-          "price_updated": "12:24 PM ET",
+          "live_price": 45.51,
+          "live_pct": 1.4,
+          "price_updated": "12:31 PM ET",
           "skipped_reason": "Opening-gap filter: gapped +3.2% from the $44.88 close signals were scored on \u2014 skipping."
         },
         {
@@ -1416,9 +1418,9 @@
             "relative_strength_pct": 1.25,
             "gap_pct": 0.27
           },
-          "live_price": 134.65,
-          "live_pct": 5.12,
-          "price_updated": "12:24 PM ET",
+          "live_price": 134.74,
+          "live_pct": 5.19,
+          "price_updated": "12:31 PM ET",
           "skipped_reason": "Opening-gap filter: gapped +3.2% from the $128.09 close signals were scored on \u2014 skipping."
         },
         {
@@ -1436,9 +1438,9 @@
             "relative_strength_pct": -1.96,
             "gap_pct": 1.83
           },
-          "live_price": 18.09,
-          "live_pct": 3.19,
-          "price_updated": "12:24 PM ET",
+          "live_price": 18.15,
+          "live_pct": 3.54,
+          "price_updated": "12:31 PM ET",
           "skipped_reason": "Opening-gap filter: gapped +1.6% from the $17.53 close signals were scored on \u2014 skipping."
         },
         {
@@ -1456,9 +1458,9 @@
             "relative_strength_pct": -6.62,
             "gap_pct": 0.98
           },
-          "live_price": 478.24,
-          "live_pct": -0.03,
-          "price_updated": "12:24 PM ET",
+          "live_price": 477.4,
+          "live_pct": -0.2,
+          "price_updated": "12:31 PM ET",
           "skipped_reason": "Opening-gap filter: gapped +1.1% from the $478.38 close signals were scored on \u2014 skipping."
         },
         {
@@ -1476,9 +1478,9 @@
             "relative_strength_pct": 2.86,
             "gap_pct": 1.47
           },
-          "live_price": 73.64,
-          "live_pct": 1.83,
-          "price_updated": "12:24 PM ET",
+          "live_price": 73.74,
+          "live_pct": 1.96,
+          "price_updated": "12:31 PM ET",
           "skipped_reason": "Opening-gap filter: gapped +3.1% from the $72.32 close signals were scored on \u2014 skipping."
         },
         {
@@ -1496,9 +1498,9 @@
             "relative_strength_pct": 3.93,
             "gap_pct": 0.38
           },
-          "live_price": 115.06,
-          "live_pct": 1.2,
-          "price_updated": "12:24 PM ET"
+          "live_price": 115.1,
+          "live_pct": 1.23,
+          "price_updated": "12:31 PM ET"
         }
       ],
       "prior_predictions_actual": [
@@ -1556,8 +1558,8 @@
         {
           "rank": 5,
           "ticker": "FE",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": -0.04,
+          "dollar_change": -0.04,
           "position_size": 100.49,
           "actual_rank": 430,
           "total_ranked": 631,
@@ -1568,13 +1570,13 @@
             "relative_strength_pct": -1.17,
             "gap_pct": -0.33
           },
-          "postmortem": null
+          "postmortem": "Small loss (-0.04%) \u2014 accumulation/volume and news sentiment didn't convert this time; within normal volatility for now. The stock itself ranked #430 of 631 tracked that day, for context."
         },
         {
           "rank": 6,
           "ticker": "HD",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": 2.0,
+          "dollar_change": 2.01,
           "position_size": 100.49,
           "actual_rank": 359,
           "total_ranked": 631,
@@ -1585,18 +1587,18 @@
             "relative_strength_pct": 0.01,
             "gap_pct": -0.27
           },
-          "postmortem": null
+          "postmortem": "Cleared the trailing-stop floor (+2.00%) \u2014 the relative strength and sector momentum and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats. The stock itself ranked #359 of 631 tracked that day, for context."
         }
       ],
       "hit_rate": 0.0,
       "total_hits": 0,
-      "total_predictions": 6,
-      "days_tracked": 2,
+      "total_predictions": 9,
+      "days_tracked": 3,
       "closed_rounds": [],
-      "prices_last_updated": "12:24 PM ET",
+      "prices_last_updated": "12:31 PM ET",
       "prices_after_hours": false,
-      "spy_live_price": 756.19,
-      "spy_live_pct": 1.61
+      "spy_live_price": 756.55,
+      "spy_live_pct": 1.66
     }
   ]
 }
