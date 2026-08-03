@@ -298,6 +298,7 @@
 </div>
 
 <div id="llm-sentiment-alert" class="llm-alert" style="display:none"></div>
+<div id="mover-causes-alert" class="llm-alert" style="display:none"></div>
 
 <div class="tabs">
   <div class="tab active" onclick="showTab('today')">Today's Picks</div>
@@ -456,6 +457,11 @@
         <tbody id="model-review-backtest-body"></tbody>
       </table>
     </div>
+    <div class="card">
+      <div class="card-title">Actual Mover Cause Themes <span style="font-size:11px;font-weight:500;color:var(--gold)">TRACK-ONLY</span></div>
+      <div class="gainer-label">What REALLY drove each day's actual top movers (real web-search research, not just our own internal signals) — pooled weekly, looking for recurring structural patterns rather than one-off events.</div>
+      <div id="model-review-mover-themes"></div>
+    </div>
   </div>
 
   <div id="tab-scanners" class="panel">
@@ -596,6 +602,7 @@ const PERF_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_da
 const PERF_API_URL = "https://api.github.com/repos/clamb9289/mover_predictor_dashboard/contents/performance.json";
 const MODEL_REVIEW_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/model_review.json";
 const MODEL_REVIEW_SEEN_KEY = "model_review_last_seen";
+const ACTUAL_MOVER_CAUSES_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/actual_mover_causes.json";
 const GAP_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/gap_scan.json";
 const MARKET_HOLIDAYS_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/market_holidays.json";
 const LLM_SENTIMENT_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/llm_sentiment_tracking.json";
@@ -611,6 +618,7 @@ let MAX_HOLD_DAYS = 5;
 
 let perfData = null;
 let marketHolidays = new Set(); // populated by loadMarketHolidays() before first render
+let actualMoverCauses = {}; // "date|TICKER" -> cause entry, populated by loadActualMoverCauses() before first render
 // 'price' (per-share entry/live/exit price) or 'value' (actual $ cost basis/
 // market value) -- toggled via setCardViewMode(), shared by every card grid
 // that goes through buildPickCards() (Today's Picks, Last Session, Yesterday's
@@ -1252,6 +1260,29 @@ async function loadMarketHolidays() {
   }
 }
 
+// actual_mover_causes.json (written by actual_mover_causes.py, TRACK-ONLY)
+// -- real web-search-researched causes for each day's actual top movers.
+// Optional/best-effort: this file may not exist yet (feature just shipped,
+// or ANTHROPIC_API_KEY unset/exhausted on the runner), so a fetch failure
+// here is silent, same as the holiday loader above — the History tab's
+// Actual Top Movers cards simply don't show a real-cause line if this
+// never populates.
+async function loadActualMoverCauses() {
+  try {
+    const res = await fetch(ACTUAL_MOVER_CAUSES_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const map = {};
+    (data.days || []).forEach(day => {
+      if (day.status !== 'ok') return;
+      (day.tickers || []).forEach(t => { map[day.date + '|' + t.ticker] = t; });
+    });
+    actualMoverCauses = map;
+  } catch (e) {
+    console.warn('Could not load actual_mover_causes.json — real-cause research not shown yet.', e);
+  }
+}
+
 // Checks llm_sentiment_tracking.json's `status` field (written by
 // llm_news_sentiment.py) and surfaces a banner if the last run failed —
 // most importantly a billing/insufficient-credit error, since that step's
@@ -1274,6 +1305,35 @@ async function checkLlmSentimentStatus() {
     banner.innerHTML = `⚠️ <b>LLM news sentiment tracker (track-only) is failing</b> as of ${data.date}: ` +
       `${data.error_message || data.error_type || 'unknown error'}. ${action} ` +
       `This does not affect real trading — only the experimental LLM sentiment/top-3 comparison.`;
+    banner.style.display = 'block';
+  } catch (e) {
+    banner.style.display = 'none';
+  }
+}
+
+// Same failsafe-visibility pattern as checkLlmSentimentStatus() above, for
+// actual_mover_causes.py -- built explicitly with an "I might not fund this
+// long-term" failsafe (2026-08-03): if ANTHROPIC_API_KEY is pulled or
+// Console credit runs out, the script degrades to writing a status:"error"
+// entry (continue-on-error: true on the workflow step, so the real trading
+// job never fails either way) instead of just going silently stale. Checks
+// only the MOST RECENT day entry, since older days may have succeeded fine
+// before a later billing failure.
+async function checkMoverCausesStatus() {
+  const banner = document.getElementById('mover-causes-alert');
+  try {
+    const res = await fetch(ACTUAL_MOVER_CAUSES_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    const latestDay = (data.days || []).slice().sort((a, b) => a.date.localeCompare(b.date)).pop();
+    if (!latestDay || latestDay.status !== 'error') { banner.style.display = 'none'; return; }
+    const isBilling = latestDay.error_type === 'billing_error' || /credit|balance|billing/i.test(latestDay.error_message || '');
+    const action = isBilling
+      ? 'Reload credits at <a href="https://console.anthropic.com" target="_blank" style="color:inherit;text-decoration:underline">console.anthropic.com</a>, or just leave it — it fails safely and skips a day rather than blocking anything.'
+      : 'Check the ANTHROPIC_API_KEY secret / API status to resume it.';
+    banner.innerHTML = `⚠️ <b>Actual mover cause research (track-only) is failing</b> as of ${latestDay.date}: ` +
+      `${latestDay.error_message || latestDay.error_type || 'unknown error'}. ${action} ` +
+      `This does not affect real trading — only the experimental "what actually caused this move" research.`;
     banner.style.display = 'block';
   } catch (e) {
     banner.style.display = 'none';
@@ -1746,7 +1806,9 @@ function renderArchive(days) {
           </div>
           <div>
             <div class="archive-col-title">Actual Top Movers</div>
-            ${winners.map(w => `
+            ${winners.map(w => {
+              const cause = actualMoverCauses[labelDate + '|' + w.ticker];
+              return `
               <div class="archive-pick">
                 <div class="archive-pick-head">
                   <strong>${w.ticker}</strong>
@@ -1759,8 +1821,12 @@ function renderArchive(days) {
                     : 'Not in our candidate pool that day'}
                   ${w.signals ? ` — accumulation ${w.signals.accumulation}, relative strength ${fmt(w.signals.relative_strength_pct)}` : ''}
                 </div>
+                ${cause ? `<div style="color:var(--text);margin-top:6px;padding-top:6px;border-top:1px solid var(--border)">
+                  🔎 <strong>What actually happened:</strong> ${cause.cause_summary}
+                  <span style="color:var(--muted);font-size:11px"> (${cause.category}${cause.structural_blind_spot ? ', structural blind spot' : ''}, ${cause.confidence} confidence)</span>
+                </div>` : ''}
               </div>
-            `).join('') || '<div style="color:var(--muted)">No actual-mover data for this day.</div>'}
+            `;}).join('') || '<div style="color:var(--muted)">No actual-mover data for this day.</div>'}
           </div>
         </div>
         ${day.model_insight ? `<div class="archive-insight">💡 ${day.model_insight}</div>` : ''}
@@ -2356,6 +2422,7 @@ async function loadModelReview() {
   const bodyEl = document.getElementById('model-review-backtest-body');
   const recEl = document.getElementById('model-review-recommendation');
   const genEl = document.getElementById('model-review-generated');
+  const themesEl = document.getElementById('model-review-mover-themes');
 
   try {
     const data = await fetchModelReview();
@@ -2393,10 +2460,29 @@ async function loadModelReview() {
         <td>${(c.win_day_rate * 100).toFixed(0)}%</td>
       </tr>`).join('');
 
+    const themes = data.mover_theme_synthesis;
+    if (!themes || !themes.themes || !themes.themes.length) {
+      themesEl.innerHTML = `<div class="loading-msg">${themes?.note || 'No theme synthesis yet.'}</div>`;
+    } else {
+      themesEl.innerHTML = `
+        ${themes.note ? `<div class="gainer-label" style="margin-bottom:12px">${themes.note}</div>` : ''}
+        ${themes.themes.map(t => `
+          <div class="archive-pick" style="margin-bottom:10px">
+            <div class="archive-pick-head">
+              <strong>${t.theme}</strong>
+              <span style="color:var(--muted);font-size:12px">${t.supporting_count} mover${t.supporting_count === 1 ? '' : 's'}</span>
+            </div>
+            <div style="color:var(--muted)">${t.recommendation}</div>
+          </div>
+        `).join('')}
+        <div style="font-size:11px;color:var(--muted);margin-top:8px">Based on ${themes.n} researched mover cause${themes.n === 1 ? '' : 's'} so far.</div>`;
+    }
+
   } catch (e) {
     liveEl.innerHTML = `<div class="error-msg">No model review yet — the first weekly run hasn't landed.<br><small>${e.message}</small></div>`;
     bodyEl.innerHTML = '';
     recEl.innerHTML = '';
+    themesEl.innerHTML = '';
   }
 }
 
@@ -2474,8 +2560,9 @@ async function loadTaxData() {
   }
 }
 
-loadMarketHolidays().then(() => loadPerfData()).then(() => startCountdown());
+Promise.all([loadMarketHolidays(), loadActualMoverCauses()]).then(() => loadPerfData()).then(() => startCountdown());
 checkLlmSentimentStatus();
+checkMoverCausesStatus();
 checkModelReviewBadge();
 </script>
 </body>
