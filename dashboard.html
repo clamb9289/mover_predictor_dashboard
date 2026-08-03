@@ -38,6 +38,9 @@
   .dot.pulse { animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
   .refresh-info { font-size: 11px; color: var(--muted); }
+  .force-refresh-btn { font-size: 11px; color: var(--muted); background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 5px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
+  .force-refresh-btn:hover:not(:disabled) { color: var(--accent); border-color: var(--accent); }
+  .force-refresh-btn:disabled { opacity: 0.5; cursor: default; }
 
   .tabs { display: flex; gap: 2px; padding: 12px 24px 0; background: var(--surface); border-bottom: 1px solid var(--border); }
   .tab { position: relative; padding: 10px 18px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.15s; user-select: none; }
@@ -286,6 +289,7 @@
   </div>
   <div class="header-right">
     <span class="refresh-info" id="refresh-countdown"></span>
+    <button class="force-refresh-btn" id="force-refresh-btn" onclick="loadPerfData(true)" title="Bypass the CDN cache and pull the latest data directly from GitHub's API">↻ Force refresh</button>
     <div id="status-badge" class="status-badge status-paper">
       <span class="dot pulse"></span> Paper Trading
     </div>
@@ -581,6 +585,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
 const PERF_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/performance.json";
+// raw.githubusercontent.com sits behind a CDN that ignores cache-busting query
+// params (confirmed 2026-08-03 -- the ?t= below has never actually bypassed
+// it), so a push can take several minutes to show up on the normal 60s
+// auto-refresh. This API path hits GitHub's live Contents API instead, which
+// isn't CDN-cached, for the "Force refresh" button only -- NOT the regular
+// auto-refresh loop, since unauthenticated api.github.com is rate-limited to
+// 60 requests/hour per IP and the 60s auto-refresh alone would already
+// exhaust that with just one tab open.
+const PERF_API_URL = "https://api.github.com/repos/clamb9289/mover_predictor_dashboard/contents/performance.json";
 const MODEL_REVIEW_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/model_review.json";
 const MODEL_REVIEW_SEEN_KEY = "model_review_last_seen";
 const GAP_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/gap_scan.json";
@@ -677,19 +690,42 @@ function toggleExplainer(id) {
   el.classList.toggle('open');
 }
 
-async function loadPerfData() {
+async function loadPerfData(force) {
   document.getElementById('live-spinner').style.display = 'inline-block';
+  const forceBtn = document.getElementById('force-refresh-btn');
+  if (force) {
+    forceBtn.disabled = true;
+    forceBtn.textContent = '↻ Refreshing…';
+  }
   try {
-    const res = await fetch(PERF_URL + '?t=' + Date.now());
-    if (!res.ok) throw new Error('HTTP ' + res.status);
-    perfData = await res.json();
+    let data;
+    if (force) {
+      // Contents API returns base64-encoded content, not raw JSON directly.
+      const res = await fetch(PERF_API_URL, { headers: { 'Accept': 'application/vnd.github+json' } });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const body = await res.json();
+      // atob() alone mangles multi-byte UTF-8 (e.g. smart quotes/accents in a
+      // real news headline) -- decode the raw bytes properly instead.
+      const bytes = Uint8Array.from(atob(body.content), c => c.charCodeAt(0));
+      data = JSON.parse(new TextDecoder('utf-8').decode(bytes));
+    } else {
+      const res = await fetch(PERF_URL + '?t=' + Date.now());
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      data = await res.json();
+    }
+    perfData = data;
     render(perfData);
+    if (force) startCountdown(); // don't also fire on the old schedule seconds later
   } catch(e) {
     document.getElementById('today-picks').innerHTML =
       `<div class="error-msg">Could not load performance.json from GitHub.<br><small>${e.message}</small></div>`;
     document.getElementById('header-sub').textContent = 'Error loading data';
   }
   document.getElementById('live-spinner').style.display = 'none';
+  if (force) {
+    forceBtn.disabled = false;
+    forceBtn.textContent = '↻ Force refresh';
+  }
 }
 
 function startCountdown() {
