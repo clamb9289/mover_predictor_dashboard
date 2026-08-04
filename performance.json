@@ -1379,10 +1379,10 @@
           "signals": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 43.28,
+          "paper_exit_pct": -3.33,
+          "paper_exit_dollar": -3.39,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "days_held": 1,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0041,
@@ -1390,7 +1390,9 @@
           "live_price": 43.56,
           "live_pct": -2.7,
           "live_dollar": -2.75,
-          "price_updated": "9:42 AM ET"
+          "price_updated": "9:42 AM ET",
+          "paper_exit_time": "9:44 AM ET",
+          "paper_exit_date": "2026-08-04"
         },
         {
           "ticker": "FHN",
@@ -1653,7 +1655,7 @@
       "total_predictions": 9,
       "days_tracked": 3,
       "closed_rounds": [],
-      "prices_last_updated": "9:42 AM ET",
+      "prices_last_updated": "9:44 AM ET",
       "prices_after_hours": false,
       "spy_live_price": 757.67,
       "spy_live_pct": 1.81
