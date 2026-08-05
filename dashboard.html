@@ -649,6 +649,7 @@ function showTab(name) {
   });
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
+  if (name === 'today') fitStatValues(document.getElementById('tab-today'));
   if (name === 'history' && perfData) renderChart();
   if (name === 'research') loadResearchResults();
   if (name === 'modelreview') loadModelReview();
@@ -669,6 +670,29 @@ function fmtPrice(n) {
 function fmtDollar(n) {
   if (n == null) return '—';
   return (n >= 0 ? '+$' : '-$') + Math.abs(n).toFixed(2);
+}
+
+// Shrinks any .stat-value text that overflows its box (2026-08-05 --
+// added after Total Contributed's "+$300.00" overflowed its box in the
+// new 8-column grid) instead of letting it clip or wrap. Resets to the
+// CSS default (24px) before measuring, then steps down 1px at a time
+// until it fits or hits a 12px floor -- robust to any future value
+// length (a bigger contribution, a big win/loss day) without needing a
+// fixed threshold. Skipped for boxes that aren't actually visible right
+// now (clientWidth reads 0 inside a hidden tab panel, which would
+// otherwise shrink every value to the floor for no reason) -- called
+// again on tab-switch below so a value set while hidden still gets
+// sized correctly once its tab becomes visible.
+function fitStatValues(container) {
+  (container || document).querySelectorAll('.stat-value').forEach(el => {
+    if (!el.offsetParent) return; // hidden (inactive tab) -- nothing to measure yet
+    el.style.fontSize = '';
+    let size = 24;
+    while (el.scrollWidth > el.clientWidth && size > 12) {
+      size -= 1;
+      el.style.fontSize = size + 'px';
+    }
+  });
 }
 
 function moveClass(n) {
@@ -956,6 +980,7 @@ function render(data) {
     netGainPctEl.textContent = '—';
     netGainPctEl.className = 'stat-value neutral';
   }
+  fitStatValues(document.getElementById('tab-today'));
 
   if (isStale) {
     // Swing positions (added 2026-07-24) can still be open days after the
