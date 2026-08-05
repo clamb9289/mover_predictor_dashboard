@@ -77,6 +77,84 @@
           "confidence": "high"
         }
       ]
+    },
+    {
+      "date": "2026-08-04",
+      "generated_at": "2026-08-05T13:37:25.322118+00:00",
+      "model": "claude-opus-5",
+      "status": "ok",
+      "tickers": [
+        {
+          "ticker": "PLTR",
+          "cause_summary": "Palantir reported Q2 2026 results after the Aug 3 close that CEO Alex Karp called \"otherworldly\": revenue up ~93% year over year to ~$1.94B, U.S. commercial revenue up ~149%, adjusted EPS $0.41, and full-year 2026 revenue guidance raised to about $8.15B. Shares posted their best day in more than two years on Aug 4.",
+          "category": "earnings",
+          "structural_blind_spot": true,
+          "confidence": "high"
+        },
+        {
+          "ticker": "IT",
+          "cause_summary": "Gartner reported Q2 CY2026 results on Aug 4 that beat Wall Street on both revenue (~$1.68B, roughly flat y/y) and profit, sparking a ~23% squeeze in a heavily beaten-down stock trading far below its 52-week high.",
+          "category": "earnings",
+          "structural_blind_spot": true,
+          "confidence": "high"
+        },
+        {
+          "ticker": "ENTG",
+          "cause_summary": "Entegris beat Q2 estimates (adjusted EPS $0.93 vs ~$0.82 expected; sales $883.2M vs ~$835M consensus, with adjusted gross margin 47.6%) and guided above consensus, and the move was amplified by a broad semiconductor rally (SOXX +6%) that day.",
+          "category": "earnings",
+          "structural_blind_spot": true,
+          "confidence": "high"
+        },
+        {
+          "ticker": "WLK",
+          "cause_summary": "Westlake released Q2 2026 results pre-market on Aug 4 showing a sharp profitability rebound on higher product pricing (EPS ~$2.01 on ~$3.27B revenue), and investors rewarded the earnings beat and improved operating performance.",
+          "category": "earnings",
+          "structural_blind_spot": true,
+          "confidence": "high"
+        },
+        {
+          "ticker": "WHR",
+          "cause_summary": "Whirlpool reported Q2 on Aug 3 (revenue missed, down 6.8% y/y) but held its investor call the morning of Aug 4, where CEO Marc Bitzer's team reaffirmed the 2026 outlook (~1.5% like-for-like growth, ~4% ongoing EBIT margin, ~$300M free cash flow) and pointed to sequential margin gains and North America strength, triggering a relief rally in a deeply depressed stock.",
+          "category": "earnings",
+          "structural_blind_spot": true,
+          "confidence": "high"
+        },
+        {
+          "ticker": "MRVL",
+          "cause_summary": "Marvell previewed next-generation AI memory and storage products (including the Bravera SC6 PCIe 6.0 SSD controller) as the FMS 2026 memory/storage conference opened, and drew aggressive AI-related price target hikes; the move was magnified by the day's broad AI/semiconductor rally.",
+          "category": "product_launch",
+          "structural_blind_spot": false,
+          "confidence": "high"
+        },
+        {
+          "ticker": "COHR",
+          "cause_summary": "A Reuters report that the Trump administration/FCC is drafting a ban on imports of new Chinese optical transceiver modules and data center hardware sent U.S. optical component names sharply higher (AAOI +16%, Lumentum +11%, Corning +8%), with Coherent seen as a prime beneficiary; several banks also raised targets (e.g., JPMorgan to $435).",
+          "category": "regulatory_FDA",
+          "structural_blind_spot": true,
+          "confidence": "high"
+        },
+        {
+          "ticker": "ADEA",
+          "cause_summary": "Adeia reported Q2 2026 on Aug 3 (revenue ~$96M, slight miss; adjusted EPS $0.34 vs $0.31 consensus, 59% adjusted EBITDA margin, plus disclosure of a multi-year Google/YouTube TV license renewal); after an initial after-hours drop the stock reversed sharply higher on Aug 4. No separate Aug 4 headline catalyst was found, so the move looks like an earnings-driven reversal.",
+          "category": "earnings",
+          "structural_blind_spot": true,
+          "confidence": "medium"
+        },
+        {
+          "ticker": "INTC",
+          "cause_summary": "No Intel-specific news on the day; the stock rode a powerful sector-wide semiconductor rebound (PHLX Semiconductor Index +6%, SOXL +20%) as the AI trade recovered from July's tariff-driven washout, helped by policy headlines favoring domestic chip/hardware suppliers and continued enthusiasm over Intel's blowout Q2 reported in late July.",
+          "category": "macro_sector",
+          "structural_blind_spot": false,
+          "confidence": "medium"
+        },
+        {
+          "ticker": "SMCI",
+          "cause_summary": "Super Micro rose with the broad AI server/semiconductor rally on Aug 4 and on positioning ahead of its own fiscal Q4 results due after that day's close; no company-specific news drove the intraday gain.",
+          "category": "macro_sector",
+          "structural_blind_spot": false,
+          "confidence": "medium"
+        }
+      ]
     }
   ]
 }

@@ -1,201 +1,93 @@
 {
-  "date": "2026-08-04",
-  "generated_at": "2026-08-04T14:57:10.254595+00:00",
+  "date": "2026-08-05",
+  "generated_at": "2026-08-05T13:37:02.211377+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "GME",
-    "APTV",
-    "SYY"
+    "PLD",
+    "VLO",
+    "CZR"
   ],
   "llm_top3": {
     "tickers": [
-      "LYB",
-      "BMY",
-      "TGT"
+      "VLO",
+      "MGM",
+      "SO"
     ],
-    "reasoning": "I deviate from the quant top three (GME, APTV, SYY) because GME just hit a 52-week low on a dilutive debt-for-equity swap and APTV made a new 52-week low on soft guidance and a death cross \u2014 both news reads are negative despite their ranks. LYB has the strongest fundamental inflection (EBITDA tripled, JPMorgan upgrade to Overweight, $80 target) with supply-driven margin durability. BMY combines a 52-week high, live $400B AZN merger optionality and genuine growth-portfolio momentum with an Aug 17 FDA catalyst. TGT is at fresh 52-week highs with sequential analyst target hikes and clear positive momentum. SYY is a reasonable alternative but its in-line quarter is less material than these three."
+    "reasoning": "VLO combines the top-tier quant rank with the cleanest fundamental news: a broad refining beat, Zacks Strong Buy across screens, and multiple target hikes. I skip rank-1 PLD because the Segro deal is being funded with ~10% equity dilution that is actively pressuring the shares near-term. MGM (rank 6) is promoted for a record-revenue EPS beat plus an active $48.30 take-private bid providing a valuation floor, and SO offers defensive earnings growth with a rapidly expanding data-center load pipeline."
   },
   "tickers": {
-    "GME": {
+    "PLD": {
       "rank": 1,
       "headline_count": 40,
-      "mentions_24h": 64,
-      "total_distinct_found": 85,
-      "llm_score": -2,
-      "materiality": "medium",
-      "reasoning": "Shares fell 12% to a 52-week low on a $1.4B debt-for-equity swap that cuts debt but dilutes shareholders, with retail sentiment mixed/negative."
+      "mentions_24h": 11,
+      "total_distinct_found": 76,
+      "llm_score": -1.5,
+      "materiality": "high",
+      "reasoning": "The $18.8B Segro takeover is confirmed but funded partly by a $2.1B equity offering (15M shares, ~9-10% dilution chatter) that pushed the stock lower, offsetting the strategic positives and higher price targets."
     },
-    "APTV": {
+    "VLO": {
       "rank": 2,
       "headline_count": 40,
-      "mentions_24h": 18,
-      "total_distinct_found": 62,
-      "llm_score": -2,
+      "mentions_24h": 25,
+      "total_distinct_found": 75,
+      "llm_score": 4,
       "materiality": "high",
-      "reasoning": "Q2 EPS beat but revenue missed and Q3 guidance came in soft, driving shares to a new 52-week low with a death cross forming."
+      "reasoning": "Broad Q2 beat on refining/renewable diesel, Zacks #1 Strong Buy across value/growth/income screens, and multiple target hikes (TD Cowen to $350, Mizuho bullish) amid strong crack spreads."
     },
-    "SYY": {
+    "CZR": {
       "rank": 3,
       "headline_count": 40,
-      "mentions_24h": 27,
-      "total_distinct_found": 68,
-      "llm_score": 2,
+      "mentions_24h": 2,
+      "total_distinct_found": 62,
+      "llm_score": 0.5,
       "materiality": "medium",
-      "reasoning": "Q4 in line/slight beat with FY27 guidance of 9-11% adjusted EPS growth topping consensus."
+      "reasoning": "Q2 revenue topped but EPS was a loss, debt strain and an antitrust class action were allowed to proceed; upside is largely capped by the pending Fertitta take-private at a fixed price."
     },
-    "BMY": {
+    "SO": {
       "rank": 4,
       "headline_count": 40,
-      "mentions_24h": 74,
-      "total_distinct_found": 123,
-      "llm_score": 3,
-      "materiality": "high",
-      "reasoning": "52-week high on advanced $400B AstraZeneca merger talks plus strong growth portfolio (Eliquis +21%, Camzyos +60%), though the spike round-tripped and deal logic is questioned."
+      "mentions_24h": 11,
+      "total_distinct_found": 69,
+      "llm_score": 1.5,
+      "materiality": "medium",
+      "reasoning": "Q2 EPS beat (+29% YoY) with revenue slightly light, but contracted large-load pipeline rising to 17 GW including a 3.2-GW OpenAI data center is a genuine structural growth positive, tempered by convertible note issuance."
     },
-    "RVTY": {
+    "KRG": {
       "rank": 5,
       "headline_count": 40,
-      "mentions_24h": 17,
-      "total_distinct_found": 65,
-      "llm_score": 3,
+      "mentions_24h": 0,
+      "total_distinct_found": 63,
+      "llm_score": 1.5,
       "materiality": "medium",
-      "reasoning": "Q2 EPS beat by ~15%, revenue topped estimates and full-year guidance raised, though soft pro forma guidance capped the reaction."
+      "reasoning": "In-line Q2 FFO with 3.7% NOI growth, 94.8% leased and affirmed guidance, plus price target raises from Citi ($31) and Piper Sandler ($33)."
     },
-    "COO": {
+    "MGM": {
       "rank": 6,
       "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 60,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Headlines are mostly unrelated COO-title insider sales noise; only a Citigroup target raise to $76 is relevant."
-    },
-    "TGT": {
-      "rank": 7,
-      "headline_count": 40,
-      "mentions_24h": 24,
-      "total_distinct_found": 68,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "New 52-week highs with multiple price target raises (Evercore $150, Citi $148, Gordon Haskett $170) and strong momentum ahead of Aug 19 earnings."
-    },
-    "AMRX": {
-      "rank": 8,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 59,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Q2 beat with record revenue and raised 2026 guidance plus debt repricing savings, though the stock faded after an initial 16% pop and looks fairly valued."
-    },
-    "ZION": {
-      "rank": 9,
-      "headline_count": 40,
-      "mentions_24h": 7,
+      "mentions_24h": 4,
       "total_distinct_found": 63,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Strong Q2 EPS growth, 6.7% dividend hike, $75M buyback and completed Fannie/Freddie multifamily platform acquisition, offset slightly by expense concerns."
-    },
-    "LYB": {
-      "rank": 10,
-      "headline_count": 40,
-      "mentions_24h": 7,
-      "total_distinct_found": 75,
-      "llm_score": 3,
+      "llm_score": 2.5,
       "materiality": "high",
-      "reasoning": "EBITDA tripled to $2.1B on tight polyethylene markets, JPMorgan upgraded to Overweight with $80 target and multiple targets raised."
-    },
-    "AMH": {
-      "rank": 11,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 59,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Q2 FFO beat, buyback and raised Core FFO guidance, but stock shrugged it off as rising long yields weigh on REITs."
+      "reasoning": "Record Q2 revenue with EPS beat and 20% digital growth, plus a live non-binding $48.30/share take-private proposal from People Inc. under special committee review, though an activist urges withdrawal."
     },
     "VICI": {
-      "rank": 12,
+      "rank": 7,
       "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 59,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "AFFO up 4.6% with low end of guidance raised and Las Vegas NBA arena optionality, but stock remains range-bound and rate-pressured."
-    },
-    "CVBF": {
-      "rank": 13,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 60,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Mixed: EPS beat but revenue missed and GAAP EPS fell 22% YoY, offset by a $455K insider buy and board addition."
-    },
-    "FNB": {
-      "rank": 14,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 60,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Q2 met estimates with record revenue but BofA downgraded and Truist cut its target to $20.50."
-    },
-    "ARR": {
-      "rank": 15,
-      "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Q2 returned to profitability with book value up slightly to $17.53 and dividend maintained, but rate pressure keeps sentiment tepid."
-    },
-    "PCG": {
-      "rank": 16,
-      "headline_count": 40,
-      "mentions_24h": 4,
+      "mentions_24h": 6,
       "total_distinct_found": 58,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Q2 earnings beat with margin expansion, $73B grid plan and 12.7GW data center pipeline, but stock is sluggish and lobbying/wildfire headlines linger."
+      "reasoning": "Q2 FFO in line with revenue beat and raised AFFO guidance plus a ~6.6% yield, but Caesars/tenant uncertainty and persistent range-bound price action limit enthusiasm."
     },
-    "KMB": {
-      "rank": 17,
+    "TJX": {
+      "rank": 8,
       "headline_count": 40,
-      "mentions_24h": 39,
+      "mentions_24h": 5,
       "total_distinct_found": 70,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Adjusted EPS beat but sales missed, GAAP net income fell 32%, China social-media diaper disruption and trimmed organic sales outlook."
-    },
-    "MCD": {
-      "rank": 18,
-      "headline_count": 40,
-      "mentions_24h": 89,
-      "total_distinct_found": 121,
-      "llm_score": 0,
-      "materiality": "medium",
-      "reasoning": "EPS in line/slight beat but revenue missed and US comps slowed to +0.8%, prompting a US president change; management admits execution issues."
-    },
-    "AEE": {
-      "rank": 19,
-      "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 64,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Q2 EPS beat with 2026 guidance reaffirmed, $71B infrastructure pipeline and data center load growth, plus Mizuho target raise."
-    },
-    "PCAR": {
-      "rank": 20,
-      "headline_count": 40,
-      "mentions_24h": 18,
-      "total_distinct_found": 61,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Record parts revenue and margin gains drove a 5.4% move and new 52-week high, but revenue fell 7% YoY and heavy insider selling plus skeptical sell-side notes temper it."
+      "llm_score": 0.5,
+      "materiality": "low",
+      "reasoning": "No fresh company news ahead of the 8/19 report; commentary is a mix of quality/momentum praise and valuation-premium caution with recent relative underperformance."
     }
   }
 }
