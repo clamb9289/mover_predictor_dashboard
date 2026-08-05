@@ -157,7 +157,14 @@
   .signal-mini-value { font-size: 13px; font-weight: 600; margin-top: 2px; }
 
   /* Stats */
-  .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  /* Fixed 8-column grid (16 stat-boxes in the Today's Picks row as of
+     2026-08-05 -- two even rows of 8) instead of auto-fit, which wrapped
+     unevenly (7/7/2) depending on viewport width. Responsive fallbacks
+     below keep boxes from getting too cramped on narrower screens,
+     matching this file's existing 700px mobile breakpoint convention. */
+  .stats-row { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+  @media (max-width: 900px) { .stats-row { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (max-width: 500px) { .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .stat-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
   .stat-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
   .stat-value { font-size: 24px; font-weight: 700; }
