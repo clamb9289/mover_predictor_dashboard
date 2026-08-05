@@ -328,6 +328,9 @@
       <div class="stat-box" title="Average % return across every actually-bought position since tracking began (equal-weighted, same convention as Today's Performance %)"><div class="stat-label">Total Performance %</div><div class="stat-value neutral" id="s-total-pnl-pct">—</div></div>
       <div class="stat-box" title="Average of each tracked day's own total $ P/L across its actually-bought positions"><div class="stat-label">Avg Daily Performance</div><div class="stat-value neutral" id="s-avgday-pnl">—</div></div>
       <div class="stat-box" title="Average of each tracked day's own equal-weighted % return across its actually-bought positions"><div class="stat-label">Avg Daily Performance %</div><div class="stat-value neutral" id="s-avgday-pnl-pct">—</div></div>
+      <div class="stat-box" title="Sum of every real deposit made to the account (config.json's capital_contributions log) — the initial funding plus anything added since, NOT trading performance"><div class="stat-label">Total Contributed</div><div class="stat-value neutral" id="s-total-contributed">—</div></div>
+      <div class="stat-box" title="Real account equity minus Total Contributed — the actual $ gained/lost from trading, correctly excluding any deposit or withdrawal from looking like a trading return"><div class="stat-label">Net Trading Gain</div><div class="stat-value neutral" id="s-net-gain">—</div></div>
+      <div class="stat-box" title="Net Trading Gain as a % of Total Contributed"><div class="stat-label">Net Trading Gain %</div><div class="stat-value neutral" id="s-net-gain-pct">—</div></div>
     </div>
     <div class="card">
       <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:16px">
@@ -914,6 +917,37 @@ function render(data) {
   } else {
     avgDayPnlPctEl.textContent = '—';
     avgDayPnlPctEl.className = 'stat-value neutral';
+  }
+
+  // Total Contributed / Net Trading Gain (added 2026-08-05) -- written by
+  // trader.py's write_capital_snapshot() on every real trading cycle
+  // (check_risk_limits()), reusing config.json's capital_contributions
+  // log rather than a single static starting-capital number, so these
+  // stay correct even after a real future deposit/withdrawal. Only ever
+  // present once real trading has actually run at least once today.
+  const contributedEl = document.getElementById('s-total-contributed');
+  const netGainEl = document.getElementById('s-net-gain');
+  const netGainPctEl = document.getElementById('s-net-gain-pct');
+  if (latest && latest.total_contributed != null) {
+    contributedEl.textContent = fmtDollar(latest.total_contributed);
+    contributedEl.className = 'stat-value neutral';
+  } else {
+    contributedEl.textContent = '—';
+    contributedEl.className = 'stat-value neutral';
+  }
+  if (latest && latest.net_trading_gain != null) {
+    netGainEl.textContent = fmtDollar(latest.net_trading_gain);
+    netGainEl.className = 'stat-value ' + (latest.net_trading_gain > 0 ? 'pos' : latest.net_trading_gain < 0 ? 'neg' : 'neutral');
+  } else {
+    netGainEl.textContent = '—';
+    netGainEl.className = 'stat-value neutral';
+  }
+  if (latest && latest.net_trading_gain_pct != null) {
+    netGainPctEl.textContent = fmt(latest.net_trading_gain_pct);
+    netGainPctEl.className = 'stat-value ' + (latest.net_trading_gain_pct > 0 ? 'pos' : latest.net_trading_gain_pct < 0 ? 'neg' : 'neutral');
+  } else {
+    netGainPctEl.textContent = '—';
+    netGainPctEl.className = 'stat-value neutral';
   }
 
   if (isStale) {
