@@ -2638,7 +2638,13 @@
           "price_updated": "9:51 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0031,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "paper_exit_price": 299.43,
+          "paper_exit_pct": -3.0,
+          "paper_exit_dollar": -3.01,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "9:52 AM ET",
+          "paper_exit_date": "2026-08-06"
         },
         {
           "rank": 3,
@@ -2899,7 +2905,7 @@
       "total_predictions": 12,
       "days_tracked": 4,
       "closed_rounds": [],
-      "prices_last_updated": "9:51 AM ET",
+      "prices_last_updated": "9:52 AM ET",
       "prices_after_hours": false,
       "spy_live_price": 769.79,
       "spy_live_pct": -0.36,
