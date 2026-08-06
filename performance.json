@@ -3112,10 +3112,10 @@
           "signals": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 121.16,
+          "paper_exit_pct": 0.89,
+          "paper_exit_dollar": 0.88,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "live_price": 119.67,
           "live_pct": -0.35,
           "live_dollar": -0.34,
@@ -3123,7 +3123,9 @@
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0015,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "paper_exit_time": "4:11 PM ET",
+          "paper_exit_date": "2026-08-06"
         },
         {
           "ticker": "ELAN",
@@ -3164,10 +3166,10 @@
           "signals": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 43.23,
+          "paper_exit_pct": 0.28,
+          "paper_exit_dollar": 0.27,
+          "paper_exit_reason": "Closed manually (not by the bot)",
           "live_price": 42.94,
           "live_pct": -0.38,
           "live_dollar": -0.37,
@@ -3175,7 +3177,9 @@
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "paper_exit_time": "4:11 PM ET",
+          "paper_exit_date": "2026-08-06"
         }
       ],
       "bench_candidates": [
@@ -3312,12 +3316,12 @@
       "total_predictions": 15,
       "days_tracked": 5,
       "total_contributed": 300.0,
-      "current_equity": 295.51,
-      "net_trading_gain": -4.49,
-      "net_trading_gain_pct": -1.5,
+      "current_equity": 296.06,
+      "net_trading_gain": -3.94,
+      "net_trading_gain_pct": -1.31,
       "closed_rounds": [],
-      "prices_last_updated": "11:34 AM ET",
-      "prices_after_hours": false,
+      "prices_last_updated": "4:11 PM ET",
+      "prices_after_hours": true,
       "spy_live_price": 768.6,
       "spy_live_pct": -0.32
     }
