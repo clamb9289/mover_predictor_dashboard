@@ -1938,7 +1938,8 @@
           "paper_exit_dollar": 0.35,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "3:02 PM ET",
-          "paper_exit_date": "2026-08-05"
+          "paper_exit_date": "2026-08-05",
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "ticker": "BMY",
@@ -2005,7 +2006,8 @@
           "paper_peak_pct": 0.0064,
           "paper_trail_floor_active": true,
           "paper_exit_time": "9:52 AM ET",
-          "paper_exit_date": "2026-08-05"
+          "paper_exit_date": "2026-08-05",
+          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
         }
       ],
       "bench_candidates": [
@@ -2611,7 +2613,8 @@
           "paper_exit_dollar": 0.36,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:48 AM ET",
-          "paper_exit_date": "2026-08-05"
+          "paper_exit_date": "2026-08-05",
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "rank": 2,
@@ -2644,7 +2647,8 @@
           "paper_exit_dollar": -3.01,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:52 AM ET",
-          "paper_exit_date": "2026-08-06"
+          "paper_exit_date": "2026-08-06",
+          "postmortem": "Hit the stop loss (-3.00%) despite relative strength and news sentiment \u2014 worth reviewing if relative strength keeps producing false positives."
         },
         {
           "rank": 3,
@@ -2677,7 +2681,8 @@
           "paper_exit_dollar": 0.17,
           "paper_exit_reason": "Retry of previously failed sell",
           "paper_exit_time": "3:56 PM ET",
-          "paper_exit_date": "2026-08-05"
+          "paper_exit_date": "2026-08-05",
+          "postmortem": "Modest gain (+0.17%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
         },
         {
           "ticker": "SO",
@@ -2710,7 +2715,8 @@
           "paper_peak_pct": 0.0023,
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:56 PM ET",
-          "paper_exit_date": "2026-08-05"
+          "paper_exit_date": "2026-08-05",
+          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through."
         }
       ],
       "bench_candidates": [
@@ -2913,6 +2919,330 @@
       "current_equity": 297.59,
       "net_trading_gain": -2.41,
       "net_trading_gain_pct": -0.8
+    },
+    {
+      "date": "2026-08-06",
+      "regime": "Could not determine regime \u2014 proceeding anyway",
+      "trading_skipped": false,
+      "max_hold_days": 3,
+      "spy_regime_pct": null,
+      "top_sectors": [],
+      "actual_top3": [
+        {
+          "ticker": "FRPT",
+          "pct": 14.57,
+          "signals": {
+            "accumulation": 1.551,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 8.5,
+            "relative_strength_pct": 1.89
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 31,
+          "eligible_pool_size": 670,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "SHAK",
+          "pct": 12.25,
+          "signals": {
+            "accumulation": 1.361,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 5.0,
+            "relative_strength_pct": 4.78
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 51,
+          "eligible_pool_size": 670,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "DT",
+          "pct": 11.27,
+          "signals": {
+            "accumulation": 1.073,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.5,
+            "relative_strength_pct": 4.12
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 117,
+          "eligible_pool_size": 670,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "IFF",
+          "pct": 8.88,
+          "signals": {
+            "accumulation": 0.926,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -2.5,
+            "relative_strength_pct": 2.07
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 179,
+          "eligible_pool_size": 670,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "SUPN",
+          "pct": 8.46,
+          "signals": {
+            "accumulation": 1.845,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.5,
+            "relative_strength_pct": -9.39
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 16,
+          "eligible_pool_size": 670,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "SN",
+          "pct": 8.28,
+          "signals": {
+            "accumulation": 1.87,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.5,
+            "relative_strength_pct": 5.22
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 14,
+          "eligible_pool_size": 670,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "CDE",
+          "pct": 7.53,
+          "signals": {
+            "accumulation": 0.686,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 8.72
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 369,
+          "eligible_pool_size": 670,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "HL",
+          "pct": 7.47,
+          "signals": {
+            "accumulation": 0.894,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 5.77
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 203,
+          "eligible_pool_size": 670,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "NEM",
+          "pct": 6.71,
+          "signals": {
+            "accumulation": 0.707,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 6.79
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 349,
+          "eligible_pool_size": 670,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "KTOS",
+          "pct": 6.69,
+          "signals": {
+            "accumulation": 0.951,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 12.0,
+            "relative_strength_pct": 6.64
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 167,
+          "eligible_pool_size": 670,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably higher relative strength (3.66 vs our picks' -1.22) \u2014 possible signal to increase weighting on relative strength. SHAK (#51 of 670), DT (#117 of 670), IFF (#179 of 670), CDE (#369 of 670), HL (#203 of 670), NEM (#349 of 670), KTOS (#167 of 670) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap. FRPT (accumulation #31), SUPN (accumulation #16), SN (accumulation #14) made the top-50 shortlist but didn't score high enough on the full composite to reach our top picks.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "WBS",
+          "score": null,
+          "entry_price": 79.628,
+          "headline": null,
+          "sector": null,
+          "explainer": "Reconstructed from real trade data after a prior run's commit failed \u2014 original prediction metadata unavailable.",
+          "signals": {},
+          "position_cost": 99.73,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0,
+          "live_price": 79.12,
+          "live_pct": -0.64,
+          "live_dollar": -0.64,
+          "price_updated": "10:39 AM ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "EBAY",
+          "score": 0.239,
+          "entry_price": 111.15,
+          "headline": "eBay Q2 2026 earnings beat estimates, raises full-year outlook",
+          "sector": "Consumer Discretionary",
+          "explainer": "Recent news skewed positive, including: \u201ceBay Q2 2026 earnings beat estimates, raises full-year outlook\u201d",
+          "signals": {
+            "accumulation": 1.406,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -3.6,
+            "gap_pct": null
+          },
+          "live_price": 111.15,
+          "live_pct": 0.0,
+          "price_updated": "10:39 AM ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "VZ",
+          "score": 0.21,
+          "entry_price": 46.47,
+          "headline": "Lumen Posts Narrower-Than-Expected Q2 Loss, Revenues Drop Y/Y",
+          "sector": "Communication Services",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.343,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -0.5,
+            "relative_strength_pct": -1.59,
+            "gap_pct": null
+          },
+          "live_price": 46.47,
+          "live_pct": 0.0,
+          "price_updated": "10:39 AM ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "AEP",
+          "score": 0.202,
+          "entry_price": 126.47,
+          "headline": "3 Dividend Stocks Ready to Pay You \u2013 If You Buy Them This Week",
+          "sector": "Utilities",
+          "explainer": "Recent news skewed positive, including: \u201c3 Dividend Stocks Ready to Pay You \u2013 If You Buy Them This Week\u201d",
+          "signals": {
+            "accumulation": 1.345,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": -2.26,
+            "gap_pct": null
+          },
+          "live_price": 126.47,
+          "live_pct": 0.0,
+          "price_updated": "10:39 AM ET"
+        }
+      ],
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "PLD",
+          "move_pct": 0.36,
+          "dollar_change": 0.36,
+          "position_size": 98.87,
+          "actual_rank": 110,
+          "total_ranked": 670,
+          "signals": {
+            "accumulation": 2.603,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": -5.49,
+            "gap_pct": 0.58
+          },
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #110 of 670 tracked that day, for context."
+        },
+        {
+          "rank": 2,
+          "ticker": "VLO",
+          "move_pct": -3.0,
+          "dollar_change": -3.01,
+          "position_size": 100.27,
+          "actual_rank": 522,
+          "total_ranked": 670,
+          "signals": {
+            "accumulation": 1.34,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 16.0,
+            "relative_strength_pct": 3.69,
+            "gap_pct": -1.21
+          },
+          "postmortem": "Hit the stop loss (-3.00%) despite relative strength and news sentiment \u2014 worth reviewing if relative strength keeps producing false positives. The stock itself ranked #522 of 670 tracked that day, for context."
+        },
+        {
+          "rank": 3,
+          "ticker": "CZR",
+          "move_pct": 0.17,
+          "dollar_change": 0.17,
+          "position_size": 99.23,
+          "actual_rank": 288,
+          "total_ranked": 670,
+          "signals": {
+            "accumulation": 1.421,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.57,
+            "gap_pct": -0.53
+          },
+          "postmortem": "Modest gain (+0.17%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through. The stock itself ranked #288 of 670 tracked that day, for context."
+        },
+        {
+          "rank": 4,
+          "ticker": "SO",
+          "move_pct": 0.39,
+          "dollar_change": 0.39,
+          "position_size": 99.68,
+          "actual_rank": 309,
+          "total_ranked": 670,
+          "signals": {
+            "accumulation": 1.575,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": -3.65,
+            "gap_pct": -1.24
+          },
+          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #309 of 670 tracked that day, for context."
+        }
+      ],
+      "hit_rate": 0.0,
+      "total_hits": 0,
+      "total_predictions": 15,
+      "days_tracked": 5,
+      "total_contributed": 300.0,
+      "current_equity": 296.65,
+      "net_trading_gain": -3.35,
+      "net_trading_gain_pct": -1.12,
+      "closed_rounds": [],
+      "prices_last_updated": "10:39 AM ET",
+      "prices_after_hours": false,
+      "spy_live_price": 769.79,
+      "spy_live_pct": -0.36
     }
   ]
 }
