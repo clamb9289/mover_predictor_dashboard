@@ -351,6 +351,7 @@
       <p class="updated-at" id="today-date"></p>
       <p class="updated-at" id="prices-updated"></p>
       <div id="closed-notice" style="display:none"></div>
+      <div id="pool-shortfall-notice" class="closed-notice" style="display:none"></div>
     </div>
     <div class="card" id="bench-card" style="display:none">
       <div class="card-title">Also Considered</div>
@@ -1109,6 +1110,19 @@ function renderTodayPicks(day, days) {
   const el = document.getElementById('today-picks');
   const dateEl = document.getElementById('today-date');
   const refreshedEl = document.getElementById('prices-updated');
+  // day.pool_shortfall_note (added 2026-08-07, predictor.py) is only set
+  // when the candidate pool genuinely came back short of its usual depth
+  // (e.g. a heavy earnings-season day excluding most of the shortlist) --
+  // surfaces WHY the bench looks thin instead of it silently looking like
+  // a bug. Checked on every render (not just the trading_skipped branch
+  // below) so it also updates correctly switching between days.
+  const shortfallEl = document.getElementById('pool-shortfall-notice');
+  if (day?.pool_shortfall_note) {
+    shortfallEl.style.display = '';
+    shortfallEl.innerHTML = `<span class="closed-notice-emoji">📊</span><span>${day.pool_shortfall_note}</span>`;
+  } else {
+    shortfallEl.style.display = 'none';
+  }
   if (day?.trading_skipped) {
     dateEl.textContent = '';
     refreshedEl.textContent = '';
