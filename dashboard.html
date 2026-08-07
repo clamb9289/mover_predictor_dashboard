@@ -1530,8 +1530,8 @@ function renderBenchCandidates(day) {
       <td style="color:var(--muted);font-size:12px">${b.sector || '—'}</td>
       <td style="color:var(--muted)">${b.score != null ? b.score.toFixed(3) : '—'}</td>
       <td style="color:var(--muted)">${b.entry_price ? fmtPrice(b.entry_price) : '—'}</td>
-      <td style="color:var(--muted)">${isSkippedPick ? 'Not bought' : (b.live_price ? fmtPrice(b.live_price) : '—')}</td>
-      <td class="${isSkippedPick ? 'td-flat' : mc}">${isSkippedPick ? '—' : fmt(pct)}</td>
+      <td style="color:var(--muted)">${b.live_price ? fmtPrice(b.live_price) : (isSkippedPick ? 'Not bought' : '—')}</td>
+      <td class="${b.live_price ? mc : 'td-flat'}">${b.live_price ? fmt(pct) : '—'}</td>
       <td class="why-not-cell">
         <span class="why-not-toggle" onclick="toggleExplainer('${whyId}')">Details ▾</span>
         <div class="why-not-text" id="${whyId}">${whyText}</div>
