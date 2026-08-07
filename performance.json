@@ -3095,10 +3095,10 @@
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
           "days_held": 1,
-          "live_price": 79.46,
-          "live_pct": -0.21,
-          "live_dollar": -0.21,
-          "price_updated": "9:32 AM ET"
+          "live_price": 79.42,
+          "live_pct": -0.26,
+          "live_dollar": -0.26,
+          "price_updated": "9:41 AM ET"
         },
         {
           "ticker": "PRU",
@@ -3125,7 +3125,8 @@
           "paper_peak_pct": 0.0015,
           "paper_trail_floor_active": false,
           "paper_exit_time": "4:11 PM ET",
-          "paper_exit_date": "2026-08-06"
+          "paper_exit_date": "2026-08-06",
+          "postmortem": "Modest gain of +0.89%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "ELAN",
@@ -3152,7 +3153,8 @@
           "paper_peak_pct": 0.0074,
           "paper_trail_floor_active": true,
           "paper_exit_time": "11:08 AM ET",
-          "paper_exit_date": "2026-08-06"
+          "paper_exit_date": "2026-08-06",
+          "postmortem": "Small loss of -0.12%. Within normal volatility."
         },
         {
           "ticker": "NI",
@@ -3179,7 +3181,8 @@
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
           "paper_exit_time": "4:11 PM ET",
-          "paper_exit_date": "2026-08-06"
+          "paper_exit_date": "2026-08-06",
+          "postmortem": "Modest gain of +0.28%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "VVV",
@@ -3198,10 +3201,10 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "days_held": 1,
-          "live_price": 35.35,
-          "live_pct": -1.35,
-          "live_dollar": -1.33,
-          "price_updated": "9:32 AM ET",
+          "live_price": 35.74,
+          "live_pct": -0.27,
+          "live_dollar": -0.27,
+          "price_updated": "9:41 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false
@@ -3345,10 +3348,303 @@
       "net_trading_gain": -3.94,
       "net_trading_gain_pct": -1.31,
       "closed_rounds": [],
-      "prices_last_updated": "9:32 AM ET",
+      "prices_last_updated": "9:41 AM ET",
       "prices_after_hours": false,
       "spy_live_price": 768.56,
       "spy_live_pct": -0.33
+    },
+    {
+      "date": "2026-08-07",
+      "regime": "Market regime OK \u2014 SPY +0.31%",
+      "trading_skipped": false,
+      "max_hold_days": 3,
+      "spy_regime_pct": 0.00312,
+      "top_sectors": [
+        {
+          "etf": "XLK",
+          "name": "Technology",
+          "pct": 1.46
+        },
+        {
+          "etf": "XLY",
+          "name": "Consumer Discretionary",
+          "pct": 0.74
+        },
+        {
+          "etf": "XLB",
+          "name": "Materials",
+          "pct": 0.21
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "FA",
+          "pct": 17.32,
+          "signals": {
+            "accumulation": 0.721,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": -4.42
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 288,
+          "eligible_pool_size": 661,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "MTSI",
+          "pct": 14.49,
+          "signals": {
+            "accumulation": 0.647,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.5,
+            "relative_strength_pct": 15.19
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 349,
+          "eligible_pool_size": 661,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "SMTC",
+          "pct": 11.16,
+          "signals": {
+            "accumulation": 0.472,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 17.09
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 532,
+          "eligible_pool_size": 661,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "ATI",
+          "pct": 8.93,
+          "signals": {
+            "accumulation": 1.007,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.5,
+            "relative_strength_pct": 15.28
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 118,
+          "eligible_pool_size": 661,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "DNOW",
+          "pct": 8.23,
+          "signals": {
+            "accumulation": 0.954,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.5,
+            "relative_strength_pct": 6.6
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 138,
+          "eligible_pool_size": 661,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "RELY",
+          "pct": 7.73,
+          "signals": {
+            "accumulation": 0.674,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": 3.35
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 324,
+          "eligible_pool_size": 661,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "ELF",
+          "pct": 6.88,
+          "signals": {
+            "accumulation": 1.457,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 8.0,
+            "relative_strength_pct": 6.76
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 39,
+          "eligible_pool_size": 661,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "VSNT",
+          "pct": 6.79,
+          "signals": {
+            "accumulation": 1.234,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 8.0,
+            "relative_strength_pct": -3.14
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 69,
+          "eligible_pool_size": 661,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "LDOS",
+          "pct": 6.63,
+          "signals": {
+            "accumulation": 0.745,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": 10.91
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 267,
+          "eligible_pool_size": 661,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "USFD",
+          "pct": 6.45,
+          "signals": {
+            "accumulation": 1.164,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": -1.82
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 81,
+          "eligible_pool_size": 661,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": null,
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "D",
+          "score": 0.7,
+          "entry_price": 66.432,
+          "headline": "Virginia Governor Is \u2018Skeptical\u2019 of NextEra Energy\u2019s Dominion Acquisition",
+          "sector": "",
+          "explainer": "Volume was running 2.2x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Recent news skewed positive, including: \u201cVirginia Governor Is \u2018Skeptical\u2019 of NextEra Energy\u2019s Dominion Acquisition\u201d",
+          "signals": {
+            "accumulation": 2.187,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -4.2,
+            "gap_pct": 3.29
+          },
+          "prediction_price": 66.8,
+          "position_cost": 99.34,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 66.32,
+          "live_pct": -0.17,
+          "live_dollar": -0.17,
+          "price_updated": "9:41 AM ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "WEC",
+          "score": 0.3,
+          "entry_price": 107.97,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 1.581,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.89,
+            "gap_pct": 1.26
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
+        }
+      ],
+      "bench_candidates": [],
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "WBS",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 99.73,
+          "actual_rank": 306,
+          "total_ranked": 661,
+          "signals": null,
+          "postmortem": null
+        },
+        {
+          "rank": 3,
+          "ticker": "PRU",
+          "move_pct": 0.89,
+          "dollar_change": 0.88,
+          "position_size": 98.49,
+          "actual_rank": 135,
+          "total_ranked": 661,
+          "signals": null,
+          "postmortem": "Modest gain of +0.89%, but did not clear the +1% floor trigger. The stock itself ranked #135 of 661 tracked that day, for context."
+        },
+        {
+          "rank": 4,
+          "ticker": "ELAN",
+          "move_pct": -0.12,
+          "dollar_change": -0.12,
+          "position_size": 98.49,
+          "actual_rank": 639,
+          "total_ranked": 661,
+          "signals": null,
+          "postmortem": "Small loss of -0.12%. Within normal volatility. The stock itself ranked #639 of 661 tracked that day, for context."
+        },
+        {
+          "rank": 5,
+          "ticker": "NI",
+          "move_pct": 0.28,
+          "dollar_change": 0.27,
+          "position_size": 98.37,
+          "actual_rank": 137,
+          "total_ranked": 661,
+          "signals": null,
+          "postmortem": "Modest gain of +0.28%, but did not clear the +1% floor trigger. The stock itself ranked #137 of 661 tracked that day, for context."
+        },
+        {
+          "rank": 6,
+          "ticker": "VVV",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 98.64,
+          "actual_rank": 588,
+          "total_ranked": 661,
+          "signals": null,
+          "postmortem": null
+        }
+      ],
+      "hit_rate": 0.0,
+      "total_hits": 0,
+      "total_predictions": 18,
+      "days_tracked": 6,
+      "total_contributed": 300.0,
+      "current_equity": 297.19,
+      "net_trading_gain": -2.81,
+      "net_trading_gain_pct": -0.94,
+      "closed_rounds": [],
+      "prices_last_updated": "9:41 AM ET",
+      "prices_after_hours": false,
+      "spy_live_price": 771.34,
+      "spy_live_pct": 0.3
     }
   ]
 }

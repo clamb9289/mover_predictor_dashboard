@@ -1,93 +1,37 @@
 {
-  "date": "2026-08-05",
-  "generated_at": "2026-08-05T13:37:02.211377+00:00",
+  "date": "2026-08-07",
+  "generated_at": "2026-08-07T13:41:55.015448+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "PLD",
-    "VLO",
-    "CZR"
+    "D",
+    "WEC"
   ],
   "llm_top3": {
     "tickers": [
-      "VLO",
-      "MGM",
-      "SO"
+      "WEC",
+      "D"
     ],
-    "reasoning": "VLO combines the top-tier quant rank with the cleanest fundamental news: a broad refining beat, Zacks Strong Buy across screens, and multiple target hikes. I skip rank-1 PLD because the Segro deal is being funded with ~10% equity dilution that is actively pressuring the shares near-term. MGM (rank 6) is promoted for a record-revenue EPS beat plus an active $48.30 take-private bid providing a valuation floor, and SO offers defensive earnings growth with a rapidly expanding data-center load pipeline."
+    "reasoning": "WEC is the cleaner pick: reaffirmed guidance, EPS growth, regulated data-center-driven rate base growth, with only a modest downgrade offsetting. D ranks first quantitatively and offers merger-arb upside plus regulated stability, but the Virginia governor's intervention makes it a lower-conviction, second choice. Only two candidates were provided, so no third pick is named rather than forcing a low-conviction addition."
   },
   "tickers": {
-    "PLD": {
+    "D": {
       "rank": 1,
       "headline_count": 40,
-      "mentions_24h": 11,
-      "total_distinct_found": 76,
-      "llm_score": -1.5,
-      "materiality": "high",
-      "reasoning": "The $18.8B Segro takeover is confirmed but funded partly by a $2.1B equity offering (15M shares, ~9-10% dilution chatter) that pushed the stock lower, offsetting the strategic positives and higher price targets."
-    },
-    "VLO": {
-      "rank": 2,
-      "headline_count": 40,
-      "mentions_24h": 25,
+      "mentions_24h": 24,
       "total_distinct_found": 75,
-      "llm_score": 4,
+      "llm_score": -2.5,
       "materiality": "high",
-      "reasoning": "Broad Q2 beat on refining/renewable diesel, Zacks #1 Strong Buy across value/growth/income screens, and multiple target hikes (TD Cowen to $350, Mizuho bullish) amid strong crack spreads."
+      "reasoning": "Virginia Governor Spanberger's unprecedented intervention in the NextEra-Dominion $67B merger review, plus SCC ordering data-center transmission tariffs, raises deal risk and regulatory overhang."
     },
-    "CZR": {
-      "rank": 3,
+    "WEC": {
+      "rank": 2,
       "headline_count": 40,
       "mentions_24h": 2,
       "total_distinct_found": 62,
       "llm_score": 0.5,
       "materiality": "medium",
-      "reasoning": "Q2 revenue topped but EPS was a loss, debt strain and an antitrust class action were allowed to proceed; upside is largely capped by the pending Fertitta take-private at a fixed price."
-    },
-    "SO": {
-      "rank": 4,
-      "headline_count": 40,
-      "mentions_24h": 11,
-      "total_distinct_found": 69,
-      "llm_score": 1.5,
-      "materiality": "medium",
-      "reasoning": "Q2 EPS beat (+29% YoY) with revenue slightly light, but contracted large-load pipeline rising to 17 GW including a 3.2-GW OpenAI data center is a genuine structural growth positive, tempered by convertible note issuance."
-    },
-    "KRG": {
-      "rank": 5,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 63,
-      "llm_score": 1.5,
-      "materiality": "medium",
-      "reasoning": "In-line Q2 FFO with 3.7% NOI growth, 94.8% leased and affirmed guidance, plus price target raises from Citi ($31) and Piper Sandler ($33)."
-    },
-    "MGM": {
-      "rank": 6,
-      "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 63,
-      "llm_score": 2.5,
-      "materiality": "high",
-      "reasoning": "Record Q2 revenue with EPS beat and 20% digital growth, plus a live non-binding $48.30/share take-private proposal from People Inc. under special committee review, though an activist urges withdrawal."
-    },
-    "VICI": {
-      "rank": 7,
-      "headline_count": 40,
-      "mentions_24h": 6,
-      "total_distinct_found": 58,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 FFO in line with revenue beat and raised AFFO guidance plus a ~6.6% yield, but Caesars/tenant uncertainty and persistent range-bound price action limit enthusiasm."
-    },
-    "TJX": {
-      "rank": 8,
-      "headline_count": 40,
-      "mentions_24h": 5,
-      "total_distinct_found": 70,
-      "llm_score": 0.5,
-      "materiality": "low",
-      "reasoning": "No fresh company news ahead of the 8/19 report; commentary is a mix of quality/momentum praise and valuation-premium caution with recent relative underperformance."
+      "reasoning": "Q2 EPS beat and reaffirmed 2026 guidance are positive, but a revenue miss, a Ladenburg downgrade on data-center funding headwinds, and soft guidance commentary largely offset it."
     }
   }
 }
