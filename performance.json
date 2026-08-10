@@ -3208,7 +3208,7 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "paper_exit_time": "9:38 AM ET",
+          "paper_exit_time": "9:42 AM ET",
           "paper_exit_date": "2026-08-10"
         }
       ],
@@ -3562,7 +3562,8 @@
           "paper_exit_dollar": 1.48,
           "paper_exit_reason": "EOD sell (winning position, +1.5%)",
           "paper_exit_time": "3:55 PM ET",
-          "paper_exit_date": "2026-08-07"
+          "paper_exit_date": "2026-08-07",
+          "postmortem": "Cleared the trailing-stop floor (+1.49%) \u2014 the accumulation/volume and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
         },
         {
           "rank": 2,
@@ -3657,6 +3658,615 @@
       "spy_live_price": 773.26,
       "spy_live_pct": 0.55,
       "pool_shortfall_note": "Bench is short today (2 of the usual 20 candidates) \u2014 48 excluded for upcoming/recent earnings."
+    },
+    {
+      "date": "2026-08-10",
+      "regime": "Market regime OK \u2014 SPY -0.08%",
+      "trading_skipped": false,
+      "max_hold_days": 3,
+      "spy_regime_pct": -0.00079,
+      "top_sectors": [
+        {
+          "etf": "XLE",
+          "name": "Energy",
+          "pct": 2.11
+        },
+        {
+          "etf": "XLV",
+          "name": "Healthcare",
+          "pct": 0.86
+        },
+        {
+          "etf": "XLF",
+          "name": "Financials",
+          "pct": 0.26
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "DOCS",
+          "pct": 32.62,
+          "signals": {
+            "accumulation": 5.472,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -1.5,
+            "relative_strength_pct": -2.73
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 1,
+          "eligible_pool_size": 638,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "TWLO",
+          "pct": 24.89,
+          "signals": {
+            "accumulation": 1.913,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": 1.18
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 18,
+          "eligible_pool_size": 638,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "HALO",
+          "pct": 20.24,
+          "signals": {
+            "accumulation": 1.201,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.5,
+            "relative_strength_pct": 2.95
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 75,
+          "eligible_pool_size": 638,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "FIVN",
+          "pct": 19.81,
+          "signals": {
+            "accumulation": 0.467,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.57
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 532,
+          "eligible_pool_size": 638,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "TNDM",
+          "pct": 19.11,
+          "signals": {
+            "accumulation": 0.848,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.16
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 204,
+          "eligible_pool_size": 638,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "ABNB",
+          "pct": 17.43,
+          "signals": {
+            "accumulation": 1.689,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 9.0,
+            "relative_strength_pct": -0.29
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 28,
+          "eligible_pool_size": 638,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "FLR",
+          "pct": 16.92,
+          "signals": {
+            "accumulation": 1.478,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": -2.64
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 45,
+          "eligible_pool_size": 638,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "CELH",
+          "pct": 16.83,
+          "signals": {
+            "accumulation": 1.893,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": -19.01
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 20,
+          "eligible_pool_size": 638,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "MCHP",
+          "pct": 13.89,
+          "signals": {
+            "accumulation": 1.206,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -0.87
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 74,
+          "eligible_pool_size": 638,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "COHR",
+          "pct": 13.44,
+          "signals": {
+            "accumulation": 0.362,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": 34.19
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 601,
+          "eligible_pool_size": 638,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably higher relative strength (1.42 vs our picks' -3.04) \u2014 possible signal to increase weighting on relative strength. Actual top movers had notably higher news sentiment (1.80 vs our picks' 0.50) \u2014 possible signal to increase weighting on news sentiment. HALO (#75 of 638), FIVN (#532 of 638), TNDM (#204 of 638), MCHP (#74 of 638), COHR (#601 of 638) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap. DOCS (accumulation #1), TWLO (accumulation #18), ABNB (accumulation #28), FLR (accumulation #45), CELH (accumulation #20) made the top-50 shortlist but didn't score high enough on the full composite to reach our top picks.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "BNL",
+          "score": 0.722,
+          "entry_price": 20.65,
+          "headline": "Broadstone Net Lease (BNL) Raises Fresh Equity, Is The 9% Undervaluation Still Intact?",
+          "sector": "",
+          "explainer": "Volume was running 3.4x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Recent news skewed positive, including: \u201cBroadstone Net Lease (BNL) Raises Fresh Equity, Is The 9% Undervaluation Still Intact?\u201d",
+          "signals": {
+            "accumulation": 3.38,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -2.24,
+            "gap_pct": -0.24
+          },
+          "prediction_price": 20.93,
+          "position_cost": 97.97,
+          "days_held": 0,
+          "live_price": 20.6,
+          "live_pct": -0.24,
+          "live_dollar": -0.24,
+          "price_updated": "9:52 AM ET",
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0005,
+          "paper_trail_floor_active": false
+        },
+        {
+          "rank": 2,
+          "ticker": "CART",
+          "score": 0.502,
+          "entry_price": 49.884,
+          "headline": "CART Q2 Deep Dive: Customer Growth and Expanding Enterprise Partnerships",
+          "sector": "",
+          "explainer": "Volume was running 2.2x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+12.5% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cCART Q2 Deep Dive: Customer Growth and Expanding Enterprise Partnerships\u201d",
+          "signals": {
+            "accumulation": 2.156,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.5,
+            "relative_strength_pct": 12.49,
+            "gap_pct": -0.94
+          },
+          "prediction_price": 50.17,
+          "position_cost": 97.97,
+          "days_held": 0,
+          "live_price": 50.08,
+          "live_pct": 0.39,
+          "live_dollar": 0.38,
+          "price_updated": "9:52 AM ET",
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0039,
+          "paper_trail_floor_active": false
+        },
+        {
+          "rank": 3,
+          "ticker": "GMED",
+          "score": 0.463,
+          "entry_price": 82.35,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 2.2x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+4.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 2.21,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.52,
+            "gap_pct": 7.01
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 82.64,
+          "live_pct": 0.35,
+          "price_updated": "9:52 AM ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "HALO",
+          "score": 0.372,
+          "entry_price": 103.12,
+          "headline": "Halozyme Therapeutics (HALO) Is Up 24.9% After Raising 2026 Revenue Outlook and Boosting Buybacks",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+24.9% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cHalozyme Therapeutics (HALO) Is Up 24.9% After Raising 2026 Revenue Outlook and Boosting Buybacks\u201d",
+          "signals": {
+            "accumulation": 1.339,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.5,
+            "relative_strength_pct": 24.93,
+            "gap_pct": -0.32
+          },
+          "live_price": 103.47,
+          "live_pct": 0.34,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "MAC",
+          "score": 0.352,
+          "entry_price": 24.4,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 2.0x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 2.035,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -5.57,
+            "gap_pct": -2.95
+          },
+          "live_price": 24.2,
+          "live_pct": -0.8,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "ABNB",
+          "score": 0.338,
+          "entry_price": 178.07,
+          "headline": "Airbnb shares jump 17% after quarterly results beat expectations",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+17.5% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cAirbnb shares jump 17% after quarterly results beat expectations\u201d",
+          "signals": {
+            "accumulation": 1.397,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 9.0,
+            "relative_strength_pct": 17.52,
+            "gap_pct": 0.35
+          },
+          "live_price": 180.89,
+          "live_pct": 1.58,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "GEN",
+          "score": 0.331,
+          "entry_price": 29.17,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+6.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.653,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 6.27,
+            "gap_pct": -1.27
+          },
+          "live_price": 29.32,
+          "live_pct": 0.51,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "LYFT",
+          "score": 0.313,
+          "entry_price": 17.46,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+10.1% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.486,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 10.09,
+            "gap_pct": -0.11
+          },
+          "live_price": 17.64,
+          "live_pct": 1.0,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 9,
+          "ticker": "BMRN",
+          "score": 0.256,
+          "entry_price": 63.81,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+6.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.364,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 6.31,
+            "gap_pct": 0.02
+          },
+          "live_price": 64.39,
+          "live_pct": 0.9,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 10,
+          "ticker": "ALL",
+          "score": 0.255,
+          "entry_price": 267.0,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.1% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.491,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.11,
+            "gap_pct": 1.91
+          },
+          "live_price": 267.05,
+          "live_pct": 0.02,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 11,
+          "ticker": "AIG",
+          "score": 0.24,
+          "entry_price": 78.78,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.456,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.25,
+            "gap_pct": 0.47
+          },
+          "live_price": 77.79,
+          "live_pct": -1.26,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 12,
+          "ticker": "CYTK",
+          "score": 0.222,
+          "entry_price": 76.76,
+          "headline": null,
+          "sector": "",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.405,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.48,
+            "gap_pct": 5.82
+          },
+          "live_price": 76.42,
+          "live_pct": -0.44,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 13,
+          "ticker": "TSLA",
+          "score": 0.201,
+          "entry_price": 328.58,
+          "headline": "SpaceX Stock Jumps Again After Lock-Up Rally. When\u2019s the Next Release, What to Expect.",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+5.6% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cSpaceX Stock Jumps Again After Lock-Up Rally. When\u2019s the Next Release, What to Expect.\u201d",
+          "signals": {
+            "accumulation": 1.171,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": 5.58,
+            "gap_pct": -0.59
+          },
+          "live_price": 328.65,
+          "live_pct": 0.02,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 14,
+          "ticker": "DLR",
+          "score": 0.195,
+          "entry_price": 193.8,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.218,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.8,
+            "gap_pct": 0.07
+          },
+          "live_price": 190.8,
+          "live_pct": -1.55,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 15,
+          "ticker": "ARR",
+          "score": 0.193,
+          "entry_price": 16.68,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.246,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.28,
+            "gap_pct": -0.42
+          },
+          "live_price": 16.5,
+          "live_pct": -1.08,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 16,
+          "ticker": "GAP",
+          "score": 0.188,
+          "entry_price": 20.47,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.9% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.211,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.89,
+            "gap_pct": -1.61
+          },
+          "live_price": 20.86,
+          "live_pct": 1.93,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 17,
+          "ticker": "BKR",
+          "score": 0.183,
+          "entry_price": 61.55,
+          "headline": "Baker Hughes (BKR) Secures LNG And Gas Turbine Orders Across Key Growth Markets",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.1% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cBaker Hughes (BKR) Secures LNG And Gas Turbine Orders Across Key Growth Markets\u201d",
+          "signals": {
+            "accumulation": 1.186,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": 2.13,
+            "gap_pct": 0.81
+          },
+          "live_price": 62.42,
+          "live_pct": 1.41,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 18,
+          "ticker": "XOM",
+          "score": 0.18,
+          "entry_price": 153.04,
+          "headline": null,
+          "sector": "",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.267,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.54,
+            "gap_pct": -0.26
+          },
+          "live_price": 157.8,
+          "live_pct": 3.11,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 19,
+          "ticker": "TEL",
+          "score": 0.172,
+          "entry_price": 216.33,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+5.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.069,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 5.17,
+            "gap_pct": -0.76
+          },
+          "live_price": 213.51,
+          "live_pct": -1.3,
+          "price_updated": "9:52 AM ET"
+        },
+        {
+          "rank": 20,
+          "ticker": "CZR",
+          "score": 0.165,
+          "entry_price": 30.15,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.139,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.34,
+            "gap_pct": -0.5
+          },
+          "live_price": 30.14,
+          "live_pct": -0.05,
+          "price_updated": "9:52 AM ET"
+        }
+      ],
+      "pool_shortfall_note": null,
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "D",
+          "move_pct": 1.49,
+          "dollar_change": 1.48,
+          "position_size": 99.34,
+          "actual_rank": 282,
+          "total_ranked": 638,
+          "signals": {
+            "accumulation": 2.187,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -4.2,
+            "gap_pct": 3.29
+          },
+          "postmortem": "Cleared the trailing-stop floor (+1.49%) \u2014 the accumulation/volume and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats. The stock itself ranked #282 of 638 tracked that day, for context."
+        }
+      ],
+      "hit_rate": 0.0,
+      "total_hits": 0,
+      "total_predictions": 20,
+      "days_tracked": 7,
+      "total_contributed": 300.0,
+      "current_equity": 294.98,
+      "net_trading_gain": -5.02,
+      "net_trading_gain_pct": -1.67,
+      "closed_rounds": [],
+      "prices_last_updated": "9:52 AM ET",
+      "prices_after_hours": false,
+      "spy_live_price": 772.77,
+      "spy_live_pct": -0.08
     }
   ]
 }
