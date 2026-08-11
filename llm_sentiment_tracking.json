@@ -1,201 +1,201 @@
 {
-  "date": "2026-08-10",
-  "generated_at": "2026-08-10T13:49:35.608556+00:00",
+  "date": "2026-08-11",
+  "generated_at": "2026-08-11T13:42:35.581461+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "BNL",
-    "CART",
+    "DUK",
+    "PPL",
     "GMED"
   ],
   "llm_top3": {
     "tickers": [
-      "HALO",
-      "CART",
-      "BKR"
+      "VRTX",
+      "MPC",
+      "GMED"
     ],
-    "reasoning": "HALO has the most materially positive news: record Q2, raised guidance, buybacks, five new ENHANZE deals and an upgrade, with fresh 52-week-high momentum. CART pairs a strong revenue beat and ad/enterprise growth with a broad sweep of analyst target hikes and a technical breakout. I skip top-ranked BNL because its dilutive equity offering and a leverage-driven downgrade offset the good development news, and I skip extended ABNB after a 17% one-day gap; instead I add BKR, where a Morgan Stanley Overweight reinstatement plus record LNG/power backlog offers a less crowded entry with real forward visibility."
+    "reasoning": "I deviate from the quant top-3 (DUK, PPL, GMED) because both utilities carry genuinely negative near-term news \u2014 DUK's $1.75B equity units plus $10B equity plan is dilutive and is literally why the stock slipped, and PPL missed on higher costs with a target cut. VRTX has the cleanest catalyst on the board: a direct competitor's cystic fibrosis drug failed, extending its franchise moat, plus raised guidance and a new all-time high. MPC pairs a refining-margin earnings blowout with a supportive oil tape. GMED is retained from the quant list on a genuine beat-and-raise with margin expansion at a still-modest valuation."
   },
   "tickers": {
-    "BNL": {
+    "DUK": {
       "rank": 1,
       "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 57,
-      "llm_score": 1,
+      "mentions_24h": 11,
+      "total_distinct_found": 66,
+      "llm_score": -1,
       "materiality": "medium",
-      "reasoning": "Mixed: Q2 FFO beat, $303M Colorado build-to-suit with Fortune 20 tenant and Goldman PT raise to $26, offset by a dilutive 11M-share equity offering at $20.50 and a Citizens downgrade to neutral on elevated leverage."
+      "reasoning": "Solid Q2 beat and data-center demand narrative offset by dilutive $1.75B equity units offering and $10B equity plan, which is why the stock slipped."
     },
-    "CART": {
+    "PPL": {
       "rank": 2,
       "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 78,
-      "llm_score": 4,
-      "materiality": "high",
-      "reasoning": "Q2 revenue beat with 14% growth, strong ad/GTV momentum, European enterprise expansion, and a broad wave of analyst price-target raises drove a ~12-15% move."
+      "mentions_24h": 6,
+      "total_distinct_found": 65,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Q2 earnings missed on higher costs and BMO cut its target to $38, though guidance reaffirmed and Blackstone JV secured 5GW of turbines for data centers."
     },
     "GMED": {
       "rank": 3,
       "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 67,
+      "mentions_24h": 5,
+      "total_distinct_found": 62,
       "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Q2 sales beat and raised 2026 EPS guidance on record margins lifted shares, though Nevro and enabling-tech weakness caps revenue upside."
+      "materiality": "high",
+      "reasoning": "Q2 revenue and EPS beat with raised non-GAAP EPS guidance to $4.95-$5.05 and margin expansion, despite Nevro/enabling tech softness."
     },
-    "HALO": {
+    "MPC": {
       "rank": 4,
       "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 76,
-      "llm_score": 5,
+      "mentions_24h": 22,
+      "total_distinct_found": 66,
+      "llm_score": 3,
       "materiality": "high",
-      "reasoning": "Record Q2 revenue $481M, raised 2026 guidance, large buybacks, five new ENHANZE deals, Leerink upgrade to Outperform and a 25% move to record highs."
+      "reasoning": "Q2 earnings blowout on strong refining margins, stock up 18% in 3 months with bullish analyst views and midstream cash flow growth."
     },
-    "MAC": {
+    "TSCO": {
       "rank": 5,
       "headline_count": 40,
-      "mentions_24h": 6,
-      "total_distinct_found": 62,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Q2 FFO and revenue beat with target hikes, but net losses persist and the $675M exchangeable notes offering is a refinancing/dilution wash; feed is heavily polluted with unrelated Apple/Freddie Mac headlines."
-    },
-    "ABNB": {
-      "rank": 6,
-      "headline_count": 40,
-      "mentions_24h": 49,
-      "total_distinct_found": 137,
-      "llm_score": 4,
-      "materiality": "high",
-      "reasoning": "Q2 beat and raised guidance drove a 17% jump to 52-week highs with AI-driven cost savings and multiple large PT hikes, though the move is now extended."
-    },
-    "GEN": {
-      "rank": 7,
-      "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 66,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Fiscal Q1 EPS and revenue beat with record bookings and raised FY27 guidance, plus multiple price-target raises, though analysts stay Equal-Weight/Sector Perform on debt."
-    },
-    "LYFT": {
-      "rank": 8,
-      "headline_count": 40,
-      "mentions_24h": 19,
-      "total_distinct_found": 68,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Record rides and 37% EBITDA growth with numerous PT raises, but EPS missed and guidance trailed Uber's, prompting an after-hours dip."
-    },
-    "BMRN": {
-      "rank": 9,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 67,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Q2 beat with 20% revenue growth, raised 2026 guidance and Voxzogo topping $1B drove multiple PT raises, though GAAP EPS fell sharply."
-    },
-    "ALL": {
-      "rank": 10,
-      "headline_count": 40,
-      "mentions_24h": 10,
-      "total_distinct_found": 65,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Strong Q2 beat (EPS $12.66, 86.6% combined ratio) is already reflected; Wells Fargo downgraded to Underweight and commentary suggests the easy upside and turnaround are over."
-    },
-    "AIG": {
-      "rank": 11,
-      "headline_count": 40,
-      "mentions_24h": 6,
-      "total_distinct_found": 66,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Q2 EPS and premiums beat on strong underwriting, but weaker investment income and analyst notes citing limited catalysts and Equal-Weight ratings keep it muted."
-    },
-    "CYTK": {
-      "rank": 12,
-      "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 66,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Strong MYQORZO launch (~$25M, ahead of consensus) and UK approval drove several PT raises, but losses widened and one shop downgraded to Sell."
-    },
-    "TSLA": {
-      "rank": 13,
-      "headline_count": 40,
-      "mentions_24h": 60,
-      "total_distinct_found": 130,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Feed is dominated by retail noise and political spam; only modest signal is a mild retail-driven rebound and a Texas semiconductor megafactory announcement with unclear commitment."
-    },
-    "DLR": {
-      "rank": 14,
-      "headline_count": 40,
-      "mentions_24h": 2,
+      "mentions_24h": 8,
       "total_distinct_found": 64,
       "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Supportive AI data-center demand narrative, record backlog and PT raises from Deutsche Bank/RBC, but most headlines are options-chain and 13F noise."
+      "materiality": "medium",
+      "reasoning": "Cut 2026 outlook and withdrew long-term framework (negative), but CEO bought $501K of stock and shares have rebounded 13% off deeply depressed levels."
     },
     "ARR": {
-      "rank": 15,
+      "rank": 6,
       "headline_count": 40,
-      "mentions_24h": 2,
+      "mentions_24h": 3,
+      "total_distinct_found": 60,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Returned to profitability with book value up slightly to $17.53 and dividend affirmed, but mortgage REIT remains rate-hostage."
+    },
+    "ALLY": {
+      "rank": 7,
+      "headline_count": 40,
+      "mentions_24h": 5,
+      "total_distinct_found": 61,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Revenue beat but EPS missed on higher credit provisions, plus routine 10b5-1 insider sale \u2014 mixed and largely stale."
+    },
+    "VRTX": {
+      "rank": 8,
+      "headline_count": 40,
+      "mentions_24h": 34,
+      "total_distinct_found": 72,
+      "llm_score": 4,
+      "materiality": "high",
+      "reasoning": "Rival Sionna's cystic fibrosis drug failed (-90%), removing a competitive threat, alongside raised 2026 guidance and an all-time high share price."
+    },
+    "LAZ": {
+      "rank": 9,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 60,
+      "llm_score": -3,
+      "materiality": "high",
+      "reasoning": "Q2 net income plunged 91% with EPS of $0.03, badly missing on higher costs and an elevated tax rate."
+    },
+    "EVRG": {
+      "rank": 10,
+      "headline_count": 40,
+      "mentions_24h": 5,
       "total_distinct_found": 61,
       "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Q2 returned to profitability with book value up slightly to $17.53 and dividend affirmed, a modest positive for a mortgage REIT."
+      "reasoning": "Q2 beat, dividend declared and guidance reaffirmed, but technical commentary flags repeated rejection at the 10 DMA and sell signals."
+    },
+    "IBM": {
+      "rank": 11,
+      "headline_count": 40,
+      "mentions_24h": 50,
+      "total_distinct_found": 96,
+      "llm_score": 3,
+      "materiality": "medium",
+      "reasoning": "$240M multi-year Together AI agreement to deploy a large NVIDIA HGX B300 inference cluster on IBM Cloud is a credible AI-revenue catalyst."
+    },
+    "DASH": {
+      "rank": 12,
+      "headline_count": 40,
+      "mentions_24h": 16,
+      "total_distinct_found": 68,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Q2 orders +27% and revenue +36% with Roth raising target to $220, offset by margin/integration concerns and director share sales."
+    },
+    "TGT": {
+      "rank": 13,
+      "headline_count": 40,
+      "mentions_24h": 28,
+      "total_distinct_found": 71,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Multiple target hikes (TD Cowen to $155, UBS to $166), 52-week high and +50% YTD, though a Taylor Farms salmonella recall is a minor overhang."
+    },
+    "DLTR": {
+      "rank": 14,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 59,
+      "llm_score": -1,
+      "materiality": "low",
+      "reasoning": "Mostly options-chain noise plus bearish 'reasons to sell' commentary and store closures ahead of Aug 27 earnings."
+    },
+    "WTRG": {
+      "rank": 15,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 63,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Q2 EPS met estimates and slightly below prior year with revenue beat; merger approvals progressing \u2014 steady, no directional catalyst."
     },
     "GAP": {
       "rank": 16,
       "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 63,
-      "llm_score": -2,
+      "mentions_24h": 20,
+      "total_distinct_found": 59,
+      "llm_score": -3,
       "materiality": "medium",
-      "reasoning": "Wells Fargo downgraded Gap to Equal-Weight and cut its target to $22 on Old Navy concerns, with the stock sliding; the Middle East Chalhoub partnership is minor by comparison."
+      "reasoning": "Downgraded by both Barclays (elevated promotions) and Wells Fargo (Old Navy concerns), with stock sliding."
     },
-    "BKR": {
+    "CVX": {
       "rank": 17,
       "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 68,
+      "mentions_24h": 67,
+      "total_distinct_found": 106,
       "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "Morgan Stanley reinstated Overweight with a $70 target, and large LNG/gas-turbine orders plus book-to-bill above 2x point to a growing backlog."
+      "reasoning": "Oil surged ~5% on Hormuz tensions and Chevron signed a 20-year Microsoft AI data-center power deal, driving a 4.3% move higher."
     },
-    "XOM": {
+    "JNJ": {
       "rank": 18,
       "headline_count": 40,
-      "mentions_24h": 26,
-      "total_distinct_found": 71,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "TD Cowen raised its target to $168 and higher oil from Hormuz disruption supports upstream cash flow, but most posts are macro/political noise."
-    },
-    "TEL": {
-      "rank": 19,
-      "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 65,
+      "mentions_24h": 55,
+      "total_distinct_found": 106,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Fiscal Q3 revenue up 14% with EPS up 19%, record AI-driven orders, multiple undervaluation screens and bullish call sweeps into $230-240 strikes."
+      "reasoning": "Strong Q2 with raised guidance, OTTAVA robotic surgery FDA authorization, and a $5.5B talc settlement removing major legal overhang."
     },
-    "CZR": {
-      "rank": 20,
+    "PGR": {
+      "rank": 19,
       "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 59,
+      "mentions_24h": 8,
+      "total_distinct_found": 64,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Pending Fertitta take-private at a fixed price caps upside and caps downside; Q2 revenue beat but EPS loss and an antitrust class action revived add mild risk."
+      "reasoning": "Modest Q2 growth but combined ratio widened to 87.1 and one-year total return is negative; institutional position news is low materiality."
+    },
+    "AFL": {
+      "rank": 20,
+      "headline_count": 40,
+      "mentions_24h": 16,
+      "total_distinct_found": 62,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Q2 EPS lagged with revenue down 1% YoY, offset by several small analyst target raises \u2014 net neutral."
     }
   }
 }
