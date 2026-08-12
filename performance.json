@@ -3873,7 +3873,8 @@
           "paper_exit_dollar": 0.38,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "2:35 PM ET",
-          "paper_exit_date": "2026-08-11"
+          "paper_exit_date": "2026-08-11",
+          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "rank": 2,
@@ -3973,7 +3974,8 @@
           "paper_peak_pct": 0.0058,
           "paper_trail_floor_active": true,
           "paper_exit_time": "9:54 AM ET",
-          "paper_exit_date": "2026-08-11"
+          "paper_exit_date": "2026-08-11",
+          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
         }
       ],
       "bench_candidates": [
@@ -4545,7 +4547,8 @@
           "paper_exit_dollar": 0.36,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "12:52 PM ET",
-          "paper_exit_date": "2026-08-11"
+          "paper_exit_date": "2026-08-11",
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
         },
         {
           "rank": 2,
@@ -4578,7 +4581,8 @@
           "paper_exit_dollar": 0.35,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "3:49 PM ET",
-          "paper_exit_date": "2026-08-11"
+          "paper_exit_date": "2026-08-11",
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
         },
         {
           "rank": 3,
@@ -4611,7 +4615,8 @@
           "paper_exit_dollar": 0.26,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "2:49 PM ET",
-          "paper_exit_date": "2026-08-11"
+          "paper_exit_date": "2026-08-11",
+          "postmortem": "Modest gain (+0.26%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
         },
         {
           "ticker": "ALLY",
@@ -4635,10 +4640,10 @@
           "paper_exit_pct": null,
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
-          "live_price": 43.75,
-          "live_pct": -0.97,
-          "live_dollar": -0.95,
-          "price_updated": "9:43 AM ET",
+          "live_price": 43.74,
+          "live_pct": -1.0,
+          "live_dollar": -0.98,
+          "price_updated": "9:45 AM ET",
           "days_held": 1,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0002,
@@ -4666,15 +4671,15 @@
           "paper_exit_pct": 0.33,
           "paper_exit_dollar": 0.33,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
-          "live_price": 82.46,
-          "live_pct": 0.48,
-          "live_dollar": 0.47,
-          "price_updated": "9:37 AM ET",
+          "live_price": 82.39,
+          "live_pct": 0.39,
+          "live_dollar": 0.39,
+          "price_updated": "9:30 AM ET",
           "days_held": 1,
-          "paper_current_floor_pct": 0.0037,
-          "paper_peak_pct": 0.0087,
-          "paper_trail_floor_active": true,
-          "paper_exit_time": "9:39 AM ET",
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0039,
+          "paper_trail_floor_active": false,
+          "paper_exit_time": "9:38 AM ET",
           "paper_exit_date": "2026-08-12"
         },
         {
@@ -4699,10 +4704,10 @@
           "paper_exit_pct": null,
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
-          "live_price": 235.26,
-          "live_pct": -1.38,
-          "live_dollar": -1.37,
-          "price_updated": "9:43 AM ET",
+          "live_price": 234.81,
+          "live_pct": -1.57,
+          "live_dollar": -1.56,
+          "price_updated": "9:45 AM ET",
           "days_held": 1,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0003,
@@ -5122,9 +5127,697 @@
       "net_trading_gain_pct": -1.28,
       "spy_live_price": 770.56,
       "spy_live_pct": -0.24,
-      "prices_last_updated": "9:43 AM ET",
+      "prices_last_updated": "9:45 AM ET",
       "prices_after_hours": false,
       "closed_rounds": []
+    },
+    {
+      "date": "2026-08-12",
+      "regime": "Market regime OK \u2014 SPY +0.34%",
+      "trading_skipped": false,
+      "max_hold_days": 3,
+      "spy_regime_pct": 0.00341,
+      "top_sectors": [
+        {
+          "etf": "XLK",
+          "name": "Technology",
+          "pct": 1.79
+        },
+        {
+          "etf": "XLI",
+          "name": "Industrials",
+          "pct": 0.46
+        },
+        {
+          "etf": "XLU",
+          "name": "Utilities",
+          "pct": 0.34
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "DDOG",
+          "pct": 11.48,
+          "signals": {
+            "accumulation": 0.413,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -12.7
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 560,
+          "eligible_pool_size": 618,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "P",
+          "pct": 8.81,
+          "signals": {
+            "accumulation": 0.468,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.5,
+            "relative_strength_pct": 16.69
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 511,
+          "eligible_pool_size": 618,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "TALO",
+          "pct": 8.41,
+          "signals": {
+            "accumulation": 0.585,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -5.27
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 372,
+          "eligible_pool_size": 618,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "PBF",
+          "pct": 7.42,
+          "signals": {
+            "accumulation": 0.46,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.5,
+            "relative_strength_pct": -14.62
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 519,
+          "eligible_pool_size": 618,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "MTDR",
+          "pct": 7.28,
+          "signals": {
+            "accumulation": 1.072,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": -1.66
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 43,
+          "eligible_pool_size": 618,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "MP",
+          "pct": 6.95,
+          "signals": {
+            "accumulation": 0.9,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": 23.54
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 99,
+          "eligible_pool_size": 618,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "KKR",
+          "pct": 6.88,
+          "signals": {
+            "accumulation": 1.095,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -2.38
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 38,
+          "eligible_pool_size": 618,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "AR",
+          "pct": 6.8,
+          "signals": {
+            "accumulation": 0.425,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.5,
+            "relative_strength_pct": -3.96
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 549,
+          "eligible_pool_size": 618,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "KRMN",
+          "pct": 6.75,
+          "signals": {
+            "accumulation": 0.987,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 20.93
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 64,
+          "eligible_pool_size": 618,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "APO",
+          "pct": 6.26,
+          "signals": {
+            "accumulation": 0.968,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": 2.01
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 74,
+          "eligible_pool_size": 618,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably higher relative strength (2.26 vs our picks' 0.97) \u2014 possible signal to increase weighting on relative strength. Actual top movers had notably higher news sentiment (1.95 vs our picks' 0.00) \u2014 possible signal to increase weighting on news sentiment. DDOG (#560 of 618), P (#511 of 618), TALO (#372 of 618), PBF (#519 of 618), MP (#99 of 618), AR (#549 of 618), KRMN (#64 of 618), APO (#74 of 618) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap. MTDR (accumulation #43), KKR (accumulation #38) made the top-50 shortlist but didn't score high enough on the full composite to reach our top picks.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "FHN",
+          "score": 0.771,
+          "entry_price": 25.51,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.9x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 1.926,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.53,
+            "gap_pct": -0.83
+          },
+          "prediction_price": 25.43,
+          "position_cost": 99.24,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 25.5,
+          "live_pct": -0.05,
+          "live_dollar": -0.05,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "UGI",
+          "score": 0.73,
+          "entry_price": 35.16,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.9x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 1.871,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.95,
+            "gap_pct": -3.3
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 35.49,
+          "live_pct": 0.94,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "ACGL",
+          "score": 0.578,
+          "entry_price": 98.26,
+          "headline": "Berkshire Hathaway Could Have an Insurance Problem as Underwriting Results Weaken",
+          "sector": "",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 1.592,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -1.0,
+            "relative_strength_pct": -1.27,
+            "gap_pct": -0.24
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 99.02,
+          "live_pct": 0.77,
+          "price_updated": "9:39 AM ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "EL",
+          "score": 0.492,
+          "entry_price": 87.78,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.9% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.406,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.93,
+            "gap_pct": -1.11
+          },
+          "live_price": 87.66,
+          "live_pct": -0.14,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "MNST",
+          "score": 0.463,
+          "entry_price": 90.36,
+          "headline": "Will Strong Q2 2026 International-Driven Results Change Monster Beverage's (MNST) Margin and Growth Narrative?",
+          "sector": "",
+          "explainer": "Recent news skewed positive, including: \u201cWill Strong Q2 2026 International-Driven Results Change Monster Beverage's (MNST) Margin and Growth Narrative?\u201d Gapped down -49.6% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.046,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.5,
+            "relative_strength_pct": -6.25,
+            "gap_pct": -49.59
+          },
+          "live_price": 45.44,
+          "live_pct": -49.72,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "TSCO",
+          "score": 0.456,
+          "entry_price": 35.29,
+          "headline": "A Once-in-a-Decade Opportunity: 1 Magnificent S&P 500 Dividend Stock Down 45% to Buy Right Now",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+6.6% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cA Once-in-a-Decade Opportunity: 1 Magnificent S&P 500 Dividend Stock Down 45% to Buy Right Now\u201d",
+          "signals": {
+            "accumulation": 1.223,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 6.55,
+            "gap_pct": -0.4
+          },
+          "live_price": 35.51,
+          "live_pct": 0.62,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "ALLY",
+          "score": 0.418,
+          "entry_price": 43.79,
+          "headline": "Ally Financial Chief Risk Officer Stephanie Richard Sells 5,000 Shares",
+          "sector": "",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.325,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -1.0,
+            "relative_strength_pct": -0.64,
+            "gap_pct": 0.0
+          },
+          "live_price": 43.95,
+          "live_pct": 0.37,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "FDX",
+          "score": 0.394,
+          "entry_price": 322.43,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.9% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.206,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.9,
+            "gap_pct": 1.48
+          },
+          "live_price": 325.21,
+          "live_pct": 0.86,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 9,
+          "ticker": "DECK",
+          "score": 0.381,
+          "entry_price": 93.84,
+          "headline": "Stock Market Today, Aug. 11: On Holding Stock Plunges on Worst Day Ever",
+          "sector": "",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.387,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -6.04,
+            "gap_pct": 1.24
+          },
+          "live_price": 94.15,
+          "live_pct": 0.33,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 10,
+          "ticker": "ICE",
+          "score": 0.367,
+          "entry_price": 151.25,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.198,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.37,
+            "gap_pct": -0.73
+          },
+          "live_price": 151.75,
+          "live_pct": 0.33,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 11,
+          "ticker": "ROST",
+          "score": 0.365,
+          "entry_price": 251.81,
+          "headline": "3 Market-Beating Stocks Worth Your Attention",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.3% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201c3 Market-Beating Stocks Worth Your Attention\u201d",
+          "signals": {
+            "accumulation": 1.219,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 0.3,
+            "gap_pct": -0.86
+          },
+          "live_price": 251.76,
+          "live_pct": -0.02,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 12,
+          "ticker": "DASH",
+          "score": 0.361,
+          "entry_price": 209.86,
+          "headline": "DoorDash Director Andy Fang Sells 15,000 Shares for $3.2 Million",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+4.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.114,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -0.5,
+            "relative_strength_pct": 4.67,
+            "gap_pct": 1.44
+          },
+          "live_price": 213.27,
+          "live_pct": 1.62,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 13,
+          "ticker": "NOV",
+          "score": 0.322,
+          "entry_price": 21.02,
+          "headline": "Transocean Q2 Earnings Beat Estimates, Revenues Decline Y/Y",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+5.2% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cTransocean Q2 Earnings Beat Estimates, Revenues Decline Y/Y\u201d",
+          "signals": {
+            "accumulation": 1.041,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 5.15,
+            "gap_pct": -1.33
+          },
+          "live_price": 20.62,
+          "live_pct": -1.88,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 14,
+          "ticker": "ETR",
+          "score": 0.303,
+          "entry_price": 106.57,
+          "headline": null,
+          "sector": "",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.175,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.1,
+            "gap_pct": -0.54
+          },
+          "live_price": 107.0,
+          "live_pct": 0.4,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 15,
+          "ticker": "ARR",
+          "score": 0.299,
+          "entry_price": 16.67,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.089,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.46,
+            "gap_pct": -0.72
+          },
+          "live_price": 16.78,
+          "live_pct": 0.66,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 16,
+          "ticker": "GMED",
+          "score": 0.298,
+          "entry_price": 86.15,
+          "headline": "Globus Medical (GMED) Upgraded to Strong Buy: Here's Why",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+5.8% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cGlobus Medical (GMED) Upgraded to Strong Buy: Here's Why\u201d",
+          "signals": {
+            "accumulation": 0.989,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 8.0,
+            "relative_strength_pct": 5.76,
+            "gap_pct": -0.35
+          },
+          "live_price": 84.11,
+          "live_pct": -2.36,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 17,
+          "ticker": "CTRE",
+          "score": 0.295,
+          "entry_price": 40.42,
+          "headline": null,
+          "sector": "",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.158,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.94,
+            "gap_pct": -0.17
+          },
+          "live_price": 39.04,
+          "live_pct": -3.41,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 18,
+          "ticker": "MDT",
+          "score": 0.281,
+          "entry_price": 90.68,
+          "headline": "Medtronic (MDT) Wins Analyst Upgrades, Is It Fully Priced?",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+5.2% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cMedtronic (MDT) Wins Analyst Upgrades, Is It Fully Priced?\u201d",
+          "signals": {
+            "accumulation": 0.975,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 7.5,
+            "relative_strength_pct": 5.2,
+            "gap_pct": -1.57
+          },
+          "live_price": 89.18,
+          "live_pct": -1.65,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 19,
+          "ticker": "AKR",
+          "score": 0.275,
+          "entry_price": 20.61,
+          "headline": null,
+          "sector": "",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.192,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -4.85,
+            "gap_pct": -1.89
+          },
+          "live_price": 20.76,
+          "live_pct": 0.73,
+          "price_updated": "9:39 AM ET"
+        },
+        {
+          "rank": 20,
+          "ticker": "KO",
+          "score": 0.268,
+          "entry_price": 86.48,
+          "headline": "3 Rock-Solid Dividend Kings That Have Raised Their Dividend Payments for Over 60 Years",
+          "sector": "",
+          "explainer": "Recent news skewed positive, including: \u201c3 Rock-Solid Dividend Kings That Have Raised Their Dividend Payments for Over 60 Years\u201d",
+          "signals": {
+            "accumulation": 1.074,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -0.09,
+            "gap_pct": 0.16
+          },
+          "live_price": 86.05,
+          "live_pct": -0.5,
+          "price_updated": "9:39 AM ET"
+        }
+      ],
+      "pool_shortfall_note": null,
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "DUK",
+          "move_pct": 0.37,
+          "dollar_change": 0.36,
+          "position_size": 98.73,
+          "actual_rank": 121,
+          "total_ranked": 618,
+          "signals": {
+            "accumulation": 1.865,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.49,
+            "gap_pct": 2.32
+          },
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through. The stock itself ranked #121 of 618 tracked that day, for context."
+        },
+        {
+          "rank": 2,
+          "ticker": "PPL",
+          "move_pct": 0.35,
+          "dollar_change": 0.35,
+          "position_size": 99.09,
+          "actual_rank": 207,
+          "total_ranked": 618,
+          "signals": {
+            "accumulation": 1.829,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.6,
+            "gap_pct": 0.6
+          },
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through. The stock itself ranked #207 of 618 tracked that day, for context."
+        },
+        {
+          "rank": 3,
+          "ticker": "GMED",
+          "move_pct": 0.26,
+          "dollar_change": 0.26,
+          "position_size": 98.69,
+          "actual_rank": 24,
+          "total_ranked": 618,
+          "signals": {
+            "accumulation": 0.989,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 5.76,
+            "gap_pct": -5.26
+          },
+          "postmortem": "Modest gain (+0.26%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through. The stock itself ranked #24 of 618 tracked that day, for context."
+        },
+        {
+          "rank": 7,
+          "ticker": "ALLY",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 98.35,
+          "actual_rank": 316,
+          "total_ranked": 618,
+          "signals": {
+            "accumulation": 1.325,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -2.0,
+            "relative_strength_pct": -0.64,
+            "gap_pct": -0.82
+          },
+          "postmortem": null
+        },
+        {
+          "rank": 10,
+          "ticker": "EVRG",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 98.95,
+          "actual_rank": 357,
+          "total_ranked": 618,
+          "signals": {
+            "accumulation": 1.252,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.37,
+            "gap_pct": 0.94
+          },
+          "postmortem": null
+        },
+        {
+          "rank": 11,
+          "ticker": "IBM",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 99.44,
+          "actual_rank": 196,
+          "total_ranked": 618,
+          "signals": {
+            "accumulation": 1.115,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": 5.17,
+            "gap_pct": -0.55
+          },
+          "postmortem": null
+        }
+      ],
+      "hit_rate": 0.0,
+      "total_hits": 0,
+      "total_predictions": 26,
+      "days_tracked": 9,
+      "total_contributed": 300.0,
+      "current_equity": 295.44,
+      "net_trading_gain": -4.56,
+      "net_trading_gain_pct": -1.52,
+      "closed_rounds": [],
+      "prices_last_updated": "9:39 AM ET",
+      "prices_after_hours": false,
+      "spy_live_price": 772.74,
+      "spy_live_pct": 0.23
     }
   ]
 }
