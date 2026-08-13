@@ -4649,7 +4649,8 @@
           "paper_peak_pct": 0.0034,
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:56 PM ET",
-          "paper_exit_date": "2026-08-12"
+          "paper_exit_date": "2026-08-12",
+          "postmortem": "Modest gain (+0.18%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through."
         },
         {
           "ticker": "EVRG",
@@ -4682,7 +4683,8 @@
           "paper_peak_pct": 0.0039,
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:38 AM ET",
-          "paper_exit_date": "2026-08-12"
+          "paper_exit_date": "2026-08-12",
+          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through."
         },
         {
           "ticker": "IBM",
@@ -4706,13 +4708,13 @@
           "paper_exit_pct": null,
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
-          "live_price": 237.67,
-          "live_pct": -0.37,
-          "live_dollar": -0.37,
-          "price_updated": "9:53 AM ET",
+          "live_price": 237.74,
+          "live_pct": -0.34,
+          "live_dollar": -0.34,
+          "price_updated": "9:51 AM ET",
           "days_held": 2,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0029,
+          "paper_peak_pct": 0.0027,
           "paper_trail_floor_active": false
         }
       ],
@@ -5129,7 +5131,7 @@
       "net_trading_gain_pct": -1.28,
       "spy_live_price": 770.56,
       "spy_live_pct": -0.24,
-      "prices_last_updated": "9:53 AM ET",
+      "prices_last_updated": "9:51 AM ET",
       "prices_after_hours": false,
       "closed_rounds": []
     },
@@ -5340,7 +5342,8 @@
           "paper_exit_dollar": 0.39,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:30 AM ET",
-          "paper_exit_date": "2026-08-12"
+          "paper_exit_date": "2026-08-12",
+          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
         },
         {
           "rank": 2,
@@ -5359,12 +5362,12 @@
           },
           "skipped_reason": null,
           "live_price": 35.08,
-          "live_pct": 0.03,
-          "price_updated": "9:53 AM ET",
+          "live_pct": 0.04,
+          "price_updated": "9:51 AM ET",
           "prediction_price": 35.16,
           "position_cost": 99.63,
           "days_held": 1,
-          "live_dollar": 0.03,
+          "live_dollar": 0.04,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0027,
           "paper_trail_floor_active": false
@@ -5830,10 +5833,630 @@
       "net_trading_gain": -3.37,
       "net_trading_gain_pct": -1.12,
       "closed_rounds": [],
-      "prices_last_updated": "9:53 AM ET",
+      "prices_last_updated": "9:51 AM ET",
       "prices_after_hours": false,
       "spy_live_price": 772.49,
       "spy_live_pct": 0.2
+    },
+    {
+      "date": "2026-08-13",
+      "regime": "Market regime OK \u2014 SPY +0.43%",
+      "trading_skipped": false,
+      "max_hold_days": 3,
+      "spy_regime_pct": 0.00427,
+      "top_sectors": [
+        {
+          "etf": "XLRE",
+          "name": "Real Estate",
+          "pct": 0.96
+        },
+        {
+          "etf": "XLC",
+          "name": "Communication Services",
+          "pct": 0.88
+        },
+        {
+          "etf": "XLP",
+          "name": "Consumer Staples",
+          "pct": 0.73
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "SMCI",
+          "pct": 19.02,
+          "signals": {
+            "accumulation": 1.312,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": -0.28
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 22,
+          "eligible_pool_size": 607,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "HRB",
+          "pct": 16.09,
+          "signals": {
+            "accumulation": 1.526,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 11.5,
+            "relative_strength_pct": 1.3
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 15,
+          "eligible_pool_size": 607,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "CAVA",
+          "pct": 14.24,
+          "signals": {
+            "accumulation": 1.675,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": -4.15
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 10,
+          "eligible_pool_size": 607,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "VIAV",
+          "pct": 12.27,
+          "signals": {
+            "accumulation": 0.32,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -1.0,
+            "relative_strength_pct": -4.76
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 554,
+          "eligible_pool_size": 607,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CIEN",
+          "pct": 11.49,
+          "signals": {
+            "accumulation": 0.601,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 5.0,
+            "relative_strength_pct": -5.74
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 304,
+          "eligible_pool_size": 607,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "DOCN",
+          "pct": 10.35,
+          "signals": {
+            "accumulation": 0.641,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -1.5,
+            "relative_strength_pct": -6.23
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 256,
+          "eligible_pool_size": 607,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "DELL",
+          "pct": 9.87,
+          "signals": {
+            "accumulation": 0.722,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -5.63
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 170,
+          "eligible_pool_size": 607,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "COHR",
+          "pct": 8.24,
+          "signals": {
+            "accumulation": 0.665,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 9.0,
+            "relative_strength_pct": 1.5
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 229,
+          "eligible_pool_size": 607,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "HPE",
+          "pct": 8.11,
+          "signals": {
+            "accumulation": 0.438,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": 3.8
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 479,
+          "eligible_pool_size": 607,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "MXL",
+          "pct": 7.69,
+          "signals": {
+            "accumulation": 0.344,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -5.09
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 547,
+          "eligible_pool_size": 607,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably lower accumulation (0.82 vs our picks' 1.80) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably higher news sentiment (4.30 vs our picks' -0.33) \u2014 possible signal to increase weighting on news sentiment. VIAV (#554 of 607), CIEN (#304 of 607), DOCN (#256 of 607), DELL (#170 of 607), COHR (#229 of 607), HPE (#479 of 607), MXL (#547 of 607) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap. SMCI (accumulation #22), HRB (accumulation #15), CAVA (accumulation #10) made the top-50 shortlist but didn't score high enough on the full composite to reach our top picks.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "CZR",
+          "score": 0.776,
+          "entry_price": 29.69,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 4.1x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 4.106,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.63,
+            "gap_pct": 0.14
+          },
+          "prediction_price": 29.63,
+          "position_cost": 98.5,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0034,
+          "paper_trail_floor_active": false,
+          "live_price": 29.79,
+          "live_pct": 0.34,
+          "live_dollar": 0.33,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "O",
+          "score": 0.417,
+          "entry_price": 62.59,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 2.3x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 2.258,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.18,
+            "gap_pct": -0.94
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 63.19,
+          "live_pct": 0.95,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "WEC",
+          "score": 0.398,
+          "entry_price": 109.11,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 2.1x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+0.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 2.113,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.79,
+            "gap_pct": -0.93
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 109.57,
+          "live_pct": 0.42,
+          "price_updated": "9:51 AM ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "EQR",
+          "score": 0.38,
+          "entry_price": 64.42,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 2.3x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 2.348,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -4.9,
+            "gap_pct": 0.96
+          },
+          "live_price": 65.98,
+          "live_pct": 2.42,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "LNT",
+          "score": 0.373,
+          "entry_price": 70.24,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 2.0x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+0.1% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 2.028,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.06,
+            "gap_pct": 0.31
+          },
+          "live_price": 70.67,
+          "live_pct": 0.61,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "BAH",
+          "score": 0.359,
+          "entry_price": 78.4,
+          "headline": "Accenture Stock Trades At A Discount While The Company Buys Its Growth",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+9.0% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cAccenture Stock Trades At A Discount While The Company Buys Its Growth\u201d",
+          "signals": {
+            "accumulation": 1.447,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": 9.03,
+            "gap_pct": -1.8
+          },
+          "live_price": 78.68,
+          "live_pct": 0.36,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "AHR",
+          "score": 0.311,
+          "entry_price": 52.59,
+          "headline": "Is AHR\u2019s US$712 Million Equity Raise For Senior Housing Acquisitions Altering The Investment Case For American Healthcare REIT (AHR)?",
+          "sector": "",
+          "explainer": "Volume was running 1.9x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Recent news skewed positive, including: \u201cIs AHR\u2019s US$712 Million Equity Raise For Senior Housing Acquisitions Altering The Investment Case For American Healthcare REIT (AHR)?\u201d",
+          "signals": {
+            "accumulation": 1.926,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -3.45,
+            "gap_pct": 0.4
+          },
+          "live_price": 53.17,
+          "live_pct": 1.11,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "AWK",
+          "score": 0.295,
+          "entry_price": 134.92,
+          "headline": "CWCO Q2 Earnings Beat, Revenues Miss on Manufacturing Weakness",
+          "sector": "",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.582,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -0.5,
+            "relative_strength_pct": 1.24,
+            "gap_pct": 0.52
+          },
+          "live_price": 136.41,
+          "live_pct": 1.11,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 9,
+          "ticker": "HLT",
+          "score": 0.292,
+          "entry_price": 322.53,
+          "headline": "Deutsche Bank upgrades Hilton to buy as expectations reset",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+3.4% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cDeutsche Bank upgrades Hilton to buy as expectations reset\u201d",
+          "signals": {
+            "accumulation": 1.442,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": 3.35,
+            "gap_pct": -0.21
+          },
+          "live_price": 323.0,
+          "live_pct": 0.15,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 10,
+          "ticker": "AXTA",
+          "score": 0.265,
+          "entry_price": 37.28,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 1.553,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.88,
+            "gap_pct": 1.56
+          },
+          "live_price": 37.21,
+          "live_pct": -0.2,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 11,
+          "ticker": "EL",
+          "score": 0.241,
+          "entry_price": 87.68,
+          "headline": "Estee Lauder (EL) Earnings Expected to Grow: Should You Buy?",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.8% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cEstee Lauder (EL) Earnings Expected to Grow: Should You Buy?\u201d",
+          "signals": {
+            "accumulation": 1.337,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": 0.83,
+            "gap_pct": -0.03
+          },
+          "live_price": 87.44,
+          "live_pct": -0.27,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 12,
+          "ticker": "RHP",
+          "score": 0.237,
+          "entry_price": 123.99,
+          "headline": "Are You Looking for a High-Growth Dividend Stock?",
+          "sector": "",
+          "explainer": "Volume was running 1.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Recent news skewed positive, including: \u201cAre You Looking for a High-Growth Dividend Stock?\u201d",
+          "signals": {
+            "accumulation": 1.528,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": -2.84,
+            "gap_pct": -1.25
+          },
+          "live_price": 124.83,
+          "live_pct": 0.68,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 13,
+          "ticker": "COO",
+          "score": 0.236,
+          "entry_price": 76.73,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.218,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.53,
+            "gap_pct": 0.69
+          },
+          "live_price": 76.99,
+          "live_pct": 0.34,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 14,
+          "ticker": "CUBE",
+          "score": 0.22,
+          "entry_price": 41.22,
+          "headline": null,
+          "sector": "",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.382,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.74,
+            "gap_pct": -1.02
+          },
+          "live_price": 41.67,
+          "live_pct": 1.09,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 15,
+          "ticker": "ARR",
+          "score": 0.216,
+          "entry_price": 16.64,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.1% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.257,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.06,
+            "gap_pct": 0.36
+          },
+          "live_price": 16.71,
+          "live_pct": 0.42,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 16,
+          "ticker": "OTIS",
+          "score": 0.214,
+          "entry_price": 73.97,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.228,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.45,
+            "gap_pct": -1.65
+          },
+          "live_price": 73.45,
+          "live_pct": -0.7,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 17,
+          "ticker": "KNX",
+          "score": 0.213,
+          "entry_price": 71.31,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.209,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.71,
+            "gap_pct": -3.38
+          },
+          "live_price": 72.7,
+          "live_pct": 1.95,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 18,
+          "ticker": "YUM",
+          "score": 0.209,
+          "entry_price": 150.34,
+          "headline": "Stock Market Today, Aug. 12: Wendy's Surges 15% on Take-Private Bid Report",
+          "sector": "",
+          "explainer": "Recent news skewed positive, including: \u201cStock Market Today, Aug. 12: Wendy's Surges 15% on Take-Private Bid Report\u201d",
+          "signals": {
+            "accumulation": 1.303,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -1.33,
+            "gap_pct": -3.81
+          },
+          "live_price": 152.89,
+          "live_pct": 1.7,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 19,
+          "ticker": "FITB",
+          "score": 0.206,
+          "entry_price": 58.01,
+          "headline": "The Best Value Stocks to Buy",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.7% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cThe Best Value Stocks to Buy\u201d",
+          "signals": {
+            "accumulation": 1.174,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": 0.71,
+            "gap_pct": -0.55
+          },
+          "live_price": 58.07,
+          "live_pct": 0.1,
+          "price_updated": "9:51 AM ET"
+        },
+        {
+          "rank": 20,
+          "ticker": "CMS",
+          "score": 0.203,
+          "entry_price": 70.02,
+          "headline": null,
+          "sector": "",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.28,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.4,
+            "gap_pct": -0.53
+          },
+          "live_price": 70.5,
+          "live_pct": 0.69,
+          "price_updated": "9:51 AM ET"
+        }
+      ],
+      "pool_shortfall_note": null,
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "FHN",
+          "move_pct": 0.39,
+          "dollar_change": 0.39,
+          "position_size": 99.24,
+          "actual_rank": 111,
+          "total_ranked": 607,
+          "signals": {
+            "accumulation": 1.926,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.53,
+            "gap_pct": -0.83
+          },
+          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through. The stock itself ranked #111 of 607 tracked that day, for context."
+        },
+        {
+          "rank": 2,
+          "ticker": "UGI",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 99.63,
+          "actual_rank": 329,
+          "total_ranked": 607,
+          "signals": {
+            "accumulation": 1.871,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.95,
+            "gap_pct": -3.3
+          },
+          "postmortem": null
+        }
+      ],
+      "hit_rate": 0.0,
+      "total_hits": 0,
+      "total_predictions": 29,
+      "days_tracked": 10,
+      "total_contributed": 300.0,
+      "current_equity": 297.39,
+      "net_trading_gain": -2.61,
+      "net_trading_gain_pct": -0.87,
+      "closed_rounds": [],
+      "prices_last_updated": "9:51 AM ET",
+      "prices_after_hours": false,
+      "spy_live_price": 777.03,
+      "spy_live_pct": 0.61
     }
   ]
 }

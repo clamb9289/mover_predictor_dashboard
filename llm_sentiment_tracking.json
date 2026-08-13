@@ -1,201 +1,201 @@
 {
-  "date": "2026-08-12",
-  "generated_at": "2026-08-12T13:42:12.488865+00:00",
+  "date": "2026-08-13",
+  "generated_at": "2026-08-13T13:47:48.514423+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "FHN",
-    "UGI",
-    "ACGL"
+    "CZR",
+    "O",
+    "WEC"
   ],
   "llm_top3": {
     "tickers": [
-      "TSCO",
-      "GMED",
-      "MDT"
+      "BAH",
+      "HLT",
+      "KNX"
     ],
-    "reasoning": "I deviate from the top quant ranks because FHN's beat was already sold and UGI's news read is outright negative (revenue miss, propane weakness, debt overhang). TSCO pairs strong price momentum and bullish options flow with a CEO buying 15,600 shares near multi-year lows \u2014 the most credible insider-confirmed turnaround signal in the list. GMED has the cleanest fundamental catalyst: revenue/EPS beat, raised EPS guidance and an upgrade to Strong Buy with wide analyst upside. MDT offers a UBS upgrade, regulatory win and a confirmed technical breakout with dividend support and low downside."
+    "reasoning": "I deviate from the top-ranked names because CZR is essentially dead money capped by a fixed $31 take-private with hostile management communication, and O/WEC/EQR/LNT are rate-sensitive utilities/REITs with either dilutive financings or in-line-to-missed quarters. BAH has clear momentum (+12% in August) with an earnings beat, cyber/AI product news and high-profile media attention; HLT just received a Deutsche Bank upgrade to Buy on an expectations reset with intact RevPAR and stable estimates; KNX shows a genuine freight-cycle inflection with a Q2 beat, 19.6% intermodal load growth, tightening driver capacity and multiple analyst upgrades/target hikes."
   },
   "tickers": {
-    "FHN": {
+    "CZR": {
       "rank": 1,
+      "headline_count": 40,
+      "mentions_24h": 6,
+      "total_distinct_found": 61,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Pending $31/share Fertitta take-private caps upside and management's silence/canceled call plus a revived antitrust class action are negatives, though the fixed-price deal limits downside too."
+    },
+    "O": {
+      "rank": 2,
+      "headline_count": 40,
+      "mentions_24h": 10,
+      "total_distinct_found": 68,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Raised AFFO guidance and data-center pivot are modest positives, offset by $875M convertible dilution and the 'REIT dividend thesis is falling apart' rate-sensitivity narrative."
+    },
+    "WEC": {
+      "rank": 3,
+      "headline_count": 40,
+      "mentions_24h": 7,
+      "total_distinct_found": 61,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Q2 EPS up 19% and reaffirmed 2026 guidance with data-center load growth, though revenue miss and funding scrutiny temper the read."
+    },
+    "EQR": {
+      "rank": 4,
+      "headline_count": 40,
+      "mentions_24h": 6,
+      "total_distinct_found": 62,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Shareholders overwhelmingly approved the AvalonBay merger of equals creating Vivmark, a clear catalyst, but apartment oversupply through 2027 and 'largely priced in' analyst views cap upside."
+    },
+    "LNT": {
+      "rank": 5,
       "headline_count": 40,
       "mentions_24h": 2,
       "total_distinct_found": 60,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Q2 EPS up ~20% YoY beat with Cramer buy call and Wells Fargo raising PT to $28, though shares fell on the print and valuation is less cheap."
-    },
-    "UGI": {
-      "rank": 2,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 62,
-      "llm_score": -2,
-      "materiality": "medium",
-      "reasoning": "Q3 revenue miss, segment EBIT down on warm weather/AmeriGas propane weakness, debt-burden concerns and Wells Fargo PT cut, partly offset by reaffirmed guidance and a PA rate settlement."
-    },
-    "ACGL": {
-      "rank": 3,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 61,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 earnings beat on reserve gains and investment income with JPM raising PT to $118, but GAAP EPS fell YoY and revenue-decline headlines pushed the stock down."
-    },
-    "EL": {
-      "rank": 4,
-      "headline_count": 40,
-      "mentions_24h": 5,
-      "total_distinct_found": 64,
       "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Mostly promotional Glimmer fragrance launch news and a $210M securities-settlement claims deadline; nothing clearly directional ahead of Aug 19 results."
-    },
-    "MNST": {
-      "rank": 5,
-      "headline_count": 40,
-      "mentions_24h": 20,
-      "total_distinct_found": 68,
-      "llm_score": -1,
       "materiality": "medium",
-      "reasoning": "Stock hit a 52-week low and 'record sales meet premium doubts' with margin compression despite strong international growth; the 2-for-1 split is cosmetic."
+      "reasoning": "Q2 EPS missed and fell YoY with a Wall Street Zen downgrade to Sell, offset by reaffirmed guidance and 60% load growth from three data centers."
     },
-    "TSCO": {
+    "BAH": {
       "rank": 6,
       "headline_count": 40,
-      "mentions_24h": 13,
-      "total_distinct_found": 62,
+      "mentions_24h": 9,
+      "total_distinct_found": 70,
       "llm_score": 3,
-      "materiality": "high",
-      "reasoning": "Strong momentum with 17% surge/8-day win streak, CEO buying 15,600 shares near lows and bullish call flow, though the 2026 outlook cut and margin squeeze are real overhangs."
+      "materiality": "medium",
+      "reasoning": "Stock up ~12% in August on an earnings beat, CNBC cyber/AI spotlight and new Vellox Ranger AI tool, though consensus rating is still 'Reduce'."
     },
-    "ALLY": {
+    "AHR": {
       "rank": 7,
       "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 61,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Revenue beat but EPS missed on $430M credit provisions, stock slid 2.4%, plus a CRO insider sale; buybacks and NIM expansion temper the negative."
+      "mentions_24h": 6,
+      "total_distinct_found": 65,
+      "llm_score": 2,
+      "materiality": "high",
+      "reasoning": "Raised FY NFFO guidance, 10 straight quarters of double-digit NOI and an $873M Kensington senior housing acquisition, partly offset by the dilutive $712M equity raise that gapped shares down."
     },
-    "FDX": {
+    "AWK": {
       "rank": 8,
       "headline_count": 40,
-      "mentions_24h": 9,
+      "mentions_24h": 3,
       "total_distinct_found": 64,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Automation/robotics rollout and heavy call buying with shares up 5% in 7 days, offset by weak guidance post-spinoff and Amazon opening freight services as a competitive threat."
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Q2 EPS +8.8% and revenue +6.2% but shares seen as pricey/premium to DDM value with 5-year price decline; other headlines are PR and community grants."
     },
-    "DECK": {
+    "HLT": {
       "rank": 9,
       "headline_count": 40,
-      "mentions_24h": 24,
-      "total_distinct_found": 65,
-      "llm_score": 1,
+      "mentions_24h": 5,
+      "total_distinct_found": 66,
+      "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "Solid Q2 with HOKA +7.7%, UGG +4.9%, DTC +13% and raised FY27 EPS guidance at ~13x earnings, but the whole footwear group is being dragged down by ONON's plunge."
+      "reasoning": "Deutsche Bank upgrade to Buy with $365 target on reset expectations and resilient RevPAR, plus CICC Outperform initiation, though Susquehanna cut its target to $345."
     },
-    "ICE": {
+    "AXTA": {
       "rank": 10,
       "headline_count": 40,
-      "mentions_24h": 6,
-      "total_distinct_found": 70,
-      "llm_score": 0,
-      "materiality": "medium",
-      "reasoning": "MarketAxess $6B acquisition brings antitrust/financing overhang and bond issuance, while July volumes +25% and record mortgage equity data are positives; stock is down 18% over a year."
-    },
-    "ROST": {
-      "rank": 11,
-      "headline_count": 40,
-      "mentions_24h": 10,
-      "total_distinct_found": 54,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Printed a new 52-week high with bullish technical calls and positive fundamental write-ups, though some notes flag it as expensive after a 130% three-year run ahead of Aug 20 earnings."
-    },
-    "DASH": {
-      "rank": 12,
-      "headline_count": 40,
-      "mentions_24h": 15,
-      "total_distinct_found": 68,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 orders +27% and revenue +36% with PT raises to $220, but valuation is stretched, margins/costs rising and insiders selling."
-    },
-    "NOV": {
-      "rank": 13,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 56,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Q2 EPS beat (+7% YoY) despite revenue decline, stock up 49% in a year and still called undervalued, with cash-flow doubts and insider selling as offsets."
-    },
-    "ETR": {
-      "rank": 14,
-      "headline_count": 40,
-      "mentions_24h": 5,
+      "mentions_24h": 1,
       "total_distinct_found": 61,
       "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Shareholders approved the all-stock AkzoNobel merger of equals and record $305M EBITDA, but EPS fell 16% YoY and shares look fully valued."
+    },
+    "EL": {
+      "rank": 11,
+      "headline_count": 40,
+      "mentions_24h": 6,
+      "total_distinct_found": 67,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Technical breakout setup and expected earnings growth into the Nov print plus the Glimmer fragrance launch, but nothing fundamentally material yet."
+    },
+    "RHP": {
+      "rank": 12,
+      "headline_count": 40,
+      "mentions_24h": 7,
+      "total_distinct_found": 61,
+      "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Q2 beat with affirmed guidance, insider purchase, SMR nuclear MOU with Holtec/Hyundai and JPM PT raise to $139, though valuation is called expensive after a 144% run."
+      "reasoning": "Raised FY EBITDAre guidance, +22% FFO, Cantor target up to $135 and a $1.38B Orlando resort acquisition funded by a $658M equity raise that pressured shares."
+    },
+    "COO": {
+      "rank": 13,
+      "headline_count": 40,
+      "mentions_24h": 15,
+      "total_distinct_found": 65,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Upgraded to Buy by Zacks and fertility/MiSight optimism, though most 'COO' headlines are unrelated insider-sale noise from other companies."
+    },
+    "CUBE": {
+      "rank": 14,
+      "headline_count": 40,
+      "mentions_24h": 2,
+      "total_distinct_found": 59,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Q2 FFO missed estimates with expense pressure and margin erosion, only partly offset by improving occupancy and a Barclays top-pick switch."
     },
     "ARR": {
       "rank": 15,
       "headline_count": 40,
-      "mentions_24h": 8,
+      "mentions_24h": 2,
       "total_distinct_found": 61,
       "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Returned to profitability with book value up slightly to $17.53 and dividend affirmed, but mortgage REIT upside hinges on rate direction."
+      "materiality": "medium",
+      "reasoning": "Returned to profit with $0.86 EPS and book value up to $17.53, supporting the monthly dividend, though rate sensitivity keeps volatility high."
     },
-    "GMED": {
+    "OTIS": {
       "rank": 16,
       "headline_count": 40,
-      "mentions_24h": 7,
-      "total_distinct_found": 60,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Q2 revenue and EPS beat, raised non-GAAP EPS guidance, Zacks upgrade to Strong Buy and broad analyst buy ratings with ~25% upside."
+      "mentions_24h": 0,
+      "total_distinct_found": 57,
+      "llm_score": -3,
+      "materiality": "high",
+      "reasoning": "Otis cut FY adjusted EPS guidance to $4.01-$4.05 from $4.20-$4.24, shares down ~19% YTD with service-margin miss and price targets cut."
     },
-    "CTRE": {
+    "KNX": {
       "rank": 17,
       "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 60,
+      "mentions_24h": 6,
+      "total_distinct_found": 58,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Record $900M investment quarter at 8.9% yields, ~$1.5B deployed in 2026, revenue +43% YoY and Cantor PT raise, though FFO merely met estimates and shares dipped."
+      "reasoning": "Q2 beat with revenue +12.6%, intermodal loads +19.6%, tightening driver capacity and multiple target hikes (Citi upgrade, Benchmark to $90), signaling a turning freight cycle."
     },
-    "MDT": {
+    "YUM": {
       "rank": 18,
       "headline_count": 40,
-      "mentions_24h": 14,
-      "total_distinct_found": 72,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "UBS upgrade citing a turnaround, CE Mark win, breakout above 50-week MA and bullish call flow support the dividend-aristocrat re-rating story."
+      "mentions_24h": 2,
+      "total_distinct_found": 71,
+      "llm_score": -2,
+      "materiality": "high",
+      "reasoning": "Still reeling from the record Cyclospora outbreak tied to Taco Bell lettuce with JPMorgan cutting its target to $160; the completed $1.2B Pizza Hut China sale only partly offsets."
     },
-    "AKR": {
+    "FITB": {
       "rank": 19,
       "headline_count": 40,
-      "mentions_24h": 0,
+      "mentions_24h": 4,
       "total_distinct_found": 60,
-      "llm_score": 1,
+      "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Raised full-year FFO guidance on record leasing and hit a 52-week high, but a 9M-share equity offering dilutes and one shop cut it to Sell."
+      "reasoning": "BofA maintains Buy with $65 PT on deposit growth and Comerica integration progress, breakout in regional banks, though Q2 stock reaction was slightly negative."
     },
-    "KO": {
+    "CMS": {
       "rank": 20,
       "headline_count": 40,
-      "mentions_24h": 21,
-      "total_distinct_found": 98,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "All-time high but valuation-stretched commentary, insider sale of 9,958 shares and no fundamental catalyst; ultra-processed-food policy chatter is peripheral."
+      "mentions_24h": 3,
+      "total_distinct_found": 61,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Q2 GAAP EPS fell 44% YoY with revenue down and shares hitting 52-week lows, though reaffirmed 2026 and new 2027 guidance plus the regulated pivot offer support."
     }
   }
 }
