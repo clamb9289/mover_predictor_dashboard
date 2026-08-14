@@ -4717,7 +4717,8 @@
           "paper_peak_pct": 0.0041,
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:56 PM ET",
-          "paper_exit_date": "2026-08-13"
+          "paper_exit_date": "2026-08-13",
+          "postmortem": "Small loss (-0.88%) \u2014 relative strength and news sentiment didn't convert this time; within normal volatility for now."
         }
       ],
       "bench_candidates": [
@@ -5378,7 +5379,8 @@
           "paper_exit_dollar": 0.26,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:57 AM ET",
-          "paper_exit_date": "2026-08-13"
+          "paper_exit_date": "2026-08-13",
+          "postmortem": "Modest gain (+0.26%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
         },
         {
           "rank": 3,
@@ -6053,7 +6055,8 @@
           "paper_exit_dollar": 0.36,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:46 AM ET",
-          "paper_exit_date": "2026-08-13"
+          "paper_exit_date": "2026-08-13",
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
         },
         {
           "rank": 2,
@@ -6071,15 +6074,15 @@
             "gap_pct": -0.94
           },
           "skipped_reason": null,
-          "live_price": 63.03,
-          "live_pct": -0.08,
-          "price_updated": "10:00 AM ET",
+          "live_price": 62.99,
+          "live_pct": -0.16,
+          "price_updated": "10:02 AM ET",
           "prediction_price": 62.59,
           "position_cost": 99.89,
           "days_held": 1,
-          "live_dollar": -0.08,
+          "live_dollar": -0.16,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0023,
+          "paper_peak_pct": 0.0027,
           "paper_trail_floor_active": false
         },
         {
@@ -6113,7 +6116,8 @@
           "paper_exit_dollar": -0.65,
           "paper_exit_reason": "Trail stop: +0.38% floor (step) triggered (-0.6%)",
           "paper_exit_time": "9:30 AM ET",
-          "paper_exit_date": "2026-08-14"
+          "paper_exit_date": "2026-08-14",
+          "postmortem": "Small loss (-0.66%) \u2014 accumulation/volume and relative strength didn't convert this time; within normal volatility for now."
         }
       ],
       "bench_candidates": [
@@ -6489,10 +6493,653 @@
       "net_trading_gain": -2.1,
       "net_trading_gain_pct": -0.7,
       "closed_rounds": [],
-      "prices_last_updated": "10:00 AM ET",
+      "prices_last_updated": "10:02 AM ET",
       "prices_after_hours": false,
       "spy_live_price": 777.88,
       "spy_live_pct": 0.72
+    },
+    {
+      "date": "2026-08-14",
+      "regime": "Market regime OK \u2014 SPY +0.03%",
+      "trading_skipped": false,
+      "max_hold_days": 3,
+      "spy_regime_pct": 0.00033,
+      "top_sectors": [
+        {
+          "etf": "XLC",
+          "name": "Communication Services",
+          "pct": 0.82
+        },
+        {
+          "etf": "XLU",
+          "name": "Utilities",
+          "pct": 0.41
+        },
+        {
+          "etf": "XLE",
+          "name": "Energy",
+          "pct": 0.38
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "WDAY",
+          "pct": 17.78,
+          "signals": {
+            "accumulation": 1.106,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 5.0,
+            "relative_strength_pct": 2.73
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 58,
+          "eligible_pool_size": 596,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "BL",
+          "pct": 10.34,
+          "signals": {
+            "accumulation": 0.564,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -14.19
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 388,
+          "eligible_pool_size": 596,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "DOCU",
+          "pct": 10.31,
+          "signals": {
+            "accumulation": 0.549,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.06
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 406,
+          "eligible_pool_size": 596,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "GDDY",
+          "pct": 9.45,
+          "signals": {
+            "accumulation": 0.833,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -5.5,
+            "relative_strength_pct": 3.06
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 159,
+          "eligible_pool_size": 596,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "PATH",
+          "pct": 9.31,
+          "signals": {
+            "accumulation": 0.836,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -2.0,
+            "relative_strength_pct": 10.42
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 158,
+          "eligible_pool_size": 596,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "FOUR",
+          "pct": 9.29,
+          "signals": {
+            "accumulation": 0.399,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": -17.72
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 540,
+          "eligible_pool_size": 596,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CSGP",
+          "pct": 8.36,
+          "signals": {
+            "accumulation": 0.638,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.96
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 305,
+          "eligible_pool_size": 596,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "FIVN",
+          "pct": 8.33,
+          "signals": {
+            "accumulation": 0.312,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": 5.41
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 574,
+          "eligible_pool_size": 596,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "STEP",
+          "pct": 8.02,
+          "signals": {
+            "accumulation": 0.316,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -1.0,
+            "relative_strength_pct": -1.07
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 572,
+          "eligible_pool_size": 596,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "RNG",
+          "pct": 7.79,
+          "signals": {
+            "accumulation": 0.489,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.85
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 464,
+          "eligible_pool_size": 596,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably lower accumulation (0.60 vs our picks' 2.83) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably lower relative strength (-0.55 vs our picks' -0.34) \u2014 possible signal to decrease weighting on relative strength. WDAY (#58 of 596), BL (#388 of 596), DOCU (#406 of 596), GDDY (#159 of 596), PATH (#158 of 596), FOUR (#540 of 596), CSGP (#305 of 596), FIVN (#574 of 596), STEP (#572 of 596), RNG (#464 of 596) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "HOG",
+          "score": 0.995,
+          "entry_price": 27.84,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+8.4% relative strength), suggesting individual demand beyond just sector momentum. Gapped down -6.6% overnight \u2014 deep enough to get a rebound-boost to its score (calibrated 2026-07-17: this specific setup showed a consistent win-rate edge).",
+          "signals": {
+            "accumulation": 1.578,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 8.37,
+            "gap_pct": -6.57
+          },
+          "prediction_price": 27.85,
+          "position_cost": 98.37,
+          "days_held": 0,
+          "live_price": 27.77,
+          "live_pct": -0.23,
+          "live_dollar": -0.23,
+          "price_updated": "9:56 AM ET",
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false
+        },
+        {
+          "rank": 2,
+          "ticker": "KMI",
+          "score": 0.823,
+          "entry_price": 32.32,
+          "headline": "3 High-Yield Dividend Stocks Under $30 to Buy in August",
+          "sector": "",
+          "explainer": "Volume was running 1.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.6% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201c3 High-Yield Dividend Stocks Under $30 to Buy in August\u201d",
+          "signals": {
+            "accumulation": 1.807,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": 2.56,
+            "gap_pct": -1.37
+          },
+          "prediction_price": 32.08,
+          "position_cost": 98.37,
+          "days_held": 0,
+          "live_price": 32.38,
+          "live_pct": 0.17,
+          "live_dollar": 0.17,
+          "price_updated": "9:56 AM ET",
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0017,
+          "paper_trail_floor_active": false
+        },
+        {
+          "rank": 3,
+          "ticker": "LYV",
+          "score": 0.705,
+          "entry_price": 186.06,
+          "headline": "MSGE Stock Breaks Out On Blowout Earnings As Concert Volumes Double",
+          "sector": "",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.4% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cMSGE Stock Breaks Out On Blowout Earnings As Concert Volumes Double\u201d",
+          "signals": {
+            "accumulation": 1.677,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": 2.36,
+            "gap_pct": 0.09
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 187.11,
+          "live_pct": 0.56,
+          "price_updated": "9:56 AM ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "PCG",
+          "score": 0.638,
+          "entry_price": 17.46,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.598,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.71,
+            "gap_pct": -0.29
+          },
+          "live_price": 17.56,
+          "live_pct": 0.57,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "CLX",
+          "score": 0.602,
+          "entry_price": 106.54,
+          "headline": "Is ENR a Buy as Low Valuation Clashes With Weak Growth and Margins?",
+          "sector": "",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.1% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cIs ENR a Buy as Low Valuation Clashes With Weak Growth and Margins?\u201d",
+          "signals": {
+            "accumulation": 1.567,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 2.07,
+            "gap_pct": -0.38
+          },
+          "live_price": 105.32,
+          "live_pct": -1.15,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "AWK",
+          "score": 0.563,
+          "entry_price": 136.46,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.9% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.526,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.89,
+            "gap_pct": -1.03
+          },
+          "live_price": 136.57,
+          "live_pct": 0.08,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "WELL",
+          "score": 0.453,
+          "entry_price": 234.44,
+          "headline": "What Makes Welltower (WELL) a Bullish Bet?",
+          "sector": "",
+          "explainer": "Recent news skewed positive, including: \u201cWhat Makes Welltower (WELL) a Bullish Bet?\u201d",
+          "signals": {
+            "accumulation": 1.435,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": -0.29,
+            "gap_pct": -1.25
+          },
+          "live_price": 234.29,
+          "live_pct": -0.06,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "SLM",
+          "score": 0.43,
+          "entry_price": 27.74,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.387,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.2,
+            "gap_pct": 0.14
+          },
+          "live_price": 27.78,
+          "live_pct": 0.14,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 9,
+          "ticker": "VICI",
+          "score": 0.413,
+          "entry_price": 26.34,
+          "headline": null,
+          "sector": "",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.397,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.75,
+            "gap_pct": -0.68
+          },
+          "live_price": 26.4,
+          "live_pct": 0.21,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 10,
+          "ticker": "TRU",
+          "score": 0.409,
+          "entry_price": 81.13,
+          "headline": "Is TRU Stock Worth Buying as Growth Improves but Debt Stays High?",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.5% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cIs TRU Stock Worth Buying as Growth Improves but Debt Stays High?\u201d",
+          "signals": {
+            "accumulation": 1.36,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 5.0,
+            "relative_strength_pct": 1.45,
+            "gap_pct": -1.84
+          },
+          "live_price": 79.83,
+          "live_pct": -1.61,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 11,
+          "ticker": "ADSK",
+          "score": 0.404,
+          "entry_price": 257.96,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+6.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.282,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 6.39,
+            "gap_pct": 0.79
+          },
+          "live_price": 252.19,
+          "live_pct": -2.24,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 12,
+          "ticker": "V",
+          "score": 0.397,
+          "entry_price": 365.45,
+          "headline": "Fintech, Payments Firms Outperform Expectations Amid Solid Consumer Spending, RBC Says",
+          "sector": "",
+          "explainer": "Recent news skewed positive, including: \u201cFintech, Payments Firms Outperform Expectations Amid Solid Consumer Spending, RBC Says\u201d",
+          "signals": {
+            "accumulation": 1.386,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": -1.17,
+            "gap_pct": -0.48
+          },
+          "live_price": 364.62,
+          "live_pct": -0.23,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 13,
+          "ticker": "NFLX",
+          "score": 0.39,
+          "entry_price": 78.24,
+          "headline": "Netflix Stock Has Been Beaten Down Lately. Some Big Investors Are Buying In",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+6.2% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cNetflix Stock Has Been Beaten Down Lately. Some Big Investors Are Buying In\u201d",
+          "signals": {
+            "accumulation": 1.269,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": 6.17,
+            "gap_pct": 0.31
+          },
+          "live_price": 78.39,
+          "live_pct": 0.2,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 14,
+          "ticker": "BOX",
+          "score": 0.389,
+          "entry_price": 33.64,
+          "headline": "Box COO Olivia Nottebohm Sells 5,834 Shares for $188,500",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+5.1% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.284,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -2.0,
+            "relative_strength_pct": 5.12,
+            "gap_pct": -2.91
+          },
+          "live_price": 32.87,
+          "live_pct": -2.29,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 15,
+          "ticker": "AMGN",
+          "score": 0.382,
+          "entry_price": 417.84,
+          "headline": "How to Build $7,200 a Month in Dividend Income Without Selling a Single Share",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+3.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.305,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -1.5,
+            "relative_strength_pct": 3.21,
+            "gap_pct": -0.98
+          },
+          "live_price": 411.54,
+          "live_pct": -1.51,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 16,
+          "ticker": "COLB",
+          "score": 0.356,
+          "entry_price": 32.44,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+4.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.255,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.54,
+            "gap_pct": 0.06
+          },
+          "live_price": 32.75,
+          "live_pct": 0.96,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 17,
+          "ticker": "EQR",
+          "score": 0.352,
+          "entry_price": 65.97,
+          "headline": "Reddit Stock Jumps On S&P 500 News",
+          "sector": "",
+          "explainer": "Recent news skewed positive, including: \u201cReddit Stock Jumps On S&P 500 News\u201d",
+          "signals": {
+            "accumulation": 1.335,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 11.0,
+            "relative_strength_pct": -1.09,
+            "gap_pct": -1.33
+          },
+          "live_price": 65.99,
+          "live_pct": 0.02,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 18,
+          "ticker": "PGR",
+          "score": 0.339,
+          "entry_price": 208.87,
+          "headline": "TRV Stock Outperforms Industry: Time to Buy for Solid Returns?",
+          "sector": "",
+          "explainer": "Recent news skewed positive, including: \u201cTRV Stock Outperforms Industry: Time to Buy for Solid Returns?\u201d",
+          "signals": {
+            "accumulation": 1.347,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": -3.0,
+            "gap_pct": -0.15
+          },
+          "live_price": 209.01,
+          "live_pct": 0.07,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 19,
+          "ticker": "AEE",
+          "score": 0.329,
+          "entry_price": 109.12,
+          "headline": null,
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.281,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.79,
+            "gap_pct": 0.27
+          },
+          "live_price": 109.56,
+          "live_pct": 0.4,
+          "price_updated": "9:56 AM ET"
+        },
+        {
+          "rank": 20,
+          "ticker": "LOW",
+          "score": 0.27,
+          "entry_price": 218.22,
+          "headline": "5 Dividend Kings to Buy and Hold Forever in August",
+          "sector": "",
+          "explainer": "Recent news skewed positive, including: \u201c5 Dividend Kings to Buy and Hold Forever in August\u201d",
+          "signals": {
+            "accumulation": 1.228,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 2.0,
+            "relative_strength_pct": -0.08,
+            "gap_pct": 0.03
+          },
+          "live_price": 217.09,
+          "live_pct": -0.52,
+          "price_updated": "9:56 AM ET"
+        }
+      ],
+      "pool_shortfall_note": null,
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "CZR",
+          "move_pct": 0.37,
+          "dollar_change": 0.36,
+          "position_size": 98.5,
+          "actual_rank": 389,
+          "total_ranked": 596,
+          "signals": {
+            "accumulation": 4.106,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.63,
+            "gap_pct": 0.14
+          },
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through. The stock itself ranked #389 of 596 tracked that day, for context."
+        },
+        {
+          "rank": 2,
+          "ticker": "O",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 99.89,
+          "actual_rank": 306,
+          "total_ranked": 596,
+          "signals": {
+            "accumulation": 2.258,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.18,
+            "gap_pct": -0.94
+          },
+          "postmortem": null
+        },
+        {
+          "rank": 3,
+          "ticker": "WEC",
+          "move_pct": -0.66,
+          "dollar_change": -0.65,
+          "position_size": 98.86,
+          "actual_rank": 240,
+          "total_ranked": 596,
+          "signals": {
+            "accumulation": 2.113,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.79,
+            "gap_pct": -0.93
+          },
+          "postmortem": "Small loss (-0.66%) \u2014 accumulation/volume and relative strength didn't convert this time; within normal volatility for now. The stock itself ranked #240 of 596 tracked that day, for context."
+        }
+      ],
+      "hit_rate": 0.0,
+      "total_hits": 0,
+      "total_predictions": 32,
+      "days_tracked": 11,
+      "total_contributed": 300.0,
+      "current_equity": 296.51,
+      "net_trading_gain": -3.49,
+      "net_trading_gain_pct": -1.16,
+      "closed_rounds": [],
+      "prices_last_updated": "9:56 AM ET",
+      "prices_after_hours": false,
+      "spy_live_price": 778.29,
+      "spy_live_pct": 0.02
     }
   ]
 }
