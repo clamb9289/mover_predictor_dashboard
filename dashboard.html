@@ -213,6 +213,12 @@
   .chart-toggle-btn { padding: 6px 14px; font-size: 12px; font-weight: 500; color: var(--muted); cursor: pointer; border-radius: 6px; user-select: none; transition: all 0.15s; }
   .chart-toggle-btn.active { background: var(--accent); color: white; }
   .chart-toggle-btn:hover:not(.active) { color: var(--text); }
+  /* Exit Dots / Entry→Exit Lines toggles (2026-08-18) -- only meaningful in
+     By Stock + Daily %, dimmed+unclickable-looking everywhere else instead
+     of silently doing nothing when clicked. Not also overriding :hover
+     here -- .chart-toggle-btn:hover:not(.active) above is more specific
+     (three class-level selectors vs. two) and would win anyway. */
+  .chart-toggle-btn-disabled { opacity: 0.35; cursor: default; }
   .chart-wrap { position: relative; height: 280px; margin-top: 8px; }
   .chart-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 12px; font-size: 11px; color: var(--muted); }
   .chart-legend-item { display: flex; align-items: center; gap: 5px; }
@@ -242,8 +248,11 @@
   .updated-at { font-size: 11px; color: var(--muted); margin-top: 10px; }
   /* Last-refreshed line reads slightly bolder/larger than the plain
      .updated-at style above so it's easy to spot at a glance (added
-     2026-07-24). */
-  #prices-updated { font-size: 12px; font-weight: 600; color: var(--text); }
+     2026-07-24). Moved above the picks grid (2026-08-18) so it's visible
+     without scrolling past the cards first, especially on mobile --
+     margin-bottom (rather than the inherited margin-top) now separates it
+     from the grid below instead of the header row above. */
+  #prices-updated { font-size: 12px; font-weight: 600; color: var(--text); margin-top: 0; margin-bottom: 12px; }
   .after-hours-badge { color: var(--red); font-weight: 700; margin-left: 6px; }
   .spinning { animation: spin 1s linear infinite; display: inline-block; }
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -350,9 +359,9 @@
           <div class="chart-toggle-btn" data-cardview="value" onclick="setCardViewMode('value')">Position $</div>
         </div>
       </div>
+      <p class="updated-at" id="prices-updated"></p>
       <div id="today-picks" class="picks-grid"><div class="loading-msg">Loading picks...</div></div>
       <p class="updated-at" id="today-date"></p>
-      <p class="updated-at" id="prices-updated"></p>
       <div id="closed-notice" style="display:none"></div>
       <div id="pool-shortfall-notice" class="closed-notice" style="display:none"></div>
     </div>
@@ -409,6 +418,10 @@
         <div class="chart-toggle-group">
           <div class="chart-toggle-btn active" data-view="daily" onclick="setChartView('daily')">Daily %</div>
           <div class="chart-toggle-btn" data-view="cumulative" onclick="setChartView('cumulative')">Cumulative %</div>
+        </div>
+        <div class="chart-toggle-group" id="overlay-toggle-group" title="Only meaningful in By Stock + Daily % -- each trade's own buy day and exit day, and the 0%-to-final-% move between them, only make sense one trade at a time on its own daily value, not averaged into the portfolio mean or summed into a running cumulative total.">
+          <div class="chart-toggle-btn" id="overlay-exit-dots" onclick="toggleOverlay('exitDots')">Exit Dots</div>
+          <div class="chart-toggle-btn" id="overlay-entry-exit" onclick="toggleOverlay('entryExitLines')">Entry→Exit Lines</div>
         </div>
       </div>
       <div class="chart-wrap"><canvas id="perf-chart"></canvas></div>
@@ -643,6 +656,14 @@ let countdownTimer = null;
 let chartMode = 'combined';
 let chartView = 'daily';
 let chartInstance = null;
+// Independently toggleable (not a radio pair like chartMode/chartView
+// above) -- both can be on at once, added 2026-08-18. Only rendered when
+// chartMode === 'individual' && chartView === 'daily' (see renderChart's
+// updateOverlayToggleAvailability) since each trade's own 0%-to-final-%
+// arc only makes sense one trade at a time, not averaged into the
+// portfolio mean (combined) or summed into a running total (cumulative).
+let showExitDots = false;
+let showEntryExitLines = false;
 
 const STOCK_COLORS = ['#5b7fff', '#34d399', '#fbbf24', '#f87171', '#a78bfa', '#22d3ee', '#fb923c'];
 
@@ -2047,6 +2068,59 @@ function setChartView(view) {
   renderChart();
 }
 
+function overlaysAvailable() {
+  return chartMode === 'individual' && chartView === 'daily';
+}
+
+function toggleOverlay(which) {
+  if (!overlaysAvailable()) return; // buttons are visually disabled in this state, but guard anyway
+  if (which === 'exitDots') showExitDots = !showExitDots;
+  else if (which === 'entryExitLines') showEntryExitLines = !showEntryExitLines;
+  renderChart();
+}
+
+// Called at the top of renderChart() (state may have just changed via
+// setChartMode/setChartView) -- keeps the two overlay buttons visually
+// disabled outside By Stock + Daily %, rather than leaving them clickable
+// but silently doing nothing (which read as broken during testing).
+function updateOverlayButtonAvailability() {
+  const available = overlaysAvailable();
+  const dotsBtn = document.getElementById('overlay-exit-dots');
+  const linesBtn = document.getElementById('overlay-entry-exit');
+  [dotsBtn, linesBtn].forEach(btn => {
+    btn.classList.toggle('chart-toggle-btn-disabled', !available);
+  });
+  dotsBtn.classList.toggle('active', available && showExitDots);
+  linesBtn.classList.toggle('active', available && showEntryExitLines);
+}
+
+// Per-ticker list of every actually-bought pick's own buy day, exit day
+// (null if still open), and resolved-or-live % move -- built once per
+// renderChart() call from the same days[] data buildDailyMoveData reads,
+// but keeping the individual trade records (buildDailyMoveData collapses
+// to one number per ticker per day) since the overlay needs buy/exit
+// DATES, not just the move value. Same isActuallyHeld convention as
+// buildPickCards/the bench-table split (line ~1523) so bench/skipped
+// entries never show up as phantom trades here.
+function buildTradeRecords(days) {
+  const trades = [];
+  days.slice().sort((a,b) => a.date.localeCompare(b.date)).forEach(day => {
+    (day.predictions || []).forEach(p => {
+      if (p.skipped_reason) return;
+      if (p.position_cost == null && p.paper_exit_price == null) return; // never actually bought
+      const pct = p.paper_exit_pct ?? p.live_pct;
+      if (pct == null) return;
+      trades.push({
+        ticker: p.ticker,
+        buyDate: day.date,
+        exitDate: p.paper_exit_date ?? null, // null = still open
+        pct,
+      });
+    });
+  });
+  return trades;
+}
+
 function buildDailyMoveData(days) {
   // Build map: date -> ticker -> move_pct, reading each day's own
   // predictions[] directly (paper_exit_pct once resolved, live_pct while
@@ -2077,6 +2151,7 @@ function buildDailyMoveData(days) {
 function renderChart() {
   const canvas = document.getElementById('perf-chart');
   if (!canvas || !perfData) return;
+  updateOverlayButtonAvailability();
   const days = perfData.days || [];
   const { byDate, tickers, dates } = buildDailyMoveData(days);
 
@@ -2138,6 +2213,92 @@ function renderChart() {
       });
       legendHtml += `<div class="chart-legend-item"><div class="chart-legend-dot" style="background:${color}"></div>${ticker}</div>`;
     });
+
+    if (overlaysAvailable() && (showExitDots || showEntryExitLines)) {
+      const tickerColor = {};
+      tickers.forEach((t, i) => { tickerColor[t] = STOCK_COLORS[i % STOCK_COLORS.length]; });
+      const dateIndex = {};
+      dates.forEach((d, i) => { dateIndex[d] = i; });
+      const trades = buildTradeRecords(days);
+
+      if (showExitDots) {
+        // One dataset PER TRADE, not one shared array indexed by date --
+        // found live while building this: two different tickers can
+        // legitimately exit on the same calendar day (e.g. 2 of 3 picks
+        // closing together), which would silently collide into a single
+        // array slot and drop one of them if all exits shared one dataset.
+        // showLine:false means no gap/spanGaps handling needed either way.
+        // Plotted at the trade's actual paper_exit_date, which for
+        // same-day trades is the same index as the point the base line
+        // already draws there (a slightly bigger ring on top of it,
+        // harmless) and for multi-day swing holds lands on a LATER day
+        // than the line's own point -- that gap is the whole point of
+        // this overlay.
+        trades.forEach(t => {
+          if (!t.exitDate) return; // still open -- nothing resolved to mark yet
+          const idx = dateIndex[t.exitDate];
+          if (idx == null) return; // exit landed on a day with no new picks at all, so it isn't a labeled x-position here -- rare, skipped rather than distorting the axis
+          const dotData = dates.map(() => null);
+          dotData[idx] = t.pct;
+          datasets.push({
+            label: `Exit: ${t.ticker} (${t.exitDate})`,
+            data: dotData,
+            showLine: false,
+            pointStyle: 'circle',
+            pointRadius: 7,
+            pointBorderWidth: 2,
+            pointBorderColor: '#fff',
+            pointBackgroundColor: tickerColor[t.ticker] || '#5b7fff',
+            order: -1, // draw on top of the ticker lines below
+          });
+        });
+      }
+
+      if (showEntryExitLines) {
+        // One dataset per trade (each needs its own win/loss color and,
+        // for multi-day holds, its own sparse two-point array) -- kept out
+        // of legendHtml above so ~45 trades/month don't flood the custom
+        // legend, which only lists the ticker lines themselves.
+        //
+        // Only visible for genuine multi-day swing holds: with a
+        // category (index-based) x-axis, a same-day trade's buy and exit
+        // share one index, so there's no second x-position to draw a line
+        // to -- the base ticker line's own point already shows that
+        // trade's full outcome, nothing more to add here.
+        trades.forEach(t => {
+          const buyIdx = dateIndex[t.buyDate];
+          if (buyIdx == null) return;
+          let endIdx, endVal;
+          if (t.exitDate) {
+            endIdx = dateIndex[t.exitDate];
+            if (endIdx == null) return; // exit day not on the axis -- see Exit Dots comment above
+          } else {
+            // Still open -- draw out to the most recent labeled day using
+            // its current live_pct (already what `t.pct` is for an open
+            // trade, since buildTradeRecords reads paper_exit_pct ?? live_pct).
+            endIdx = dates.length - 1;
+          }
+          endVal = t.pct;
+          if (buyIdx === endIdx) return; // same-day trade -- nothing extra to draw, see comment above
+          const lineData = dates.map(() => null);
+          lineData[buyIdx] = 0; // every trade starts at 0% by definition
+          lineData[endIdx] = endVal;
+          const color = endVal >= 0 ? '#34d399' : '#f87171';
+          datasets.push({
+            label: `${t.ticker} ${t.buyDate}→${t.exitDate || 'open'}`,
+            data: lineData,
+            borderColor: color,
+            backgroundColor: color,
+            borderDash: t.exitDate ? [] : [4, 3], // dashed = still open, not yet resolved
+            fill: false,
+            tension: 0,
+            pointRadius: 0,
+            spanGaps: true,
+            order: 1, // draw beneath the ticker lines/exit dots
+          });
+        });
+      }
+    }
   }
 
   document.getElementById('chart-legend').innerHTML = legendHtml;
