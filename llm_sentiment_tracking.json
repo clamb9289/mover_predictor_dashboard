@@ -1,201 +1,201 @@
 {
-  "date": "2026-08-17",
-  "generated_at": "2026-08-17T13:56:10.920444+00:00",
+  "date": "2026-08-18",
+  "generated_at": "2026-08-18T13:51:59.828146+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
     "WBS",
-    "EQR",
-    "CB"
+    "CB",
+    "FITB"
   ],
   "llm_top3": {
     "tickers": [
       "WMB",
-      "PYPL",
-      "FITB"
+      "BKR",
+      "TTEK"
     ],
-    "reasoning": "WMB pairs a revenue beat and raised guidance with an accretive $5.5B Haynesville acquisition levered to LNG/power demand \u2014 the cleanest high-materiality positive in the list. PYPL offers a live takeover catalyst with credible consortium bidders and analyst upside to $70-80, a rare asymmetric setup. FITB is the best-positioned of the top-ranked names: perfect technical breakout rating, BofA Buy at $65, and yield-curve steepening tailwinds. I skip rank-1 WBS because its news is dominated by immaterial Form 4 vesting noise and its Santander acquisition at a fixed price caps forward upside, and rank-2 EQR because the AvalonBay merger is already approved and largely priced."
+    "reasoning": "I deviate from the top-ranked financials because their headline flow is dominated by low-materiality 13F and vesting filings. WMB has the cleanest fundamental catalyst set: revenue beat, raised FY26 EBITDA guidance, and an accretive $5.5B Haynesville acquisition tied to secular LNG/power demand. BKR pairs concrete order wins (Kuwait, 1.3GW of turbines for data centers) with a >2x book-to-bill and an Overweight initiation. TTEK beat and raised with record backlog plus a new five-year NOAA contract after a deep drawdown. WBS at rank 1 is essentially a closed-deal arbitrage with limited forward upside, and PGR/SW screen negatively on margin and guidance deterioration."
   },
   "tickers": {
     "WBS": {
       "rank": 1,
       "headline_count": 40,
-      "mentions_24h": 16,
-      "total_distinct_found": 60,
-      "llm_score": 1.5,
-      "materiality": "medium",
-      "reasoning": "Fed approval of the Santander-Webster deal is the key item, giving deal certainty, but the flood of routine vesting/tax-withholding Form 4 headlines is low-materiality noise and the acquisition price largely caps upside."
-    },
-    "EQR": {
-      "rank": 2,
-      "headline_count": 40,
       "mentions_24h": 3,
-      "total_distinct_found": 64,
+      "total_distinct_found": 60,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Shareholder approval of the AvalonBay merger and raised same-store revenue guidance are modestly positive, though the AVB index-removal chatter and a pessimistic Zacks estimate temper it."
+      "reasoning": "Fed approval of the Santander-Webster deal is a real catalyst, but most headlines are routine vesting/13F noise and the acquisition is largely priced in."
     },
     "CB": {
-      "rank": 3,
+      "rank": 2,
       "headline_count": 40,
-      "mentions_24h": 9,
-      "total_distinct_found": 61,
+      "mentions_24h": 14,
+      "total_distinct_found": 59,
       "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Mostly routine 13F buying and dividend affirmation; the substantive item is Q2 premium growth slowdown from underwriting discipline that knocked shares 3%, offset by a new 52-week high and raised price targets."
+      "reasoning": "Mostly routine 13F filings and dividend affirmation, with a Deutsche Bank target raise to $354 and a 52-week high as mild positives."
     },
     "FITB": {
-      "rank": 4,
+      "rank": 3,
       "headline_count": 40,
-      "mentions_24h": 7,
+      "mentions_24h": 2,
       "total_distinct_found": 60,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Perfect technical rating/breakout setup, BofA Buy reiteration at $65 on deposit growth and Comerica integration, and steepening yield curve tailwinds outweigh a slight post-earnings dip."
+      "reasoning": "Technical breakout rating, BofA Buy with $65 PT on deposit growth and Comerica integration, plus solid Q2 EPS of $0.83 support a modestly bullish read."
     },
     "PYPL": {
-      "rank": 5,
+      "rank": 4,
       "headline_count": 40,
-      "mentions_24h": 35,
-      "total_distinct_found": 64,
-      "llm_score": 3,
+      "mentions_24h": 41,
+      "total_distinct_found": 62,
+      "llm_score": 2,
       "materiality": "high",
-      "reasoning": "Confirmed reports of sale talks with a Stripe/Advent consortium after rejecting a $60.50 bid, with upgrades citing $70-80 potential, is a high-materiality takeover catalyst though antitrust and no-deal risk is real."
+      "reasoning": "Active Stripe/Advent buyout situation with possible raised offer chatter and Piper Sandler valuation support makes this highly material, though deal terms remain contentious."
     },
     "CPRT": {
-      "rank": 6,
+      "rank": 5,
       "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 62,
-      "llm_score": 1,
+      "mentions_24h": 8,
+      "total_distinct_found": 59,
+      "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Stock is bouncing off multi-year lows with a 6-7% jump, heavy long-dated call accumulation and Jay Adair back signaling acquisitions, but CEO share sales and 'suffers larger drop' headlines show mixed sentiment."
+      "reasoning": "Stock bouncing 6-7% on institutional buying, new CEO Jay Adair back with acquisition ambitions and heavy long-dated call flow, offset by CEO share sale."
     },
     "V": {
-      "rank": 7,
+      "rank": 6,
       "headline_count": 40,
-      "mentions_24h": 10,
-      "total_distinct_found": 88,
-      "llm_score": 1.5,
+      "mentions_24h": 20,
+      "total_distinct_found": 86,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Ackman's Pershing Square, Lone Pine and Tiger Global all buying, plus Agentic-ready program rollout and bullish technicals near all-time highs."
+      "reasoning": "Ackman's new Visa stake is a positive endorsement but the stock slipped on the news, suggesting it's largely priced."
     },
     "KEY": {
-      "rank": 8,
+      "rank": 7,
       "headline_count": 40,
-      "mentions_24h": 7,
+      "mentions_24h": 12,
       "total_distinct_found": 60,
-      "llm_score": 0.5,
+      "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Aggressive buybacks and new 52-week high are mild positives, but most headlines are keyword coincidences on the word 'key' and preferred redemption notices are administrative."
+      "reasoning": "Aggressive buyback, 52-week high and in-line Q2 ($0.44 EPS) are mildly positive; most headlines are unrelated keyword noise about the word 'key'."
     },
     "MDT": {
-      "rank": 9,
+      "rank": 8,
       "headline_count": 40,
-      "mentions_24h": 9,
-      "total_distinct_found": 61,
-      "llm_score": 1.5,
+      "mentions_24h": 16,
+      "total_distinct_found": 59,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Health Canada approval of Affera and analyst upgrades plus 20% three-month momentum offset by an $88M hernia mesh verdict."
+      "reasoning": "Strong technical breakout and Health Canada approval for Affera offset by an $88M hernia mesh verdict."
     },
     "SLB": {
+      "rank": 9,
+      "headline_count": 40,
+      "mentions_24h": 5,
+      "total_distinct_found": 62,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Energy sector strength and new Brunei Shell project, but Capital One trimmed its target to $63 and valuation debate persists."
+    },
+    "TSLA": {
       "rank": 10,
       "headline_count": 40,
-      "mentions_24h": 2,
+      "mentions_24h": 53,
+      "total_distinct_found": 78,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "Cybercab Austin rollout and Einride Semi order are positives, but stock fell ~1.4% premarket and retail chatter is split."
+    },
+    "HAL": {
+      "rank": 11,
+      "headline_count": 40,
+      "mentions_24h": 10,
+      "total_distinct_found": 59,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Weekly wedge breakout, golden cross, nuclear-waste drilling optionality with Deep Isolation and Burry long position support a constructive read after a 94% run."
+    },
+    "SW": {
+      "rank": 12,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 60,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Q2 EBITDA missed with FY guidance lowered and Q3 guided below consensus on $150M freight/energy costs, though Morgan Stanley named it top pick and containerboard price hikes help."
+    },
+    "SYK": {
+      "rank": 13,
+      "headline_count": 40,
+      "mentions_24h": 13,
+      "total_distinct_found": 60,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "Stock fell 7.7% post-earnings despite 9% organic growth, and valuation calls are split between fairly valued and overvalued."
+    },
+    "WMB": {
+      "rank": 14,
+      "headline_count": 40,
+      "mentions_24h": 6,
+      "total_distinct_found": 61,
+      "llm_score": 3,
+      "materiality": "high",
+      "reasoning": "Q2 revenue beat at $3.05B, raised FY26 EBITDA guidance, and the accretive $5.5B Momentum Midstream Haynesville acquisition materially expand the LNG/power growth story."
+    },
+    "TSN": {
+      "rank": 15,
+      "headline_count": 40,
+      "mentions_24h": 13,
       "total_distinct_found": 62,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Oil-services rally, strong Q2 beat and DCF discount commentary are positive, though flat revenue with EPS down 40% and some seller skepticism cap the read."
-    },
-    "TSLA": {
-      "rank": 11,
-      "headline_count": 40,
-      "mentions_24h": 43,
-      "total_distinct_found": 82,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Nearly all content is retail day-trading chatter with no clear directional catalyst; SpaceX correlation and EV-market bottoming talk are speculative."
-    },
-    "HAL": {
-      "rank": 12,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 62,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "52-week high, weekly golden cross, breakout continuation and Deep Isolation nuclear-waste optionality plus Burry long position, versus bearish 2027 oversupply worries."
-    },
-    "SW": {
-      "rank": 13,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 61,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Q2 EPS missed on higher freight costs and FY EBITDA guidance was lowered with Q3 guide below consensus, partially offset by containerboard price hikes and Morgan Stanley naming it top pick."
-    },
-    "SYK": {
-      "rank": 14,
-      "headline_count": 40,
-      "mentions_24h": 9,
-      "total_distinct_found": 63,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Wolfe Research downgrade and 'shares plunging' headline offset generally solid Mako momentum and recovery commentary; valuation seen as full."
-    },
-    "WMB": {
-      "rank": 15,
-      "headline_count": 40,
-      "mentions_24h": 7,
-      "total_distinct_found": 62,
-      "llm_score": 2,
-      "materiality": "high",
-      "reasoning": "Q2 revenue beat, raised FY26 EBITDA guidance, and the accretive $5.5B Momentum Midstream Haynesville acquisition tied to LNG/power demand is a material positive."
-    },
-    "TSN": {
-      "rank": 16,
-      "headline_count": 40,
-      "mentions_24h": 5,
-      "total_distinct_found": 68,
-      "llm_score": -1.5,
-      "materiality": "high",
-      "reasoning": "Historic cattle shortage forcing closure/sale of three beef plants and 2,500 layoffs signals mounting beef losses, though investors welcomed the capacity discipline."
+      "reasoning": "Beef plant closures cut a third of processing capacity \u2014 painful but margin-accretive restructuring amid historic cattle shortages, with the stock up 3%+."
     },
     "UAL": {
-      "rank": 17,
+      "rank": 16,
       "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 63,
-      "llm_score": 1.5,
-      "materiality": "medium",
-      "reasoning": "Record closing highs, Druckenmiller tripling his stake, fuel-cost recapture reaffirmation and easing fuel fears on a US-Iran deal are net supportive."
-    },
-    "PGR": {
-      "rank": 18,
-      "headline_count": 40,
-      "mentions_24h": 5,
-      "total_distinct_found": 60,
-      "llm_score": -0.5,
-      "materiality": "medium",
-      "reasoning": "Cantor cut its target to $200 and combined ratio deteriorated to 87.3 from 86.2, though Morgan Stanley upgraded to Equal Weight and premiums still grew 6%."
-    },
-    "TEL": {
-      "rank": 19,
-      "headline_count": 40,
-      "mentions_24h": 1,
+      "mentions_24h": 12,
       "total_distinct_found": 61,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Zacks upgrade to Buy, Q3 revenue up 14% with EPS up 19%, orders up $1.2B YoY and strong Q4 guidance plus AI interconnect exposure, tempered by a $5.8M export-control penalty."
+      "reasoning": "Druckenmiller tripled his stake, shares closed at record highs, and management plans to claw back rising fuel costs, though oil/Hormuz risk lingers."
+    },
+    "PGR": {
+      "rank": 17,
+      "headline_count": 40,
+      "mentions_24h": 11,
+      "total_distinct_found": 62,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Combined ratio deteriorated to 87.3, Cantor cut its target to $200, and an insider sold $1.5M of stock."
+    },
+    "TEL": {
+      "rank": 18,
+      "headline_count": 40,
+      "mentions_24h": 3,
+      "total_distinct_found": 60,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Q3 revenue up 13.8% with orders of $5.7B up $1.2B YoY, a Zacks upgrade to Buy, and constructive Q4 guidance."
     },
     "TTEK": {
+      "rank": 19,
+      "headline_count": 40,
+      "mentions_24h": 3,
+      "total_distinct_found": 58,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Q3 EPS and revenue beat, raised FY26 guidance, record backlog up $200M and a new five-year NOAA contract, though revenue declined YoY."
+    },
+    "BKR": {
       "rank": 20,
       "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 58,
-      "llm_score": 1.5,
+      "mentions_24h": 7,
+      "total_distinct_found": 57,
+      "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Q3 beat on EPS and revenue, raised FY26 guidance, record backlog up $200M on data-center and federal orders, though revenue declined YoY and stock has been weak."
+      "reasoning": "Kuwait KOC award, a 76-unit NovaLT16 turbine order for data centers, Morgan Stanley Overweight $70 PT and book-to-bill above 2x, tempered by a flag on lower 2026 E&P spending."
     }
   }
 }
