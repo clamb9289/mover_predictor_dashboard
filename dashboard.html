@@ -38,8 +38,6 @@
   .dot.pulse { animation: pulse 2s infinite; }
   @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
   .refresh-info { font-size: 11px; color: var(--muted); }
-  #refresh-result.ok { color: var(--green); }
-  #refresh-result.fail { color: var(--red); }
   .force-refresh-btn { font-size: 11px; color: var(--muted); background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 5px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
   .force-refresh-btn:hover:not(:disabled) { color: var(--accent); border-color: var(--accent); }
   .force-refresh-btn:disabled { opacity: 0.5; cursor: default; }
@@ -299,7 +297,6 @@
   <div class="header-right">
     <span class="refresh-info" id="refresh-countdown"></span>
     <button class="force-refresh-btn" id="force-refresh-btn" onclick="loadPerfData(true)" title="Bypass the CDN cache and pull the latest data directly from GitHub's API">↻ Force refresh</button>
-    <span class="refresh-info" id="refresh-result" style="display:none"></span>
     <div id="status-badge" class="status-badge status-paper">
       <span class="dot pulse"></span> Paper Trading
     </div>
@@ -739,16 +736,6 @@ function toggleExplainer(id) {
 async function loadPerfData(force) {
   document.getElementById('live-spinner').style.display = 'inline-block';
   const forceBtn = document.getElementById('force-refresh-btn');
-  const resultEl = document.getElementById('refresh-result');
-  resultEl.style.display = 'none';
-  // Snapshot of what's already on screen, taken BEFORE the fetch -- used
-  // below (force only) to tell "fetch worked but nothing's changed yet"
-  // apart from "fetch actually failed." Both used to look identical (the
-  // page just silently sits there), which read as broken during the long
-  // pre-market stretch where trader.py's own price-change gate means
-  // nothing NEW has landed in performance.json yet even though every
-  // refresh_prices tick ran fine (see prices_last_updated in trader.py).
-  const prevSignature = force ? JSON.stringify(perfData) : null;
   if (force) {
     forceBtn.disabled = true;
     forceBtn.textContent = '↻ Refreshing…';
@@ -772,28 +759,15 @@ async function loadPerfData(force) {
     perfData = data;
     render(perfData);
     if (force) startCountdown(); // don't also fire on the old schedule seconds later
-    if (force) {
-      resultEl.className = 'refresh-info ok';
-      resultEl.textContent = JSON.stringify(perfData) === prevSignature
-        ? 'No new data yet (fetched OK, nothing has changed)'
-        : '✓ Updated';
-      resultEl.style.display = 'inline';
-    }
   } catch(e) {
     document.getElementById('today-picks').innerHTML =
       `<div class="error-msg">Could not load performance.json from GitHub.<br><small>${e.message}</small></div>`;
     document.getElementById('header-sub').textContent = 'Error loading data';
-    if (force) {
-      resultEl.className = 'refresh-info fail';
-      resultEl.textContent = '✗ Refresh failed: ' + e.message;
-      resultEl.style.display = 'inline';
-    }
   }
   document.getElementById('live-spinner').style.display = 'none';
   if (force) {
     forceBtn.disabled = false;
     forceBtn.textContent = '↻ Force refresh';
-    setTimeout(() => { resultEl.style.display = 'none'; }, 6000);
   }
 }
 
