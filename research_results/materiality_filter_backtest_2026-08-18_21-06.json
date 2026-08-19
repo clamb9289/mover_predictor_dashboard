@@ -1,0 +1,77 @@
+{
+  "script_name": "materiality_filter_backtest",
+  "run_timestamp": "2026-08-18T21:06:12.387311+00:00",
+  "title": "LLM materiality (high/medium/low) as a top-3 SELECTION filter, not a linear score blend",
+  "params": {
+    "n_dates": 15,
+    "date_range": "2026-07-23 -> 2026-08-14",
+    "strict_dates_used": 10
+  },
+  "tables": [
+    {
+      "name": "Selection rules vs baseline vs random control",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "train.total_dollar",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct",
+        "val.total_dollar"
+      ],
+      "rows": [
+        [
+          "baseline (mechanical top-3 by rank)",
+          44,
+          "59.09%",
+          "129.77%",
+          "$57.10",
+          44,
+          "59.09%",
+          "129.77%",
+          "$57.10"
+        ],
+        [
+          "materiality-filtered (high only, strict)",
+          30,
+          "50.00%",
+          "60.71%",
+          "$18.21",
+          30,
+          "50.00%",
+          "60.71%",
+          "$18.21"
+        ],
+        [
+          "materiality-filtered (high, fallback to medium)",
+          41,
+          "51.22%",
+          "54.73%",
+          "$22.44",
+          41,
+          "51.22%",
+          "54.73%",
+          "$22.44"
+        ],
+        [
+          "random 3-of-pool control (200 reps/day, averaged)",
+          8800,
+          "52.32%",
+          "21.09%",
+          "$1,855.57",
+          8800,
+          "52.32%",
+          "21.09%",
+          "$1,855.57"
+        ]
+      ]
+    }
+  ],
+  "notes": "Only 14 usable dates exist (materiality tracking started 2026-07-24) -- too few for a real train/val split, reported as one pooled result. Every prior sentiment test tried a linear weight blend (REJECTED, see backtest.py WEIGHT_PRESETS) or a raw correlation (weak). This tests materiality as a bucket-based SELECTION rule instead, using real staircase-stop-simulated outcomes already computed by sentiment_outcome_tracker.py -- no new data collection needed. Stone #1 of 6 in the user's 2026-08-18 'turn over every stone' sentiment review.",
+  "conclusion": {
+    "verdict": "INCONCLUSIVE",
+    "summary": "Strict filter beats baseline+control: False. Fallback filter beats baseline+control: False. At only 15 dates, treat as a lead either way, not a decision -- worth re-checking once more live data accumulates."
+  }
+}

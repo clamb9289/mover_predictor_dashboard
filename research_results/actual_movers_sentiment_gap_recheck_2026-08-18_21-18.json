@@ -1,0 +1,64 @@
+{
+  "script_name": "actual_movers_sentiment_gap_recheck",
+  "run_timestamp": "2026-08-18T21:18:56.704174+00:00",
+  "title": "Re-check: does news_sentiment still run higher among actual top movers than our own picks?",
+  "params": {
+    "n_days": 14
+  },
+  "tables": [
+    {
+      "name": "Old thin news_sentiment signal: actual movers vs our picks vs our pool",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.mean",
+        "train.min",
+        "train.max",
+        "val.n",
+        "val.mean",
+        "val.min",
+        "val.max"
+      ],
+      "rows": [
+        [
+          "Actual top movers (old thin signal)",
+          140,
+          2.0929,
+          -5.5,
+          12.0,
+          140,
+          2.0929,
+          -5.5,
+          12.0
+        ],
+        [
+          "Our top-3 picks (old thin signal)",
+          48,
+          0.9271,
+          -3.0,
+          16.0,
+          48,
+          0.9271,
+          -3.0,
+          16.0
+        ],
+        [
+          "Our full pool, picks+bench (old thin signal)",
+          213,
+          0.9131,
+          -3.0,
+          16.0,
+          213,
+          0.9131,
+          -3.0,
+          16.0
+        ]
+      ]
+    }
+  ],
+  "notes": "Stone #6 of 6 in the user's 2026-08-18 'turn over every stone' sentiment review -- hits a real data wall: the richer signals (multi-source pool, LLM score) have never scored the actual top movers universe, only our own shortlisted pool, and historical news text isn't archived anywhere queryable, so there's no way to compute what they WOULD have scored for a real mover weeks ago. This re-runs the ORIGINAL postmortem comparison (old thin signal only) on current data as the feasible partial check. performance.json only keeps a rolling ~14-day window, so this is a smaller, fresher sample than the original 14-day postmortem check, not a larger one.",
+  "conclusion": {
+    "verdict": "PARTIAL -- richer-signal version not buildable historically",
+    "summary": "Old-signal gap (actual movers vs our picks): 1.1657738095238095. Consistent with the original postmortem finding on this fresher window. A real richer-signal answer requires a forward-looking live tracker (scoring actual top movers' real sentiment going forward) -- new production surface area, needs the user's explicit go-ahead before building, not something to add unprompted."
+  }
+}

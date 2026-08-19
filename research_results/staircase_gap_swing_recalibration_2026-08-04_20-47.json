@@ -1,0 +1,115 @@
+{
+  "script_name": "staircase_gap_swing_recalibration",
+  "run_timestamp": "2026-08-04T20:47:54.194352+00:00",
+  "title": "Is the trailing-stop staircase's +1.25%-3% gap still too wide, under today's swing-hold rules?",
+  "params": {
+    "backtest_days": 150,
+    "candidates_per_day": 12,
+    "max_hold_days": 3,
+    "n_train": 842,
+    "n_val": 373
+  },
+  "tables": [
+    {
+      "name": "Gap-tier configs vs live baseline (6 tested)",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "train.total_dollar",
+        "train.avg_loss",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct",
+        "val.total_dollar",
+        "val.avg_loss"
+      ],
+      "rows": [
+        [
+          "BASELINE (live 7-tier)",
+          842,
+          "66.27%",
+          "0.10%",
+          "$84.09",
+          "-2.33%",
+          373,
+          "71.58%",
+          "0.31%",
+          "$116.27",
+          "-2.30%"
+        ],
+        [
+          "gap trig=1.50% floor=1.10%",
+          842,
+          "66.98%",
+          "0.10%",
+          "$84.29",
+          "-2.37%",
+          373,
+          "71.58%",
+          "0.32%",
+          "$118.72",
+          "-2.30%"
+        ],
+        [
+          "gap trig=1.75% floor=1.30%",
+          842,
+          "66.98%",
+          "0.08%",
+          "$67.94",
+          "-2.38%",
+          373,
+          "71.58%",
+          "0.30%",
+          "$113.26",
+          "-2.30%"
+        ],
+        [
+          "gap trig=2.00% floor=1.50%",
+          842,
+          "66.63%",
+          "0.09%",
+          "$72.45",
+          "-2.36%",
+          373,
+          "71.85%",
+          "0.31%",
+          "$114.79",
+          "-2.30%"
+        ],
+        [
+          "gap trig=2.25% floor=1.70%",
+          842,
+          "66.39%",
+          "0.08%",
+          "$66.25",
+          "-2.34%",
+          373,
+          "71.85%",
+          "0.31%",
+          "$117.45",
+          "-2.30%"
+        ],
+        [
+          "gap trig=2.50% floor=1.90%",
+          842,
+          "66.39%",
+          "0.07%",
+          "$58.79",
+          "-2.34%",
+          373,
+          "71.85%",
+          "0.30%",
+          "$112.07",
+          "-2.30%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Retests under TODAY's live mechanics (swing-hold, MAX_HOLD_DAYS=3, broker-side stops) -- the 2026-07-24 staircase_gap_calibration.py that added the current +1.25%/+0.9% tier tested a denser gap-band alternative under the old single-day rules and rejected it; none of the swing-hold/hold-cap/broker-stop changes since then retested that specific question.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "0/5 denser gap-band staircase variants beat the live baseline overall (win_rate AND avg_pct, both TRAIN and VAL)."
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "script_name": "richer_sentiment_weight_backtest",
+  "run_timestamp": "2026-08-18T21:10:50.325156+00:00",
+  "title": "Multi-source/LLM sentiment substituted into the SAME weight-preset formulas that rejected the old signal",
+  "params": {
+    "n_dates": 9,
+    "date_range": "2026-07-30 -> 2026-08-14",
+    "presets_tested": [
+      "balanced (accum.35/sector.25/sent.15/rs.25)",
+      "accum55 (accum.55/sector.25/sent.10/rs.10)"
+    ]
+  },
+  "tables": [
+    {
+      "name": "Richer-signal weight substitutions vs baseline vs random control",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "train.total_dollar",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct",
+        "val.total_dollar"
+      ],
+      "rows": [
+        [
+          "baseline (real live top-3)",
+          27,
+          "59.26%",
+          "65.46%",
+          "$17.68",
+          27,
+          "59.26%",
+          "65.46%",
+          "$17.68"
+        ],
+        [
+          "multi-source pooled | balanced (accum.35/sector.25/sent.15/rs.25)",
+          15,
+          "60.00%",
+          "18.26%",
+          "$2.74",
+          15,
+          "60.00%",
+          "18.26%",
+          "$2.74"
+        ],
+        [
+          "multi-source pooled | accum55 (accum.55/sector.25/sent.10/rs.10)",
+          15,
+          "53.33%",
+          "-0.07%",
+          "$-0.01",
+          15,
+          "53.33%",
+          "-0.07%",
+          "$-0.01"
+        ],
+        [
+          "LLM (Opus) score | balanced (accum.35/sector.25/sent.15/rs.25)",
+          27,
+          "51.85%",
+          "26.73%",
+          "$7.22",
+          27,
+          "51.85%",
+          "26.73%",
+          "$7.22"
+        ],
+        [
+          "LLM (Opus) score | accum55 (accum.55/sector.25/sent.10/rs.10)",
+          27,
+          "55.56%",
+          "48.84%",
+          "$13.19",
+          27,
+          "55.56%",
+          "48.84%",
+          "$13.19"
+        ]
+      ]
+    }
+  ],
+  "notes": "performance.json only keeps a rolling ~14-day window, so this only covers 2026-07-30 onward -- smaller sample than stone 1's already-thin dataset. Substitutes multi_source_sentiment.py's pooled score and llm_news_sentiment.py's Opus-graded score into backtest.py's EXACT already-tested balanced/accum55 weight formulas, isolating whether the blend structure itself is the problem (as opposed to the old thin signal specifically). Stone #2 of 6 in the user's 2026-08-18 'turn over every stone' sentiment review.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "0/4 richer-signal weight substitutions beat both the real baseline and their own random-shuffle control. The blend structure itself appears to be the limiting factor, not just the old signal quality -- consistent with stone 1s finding that the mechanical top-3 is already hard to beat by reranking on any sentiment source."
+  }
+}

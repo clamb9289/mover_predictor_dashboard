@@ -1,0 +1,66 @@
+{
+  "script_name": "atr_scaled_staircase_calibration",
+  "run_timestamp": "2026-08-04T21:39:52.685844+00:00",
+  "title": "Should the trailing-stop staircase scale with each stock's own ATR%, instead of a fixed percentage for everyone?",
+  "params": {
+    "backtest_days": 150,
+    "n_train": 887,
+    "n_val": 383
+  },
+  "tables": [
+    {
+      "name": "ATR-scaled staircase configs vs fixed baseline (3 tested)",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "train.avg_loss",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct",
+        "val.avg_loss"
+      ],
+      "rows": [
+        [
+          "ATR-scaled cap=[0.5x-2.0x]",
+          887,
+          "67.42%",
+          "0.03%",
+          "-2.42%",
+          383,
+          "72.06%",
+          "0.37%",
+          "-2.38%"
+        ],
+        [
+          "ATR-scaled cap=[0.7x-1.5x]",
+          887,
+          "67.87%",
+          "0.03%",
+          "-2.47%",
+          383,
+          "72.06%",
+          "0.34%",
+          "-2.38%"
+        ],
+        [
+          "ATR-scaled cap=[0.6x-1.8x]",
+          887,
+          "67.87%",
+          "0.03%",
+          "-2.45%",
+          383,
+          "71.54%",
+          "0.30%",
+          "-2.33%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Multiplier = candidate's own ATR% (predictor.py's compute_volatility_pct(), same definition/window the live volatility exclusion filter already uses) divided by the cross-sectional median ATR% among that day's scored candidates -- self-normalizing to the day's relative volatility spread rather than an arbitrary fixed reference. Capped to avoid a single extreme-ATR ticker producing a degenerate staircase. Only TRAIL_STEPS is scaled; STOP_LOSS_PCT stays fixed at the live -3% (repeatedly reconfirmed well-calibrated elsewhere in this project).",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "0/3 ATR-scaled staircase configs beat the fixed baseline on win_rate AND avg_pct, both TRAIN and VAL."
+  }
+}
