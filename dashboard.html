@@ -541,7 +541,7 @@
       <div class="card-title">How the Model Works — v2</div>
       <div class="model-section">
         <h3>Overview</h3>
-        <p>Each morning before market open, the predictor runs a series of checks before selecting any stocks. It first checks whether the overall market is healthy enough to trade. If the market passes, it scores the full S&P Composite 1500 (~1,500 large/mid/small-cap stocks) on four weighted signals, then applies an overnight gap-down boost to the top-50 shortlist before selecting the top 3 most likely to move during the upcoming session. Stocks with upcoming earnings or excessive recent volatility are excluded entirely.</p>
+        <p>Each morning before market open, the predictor runs a series of checks before selecting any stocks. It first checks whether the overall market is healthy enough to trade. If the market passes, it scores the full S&P Composite 1500 (~1,500 large/mid/small-cap stocks) on four weighted signals, then selects the top 3 most likely to move during the upcoming session. Stocks with upcoming earnings or excessive recent volatility are excluded entirely. (An overnight gap-down reranking boost also lives in this step — currently disabled, see below.)</p>
       </div>
       <div class="model-section">
         <h3>Step 1 — Market Regime Check</h3>
@@ -585,8 +585,8 @@
         </div>
       </div>
       <div class="model-section">
-        <h3>Overnight Gap-Down Boost <span style="font-weight:normal; font-size:0.8em; color:var(--text-secondary,#888);">(added 2026-07-17)</span></h3>
-        <p>Not a weighted signal like the four above — a flat score bonus applied only to shortlisted candidates whose price has gapped down 5%+ overnight (prior close → today's open). A straight linear blend of the gap into the composite score was tested first and showed no real edge (noise, sometimes worse than doing nothing); the effect turned out to be a deep-tail cliff, not a smooth relationship, so it's applied as a threshold instead — the same style of rule as the opening-move and opening-gap filters below. Calibrated across 250 trading days, isolating specifically the days this boost changes the top-3: the promoted pick beat the pick it replaced by roughly +1.4 percentage points of win rate, consistently on both a training window and a held-out validation window. This only reranks within the existing top-50 shortlist — a separate, wider test confirmed the same gap-down effect does <em>not</em> hold for stocks outside that shortlist, so it's not used to source new candidates, only to promote ones the model already likes.</p>
+        <h3>Overnight Gap-Down Boost <span style="font-weight:normal; font-size:0.8em; color:var(--text-secondary,#888);">(added 2026-07-17, disabled 2026-08-19)</span></h3>
+        <p><strong>Currently disabled.</strong> When active, this was a flat score bonus applied to shortlisted candidates whose price had gapped down 5%+ overnight (prior close → today's open) — not a weighted signal like the four above, and calibrated across 250 trading days back when it shipped, isolating specifically the days it changed the top-3: the promoted pick beat the pick it replaced by roughly +1.4 percentage points of win rate on both a training and a held-out validation window. That calibration predated the swing-trading switch by a week and was never re-tested under real multi-day hold mechanics — re-run at 736-day scale on 2026-08-19 (the largest single-parameter test this project has run), <em>disabling</em> the boost beat the live baseline on both win rate and average return, on both splits. The deep-gap-down mean-reversion edge that justified promoting a candidate under the old single-day model doesn't carry the same weight once a position has 3 days to develop instead of 1. Threshold/mechanism left in the code, just zeroed out, in case future evidence says otherwise.</p>
       </div>
       <div class="model-section">
         <h3>Trade Execution Rules</h3>
