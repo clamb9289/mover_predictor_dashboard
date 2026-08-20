@@ -20,6 +20,7 @@
     --red-bg: rgba(248,113,113,0.1);
     --gold: #fbbf24;
     --gold-bg: rgba(251,191,36,0.08);
+    --gold-bg-strong: rgba(251,191,36,0.25);
     --silver: #cbd5e1;
     --silver-bg: rgba(203,213,225,0.08);
     --bronze: #d97757;
@@ -66,6 +67,14 @@
      tone (added 2026-07-24, see buildPickCards()). */
   .pick-card-win { background-image: linear-gradient(var(--green-bg), var(--green-bg)); }
   .pick-card-loss { background-image: linear-gradient(var(--red-bg), var(--red-bg)); }
+  /* 2026-08-20: needs attention -- a real sell failure (sell_error_note) or
+     a position that showed up with no matching buy order in our own
+     history (external_position, e.g. a merger/corporate-action stock
+     credit). Deliberately much stronger than the subtle win/loss tint
+     above -- this needs to be unmissable at a glance, not just informative
+     on close reading. */
+  .pick-card-attention { background-image: linear-gradient(var(--gold-bg-strong), var(--gold-bg-strong)); border: 1px solid rgba(251,191,36,0.5); }
+  .attention-badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; background: var(--gold-bg); color: var(--gold); border: 1px solid rgba(251,191,36,0.35); margin-top: 6px; margin-right: 6px; }
   .pick-round-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
   .pick-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
   .pick-rank { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.5px; margin-bottom: 4px; }
@@ -1245,11 +1254,20 @@ function buildPickCards(predictions, idPrefix) {
     const entryPrice = p.entry_price;
     const isExited = p.paper_exit_price != null;
     const livePrice = isExited ? p.paper_exit_price : (p.live_price ?? null);
+    // Needs-attention state (2026-08-20): a real sell failure or a
+    // position that showed up with no matching buy order in our own
+    // history (external_position). Takes priority over the win/loss tint
+    // below -- a stuck/external position hasn't organically resolved, so
+    // its status should dominate the card visually over whatever its
+    // live P/L happens to read at the moment.
+    const needsAttention = !!(p.sell_error_note || p.external_position);
     // Subtle win/loss card tint once exited -- makes it easy to scan
     // multiple same-day cards (e.g. a ticker that round-tripped several
     // times) at a glance (added 2026-07-24).
     let exitCardClass = '';
-    if (isExited && p.paper_exit_pct != null) {
+    if (needsAttention) {
+      exitCardClass = ' pick-card-attention';
+    } else if (isExited && p.paper_exit_pct != null) {
       exitCardClass = p.paper_exit_pct > 0 ? ' pick-card-win' : (p.paper_exit_pct < 0 ? ' pick-card-loss' : '');
     }
     const pnlPct = isExited ? p.paper_exit_pct : (p.live_pct ?? null);
@@ -1288,6 +1306,16 @@ function buildPickCards(predictions, idPrefix) {
     const isNotBought = !isSkipped && p.position_cost == null && p.paper_exit_price == null;
 
     let badges = '';
+    // 2026-08-20: always shown when applicable, unconditionally -- unlike
+    // the mutually-exclusive status badges below, a needs-attention state
+    // can coexist with any of them (e.g. an external position mid-swing-hold
+    // still shows its "Day N of M" badge too).
+    if (p.external_position) {
+      badges += `<div class="attention-badge">⚠️ Not one of our picks — ${p.external_position_note || 'found with no matching buy order in our history'}</div>`;
+    }
+    if (p.sell_error_note) {
+      badges += `<div class="attention-badge">${p.sell_error_note}</div>`;
+    }
     if (isSkipped) {
       badges += `<div class="exited-badge">⛔ Skipped — ${p.skipped_reason}</div>`;
     } else if (isNotBought) {
