@@ -8162,10 +8162,10 @@
           "live_price": 77.57,
           "live_pct": -0.93,
           "live_dollar": -0.94,
-          "price_updated": "6:00 PM ET",
+          "price_updated": "12:59 PM ET",
           "prediction_price": 79.0,
           "position_cost": 100.54,
-          "days_held": 1,
+          "days_held": 2,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false
@@ -8222,7 +8222,8 @@
           "paper_exit_dollar": -2.98,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "12:55 PM ET",
-          "paper_exit_date": "2026-08-19"
+          "paper_exit_date": "2026-08-19",
+          "postmortem": "Small loss (-2.99%) \u2014 relative strength didn't convert this time; within normal volatility for now."
         }
       ],
       "bench_candidates": [
@@ -8611,8 +8612,8 @@
       "days_tracked": 13,
       "spy_live_price": 767.45,
       "spy_live_pct": -0.67,
-      "prices_last_updated": "6:00 PM ET",
-      "prices_after_hours": true,
+      "prices_last_updated": "12:59 PM ET",
+      "prices_after_hours": false,
       "total_contributed": 300.0,
       "current_equity": 297.1,
       "net_trading_gain": -2.9,
@@ -8814,7 +8815,7 @@
           "skipped_reason": null,
           "live_price": 38.55,
           "live_pct": 0.03,
-          "price_updated": "6:00 PM ET",
+          "price_updated": "11:00 PM ET",
           "prediction_price": 38.39,
           "position_cost": 96.4,
           "days_held": 0,
@@ -8827,7 +8828,8 @@
           "paper_exit_dollar": 0.29,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "3:20 PM ET",
-          "paper_exit_date": "2026-08-19"
+          "paper_exit_date": "2026-08-19",
+          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
         },
         {
           "rank": 2,
@@ -8847,7 +8849,7 @@
           "live_price": 77.57,
           "live_pct": -0.51,
           "live_dollar": null,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 3,
@@ -8866,14 +8868,14 @@
           },
           "prediction_price": 35.62,
           "position_cost": 98.45,
-          "days_held": 0,
+          "days_held": 1,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "live_price": 35.49,
-          "live_pct": -0.81,
-          "live_dollar": -0.8,
-          "price_updated": "6:00 PM ET"
+          "live_price": 35.28,
+          "live_pct": -1.38,
+          "live_dollar": -1.36,
+          "price_updated": "12:59 PM ET"
         }
       ],
       "bench_candidates": [
@@ -8895,7 +8897,7 @@
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
           "live_price": 108.0,
           "live_pct": -1.06,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 5,
@@ -8914,7 +8916,7 @@
           },
           "live_price": 220.22,
           "live_pct": 1.79,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 6,
@@ -8933,7 +8935,7 @@
           },
           "live_price": 37.56,
           "live_pct": 1.4,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 7,
@@ -8952,7 +8954,7 @@
           },
           "live_price": 79.41,
           "live_pct": 0.3,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 8,
@@ -8971,7 +8973,7 @@
           },
           "live_price": 189.93,
           "live_pct": 1.23,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 9,
@@ -8990,7 +8992,7 @@
           },
           "live_price": 89.21,
           "live_pct": 2.22,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 10,
@@ -9009,7 +9011,7 @@
           },
           "live_price": 182.36,
           "live_pct": -0.21,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 11,
@@ -9028,7 +9030,7 @@
           },
           "live_price": 25.86,
           "live_pct": 2.82,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 12,
@@ -9047,7 +9049,7 @@
           },
           "live_price": 37.51,
           "live_pct": 1.13,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 13,
@@ -9066,7 +9068,7 @@
           },
           "live_price": 45.3,
           "live_pct": -0.02,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 14,
@@ -9085,7 +9087,7 @@
           },
           "live_price": 23.01,
           "live_pct": -2.54,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 15,
@@ -9104,7 +9106,7 @@
           },
           "live_price": 573.72,
           "live_pct": -0.1,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 16,
@@ -9123,7 +9125,7 @@
           },
           "live_price": 144.38,
           "live_pct": 0.65,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 17,
@@ -9142,7 +9144,7 @@
           },
           "live_price": 36.4,
           "live_pct": 5.05,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 18,
@@ -9161,7 +9163,7 @@
           },
           "live_price": 26.59,
           "live_pct": 1.49,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 19,
@@ -9180,7 +9182,7 @@
           },
           "live_price": 30.33,
           "live_pct": 1.17,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         },
         {
           "rank": 20,
@@ -9199,7 +9201,7 @@
           },
           "live_price": 18.57,
           "live_pct": -3.38,
-          "price_updated": "6:00 PM ET"
+          "price_updated": "11:00 PM ET"
         }
       ],
       "pool_shortfall_note": null,
@@ -9244,14 +9246,669 @@
       "total_predictions": 41,
       "days_tracked": 14,
       "total_contributed": 300.0,
-      "current_equity": 293.96,
-      "net_trading_gain": -6.04,
-      "net_trading_gain_pct": -2.01,
+      "current_equity": 294.19,
+      "net_trading_gain": -5.81,
+      "net_trading_gain_pct": -1.94,
       "closed_rounds": [],
-      "prices_last_updated": "6:00 PM ET",
-      "prices_after_hours": true,
+      "prices_last_updated": "12:59 PM ET",
+      "prices_after_hours": false,
       "spy_live_price": 769.06,
       "spy_live_pct": 0.26
+    },
+    {
+      "date": "2026-08-20",
+      "regime": "Market regime OK \u2014 SPY -0.37%",
+      "trading_skipped": false,
+      "max_hold_days": 3,
+      "spy_regime_pct": -0.00371,
+      "top_sectors": [
+        {
+          "etf": "XLV",
+          "name": "Healthcare",
+          "pct": 4.3
+        },
+        {
+          "etf": "XLE",
+          "name": "Energy",
+          "pct": 4.18
+        },
+        {
+          "etf": "XLP",
+          "name": "Consumer Staples",
+          "pct": 1.72
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "MRNA",
+          "pct": 176.97,
+          "signals": {
+            "accumulation": 0.648,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 6.0,
+            "relative_strength_pct": 3.95
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 444,
+          "eligible_pool_size": 622,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "EL",
+          "pct": 16.3,
+          "signals": {
+            "accumulation": 0.871,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": -4.0
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 235,
+          "eligible_pool_size": 622,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "HL",
+          "pct": 14.43,
+          "signals": {
+            "accumulation": 1.229,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": 1.07
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 64,
+          "eligible_pool_size": 622,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "HIMS",
+          "pct": 13.51,
+          "signals": {
+            "accumulation": 0.371,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -10.23
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 605,
+          "eligible_pool_size": 622,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CDE",
+          "pct": 13.07,
+          "signals": {
+            "accumulation": 0.98,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -0.38
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 166,
+          "eligible_pool_size": 622,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "MRK",
+          "pct": 12.6,
+          "signals": {
+            "accumulation": 1.219,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 9.0,
+            "relative_strength_pct": 3.64
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 67,
+          "eligible_pool_size": 622,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "WRBY",
+          "pct": 11.28,
+          "signals": {
+            "accumulation": 0.8,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.28
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 300,
+          "eligible_pool_size": 622,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "ARE",
+          "pct": 10.27,
+          "signals": {
+            "accumulation": 0.915,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -4.74
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 197,
+          "eligible_pool_size": 622,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "MRVL",
+          "pct": 9.85,
+          "signals": {
+            "accumulation": 1.06,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": 1.74
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 126,
+          "eligible_pool_size": 622,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "PPC",
+          "pct": 9.79,
+          "signals": {
+            "accumulation": 0.728,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 6.07
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 372,
+          "eligible_pool_size": 622,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably lower accumulation (0.88 vs our picks' 3.41) \u2014 possible signal to decrease weighting on accumulation. Actual top movers had notably lower relative strength (-0.06 vs our picks' 3.05) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably higher news sentiment (3.30 vs our picks' 0.33) \u2014 possible signal to increase weighting on news sentiment. MRNA (#444 of 622), EL (#235 of 622), HL (#64 of 622), HIMS (#605 of 622), CDE (#166 of 622), MRK (#67 of 622), WRBY (#300 of 622), ARE (#197 of 622), MRVL (#126 of 622), PPC (#372 of 622) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "NTST",
+          "score": 0.774,
+          "entry_price": 20.66,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 19.1x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 19.067,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.0,
+            "gap_pct": 0.73
+          },
+          "prediction_price": 20.53,
+          "position_cost": 96.66,
+          "days_held": 0,
+          "skipped_reason": null,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0015,
+          "paper_trail_floor_active": false,
+          "live_price": 20.68,
+          "live_pct": 0.1,
+          "live_dollar": 0.1,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "ADC",
+          "score": 0.377,
+          "entry_price": 74.39,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 7.4x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+0.0% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 7.375,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.04,
+            "gap_pct": 0.15
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 74.47,
+          "live_pct": 0.11,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "WBS",
+          "score": 0.352,
+          "entry_price": 77.57,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 7.1x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 7.137,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.9,
+            "gap_pct": null
+          },
+          "live_price": 77.57,
+          "live_pct": 0.0,
+          "live_dollar": null,
+          "price_updated": "12:59 PM ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 4,
+          "ticker": "EPRT",
+          "score": 0.324,
+          "entry_price": 31.1,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 5.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 5.458,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.53,
+            "gap_pct": -0.1
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 31.25,
+          "live_pct": 0.48,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "CURB",
+          "score": 0.323,
+          "entry_price": 29.97,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 5.9x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 5.911,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.4,
+            "gap_pct": 0.6
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 29.59,
+          "live_pct": -1.27,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "MRK",
+          "score": 0.308,
+          "entry_price": 152.2,
+          "headline": "After Moderna stock surge of 177% on cancer drug breakthrough, here's what Wall Street thinks happens next",
+          "sector": "",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+14.5% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cAfter Moderna stock surge of 177% on cancer drug breakthrough, here's what Wall Street thinks happens next\u201d",
+          "signals": {
+            "accumulation": 1.65,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 6.0,
+            "relative_strength_pct": 14.5,
+            "gap_pct": -3.46
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 151.6,
+          "live_pct": -0.39,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "AKR",
+          "score": 0.287,
+          "entry_price": 21.18,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 4.2x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 4.162,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.32,
+            "gap_pct": 0.09
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 20.97,
+          "live_pct": -1.02,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "SBRA",
+          "score": 0.264,
+          "entry_price": 20.54,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 3.2x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+3.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 3.24,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.27,
+            "gap_pct": -0.39
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 20.61,
+          "live_pct": 0.37,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 9,
+          "ticker": "CTRE",
+          "score": 0.254,
+          "entry_price": 39.82,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 3.3x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 3.349,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.69,
+            "gap_pct": -0.55
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 40.0,
+          "live_pct": 0.45,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 10,
+          "ticker": "CPB",
+          "score": 0.25,
+          "entry_price": 23.81,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 2.3x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+5.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 2.295,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 5.35,
+            "gap_pct": -1.55
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 23.57,
+          "live_pct": -1.03,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 11,
+          "ticker": "A",
+          "score": 0.224,
+          "entry_price": 155.41,
+          "headline": "MDT vs. A: Which Stock Should Value Investors Buy Now?",
+          "sector": "",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+4.8% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cMDT vs. A: Which Stock Should Value Investors Buy Now?\u201d",
+          "signals": {
+            "accumulation": 1.671,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 4.84,
+            "gap_pct": -2.79
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 157.88,
+          "live_pct": 1.59,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 12,
+          "ticker": "VTR",
+          "score": 0.22,
+          "entry_price": 91.85,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 2.0x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+3.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.953,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.19,
+            "gap_pct": -0.24
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 92.86,
+          "live_pct": 1.1,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 13,
+          "ticker": "TTEK",
+          "score": 0.214,
+          "entry_price": 36.6,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+3.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.751,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.31,
+            "gap_pct": -0.63
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 36.79,
+          "live_pct": 0.53,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 14,
+          "ticker": "ABR",
+          "score": 0.204,
+          "entry_price": 5.17,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.703,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.35,
+            "gap_pct": -3.87
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 5.09,
+          "live_pct": -1.45,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 15,
+          "ticker": "LEG",
+          "score": 0.203,
+          "entry_price": 9.68,
+          "headline": "New Strong Buy Stocks for August 20th",
+          "sector": "",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.8% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cNew Strong Buy Stocks for August 20th\u201d",
+          "signals": {
+            "accumulation": 1.577,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 8.0,
+            "relative_strength_pct": 2.76,
+            "gap_pct": -1.45
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 9.46,
+          "live_pct": -2.27,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 16,
+          "ticker": "TMUS",
+          "score": 0.201,
+          "entry_price": 182.36,
+          "headline": "T-Mobile (TMUS), The Market\u2019s Favorite Telecom Just Got Downgraded \u2014 and the Reason Should Worry Bulls",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+3.0% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.478,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -2.0,
+            "relative_strength_pct": 2.95,
+            "gap_pct": 0.11
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 180.51,
+          "live_pct": -1.01,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 17,
+          "ticker": "TAP",
+          "score": 0.201,
+          "entry_price": 42.49,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.646,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.21,
+            "gap_pct": -2.54
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 42.18,
+          "live_pct": -0.73,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 18,
+          "ticker": "DHR",
+          "score": 0.199,
+          "entry_price": 211.5,
+          "headline": "Danaher (DHR) Jumped, But What Is Drawing Fresh Attention Now?",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.8% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cDanaher (DHR) Jumped, But What Is Drawing Fresh Attention Now?\u201d",
+          "signals": {
+            "accumulation": 1.455,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 2.77,
+            "gap_pct": -3.97
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 218.11,
+          "live_pct": 3.12,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 19,
+          "ticker": "BF-B",
+          "score": 0.199,
+          "entry_price": 28.43,
+          "headline": null,
+          "sector": "",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.696,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.83,
+            "gap_pct": -3.48
+          },
+          "skipped_reason": "Buy order failed: {\"code\":42210000,\"message\":\"asset \\\"BF-B\\\" not found\"}",
+          "live_price": 28.34,
+          "live_pct": -0.32,
+          "price_updated": "12:59 PM ET"
+        },
+        {
+          "rank": 20,
+          "ticker": "LEN",
+          "score": 0.198,
+          "entry_price": 87.3,
+          "headline": "LSI (LYTS) Misses Q4 Earnings Estimates",
+          "sector": "",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.5% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.495,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -2.0,
+            "relative_strength_pct": 2.46,
+            "gap_pct": 0.79
+          },
+          "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"96.67\",\"message\":\"insufficient buying power\"}",
+          "live_price": 85.95,
+          "live_pct": -1.55,
+          "price_updated": "12:59 PM ET"
+        }
+      ],
+      "pool_shortfall_note": null,
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "UGI",
+          "move_pct": 0.3,
+          "dollar_change": 0.29,
+          "position_size": 96.4,
+          "actual_rank": 339,
+          "total_ranked": 622,
+          "signals": {
+            "accumulation": 3.795,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 9.19,
+            "gap_pct": 0.29
+          },
+          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through. The stock itself ranked #339 of 622 tracked that day, for context."
+        },
+        {
+          "rank": 2,
+          "ticker": "WBS",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 100.0,
+          "actual_rank": 433,
+          "total_ranked": 622,
+          "signals": {
+            "accumulation": 4.069,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.99,
+            "gap_pct": 0.08
+          },
+          "postmortem": null
+        },
+        {
+          "rank": 3,
+          "ticker": "PPL",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 98.45,
+          "actual_rank": 420,
+          "total_ranked": 622,
+          "signals": {
+            "accumulation": 2.377,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 0.96,
+            "gap_pct": 0.81
+          },
+          "postmortem": null
+        }
+      ],
+      "hit_rate": 0.0,
+      "total_hits": 0,
+      "total_predictions": 47,
+      "days_tracked": 16,
+      "total_contributed": 300.0,
+      "current_equity": 293.67,
+      "net_trading_gain": -6.33,
+      "net_trading_gain_pct": -2.11,
+      "closed_rounds": [],
+      "prices_last_updated": "12:59 PM ET",
+      "prices_after_hours": false,
+      "spy_live_price": 766.38,
+      "spy_live_pct": -0.47
     }
   ]
 }
