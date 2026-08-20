@@ -550,7 +550,7 @@
       <div class="card-title">How the Model Works — v2</div>
       <div class="model-section">
         <h3>Overview</h3>
-        <p>Each morning before market open, the predictor runs a series of checks before selecting any stocks. It first checks whether the overall market is healthy enough to trade. If the market passes, it scores the full S&P Composite 1500 (~1,500 large/mid/small-cap stocks) on four weighted signals, then selects the top 3 most likely to move during the upcoming session. Stocks with upcoming earnings or excessive recent volatility are excluded entirely. (An overnight gap-down reranking boost also lives in this step — currently disabled, see below.)</p>
+        <p>Each morning before market open, the predictor runs a series of checks before selecting any stocks. It first checks whether the overall market is healthy enough to trade. If the market passes, it scores the full S&P Composite 1500 (~1,500 large/mid/small-cap stocks) on four weighted signals, then selects the top 3 most likely to move during the upcoming session. Stocks with upcoming earnings, excessive recent volatility, or a pending merger are excluded entirely. (An overnight gap-down reranking boost also lives in this step — currently disabled, see below.)</p>
       </div>
       <div class="model-section">
         <h3>Step 1 — Market Regime Check</h3>
@@ -567,6 +567,10 @@
       <div class="model-section">
         <h3>Step 4 — Volatility Exclusion <span style="font-weight:normal; font-size:0.8em; color:var(--text-secondary,#888);">(added 2026-07-29)</span></h3>
         <p>Any candidate whose trailing 10-day Average True Range exceeds 4.0% of its price is excluded, regardless of how well it otherwise scores. Calibrated across 250 real trading days (714 real substitution-simulated trades, chronological train/validation split): the highest-volatility candidates lose noticeably more often than calmer ones without a corresponding gain in average return — a real cost to consistency with no offsetting upside, not just a correlation with rare big winners. Filtering them out and promoting the next-ranked candidate instead raised win rate from 71.7%/67.1% (train/validation) to 75.7%/80.1%, holding on both halves of the data, with average return essentially unchanged.</p>
+      </div>
+      <div class="model-section">
+        <h3>Step 5 — Corporate-Action Exclusion <span style="font-weight:normal; font-size:0.8em; color:var(--text-secondary,#888);">(added 2026-08-20)</span></h3>
+        <p>Any candidate that's the target of a pending or recently-settled merger is excluded entirely — no dated window like the earnings check above, any hit at all disqualifies. Added after a real incident: WBS (Webster Financial) was held through Santander's $48.75-cash + 2.0548-ADS acquisition closing, got delisted mid-hold, and every sell attempt was rejected by the broker as "asset not active" — the position sat stuck with no organic exit for 1–2 weeks. Checked directly against the broker's own live corporate-actions data (same account this bot already trades through), so it's checking real, current deal status rather than a stale calendar. A scale check across the full 1,500-ticker universe over ~7 months found only 2 such events — genuinely rare, so this stays a simple exclusion rather than something more elaborate.</p>
       </div>
       <div class="model-section">
         <h3>Scoring Signals</h3>
@@ -614,6 +618,7 @@
           <div class="rule"><div class="rule-icon">📅</div><div class="rule-text"><strong>No trades on bearish market days</strong> — if SPY is down more than 1.5% from prior close, no positions are opened that day.</div></div>
           <div class="rule"><div class="rule-icon">📊</div><div class="rule-text"><strong>Earnings blackout</strong> — stocks with earnings in the next 3 days are never picked regardless of their score.</div></div>
           <div class="rule"><div class="rule-icon">〰️</div><div class="rule-text"><strong>Volatility exclusion</strong> (added 2026-07-29) — a candidate with trailing 10-day ATR above 4.0% of its price is skipped and the next-ranked candidate is promoted instead. Backtested across 714 real substitution-simulated trades over 250 days: raised win rate from 71.7%/67.1% (train/validation) to 75.7%/80.1%, with average return essentially unchanged — high-volatility picks lose more often without winning bigger on average to compensate.</div></div>
+          <div class="rule"><div class="rule-icon">🏦</div><div class="rule-text"><strong>Corporate-action exclusion</strong> (added 2026-08-20) — a candidate that's the target of a pending or recently-settled merger is skipped entirely, any hit disqualifies (no dated window). Added after WBS was held through the Santander acquisition closing, got delisted mid-hold, and sat stuck for 1–2 weeks with no organic exit since every sell attempt was rejected by the broker. Checked against the broker's own live corporate-actions data.</div></div>
         </div>
       </div>
       <div class="model-section">
