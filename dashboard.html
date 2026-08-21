@@ -145,7 +145,7 @@
   .explainer-box { display: none; font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
   .explainer-box.open { display: block; }
   .why-not-cell { white-space: normal; max-width: 150px; }
-  .why-not-toggle { font-size: 11px; color: var(--accent); cursor: pointer; user-select: none; }
+  .why-not-toggle { font-size: 11px; color: var(--accent); cursor: pointer; user-select: none; white-space: nowrap; }
   .why-not-toggle:hover { text-decoration: underline; }
   .why-not-text { display: none; font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 4px; white-space: normal; }
   .why-not-text.open { display: block; }
@@ -1384,7 +1384,7 @@ function wrapPositionsTable(rowsHtml) {
       <th style="width:24px"></th><th style="width:80px">#</th><th style="width:15%">Ticker</th>
       <th style="width:13%">Price</th><th style="width:10%">Entry</th>
       <th style="width:10%">Change</th><th style="width:10%">Score</th>
-      <th>Status</th><th style="width:60px">Details</th>
+      <th>Status</th><th style="width:80px">Details</th>
     </tr></thead>
     <tbody>${rowsHtml}</tbody>
   </table></div>`;
@@ -1538,7 +1538,7 @@ function buildPickCards(predictions, idPrefix) {
         ${topDollarLine != null ? `<div style="font-size:11px;color:var(--${topDollarLine > 0 ? 'green' : topDollarLine < 0 ? 'red' : 'muted'})">${fmtDollar(topDollarLine)}</div>` : ''}
       </td>
       <td style="color:var(--muted)">${!isSkipped && bottomLeftValue != null ? fmtPrice(bottomLeftValue) : '—'}</td>
-      <td class="${isSkipped ? 'td-flat' : pnlClass(pnlPct)}">${isSkipped ? '—' : fmt(pnlPct)}</td>
+      <td class="${isSkipped ? 'td-flat' : moveClass(pnlPct)}">${isSkipped ? '—' : fmt(pnlPct)}</td>
       <td style="color:var(--muted)">${score.toFixed(3)}<div style="font-size:10px">${pct.toFixed(0)}% signal</div></td>
       <td class="td-status-text" style="font-size:12px" title="${statusText || ''}">${statusText || '—'}</td>
       <td class="why-not-cell">
