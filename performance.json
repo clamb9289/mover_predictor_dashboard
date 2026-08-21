@@ -8162,7 +8162,7 @@
           "live_price": 77.57,
           "live_pct": -0.93,
           "live_dollar": -0.94,
-          "price_updated": "11:22 AM ET",
+          "price_updated": "11:24 AM ET",
           "prediction_price": 79.0,
           "position_cost": 100.54,
           "days_held": 3,
@@ -8612,7 +8612,7 @@
       "days_tracked": 13,
       "spy_live_price": 767.45,
       "spy_live_pct": -0.67,
-      "prices_last_updated": "11:22 AM ET",
+      "prices_last_updated": "11:24 AM ET",
       "prices_after_hours": false,
       "total_contributed": 300.0,
       "current_equity": 297.1,
@@ -8875,7 +8875,13 @@
           "live_price": 34.74,
           "live_pct": -2.92,
           "live_dollar": -2.87,
-          "price_updated": "11:22 AM ET"
+          "price_updated": "11:22 AM ET",
+          "paper_exit_price": 34.7,
+          "paper_exit_pct": -3.02,
+          "paper_exit_dollar": -2.97,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "11:23 AM ET",
+          "paper_exit_date": "2026-08-21"
         }
       ],
       "bench_candidates": [
@@ -9250,7 +9256,7 @@
       "net_trading_gain": -5.81,
       "net_trading_gain_pct": -1.94,
       "closed_rounds": [],
-      "prices_last_updated": "11:22 AM ET",
+      "prices_last_updated": "11:23 AM ET",
       "prices_after_hours": false,
       "spy_live_price": 769.06,
       "spy_live_pct": 0.26
@@ -9454,10 +9460,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0048,
           "paper_trail_floor_active": false,
-          "live_price": 20.47,
-          "live_pct": -0.92,
-          "live_dollar": -0.89,
-          "price_updated": "11:22 AM ET"
+          "live_price": 20.43,
+          "live_pct": -1.11,
+          "live_dollar": -1.07,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 2,
@@ -9905,7 +9911,7 @@
       "net_trading_gain": -7.1,
       "net_trading_gain_pct": -2.37,
       "closed_rounds": [],
-      "prices_last_updated": "11:22 AM ET",
+      "prices_last_updated": "11:24 AM ET",
       "prices_after_hours": false,
       "spy_live_price": 762.6,
       "spy_live_pct": -0.96
@@ -10091,7 +10097,7 @@
           "rank": 1,
           "ticker": "PCG",
           "score": 0.726,
-          "entry_price": 17.96,
+          "entry_price": 17.55,
           "headline": null,
           "sector": "Utilities",
           "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+3.5% relative strength), suggesting individual demand beyond just sector momentum.",
@@ -10102,10 +10108,13 @@
             "relative_strength_pct": 3.48,
             "gap_pct": 0.56
           },
-          "live_price": 17.57,
-          "live_pct": -2.2,
-          "live_dollar": null,
-          "price_updated": "11:22 AM ET"
+          "live_price": 17.56,
+          "live_pct": 0.03,
+          "live_dollar": 0.03,
+          "price_updated": "11:24 AM ET",
+          "prediction_price": 17.96,
+          "position_cost": 95.47,
+          "days_held": 0
         },
         {
           "rank": 2,
@@ -10123,9 +10132,10 @@
             "gap_pct": 0.82
           },
           "live_price": 11.23,
-          "live_pct": 2.56,
+          "live_pct": 2.51,
           "live_dollar": null,
-          "price_updated": "11:22 AM ET"
+          "price_updated": "11:24 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 3,
@@ -10142,10 +10152,11 @@
             "relative_strength_pct": -0.12,
             "gap_pct": 0.3
           },
-          "live_price": 57.56,
-          "live_pct": 2.21,
+          "live_price": 57.55,
+          "live_pct": 2.18,
           "live_dollar": null,
-          "price_updated": "11:22 AM ET"
+          "price_updated": "11:24 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         }
       ],
       "bench_candidates": [
@@ -10166,7 +10177,7 @@
           },
           "live_price": 9.48,
           "live_pct": 1.5,
-          "price_updated": "11:22 AM ET"
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 5,
@@ -10183,9 +10194,9 @@
             "relative_strength_pct": -2.09,
             "gap_pct": 0.0
           },
-          "live_price": 13.73,
-          "live_pct": -0.07,
-          "price_updated": "11:22 AM ET"
+          "live_price": 13.74,
+          "live_pct": -0.0,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 6,
@@ -10203,8 +10214,8 @@
             "gap_pct": -0.07
           },
           "live_price": 14.77,
-          "live_pct": 0.0,
-          "price_updated": "11:22 AM ET"
+          "live_pct": 0.03,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 7,
@@ -10221,9 +10232,9 @@
             "relative_strength_pct": 1.7,
             "gap_pct": -0.19
           },
-          "live_price": 46.64,
-          "live_pct": -0.24,
-          "price_updated": "11:22 AM ET"
+          "live_price": 46.63,
+          "live_pct": -0.26,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 8,
@@ -10240,9 +10251,9 @@
             "relative_strength_pct": 5.32,
             "gap_pct": 0.75
           },
-          "live_price": 305.07,
-          "live_pct": 0.36,
-          "price_updated": "11:22 AM ET"
+          "live_price": 305.17,
+          "live_pct": 0.39,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 9,
@@ -10260,8 +10271,8 @@
             "gap_pct": 0.03
           },
           "live_price": 143.82,
-          "live_pct": 0.59,
-          "price_updated": "11:22 AM ET"
+          "live_pct": 0.6,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 10,
@@ -10278,9 +10289,9 @@
             "relative_strength_pct": -2.23,
             "gap_pct": 0.07
           },
-          "live_price": 72.31,
+          "live_price": 72.3,
           "live_pct": 0.03,
-          "price_updated": "11:22 AM ET"
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 11,
@@ -10297,9 +10308,9 @@
             "relative_strength_pct": 8.16,
             "gap_pct": -0.36
           },
-          "live_price": 33.24,
-          "live_pct": 1.03,
-          "price_updated": "11:22 AM ET"
+          "live_price": 33.26,
+          "live_pct": 1.08,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 12,
@@ -10316,9 +10327,9 @@
             "relative_strength_pct": -6.84,
             "gap_pct": 0.92
           },
-          "live_price": 132.69,
-          "live_pct": 2.08,
-          "price_updated": "11:22 AM ET"
+          "live_price": 132.78,
+          "live_pct": 2.15,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 13,
@@ -10335,9 +10346,9 @@
             "relative_strength_pct": -1.39,
             "gap_pct": 0.94
           },
-          "live_price": 335.69,
-          "live_pct": 1.37,
-          "price_updated": "11:22 AM ET"
+          "live_price": 335.88,
+          "live_pct": 1.43,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 14,
@@ -10354,9 +10365,9 @@
             "relative_strength_pct": 1.36,
             "gap_pct": 0.39
           },
-          "live_price": 210.51,
-          "live_pct": -0.24,
-          "price_updated": "11:22 AM ET"
+          "live_price": 210.54,
+          "live_pct": -0.23,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 15,
@@ -10373,9 +10384,9 @@
             "relative_strength_pct": 8.31,
             "gap_pct": -0.14
           },
-          "live_price": 216.2,
-          "live_pct": 1.39,
-          "price_updated": "11:22 AM ET"
+          "live_price": 216.44,
+          "live_pct": 1.5,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 16,
@@ -10392,9 +10403,9 @@
             "relative_strength_pct": -0.04,
             "gap_pct": 0.05
           },
-          "live_price": 90.03,
-          "live_pct": -1.53,
-          "price_updated": "11:22 AM ET"
+          "live_price": 89.99,
+          "live_pct": -1.57,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 17,
@@ -10411,9 +10422,9 @@
             "relative_strength_pct": -3.08,
             "gap_pct": 0.2
           },
-          "live_price": 100.18,
+          "live_price": 100.19,
           "live_pct": -0.05,
-          "price_updated": "11:22 AM ET"
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 18,
@@ -10430,9 +10441,9 @@
             "relative_strength_pct": -2.29,
             "gap_pct": 0.34
           },
-          "live_price": 89.11,
-          "live_pct": 0.04,
-          "price_updated": "11:22 AM ET"
+          "live_price": 89.07,
+          "live_pct": -0.01,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 19,
@@ -10449,9 +10460,9 @@
             "relative_strength_pct": 1.05,
             "gap_pct": 0.42
           },
-          "live_price": 81.44,
-          "live_pct": -2.07,
-          "price_updated": "11:22 AM ET"
+          "live_price": 81.36,
+          "live_pct": -2.16,
+          "price_updated": "11:24 AM ET"
         },
         {
           "rank": 20,
@@ -10468,9 +10479,9 @@
             "relative_strength_pct": 3.08,
             "gap_pct": 0.12
           },
-          "live_price": 55.15,
-          "live_pct": 9.08,
-          "price_updated": "11:22 AM ET"
+          "live_price": 55.02,
+          "live_pct": 8.82,
+          "price_updated": "11:24 AM ET"
         }
       ],
       "pool_shortfall_note": null,
@@ -10515,13 +10526,14 @@
       "total_predictions": 50,
       "days_tracked": 17,
       "total_contributed": 300.0,
-      "current_equity": 290.95,
-      "net_trading_gain": -9.05,
-      "net_trading_gain_pct": -3.02,
-      "spy_live_price": 765.72,
-      "spy_live_pct": 0.37,
-      "prices_last_updated": "11:22 AM ET",
-      "prices_after_hours": false
+      "current_equity": 290.67,
+      "net_trading_gain": -9.33,
+      "net_trading_gain_pct": -3.11,
+      "spy_live_price": 765.82,
+      "spy_live_pct": 0.39,
+      "prices_last_updated": "11:24 AM ET",
+      "prices_after_hours": false,
+      "closed_rounds": []
     }
   ]
 }
