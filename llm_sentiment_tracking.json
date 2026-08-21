@@ -1,6 +1,6 @@
 {
   "date": "2026-08-21",
-  "generated_at": "2026-08-21T13:43:29.288478+00:00",
+  "generated_at": "2026-08-21T14:04:24.004111+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
@@ -14,7 +14,7 @@
       "ILMN",
       "UNP"
     ],
-    "reasoning": "CNH pairs a rank-2 quant score with the cleanest fundamental catalyst: an earnings beat and raised FY26 guidance signaling an ag-cycle bottom. ILMN ranks mid-pack quantitatively but has the strongest news profile \u2014 52-week highs on a beat-and-raise plus genomics tailwinds \u2014 so I upgrade it. UNP offers a real regulatory catalyst with the STB reopening the Norfolk Southern merger review. I skip top-ranked PCG (wildfire liability overhang and hedging put flow) and avoid OGN/AES/LNTH entirely since all three are near-complete fixed-price buyouts with capped upside."
+    "reasoning": "CNH (rank 2) and ILMN both have genuine fundamental catalysts: CNH beat and raised guidance signaling an ag cycle bottom, and Illumina raised 2026 outlook while breaking to 52-week highs with institutional accumulation. I skip rank-1 PCG because its news is dominated by California wildfire liability overhang and two-sided options hedging, and skip KR (rank 3) whose feed is almost entirely routine 13F filings with no catalyst; instead UNP offers a real event driver in the STB resuming the Norfolk Southern merger review plus earnings strength."
   },
   "tickers": {
     "PCG": {
@@ -24,7 +24,7 @@
       "total_distinct_found": 62,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Mixed: DOE $271M Diablo Canyon award and Dalio 13F new large buy plus UBS Buy reiteration are positive, but wildfire liability/lobbying overhang and hedging put flow temper it."
+      "reasoning": "Mixed: DOE $271M Diablo Canyon award and Dalio 13F new large buy plus UBS Buy reiteration are positive, but persistent California wildfire liability overhang and hedging put flow temper it."
     },
     "CNH": {
       "rank": 2,
@@ -33,16 +33,16 @@
       "total_distinct_found": 61,
       "llm_score": 3,
       "materiality": "high",
-      "reasoning": "Q2 EPS beat with raised FY26 outlook drove an ~11% surge and pulled Deere higher, signaling the ag downturn may be bottoming, though earnings still down YoY."
+      "reasoning": "Q2 EPS beat with raised FY26 outlook drove an 11% surge and even lifted Deere, signaling ag equipment cycle bottoming, though GAAP EPS still down YoY and analysts remain neutral."
     },
     "KR": {
       "rank": 3,
       "headline_count": 40,
       "mentions_24h": 8,
       "total_distinct_found": 68,
-      "llm_score": 1,
+      "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Mostly routine 13F stakes and 'bargain/Buy rating' commentary; no material operating news, though holding the 200WMA and defensive appeal are mildly supportive."
+      "reasoning": "Mostly routine 13F filings, generic 'great choice'/value articles and unrelated retail sector news; no company-specific catalyst."
     },
     "LEG": {
       "rank": 4,
@@ -51,7 +51,7 @@
       "total_distinct_found": 60,
       "llm_score": -1,
       "materiality": "medium",
-      "reasoning": "Sales down ~6% YoY and soft Q2 with stock dropping; pending Somnigroup merger approved by shareholders caps upside, making it a fixed-price low-upside situation."
+      "reasoning": "Q2 sales down 5.5% and EPS down 13% with stock dropping despite estimate beat; pending Somnigroup merger at a low price caps upside."
     },
     "OGN": {
       "rank": 5,
@@ -60,7 +60,7 @@
       "total_distinct_found": 58,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Sun Pharma all-cash buyout already approved by shareholders and near completion, so upside is capped despite weak Q2 earnings."
+      "reasoning": "Shareholders approved Sun Pharma all-cash buyout, so the stock is deal-pinned with limited further upside despite weak Q2 results."
     },
     "AES": {
       "rank": 6,
@@ -69,7 +69,7 @@
       "total_distinct_found": 61,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Trading at $14.75 vs a $15.00 take-private offer with FERC as last hurdle \u2014 merger arb with minimal remaining upside despite a strong Q2 beat."
+      "reasoning": "Trading at $14.75 against a fixed $15.00 take-private with only FERC left; arbitrage-capped despite the strong Q2 EPS beat."
     },
     "OHI": {
       "rank": 7,
@@ -78,16 +78,16 @@
       "total_distinct_found": 60,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Q2 FFO beat, raised guidance and dividend hike are positive, offset by aggressive $45 put sweeps, tenant doubts and a Seeking Alpha downgrade."
+      "reasoning": "Q2 FFO/revenue beat, raised AFFO guidance and a dividend hike offset heavy put sweeps at $45 and a Seeking Alpha downgrade."
     },
     "UNP": {
       "rank": 8,
       "headline_count": 40,
-      "mentions_24h": 20,
+      "mentions_24h": 19,
       "total_distinct_found": 64,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "STB resumed the Norfolk Southern merger review (removed from abeyance) and a $91M fuel-surcharge surplus boosted earnings, though the surcharge story invites regulatory scrutiny."
+      "reasoning": "STB resumed the Norfolk Southern merger review with a procedural schedule, and $91M fuel surcharge surplus boosted earnings, though the surcharge story carries regulatory/optics risk."
     },
     "PG": {
       "rank": 9,
@@ -96,7 +96,7 @@
       "total_distinct_found": 78,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Headlines are largely routine 13F filings, insider stock grants and generic dividend-king commentary, with some chatter about weak price action."
+      "reasoning": "Only routine institutional filings, insider stock grants and generic dividend-king commentary; weak consumer read-through from Walmart is a mild negative."
     },
     "TECH": {
       "rank": 10,
@@ -105,25 +105,25 @@
       "total_distinct_found": 60,
       "llm_score": -1,
       "materiality": "low",
-      "reasoning": "Most items are generic 'tech stock' macro selloff noise; Bio-Techne's own Q4 met estimates with revenue beat and stock rose, so modest net."
+      "reasoning": "Bio-Techne's Q4 met estimates with revenue beat, but the feed is dominated by unrelated broad tech-selloff headlines and one 'approach with caution' valuation piece."
     },
     "DOW": {
       "rank": 11,
       "headline_count": 40,
-      "mentions_24h": 25,
+      "mentions_24h": 26,
       "total_distinct_found": 80,
       "llm_score": -1,
       "materiality": "medium",
-      "reasoning": "Mostly index noise, but DOW-specific chatter flags weak earnings expectations and 'retain' ratings, partly offset by firmer petrochemical feedstock pricing."
+      "reasoning": "Most headlines are index noise; the DOW-specific reads are 'retain' ratings plus feedstock tightness helping pricing, offset by bearish chart/earnings skepticism."
     },
     "APO": {
       "rank": 12,
       "headline_count": 40,
-      "mentions_24h": 9,
+      "mentions_24h": 10,
       "total_distinct_found": 67,
       "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "Stock down ~5% amid private-credit/AI-debt risk scrutiny and CFO share sales, with the Nvidia $500B financing narrative questioned."
+      "reasoning": "Confirmed data breach, CFO share sales, a ~5% drop and questions over AI-related private credit exposure outweigh the routine institutional buying."
     },
     "AXP": {
       "rank": 13,
@@ -132,16 +132,16 @@
       "total_distinct_found": 84,
       "llm_score": -1,
       "materiality": "low",
-      "reasoning": "Down on Walmart-driven consumer-confidence read-through and 13% YTD underperformance; other news is routine 13Fs and marketing partnerships."
+      "reasoning": "Stock down 13% YTD and off 2.6% on weak-consumer read-through from Walmart; only minor positives like the St Andrews partnership."
     },
     "FANG": {
       "rank": 14,
       "headline_count": 40,
-      "mentions_24h": 9,
+      "mentions_24h": 8,
       "total_distinct_found": 62,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Fresh 52-week highs and Solitude pipeline FID are positive, offset by a Morgan Stanley downgrade to Equal-Weight and insider selling."
+      "reasoning": "Fresh 52-week highs and the Solitude pipeline FID are positive, but a Morgan Stanley downgrade to Equal-Weight and insider selling cut the score."
     },
     "ILMN": {
       "rank": 15,
@@ -150,25 +150,25 @@
       "total_distinct_found": 63,
       "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "Stock at 52-week highs on strong Q2 and raised 2026 outlook, plus PrimeCap boosting position and precision-medicine tailwinds from MRK/MRNA vaccine news."
+      "reasoning": "Strong Q2 with raised 2026 outlook, new 52-week highs, PrimeCap boosting stake and Zacks Strong Buy upgrade signal genuine momentum."
     },
     "SO": {
       "rank": 16,
       "headline_count": 40,
-      "mentions_24h": 4,
+      "mentions_24h": 3,
       "total_distinct_found": 60,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Q2 EPS up 29% YoY but flat revenue, and most coverage suggests the stock is fully valued after a 68% five-year run."
+      "reasoning": "Q2 EPS up 29% but flat revenue, and most 'SO' headlines are false matches on the word 'so'; valuation seen as full after a 68% five-year run."
     },
     "LNTH": {
       "rank": 17,
       "headline_count": 40,
       "mentions_24h": 1,
       "total_distinct_found": 60,
-      "llm_score": 0,
+      "llm_score": -1,
       "materiality": "low",
-      "reasoning": "Curium's up-to-$8B go-private deal is agreed and shareholders are complaining about the price, capping forward upside despite an Alzheimer's tau FDA approval."
+      "reasoning": "Curium go-private deal caps upside and drew a B. Riley downgrade plus shareholder anger over the price, though the FDA tau imaging approval is a positive."
     },
     "ORLY": {
       "rank": 18,
@@ -177,7 +177,7 @@
       "total_distinct_found": 62,
       "llm_score": -1,
       "materiality": "medium",
-      "reasoning": "Shares slipped on Advance Auto Parts' comp-sales miss signaling constrained DIY consumer, and valuation is called rich on earnings."
+      "reasoning": "Stock traded lower on Advance Auto Parts' comp-sales miss showing constrained DIY consumer, with valuation flagged as rich on earnings."
     },
     "EVRG": {
       "rank": 19,
@@ -185,8 +185,8 @@
       "mentions_24h": 2,
       "total_distinct_found": 60,
       "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 beat with reaffirmed guidance and 3 GW of signed large loads/5 GW pipeline, though technicians flag repeated rejections at the 10 DMA."
+      "materiality": "low",
+      "reasoning": "Q2 beat with reaffirmed 6-8% long-term EPS growth and 3GW of large-load contracts, but charts show repeated sell signals below the 50 DMA."
     },
     "TGTX": {
       "rank": 20,
@@ -195,7 +195,7 @@
       "total_distinct_found": 58,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Sharp move on M&A speculation and unusual call buying, plus positive at-home BRIUMVI data, price-target hikes and 22% short interest \u2014 but the buyout is rumor only."
+      "reasoning": "Unconfirmed Betaville buyout chatter sparked a sharp move alongside positive BRIUMVI subcutaneous data and price target hikes, but rumor-driven gains are fragile."
     }
   }
 }
