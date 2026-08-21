@@ -65,12 +65,25 @@
      Today's Open Positions / Last Trading Session -- see buildPickCards()).
      Reuses the why-not-toggle/why-not-cell pattern already established by
      the Also Considered table for the expandable Details row. */
-  .positions-table td { vertical-align: top; }
+  /* table-layout:fixed -- 2026-08-21 fix: without this, a wide Details row
+     (badges/explainer text with nothing forcing them to wrap) could push
+     the WHOLE table wider than its container under the default auto
+     layout, triggering .table-wrap's horizontal scrollbar for every row,
+     not just the expanded one (reported live: header cut off mid-scroll).
+     Fixed layout makes column widths purely a function of the <th> widths
+     below, never of content, so long content wraps in place instead. */
+  .positions-table { table-layout: fixed; }
+  .positions-table td { vertical-align: top; word-wrap: break-word; overflow-wrap: break-word; }
   .positions-row td { border-top: 1px solid var(--border); padding-top: 10px; }
-  .td-status-dot { font-size: 14px; text-align: center; width: 20px; }
+  .td-status-dot { font-size: 14px; text-align: center; width: 24px; }
+  /* Status column: single-line ellipsis truncation rather than wrapping --
+     full text is already in Details (and in the title tooltip), so this
+     just needs to not visually collide with the Details column next to it
+     (reported live: long exit-reason text overlapped "Details ▾"). */
+  .td-status-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .positions-detail-row { display: none; }
   .positions-detail-row.open { display: table-row; }
-  .positions-detail-row td { font-size: 12px; color: var(--muted); line-height: 1.6; padding: 4px 8px 14px 28px; border-bottom: 1px solid var(--border); }
+  .positions-detail-row td { font-size: 12px; color: var(--muted); line-height: 1.6; padding: 4px 8px 14px 28px; border-bottom: 1px solid var(--border); white-space: normal; }
   .positions-row.pick-card-win td:first-child { box-shadow: inset 3px 0 0 var(--green); }
   .positions-row.pick-card-loss td:first-child { box-shadow: inset 3px 0 0 var(--red); }
   .positions-row.pick-card-attention td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
@@ -1368,8 +1381,10 @@ function renderTodayPicks(day, days) {
 function wrapPositionsTable(rowsHtml) {
   return `<div class="table-wrap"><table class="positions-table">
     <thead><tr>
-      <th></th><th>#</th><th>Ticker</th><th>Price</th><th>Entry</th>
-      <th>Change</th><th>Score</th><th>Status</th><th>Details</th>
+      <th style="width:24px"></th><th style="width:80px">#</th><th style="width:15%">Ticker</th>
+      <th style="width:13%">Price</th><th style="width:10%">Entry</th>
+      <th style="width:10%">Change</th><th style="width:10%">Score</th>
+      <th>Status</th><th style="width:60px">Details</th>
     </tr></thead>
     <tbody>${rowsHtml}</tbody>
   </table></div>`;
@@ -1525,7 +1540,7 @@ function buildPickCards(predictions, idPrefix) {
       <td style="color:var(--muted)">${!isSkipped && bottomLeftValue != null ? fmtPrice(bottomLeftValue) : '—'}</td>
       <td class="${isSkipped ? 'td-flat' : pnlClass(pnlPct)}">${isSkipped ? '—' : fmt(pnlPct)}</td>
       <td style="color:var(--muted)">${score.toFixed(3)}<div style="font-size:10px">${pct.toFixed(0)}% signal</div></td>
-      <td style="font-size:12px;max-width:180px" title="${statusText || ''}">${statusText || '—'}</td>
+      <td class="td-status-text" style="font-size:12px" title="${statusText || ''}">${statusText || '—'}</td>
       <td class="why-not-cell">
         <span class="why-not-toggle" onclick="toggleExplainer('${explainerId}-row')">Details ▾</span>
       </td>
