@@ -649,6 +649,7 @@ const GAP_SCAN_URL = "https://raw.githubusercontent.com/clamb9289/mover_predicto
 const MARKET_HOLIDAYS_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/market_holidays.json";
 const LLM_SENTIMENT_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/llm_sentiment_tracking.json";
 const TAX_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/tax_liability.json";
+const CUMULATIVE_STATS_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/cumulative_trade_stats.json";
 const REFRESH_INTERVAL = 60;
 // Fallback only -- render() below overwrites this from the latest day's own
 // max_hold_days field (emitted by predictor.py, sourced from trader.py's
@@ -661,6 +662,7 @@ let MAX_HOLD_DAYS = 5;
 let perfData = null;
 let marketHolidays = new Set(); // populated by loadMarketHolidays() before first render
 let actualMoverCauses = {}; // "date|TICKER" -> cause entry, populated by loadActualMoverCauses() before first render
+let cumulativeStats = null; // {total_closed, total_wins, total_pnl, since}, populated by loadCumulativeStats() before first render
 // 'price' (per-share entry/live/exit price) or 'value' (actual $ cost basis/
 // market value) -- toggled via setCardViewMode(), shared by every card grid
 // that goes through buildPickCards() (Today's Picks, Last Session, Yesterday's
@@ -889,20 +891,38 @@ function render(data) {
   // Win rate / total wins — a real trading-outcome metric (any position
   // actually sold above what we paid), distinct from hit_rate above (which
   // only measures whether a pick landed in that day's real top-3 gainers).
-  // Computed client-side across every day's exited positions (top-3 +
-  // substitutes) since nothing server-side tracks this cumulatively yet.
+  // Prefers cumulative_trade_stats.json (full real history, never pruned --
+  // see loadCumulativeStats()) since the client-side days-array computation
+  // below is only ever as complete as performance.json's rolling ~16-day
+  // window, which understates the real sample size the longer the app runs.
   const allExited = days.flatMap(d => d.predictions || []).filter(p => p.paper_exit_price != null);
-  const wins = allExited.filter(p => (p.paper_exit_pct ?? 0) > 0).length;
+  const windowWins = allExited.filter(p => (p.paper_exit_pct ?? 0) > 0).length;
   const wrEl = document.getElementById('s-winrate');
-  if (allExited.length) {
-    const winRate = wins / allExited.length;
+  const wrLabel = document.getElementById('s-winrate')?.closest('.stat-box')?.querySelector('.stat-label');
+  let winCount, totalCount, usingFullHistory;
+  if (cumulativeStats && cumulativeStats.total_closed > 0) {
+    winCount = cumulativeStats.total_wins;
+    totalCount = cumulativeStats.total_closed;
+    usingFullHistory = true;
+  } else {
+    winCount = windowWins;
+    totalCount = allExited.length;
+    usingFullHistory = false;
+  }
+  if (totalCount) {
+    const winRate = winCount / totalCount;
     wrEl.textContent = (winRate * 100).toFixed(0) + '%';
     wrEl.className = 'stat-value ' + (winRate > 0.5 ? 'pos' : winRate > 0 ? 'warn' : 'neg');
+    if (wrLabel) {
+      wrLabel.textContent = usingFullHistory
+        ? `Win Rate (Profitable Exits, all-time since ${cumulativeStats.since})`
+        : 'Win Rate (Profitable Exits, recent window)';
+    }
   } else {
     wrEl.textContent = '—';
     wrEl.className = 'stat-value neutral';
   }
-  document.getElementById('s-wins').textContent = allExited.length ? wins : '—';
+  document.getElementById('s-wins').textContent = totalCount ? winCount : '—';
 
   // Today's overall performance — combined $ across every position actually
   // bought today (top-3 + substitutes, excludes anything skipped by the
@@ -1418,6 +1438,28 @@ async function loadMarketHolidays() {
     marketHolidays = new Set(data.holidays || []);
   } catch (e) {
     console.warn('Could not load market_holidays.json — holiday-specific closed message will be skipped (weekend detection still works).', e);
+  }
+}
+
+// cumulative_trade_stats.json (written by trader.py's
+// record_cumulative_trade_outcome(), incremented once per real position
+// close, never pruned) -- 2026-08-21: the Win Rate stat below used to be
+// computed purely client-side from performance.json's `days` array, which
+// is only a rolling ~16-day window (confirmed live: showed 75% off recent
+// days alone vs. 66.0% across the full ~106-trade real history reconstructed
+// from git archaeology, see project memory "historical winner/loser pattern
+// mining"). That math wasn't wrong, just recency-biased -- this file gives
+// the true full-history denominator instead. Same optional/best-effort
+// pattern as the other loaders here: a fetch failure (file not yet synced
+// to a fresh dashboard-repo checkout, etc.) falls back to the old
+// days-array computation rather than breaking the stat entirely.
+async function loadCumulativeStats() {
+  try {
+    const res = await fetch(CUMULATIVE_STATS_URL + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    cumulativeStats = await res.json();
+  } catch (e) {
+    console.warn('Could not load cumulative_trade_stats.json — Win Rate will fall back to the visible rolling window only.', e);
   }
 }
 
@@ -2874,7 +2916,7 @@ async function loadTaxData() {
   }
 }
 
-Promise.all([loadMarketHolidays(), loadActualMoverCauses()]).then(() => loadPerfData()).then(() => startCountdown());
+Promise.all([loadMarketHolidays(), loadActualMoverCauses(), loadCumulativeStats()]).then(() => loadPerfData()).then(() => startCountdown());
 checkLlmSentimentStatus();
 checkMoverCausesStatus();
 checkModelReviewBadge();
