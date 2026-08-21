@@ -176,6 +176,15 @@
   .stats-row { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
   @media (max-width: 900px) { .stats-row { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
   @media (max-width: 500px) { .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  /* 2026-08-21: the Today tab's stats grew to 17 boxes across several
+     genuinely different questions, cluttering the page -- split into 4
+     categories (5 stats max each, see setStatsCategory()). Scoped to
+     .stats-category specifically (not the base .stats-row used elsewhere
+     for Tax/Model Review's own 6-item rows, which still want the wider
+     8-column default) so 5 columns fits each category as one tidy row. */
+  .stats-row.stats-category { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  @media (max-width: 900px) { .stats-row.stats-category { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .stats-category-nav { margin-bottom: 12px; width: fit-content; }
   .stat-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
   .stat-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
   .stat-value { font-size: 24px; font-weight: 700; }
@@ -342,21 +351,33 @@
 <div class="main">
 
   <div id="tab-today" class="panel active">
-    <div class="stats-row">
+    <div class="chart-toggle-group stats-category-nav" title="Switch which group of stats is shown below">
+      <div class="chart-toggle-btn active" data-statscat="today" onclick="setStatsCategory('today')">Today</div>
+      <div class="chart-toggle-btn" data-statscat="track-record" onclick="setStatsCategory('track-record')">Track Record</div>
+      <div class="chart-toggle-btn" data-statscat="performance" onclick="setStatsCategory('performance')">Performance</div>
+      <div class="chart-toggle-btn" data-statscat="account" onclick="setStatsCategory('account')">Account</div>
+    </div>
+    <div class="stats-row stats-category" data-statscat="today">
       <div class="stat-box" title="SPY's live % move vs prior close — a quick pulse on how the overall market is doing today, updates on the same ~2 min cadence as everything else"><div class="stat-label">SPY Today</div><div class="stat-value neutral" id="s-spy">—</div></div>
-      <div class="stat-box" title="% of bought positions sold at a price above what we paid — an actual trading outcome, across every real exit"><div class="stat-label">Win Rate (Profitable Exits)</div><div class="stat-value neutral" id="s-winrate">—</div></div>
-      <div class="stat-box"><div class="stat-label">Days Tracked</div><div class="stat-value neutral" id="s-days">—</div></div>
-      <div class="stat-box" title="Picks that landed in that day's actual top-3 real gainers"><div class="stat-label">Total Hits</div><div class="stat-value neutral" id="s-hits">—</div></div>
-      <div class="stat-box" title="Positions sold at a price above what we paid"><div class="stat-label">Total Wins</div><div class="stat-value neutral" id="s-wins">—</div></div>
-      <div class="stat-box"><div class="stat-label">Predictions Made</div><div class="stat-value neutral" id="s-preds">—</div></div>
       <div class="stat-box" title="Combined $ P/L across today's actually-bought positions — live for still-open ones, realized for exited ones, updates every ~2 min"><div class="stat-label">Today's Performance</div><div class="stat-value neutral" id="s-today-pnl">—</div></div>
       <div class="stat-box" title="Average % return across today's actually-bought positions (equal-weighted, matching the roughly equal $ notional per position) — live for open, realized for exited"><div class="stat-label">Today's Performance %</div><div class="stat-value neutral" id="s-today-pnl-pct">—</div></div>
       <div class="stat-box" title="Combined $ P/L across EVERYTHING on today's board — today's fresh buys PLUS any still-open or exited-today carryover swing position, regardless of which day it originated. This is the blended P/L for what's actually shown in Today's Open Positions below, unlike Today's Performance which only counts fresh buys."><div class="stat-label">Open Book Performance</div><div class="stat-value neutral" id="s-openbook-pnl">—</div></div>
       <div class="stat-box" title="Average % return (equal-weighted) across EVERYTHING on today's board — same population as Open Book Performance"><div class="stat-label">Open Book Performance %</div><div class="stat-value neutral" id="s-openbook-pnl-pct">—</div></div>
+    </div>
+    <div class="stats-row stats-category" data-statscat="track-record" style="display:none">
+      <div class="stat-box" title="% of bought positions sold at a price above what we paid — an actual trading outcome, across every real exit"><div class="stat-label">Win Rate (Profitable Exits)</div><div class="stat-value neutral" id="s-winrate">—</div></div>
+      <div class="stat-box" title="Positions sold at a price above what we paid"><div class="stat-label">Total Wins</div><div class="stat-value neutral" id="s-wins">—</div></div>
+      <div class="stat-box" title="Picks that landed in that day's actual top-3 real gainers"><div class="stat-label">Total Hits</div><div class="stat-value neutral" id="s-hits">—</div></div>
+      <div class="stat-box"><div class="stat-label">Predictions Made</div><div class="stat-value neutral" id="s-preds">—</div></div>
+      <div class="stat-box"><div class="stat-label">Days Tracked</div><div class="stat-value neutral" id="s-days">—</div></div>
+    </div>
+    <div class="stats-row stats-category" data-statscat="performance" style="display:none">
       <div class="stat-box" title="Combined $ P/L across every actually-bought position on the CURRENT Alpaca account, full history (durable, not window-limited) — live for still-open positions, realized for exited ones. Should track closely with Net Trading Gain; if they ever diverge again, suspect an account reset."><div class="stat-label">Total Performance</div><div class="stat-value neutral" id="s-total-pnl">—</div></div>
       <div class="stat-box" title="Average % return per individual trade (equal-weighted — every trade counts the same regardless of size), full account history. A genuinely different question from Net Trading Gain % (dollar-weighted return on actual capital) — this answers 'what does a typical trade look like', not 'what's my real overall return'."><div class="stat-label">Total Performance %</div><div class="stat-value neutral" id="s-total-pnl-pct">—</div></div>
       <div class="stat-box" title="Average of each tracked day's own total $ P/L across its actually-bought positions"><div class="stat-label">Avg Daily Performance</div><div class="stat-value neutral" id="s-avgday-pnl">—</div></div>
       <div class="stat-box" title="Average of each tracked day's own equal-weighted % return across its actually-bought positions"><div class="stat-label">Avg Daily Performance %</div><div class="stat-value neutral" id="s-avgday-pnl-pct">—</div></div>
+    </div>
+    <div class="stats-row stats-category" data-statscat="account" style="display:none">
       <div class="stat-box" title="Sum of every real deposit made to the account (config.json's capital_contributions log) — the initial funding plus anything added since, NOT trading performance"><div class="stat-label">Total Contributed</div><div class="stat-value neutral" id="s-total-contributed">—</div></div>
       <div class="stat-box" title="Real account equity minus Total Contributed — the actual $ gained/lost from trading, correctly excluding any deposit or withdrawal from looking like a trading return"><div class="stat-label">Net Trading Gain</div><div class="stat-value neutral" id="s-net-gain">—</div></div>
       <div class="stat-box" title="Net Trading Gain as a % of Total Contributed"><div class="stat-label">Net Trading Gain %</div><div class="stat-value neutral" id="s-net-gain-pct">—</div></div>
@@ -2204,6 +2225,35 @@ function setCardViewMode(mode) {
   document.querySelectorAll('[data-cardview]').forEach(b => b.classList.toggle('active', b.dataset.cardview === mode));
   if (perfData) render(perfData); // re-render everything from cached data -- no re-fetch needed
 }
+
+// Stats sub-tabs (added 2026-08-21) -- the top-of-page stats grew to 17
+// boxes across several genuinely different questions (today vs. all-time
+// track record vs. cumulative $ performance vs. real account numbers),
+// cluttering the page. Grouped into 4 categories, one visible at a time.
+// Pure show/hide via CSS -- render() keeps updating every stat-value's
+// textContent on its normal cadence regardless of which category is
+// currently shown, so switching tabs never shows stale numbers.
+// Persisted via localStorage so a reload keeps whichever category the
+// user was last looking at, same convention as MODEL_REVIEW_SEEN_KEY.
+const STATS_CATEGORY_KEY = 'stats_category_selected';
+
+function setStatsCategory(cat) {
+  document.querySelectorAll('[data-statscat]').forEach(el => {
+    if (el.classList.contains('chart-toggle-btn')) {
+      el.classList.toggle('active', el.dataset.statscat === cat);
+    } else {
+      el.style.display = el.dataset.statscat === cat ? '' : 'none';
+    }
+  });
+  localStorage.setItem(STATS_CATEGORY_KEY, cat);
+}
+
+(function initStatsCategory() {
+  const saved = localStorage.getItem(STATS_CATEGORY_KEY);
+  if (saved && document.querySelector(`.stats-row[data-statscat="${saved}"]`)) {
+    setStatsCategory(saved);
+  }
+})();
 
 function setChartMode(mode) {
   chartMode = mode;
