@@ -389,8 +389,6 @@
       <div class="stat-box" title="Average % return across today's actually-bought positions (equal-weighted, matching the roughly equal $ notional per position) — live for open, realized for exited"><div class="stat-label">Today's Performance %</div><div class="stat-value neutral" id="s-today-pnl-pct">—</div></div>
       <div class="stat-box" title="Combined $ P/L across EVERYTHING on today's board — today's fresh buys PLUS any still-open or exited-today carryover swing position, regardless of which day it originated. This is the blended P/L for what's actually shown in Today's Open Positions below, unlike Today's Performance which only counts fresh buys."><div class="stat-label">Open Book Performance</div><div class="stat-value neutral" id="s-openbook-pnl">—</div></div>
       <div class="stat-box" title="Average % return (equal-weighted) across EVERYTHING on today's board — same population as Open Book Performance"><div class="stat-label">Open Book Performance %</div><div class="stat-value neutral" id="s-openbook-pnl-pct">—</div></div>
-      <div class="stat-box" title="Combined LIVE $ P/L across only positions that are STILL open right now — unlike Open Book Performance, this excludes anything already exited today. Answers 'what would I bank if I sold everything at this exact moment' — the number to check before manually triggering a full sell-all."><div class="stat-label">Open Positions Live Total</div><div class="stat-value neutral" id="s-openpos-live-total">—</div></div>
-      <div class="stat-box" title="Average % return (equal-weighted) across only positions still open right now — same population as Open Positions Live Total"><div class="stat-label">Open Positions Live Total %</div><div class="stat-value neutral" id="s-openpos-live-total-pct">—</div></div>
     </div>
     <div class="stats-row stats-category" data-statscat="track-record" style="display:none">
       <div class="stat-box" title="% of bought positions sold at a price above what we paid — an actual trading outcome, across every real exit"><div class="stat-label">Win Rate (Profitable Exits)</div><div class="stat-value neutral" id="s-winrate">—</div></div>
@@ -416,6 +414,16 @@
         <div class="chart-toggle-group" title="Switch between per-share price and actual position $ value">
           <div class="chart-toggle-btn active" data-cardview="price" onclick="setCardViewMode('price')">Price</div>
           <div class="chart-toggle-btn" data-cardview="value" onclick="setCardViewMode('value')">Position $</div>
+        </div>
+      </div>
+      <div class="closed-notice" style="margin-top:0;margin-bottom:16px;justify-content:flex-start">
+        <span style="font-size:22px">💰</span>
+        <div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:2px">Open Positions Live Total — what you'd bank selling everything right now</div>
+          <div style="display:flex;align-items:baseline;gap:10px">
+            <span class="stat-value neutral" id="s-openpos-live-total" style="font-size:24px;font-weight:700">—</span>
+            <span class="stat-value neutral" id="s-openpos-live-total-pct" style="font-size:16px">—</span>
+          </div>
         </div>
       </div>
       <p class="updated-at" id="prices-updated"></p>
