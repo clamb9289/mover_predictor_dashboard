@@ -61,6 +61,19 @@
   /* Pick cards */
   .picks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
   .pick-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  /* 2026-08-21: positions table (replaces the pick-card grid above for
+     Today's Open Positions / Last Trading Session -- see buildPickCards()).
+     Reuses the why-not-toggle/why-not-cell pattern already established by
+     the Also Considered table for the expandable Details row. */
+  .positions-table td { vertical-align: top; }
+  .positions-row td { border-top: 1px solid var(--border); padding-top: 10px; }
+  .td-status-dot { font-size: 14px; text-align: center; width: 20px; }
+  .positions-detail-row { display: none; }
+  .positions-detail-row.open { display: table-row; }
+  .positions-detail-row td { font-size: 12px; color: var(--muted); line-height: 1.6; padding: 4px 8px 14px 28px; border-bottom: 1px solid var(--border); }
+  .positions-row.pick-card-win td:first-child { box-shadow: inset 3px 0 0 var(--green); }
+  .positions-row.pick-card-loss td:first-child { box-shadow: inset 3px 0 0 var(--red); }
+  .positions-row.pick-card-attention td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
   /* Subtle win/loss tint once a position has exited -- layered over
      --surface2 via background-image rather than replacing background-color
      outright, so it stays a tint rather than overriding the card's base
@@ -1346,7 +1359,20 @@ function renderTodayPicks(day, days) {
   // same-day multi-round pick's cards all move together as one unit.
   const sortedPicks = activePicks.slice()
     .sort((a, b) => (a.paper_exit_price != null ? 1 : 0) - (b.paper_exit_price != null ? 1 : 0));
-  el.innerHTML = buildPickCards(withClosedRounds(sortedPicks, day), 'explainer');
+  el.innerHTML = wrapPositionsTable(buildPickCards(withClosedRounds(sortedPicks, day), 'explainer'));
+}
+
+// Shared table shell for buildPickCards() output -- see its 2026-08-21
+// comment for why this replaced the card grid. Both renderTodayPicks() and
+// renderLastSession() use this so the header stays in sync automatically.
+function wrapPositionsTable(rowsHtml) {
+  return `<div class="table-wrap"><table class="positions-table">
+    <thead><tr>
+      <th></th><th>#</th><th>Ticker</th><th>Price</th><th>Entry</th>
+      <th>Change</th><th>Score</th><th>Status</th><th>Details</th>
+    </tr></thead>
+    <tbody>${rowsHtml}</tbody>
+  </table></div>`;
 }
 
 function buildPickCards(predictions, idPrefix) {
@@ -1455,55 +1481,64 @@ function buildPickCards(predictions, idPrefix) {
         <div class="signal-mini"><div class="signal-mini-label">Rel. Strength</div><div class="signal-mini-value">${signals.relative_strength_pct != null ? fmt(signals.relative_strength_pct) : '—'}</div></div>
       </div>`;
 
-    return `<div class="pick-card${exitCardClass}"${isSkipped ? ' style="opacity:0.55"' : ''}>
-      <div class="pick-card-top">
-        <div>
-          <div class="pick-rank">${rankLabels[(p.rank ?? (i + 1)) - 1] || '#' + (p.rank ?? (i + 1))}</div>
-          ${p.round_label ? `<div class="pick-round-label">${p.round_label}</div>` : ''}
-          <div class="pick-ticker"><a href="https://finance.yahoo.com/quote/${p.ticker}" target="_blank">${p.ticker} ↗</a></div>
-          ${p.sector ? `<div style="font-size:11px;color:var(--muted);margin-top:2px">${p.sector}</div>` : ''}
-        </div>
-        <div class="pick-live-price">
-          <div class="live-price-value" style="color:${topValue != null ? 'var(--text)' : 'var(--muted)'}">
-            ${isSkipped ? '—' : (topValue != null ? fmtPrice(topValue) : '—')}
-          </div>
-          <div class="live-price-label"${isExited ? ` style="color:var(--${pnlPct > 0 ? 'green' : pnlPct < 0 ? 'red' : 'muted'})"` : ''}>${topLabel}</div>
-          ${topDollarLine != null ? `<div class="live-price-dollar" style="color:var(--${topDollarLine > 0 ? 'green' : topDollarLine < 0 ? 'red' : 'muted'})">${fmtDollar(topDollarLine)}</div>` : ''}
-        </div>
-      </div>
+    // 2026-08-21: converted from a card grid to table rows -- the card
+    // layout (one ~200px-tall box per position) worked fine for 3-4
+    // concurrent positions but doesn't scale to the 15-20+ position counts
+    // under evaluation (see project memory "pool depth position count").
+    // Nothing here is removed, just reorganized: the always-visible card
+    // content (price/entry/change/score/signal bar) becomes compact table
+    // columns, and everything else (badges, headline, full explainer,
+    // signal grid, price-updated timestamp) moves into the same
+    // explainer-toggle/explainer-box expand mechanism the old card already
+    // used for "Why this pick?" -- same toggleExplainer() function, same
+    // CSS, just triggered from a "Details ▾" cell instead of card footer.
+    const rankLabel = rankLabels[(p.rank ?? (i + 1)) - 1] || '#' + (p.rank ?? (i + 1));
+    const statusDot = needsAttention ? '⚠️' : (isExited ? (pnlPct > 0 ? '🟢' : pnlPct < 0 ? '🔴' : '⚪')
+      : (isSkipped ? '⛔' : (p.paper_current_floor_pct != null ? '🟢' : '')));
+    // Compact one-line status for the Status column -- the full badge list
+    // (needs-attention, floor/stop, day-of-hold, substitute, exit reason)
+    // still all appears in Details, this is just the single most relevant
+    // line to show without expanding.
+    let statusText = '';
+    if (isSkipped) statusText = `Skipped — ${p.skipped_reason}`;
+    else if (isNotBought) statusText = 'Not bought — no open slot';
+    else if (p.paper_exit_reason) statusText = `Exited — ${p.paper_exit_reason}`;
+    else if (p.paper_current_floor_pct != null) statusText = `Floor locked ${fmt(p.paper_current_floor_pct * 100, 2)}`;
+    else if (pnlPct != null && pnlPct <= -3) statusText = 'Stop triggered';
+    else if (!isExited && p.days_held != null) statusText = `Day ${p.days_held + 1} of ${MAX_HOLD_DAYS}`;
+    if (needsAttention) statusText = (p.sell_error_note || p.external_position_note || 'Needs attention') + (statusText ? ` · ${statusText}` : '');
 
-      <div class="pick-pnl-row">
-        <div class="pnl-item">
-          <div class="pnl-label">${showValue ? 'Cost Basis' : 'Entry Price'}</div>
-          <div class="pnl-value flat">${!isSkipped && bottomLeftValue != null ? fmtPrice(bottomLeftValue) : '—'}</div>
-        </div>
-        <div class="pnl-item">
-          <div class="pnl-label">Change</div>
-          <div class="pnl-value ${pnlClass(pnlPct)}">${isSkipped ? '—' : fmt(pnlPct)}</div>
-        </div>
-        <div class="pnl-item">
-          <div class="pnl-label">Score</div>
-          <div class="pnl-value flat">${score.toFixed(3)}</div>
-        </div>
-      </div>
+    const priceUpdatedLine = isSkipped ? ''
+      : isExited && priceUpdated ? `Exited at ${priceUpdated} — price locked, no longer live`
+      : !isExited && priceUpdated ? `Price as of ${priceUpdated} (updates about every minute during market hours)`
+      : !isExited ? 'Live price updates during market hours' : '';
 
-      <div class="score-bar-wrap">
-        <div class="score-bar-label"><span>Signal strength</span><span>${pct.toFixed(0)}%</span></div>
-        <div class="score-bar"><div class="score-bar-fill" style="width:${pct}%"></div></div>
-      </div>
-
-      ${p.headline ? `<div class="pick-headline">📰 ${p.headline}</div>` : ''}
-      ${!isSkipped && isExited && priceUpdated ? `<div class="updated-at">Exited at ${priceUpdated} — price locked, no longer live</div>` : ''}
-      ${!isSkipped && !isExited && priceUpdated ? `<div class="updated-at">Price as of ${priceUpdated} (updates about every minute during market hours)</div>` : ''}
-      ${!isSkipped && !isExited && !priceUpdated ? '<div class="updated-at" style="color:var(--muted)">Live price updates during market hours</div>' : ''}
-      ${badges}
-
-      <div class="explainer-toggle" onclick="toggleExplainer('${explainerId}')">Why this pick? ▾</div>
-      <div class="explainer-box" id="${explainerId}">
-        ${p.explainer || 'No explainer available for this pick.'}
+    return `<tr class="positions-row${exitCardClass}"${isSkipped ? ' style="opacity:0.55"' : ''}>
+      <td class="td-status-dot" title="${statusText || ''}">${statusDot}</td>
+      <td style="color:var(--muted);white-space:nowrap">${rankLabel}${p.round_label ? `<br><span style="font-size:10px">${p.round_label}</span>` : ''}</td>
+      <td class="td-ticker"><a href="https://finance.yahoo.com/quote/${p.ticker}" target="_blank">${p.ticker} ↗</a>${p.sector ? `<div style="font-size:11px;color:var(--muted);font-weight:400">${p.sector}</div>` : ''}</td>
+      <td>
+        <div style="color:${topValue != null ? 'var(--text)' : 'var(--muted)'}">${isSkipped ? '—' : (topValue != null ? fmtPrice(topValue) : '—')}</div>
+        <div style="font-size:10px;color:var(--muted)">${topLabel}</div>
+        ${topDollarLine != null ? `<div style="font-size:11px;color:var(--${topDollarLine > 0 ? 'green' : topDollarLine < 0 ? 'red' : 'muted'})">${fmtDollar(topDollarLine)}</div>` : ''}
+      </td>
+      <td style="color:var(--muted)">${!isSkipped && bottomLeftValue != null ? fmtPrice(bottomLeftValue) : '—'}</td>
+      <td class="${isSkipped ? 'td-flat' : pnlClass(pnlPct)}">${isSkipped ? '—' : fmt(pnlPct)}</td>
+      <td style="color:var(--muted)">${score.toFixed(3)}<div style="font-size:10px">${pct.toFixed(0)}% signal</div></td>
+      <td style="font-size:12px;max-width:180px" title="${statusText || ''}">${statusText || '—'}</td>
+      <td class="why-not-cell">
+        <span class="why-not-toggle" onclick="toggleExplainer('${explainerId}-row')">Details ▾</span>
+      </td>
+    </tr>
+    <tr class="positions-detail-row" id="${explainerId}-row">
+      <td colspan="9">
+        ${p.headline ? `<div class="pick-headline" style="margin-top:0">📰 ${p.headline}</div>` : ''}
+        ${priceUpdatedLine ? `<div class="updated-at" style="margin-top:${p.headline ? '8px' : '0'}">${priceUpdatedLine}</div>` : ''}
+        ${badges}
+        <div style="margin-top:8px">${p.explainer || 'No explainer available for this pick.'}</div>
         ${signalGrid}
-      </div>
-    </div>`;
+      </td>
+    </tr>`;
   }).join('');
 }
 
@@ -1677,7 +1712,7 @@ function renderLastSession(day) {
   }
   card.style.display = '';
   dateEl.textContent = day.date;
-  el.innerHTML = buildPickCards(withClosedRounds(day.predictions, day), 'last-session-explainer');
+  el.innerHTML = wrapPositionsTable(buildPickCards(withClosedRounds(day.predictions, day), 'last-session-explainer'));
 }
 
 function renderBenchCandidates(day) {
