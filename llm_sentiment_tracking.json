@@ -1,201 +1,201 @@
 {
-  "date": "2026-08-20",
-  "generated_at": "2026-08-20T14:16:51.344837+00:00",
+  "date": "2026-08-21",
+  "generated_at": "2026-08-21T13:43:29.288478+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "NTST",
-    "ADC",
-    "WBS"
+    "PCG",
+    "CNH",
+    "KR"
   ],
   "llm_top3": {
     "tickers": [
-      "MRK",
-      "ADC",
-      "VTR"
+      "CNH",
+      "ILMN",
+      "UNP"
     ],
-    "reasoning": "MRK has by far the most material positive catalyst (successful Moderna/Merck cancer vaccine Phase 3 plus multiple upgrades and target hikes) despite a mid-tier quant rank. ADC pairs a top-2 quant rank with a clean fundamental beat, dividend hike and a $1M CEO buy. VTR offers a raised FY guidance and record senior housing NOI growth with strong secular demand. I skip top-ranked NTST because its equity offering dilution and WBS because its Santander deal price effectively caps upside."
+    "reasoning": "CNH pairs a rank-2 quant score with the cleanest fundamental catalyst: an earnings beat and raised FY26 guidance signaling an ag-cycle bottom. ILMN ranks mid-pack quantitatively but has the strongest news profile \u2014 52-week highs on a beat-and-raise plus genomics tailwinds \u2014 so I upgrade it. UNP offers a real regulatory catalyst with the STB reopening the Norfolk Southern merger review. I skip top-ranked PCG (wildfire liability overhang and hedging put flow) and avoid OGN/AES/LNTH entirely since all three are near-complete fixed-price buyouts with capped upside."
   },
   "tickers": {
-    "NTST": {
+    "PCG": {
       "rank": 1,
       "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 59,
-      "llm_score": 2,
+      "mentions_24h": 5,
+      "total_distinct_found": 62,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Q2 FFO/revenue beat, raised AFFO guidance, CEO insider buy and S&P SmallCap 600 inclusion outweigh dilution from the upsized equity offering."
+      "reasoning": "Mixed: DOE $271M Diablo Canyon award and Dalio 13F new large buy plus UBS Buy reiteration are positive, but wildfire liability/lobbying overhang and hedging put flow temper it."
     },
-    "ADC": {
+    "CNH": {
       "rank": 2,
       "headline_count": 40,
-      "mentions_24h": 2,
+      "mentions_24h": 7,
+      "total_distinct_found": 61,
+      "llm_score": 3,
+      "materiality": "high",
+      "reasoning": "Q2 EPS beat with raised FY26 outlook drove an ~11% surge and pulled Deere higher, signaling the ag downturn may be bottoming, though earnings still down YoY."
+    },
+    "KR": {
+      "rank": 3,
+      "headline_count": 40,
+      "mentions_24h": 8,
+      "total_distinct_found": 68,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Mostly routine 13F stakes and 'bargain/Buy rating' commentary; no material operating news, though holding the 200WMA and defensive appeal are mildly supportive."
+    },
+    "LEG": {
+      "rank": 4,
+      "headline_count": 40,
+      "mentions_24h": 3,
       "total_distinct_found": 60,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Sales down ~6% YoY and soft Q2 with stock dropping; pending Somnigroup merger approved by shareholders caps upside, making it a fixed-price low-upside situation."
+    },
+    "OGN": {
+      "rank": 5,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 58,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Sun Pharma all-cash buyout already approved by shareholders and near completion, so upside is capped despite weak Q2 earnings."
+    },
+    "AES": {
+      "rank": 6,
+      "headline_count": 40,
+      "mentions_24h": 2,
+      "total_distinct_found": 61,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Trading at $14.75 vs a $15.00 take-private offer with FERC as last hurdle \u2014 merger arb with minimal remaining upside despite a strong Q2 beat."
+    },
+    "OHI": {
+      "rank": 7,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 60,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Q2 FFO beat, raised guidance and dividend hike are positive, offset by aggressive $45 put sweeps, tenant doubts and a Seeking Alpha downgrade."
+    },
+    "UNP": {
+      "rank": 8,
+      "headline_count": 40,
+      "mentions_24h": 20,
+      "total_distinct_found": 64,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Agree Realty beat Q2 FFO, raised guidance, hiked dividend 4.3% and CEO bought $1M of stock; noise from unrelated ADC Therapeutics headlines is not applicable."
+      "reasoning": "STB resumed the Norfolk Southern merger review (removed from abeyance) and a $91M fuel-surcharge surplus boosted earnings, though the surcharge story invites regulatory scrutiny."
     },
-    "WBS": {
-      "rank": 3,
+    "PG": {
+      "rank": 9,
+      "headline_count": 40,
+      "mentions_24h": 24,
+      "total_distinct_found": 78,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Headlines are largely routine 13F filings, insider stock grants and generic dividend-king commentary, with some chatter about weak price action."
+    },
+    "TECH": {
+      "rank": 10,
+      "headline_count": 40,
+      "mentions_24h": 6,
+      "total_distinct_found": 60,
+      "llm_score": -1,
+      "materiality": "low",
+      "reasoning": "Most items are generic 'tech stock' macro selloff noise; Bio-Techne's own Q4 met estimates with revenue beat and stock rose, so modest net."
+    },
+    "DOW": {
+      "rank": 11,
+      "headline_count": 40,
+      "mentions_24h": 25,
+      "total_distinct_found": 80,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Mostly index noise, but DOW-specific chatter flags weak earnings expectations and 'retain' ratings, partly offset by firmer petrochemical feedstock pricing."
+    },
+    "APO": {
+      "rank": 12,
+      "headline_count": 40,
+      "mentions_24h": 9,
+      "total_distinct_found": 67,
+      "llm_score": -2,
+      "materiality": "medium",
+      "reasoning": "Stock down ~5% amid private-credit/AI-debt risk scrutiny and CFO share sales, with the Nvidia $500B financing narrative questioned."
+    },
+    "AXP": {
+      "rank": 13,
+      "headline_count": 40,
+      "mentions_24h": 24,
+      "total_distinct_found": 84,
+      "llm_score": -1,
+      "materiality": "low",
+      "reasoning": "Down on Walmart-driven consumer-confidence read-through and 13% YTD underperformance; other news is routine 13Fs and marketing partnerships."
+    },
+    "FANG": {
+      "rank": 14,
+      "headline_count": 40,
+      "mentions_24h": 9,
+      "total_distinct_found": 62,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Fresh 52-week highs and Solitude pipeline FID are positive, offset by a Morgan Stanley downgrade to Equal-Weight and insider selling."
+    },
+    "ILMN": {
+      "rank": 15,
+      "headline_count": 40,
+      "mentions_24h": 15,
+      "total_distinct_found": 63,
+      "llm_score": 3,
+      "materiality": "medium",
+      "reasoning": "Stock at 52-week highs on strong Q2 and raised 2026 outlook, plus PrimeCap boosting position and precision-medicine tailwinds from MRK/MRNA vaccine news."
+    },
+    "SO": {
+      "rank": 16,
       "headline_count": 40,
       "mentions_24h": 4,
       "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Fed approved the Santander acquisition and shelf was terminated, so the outcome is largely fixed; remaining headlines are routine vesting filings."
-    },
-    "EPRT": {
-      "rank": 4,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 58,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Q2 FFO merely matched estimates with a revenue miss, insider COO selling 22,000 shares, and mixed valuation commentary."
+      "reasoning": "Q2 EPS up 29% YoY but flat revenue, and most coverage suggests the stock is fully valued after a 68% five-year run."
     },
-    "CURB": {
-      "rank": 5,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 58,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 FFO/revenue beat with record acquisitions and updated guidance, but persistent heavy director (Otto) selling of millions in stock offsets."
-    },
-    "MRK": {
-      "rank": 6,
-      "headline_count": 40,
-      "mentions_24h": 88,
-      "total_distinct_found": 114,
-      "llm_score": 3,
-      "materiality": "high",
-      "reasoning": "Merck/Moderna melanoma cancer vaccine Phase 3 success drove a 13% gain and multiple large price-target hikes and a Morgan Stanley upgrade, partly offset by an RBC downgrade."
-    },
-    "AKR": {
-      "rank": 7,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 63,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "KeyBanc upgrade to Overweight, Truist target raise and raised FY26 FFO guidance, tempered by a 9M-share dilutive equity offering."
-    },
-    "SBRA": {
-      "rank": 8,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 60,
-      "llm_score": 0,
-      "materiality": "medium",
-      "reasoning": "Q2 FFO/revenue beat and a Raymond James upgrade are offset by a GAAP loss from a loan write-off and a 15% seven-day slide."
-    },
-    "CTRE": {
-      "rank": 9,
-      "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 59,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Record $900M of investments at 8.9% yields and raised 2026 guidance, but the stock fell 5.9% and RBC downgraded to Hold."
-    },
-    "CPB": {
-      "rank": 10,
-      "headline_count": 40,
-      "mentions_24h": 13,
-      "total_distinct_found": 61,
-      "llm_score": 0,
-      "materiality": "medium",
-      "reasoning": "EPS beat and modest price-target raises to $22 with Hold/Neutral ratings, offset by GLP-1 demand destruction narrative and 31% short interest."
-    },
-    "A": {
-      "rank": 11,
-      "headline_count": 40,
-      "mentions_24h": 10,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Agilent won expanded EU and FDA approvals for PD-L1 companion diagnostics, a modest positive amid otherwise generic market noise."
-    },
-    "VTR": {
-      "rank": 12,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 56,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Ventas beat Q2 FFO, raised FY26 normalized FFO guidance and lifted investment volume expectations to $4.5B on strong senior housing demand."
-    },
-    "TTEK": {
-      "rank": 13,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 59,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Raised FY26 EPS guidance and record backlog plus a $49M NOAA contract, but revenue declined 4.5% YoY and shares slid on profit-quality doubts."
-    },
-    "ABR": {
-      "rank": 14,
-      "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 59,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Dividend cut 61% over two years, shares down ~52%, and continued credit/rate concerns despite a technically improving chart and Q2 beat chatter."
-    },
-    "LEG": {
-      "rank": 15,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 59,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Sales fell 6% with stock dropping post-earnings, but the pending Somnigroup merger caps downside with only a small remaining spread."
-    },
-    "TMUS": {
-      "rank": 16,
-      "headline_count": 40,
-      "mentions_24h": 9,
-      "total_distinct_found": 61,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Downgrade citing new competitive pressures from satellite/Starlink and worst weekly performance in six years, only partly offset by Goldman's 35% upside call."
-    },
-    "TAP": {
+    "LNTH": {
       "rank": 17,
       "headline_count": 40,
       "mentions_24h": 1,
-      "total_distinct_found": 65,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Q2 EPS beat but GAAP pretax income fell 49% and guidance reaffirms an 11-15% underlying EPS decline amid category weakness."
+      "total_distinct_found": 60,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Curium's up-to-$8B go-private deal is agreed and shareholders are complaining about the price, capping forward upside despite an Alzheimer's tau FDA approval."
     },
-    "DHR": {
+    "ORLY": {
       "rank": 18,
       "headline_count": 40,
-      "mentions_24h": 25,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Potential bioprocessing tailwind from the Moderna/Merck cancer vaccine read-through and a large new Generation Investment position, but mostly routine 13F filings."
+      "mentions_24h": 21,
+      "total_distinct_found": 62,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Shares slipped on Advance Auto Parts' comp-sales miss signaling constrained DIY consumer, and valuation is called rich on earnings."
     },
-    "BF-B": {
+    "EVRG": {
       "rank": 19,
       "headline_count": 40,
-      "mentions_24h": 4,
+      "mentions_24h": 2,
       "total_distinct_found": 60,
-      "llm_score": 0,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Board rejected Sazerac's $32/share takeover bid removing a near-term catalyst, and CEO retirement adds uncertainty amid soft spirits demand."
+      "reasoning": "Q2 beat with reaffirmed guidance and 3 GW of signed large loads/5 GW pipeline, though technicians flag repeated rejections at the 10 DMA."
     },
-    "LEN": {
+    "TGTX": {
       "rank": 20,
       "headline_count": 40,
-      "mentions_24h": 8,
-      "total_distinct_found": 61,
-      "llm_score": 0,
+      "mentions_24h": 28,
+      "total_distinct_found": 58,
+      "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Berkshire increased its Lennar stake meaningfully, but shares are down 28% with rising mortgage rates and weak order commentary weighing."
+      "reasoning": "Sharp move on M&A speculation and unusual call buying, plus positive at-home BRIUMVI data, price-target hikes and 22% short interest \u2014 but the buyout is rumor only."
     }
   }
 }
