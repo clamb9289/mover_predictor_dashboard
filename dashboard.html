@@ -389,6 +389,8 @@
       <div class="stat-box" title="Average % return across today's actually-bought positions (equal-weighted, matching the roughly equal $ notional per position) — live for open, realized for exited"><div class="stat-label">Today's Performance %</div><div class="stat-value neutral" id="s-today-pnl-pct">—</div></div>
       <div class="stat-box" title="Combined $ P/L across EVERYTHING on today's board — today's fresh buys PLUS any still-open or exited-today carryover swing position, regardless of which day it originated. This is the blended P/L for what's actually shown in Today's Open Positions below, unlike Today's Performance which only counts fresh buys."><div class="stat-label">Open Book Performance</div><div class="stat-value neutral" id="s-openbook-pnl">—</div></div>
       <div class="stat-box" title="Average % return (equal-weighted) across EVERYTHING on today's board — same population as Open Book Performance"><div class="stat-label">Open Book Performance %</div><div class="stat-value neutral" id="s-openbook-pnl-pct">—</div></div>
+      <div class="stat-box" title="Combined LIVE $ P/L across only positions that are STILL open right now — unlike Open Book Performance, this excludes anything already exited today. Answers 'what would I bank if I sold everything at this exact moment' — the number to check before manually triggering a full sell-all."><div class="stat-label">Open Positions Live Total</div><div class="stat-value neutral" id="s-openpos-live-total">—</div></div>
+      <div class="stat-box" title="Average % return (equal-weighted) across only positions still open right now — same population as Open Positions Live Total"><div class="stat-label">Open Positions Live Total %</div><div class="stat-value neutral" id="s-openpos-live-total-pct">—</div></div>
     </div>
     <div class="stats-row stats-category" data-statscat="track-record" style="display:none">
       <div class="stat-box" title="% of bought positions sold at a price above what we paid — an actual trading outcome, across every real exit"><div class="stat-label">Win Rate (Profitable Exits)</div><div class="stat-value neutral" id="s-winrate">—</div></div>
@@ -1048,6 +1050,40 @@ function render(data) {
     obPnlEl.className = 'stat-value neutral';
     obPnlPctEl.textContent = '—';
     obPnlPctEl.className = 'stat-value neutral';
+  }
+
+  // Open Positions Live Total -- added 2026-08-21 alongside the manual
+  // sell-all trigger: unlike Open Book Performance just above (which
+  // blends in anything already exited today via paper_exit_dollar/pct),
+  // this is ONLY genuinely-still-open positions, always read live --
+  // "what would I bank if I sold everything at this exact moment", the
+  // number to check before manually triggering a full sell-all. Reuses
+  // the same openBookPicks population, just filtered down with the
+  // existing isOpenPosition() helper (defined below, same file) rather
+  // than duplicating getCurrentlyHeldPicks()'s own open-vs-exited logic.
+  const openOnlyPicks = openBookPicks.filter(isOpenPosition);
+  const openOnlyDollarValues = openOnlyPicks.map(p => p.live_dollar).filter(v => v != null);
+  const olPnlEl = document.getElementById('s-openpos-live-total');
+  const olPnlPctEl = document.getElementById('s-openpos-live-total-pct');
+  if (openOnlyDollarValues.length) {
+    const olTotal = openOnlyDollarValues.reduce((sum, v) => sum + v, 0);
+    olPnlEl.textContent = fmtDollar(olTotal);
+    olPnlEl.className = 'stat-value ' + (olTotal > 0 ? 'pos' : olTotal < 0 ? 'neg' : 'neutral');
+
+    const olPctValues = openOnlyPicks.map(p => p.live_pct).filter(v => v != null);
+    if (olPctValues.length) {
+      const olPctAvg = olPctValues.reduce((sum, v) => sum + v, 0) / olPctValues.length;
+      olPnlPctEl.textContent = fmt(olPctAvg);
+      olPnlPctEl.className = 'stat-value ' + (olPctAvg > 0 ? 'pos' : olPctAvg < 0 ? 'neg' : 'neutral');
+    } else {
+      olPnlPctEl.textContent = '—';
+      olPnlPctEl.className = 'stat-value neutral';
+    }
+  } else {
+    olPnlEl.textContent = '—';
+    olPnlEl.className = 'stat-value neutral';
+    olPnlPctEl.textContent = '—';
+    olPnlPctEl.className = 'stat-value neutral';
   }
 
   // Total / Avg Daily Performance -- same wasBought/dollar/pct convention as
