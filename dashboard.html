@@ -344,7 +344,6 @@
   <div id="tab-today" class="panel active">
     <div class="stats-row">
       <div class="stat-box" title="SPY's live % move vs prior close — a quick pulse on how the overall market is doing today, updates on the same ~2 min cadence as everything else"><div class="stat-label">SPY Today</div><div class="stat-value neutral" id="s-spy">—</div></div>
-      <div class="stat-box" title="% of picks that landed in that day's actual top-3 real gainers — a prediction-accuracy metric, not a trading outcome"><div class="stat-label">Hit Rate (Top-3 Match)</div><div class="stat-value neutral" id="s-hitrate">—</div></div>
       <div class="stat-box" title="% of bought positions sold at a price above what we paid — an actual trading outcome, across every real exit"><div class="stat-label">Win Rate (Profitable Exits)</div><div class="stat-value neutral" id="s-winrate">—</div></div>
       <div class="stat-box"><div class="stat-label">Days Tracked</div><div class="stat-value neutral" id="s-days">—</div></div>
       <div class="stat-box" title="Picks that landed in that day's actual top-3 real gainers"><div class="stat-label">Total Hits</div><div class="stat-value neutral" id="s-hits">—</div></div>
@@ -352,6 +351,8 @@
       <div class="stat-box"><div class="stat-label">Predictions Made</div><div class="stat-value neutral" id="s-preds">—</div></div>
       <div class="stat-box" title="Combined $ P/L across today's actually-bought positions — live for still-open ones, realized for exited ones, updates every ~2 min"><div class="stat-label">Today's Performance</div><div class="stat-value neutral" id="s-today-pnl">—</div></div>
       <div class="stat-box" title="Average % return across today's actually-bought positions (equal-weighted, matching the roughly equal $ notional per position) — live for open, realized for exited"><div class="stat-label">Today's Performance %</div><div class="stat-value neutral" id="s-today-pnl-pct">—</div></div>
+      <div class="stat-box" title="Combined $ P/L across EVERYTHING on today's board — today's fresh buys PLUS any still-open or exited-today carryover swing position, regardless of which day it originated. This is the blended P/L for what's actually shown in Today's Open Positions below, unlike Today's Performance which only counts fresh buys."><div class="stat-label">Open Book Performance</div><div class="stat-value neutral" id="s-openbook-pnl">—</div></div>
+      <div class="stat-box" title="Average % return (equal-weighted) across EVERYTHING on today's board — same population as Open Book Performance"><div class="stat-label">Open Book Performance %</div><div class="stat-value neutral" id="s-openbook-pnl-pct">—</div></div>
       <div class="stat-box" title="Combined $ P/L across every actually-bought position since tracking began — live for still-open positions, realized for exited ones"><div class="stat-label">Total Performance</div><div class="stat-value neutral" id="s-total-pnl">—</div></div>
       <div class="stat-box" title="Average % return across every actually-bought position since tracking began (equal-weighted, same convention as Today's Performance %)"><div class="stat-label">Total Performance %</div><div class="stat-value neutral" id="s-total-pnl-pct">—</div></div>
       <div class="stat-box" title="Average of each tracked day's own total $ P/L across its actually-bought positions"><div class="stat-label">Avg Daily Performance</div><div class="stat-value neutral" id="s-avgday-pnl">—</div></div>
@@ -879,18 +880,16 @@ function render(data) {
       spyEl.className = 'stat-value neutral';
     }
 
-    const hr = latest.hit_rate;
-    const hrEl = document.getElementById('s-hitrate');
-    hrEl.textContent = (hr * 100).toFixed(0) + '%';
-    hrEl.className = 'stat-value ' + (hr > 0.33 ? 'pos' : hr > 0 ? 'warn' : 'neg');
     document.getElementById('s-days').textContent = latest.days_tracked;
     document.getElementById('s-hits').textContent = latest.total_hits;
     document.getElementById('s-preds').textContent = latest.total_predictions;
   }
 
   // Win rate / total wins — a real trading-outcome metric (any position
-  // actually sold above what we paid), distinct from hit_rate above (which
-  // only measures whether a pick landed in that day's real top-3 gainers).
+  // actually sold above what we paid). The Hit Rate stat (prediction
+  // accuracy -- landed in that day's real top-3 gainers) was removed
+  // 2026-08-21 as redundant with Total Hits/Predictions Made, which show
+  // the same underlying numbers without a derived percentage.
   // Prefers cumulative_trade_stats.json (full real history, never pruned --
   // see loadCumulativeStats()) since the client-side days-array computation
   // below is only ever as complete as performance.json's rolling ~16-day
@@ -963,6 +962,45 @@ function render(data) {
     pnlEl.className = 'stat-value neutral';
     pnlPctEl.textContent = '—';
     pnlPctEl.className = 'stat-value neutral';
+  }
+
+  // Open Book Performance — added 2026-08-21 after a real user report:
+  // Today's Performance above only counts fresh buys, but the "Today's Open
+  // Positions" grid right below these stats also shows carryover swing
+  // positions (still open or exited today) pulled in from their own origin
+  // day via getCurrentlyHeldPicks() -- same helper renderTodayPicks() uses,
+  // so this stat's population always matches what's actually on screen.
+  // That mismatch (e.g. a lone +0.28% fresh buy showing as "Today's
+  // Performance" while three other carryover positions sit red in the grid
+  // below) was confusing enough to report as looking broken, even though
+  // Today's Performance was computing its own narrower definition correctly.
+  const openBookPicks = getCurrentlyHeldPicks(latest, days);
+  const openBookDollarValues = openBookPicks
+    .map(p => p.paper_exit_price != null ? p.paper_exit_dollar : p.live_dollar)
+    .filter(v => v != null);
+  const obPnlEl = document.getElementById('s-openbook-pnl');
+  const obPnlPctEl = document.getElementById('s-openbook-pnl-pct');
+  if (openBookDollarValues.length) {
+    const obTotal = openBookDollarValues.reduce((sum, v) => sum + v, 0);
+    obPnlEl.textContent = fmtDollar(obTotal);
+    obPnlEl.className = 'stat-value ' + (obTotal > 0 ? 'pos' : obTotal < 0 ? 'neg' : 'neutral');
+
+    const obPctValues = openBookPicks
+      .map(p => p.paper_exit_price != null ? p.paper_exit_pct : p.live_pct)
+      .filter(v => v != null);
+    if (obPctValues.length) {
+      const obPctAvg = obPctValues.reduce((sum, v) => sum + v, 0) / obPctValues.length;
+      obPnlPctEl.textContent = fmt(obPctAvg);
+      obPnlPctEl.className = 'stat-value ' + (obPctAvg > 0 ? 'pos' : obPctAvg < 0 ? 'neg' : 'neutral');
+    } else {
+      obPnlPctEl.textContent = '—';
+      obPnlPctEl.className = 'stat-value neutral';
+    }
+  } else {
+    obPnlEl.textContent = '—';
+    obPnlEl.className = 'stat-value neutral';
+    obPnlPctEl.textContent = '—';
+    obPnlPctEl.className = 'stat-value neutral';
   }
 
   // Total / Avg Daily Performance -- same wasBought/dollar/pct convention as
