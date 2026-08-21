@@ -598,7 +598,7 @@
       <div class="card-title">How the Model Works — v2</div>
       <div class="model-section">
         <h3>Overview</h3>
-        <p>Each morning before market open, the predictor runs a series of checks before selecting any stocks. It first checks whether the overall market is healthy enough to trade. If the market passes, it scores the full S&P Composite 1500 (~1,500 large/mid/small-cap stocks) on four weighted signals, then selects the top 3 most likely to move during the upcoming session. Stocks with upcoming earnings, excessive recent volatility, or a pending merger are excluded entirely. (An overnight gap-down reranking boost also lives in this step — currently disabled, see below.)</p>
+        <p>Each morning before market open, the predictor runs a series of checks before selecting any stocks. It first checks whether the overall market is healthy enough to trade. If the market passes, it scores the full S&P Composite 1500 (~1,500 large/mid/small-cap stocks) on four weighted signals, then selects the top 20 most likely to move during the upcoming session and buys all of them (widened from top 3 on 2026-08-21 — see The Model tab's trade execution notes). Stocks with upcoming earnings, excessive recent volatility, or a pending merger are excluded entirely. (An overnight gap-down reranking boost also lives in this step — currently disabled, see below.)</p>
       </div>
       <div class="model-section">
         <h3>Step 1 — Market Regime Check</h3>
@@ -1776,8 +1776,8 @@ function renderBenchCandidates(day) {
     const whyText = isSkippedPick
       ? `⛔ Skipped — ${b.skipped_reason}`
       : isNoSlotPick
-        ? `⏳ No open slot — all 3 positions already held; next in line if one exits`
-        : `Ranked #${b.rank} — outside the top 3 selected for trading`;
+        ? `⏳ No open slot — all 20 positions already held; next in line if one exits`
+        : `Ranked #${b.rank} — outside the top 20 selected for trading`;
     return `<tr${isSkippedPick ? ' style="opacity:0.7"' : ''}>
       <td style="color:var(--muted)">#${b.rank}</td>
       <td class="td-ticker">${b.ticker}</td>
