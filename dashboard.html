@@ -353,8 +353,8 @@
       <div class="stat-box" title="Average % return across today's actually-bought positions (equal-weighted, matching the roughly equal $ notional per position) — live for open, realized for exited"><div class="stat-label">Today's Performance %</div><div class="stat-value neutral" id="s-today-pnl-pct">—</div></div>
       <div class="stat-box" title="Combined $ P/L across EVERYTHING on today's board — today's fresh buys PLUS any still-open or exited-today carryover swing position, regardless of which day it originated. This is the blended P/L for what's actually shown in Today's Open Positions below, unlike Today's Performance which only counts fresh buys."><div class="stat-label">Open Book Performance</div><div class="stat-value neutral" id="s-openbook-pnl">—</div></div>
       <div class="stat-box" title="Average % return (equal-weighted) across EVERYTHING on today's board — same population as Open Book Performance"><div class="stat-label">Open Book Performance %</div><div class="stat-value neutral" id="s-openbook-pnl-pct">—</div></div>
-      <div class="stat-box" title="Combined $ P/L across every actually-bought position since tracking began — live for still-open positions, realized for exited ones"><div class="stat-label">Total Performance</div><div class="stat-value neutral" id="s-total-pnl">—</div></div>
-      <div class="stat-box" title="Average % return across every actually-bought position since tracking began (equal-weighted, same convention as Today's Performance %)"><div class="stat-label">Total Performance %</div><div class="stat-value neutral" id="s-total-pnl-pct">—</div></div>
+      <div class="stat-box" title="Combined $ P/L across every actually-bought position on the CURRENT Alpaca account, full history (durable, not window-limited) — live for still-open positions, realized for exited ones. Should track closely with Net Trading Gain; if they ever diverge again, suspect an account reset."><div class="stat-label">Total Performance</div><div class="stat-value neutral" id="s-total-pnl">—</div></div>
+      <div class="stat-box" title="Average % return per individual trade (equal-weighted — every trade counts the same regardless of size), full account history. A genuinely different question from Net Trading Gain % (dollar-weighted return on actual capital) — this answers 'what does a typical trade look like', not 'what's my real overall return'."><div class="stat-label">Total Performance %</div><div class="stat-value neutral" id="s-total-pnl-pct">—</div></div>
       <div class="stat-box" title="Average of each tracked day's own total $ P/L across its actually-bought positions"><div class="stat-label">Avg Daily Performance</div><div class="stat-value neutral" id="s-avgday-pnl">—</div></div>
       <div class="stat-box" title="Average of each tracked day's own equal-weighted % return across its actually-bought positions"><div class="stat-label">Avg Daily Performance %</div><div class="stat-value neutral" id="s-avgday-pnl-pct">—</div></div>
       <div class="stat-box" title="Sum of every real deposit made to the account (config.json's capital_contributions log) — the initial funding plus anything added since, NOT trading performance"><div class="stat-label">Total Contributed</div><div class="stat-value neutral" id="s-total-contributed">—</div></div>
@@ -1025,21 +1025,43 @@ function render(data) {
     .map(p => p.paper_exit_price != null ? p.paper_exit_pct : p.live_pct)
     .filter(v => v != null);
 
+  // 2026-08-21: prefers cumulative_trade_stats.json (durable, full real
+  // account history) over the window-limited allDollarValues/allPctValues
+  // above, for the same reason Win Rate does -- this was the actual root
+  // cause of a real user-reported mismatch against Net Trading Gain
+  // (window-limited Total Performance vs. equity-based Net Trading Gain
+  // disagreeing). Falls back to the window calc if the file hasn't loaded.
+  // total_pct_sum/total_closed reproduces the same equal-weighted-average-
+  // of-each-trade's-own-%% convention as the old calc, just durably.
   const totalPnlEl = document.getElementById('s-total-pnl');
   const totalPnlPctEl = document.getElementById('s-total-pnl-pct');
-  if (allDollarValues.length) {
+  if (cumulativeStats && cumulativeStats.total_closed > 0) {
+    const totalDollar = cumulativeStats.total_pnl;
+    totalPnlEl.textContent = fmtDollar(totalDollar);
+    totalPnlEl.className = 'stat-value ' + (totalDollar > 0 ? 'pos' : totalDollar < 0 ? 'neg' : 'neutral');
+    if (cumulativeStats.total_pct_sum != null) {
+      const totalPctAvg = cumulativeStats.total_pct_sum / cumulativeStats.total_closed;
+      totalPnlPctEl.textContent = fmt(totalPctAvg);
+      totalPnlPctEl.className = 'stat-value ' + (totalPctAvg > 0 ? 'pos' : totalPctAvg < 0 ? 'neg' : 'neutral');
+    } else {
+      totalPnlPctEl.textContent = '—';
+      totalPnlPctEl.className = 'stat-value neutral';
+    }
+  } else if (allDollarValues.length) {
     const totalDollar = allDollarValues.reduce((sum, v) => sum + v, 0);
     totalPnlEl.textContent = fmtDollar(totalDollar);
     totalPnlEl.className = 'stat-value ' + (totalDollar > 0 ? 'pos' : totalDollar < 0 ? 'neg' : 'neutral');
+    if (allPctValues.length) {
+      const totalPctAvg = allPctValues.reduce((sum, v) => sum + v, 0) / allPctValues.length;
+      totalPnlPctEl.textContent = fmt(totalPctAvg);
+      totalPnlPctEl.className = 'stat-value ' + (totalPctAvg > 0 ? 'pos' : totalPctAvg < 0 ? 'neg' : 'neutral');
+    } else {
+      totalPnlPctEl.textContent = '—';
+      totalPnlPctEl.className = 'stat-value neutral';
+    }
   } else {
     totalPnlEl.textContent = '—';
     totalPnlEl.className = 'stat-value neutral';
-  }
-  if (allPctValues.length) {
-    const totalPctAvg = allPctValues.reduce((sum, v) => sum + v, 0) / allPctValues.length;
-    totalPnlPctEl.textContent = fmt(totalPctAvg);
-    totalPnlPctEl.className = 'stat-value ' + (totalPctAvg > 0 ? 'pos' : totalPctAvg < 0 ? 'neg' : 'neutral');
-  } else {
     totalPnlPctEl.textContent = '—';
     totalPnlPctEl.className = 'stat-value neutral';
   }
