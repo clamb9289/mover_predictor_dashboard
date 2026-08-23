@@ -45,8 +45,16 @@
   .force-refresh-btn:hover:not(:disabled) { color: var(--accent); border-color: var(--accent); }
   .force-refresh-btn:disabled { opacity: 0.5; cursor: default; }
 
-  .tabs { display: flex; gap: 2px; padding: 12px 24px 0; background: var(--surface); border-bottom: 1px solid var(--border); }
-  .tab { position: relative; padding: 10px 18px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.15s; user-select: none; }
+  /* overflow-x:auto -- 2026-08-24 mobile fix: 8 tabs at this padding
+     need well over 375px, and plain flex (no wrap, no scroll) just lets
+     them overflow the viewport with nothing to contain them -- reported
+     live as tabs "floating out into space." Same horizontal-scroll
+     pattern .table-wrap already uses elsewhere on this page, just
+     applied to the tab bar itself. flex-shrink:0 + white-space:nowrap
+     on .tab stop individual tabs from getting squished/wrapped instead
+     of the row scrolling as a whole. */
+  .tabs { display: flex; gap: 2px; padding: 12px 24px 0; background: var(--surface); border-bottom: 1px solid var(--border); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab { position: relative; padding: 10px 18px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.15s; user-select: none; flex-shrink: 0; white-space: nowrap; }
   .tab-badge { position: absolute; top: 6px; right: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
   .tab:hover { color: var(--text); }
   .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
@@ -278,8 +286,13 @@
 
   /* Chart */
   .chart-controls { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
-  .chart-toggle-group { display: flex; background: var(--surface2); border-radius: 8px; padding: 3px; gap: 2px; }
-  .chart-toggle-btn { padding: 6px 14px; font-size: 12px; font-weight: 500; color: var(--muted); cursor: pointer; border-radius: 6px; user-select: none; transition: all 0.15s; }
+  /* overflow-x:auto -- 2026-08-24, same defensive fix as .tabs above:
+     no group here is as wide as the main tab bar, but a longer label
+     (e.g. "Track Record") on a narrow phone could hit the same overflow
+     class of bug -- cheap to guard against now rather than wait for a
+     second report. */
+  .chart-toggle-group { display: flex; background: var(--surface2); border-radius: 8px; padding: 3px; gap: 2px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .chart-toggle-btn { padding: 6px 14px; font-size: 12px; font-weight: 500; color: var(--muted); cursor: pointer; border-radius: 6px; user-select: none; transition: all 0.15s; flex-shrink: 0; white-space: nowrap; }
   .chart-toggle-btn.active { background: var(--accent); color: white; }
   .chart-toggle-btn:hover:not(.active) { color: var(--text); }
   /* Exit Dots / Entry→Exit Lines toggles (2026-08-18) -- only meaningful in
