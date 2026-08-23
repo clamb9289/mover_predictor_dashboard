@@ -82,14 +82,30 @@
      than this), but on mobile the table now properly overflows into a
      horizontal scroll instead of squeezing every column unreadable. */
   .positions-table { table-layout: fixed; min-width: 620px; }
-  .positions-table td { vertical-align: top; word-wrap: break-word; overflow-wrap: break-word; }
+  /* white-space:normal -- 2026-08-24, the REAL fix the min-width change
+     above didn't fully cover: a page-wide base rule (further down, plain
+     `td { white-space: nowrap }`) was still winning for this property on
+     every cell here, since word-wrap/overflow-wrap only control how a
+     single long token breaks, not whether multi-word text wraps at all.
+     Confirmed live: the rank-label cell ("#1 — Top Pick") was spilling
+     into the Ticker column next to it even after the min-width fix,
+     because "Top Pick" never had permission to wrap onto its own line in
+     the first place. This overrides the base nowrap for every cell in
+     this table, not just the one that happened to get screenshotted. */
+  .positions-table td { vertical-align: top; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; }
   .positions-row td { border-top: 1px solid var(--border); padding-top: 10px; }
   .td-status-dot { font-size: 14px; text-align: center; width: 24px; }
   /* Status column: single-line ellipsis truncation rather than wrapping --
      full text is already in Details (and in the title tooltip), so this
      just needs to not visually collide with the Details column next to it
      (reported live: long exit-reason text overlapped "Details ▾"). */
-  .td-status-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* .positions-table prefix -- 2026-08-24: needs to outrank the new
+     .positions-table td { white-space: normal } rule above (both were
+     one class vs. one class+element, so the plain td-scoped rule was
+     silently winning on specificity and breaking this column's
+     intentional single-line truncation) -- bare .td-status-text alone
+     is no longer enough now that white-space is contested. */
+  .positions-table td.td-status-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .positions-detail-row { display: none; }
   .positions-detail-row.open { display: table-row; }
   .positions-detail-row td { font-size: 12px; color: var(--muted); line-height: 1.6; padding: 4px 8px 14px 28px; border-bottom: 1px solid var(--border); white-space: normal; }
@@ -1586,7 +1602,7 @@ function buildPickCards(predictions, idPrefix) {
 
     return `<tr class="positions-row${exitCardClass}"${isSkipped ? ' style="opacity:0.55"' : ''}>
       <td class="td-status-dot" title="${statusText || ''}">${statusDot}</td>
-      <td style="color:var(--muted);white-space:nowrap">${rankLabel}${p.round_label ? `<br><span style="font-size:10px">${p.round_label}</span>` : ''}</td>
+      <td style="color:var(--muted)">${rankLabel}${p.round_label ? `<br><span style="font-size:10px">${p.round_label}</span>` : ''}</td>
       <td class="td-ticker"><a href="https://finance.yahoo.com/quote/${p.ticker}" target="_blank">${p.ticker} ↗</a>${p.sector ? `<div style="font-size:11px;color:var(--muted);font-weight:400">${p.sector}</div>` : ''}</td>
       <td>
         <div style="color:${topValue != null ? 'var(--text)' : 'var(--muted)'}">${isSkipped ? '—' : (topValue != null ? fmtPrice(topValue) : '—')}</div>
