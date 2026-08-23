@@ -1,0 +1,119 @@
+{
+  "script_name": "conviction_weighted_sizing_calibration",
+  "run_timestamp": "2026-08-23T04:15:25.032329+00:00",
+  "title": "Does sizing positions by conviction (composite_score) instead of flat-equal splitting beat baseline on BOTH independent TRAIN and VAL $-compounding runs?",
+  "params": {
+    "days": 380,
+    "starting_capital": 300.0,
+    "num_positions": 20,
+    "conviction_weights": [
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ]
+  },
+  "tables": [
+    {
+      "name": "Conviction-weighted sizing vs flat-equal baseline (5 tested)",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "train.day_return_std",
+        "train.day_avg_return",
+        "train.sharpe_like",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct",
+        "val.day_return_std",
+        "val.day_avg_return",
+        "val.sharpe_like"
+      ],
+      "rows": [
+        [
+          "cw=0.2",
+          3852,
+          "75.75%",
+          "-0.00%",
+          0.0062,
+          "-0.03%",
+          -0.0432,
+          1651,
+          "78.62%",
+          "0.12%",
+          0.006,
+          "0.11%",
+          0.1758
+        ],
+        [
+          "cw=0.4",
+          3852,
+          "75.75%",
+          "-0.00%",
+          0.0062,
+          "-0.03%",
+          -0.0432,
+          1651,
+          "78.62%",
+          "0.12%",
+          0.006,
+          "0.11%",
+          0.1758
+        ],
+        [
+          "cw=0.6",
+          3852,
+          "75.80%",
+          "-0.00%",
+          0.0062,
+          "-0.02%",
+          -0.0403,
+          1651,
+          "78.62%",
+          "0.12%",
+          0.006,
+          "0.11%",
+          0.1758
+        ],
+        [
+          "cw=0.8",
+          3856,
+          "75.86%",
+          "-0.00%",
+          0.0062,
+          "-0.03%",
+          -0.0415,
+          1649,
+          "78.41%",
+          "0.12%",
+          0.006,
+          "0.10%",
+          0.17
+        ],
+        [
+          "cw=1.0",
+          3861,
+          "75.63%",
+          "-0.01%",
+          0.0061,
+          "-0.03%",
+          -0.0445,
+          1647,
+          "78.51%",
+          "0.12%",
+          0.0061,
+          "0.11%",
+          0.1797
+        ]
+      ]
+    }
+  ],
+  "notes": "Extends full_strategy_simulation.py's simulate() with a new conviction_weight param -- blends equal-split sizing with composite_score-proportional sizing, same total dollars deployed per fill event either way. A single full-window (non-train/val) run showed every tested value beating flat-equal sizing (best: cw=1.0, $300->$337.61 vs baseline's $327.65) -- this calibration re-tests that properly, since day-level win_rate/std are expected to look nearly identical across conviction_weight values by construction (sizing doesn't change which trades happen or their % return), so the $-compounding outcome on independent TRAIN/VAL splits is the only metric that can actually validate or reject this.",
+  "conclusion": {
+    "verdict": "NEEDS HUMAN REVIEW",
+    "summary": "5/5 conviction_weight values beat flat-equal sizing's $-compounding outcome on BOTH independent TRAIN and VAL splits -- real candidate(s) for shipping, pick the specific value with human judgment (this project's convention is not to auto-select purely on this metric)."
+  }
+}

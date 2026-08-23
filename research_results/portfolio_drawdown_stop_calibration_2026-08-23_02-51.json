@@ -1,0 +1,152 @@
+{
+  "script_name": "portfolio_drawdown_stop_calibration",
+  "run_timestamp": "2026-08-23T02:51:04.559103+00:00",
+  "title": "Would a live, mark-to-market portfolio-level drawdown stop reduce red-day frequency or cap the worst single day, vs. the existing realized-pnl-only 5% daily-loss kill-switch?",
+  "params": {
+    "days": 380,
+    "starting_capital": 300.0,
+    "thresholds": [
+      -0.005,
+      -0.0075,
+      -0.01,
+      -0.015,
+      -0.02,
+      -0.025,
+      -0.03,
+      -0.04,
+      -0.05
+    ]
+  },
+  "tables": [
+    {
+      "name": "Portfolio drawdown-stop thresholds vs no-stop baseline (9 tested)",
+      "columns": [
+        "Config",
+        "train.n_days",
+        "train.red_days",
+        "train.red_pct",
+        "train.worst_day",
+        "train.avg_red_day",
+        "train.reason_counts.trail_floor",
+        "train.reason_counts.portfolio_drawdown_stop",
+        "train.reason_counts.stop_loss",
+        "train.reason_counts.max_hold_days"
+      ],
+      "rows": [
+        [
+          "stop=-0.50%",
+          355,
+          180,
+          "50.70%",
+          -3.4239,
+          "-85.17%",
+          3018,
+          2427,
+          179,
+          26
+        ],
+        [
+          "stop=-0.75%",
+          357,
+          162,
+          "45.38%",
+          -3.9344,
+          "-111.09%",
+          3449,
+          1846,
+          253,
+          67
+        ],
+        [
+          "stop=-1.00%",
+          360,
+          161,
+          "44.72%",
+          -4.3126,
+          "-122.15%",
+          3780,
+          1300,
+          370,
+          137
+        ],
+        [
+          "stop=-1.50%",
+          362,
+          165,
+          "45.58%",
+          -6.539,
+          "-112.66%",
+          4201,
+          284,
+          641,
+          386
+        ],
+        [
+          "stop=-2.00%",
+          373,
+          169,
+          "45.31%",
+          -6.5703,
+          "-107.40%",
+          4285,
+          42,
+          714,
+          466
+        ],
+        [
+          "stop=-2.50%",
+          375,
+          170,
+          "45.33%",
+          -6.5774,
+          "-106.04%",
+          4287,
+          4,
+          737,
+          479
+        ],
+        [
+          "stop=-3.00%",
+          375,
+          170,
+          "45.33%",
+          -6.5774,
+          "-106.10%",
+          4287,
+          null,
+          740,
+          480
+        ],
+        [
+          "stop=-4.00%",
+          375,
+          170,
+          "45.33%",
+          -6.5774,
+          "-106.10%",
+          4287,
+          null,
+          740,
+          480
+        ],
+        [
+          "stop=-5.00%",
+          375,
+          170,
+          "45.33%",
+          -6.5774,
+          "-106.10%",
+          4287,
+          null,
+          740,
+          480
+        ]
+      ]
+    }
+  ],
+  "notes": "Extends full_strategy_simulation.py's simulate() with a new portfolio_drawdown_stop_pct param -- live mark-to-market combined-book %, checked every intraday tick (same mechanic as the profit lock/staircase, negative direction). Motivated by a direct finding the same session: neither the shipped flat profit lock nor any staircase shape touched red-day frequency or worst-day severity at all (structurally can't -- a profit rule only fires on days that go positive first).",
+  "conclusion": {
+    "verdict": "NEEDS MORE DATA",
+    "summary": "5/9 thresholds fired and strictly capped the worst single day vs baseline -- needs human review of the $ trade-off before considering shipping any of them."
+  }
+}
