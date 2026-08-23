@@ -72,7 +72,16 @@
      not just the expanded one (reported live: header cut off mid-scroll).
      Fixed layout makes column widths purely a function of the <th> widths
      below, never of content, so long content wraps in place instead. */
-  .positions-table { table-layout: fixed; }
+  /* min-width -- 2026-08-24 mobile fix: table-layout:fixed alone computes
+     each column as a % of the CONTAINER, which collapses to unreadable
+     sub-20px columns on a real ~375px phone (reported live: header/cell
+     text visibly overlapping). .table-wrap's overflow-x:auto scroll was
+     already in place for exactly this case, just never triggered since
+     nothing forced the table wider than its (narrow) container. A
+     min-width does that -- no-op on desktop (container is already wider
+     than this), but on mobile the table now properly overflows into a
+     horizontal scroll instead of squeezing every column unreadable. */
+  .positions-table { table-layout: fixed; min-width: 620px; }
   .positions-table td { vertical-align: top; word-wrap: break-word; overflow-wrap: break-word; }
   .positions-row td { border-top: 1px solid var(--border); padding-top: 10px; }
   .td-status-dot { font-size: 14px; text-align: center; width: 24px; }
