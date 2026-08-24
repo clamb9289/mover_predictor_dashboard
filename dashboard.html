@@ -59,7 +59,16 @@
   .tab:hover { color: var(--text); }
   .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
 
-  .main { padding: 24px; max-width: 1050px; margin: 0 auto; }
+  /* 1050px was a fixed cap that left a lot of dead margin on wider monitors
+     -- most visible on the positions-table, which is wide enough (9
+     columns) to force its own horizontal scroll INSIDE that cap even
+     though there was plenty of real screen width sitting unused on either
+     side (reported live 2026-08-24). min(1500px, 94vw) scales up to a
+     generous cap on wide screens instead of capping hard at any single
+     desktop width, while still shrinking gracefully on narrower windows --
+     the existing @media rules below (700/900/500px) still govern the
+     actual mobile/tablet reflow independent of this. */
+  .main { padding: 24px; max-width: min(1500px, 94vw); margin: 0 auto; }
   .panel { display: none; }
   .panel.active { display: block; }
 
@@ -471,14 +480,30 @@
           <div class="chart-toggle-btn" data-cardview="value" onclick="setCardViewMode('value')">Position $</div>
         </div>
       </div>
-      <div class="closed-notice" style="margin-top:0;margin-bottom:16px;justify-content:flex-start">
-        <span style="font-size:22px">💰</span>
-        <div>
-          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:2px">Open Positions Live Total — what you'd bank selling everything right now</div>
-          <div style="display:flex;align-items:baseline;gap:10px">
-            <span class="stat-value neutral" id="s-openpos-live-total" style="font-size:24px;font-weight:700">—</span>
-            <span class="stat-value neutral" id="s-openpos-live-total-pct" style="font-size:16px">—</span>
+      <div class="closed-notice" style="margin-top:0;margin-bottom:16px;justify-content:flex-start;flex-wrap:wrap;gap:28px">
+        <div style="display:flex;align-items:flex-start;gap:10px">
+          <span style="font-size:22px">💰</span>
+          <div>
+            <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:2px">Open Positions Live Total — what you'd bank selling everything right now</div>
+            <div style="display:flex;align-items:baseline;gap:16px">
+              <div>
+                <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em">$ P/L</div>
+                <span class="stat-value neutral" id="s-openpos-live-total" style="font-size:24px;font-weight:700">—</span>
+              </div>
+              <div>
+                <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em">% P/L</div>
+                <span class="stat-value neutral" id="s-openpos-live-total-pct" style="font-size:16px">—</span>
+              </div>
+            </div>
           </div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:2px">Bought Today</div>
+          <span class="stat-value neutral" id="s-bought-today-count" style="font-size:24px;font-weight:700">—</span>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:0.03em;margin-bottom:2px">Currently Open</div>
+          <span class="stat-value neutral" id="s-currently-open-count" style="font-size:24px;font-weight:700">—</span>
         </div>
       </div>
       <p class="updated-at" id="prices-updated"></p>
@@ -1170,6 +1195,19 @@ function render(data) {
     olPnlPctEl.textContent = '—';
     olPnlPctEl.className = 'stat-value neutral';
   }
+
+  // Bought Today / Currently Open counts (added 2026-08-24) -- reuse the
+  // same two populations already computed just above rather than
+  // recomputing: todayBought is today's own fresh buys (position_cost set
+  // on one of latest.predictions, same definition as Today's Performance
+  // uses), openOnlyPicks is isOpenPosition-filtered getCurrentlyHeldPicks()
+  // (today's buys + still-open carryover, same population the Open
+  // Positions Live Total $/% above is built from) -- so these two counts
+  // always agree with what's actually driving the numbers next to them.
+  const boughtTodayCountEl = document.getElementById('s-bought-today-count');
+  if (boughtTodayCountEl) boughtTodayCountEl.textContent = todayBought.length;
+  const openCountEl = document.getElementById('s-currently-open-count');
+  if (openCountEl) openCountEl.textContent = openOnlyPicks.length;
 
   // Total / Avg Daily Performance -- same wasBought/dollar/pct convention as
   // Today's Performance above, just pooled across EVERY tracked day instead
