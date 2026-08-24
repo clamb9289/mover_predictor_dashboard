@@ -1,201 +1,291 @@
 {
-  "date": "2026-08-21",
-  "generated_at": "2026-08-21T14:04:24.004111+00:00",
+  "date": "2026-08-24",
+  "generated_at": "2026-08-24T13:54:23.086284+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "PCG",
-    "CNH",
-    "KR"
+    "BSX",
+    "CG",
+    "EXE"
   ],
   "llm_top3": {
     "tickers": [
-      "CNH",
-      "ILMN",
-      "UNP"
+      "ROST",
+      "TRGP",
+      "EXE"
     ],
-    "reasoning": "CNH (rank 2) and ILMN both have genuine fundamental catalysts: CNH beat and raised guidance signaling an ag cycle bottom, and Illumina raised 2026 outlook while breaking to 52-week highs with institutional accumulation. I skip rank-1 PCG because its news is dominated by California wildfire liability overhang and two-sided options hedging, and skip KR (rank 3) whose feed is almost entirely routine 13F filings with no catalyst; instead UNP offers a real event driver in the STB resuming the Norfolk Southern merger review plus earnings strength."
+    "reasoning": "I deviate from the top quant ranks because BSX (rank 1) has decidedly negative news \u2014 repeated 52-week lows and a BofA target cut \u2014 and CG (rank 2) headlines are almost entirely routine 13F filings with a sharp GAAP EPS decline. ROST offers the clearest hard catalyst: 10% comps, a raise, and accelerated store expansion. TRGP has a genuinely material 20-year ExxonMobil deal driving new highs and analyst target hikes. EXE combines a strong nat-gas/LNG demand setup and good hedging with a high quant rank (3), giving both signals alignment."
   },
   "tickers": {
-    "PCG": {
+    "BSX": {
       "rank": 1,
       "headline_count": 40,
-      "mentions_24h": 5,
+      "mentions_24h": 6,
       "total_distinct_found": 62,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Mixed: DOE $271M Diablo Canyon award and Dalio 13F new large buy plus UBS Buy reiteration are positive, but persistent California wildfire liability overhang and hedging put flow temper it."
-    },
-    "CNH": {
-      "rank": 2,
-      "headline_count": 40,
-      "mentions_24h": 7,
-      "total_distinct_found": 61,
-      "llm_score": 3,
-      "materiality": "high",
-      "reasoning": "Q2 EPS beat with raised FY26 outlook drove an 11% surge and even lifted Deere, signaling ag equipment cycle bottoming, though GAAP EPS still down YoY and analysts remain neutral."
-    },
-    "KR": {
-      "rank": 3,
-      "headline_count": 40,
-      "mentions_24h": 8,
-      "total_distinct_found": 68,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Mostly routine 13F filings, generic 'great choice'/value articles and unrelated retail sector news; no company-specific catalyst."
-    },
-    "LEG": {
-      "rank": 4,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 60,
       "llm_score": -1,
       "materiality": "medium",
-      "reasoning": "Q2 sales down 5.5% and EPS down 13% with stock dropping despite estimate beat; pending Somnigroup merger at a low price caps upside."
+      "reasoning": "Mixed: 52-week lows and BofA price-target cut offset by $2B buyback and CEO buying; social sentiment is frustrated/bearish."
     },
-    "OGN": {
-      "rank": 5,
+    "CG": {
+      "rank": 2,
       "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 58,
+      "mentions_24h": 0,
+      "total_distinct_found": 59,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Shareholders approved Sun Pharma all-cash buyout, so the stock is deal-pinned with limited further upside despite weak Q2 results."
+      "reasoning": "Mostly routine 13F filings; Q2 GAAP EPS down sharply though adjusted beat, with put hedging noted \u2014 net neutral."
+    },
+    "EXE": {
+      "rank": 3,
+      "headline_count": 40,
+      "mentions_24h": 4,
+      "total_distinct_found": 57,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Positive nat-gas/LNG demand narrative, well-hedged, 'biggest nat gas producer/trader' commentary and bullish accumulation, offset by lower capex outlook and leadership change."
+    },
+    "IR": {
+      "rank": 4,
+      "headline_count": 40,
+      "mentions_24h": 6,
+      "total_distinct_found": 59,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "Q2 beat and raised guidance plus Stifel upgrade to Buy at $101, but stock in a 9-day losing streak down 10% and 'skeptical' screens."
+    },
+    "BEN": {
+      "rank": 5,
+      "headline_count": 40,
+      "mentions_24h": 3,
+      "total_distinct_found": 54,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "$6B long-term net inflows and closed $1.5B CFO are constructive, but valuation-warning pieces ('3 Reasons to Avoid BEN') temper it."
     },
     "AES": {
       "rank": 6,
       "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 61,
-      "llm_score": 0,
+      "mentions_24h": 3,
+      "total_distinct_found": 60,
+      "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Trading at $14.75 against a fixed $15.00 take-private with only FERC left; arbitrage-capped despite the strong Q2 EPS beat."
+      "reasoning": "Q2 EPS beat big, but shares are effectively pinned by the BlackRock/GIP buyout, limiting upside."
     },
-    "OHI": {
+    "CNK": {
       "rank": 7,
+      "headline_count": 40,
+      "mentions_24h": 2,
+      "total_distinct_found": 58,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Record Spider-Man box office and highest-grossing domestic film, though JPM downgrade and 'fairly valued after 132% run' cap it."
+    },
+    "ROST": {
+      "rank": 8,
+      "headline_count": 40,
+      "mentions_24h": 9,
+      "total_distinct_found": 113,
+      "llm_score": 4,
+      "materiality": "high",
+      "reasoning": "Blowout Q2 with 10% comps, raised FY EPS guidance, 115 new stores and an 8% after-hours pop \u2014 clear, material positive."
+    },
+    "WAY": {
+      "rank": 9,
       "headline_count": 40,
       "mentions_24h": 1,
       "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 FFO/revenue beat, raised AFFO guidance and a dividend hike offset heavy put sweeps at $45 and a Seeking Alpha downgrade."
-    },
-    "UNP": {
-      "rank": 8,
-      "headline_count": 40,
-      "mentions_24h": 19,
-      "total_distinct_found": 64,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "STB resumed the Norfolk Southern merger review with a procedural schedule, and $91M fuel surcharge surplus boosted earnings, though the surcharge story carries regulatory/optics risk."
-    },
-    "PG": {
-      "rank": 9,
-      "headline_count": 40,
-      "mentions_24h": 24,
-      "total_distinct_found": 78,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Only routine institutional filings, insider stock grants and generic dividend-king commentary; weak consumer read-through from Walmart is a mild negative."
+      "reasoning": "Waystar beat Q2, raised 2026 outlook, Zacks upgrade to Buy and Fitch rating upgrade, though organic growth is slowing."
     },
     "TECH": {
       "rank": 10,
       "headline_count": 40,
-      "mentions_24h": 6,
-      "total_distinct_found": 60,
-      "llm_score": -1,
-      "materiality": "low",
-      "reasoning": "Bio-Techne's Q4 met estimates with revenue beat, but the feed is dominated by unrelated broad tech-selloff headlines and one 'approach with caution' valuation piece."
-    },
-    "DOW": {
-      "rank": 11,
-      "headline_count": 40,
-      "mentions_24h": 26,
-      "total_distinct_found": 80,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Most headlines are index noise; the DOW-specific reads are 'retain' ratings plus feedstock tightness helping pricing, offset by bearish chart/earnings skepticism."
-    },
-    "APO": {
-      "rank": 12,
-      "headline_count": 40,
-      "mentions_24h": 10,
-      "total_distinct_found": 67,
-      "llm_score": -2,
-      "materiality": "medium",
-      "reasoning": "Confirmed data breach, CFO share sales, a ~5% drop and questions over AI-related private credit exposure outweigh the routine institutional buying."
-    },
-    "AXP": {
-      "rank": 13,
-      "headline_count": 40,
-      "mentions_24h": 24,
-      "total_distinct_found": 84,
-      "llm_score": -1,
-      "materiality": "low",
-      "reasoning": "Stock down 13% YTD and off 2.6% on weak-consumer read-through from Walmart; only minor positives like the St Andrews partnership."
-    },
-    "FANG": {
-      "rank": 14,
-      "headline_count": 40,
-      "mentions_24h": 8,
-      "total_distinct_found": 62,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Fresh 52-week highs and the Solitude pipeline FID are positive, but a Morgan Stanley downgrade to Equal-Weight and insider selling cut the score."
-    },
-    "ILMN": {
-      "rank": 15,
-      "headline_count": 40,
       "mentions_24h": 15,
-      "total_distinct_found": 63,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Strong Q2 with raised 2026 outlook, new 52-week highs, PrimeCap boosting stake and Zacks Strong Buy upgrade signal genuine momentum."
-    },
-    "SO": {
-      "rank": 16,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 60,
+      "total_distinct_found": 61,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Q2 EPS up 29% but flat revenue, and most 'SO' headlines are false matches on the word 'so'; valuation seen as full after a 68% five-year run."
+      "reasoning": "Headlines are mostly generic tech-sector noise; Bio-Techne's Q4 met EPS with revenue beat but no strong directional signal."
     },
-    "LNTH": {
+    "NDAQ": {
+      "rank": 11,
+      "headline_count": 40,
+      "mentions_24h": 8,
+      "total_distinct_found": 61,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Constructive 23-hour trading expansion story and business diversification, but mostly filings and unrelated chatter."
+    },
+    "TRGP": {
+      "rank": 12,
+      "headline_count": 40,
+      "mentions_24h": 9,
+      "total_distinct_found": 61,
+      "llm_score": 3,
+      "materiality": "high",
+      "reasoning": "20-year ExxonMobil midstream deal with three new Permian plants drove a 7.6% pop, new 52-week high and Jefferies target hike to $345."
+    },
+    "SWKS": {
+      "rank": 13,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 60,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "BMO initiated at Market Perform citing Qorvo merger execution risk, dividend cancelled, and margin/debt concerns."
+    },
+    "XYZ": {
+      "rank": 14,
+      "headline_count": 40,
+      "mentions_24h": 9,
+      "total_distinct_found": 62,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "Cash App gross profit +31% and layoff-driven rally offset by crypto-linked weakness and pre-market crashes."
+    },
+    "ECL": {
+      "rank": 15,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 60,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Raised 2026 guidance, 89-year dividend streak, Oppenheimer upgrade and AI/data-center cooling exposure, tempered by chairman's $5M insider sale and debt concerns."
+    },
+    "TSN": {
+      "rank": 16,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 61,
+      "llm_score": -2,
+      "materiality": "medium",
+      "reasoning": "Trump's beef import/tariff plan pressures meatpacker margins, plant closures and 3,200 layoffs, plus antitrust settlement overhang."
+    },
+    "HE": {
       "rank": 17,
+      "headline_count": 40,
+      "mentions_24h": 11,
+      "total_distinct_found": 60,
+      "llm_score": -2,
+      "materiality": "medium",
+      "reasoning": "Storm exposed frail grid infrastructure, prolonged outages, ongoing wildfire settlement overhang and commentary that recovery is a long road."
+    },
+    "CSX": {
+      "rank": 18,
       "headline_count": 40,
       "mentions_24h": 1,
       "total_distinct_found": 60,
-      "llm_score": -1,
-      "materiality": "low",
-      "reasoning": "Curium go-private deal caps upside and drew a B. Riley downgrade plus shareholder anger over the price, though the FDA tau imaging approval is a positive."
-    },
-    "ORLY": {
-      "rank": 18,
-      "headline_count": 40,
-      "mentions_24h": 21,
-      "total_distinct_found": 62,
-      "llm_score": -1,
+      "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Stock traded lower on Advance Auto Parts' comp-sales miss showing constrained DIY consumer, with valuation flagged as rich on earnings."
+      "reasoning": "Hit 52-week highs with bullish flow and merger speculation, though some cautionary 'CSX is risky' pieces."
     },
-    "EVRG": {
+    "GPN": {
       "rank": 19,
       "headline_count": 40,
-      "mentions_24h": 2,
+      "mentions_24h": 1,
+      "total_distinct_found": 60,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Morgan Stanley turned bullish, RBC sees upside and dividend approval drove 8% pop, but GAAP EPS collapsed 95% and payments sector sentiment is weak."
+    },
+    "TEL": {
+      "rank": 20,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 61,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Record Q3 sales, strong orders up $1.2B YoY and upgrades, but the stock fell ~6% on the $1.4B Astrodyne acquisition."
+    },
+    "IBKR": {
+      "rank": 21,
+      "headline_count": 40,
+      "mentions_24h": 4,
+      "total_distinct_found": 66,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Global expansion, local-currency funding in LatAm and 49% margin-loan growth, though several notes call the 466% five-year run priced for perfection."
+    },
+    "RITM": {
+      "rank": 22,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 63,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "UBS lowered target to $14 while keeping Buy; dividend safe at ~9.6% but no growth catalyst and management won't raise payout."
+    },
+    "MET": {
+      "rank": 23,
+      "headline_count": 40,
+      "mentions_24h": 3,
+      "total_distinct_found": 58,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "New $3B buyback, Jefferies target raise to $115 and Wall Street Zen upgrade, but Q2 was only modestly above."
+    },
+    "SYK": {
+      "rank": 24,
+      "headline_count": 40,
+      "mentions_24h": 9,
+      "total_distinct_found": 66,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Large director sale of 350,000 shares (~$118M) and a 14% one-year decline outweigh the $100M Defense Logistics contract."
+    },
+    "OHI": {
+      "rank": 25,
+      "headline_count": 40,
+      "mentions_24h": 4,
       "total_distinct_found": 60,
       "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Q2 beat with reaffirmed 6-8% long-term EPS growth and 3GW of large-load contracts, but charts show repeated sell signals below the 50 DMA."
+      "reasoning": "Q2 FFO and revenue beat with raised AFFO guidance and dividend increase, though put sweeps at the $45 level show hedging."
     },
-    "TGTX": {
-      "rank": 20,
+    "AIG": {
+      "rank": 26,
       "headline_count": 40,
-      "mentions_24h": 28,
-      "total_distinct_found": 58,
+      "mentions_24h": 1,
+      "total_distinct_found": 60,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Q2 beat on underwriting income but RBC flags cash hoarding and 'dead money' commentary; net neutral."
+    },
+    "SYF": {
+      "rank": 27,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 59,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Unconfirmed Betaville buyout chatter sparked a sharp move alongside positive BRIUMVI subcutaneous data and price target hikes, but rumor-driven gains are fragile."
+      "reasoning": "Q2 beat with raised FY EPS guidance, record purchase volume, and an enterprise OpenAI agentic-commerce partnership."
+    },
+    "AEP": {
+      "rank": 28,
+      "headline_count": 40,
+      "mentions_24h": 2,
+      "total_distinct_found": 65,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "Massive AI data-center power demand (OpenAI Ohio, $105B NVIDIA-backed project) is offset by Icahn trimming, an MS target cut and a 3.8% drop."
+    },
+    "KNX": {
+      "rank": 29,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 57,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Q2 beat but stock down 4% since earnings amid mixed freight-cycle views and insider selling."
+    },
+    "FIS": {
+      "rank": 30,
+      "headline_count": 40,
+      "mentions_24h": 4,
+      "total_distinct_found": 62,
+      "llm_score": -2,
+      "materiality": "medium",
+      "reasoning": "Worst-performing S&P 500 stock down ~36% YTD, UBS downgrade to Neutral, $210M investor settlement and payments-sector pressure."
     }
   }
 }
