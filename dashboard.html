@@ -123,6 +123,16 @@
   .positions-table td.td-pos, .positions-table td.td-neg, .positions-table td.td-flat { white-space: nowrap; }
   .positions-detail-row { display: none; }
   .positions-detail-row.open { display: table-row; }
+  /* Sortable Price/Entry/Change/Score headers + status filter bar
+     (2026-08-24) -- lets a long positions-table (up to NUM_POSITIONS rows,
+     currently 20) be sorted to see its top/bottom extremes and narrowed
+     down to just open/won/lost/not-traded rows, same chart-toggle-btn
+     convention already used for the Price/Position $ and chart-mode
+     toggles elsewhere on this page. */
+  .positions-table th.sortable-th { cursor: pointer; user-select: none; }
+  .positions-table th.sortable-th:hover { color: var(--text); }
+  .positions-filter-bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .positions-filter-note { font-size: 12px; color: var(--muted); }
   .positions-detail-row td { font-size: 12px; color: var(--muted); line-height: 1.6; padding: 4px 8px 14px 28px; border-bottom: 1px solid var(--border); white-space: normal; }
   .positions-row.pick-card-win td:first-child { box-shadow: inset 3px 0 0 var(--green); }
   .positions-row.pick-card-loss td:first-child { box-shadow: inset 3px 0 0 var(--red); }
@@ -472,6 +482,16 @@
         </div>
       </div>
       <p class="updated-at" id="prices-updated"></p>
+      <div class="positions-filter-bar">
+        <div class="chart-toggle-group" title="Filter by status — applies to both this table and Last Trading Session below">
+          <div class="chart-toggle-btn active" data-statusfilter="all" onclick="setPositionsStatusFilter('all')">All</div>
+          <div class="chart-toggle-btn" data-statusfilter="open" onclick="setPositionsStatusFilter('open')">🟢 Open</div>
+          <div class="chart-toggle-btn" data-statusfilter="won" onclick="setPositionsStatusFilter('won')">🟢 Won</div>
+          <div class="chart-toggle-btn" data-statusfilter="lost" onclick="setPositionsStatusFilter('lost')">🔴 Lost</div>
+          <div class="chart-toggle-btn" data-statusfilter="skipped" onclick="setPositionsStatusFilter('skipped')">⛔ Not Traded</div>
+        </div>
+        <div class="positions-filter-note">Click Price / Entry / Change / Score in the table header to sort — click again to flip direction</div>
+      </div>
       <div id="today-picks" class="picks-grid"><div class="loading-msg">Loading picks...</div></div>
       <p class="updated-at" id="today-date"></p>
       <div id="closed-notice" style="display:none"></div>
@@ -774,6 +794,15 @@ let cumulativeStats = null; // {total_closed, total_wins, total_pnl, since}, pop
 // that goes through buildPickCards() (Today's Picks, Last Session, Yesterday's
 // carryover, etc.) since they all funnel through that one template function.
 let cardViewMode = 'price';
+// Positions-table filter/sort (added 2026-08-24) -- shared by both
+// renderTodayPicks() and renderLastSession() since both funnel through
+// wrapPositionsTable(), same convention as cardViewMode above. status is
+// one of 'all'|'open'|'won'|'lost'|'skipped' (see positionStatusBucket());
+// sortKey is one of 'price'|'entry'|'change'|'score'|null (null = original
+// rank order, sortDir applies only once a key is chosen).
+let positionsStatusFilter = 'all';
+let positionsSortKey = null;
+let positionsSortDir = 'desc';
 let liveCountdown = REFRESH_INTERVAL;
 let countdownTimer = null;
 let chartMode = 'combined';
@@ -1351,6 +1380,58 @@ const isOpenPosition = p => wasBought(p) && p.paper_exit_price == null;
 // realized result for the rest of that day (found 2026-07-31: NVST).
 const closedToday = (p, todayStr) => wasBought(p) && p.paper_exit_price != null && p.paper_exit_date === todayStr;
 
+// Coarse status bucket for the positions-table filter bar (2026-08-24) --
+// mirrors the same isSkipped/isExited/pnlPct branching buildPickCards()
+// already uses for the status dot/badges, just collapsed to one of 4
+// buckets a user can filter by. 'skipped' folds together both an
+// actively-rejected filter pick AND a ranked-but-no-open-slot pick
+// (isNotBought) -- both read as "not traded" from a filtering standpoint
+// even though the Status column/Details text still distinguishes them.
+// An exact flat (0%) exit counts as 'won' here (not a loss) -- rare enough
+// in practice not to warrant its own filter bucket.
+function positionStatusBucket(p) {
+  const isSkipped = !!p.skipped_reason;
+  const isExited = p.paper_exit_price != null;
+  const isNotBought = !isSkipped && p.position_cost == null && !isExited;
+  if (isSkipped || isNotBought) return 'skipped';
+  if (isExited) return (p.paper_exit_pct ?? 0) < 0 ? 'lost' : 'won';
+  return 'open';
+}
+
+// Value a positions-table row sorts by for a given column key -- same
+// live-vs-exited fallback buildPickCards() uses for the Price/Change
+// columns themselves, so sorting matches exactly what's on screen.
+function positionSortValue(p, key) {
+  const isExited = p.paper_exit_price != null;
+  switch (key) {
+    case 'price': return isExited ? p.paper_exit_price : (p.live_price ?? null);
+    case 'entry': return p.entry_price ?? null;
+    case 'change': return isExited ? p.paper_exit_pct : (p.live_pct ?? null);
+    case 'score': return p.score ?? null;
+    default: return null;
+  }
+}
+
+function setPositionsStatusFilter(status) {
+  positionsStatusFilter = status;
+  document.querySelectorAll('[data-statusfilter]').forEach(b => b.classList.toggle('active', b.dataset.statusfilter === status));
+  if (perfData) render(perfData); // re-render everything from cached data -- no re-fetch needed
+}
+
+// Clicking the same header again flips direction instead of re-picking a
+// key -- clicking a different header starts that column fresh at 'desc'
+// (highest first, matches how Score/Change are most useful to scan by
+// default -- top performers/candidates first).
+function setPositionsSort(key) {
+  if (positionsSortKey === key) {
+    positionsSortDir = positionsSortDir === 'desc' ? 'asc' : 'desc';
+  } else {
+    positionsSortKey = key;
+    positionsSortDir = 'desc';
+  }
+  if (perfData) render(perfData);
+}
+
 // Swing positions can span multiple origin days. day.predictions only
 // lists TODAY's newly-ranked candidates -- if a slot was already held by a
 // carryover position, that position's own record lives under ITS origin
@@ -1464,21 +1545,62 @@ function renderTodayPicks(day, days) {
   // same-day multi-round pick's cards all move together as one unit.
   const sortedPicks = activePicks.slice()
     .sort((a, b) => (a.paper_exit_price != null ? 1 : 0) - (b.paper_exit_price != null ? 1 : 0));
-  el.innerHTML = wrapPositionsTable(buildPickCards(withClosedRounds(sortedPicks, day), 'explainer'));
+  el.innerHTML = renderPositionsTable(withClosedRounds(sortedPicks, day), 'explainer');
+}
+
+// Applies the global status filter + column sort (positionsStatusFilter/
+// positionsSortKey/positionsSortDir, set via setPositionsStatusFilter()/
+// setPositionsSort()) to a table's row-level pick list, then hands the
+// result to buildPickCards()/wrapPositionsTable(). Sorting happens AFTER
+// withClosedRounds() (each same-day round is its own row, sorted
+// independently) and REPLACES renderTodayPicks()'s default
+// still-open-first ordering once a sort key is chosen -- with no key
+// (the default) that original ordering passes through untouched.
+function renderPositionsTable(rows, idPrefix) {
+  const filtered = positionsStatusFilter === 'all'
+    ? rows
+    : rows.filter(p => positionStatusBucket(p) === positionsStatusFilter);
+  let sorted = filtered;
+  if (positionsSortKey) {
+    const key = positionsSortKey;
+    const dirMult = positionsSortDir === 'asc' ? 1 : -1;
+    sorted = filtered.slice().sort((a, b) => {
+      const av = positionSortValue(a, key);
+      const bv = positionSortValue(b, key);
+      // Rows with no value for this column (e.g. Entry on a skipped pick)
+      // sink to the bottom regardless of sort direction, rather than
+      // sorting as if they were 0.
+      if (av == null && bv == null) return 0;
+      if (av == null) return 1;
+      if (bv == null) return -1;
+      return (av - bv) * dirMult;
+    });
+  }
+  return wrapPositionsTable(buildPickCards(sorted, idPrefix), rows.length, filtered.length);
 }
 
 // Shared table shell for buildPickCards() output -- see its 2026-08-21
 // comment for why this replaced the card grid. Both renderTodayPicks() and
 // renderLastSession() use this so the header stays in sync automatically.
-function wrapPositionsTable(rowsHtml) {
-  return `<div class="table-wrap"><table class="positions-table">
+// totalCount/shownCount (2026-08-24) are the pre-/post-status-filter row
+// counts, used only to surface a "Showing X of Y" note when the filter has
+// actually hidden something.
+function wrapPositionsTable(rowsHtml, totalCount, shownCount) {
+  const sortArrow = key => positionsSortKey !== key ? '' : (positionsSortDir === 'asc' ? ' ▲' : ' ▼');
+  const sortTh = (key, label, style) =>
+    `<th style="${style}" class="sortable-th" onclick="setPositionsSort('${key}')" title="Click to sort by ${label}">${label}${sortArrow(key)}</th>`;
+  const filterNote = (totalCount != null && shownCount != null && shownCount !== totalCount)
+    ? `<div class="positions-filter-note" style="margin-bottom:6px">Showing ${shownCount} of ${totalCount} rows — filtered by status</div>`
+    : '';
+  const body = rowsHtml || `<tr><td colspan="9" class="loading-msg">No positions match the current status filter.</td></tr>`;
+  return `${filterNote}<div class="table-wrap"><table class="positions-table">
     <thead><tr>
       <th style="width:24px"></th><th style="width:80px">#</th><th style="width:15%">Ticker</th>
-      <th style="width:13%">Price</th><th style="width:10%">Entry</th>
-      <th style="width:10%">Change</th><th style="width:10%">Score</th>
+      ${sortTh('price', 'Price', 'width:13%')}${sortTh('entry', 'Entry', 'width:10%')}
+      ${sortTh('change', 'Change', 'width:10%')}${sortTh('score', 'Score', 'width:10%')}
       <th>Status</th><th style="width:80px">Details</th>
     </tr></thead>
-    <tbody>${rowsHtml}</tbody>
+    <tbody>${body}</tbody>
   </table></div>`;
 }
 
@@ -1819,7 +1941,7 @@ function renderLastSession(day) {
   }
   card.style.display = '';
   dateEl.textContent = day.date;
-  el.innerHTML = wrapPositionsTable(buildPickCards(withClosedRounds(day.predictions, day), 'last-session-explainer'));
+  el.innerHTML = renderPositionsTable(withClosedRounds(day.predictions, day), 'last-session-explainer');
 }
 
 function renderBenchCandidates(day) {
