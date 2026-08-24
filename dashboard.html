@@ -76,7 +76,24 @@
   .card-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 16px; }
 
   /* Pick cards */
-  .picks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  /* .picks-grid REMOVED 2026-08-24 -- was display:grid;
+     grid-template-columns:repeat(auto-fit, minmax(300px,1fr)), left over on
+     #today-picks/#last-session-picks from the pre-2026-08-21 per-pick CARD
+     layout (see .pick-card below, itself now dead/unused). Those two divs
+     hold a single .table-wrap now, not a set of ~300px cards -- harmless
+     while there was only ever one child, but the new positions-filter-note
+     div (2026-08-24 status filter) is a SECOND direct child, and the grid
+     auto-placed it into its own column, shoving the actual table sideways
+     into column 2 instead of stacking above it full-width (reported live:
+     table right-shifted with a blank gap on wide screens, columns clipped
+     instead of reflowing on narrow ones -- this grid was the real cause,
+     not the .main width or the table's own sizing, both of which were
+     already computing correctly). Plain block flow is all either container
+     needs now.
+     .pick-card itself (next line) is now fully unused (no element carries
+     class="pick-card" alone anymore, only the pick-card-win/loss/attention
+     MODIFIER classes on table rows) -- left in place rather than deleted
+     since it's inert either way and this is already a big enough diff. */
   .pick-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
   /* 2026-08-21: positions table (replaces the pick-card grid above for
      Today's Open Positions / Last Trading Session -- see buildPickCards()).
@@ -89,16 +106,24 @@
      not just the expanded one (reported live: header cut off mid-scroll).
      Fixed layout makes column widths purely a function of the <th> widths
      below, never of content, so long content wraps in place instead. */
-  /* min-width -- 2026-08-24 mobile fix: table-layout:fixed alone computes
-     each column as a % of the CONTAINER, which collapses to unreadable
-     sub-20px columns on a real ~375px phone (reported live: header/cell
-     text visibly overlapping). .table-wrap's overflow-x:auto scroll was
-     already in place for exactly this case, just never triggered since
-     nothing forced the table wider than its (narrow) container. A
-     min-width does that -- no-op on desktop (container is already wider
-     than this), but on mobile the table now properly overflows into a
-     horizontal scroll instead of squeezing every column unreadable. */
-  .positions-table { table-layout: fixed; min-width: 620px; }
+  /* min-width -- 2026-08-24 mobile fix, REVISED same day: originally a
+     bare (always-on) min-width:620px, added because table-layout:fixed
+     alone computes each column as a % of the CONTAINER, which collapses to
+     unreadable sub-20px columns on a real ~375px phone (reported live:
+     header/cell text visibly overlapping). .table-wrap's overflow-x:auto
+     scroll was already in place for exactly this case, just never
+     triggered since nothing forced the table wider than its (narrow)
+     container -- the min-width did that.
+     Problem: that floor was NOT actually a no-op on desktop the way the
+     original comment assumed -- narrowing an ordinary desktop *window*
+     (not just a phone) below ~670px hit the exact same floor and forced
+     the same horizontal-scroll behavior instead of the columns reflowing
+     smaller, which read as "columns getting covered" rather than resizing
+     (reported live 2026-08-24). Scoping the floor to an actual mobile
+     media query (matching the other 700px breakpoints on this page) keeps
+     the phone fix while letting desktop narrow all the way down normally. */
+  .positions-table { table-layout: fixed; width: 100%; }
+  @media (max-width: 700px) { .positions-table { min-width: 620px; } }
   /* white-space:normal -- 2026-08-24, the REAL fix the min-width change
      above didn't fully cover: a page-wide base rule (further down, plain
      `td { white-space: nowrap }`) was still winning for this property on
@@ -517,7 +542,7 @@
         </div>
         <div class="positions-filter-note">Click Price / Entry / Change / Score in the table header to sort — click again to flip direction</div>
       </div>
-      <div id="today-picks" class="picks-grid"><div class="loading-msg">Loading picks...</div></div>
+      <div id="today-picks"><div class="loading-msg">Loading picks...</div></div>
       <p class="updated-at" id="today-date"></p>
       <div id="closed-notice" style="display:none"></div>
       <div id="pool-shortfall-notice" class="closed-notice" style="display:none"></div>
@@ -541,7 +566,7 @@
     <div class="card" id="last-session-card" style="display:none">
       <div class="card-title">Last Trading Session — <span id="last-session-date"></span></div>
       <div class="gainer-label">Markets are closed today, so here's how the most recent session's picks turned out.</div>
-      <div id="last-session-picks" class="picks-grid"></div>
+      <div id="last-session-picks"></div>
     </div>
     <div class="card">
       <div class="card-title">Actual Top Gainers Yesterday</div>
