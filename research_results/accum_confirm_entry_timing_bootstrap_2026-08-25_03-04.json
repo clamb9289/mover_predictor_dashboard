@@ -1,0 +1,107 @@
+{
+  "script_name": "accum_confirm_entry_timing_bootstrap",
+  "run_timestamp": "2026-08-25T03:04:46.328988+00:00",
+  "title": "Is accum_confirm_entry_timing_backtest.py's PROMISING momentum-confirm entry-timing result real, or noise?",
+  "params": {
+    "n_bootstrap": 10000,
+    "accum_threshold": 2.0,
+    "configs": [
+      "baseline",
+      "confirm>=1.00% win=90m fb=skip",
+      "confirm>=1.00% win=60m fb=skip"
+    ]
+  },
+  "tables": [
+    {
+      "name": "Bootstrap 95% CI + permutation test on (variant - baseline)",
+      "columns": [
+        "Variant",
+        "Split",
+        "Metric",
+        "Observed Diff",
+        "CI Low",
+        "CI High",
+        "Perm p-value"
+      ],
+      "rows": [
+        [
+          "confirm>=1.00% win=90m fb=skip",
+          "TRAIN",
+          "avg_pct",
+          "+0.0060%",
+          "-0.2079%",
+          "+0.2168%",
+          "0.9628"
+        ],
+        [
+          "confirm>=1.00% win=90m fb=skip",
+          "TRAIN",
+          "win_rate",
+          "+6.3329%",
+          "+1.0307%",
+          "+11.6087%",
+          "0.0246"
+        ],
+        [
+          "confirm>=1.00% win=90m fb=skip",
+          "VALIDATION",
+          "avg_pct",
+          "+0.0684%",
+          "-0.2700%",
+          "+0.4040%",
+          "0.7113"
+        ],
+        [
+          "confirm>=1.00% win=90m fb=skip",
+          "VALIDATION",
+          "win_rate",
+          "+7.8920%",
+          "-0.2636%",
+          "+15.9446%",
+          "0.0647"
+        ],
+        [
+          "confirm>=1.00% win=60m fb=skip",
+          "TRAIN",
+          "avg_pct",
+          "+0.0060%",
+          "-0.2178%",
+          "+0.2251%",
+          "0.9676"
+        ],
+        [
+          "confirm>=1.00% win=60m fb=skip",
+          "TRAIN",
+          "win_rate",
+          "+6.4274%",
+          "+0.8915%",
+          "+11.9445%",
+          "0.0231"
+        ],
+        [
+          "confirm>=1.00% win=60m fb=skip",
+          "VALIDATION",
+          "avg_pct",
+          "+0.0198%",
+          "-0.3265%",
+          "+0.3696%",
+          "0.9184"
+        ],
+        [
+          "confirm>=1.00% win=60m fb=skip",
+          "VALIDATION",
+          "win_rate",
+          "+6.4441%",
+          "-1.8428%",
+          "+14.8573%",
+          "0.1485"
+        ]
+      ]
+    }
+  ],
+  "notes": "Significance check on the accumulation-conditioned momentum-confirm entry-timing idea (wait for a real 1%+ intraday move on already-high-accumulation candidates before buying, skip if it never confirms). The original backtest only reported aggregate win_rate/avg_pct; this reruns just the 3 relevant configs keeping raw per-trade pct distributions, same methodology as accumulation_formula_bootstrap.py (2026-08-20).",
+  "conclusion": {
+    "verdict": "INCONCLUSIVE -- TRAIN-only significance, VALIDATION can't confirm at this sample size",
+    "summary": "VALIDATION-split significance: no."
+  }
+}
