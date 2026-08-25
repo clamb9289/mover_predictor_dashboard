@@ -1,0 +1,135 @@
+{
+  "script_name": "staircase_dense_1.25_3_calibration",
+  "run_timestamp": "2026-08-25T15:27:05.748778+00:00",
+  "title": "Densifying the +1.25%-2% and +2%-3% staircase sub-gaps -- worth an extra rung in either?",
+  "params": {
+    "n_train": 1175,
+    "n_val": 503,
+    "n_band_a_train": 130,
+    "n_band_a_val": 89,
+    "n_band_b_train": 177,
+    "n_band_b_val": 46,
+    "gap_a_grid": [
+      0.0145,
+      0.016,
+      0.0175,
+      0.019
+    ],
+    "gap_b_grid": [
+      0.0225,
+      0.025,
+      0.0275
+    ]
+  },
+  "tables": [
+    {
+      "name": "Dense-gap configs (8 tested)",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "train.total_dollar",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct",
+        "val.total_dollar"
+      ],
+      "rows": [
+        [
+          "BASELINE (live 9-tier)",
+          1175,
+          "71.66%",
+          "0.14%",
+          "$164.03",
+          503,
+          "71.37%",
+          "0.13%",
+          "$65.19"
+        ],
+        [
+          "gap-A trig=1.45%",
+          1175,
+          "71.83%",
+          "0.13%",
+          "$147.04",
+          503,
+          "71.57%",
+          "0.12%",
+          "$62.52"
+        ],
+        [
+          "gap-A trig=1.60%",
+          1175,
+          "71.83%",
+          "0.13%",
+          "$155.17",
+          503,
+          "71.37%",
+          "0.13%",
+          "$66.77"
+        ],
+        [
+          "gap-A trig=1.75%",
+          1175,
+          "71.74%",
+          "0.13%",
+          "$155.45",
+          503,
+          "71.37%",
+          "0.14%",
+          "$69.67"
+        ],
+        [
+          "gap-A trig=1.90%",
+          1175,
+          "71.66%",
+          "0.13%",
+          "$158.06",
+          503,
+          "71.37%",
+          "0.14%",
+          "$69.54"
+        ],
+        [
+          "gap-B trig=2.25%",
+          1175,
+          "71.66%",
+          "0.14%",
+          "$161.90",
+          503,
+          "71.37%",
+          "0.13%",
+          "$66.40"
+        ],
+        [
+          "gap-B trig=2.50%",
+          1175,
+          "71.66%",
+          "0.13%",
+          "$152.54",
+          503,
+          "71.57%",
+          "0.15%",
+          "$74.54"
+        ],
+        [
+          "gap-B trig=2.75%",
+          1175,
+          "71.66%",
+          "0.13%",
+          "$151.57",
+          503,
+          "71.57%",
+          "0.14%",
+          "$72.38"
+        ]
+      ]
+    }
+  ],
+  "notes": "Tests INSERTING a rung while keeping +1.25%/+2%/+3% all in place (same framing as the +0.5%-1.25% fix), not replacing one -- a different question from staircase_gap_swing_recalibration.py's 2026-08-04 single-tier-selection sweep, which already picked +2% as the best single insertion into the old +1.25%-3% gap.",
+  "conclusion": {
+    "verdict": "gap-A: REJECTED, gap-B: REJECTED",
+    "summary": "0/4 gap-A configs and 0/3 gap-B configs beat baseline on their own band, both splits."
+  }
+}

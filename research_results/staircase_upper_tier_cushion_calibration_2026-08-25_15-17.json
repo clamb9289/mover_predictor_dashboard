@@ -1,0 +1,111 @@
+{
+  "script_name": "staircase_upper_tier_cushion_calibration",
+  "run_timestamp": "2026-08-25T15:17:03.008247+00:00",
+  "title": "Should the staircase's upper tiers (>=3%) get a cushion below peak instead of locking at exactly the trigger?",
+  "params": {
+    "backtest_days": 150,
+    "candidates_per_day": 12,
+    "max_hold_days": 3,
+    "n_train": 1175,
+    "n_val": 503,
+    "n_gap_train": 537,
+    "n_gap_val": 191,
+    "floor_fraction_grid": [
+      1.0,
+      0.95,
+      0.9,
+      0.85,
+      0.8,
+      0.75
+    ]
+  },
+  "tables": [
+    {
+      "name": "Upper-tier cushion configs vs live baseline (6 tested)",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "train.total_dollar",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct",
+        "val.total_dollar"
+      ],
+      "rows": [
+        [
+          "BASELINE (live, 100% lock)",
+          1175,
+          "71.66%",
+          "0.14%",
+          "$164.03",
+          503,
+          "71.37%",
+          "0.13%",
+          "$65.19"
+        ],
+        [
+          "upper cushion frac=95%",
+          1175,
+          "71.66%",
+          "0.16%",
+          "$183.59",
+          503,
+          "71.37%",
+          "0.13%",
+          "$64.66"
+        ],
+        [
+          "upper cushion frac=90%",
+          1175,
+          "71.66%",
+          "0.14%",
+          "$169.73",
+          503,
+          "71.37%",
+          "0.11%",
+          "$57.74"
+        ],
+        [
+          "upper cushion frac=85%",
+          1175,
+          "71.57%",
+          "0.13%",
+          "$156.44",
+          503,
+          "71.37%",
+          "0.08%",
+          "$41.36"
+        ],
+        [
+          "upper cushion frac=80%",
+          1175,
+          "71.57%",
+          "0.15%",
+          "$173.49",
+          503,
+          "71.37%",
+          "0.08%",
+          "$40.09"
+        ],
+        [
+          "upper cushion frac=75%",
+          1175,
+          "71.57%",
+          "0.15%",
+          "$171.93",
+          503,
+          "71.37%",
+          "0.09%",
+          "$43.49"
+        ]
+      ]
+    }
+  ],
+  "notes": "First-ever test of the >=3% tiers and their 100%-of-trigger lock -- unlike every tier below +3%, these were never touched by any calibration script (git log traces them to the project's very first commit). Prompted by the same-session +0.5%-1.25% gap fix (project_stock_predictor_app_staircase_gap_tier.md).",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "0/5 upper-tier-cushion variants beat the live baseline on the >=3%-peak band (win_rate AND avg_pct, both TRAIN and VAL). n_gap_train=537, n_gap_val=191."
+  }
+}
