@@ -1,0 +1,67 @@
+{
+  "script_name": "weight_preset_backtest_large_sample_default",
+  "run_timestamp": "2026-08-25T00:31:27.305335+00:00",
+  "title": "Weight-preset comparison at large sample scale (540 train / 140 val trading days) -- batch: ['default']",
+  "params": {
+    "total_download_days": 650,
+    "val_size": 140,
+    "train_days": 540,
+    "presets_run": [
+      "default"
+    ]
+  },
+  "tables": [
+    {
+      "name": "Preset comparison (1 presets)",
+      "columns": [
+        "Config",
+        "train.preset",
+        "train.weights.accumulation",
+        "train.weights.sector_momentum",
+        "train.weights.news_sentiment",
+        "train.weights.relative_strength",
+        "train.hit_rate_3pct",
+        "train.avg_pick_pct",
+        "train.total_pnl",
+        "train.win_day_rate",
+        "val.preset",
+        "val.weights.accumulation",
+        "val.weights.sector_momentum",
+        "val.weights.news_sentiment",
+        "val.weights.relative_strength",
+        "val.hit_rate_3pct",
+        "val.avg_pick_pct",
+        "val.total_pnl",
+        "val.win_day_rate"
+      ],
+      "rows": [
+        [
+          "default",
+          "default",
+          0.6,
+          0.2,
+          0.0,
+          0.2,
+          "14.19%",
+          "+0.44%",
+          "$678.71",
+          "73.97%",
+          "default",
+          0.6,
+          0.2,
+          0.0,
+          0.2,
+          "20.77%",
+          "+0.67%",
+          "$261.24",
+          "78.63%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Batched run (2026-08-24 --presets split) -- part of a larger accum_NN sweep testing whether accumulation's live 0.60 weight should change. See sibling batch result files for the rest of the sweep.",
+  "conclusion": {
+    "verdict": "PENDING",
+    "summary": "Batch of 1 presets (['default']) -- see cross-batch comparison once all batches complete."
+  }
+}
