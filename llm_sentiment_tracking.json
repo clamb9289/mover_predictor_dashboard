@@ -1,291 +1,291 @@
 {
-  "date": "2026-08-25",
-  "generated_at": "2026-08-25T14:37:35.969272+00:00",
+  "date": "2026-08-26",
+  "generated_at": "2026-08-26T14:00:37.139485+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "DRH",
-    "WAY",
-    "SLB"
+    "AHR",
+    "ALLY",
+    "PEP"
   ],
   "llm_top3": {
     "tickers": [
-      "DRH",
-      "WAY",
-      "HAL"
+      "AHR",
+      "EMR",
+      "VLY"
     ],
-    "reasoning": "DRH and WAY (ranks 1-2) both pair top quant scores with genuinely strong fundamental news: DRH beat on FFO, raised guidance and hiked its dividend 22% amid private-equity bidding for US hotels, while Waystar beat, raised FY26 guidance and received a Fitch credit upgrade. I substitute HAL for SLB in the third slot: both are energy-services names, but Halliburton has fresher hard catalysts (bp deepwater Brazil award, Petrobras CCS deal, earnings beat, dividend declaration) and a confirmed technical breakout, whereas SLB's headlines are mostly 13F filings and options chatter. I avoided PINS and D despite decent ranks because of the guidance cut and merger-intervention risk respectively."
+    "reasoning": "AHR is both top-ranked quantitatively and has the strongest fundamental news: raised guidance, record NOI, accretive senior housing acquisitions and new all-time highs. I skip rank-2 ALLY and rank-3 PEP because ALLY missed EPS on rising credit provisions with insider selling and Berkshire trimming, while PEP faces clear negative relative-strength narrative versus Coke and consumer staples pressure. Instead I substitute EMR (earnings/revenue/cash flow beat, 13-year Equinor contract, AI/energy tailwinds, PT raises, 52-week high) and VLY (double-digit revenue growth, 30% EPS growth, strong loan/deposit trends and an accretive Chicago acquisition at still-discounted valuation)."
   },
   "tickers": {
-    "DRH": {
+    "AHR": {
       "rank": 1,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 59,
+      "llm_score": 3,
+      "materiality": "high",
+      "reasoning": "Raised 2026 NFFO guidance, record NOI growth, $712M equity raise funding $873M senior housing acquisition, new all-time highs and bullish analyst targets, though dilution briefly offset strong Q2."
+    },
+    "ALLY": {
+      "rank": 2,
+      "headline_count": 40,
+      "mentions_24h": 3,
+      "total_distinct_found": 60,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Revenue beat but EPS missed on higher credit provisions, stock down 3.5% post-earnings, Berkshire trimmed its stake and CRO sold shares."
+    },
+    "PEP": {
+      "rank": 3,
+      "headline_count": 40,
+      "mentions_24h": 38,
+      "total_distinct_found": 66,
+      "llm_score": -2,
+      "materiality": "medium",
+      "reasoning": "Repeated 'Coke pulling ahead' comparisons, consumer staples under pressure, and bearish commentary about PepsiCo being past its prime with flat share price since 2019."
+    },
+    "EMR": {
+      "rank": 4,
+      "headline_count": 40,
+      "mentions_24h": 5,
+      "total_distinct_found": 64,
+      "llm_score": 3,
+      "materiality": "medium",
+      "reasoning": "Strong beat on earnings/revenue/cash flow, 13-year Equinor frame agreement, Citi PT raise to $182 and AI/energy tailwinds, though shares initially dipped on the print."
+    },
+    "NKE": {
+      "rank": 5,
+      "headline_count": 40,
+      "mentions_24h": 63,
+      "total_distinct_found": 91,
+      "llm_score": -4,
+      "materiality": "high",
+      "reasoning": "Stock at 10+ year lows, dragged down by Dick's guidance cut, industry-wide discounting and downgrades questioning the turnaround."
+    },
+    "UPS": {
+      "rank": 6,
+      "headline_count": 40,
+      "mentions_24h": 18,
+      "total_distinct_found": 63,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": ">$2B investment in international, healthcare and supply chain networks plus an AllianceBernstein PT raise, offset by lingering concerns and Amazon automation competition."
+    },
+    "KRG": {
+      "rank": 7,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 61,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "Q2 FFO merely in line with revenue down 8% and a KeyBanc downgrade to sector weight, balanced by affirmed guidance and strong leasing commentary."
+    },
+    "OPCH": {
+      "rank": 8,
+      "headline_count": 40,
+      "mentions_24h": 2,
+      "total_distinct_found": 57,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Q2 beat with EPS up 13%, CEO and CFO open-market insider buying, and multiple undervaluation calls, tempered by a securities fraud investigation headline and biosimilar headwinds."
+    },
+    "PNR": {
+      "rank": 9,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 61,
+      "llm_score": -4,
+      "materiality": "high",
+      "reasoning": "Revenue down 17%, 15% stock drop on pool destocking and dealer share loss, plus multiple securities fraud class action filings."
+    },
+    "HR": {
+      "rank": 10,
+      "headline_count": 40,
+      "mentions_24h": 2,
+      "total_distinct_found": 59,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Q2 FFO and revenue beat, raised 2026 normalized FFO guidance, buybacks and record leasing support a turnaround narrative."
+    },
+    "ARES": {
+      "rank": 11,
       "headline_count": 40,
       "mentions_24h": 2,
       "total_distinct_found": 60,
-      "llm_score": 3,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Q2 FFO/revenue beat, raised guidance and a 22% dividend hike, plus hotel M&A interest, outweigh routine 13F filings."
+      "reasoning": "Multiple analyst price target raises and a $2.2B direct lending deal, but stock down 14% YTD and one note flags shares as 45% overvalued amid private credit outflow worries."
     },
-    "WAY": {
-      "rank": 2,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 60,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "Waystar beat Q2, raised FY26 guidance, stock rose ~18%, upgraded to Buy and Fitch credit upgrade."
-    },
-    "SLB": {
-      "rank": 3,
+    "APTV": {
+      "rank": 12,
       "headline_count": 40,
       "mentions_24h": 9,
+      "total_distinct_found": 58,
+      "llm_score": -4,
+      "materiality": "high",
+      "reasoning": "Fresh 52-week lows, death cross formation, repeated Zacks Strong Sell listings and softer Q2 with cautious guidance, only partly offset by insider buying."
+    },
+    "DECK": {
+      "rank": 13,
+      "headline_count": 40,
+      "mentions_24h": 30,
+      "total_distinct_found": 61,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Q1 FY27 revenue over $1B with raised full-year EPS guidance and $338M buyback, but stock sold off with the athletic complex on Dick's guidance cut."
+    },
+    "RHI": {
+      "rank": 14,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 58,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "EPS down 37% with margin pressure and buyback program ended, yet stock has run 60%+ on staffing recovery hopes, leaving a mixed setup."
+    },
+    "VLY": {
+      "rank": 15,
+      "headline_count": 40,
+      "mentions_24h": 1,
       "total_distinct_found": 61,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "New ExaCT product launch, bullish call flow and energy sector strength, though headlines are mostly filings/technicals."
+      "reasoning": "Revenue up 13% and EPS up 30% YoY with strong loan and deposit growth, plus an accretive $247M Providence Financial acquisition expanding into Chicago."
     },
-    "OGN": {
-      "rank": 4,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Shareholders cleared the Sun Pharma merger at a fixed price, so upside is capped; Q2 earnings missed with revenue and EPS down."
-    },
-    "ASO": {
-      "rank": 5,
-      "headline_count": 40,
-      "mentions_24h": 7,
-      "total_distinct_found": 57,
-      "llm_score": -2,
-      "materiality": "medium",
-      "reasoning": "Selling off in sympathy with Dick's Sporting Goods' disappointing Q2 and guidance cut ahead of its own 9/8 print."
-    },
-    "AES": {
-      "rank": 6,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 61,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Pending $15/share GIP/EQT take-private caps upside despite the Q2 EPS beat."
-    },
-    "HAL": {
-      "rank": 7,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 63,
-      "llm_score": 3,
-      "materiality": "medium",
-      "reasoning": "bp deepwater Brazil contract, Petrobras CCS deal, earnings beat and dividend declaration with a technical breakout."
-    },
-    "CTVA": {
-      "rank": 8,
-      "headline_count": 40,
-      "mentions_24h": 7,
-      "total_distinct_found": 59,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "UBS sees better setup into investor days/spin-off and price target hikes, but most headlines are routine 13Fs."
-    },
-    "CZR": {
-      "rank": 9,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 60,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Take-private uncertainty with management silence, CFO/director selling and an antitrust class action allowed to proceed."
-    },
-    "PINS": {
-      "rank": 10,
-      "headline_count": 40,
-      "mentions_24h": 11,
-      "total_distinct_found": 62,
-      "llm_score": -3,
-      "materiality": "high",
-      "reasoning": "Q3 guidance cut sent shares down nearly 20%, compounded by founder insider selling and legal risk headlines."
-    },
-    "CVS": {
-      "rank": 11,
-      "headline_count": 40,
-      "mentions_24h": 17,
-      "total_distinct_found": 61,
-      "llm_score": 0,
-      "materiality": "medium",
-      "reasoning": "Mixed: bullish analyst targets and Zepbound coverage win versus bearish technical breakdown and a new 340B lawsuit."
-    },
-    "D": {
-      "rank": 12,
-      "headline_count": 40,
-      "mentions_24h": 5,
-      "total_distinct_found": 59,
-      "llm_score": -2,
-      "materiality": "high",
-      "reasoning": "Virginia governor's unprecedented intervention in the NextEra merger review adds real deal risk despite a TD Cowen upgrade."
-    },
-    "EXEL": {
-      "rank": 13,
-      "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 62,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "EPS beat but 2026 revenue guidance cut drove a ~7% drop, though STELLAR-303 NDA acceptance is a positive catalyst."
-    },
-    "AMCR": {
-      "rank": 14,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 59,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q4 EPS/revenue beat with Berry synergies ahead of plan, offset by free cash flow shortfall and cautious transition-period guidance."
-    },
-    "VICI": {
-      "rank": 15,
-      "headline_count": 40,
-      "mentions_24h": 11,
-      "total_distinct_found": 60,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Dividend-value commentary and target trim to $31 against repeated 52-week lows; largely neutral."
-    },
-    "DIS": {
+    "CNC": {
       "rank": 16,
       "headline_count": 40,
-      "mentions_24h": 38,
-      "total_distinct_found": 84,
-      "llm_score": 3,
+      "mentions_24h": 7,
+      "total_distinct_found": 59,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Stock broke out to ~$110 on new CEO strategy, cost cuts via executive early retirements and analyst PT raises."
+      "reasoning": "Rally on favorable risk adjustment and Medicare Advantage rate news plus low forward P/E, offset by continued C-suite departures and layoff concerns."
     },
-    "EXE": {
+    "SMPL": {
       "rank": 17,
       "headline_count": 40,
       "mentions_24h": 5,
-      "total_distinct_found": 57,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Natural gas leverage and hedged Q3 with basing chart; earlier capex cut and leadership change were headwinds."
+      "total_distinct_found": 60,
+      "llm_score": -3,
+      "materiality": "high",
+      "reasoning": "Multiple securities fraud class actions over OWYN impairment allegations dominate the news flow, overshadowing an earnings beat and insider buying."
     },
-    "RHI": {
+    "CTAS": {
       "rank": 18,
       "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 58,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Q2 EPS fell 37% and shares dropped on the print, though PT hikes and staffing-recovery narrative offset somewhat."
+      "mentions_24h": 11,
+      "total_distinct_found": 64,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Record 51% margin and UniFirst acquisition scale are positives but most flow is routine 13F filings and Trump portfolio disclosure noise, with valuation seen as full."
     },
-    "WTRG": {
+    "AMH": {
       "rank": 19,
       "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "American Water merger clearing state approvals and in-line Q2 with affirmed 5-7% EPS growth."
-    },
-    "ACN": {
-      "rank": 20,
-      "headline_count": 40,
-      "mentions_24h": 21,
-      "total_distinct_found": 61,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Valuation-discount coverage, SAP partner acquisition and a Citi PT raise to $190 offset softer AI-demand worries."
-    },
-    "TDC": {
-      "rank": 21,
-      "headline_count": 40,
       "mentions_24h": 1,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Zacks upgrade and AQR's 5% stake disclosure are constructive, but most posts are retail promotion and some PT cuts."
-    },
-    "ONB": {
-      "rank": 22,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 60,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Q2 EPS up 91% beating estimates with record performance and dividend declarations."
-    },
-    "CNK": {
-      "rank": 23,
-      "headline_count": 40,
-      "mentions_24h": 11,
       "total_distinct_found": 58,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Record Spider-Man box office and technical breakout, though a JPMorgan downgrade tempers it."
+      "reasoning": "Q2 FFO and revenue beat with Core FFO guidance raised, $123M buyback, and an upgrade citing regulatory clarity and rental demand."
     },
-    "SO": {
-      "rank": 24,
-      "headline_count": 40,
-      "mentions_24h": 5,
-      "total_distinct_found": 61,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Q2 EPS growth and AI power-demand tailwinds but valuation described as fully priced; no fresh catalyst."
-    },
-    "IP": {
-      "rank": 25,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 61,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Q2 revenue fell 11% with a small GAAP loss and a Seeking Alpha sell reiteration, partly offset by JPMorgan/Deutsche upgrades."
-    },
-    "LEN": {
-      "rank": 26,
-      "headline_count": 40,
-      "mentions_24h": 6,
-      "total_distinct_found": 61,
-      "llm_score": 0,
-      "materiality": "medium",
-      "reasoning": "Berkshire increased its stake and yields eased, but mold litigation costs and weak housing sentiment offset."
-    },
-    "GOOGL": {
-      "rank": 27,
-      "headline_count": 40,
-      "mentions_24h": 56,
-      "total_distinct_found": 90,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Continued Buffett accumulation and Gemini/cloud expansion news, but no discrete material catalyst today."
-    },
-    "CB": {
-      "rank": 28,
+    "LEG": {
+      "rank": 20,
       "headline_count": 40,
       "mentions_24h": 10,
       "total_distinct_found": 59,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Mostly routine 13F filings and valuation commentary after an in-line quarter."
+      "reasoning": "Shareholders approved the all-stock Somnigroup merger, capping upside at deal terms; underlying Q2 sales fell 5.5% with EPS down 13%."
     },
-    "TTEK": {
-      "rank": 29,
+    "MGM": {
+      "rank": 21,
       "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 58,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Multiple new contract wins (EPA $16.8M, NOAA $49M), Q3 record backlog and raised FY26 guidance."
+      "mentions_24h": 9,
+      "total_distinct_found": 60,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Pending $48.30 take-private bid limits upside from current levels, though record revenue, buybacks and the $546M Northfield sale are supportive."
     },
-    "PEB": {
-      "rank": 30,
+    "XYL": {
+      "rank": 22,
       "headline_count": 40,
       "mentions_24h": 1,
       "total_distinct_found": 60,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Q2 FFO beat with upgraded 2026 guidance, 27% insurance cost cut and repeated CEO open-market buying."
+      "reasoning": "Raised full-year adjusted EPS guidance, record margins and a $1.46B pump acquisition, tempered by CFO departure to GE HealthCare creating execution uncertainty."
+    },
+    "ROL": {
+      "rank": 23,
+      "headline_count": 40,
+      "mentions_24h": 4,
+      "total_distinct_found": 58,
+      "llm_score": -3,
+      "materiality": "medium",
+      "reasoning": "Fresh 52-week lows, down ~8% since a softer Q2 with cost realignment and cautious next-quarter commentary."
+    },
+    "SLB": {
+      "rank": 24,
+      "headline_count": 40,
+      "mentions_24h": 13,
+      "total_distinct_found": 62,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "New ExaCT product launch, Havstjerne carbon storage award and Venezuela data access are positives, but a sharp oil price decline pressures E&P spending expectations."
+    },
+    "SOLS": {
+      "rank": 25,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 58,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Q2 revenue up 11% with EPS up 23% and raised full-year guidance, though valuation is still seen as rich after a 35% slump and acquisition uncertainty lingers."
+    },
+    "KHC": {
+      "rank": 26,
+      "headline_count": 40,
+      "mentions_24h": 19,
+      "total_distinct_found": 61,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Q2 beat with improved organic sales outlook and a 7% dividend, but news is dominated by a procedural NYSE listing transfer and ongoing execution risk."
+    },
+    "QCOM": {
+      "rank": 27,
+      "headline_count": 40,
+      "mentions_24h": 27,
+      "total_distinct_found": 63,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "World's first 5GHz mobile Oryon CPU with FlexCache, record highs and reported Tenstorrent AI acquisition interest, offset by Samsung Exynos and Xiaomi in-house chip competition."
+    },
+    "LTH": {
+      "rank": 28,
+      "headline_count": 40,
+      "mentions_24h": 3,
+      "total_distinct_found": 58,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Morgan Stanley PT raise to $53, analyst upside estimates near 28%, and strong secular premium-fitness growth narrative with possible index inclusion."
+    },
+    "MDLZ": {
+      "rank": 29,
+      "headline_count": 40,
+      "mentions_24h": 10,
+      "total_distinct_found": 62,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Upgraded 2026 guidance and undervaluation calls are offset by a large $8.5M CEO share sale and cocoa cost concerns."
+    },
+    "PRU": {
+      "rank": 30,
+      "headline_count": 40,
+      "mentions_24h": 2,
+      "total_distinct_found": 61,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "Q2 earnings beat with a ~$500M buyback, but Morgan Stanley remains Underweight, Japan is a drag, and shares have repeatedly stalled in the $120s."
     }
   }
 }
