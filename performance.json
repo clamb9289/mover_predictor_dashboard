@@ -8162,7 +8162,7 @@
           "live_price": 77.57,
           "live_pct": -0.93,
           "live_dollar": -0.94,
-          "price_updated": "2:07 AM ET",
+          "price_updated": "10:08 AM ET",
           "prediction_price": 79.0,
           "position_cost": 100.54,
           "days_held": 3,
@@ -8613,8 +8613,8 @@
       "days_tracked": 13,
       "spy_live_price": 767.45,
       "spy_live_pct": -0.67,
-      "prices_last_updated": "2:07 AM ET",
-      "prices_after_hours": true,
+      "prices_last_updated": "10:08 AM ET",
+      "prices_after_hours": false,
       "total_contributed": 300.0,
       "current_equity": 297.1,
       "net_trading_gain": -2.9,
@@ -13591,14 +13591,21 @@
           },
           "prediction_price": 57.05,
           "position_cost": 17.54,
-          "days_held": 0,
+          "days_held": 1,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": null,
+          "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "live_price": 57.16,
-          "live_pct": 0.0,
-          "live_dollar": 0.0,
-          "price_updated": "2:07 AM ET"
+          "live_price": 56.38,
+          "live_pct": -1.36,
+          "live_dollar": -0.24,
+          "price_updated": "9:32 AM ET",
+          "paper_exit_price": 56.4,
+          "paper_exit_pct": -1.33,
+          "paper_exit_dollar": -0.23,
+          "paper_exit_reason": "Portfolio drawdown stop (combined book -1.1%)",
+          "paper_exit_time": "9:33 AM ET",
+          "paper_exit_date": "2026-08-27",
+          "postmortem": "Small loss (-1.33%) \u2014 accumulation/volume and relative strength and sector momentum didn't convert this time; within normal volatility for now."
         },
         {
           "rank": 2,
@@ -13630,7 +13637,8 @@
           "paper_exit_dollar": 0.01,
           "paper_exit_reason": "EOD sell (winning position, +0.1%)",
           "paper_exit_time": "3:53 PM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum pointed the right direction without enough follow-through."
         },
         {
           "rank": 3,
@@ -13662,7 +13670,8 @@
           "paper_exit_dollar": 0.04,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "1:33 PM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and sector momentum and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "ticker": "APTV",
@@ -13674,20 +13683,23 @@
           "sector": null,
           "explainer": null,
           "signals": null,
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 46.02,
+          "paper_exit_pct": -1.37,
+          "paper_exit_dollar": -0.12,
+          "paper_exit_reason": "Portfolio drawdown stop (combined book -1.1%)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "days_held": 0,
+          "days_held": 1,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "live_price": 46.27,
-          "live_pct": -0.84,
+          "live_price": 46.29,
+          "live_pct": -0.8,
           "live_dollar": -0.07,
-          "price_updated": "2:07 AM ET"
+          "price_updated": "9:32 AM ET",
+          "paper_exit_time": "9:33 AM ET",
+          "paper_exit_date": "2026-08-27",
+          "postmortem": "Small loss of -1.37%. Within normal volatility."
         },
         {
           "ticker": "ARES",
@@ -13714,7 +13726,8 @@
           "live_dollar": -0.09,
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "12:10 PM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain of +0.30%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "HR",
@@ -13741,7 +13754,8 @@
           "live_dollar": -0.03,
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "3:53 PM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain of +0.08%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "KRG",
@@ -13753,20 +13767,23 @@
           "sector": null,
           "explainer": null,
           "signals": null,
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 26.11,
+          "paper_exit_pct": -0.98,
+          "paper_exit_dollar": -0.09,
+          "paper_exit_reason": "Portfolio drawdown stop (combined book -1.1%)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "days_held": 0,
+          "days_held": 1,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0044,
           "paper_trail_floor_active": false,
-          "live_price": 26.26,
-          "live_pct": -0.39,
-          "live_dollar": -0.04,
-          "price_updated": "2:07 AM ET"
+          "live_price": 26.0,
+          "live_pct": -1.38,
+          "live_dollar": -0.13,
+          "price_updated": "9:32 AM ET",
+          "paper_exit_time": "9:33 AM ET",
+          "paper_exit_date": "2026-08-27",
+          "postmortem": "Small loss of -0.98%. Within normal volatility."
         },
         {
           "ticker": "NKE",
@@ -13793,7 +13810,8 @@
           "live_dollar": -0.11,
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "10:24 AM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "OPCH",
@@ -13820,7 +13838,8 @@
           "live_dollar": 0.08,
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "3:33 PM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain of +0.60%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "UPS",
@@ -13847,7 +13866,8 @@
           "live_dollar": 0.03,
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "10:21 AM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain of +0.39%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "DECK",
@@ -13874,7 +13894,8 @@
           "live_dollar": 0.05,
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "10:29 AM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain of +0.55%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "RHI",
@@ -13886,20 +13907,23 @@
           "sector": null,
           "explainer": null,
           "signals": null,
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 44.16,
+          "paper_exit_pct": -0.66,
+          "paper_exit_dollar": -0.05,
+          "paper_exit_reason": "Portfolio drawdown stop (combined book -1.1%)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": null,
+          "paper_peak_pct": 0.0047,
           "paper_trail_floor_active": false,
-          "days_held": 0,
-          "live_price": 44.54,
-          "live_pct": 0.2,
-          "live_dollar": 0.02,
-          "price_updated": "2:07 AM ET"
+          "days_held": 1,
+          "live_price": 44.66,
+          "live_pct": 0.47,
+          "live_dollar": 0.04,
+          "price_updated": "9:32 AM ET",
+          "paper_exit_time": "9:33 AM ET",
+          "paper_exit_date": "2026-08-27",
+          "postmortem": "Small loss of -0.66%. Within normal volatility."
         },
         {
           "ticker": "VLY",
@@ -13911,20 +13935,23 @@
           "sector": null,
           "explainer": null,
           "signals": null,
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 13.95,
+          "paper_exit_pct": -1.37,
+          "paper_exit_dollar": -0.11,
+          "paper_exit_reason": "Portfolio drawdown stop (combined book -1.1%)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0016,
           "paper_trail_floor_active": false,
-          "days_held": 0,
-          "live_price": 14.09,
-          "live_pct": -0.41,
-          "live_dollar": -0.03,
-          "price_updated": "2:07 AM ET"
+          "days_held": 1,
+          "live_price": 13.95,
+          "live_pct": -1.36,
+          "live_dollar": -0.11,
+          "price_updated": "9:32 AM ET",
+          "paper_exit_time": "9:33 AM ET",
+          "paper_exit_date": "2026-08-27",
+          "postmortem": "Small loss of -1.37%. Within normal volatility."
         },
         {
           "ticker": "SMPL",
@@ -13936,20 +13963,23 @@
           "sector": null,
           "explainer": null,
           "signals": null,
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 10.45,
+          "paper_exit_pct": -2.46,
+          "paper_exit_dollar": -0.19,
+          "paper_exit_reason": "Portfolio drawdown stop (combined book -1.1%)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0021,
           "paper_trail_floor_active": false,
-          "days_held": 0,
-          "live_price": 10.54,
-          "live_pct": -1.61,
-          "live_dollar": -0.12,
-          "price_updated": "2:07 AM ET"
+          "days_held": 1,
+          "live_price": 10.47,
+          "live_pct": -2.26,
+          "live_dollar": -0.18,
+          "price_updated": "9:32 AM ET",
+          "paper_exit_time": "9:33 AM ET",
+          "paper_exit_date": "2026-08-27",
+          "postmortem": "Small loss of -2.46%. Within normal volatility."
         },
         {
           "ticker": "CTAS",
@@ -13976,7 +14006,8 @@
           "live_dollar": -0.01,
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "3:53 PM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain of +0.07%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "AMH",
@@ -13988,20 +14019,23 @@
           "sector": null,
           "explainer": null,
           "signals": null,
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 33.9,
+          "paper_exit_pct": -1.66,
+          "paper_exit_dollar": -0.12,
+          "paper_exit_reason": "Portfolio drawdown stop (combined book -1.1%)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0042,
           "paper_trail_floor_active": false,
-          "days_held": 0,
-          "live_price": 34.16,
-          "live_pct": -0.91,
-          "live_dollar": -0.06,
-          "price_updated": "2:07 AM ET"
+          "days_held": 1,
+          "live_price": 33.93,
+          "live_pct": -1.58,
+          "live_dollar": -0.11,
+          "price_updated": "9:32 AM ET",
+          "paper_exit_time": "9:33 AM ET",
+          "paper_exit_date": "2026-08-27",
+          "postmortem": "Small loss of -1.66%. Within normal volatility."
         },
         {
           "ticker": "LEG",
@@ -14028,7 +14062,8 @@
           "live_dollar": -0.17,
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "1:26 PM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain of +0.34%, but did not clear the +1% floor trigger."
         },
         {
           "ticker": "MGM",
@@ -14061,7 +14096,8 @@
           "live_dollar": 0.03,
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "3:49 PM ET",
-          "paper_exit_date": "2026-08-26"
+          "paper_exit_date": "2026-08-26",
+          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through."
         }
       ],
       "bench_candidates": [
@@ -14691,10 +14727,564 @@
           "sell_time": "2026-08-26T16:01:50.997951-04:00"
         }
       ],
-      "prices_last_updated": "2:07 AM ET",
-      "prices_after_hours": true,
+      "prices_last_updated": "9:33 AM ET",
+      "prices_after_hours": false,
       "spy_live_price": 766.08,
       "spy_live_pct": 0.15
+    },
+    {
+      "date": "2026-08-27",
+      "regime": "Market regime OK \u2014 SPY +0.30%",
+      "trading_skipped": false,
+      "max_hold_days": 3,
+      "spy_regime_pct": 0.00296,
+      "top_sectors": [
+        {
+          "etf": "XLB",
+          "name": "Materials",
+          "pct": 2.19
+        },
+        {
+          "etf": "XLF",
+          "name": "Financials",
+          "pct": 1.36
+        },
+        {
+          "etf": "XLC",
+          "name": "Communication Services",
+          "pct": 1.16
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "ANF",
+          "pct": 35.67,
+          "signals": {
+            "accumulation": 1.454,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": 6.55
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 17,
+          "eligible_pool_size": 620,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "SEDG",
+          "pct": 10.71,
+          "signals": {
+            "accumulation": 0.591,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 12.0,
+            "relative_strength_pct": 0.64
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 439,
+          "eligible_pool_size": 620,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "SMTC",
+          "pct": 10.41,
+          "signals": {
+            "accumulation": 2.598,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -5.27
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 2,
+          "eligible_pool_size": 620,
+          "made_shortlist": true
+        },
+        {
+          "ticker": "URBN",
+          "pct": 9.46,
+          "signals": {
+            "accumulation": 0.949,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 5.0,
+            "relative_strength_pct": 2.8
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 103,
+          "eligible_pool_size": 620,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "VYX",
+          "pct": 9.23,
+          "signals": {
+            "accumulation": 0.497,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 7.69
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 545,
+          "eligible_pool_size": 620,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "TTMI",
+          "pct": 8.37,
+          "signals": {
+            "accumulation": 0.613,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": -10.23
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 408,
+          "eligible_pool_size": 620,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "BBWI",
+          "pct": 7.51,
+          "signals": {
+            "accumulation": 0.936,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 7.0,
+            "relative_strength_pct": -10.17
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 108,
+          "eligible_pool_size": 620,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "BTSG",
+          "pct": 7.2,
+          "signals": {
+            "accumulation": 0.917,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -2.6
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 114,
+          "eligible_pool_size": 620,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "P",
+          "pct": 5.92,
+          "signals": {
+            "accumulation": 0.493,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 10.0,
+            "relative_strength_pct": -11.74
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 546,
+          "eligible_pool_size": 620,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "ANET",
+          "pct": 5.92,
+          "signals": {
+            "accumulation": 0.488,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 3.5,
+            "relative_strength_pct": -0.72
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 548,
+          "eligible_pool_size": 620,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably lower relative strength (-2.30 vs our picks' -0.21) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.00 vs our picks' 1.23) \u2014 possible signal to decrease weighting on sector momentum. Actual top movers had notably higher news sentiment (4.75 vs our picks' 1.00) \u2014 possible signal to increase weighting on news sentiment. SEDG (#439 of 620), URBN (#103 of 620), VYX (#545 of 620), TTMI (#408 of 620), BBWI (#108 of 620), BTSG (#114 of 620), P (#546 of 620), ANET (#548 of 620) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap. ANF (accumulation #17), SMTC (accumulation #2) made the top-50 shortlist but didn't score high enough on the full composite to reach our top picks.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "KIM",
+          "score": 0.68,
+          "entry_price": 24.03,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "Volume was running 1.9x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Real Estate) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 1.874,
+            "sector_momentum_pct": 0.22,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.41,
+            "gap_pct": -0.75
+          },
+          "live_price": 23.88,
+          "live_pct": -0.65,
+          "live_dollar": null,
+          "price_updated": "10:08 AM ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "META",
+          "score": 0.631,
+          "entry_price": 576.14,
+          "headline": "Palo Alto Networks\u2019 CEO Says Nebius Is in a Different League. Is This \u2018Neoscaler\u2019 a Buy?",
+          "sector": "Communication Services",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Communication Services) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+4.4% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cPalo Alto Networks\u2019 CEO Says Nebius Is in a Different League. Is This \u2018Neoscaler\u2019 a Buy?\u201d",
+          "signals": {
+            "accumulation": 1.572,
+            "sector_momentum_pct": 1.16,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": 4.36,
+            "gap_pct": 0.06
+          },
+          "live_price": 585.75,
+          "live_pct": 1.67,
+          "live_dollar": null,
+          "price_updated": "10:08 AM ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "SCHW",
+          "score": 0.622,
+          "entry_price": 109.39,
+          "headline": "Can Vanguard's Altruist Acquisition Turn Up the Heat on Schwab?",
+          "sector": "Financials",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Financials) was among the day's stronger performers, giving it a tailwind. Recent news skewed positive, including: \u201cCan Vanguard's Altruist Acquisition Turn Up the Heat on Schwab?\u201d",
+          "signals": {
+            "accumulation": 1.658,
+            "sector_momentum_pct": 1.36,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": -2.7,
+            "gap_pct": -0.4
+          },
+          "live_price": 107.73,
+          "live_pct": -1.52,
+          "live_dollar": null,
+          "price_updated": "10:08 AM ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 21,
+          "ticker": "CNM",
+          "score": 0.077,
+          "entry_price": 43.37,
+          "headline": null,
+          "sector": "Industrials",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.3,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.35,
+            "gap_pct": -0.02
+          },
+          "live_price": 43.35,
+          "live_pct": -0.05,
+          "price_updated": "10:08 AM ET"
+        },
+        {
+          "rank": 22,
+          "ticker": "GGG",
+          "score": 0.057,
+          "entry_price": 79.6,
+          "headline": null,
+          "sector": "Industrials",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.271,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.85,
+            "gap_pct": -0.69
+          },
+          "live_price": 78.3,
+          "live_pct": -1.63,
+          "price_updated": "10:08 AM ET"
+        },
+        {
+          "rank": 23,
+          "ticker": "FND",
+          "score": 0.047,
+          "entry_price": 54.31,
+          "headline": null,
+          "sector": "Consumer Discretionary",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.284,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -4.21,
+            "gap_pct": -0.57
+          },
+          "live_price": 53.47,
+          "live_pct": -1.56,
+          "price_updated": "10:08 AM ET"
+        },
+        {
+          "rank": 24,
+          "ticker": "LFST",
+          "score": 0.034,
+          "entry_price": 12.15,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.267,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -4.08,
+            "gap_pct": 0.29
+          },
+          "live_price": 12.16,
+          "live_pct": 0.12,
+          "price_updated": "10:08 AM ET"
+        }
+      ],
+      "pool_shortfall_note": "Bench is short today (24 of the usual 30 candidates) \u2014 19 excluded for upcoming/recent earnings and 7 excluded for high volatility.",
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "AHR",
+          "move_pct": -1.33,
+          "dollar_change": -0.23,
+          "position_size": 17.54,
+          "actual_rank": 296,
+          "total_ranked": 620,
+          "signals": {
+            "accumulation": 1.982,
+            "sector_momentum_pct": 1.64,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.2,
+            "gap_pct": -1.68
+          },
+          "postmortem": "Small loss (-1.33%) \u2014 accumulation/volume and relative strength and sector momentum didn't convert this time; within normal volatility for now. The stock itself ranked #296 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 2,
+          "ticker": "ALLY",
+          "move_pct": 0.05,
+          "dollar_change": 0.01,
+          "position_size": 15.24,
+          "actual_rank": 367,
+          "total_ranked": 620,
+          "signals": {
+            "accumulation": 1.966,
+            "sector_momentum_pct": 0.81,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.17,
+            "gap_pct": 0.09
+          },
+          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum pointed the right direction without enough follow-through. The stock itself ranked #367 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 3,
+          "ticker": "PEP",
+          "move_pct": 0.37,
+          "dollar_change": 0.04,
+          "position_size": 11.84,
+          "actual_rank": 351,
+          "total_ranked": 620,
+          "signals": {
+            "accumulation": 1.615,
+            "sector_momentum_pct": 1.1,
+            "news_sentiment": 4.0,
+            "relative_strength_pct": 0.43,
+            "gap_pct": 0.28
+          },
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and sector momentum and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #351 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 12,
+          "ticker": "APTV",
+          "move_pct": -1.37,
+          "dollar_change": -0.12,
+          "position_size": 8.39,
+          "actual_rank": 464,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Small loss of -1.37%. Within normal volatility. The stock itself ranked #464 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 11,
+          "ticker": "ARES",
+          "move_pct": 0.3,
+          "dollar_change": 0.02,
+          "position_size": 8.41,
+          "actual_rank": 434,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Modest gain of +0.30%, but did not clear the +1% floor trigger. The stock itself ranked #434 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 10,
+          "ticker": "HR",
+          "move_pct": 0.08,
+          "dollar_change": 0.01,
+          "position_size": 8.84,
+          "actual_rank": 452,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Modest gain of +0.08%, but did not clear the +1% floor trigger. The stock itself ranked #452 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 7,
+          "ticker": "KRG",
+          "move_pct": -0.98,
+          "dollar_change": -0.09,
+          "position_size": 9.56,
+          "actual_rank": 453,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Small loss of -0.98%. Within normal volatility. The stock itself ranked #453 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 5,
+          "ticker": "NKE",
+          "move_pct": 0.35,
+          "dollar_change": 0.04,
+          "position_size": 10.97,
+          "actual_rank": 586,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger. The stock itself ranked #586 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 8,
+          "ticker": "OPCH",
+          "move_pct": 0.6,
+          "dollar_change": 0.06,
+          "position_size": 9.24,
+          "actual_rank": 96,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Modest gain of +0.60%, but did not clear the +1% floor trigger. The stock itself ranked #96 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 6,
+          "ticker": "UPS",
+          "move_pct": 0.39,
+          "dollar_change": 0.04,
+          "position_size": 10.35,
+          "actual_rank": 243,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Modest gain of +0.39%, but did not clear the +1% floor trigger. The stock itself ranked #243 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 13,
+          "ticker": "DECK",
+          "move_pct": 0.55,
+          "dollar_change": 0.05,
+          "position_size": 8.32,
+          "actual_rank": 187,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Modest gain of +0.55%, but did not clear the +1% floor trigger. The stock itself ranked #187 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 14,
+          "ticker": "RHI",
+          "move_pct": -0.66,
+          "dollar_change": -0.05,
+          "position_size": 8.28,
+          "actual_rank": 469,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Small loss of -0.66%. Within normal volatility. The stock itself ranked #469 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 15,
+          "ticker": "VLY",
+          "move_pct": -1.37,
+          "dollar_change": -0.11,
+          "position_size": 8.18,
+          "actual_rank": 356,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Small loss of -1.37%. Within normal volatility. The stock itself ranked #356 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 17,
+          "ticker": "SMPL",
+          "move_pct": -2.46,
+          "dollar_change": -0.19,
+          "position_size": 7.76,
+          "actual_rank": 611,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Small loss of -2.46%. Within normal volatility. The stock itself ranked #611 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 18,
+          "ticker": "CTAS",
+          "move_pct": 0.07,
+          "dollar_change": 0.01,
+          "position_size": 7.47,
+          "actual_rank": 240,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Modest gain of +0.07%, but did not clear the +1% floor trigger. The stock itself ranked #240 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 19,
+          "ticker": "AMH",
+          "move_pct": -1.66,
+          "dollar_change": -0.12,
+          "position_size": 6.96,
+          "actual_rank": 521,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Small loss of -1.66%. Within normal volatility. The stock itself ranked #521 of 620 tracked that day, for context."
+        },
+        {
+          "rank": 20,
+          "ticker": "LEG",
+          "move_pct": 0.34,
+          "dollar_change": 0.03,
+          "position_size": 9.76,
+          "actual_rank": null,
+          "total_ranked": 620,
+          "signals": null,
+          "postmortem": "Modest gain of +0.34%, but did not clear the +1% floor trigger."
+        },
+        {
+          "rank": 21,
+          "ticker": "MGM",
+          "move_pct": 0.33,
+          "dollar_change": 0.03,
+          "position_size": 9.76,
+          "actual_rank": 280,
+          "total_ranked": 620,
+          "signals": {
+            "accumulation": 1.208,
+            "sector_momentum_pct": 1.37,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.32,
+            "gap_pct": 0.74
+          },
+          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through. The stock itself ranked #280 of 620 tracked that day, for context."
+        }
+      ],
+      "hit_rate": 0.0,
+      "total_hits": 0,
+      "total_predictions": 59,
+      "days_tracked": 20,
+      "total_contributed": 300.0,
+      "current_equity": 284.63,
+      "net_trading_gain": -15.37,
+      "net_trading_gain_pct": -5.12,
+      "spy_live_price": 768.25,
+      "spy_live_pct": -0.31,
+      "prices_last_updated": "10:08 AM ET",
+      "prices_after_hours": false
     }
   ]
 }
