@@ -1,0 +1,61 @@
+{
+  "script_name": "ipo_volume_directionality_check",
+  "run_timestamp": "2026-08-27T13:48:19.975190+00:00",
+  "title": "Does real day-1 IPO turnover (volume / shares offered) predict short-term forward directionality?",
+  "params": {
+    "ipo_months": [
+      "2024-01",
+      "2026-07"
+    ],
+    "n_ipos_found": 591,
+    "n_resolved": 522,
+    "median_turnover_train": 0.3753484848484849
+  },
+  "tables": [
+    {
+      "name": "High vs low day-1 turnover, forward 3-day return",
+      "columns": [
+        "Split",
+        "Bucket",
+        "n",
+        "Win Rate",
+        "Avg %"
+      ],
+      "rows": [
+        [
+          "TRAIN",
+          "HIGH turnover",
+          183,
+          "48.1%",
+          "-1.45%"
+        ],
+        [
+          "TRAIN",
+          "LOW turnover",
+          182,
+          "48.9%",
+          "-0.24%"
+        ],
+        [
+          "VAL",
+          "HIGH turnover",
+          61,
+          "49.2%",
+          "+6.34%"
+        ],
+        [
+          "VAL",
+          "LOW turnover",
+          96,
+          "50.0%",
+          "-5.17%"
+        ]
+      ]
+    }
+  ],
+  "notes": "First of 3 planned IPO-pairing tests (volume/financial-reporting-strength/sentiment, user-requested easiest-first order) -- pure research at this stage, not scoped for live integration since the S&P 1500 live universe structurally excludes almost all recent IPOs. No record found of the original 'IPO floats have no directionality' finding this follows up on (no memory entry, no matching script) -- this is a fresh test, not a literal re-run.",
+  "conclusion": {
+    "verdict": "REJECTED -- no consistent direction on both splits",
+    "summary": "TRAIN high=48.1%/-1.45% (n=183) vs low=48.9%/-0.24% (n=182); VAL high=49.2%/+6.34% (n=61) vs low=50.0%/-5.17% (n=96)"
+  }
+}

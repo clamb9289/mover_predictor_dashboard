@@ -1,291 +1,237 @@
 {
-  "date": "2026-08-26",
-  "generated_at": "2026-08-26T14:39:04.668326+00:00",
+  "date": "2026-08-27",
+  "generated_at": "2026-08-27T14:15:05.277032+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "AHR",
-    "ALLY",
-    "PEP"
+    "KIM",
+    "META",
+    "SCHW"
   ],
   "llm_top3": {
     "tickers": [
-      "AHR",
-      "EMR",
-      "VLY"
+      "KIM",
+      "AMT",
+      "EQH"
     ],
-    "reasoning": "AHR (rank 1) has genuinely strong fundamental news: raised guidance, 10 straight quarters of double-digit NOI, a large accretive senior-housing acquisition and new 52-week highs, with the equity-raise dilution already digested. EMR pairs an earnings/cash-flow beat with a 13-year Equinor frame agreement and AI/electrification tailwinds, plus target raises. I substitute VLY for rank-2 ALLY and rank-3 PEP: ALLY missed EPS on rising credit provisions with Berkshire trimming, and PEP's news is clearly negative (losing share to Coke, consumer staples pressure), whereas VLY has a well-received accretive Chicago acquisition, strong loan/deposit growth and regional-bank breakout momentum."
+    "reasoning": "KIM (rank 1) is confirmed by fundamentals rather than just 13F noise: record occupancy, 12% dividend hike and raised FFO guidance. I skip META (rank 2, mostly settlement-relief already priced with heavy AI spend) and SCHW (rank 3, actively hit by Vanguard's Altruist competitive threat and insider selling) in favor of AMT, where a Barclays upgrade plus a rare open-market director buy and steep discount-to-fair-value framing offer a cleaner catalyst, and EQH, which beat Q2 with record AUMA, accretive Corebridge merger math and multiple analyst target raises. LFST was a close call on news strength but is smaller and more volatile."
   },
   "tickers": {
-    "AHR": {
+    "KIM": {
       "rank": 1,
       "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 59,
-      "llm_score": 3,
+      "mentions_24h": 5,
+      "total_distinct_found": 61,
+      "llm_score": 2.5,
       "materiality": "medium",
-      "reasoning": "Raised 2026 NFFO guidance, $873M Kensington acquisition, 52-week high and bullish analyst targets, partly offset by dilution from the $712M equity raise."
+      "reasoning": "Record occupancy, 12% dividend hike, raised 2026 FFO guidance and price target raises outweigh routine 13F filings."
     },
-    "ALLY": {
+    "META": {
       "rank": 2,
       "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 60,
-      "llm_score": 0,
+      "mentions_24h": 55,
+      "total_distinct_found": 120,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Revenue beat but EPS missed on higher credit provisions, stock down 3.5% post-earnings, plus Berkshire trimming and insider sale \u2014 mixed."
+      "reasoning": "$17-18B teen safety settlement removes overhang (UBS reiterates buy, Reuters says money machine unscathed) but heavy AI spend and Needham strategy concerns temper it."
     },
-    "PEP": {
+    "SCHW": {
       "rank": 3,
       "headline_count": 40,
-      "mentions_24h": 35,
-      "total_distinct_found": 66,
-      "llm_score": -2,
+      "mentions_24h": 22,
+      "total_distinct_found": 64,
+      "llm_score": -1.5,
       "materiality": "medium",
-      "reasoning": "Repeated 'Coke pulling ahead of Pepsi' coverage, stock falling amid consumer weakness, and flat multi-year share price narrative."
+      "reasoning": "Vanguard's $4B Altruist acquisition triggered a sharp drop in wealth-management names, plus insider selling by co-chairman."
     },
-    "EMR": {
+    "EQH": {
       "rank": 4,
       "headline_count": 40,
       "mentions_24h": 5,
-      "total_distinct_found": 64,
-      "llm_score": 3,
+      "total_distinct_found": 60,
+      "llm_score": 1.5,
       "materiality": "medium",
-      "reasoning": "Beat on earnings/revenue/cash flow, 13-year Equinor frame agreement, price target raises and 52-week high, though shares initially dipped on the print."
+      "reasoning": "Q2 beat, record AUMA, Corebridge merger accretion and multiple analyst PT raises (UBS to $68, Wells to $60), offset by mostly routine 13F noise."
     },
-    "NKE": {
+    "ROKU": {
       "rank": 5,
       "headline_count": 40,
-      "mentions_24h": 62,
-      "total_distinct_found": 91,
-      "llm_score": -4,
-      "materiality": "high",
-      "reasoning": "Truist downgrade to Hold, DKS guidance cut flagged as evidence Nike turnaround is failing, multi-year lows and 'long, hard slog' commentary."
-    },
-    "UPS": {
-      "rank": 6,
-      "headline_count": 40,
-      "mentions_24h": 20,
-      "total_distinct_found": 63,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": ">$2B global logistics/healthcare investment plus analyst target raise and technical double bottom, though Amazon automation is a structural risk."
-    },
-    "KRG": {
-      "rank": 7,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 61,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "In-line Q2 FFO with affirmed guidance but revenue down 8% and a KeyBanc downgrade to sector weight \u2014 net neutral."
-    },
-    "OPCH": {
-      "rank": 8,
-      "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 57,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 beat and undervaluation narratives plus CEO/CFO open-market insider buying, offset by a securities-fraud investigation and biosimilar headwinds."
-    },
-    "PNR": {
-      "rank": 9,
-      "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 60,
-      "llm_score": -3,
-      "materiality": "high",
-      "reasoning": "15% drop on pool destocking, revenue -17% YoY, securities fraud class actions, and one of the worst S&P 500 performers YTD."
-    },
-    "HR": {
-      "rank": 10,
-      "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 59,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Q2 FFO and revenue beat with raised guidance, record leasing, buyback authorization and rebound signals after a 7% pullback."
-    },
-    "ARES": {
-      "rank": 11,
-      "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Multiple broker target raises and large private-credit deal leadership, but stock down 14% YTD and some 'overvalued' calls."
-    },
-    "APTV": {
-      "rank": 12,
-      "headline_count": 40,
-      "mentions_24h": 8,
-      "total_distinct_found": 58,
-      "llm_score": -3,
-      "materiality": "medium",
-      "reasoning": "Fresh 52-week lows, death cross, Zacks Strong Sell listings and soft Q2 guidance, only partly offset by insider buying."
-    },
-    "DECK": {
-      "rank": 13,
-      "headline_count": 40,
-      "mentions_24h": 29,
-      "total_distinct_found": 61,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q1 FY27 revenue and EPS growth with raised FY guidance and heavy buybacks, but shares sold off on sector-wide discounting fears from DKS."
-    },
-    "RHI": {
-      "rank": 14,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 58,
-      "llm_score": 0,
-      "materiality": "medium",
-      "reasoning": "EPS down 37% YoY with margin pressure and buyback termination, offset by a 62% three-month run and staffing-recovery optimism."
-    },
-    "VLY": {
-      "rank": 15,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 61,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Accretive $247M Providence Financial acquisition expanding into Chicago with analysts reiterating Buy, strong loan/deposit growth despite a small EPS miss."
-    },
-    "CNC": {
-      "rank": 16,
-      "headline_count": 40,
       "mentions_24h": 4,
-      "total_distinct_found": 59,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Medicare Advantage rate surprise rally and up 132-145% narratives, but repeated executive departures/insider sales and CFO transition temper it."
-    },
-    "SMPL": {
-      "rank": 17,
-      "headline_count": 40,
-      "mentions_24h": 8,
-      "total_distinct_found": 60,
-      "llm_score": -2,
-      "materiality": "medium",
-      "reasoning": "Multiple securities fraud class actions over OWYN impairment and a TD Cowen target cut to $11 outweigh retail bottom-fishing."
-    },
-    "CTAS": {
-      "rank": 18,
-      "headline_count": 40,
-      "mentions_24h": 11,
-      "total_distinct_found": 64,
-      "llm_score": 1,
-      "materiality": "low",
-      "reasoning": "Record 51% margin and Trump portfolio purchase buzz, but most headlines are routine 13F filings and valuation looks full."
-    },
-    "AMH": {
-      "rank": 19,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 58,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Q2 FFO/revenue beat with raised Core FFO guidance, $123M buyback and a Seeking Alpha upgrade on regulatory clarity."
-    },
-    "LEG": {
-      "rank": 20,
-      "headline_count": 40,
-      "mentions_24h": 10,
-      "total_distinct_found": 59,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Shareholders approved the all-stock Somnigroup merger, making the outcome largely fixed; underlying revenue and EPS still declining."
-    },
-    "MGM": {
-      "rank": 21,
-      "headline_count": 40,
-      "mentions_24h": 9,
-      "total_distinct_found": 60,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Trading around a $48.30 take-private offer price, so upside is capped despite record revenue and buybacks."
-    },
-    "XYL": {
-      "rank": 22,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 60,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Raised FY adjusted EPS guidance and $1.46B pump acquisitions are positives, but the CFO departure to GE HealthCare pressured shares."
-    },
-    "ROL": {
-      "rank": 23,
-      "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 58,
-      "llm_score": -3,
-      "materiality": "medium",
-      "reasoning": "52-week lows, down ~8% since a softer Q2 with cost realignment and cautious guidance."
-    },
-    "SLB": {
-      "rank": 24,
-      "headline_count": 40,
-      "mentions_24h": 13,
       "total_distinct_found": 62,
-      "llm_score": 0,
-      "materiality": "medium",
-      "reasoning": "New ExaCT product launch and Venezuela data access plus carbon-storage win, offset by falling oil prices and energy sector weakness."
-    },
-    "SOLS": {
-      "rank": 25,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 58,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Q2 revenue beat with raised full-year guidance across all segments, though shares still called pricey after a 35% slump."
+      "llm_score": 0.5,
+      "materiality": "low",
+      "reasoning": "Trading essentially as a Fox buyout arbitrage at ~$164 with JPMorgan neutral at $160 target\u2014limited upside left."
     },
     "KHC": {
-      "rank": 26,
+      "rank": 6,
       "headline_count": 40,
-      "mentions_24h": 19,
+      "mentions_24h": 22,
       "total_distinct_found": 61,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "NYSE listing transfer is administrative; Q2 beat and improved organic outlook are offset by ongoing packaged-food weakness."
+      "reasoning": "Mixed: Q2 beat and improved organic sales outlook versus declining volumes and operating income; mostly value/dividend chatter."
     },
-    "QCOM": {
-      "rank": 27,
+    "WT": {
+      "rank": 7,
       "headline_count": 40,
-      "mentions_24h": 28,
-      "total_distinct_found": 63,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "World's first 5GHz mobile CPU and record-high rally plus Tenstorrent acquisition chatter, but Samsung Exynos competition and post-investor-day drawdown weigh."
-    },
-    "LTH": {
-      "rank": 28,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 58,
+      "mentions_24h": 5,
+      "total_distinct_found": 60,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Morgan Stanley target raise to $53, analyst upside calls and new premium community launch support the growth story."
+      "reasoning": "Strong Q2 (EPS +76%, revenue +57%), 52-week high, PT raised to $27, though some valuation-stretched calls."
     },
-    "MDLZ": {
-      "rank": 29,
+    "ROL": {
+      "rank": 8,
       "headline_count": 40,
-      "mentions_24h": 11,
+      "mentions_24h": 1,
+      "total_distinct_found": 57,
+      "llm_score": -2.5,
+      "materiality": "medium",
+      "reasoning": "Down 7.8% post-earnings, printing 52-week lows on softer Q2 and cost realignment with guidance for a weak next quarter."
+    },
+    "MRSH": {
+      "rank": 9,
+      "headline_count": 30,
+      "mentions_24h": 1,
+      "total_distinct_found": 30,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Q2 beat, buybacks, Accel acquisition and stock up 7.5% since earnings; headlines mostly routine institutional filings."
+    },
+    "BX": {
+      "rank": 10,
+      "headline_count": 40,
+      "mentions_24h": 16,
+      "total_distinct_found": 61,
+      "llm_score": 0.5,
+      "materiality": "medium",
+      "reasoning": "NVIDIA investment in Blackstone-backed Lancium and AI-financing role are positives, but large put OI increases and AI-credit-risk headlines cut both ways."
+    },
+    "UDR": {
+      "rank": 11,
+      "headline_count": 40,
+      "mentions_24h": 3,
+      "total_distinct_found": 59,
+      "llm_score": 1.5,
+      "materiality": "medium",
+      "reasoning": "Q2 FFO and revenue beat with raised 2026 guidance on leasing strength."
+    },
+    "GT": {
+      "rank": 12,
+      "headline_count": 40,
+      "mentions_24h": 12,
+      "total_distinct_found": 60,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Only retail chatter about a California tire rule and trading noise; no confirmed material catalyst."
+    },
+    "NOV": {
+      "rank": 13,
+      "headline_count": 40,
+      "mentions_24h": 3,
+      "total_distinct_found": 56,
+      "llm_score": 0.5,
+      "materiality": "low",
+      "reasoning": "Small Q2 EPS beat and 'still undervalued after 64% run' commentary, but revenue declined YoY and news is thin."
+    },
+    "LYFT": {
+      "rank": 14,
+      "headline_count": 40,
+      "mentions_24h": 8,
+      "total_distinct_found": 56,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Court sanctions and malice finding in a driver injury case plus repeated CFO/insider selling and Tepper exiting outweigh undervaluation talk."
+    },
+    "DBX": {
+      "rank": 15,
+      "headline_count": 40,
+      "mentions_24h": 2,
+      "total_distinct_found": 60,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Flat ~1% revenue growth, shrinking margins, Zacks Bear of the Day and persistent executive share sales."
+    },
+    "KMB": {
+      "rank": 16,
+      "headline_count": 40,
+      "mentions_24h": 8,
       "total_distinct_found": 62,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Upgraded 2026 guidance and undervaluation calls offset by a large $8.5M CEO share sale and cocoa cost noise."
+      "reasoning": "Kenvue deal is in regulatory review (EU filing, China SAMR Phase 2 hurdle), otherwise dividend-list filler."
     },
-    "PRU": {
-      "rank": 30,
+    "CARR": {
+      "rank": 17,
       "headline_count": 40,
-      "mentions_24h": 4,
-      "total_distinct_found": 61,
-      "llm_score": 0,
+      "mentions_24h": 2,
+      "total_distinct_found": 59,
+      "llm_score": -1.5,
       "materiality": "medium",
-      "reasoning": "Q2 earnings beat and ~$500M buyback offset by China offshore insurance tax report hitting shares and Japan drag."
+      "reasoning": "Down 7.4% in four weeks with persistent weakness and unfavorable comparisons to Trane, only contrarian bounce calls."
+    },
+    "MAS": {
+      "rank": 18,
+      "headline_count": 40,
+      "mentions_24h": 5,
+      "total_distinct_found": 61,
+      "llm_score": -0.5,
+      "materiality": "low",
+      "reasoning": "EPS beat driven by tariff refunds but revenue missed and stock fell ~7%; D.A. Davidson initiated Neutral."
+    },
+    "AMT": {
+      "rank": 19,
+      "headline_count": 40,
+      "mentions_24h": 6,
+      "total_distinct_found": 62,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Barclays upgrade to Overweight with $198 PT plus a $500K director open-market purchase and repeated deep-discount valuation calls."
+    },
+    "CZR": {
+      "rank": 20,
+      "headline_count": 40,
+      "mentions_24h": 8,
+      "total_distinct_found": 61,
+      "llm_score": 0.5,
+      "materiality": "low",
+      "reasoning": "Fertitta take-private vote scheduled at a fixed price, so most of the deal move is behind it; management communication frustration noted."
+    },
+    "CNM": {
+      "rank": 21,
+      "headline_count": 40,
+      "mentions_24h": 5,
+      "total_distinct_found": 61,
+      "llm_score": -1.5,
+      "materiality": "medium",
+      "reasoning": "Repeated 'declines more than the market' headlines, Northcoast downgrade to Neutral and Wall Street Zen cut ahead of Q2."
+    },
+    "GGG": {
+      "rank": 22,
+      "headline_count": 40,
+      "mentions_24h": 8,
+      "total_distinct_found": 57,
+      "llm_score": 0.5,
+      "materiality": "low",
+      "reasoning": "Record Q2 with modest growth and strong margins but guidance only low-single-digit organic; stock has since drifted lower."
+    },
+    "FND": {
+      "rank": 23,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 60,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Down 7.4% on Walmart-driven consumer caution, weak housing demand, negative Q3 comps and Goldman PT cut, despite an earlier guidance raise."
+    },
+    "LFST": {
+      "rank": 24,
+      "headline_count": 40,
+      "mentions_24h": 3,
+      "total_distinct_found": 60,
+      "llm_score": 2.5,
+      "materiality": "medium",
+      "reasoning": "Blowout Q2 (revenue +26%, EBITDA +94%, net income positive), raised guidance, $100M buyback and a Zacks upgrade to Buy."
     }
   }
 }
