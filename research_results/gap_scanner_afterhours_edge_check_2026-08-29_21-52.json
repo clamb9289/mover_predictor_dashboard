@@ -1,0 +1,129 @@
+{
+  "script_name": "gap_scanner_afterhours_edge_check",
+  "run_timestamp": "2026-08-29T21:52:12.115018+00:00",
+  "title": "gap_scanner.py's after-hours shortlist: does it predict next-day performance?",
+  "params": {
+    "n_days": 35,
+    "n_records": 415,
+    "date_range": "2026-07-10 -> 2026-08-27",
+    "correlation_train": -0.24676558778454669,
+    "correlation_val": 0.17985343661370864,
+    "significance_train": {
+      "r": -0.2468,
+      "n": 323,
+      "ci_95": [
+        -0.3466,
+        -0.1414
+      ],
+      "p_value": 0.0,
+      "excludes_zero": true
+    },
+    "significance_val": {
+      "r": 0.1799,
+      "n": 92,
+      "ci_95": [
+        -0.0259,
+        0.371
+      ],
+      "p_value": 0.0863,
+      "excludes_zero": false
+    },
+    "bucket_boundaries": [
+      3.75,
+      5.26
+    ]
+  },
+  "tables": [
+    {
+      "name": "After-hours gap buckets: real vs random control, TRAIN + VAL",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct"
+      ],
+      "rows": [
+        [
+          "TRAIN LOW gap",
+          107,
+          "51.40%",
+          "-17.07%",
+          107,
+          "51.40%",
+          "-17.07%"
+        ],
+        [
+          "TRAIN MID gap",
+          107,
+          "45.79%",
+          "-34.45%",
+          107,
+          "45.79%",
+          "-34.45%"
+        ],
+        [
+          "TRAIN HIGH gap",
+          109,
+          "44.04%",
+          "-72.48%",
+          109,
+          "44.04%",
+          "-72.48%"
+        ],
+        [
+          "TRAIN HIGH gap (random control)",
+          109,
+          "47.16%",
+          "-41.15%",
+          109,
+          "47.16%",
+          "-41.15%"
+        ],
+        [
+          "VAL LOW gap",
+          47,
+          "36.17%",
+          "-42.57%",
+          47,
+          "36.17%",
+          "-42.57%"
+        ],
+        [
+          "VAL MID gap",
+          24,
+          "25.00%",
+          "-82.07%",
+          24,
+          "25.00%",
+          "-82.07%"
+        ],
+        [
+          "VAL HIGH gap",
+          21,
+          "38.10%",
+          "1.24%",
+          21,
+          "38.10%",
+          "1.24%"
+        ],
+        [
+          "VAL HIGH gap (random control)",
+          21,
+          "32.92%",
+          "-49.42%",
+          21,
+          "32.92%",
+          "-49.42%"
+        ]
+      ]
+    }
+  ],
+  "notes": "gap_scanner.py has run track-only since 2026-07-10 with no validation of its own premise -- its docstring explicitly says it needs the same validation-before-trust discipline as intraday_scanner.py, the sibling scanner that WAS validated and retired for no edge. This is that check for the after-hours half (gap_universe_calibration.py already answered the pre-market half: no edge outside the existing top-50 accumulation shortlist). Reuses gap_scanner's own real historical shortlist output via gap_scan.json's git history in the public dashboard repo (cloned fresh at runtime, read-only), rather than re-fetching full-universe historical intraday data from scratch. Tests BOTH continuation and mean-reversion directions, not just continuation -- a fade pattern is just as real/actionable a finding as a momentum one.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "Correlation TRAIN=-0.24676558778454669, VAL=0.17985343661370864 (95% CI excludes zero on both, same sign: False). Continuation pattern (HIGH beats LOW) on both splits: False. Mean-reversion pattern (LOW beats HIGH) on both splits: False. HIGH-gap bucket vs its own random-shuffle control -- beats it: False, underperforms it: False. No real edge detected in gap_scanner after-hours data as currently scoped."
+  }
+}

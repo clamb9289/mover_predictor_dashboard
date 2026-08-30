@@ -1,0 +1,53 @@
+{
+  "script_name": "entry_timing_snapshot_replay",
+  "run_timestamp": "2026-08-30T20:14:56.265796+00:00",
+  "title": "Live re-check: accum-confirm entry timing on real tracker.db price snapshots",
+  "params": {
+    "accum_threshold": 2.0,
+    "configs": [
+      "baseline (buy @ day open, accum-gated)",
+      "confirm>=1.00% win=90m fb=skip",
+      "confirm>=1.00% win=60m fb=skip"
+    ]
+  },
+  "tables": [
+    {
+      "name": "Live snapshot-replay results (real 2-min-cadence data, not a backtest)",
+      "columns": [
+        "Config",
+        "n",
+        "Win Rate",
+        "Avg %",
+        "Trigger Coverage"
+      ],
+      "rows": [
+        [
+          "baseline (buy @ day open, accum-gated)",
+          "48",
+          "56.2%",
+          "-0.263%",
+          "-"
+        ],
+        [
+          "confirm>=1.00% win=90m fb=skip",
+          "9",
+          "44.4%",
+          "-0.115%",
+          "19%"
+        ],
+        [
+          "confirm>=1.00% win=60m fb=skip",
+          "7",
+          "28.6%",
+          "-0.274%",
+          "15%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Track-only re-check of project_stock_predictor_app_accum_confirm_entry_timing.md's bootstrap-downgraded (INCONCLUSIVE) backtest result, using real live price-snapshot data instead of another backtest pass -- the intended way to grow the sample past what 300 real trading days of Alpaca history could support.",
+  "conclusion": {
+    "verdict": "NOT CONFIRMED (live) -- 0/2 configs beat baseline, n=48",
+    "summary": "n=48 real gated candidate-days evaluated."
+  }
+}

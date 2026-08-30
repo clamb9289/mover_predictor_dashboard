@@ -1,0 +1,129 @@
+{
+  "script_name": "gap_scanner_premarket_edge_check",
+  "run_timestamp": "2026-08-29T21:53:34.023260+00:00",
+  "title": "gap_scanner.py's premarket shortlist: does it predict that same day's session?",
+  "params": {
+    "n_days": 35,
+    "n_records": 1939,
+    "date_range": "2026-07-13 -> 2026-08-28",
+    "correlation_train": -0.13576906077157555,
+    "correlation_val": 0.5200525486604556,
+    "significance_train": {
+      "r": -0.1358,
+      "n": 1627,
+      "ci_95": [
+        -0.1832,
+        -0.0877
+      ],
+      "p_value": 0.0,
+      "excludes_zero": true
+    },
+    "significance_val": {
+      "r": 0.5201,
+      "n": 312,
+      "ci_95": [
+        0.4341,
+        0.5966
+      ],
+      "p_value": 0.0,
+      "excludes_zero": true
+    },
+    "bucket_boundaries": [
+      3.79,
+      5.25
+    ]
+  },
+  "tables": [
+    {
+      "name": "Premarket gap buckets: real vs random control, TRAIN + VAL",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct"
+      ],
+      "rows": [
+        [
+          "TRAIN LOW gap",
+          541,
+          "47.13%",
+          "-11.09%",
+          541,
+          "47.13%",
+          "-11.09%"
+        ],
+        [
+          "TRAIN MID gap",
+          543,
+          "48.80%",
+          "-14.54%",
+          543,
+          "48.80%",
+          "-14.54%"
+        ],
+        [
+          "TRAIN HIGH gap",
+          543,
+          "46.78%",
+          "-3.37%",
+          543,
+          "46.78%",
+          "-3.37%"
+        ],
+        [
+          "TRAIN HIGH gap (random control)",
+          543,
+          "47.75%",
+          "-8.39%",
+          543,
+          "47.75%",
+          "-8.39%"
+        ],
+        [
+          "VAL LOW gap",
+          146,
+          "36.30%",
+          "-68.20%",
+          146,
+          "36.30%",
+          "-68.20%"
+        ],
+        [
+          "VAL MID gap",
+          105,
+          "47.62%",
+          "-20.63%",
+          105,
+          "47.62%",
+          "-20.63%"
+        ],
+        [
+          "VAL HIGH gap",
+          61,
+          "42.62%",
+          "64.72%",
+          61,
+          "42.62%",
+          "64.72%"
+        ],
+        [
+          "VAL HIGH gap (random control)",
+          61,
+          "42.08%",
+          "-23.38%",
+          61,
+          "42.08%",
+          "-23.38%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Companion to gap_scanner_afterhours_edge_check.py (REJECTED, re-confirmed 2026-08-29 with a larger sample). Covers the genuinely untested half of gap_scanner.py's premise: PREMARKET gap (prior close -> live premarket price at scan time) predicting THAT SAME day's regular session. Different question from gap_universe_calibration.py (full-universe gap measured AT THE OPEN vs accumulation_rank membership) -- this uses gap_scanner's own running premarket snapshot and its own actually-flagged tickers. Reuses gap_scan.json's real git history in the public dashboard repo (cloned fresh at runtime, read-only). Tests both continuation and mean-reversion.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "Correlation TRAIN=-0.13576906077157555, VAL=0.5200525486604556 (95% CI excludes zero on both, same sign: False). Continuation (HIGH beats LOW) both splits: False. Mean-reversion (LOW beats HIGH) both splits: False. HIGH-gap bucket vs random-shuffle control -- beats it: False, underperforms it: False. No real edge detected in gap_scanner premarket data as currently scoped."
+  }
+}
