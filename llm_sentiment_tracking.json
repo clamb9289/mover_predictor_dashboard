@@ -1,6 +1,6 @@
 {
   "date": "2026-09-01",
-  "generated_at": "2026-09-01T13:37:36.374187+00:00",
+  "generated_at": "2026-09-01T14:00:10.972127+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
@@ -10,11 +10,11 @@
   ],
   "llm_top3": {
     "tickers": [
-      "ROIV",
+      "WMB",
       "PSX",
-      "BNY"
+      "ROIV"
     ],
-    "reasoning": "I deviate from the top-ranked TRMB/RPM/GGG because their news is largely stale, mixed earnings commentary. ROIV has a genuine, high-materiality catalyst in the FDA approval of LISRAYA, the first oral targeted dermatomyositis therapy with $2B+ peak sales potential, and the stock dipped on launch digestion. PSX pairs an actual refining margin upcycle (global refinery outages, diesel tightness) with a $10B buyback expansion and 9x forward P/E. BNY combines 52-week-high momentum, 35% YTD gains, strong Q2 custody results, and a new retail distribution channel via the Trump Accounts app with Robinhood. All three have positive, material, recent news rather than backward-looking valuation debates."
+    "reasoning": "I deviate from the top quant ranks (TRMB, RPM, GGG) because their news is solid but incremental, and TRMB carries a $562M impairment and weak post-beat price action. WMB (rank 7) pairs a technical breakout and raised EBITDA target with a strategic $5.5B Haynesville/LNG capacity bet, PSX (rank 17) is at 52-week highs on record refining margins, a $10B buyback expansion and genuine global diesel tightness, and ROIV (rank 13) has the single most material catalyst in the list: FDA approval of LISRAYA, the first oral dermatomyositis therapy with $2B+ estimated US peak sales, where the share dip creates an entry."
   },
   "tickers": {
     "TRMB": {
@@ -24,7 +24,7 @@
       "total_distinct_found": 61,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Q2 beat with 11% revenue growth, record ARR, raised guidance and $1B buyback, offset by a $562M goodwill impairment in Transportation & Logistics and muted price reaction, plus PE interest in divesting that unit."
+      "reasoning": "Q2 beat with revenue +11%, raised guidance, record ARR and $1B buyback, offset by a $562M goodwill impairment in Transportation & Logistics; PE interest in divesting that unit is a potential positive catalyst."
     },
     "RPM": {
       "rank": 2,
@@ -33,7 +33,7 @@
       "total_distinct_found": 58,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Record Q4 beat, expanded $700M buyback and 3-7% FY27 sales guidance, partly tempered by UBS's call for a slight fiscal Q1 miss."
+      "reasoning": "Record Q4 beat, expanded $700M buyback and FY27 guidance of 3-7% sales growth, tempered by UBS flagging a slight fiscal Q1 miss on material costs."
     },
     "GGG": {
       "rank": 3,
@@ -42,16 +42,16 @@
       "total_distinct_found": 58,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Zacks upgrade to Buy, record Q2 earnings beat and a $447M acquisition of adhesive dispensing/inspection systems support a modestly positive read."
+      "reasoning": "Zacks upgrade to Buy, record Q2 EPS beat and a $447M acquisition adding adhesive dispensing/inspection systems support a modest positive."
     },
     "TYL": {
       "rank": 4,
       "headline_count": 40,
-      "mentions_24h": 4,
+      "mentions_24h": 1,
       "total_distinct_found": 60,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Raised 2030 financial targets and large Tennessee cloud rollout are positive, but Goldman cut its target to $395 on soft subscription revenue and COO insider selling adds caution."
+      "reasoning": "Raised 2030 financial targets and completed Tennessee statewide cloud rollout are positives, but Goldman cut its target to $395 on weaker subscription revenue and COO sold $3M of stock."
     },
     "AVY": {
       "rank": 5,
@@ -60,34 +60,34 @@
       "total_distinct_found": 59,
       "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Q2 sales +10.9% with solid EPS guidance and momentum/dividend praise, offset by 'AVY is Risky' commentary and insider selling; mostly stale news."
+      "reasoning": "Q2 sales +10.9% with solid EPS guidance, but the news flow is mostly recycled screener commentary plus insider selling and 'AVY is Risky' pieces."
     },
     "GLPI": {
       "rank": 6,
       "headline_count": 40,
       "mentions_24h": 7,
       "total_distinct_found": 61,
-      "llm_score": 0,
+      "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Routine dividend declaration at $0.82 and 13F filings, with offsetting tenant-financing/regulatory concerns and undervaluation notes \u2014 net neutral."
+      "reasoning": "Dividend maintained at $0.82 (7.8% yield), AFFO +10% and a $422K director insider buy, offset by tenant financing and prediction-market/tribal regulatory noise."
     },
     "WMB": {
       "rank": 7,
       "headline_count": 40,
       "mentions_24h": 5,
       "total_distinct_found": 62,
-      "llm_score": 2,
+      "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "Technical breakout signals, raised EBITDA target, and a $5.5B Haynesville acquisition supporting LNG-driven growth, though leverage at 3.9x drew some skepticism."
+      "reasoning": "Technical breakout setup, raised EBITDA target, and a $5.5B Haynesville acquisition with 3 Bcf/d of transport capacity to serve LNG/data-center gas demand, with modest leverage concerns (3.9x)."
     },
     "ATI": {
       "rank": 8,
       "headline_count": 40,
       "mentions_24h": 7,
       "total_distinct_found": 58,
-      "llm_score": 1,
+      "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Shares rallied 28% in three months on aerospace demand and MSCI World inclusion, but multiple notes call the stock overvalued and insiders are selling."
+      "reasoning": "New 52-week high, +28% in three months, Deutsche Bank raising target to $262, and MSCI World Index inclusion, though several notes call it overvalued and insiders are selling."
     },
     "PODD": {
       "rank": 9,
@@ -96,7 +96,7 @@
       "total_distinct_found": 62,
       "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "Securities class action deadline, guidance cut and ~50-57% stock decline dominate, only partly offset by strong 23.5% revenue growth and a small CEO insider buy."
+      "reasoning": "Securities class action deadline, FY26 guidance cut and a ~50-57% stock decline dominate, only partly offset by a small CEO insider buy and strong 23% revenue growth."
     },
     "ALLE": {
       "rank": 10,
@@ -114,7 +114,7 @@
       "total_distinct_found": 54,
       "llm_score": -1,
       "materiality": "medium",
-      "reasoning": "Q2 EPS fell 43% with revenue down 9% and the stock printed a new 52-week low, though full-year guidance and 6-8% growth outlook were reaffirmed."
+      "reasoning": "New 52-week low with Q2 GAAP EPS down 43% and revenue down 9%, though guidance and 6-8% growth outlook were reaffirmed and data-center demand is a longer-term positive."
     },
     "PNR": {
       "rank": 12,
@@ -123,7 +123,7 @@
       "total_distinct_found": 59,
       "llm_score": -3,
       "materiality": "high",
-      "reasoning": "Securities class action and fraud investigation after pool destocking drove a 15% drop, with revenue -17% and dealer share loss; stock down 34% YTD."
+      "reasoning": "Revenue fell 17% on pool destocking and dealer share loss, stock dropped ~15% and is down 34% YTD, and multiple securities class actions with an Oct 2 lead plaintiff deadline are pending."
     },
     "ROIV": {
       "rank": 13,
@@ -132,7 +132,7 @@
       "total_distinct_found": 60,
       "llm_score": 3,
       "materiality": "high",
-      "reasoning": "FDA approval of LISRAYA (brepocitinib), the first oral targeted dermatomyositis therapy, with JPM seeing $2B+ US peak sales, though shares slid on launch-cost digestion."
+      "reasoning": "FDA approved LISRAYA (brepocitinib), the first oral targeted therapy for dermatomyositis, with J.P. Morgan seeing $2B+ US peak sales, though shares slid on launch-cost digestion."
     },
     "APTV": {
       "rank": 14,
@@ -141,34 +141,34 @@
       "total_distinct_found": 59,
       "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "Repeated new 52-week lows, guidance cut, death cross and index-deletion selling pressure, only partially offset by heavy insider buying and cheap ~8x forward P/E."
+      "reasoning": "Repeated new 52-week lows amid guidance cuts and heavy index-deletion-driven liquidation, partially offset by large insider buys from the CEO and directors and a big buyback authorization."
     },
     "CLX": {
       "rank": 15,
       "headline_count": 40,
-      "mentions_24h": 15,
+      "mentions_24h": 11,
       "total_distinct_found": 62,
       "llm_score": -1,
       "materiality": "low",
-      "reasoning": "Margin pressure triggered fresh analyst target cuts and a 4.7% drop, though dividend and GOJO growth commentary offer some support."
+      "reasoning": "Margin pressure driving fresh analyst target cuts and commentary that the stock still looks fully priced, with only dividend and GOJO growth as offsets."
     },
     "DLR": {
       "rank": 16,
       "headline_count": 40,
-      "mentions_24h": 3,
+      "mentions_24h": 4,
       "total_distinct_found": 62,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "New 50MW Singapore allocation and 15MW Swiss AI data center expansion are positive, tempered by REIT weakness on hawkish rate commentary and director selling."
+      "reasoning": "Wins 50MW Singapore low-carbon data center allocation and a 15MW Swiss expansion, offset by rising cost of capital/AI-debt concerns and REIT weakness on hawkish Fed commentary."
     },
     "PSX": {
       "rank": 17,
       "headline_count": 40,
-      "mentions_24h": 8,
+      "mentions_24h": 9,
       "total_distinct_found": 58,
       "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "New 52-week high on refining margin expansion, $10B buyback expansion, and global refinery outages boosting diesel cracks, though RSI 83 signals stretched conditions."
+      "reasoning": "New 52-week high, +17.5% in a month on record refining margins, a $10B buyback expansion and global diesel supply tightness, though RSI 83 signals overbought risk."
     },
     "BNY": {
       "rank": 18,
@@ -177,7 +177,7 @@
       "total_distinct_found": 60,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Stock at 52-week highs, up 35% YTD on strong Q2, Trump Accounts app launch with Robinhood, and new board addition, with only routine insider sales."
+      "reasoning": "Strong Q2, +35% YTD to new 52-week highs, and the BNY/Robinhood 'Trump Accounts' app launch, with momentum divergence and insider selling as mild offsets."
     },
     "GNL": {
       "rank": 19,
@@ -186,7 +186,7 @@
       "total_distinct_found": 62,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Completed $535M accretive Modiv acquisition with Citizens reiterating Market Outperform at $10, though revenue fell 10% and EPS remains negative."
+      "reasoning": "Completed the $535M accretive Modiv industrial acquisition with Citizens reiterating Market Outperform and a $10 target, but revenue fell 10% and GAAP EPS remains negative."
     },
     "ETR": {
       "rank": 20,
@@ -195,7 +195,7 @@
       "total_distinct_found": 60,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Earnings beat with reaffirmed 2026 guidance, JPMorgan target raise to $139, SMR MOA with Holtec/Hyundai and data-center demand, though some see the stock ~30% overvalued."
+      "reasoning": "Earnings beat with reaffirmed 2026 guidance, JPMorgan target raise to $139, insider purchase and SMR/data-center growth optionality, though several notes call the stock 29-31% overvalued."
     },
     "VLTO": {
       "rank": 21,
@@ -204,7 +204,7 @@
       "total_distinct_found": 58,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Q2 revenue +7.5%, raised FY26 adjusted EPS guidance to $4.35-4.43, and an upgrade to Buy amid dual-segment water/analytics strength."
+      "reasoning": "Q2 revenue +7.5%, raised FY26 adjusted EPS guidance to $4.35-$4.43, and an upgrade to Buy, tempered by a rich valuation and insider selling."
     },
     "KIM": {
       "rank": 22,
@@ -212,17 +212,17 @@
       "mentions_24h": 2,
       "total_distinct_found": 61,
       "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Raised 2026 FFO outlook, 12% dividend increase and record occupancy, offset by GAAP EPS down slightly and rate-sensitive REIT headwinds."
+      "materiality": "low",
+      "reasoning": "Raised FY26 FFO guidance, 12% dividend increase and record occupancy are positive, though EPS slipped YoY and the stock is stalling at a multi-year base."
     },
     "CCI": {
       "rank": 23,
       "headline_count": 40,
       "mentions_24h": 6,
       "total_distinct_found": 59,
-      "llm_score": -1,
+      "llm_score": 0,
       "materiality": "medium",
-      "reasoning": "SpaceX Starlink Mobile direct-to-device threat narrative and Elliott fully exiting its position weigh, partly offset by a Barclays upgrade and management rebuttal on satellite limitations."
+      "reasoning": "Barclays upgrade on valuation and management's rebuttal of satellite risk are offset by SpaceX Starlink Mobile competitive fears, Elliott exiting its stake, and a technical breakdown."
     },
     "SHO": {
       "rank": 24,
@@ -230,8 +230,8 @@
       "mentions_24h": 0,
       "total_distinct_found": 60,
       "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 FFO/revenue beat with raised full-year guidance, $279M San Francisco Hyatt sale and buybacks, though the president sold 89,000 shares."
+      "materiality": "low",
+      "reasoning": "Q2 FFO/revenue beat with raised full-year guidance and buybacks funded by the $279M Hyatt Regency San Francisco sale, but president sold 89,000 shares and a $300M equity program was launched."
     },
     "CVS": {
       "rank": 25,
@@ -240,7 +240,7 @@
       "total_distinct_found": 54,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Raised 2026 guidance and bullish technical/valuation commentary, but its first 2027 number spooked the market and PBM/mega-merger political scrutiny persists."
+      "reasoning": "Raised 2026 guidance and constructive valuation/technical commentary, but the initial 2027 outlook spooked the market and PBM/mega-merger political scrutiny persists."
     },
     "HR": {
       "rank": 26,
@@ -248,8 +248,8 @@
       "mentions_24h": 5,
       "total_distinct_found": 59,
       "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 FFO and revenue beat with raised normalized FFO guidance and $100M buybacks, though GAAP loss and revenue down 5% temper the read."
+      "materiality": "low",
+      "reasoning": "Q2 FFO and revenue beat with raised normalized FFO guidance and buybacks at $17.38, though revenue fell 5% and GAAP EPS remains negative."
     },
     "ED": {
       "rank": 27,
@@ -258,7 +258,7 @@
       "total_distinct_found": 60,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Q2 earnings and revenue beat with profit up 25%, offset by heavy capex/dilution concerns and sector-wide California wildfire liability selloff pressure on utilities."
+      "reasoning": "Q2 earnings beat with profit up 25% on rate base growth, but headlines are dominated by unrelated California wildfire liability pressure on EIX/PG&E and views the stock is fairly to fully valued."
     },
     "PEB": {
       "rank": 28,
@@ -266,17 +266,17 @@
       "mentions_24h": 1,
       "total_distinct_found": 60,
       "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Q2 FFO beat with upgraded 2026 guidance and repeated CEO insider buying, though revenue was flat and Zacks cut it to Hold."
+      "materiality": "low",
+      "reasoning": "Q2 FFO beat with upgraded 2026 guidance, preferred buybacks and sizable CEO open-market purchases, offset by flat revenue and a Zacks downgrade to Hold."
     },
     "FISV": {
       "rank": 29,
       "headline_count": 40,
-      "mentions_24h": 6,
+      "mentions_24h": 7,
       "total_distinct_found": 60,
       "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "Q2 earnings miss, new 52-week low alongside FOX and LDOS, and pervasively negative retail sentiment despite a new core deal and agentic-payments standards involvement."
+      "reasoning": "Q2 earnings miss, a plunge to 52-week lows and heavy 'dead money'/short sentiment dominate, with only agentic-payments standards work and a new core deal as offsets."
     },
     "WELL": {
       "rank": 30,
@@ -285,7 +285,7 @@
       "total_distinct_found": 61,
       "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Senior housing momentum and Barclays target raise to $259 with a technical breakout setup, but the stock is flagged as above fair value after a 208% run."
+      "reasoning": "Senior housing momentum and a Barclays target raise to $259 with a breakout setup, but Barclays stays Equal-Weight and multiple notes say the stock trades above fair value after a 208% run."
     }
   }
 }
