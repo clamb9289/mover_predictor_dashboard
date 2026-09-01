@@ -17377,8 +17377,8 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0011,
           "paper_trail_floor_active": false,
-          "live_price": 30.87,
-          "live_pct": -0.15,
+          "live_price": 30.86,
+          "live_pct": -0.16,
           "live_dollar": -0.02,
           "price_updated": "9:54 AM ET"
         },
@@ -17539,9 +17539,9 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0036,
           "paper_trail_floor_active": false,
-          "live_price": 132.36,
-          "live_pct": 0.15,
-          "live_dollar": 0.01,
+          "live_price": 132.4,
+          "live_pct": 0.18,
+          "live_dollar": 0.02,
           "price_updated": "9:54 AM ET"
         },
         {
@@ -17569,7 +17569,8 @@
           "live_dollar": -0.19,
           "price_updated": "9:31 AM ET",
           "paper_exit_time": "9:39 AM ET",
-          "paper_exit_date": "2026-09-01"
+          "paper_exit_date": "2026-09-01",
+          "postmortem": "Hit the -3% stop loss (-3.00%)."
         },
         {
           "ticker": "ACM",
@@ -17652,7 +17653,8 @@
           "live_dollar": -0.05,
           "price_updated": "9:31 AM ET",
           "paper_exit_time": "9:39 AM ET",
-          "paper_exit_date": "2026-09-01"
+          "paper_exit_date": "2026-09-01",
+          "postmortem": "Small loss of -2.99%. Within normal volatility."
         },
         {
           "ticker": "FITB",
@@ -18088,8 +18090,8 @@
           "paper_exit_reason": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "live_price": 16.18,
-          "live_pct": -0.63,
+          "live_price": 16.19,
+          "live_pct": -0.6,
           "live_dollar": -0.17,
           "price_updated": "9:54 AM ET",
           "days_held": 1,
@@ -18683,10 +18685,10 @@
     },
     {
       "date": "2026-09-01",
-      "regime": "Market regime OK \u2014 SPY -0.77%",
+      "regime": "Market regime OK \u2014 SPY -0.66%",
       "trading_skipped": false,
       "max_hold_days": 3,
-      "spy_regime_pct": -0.00765,
+      "spy_regime_pct": -0.00658,
       "top_sectors": [
         {
           "etf": "XLK",
@@ -18711,7 +18713,7 @@
           "signals": {
             "accumulation": 0.435,
             "sector_momentum_pct": 0.0,
-            "news_sentiment": 1.0,
+            "news_sentiment": 0.0,
             "relative_strength_pct": 13.78
           },
           "our_rank": null,
@@ -18726,7 +18728,7 @@
           "signals": {
             "accumulation": 0.846,
             "sector_momentum_pct": 0.0,
-            "news_sentiment": -2.0,
+            "news_sentiment": -1.0,
             "relative_strength_pct": -3.89
           },
           "our_rank": null,
@@ -18741,7 +18743,7 @@
           "signals": {
             "accumulation": 0.555,
             "sector_momentum_pct": 0.0,
-            "news_sentiment": 7.0,
+            "news_sentiment": 5.0,
             "relative_strength_pct": -4.21
           },
           "our_rank": null,
@@ -18873,8 +18875,8 @@
             "relative_strength_pct": -4.79,
             "gap_pct": -0.92
           },
-          "live_price": 59.74,
-          "live_pct": -0.33,
+          "live_price": 59.83,
+          "live_pct": -0.18,
           "live_dollar": null,
           "price_updated": "9:54 AM ET"
         },
@@ -18891,10 +18893,10 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": -0.46,
-            "gap_pct": 1.79
+            "gap_pct": -0.83
           },
-          "live_price": 103.08,
-          "live_pct": -0.98,
+          "live_price": 103.0,
+          "live_pct": -1.06,
           "live_dollar": null,
           "price_updated": "9:54 AM ET"
         },
@@ -18911,7 +18913,7 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": -1.24,
-            "gap_pct": 2.08
+            "gap_pct": -0.1
           },
           "live_price": 77.52,
           "live_pct": 0.12,
@@ -18933,10 +18935,10 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": 1.36,
-            "gap_pct": 0.46
+            "gap_pct": -1.88
           },
-          "live_price": 98.35,
-          "live_pct": -0.23,
+          "live_price": 98.25,
+          "live_pct": -0.32,
           "price_updated": "9:54 AM ET"
         },
         {
@@ -18952,10 +18954,10 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": 0.59,
-            "gap_pct": 0.08
+            "gap_pct": 0.51
           },
-          "live_price": 23.84,
-          "live_pct": 0.57,
+          "live_price": 23.83,
+          "live_pct": 0.51,
           "price_updated": "9:54 AM ET"
         },
         {
@@ -18971,10 +18973,10 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": 2.35,
-            "gap_pct": -0.5
+            "gap_pct": 0.26
           },
-          "live_price": 76.6,
-          "live_pct": 0.6,
+          "live_price": 76.58,
+          "live_pct": 0.58,
           "price_updated": "9:54 AM ET"
         },
         {
@@ -18990,7 +18992,7 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": 1.45,
-            "gap_pct": 0.9
+            "gap_pct": -0.81
           },
           "live_price": 11.1,
           "live_pct": -0.67,
@@ -19009,10 +19011,10 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": -1.0,
             "relative_strength_pct": 2.17,
-            "gap_pct": -0.73
+            "gap_pct": 1.15
           },
-          "live_price": 96.46,
-          "live_pct": 2.72,
+          "live_price": 96.48,
+          "live_pct": 2.74,
           "price_updated": "9:54 AM ET"
         },
         {
@@ -19028,10 +19030,10 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": 1.24,
-            "gap_pct": -0.47
+            "gap_pct": 0.26
           },
-          "live_price": 19.13,
-          "live_pct": 0.47,
+          "live_price": 19.12,
+          "live_pct": 0.42,
           "price_updated": "9:54 AM ET"
         },
         {
@@ -19047,10 +19049,10 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": 1.65,
-            "gap_pct": -0.21
+            "gap_pct": 0.92
           },
-          "live_price": 107.42,
-          "live_pct": 0.37,
+          "live_price": 107.33,
+          "live_pct": 0.29,
           "price_updated": "9:54 AM ET"
         },
         {
@@ -19066,7 +19068,7 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": 1.6,
-            "gap_pct": 1.6
+            "gap_pct": -0.61
           },
           "live_price": 17.98,
           "live_pct": -0.77,
@@ -19087,8 +19089,8 @@
             "relative_strength_pct": 1.54,
             "gap_pct": -1.68
           },
-          "live_price": 52.17,
-          "live_pct": -2.14,
+          "live_price": 52.11,
+          "live_pct": -2.25,
           "price_updated": "9:54 AM ET"
         },
         {
@@ -19104,10 +19106,10 @@
             "sector_momentum_pct": 0.0,
             "news_sentiment": 0.0,
             "relative_strength_pct": 1.12,
-            "gap_pct": 0.08
+            "gap_pct": 0.77
           },
-          "live_price": 238.87,
-          "live_pct": 1.11,
+          "live_price": 239.35,
+          "live_pct": 1.32,
           "price_updated": "9:54 AM ET"
         }
       ],
@@ -19244,13 +19246,13 @@
         {
           "rank": 12,
           "ticker": "MCHP",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": -3.0,
+          "dollar_change": -0.27,
           "position_size": 8.87,
           "actual_rank": 125,
           "total_ranked": 598,
           "signals": null,
-          "postmortem": null
+          "postmortem": "Hit the -3% stop loss (-3.00%). The stock itself ranked #125 of 598 tracked that day, for context."
         },
         {
           "rank": 14,
@@ -19277,13 +19279,13 @@
         {
           "rank": 16,
           "ticker": "RELY",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": -2.99,
+          "dollar_change": -0.25,
           "position_size": 8.22,
           "actual_rank": 124,
           "total_ranked": 598,
           "signals": null,
-          "postmortem": null
+          "postmortem": "Small loss of -2.99%. Within normal volatility. The stock itself ranked #124 of 598 tracked that day, for context."
         },
         {
           "rank": 17,
@@ -19536,16 +19538,16 @@
       ],
       "hit_rate": 0.0,
       "total_hits": 0,
-      "total_predictions": 68,
-      "days_tracked": 23,
-      "spy_live_price": 761.77,
-      "spy_live_pct": -0.75,
-      "prices_last_updated": "9:54 AM ET",
-      "prices_after_hours": false,
+      "total_predictions": 71,
+      "days_tracked": 24,
       "total_contributed": 300.0,
-      "current_equity": 283.9,
-      "net_trading_gain": -16.1,
-      "net_trading_gain_pct": -5.37
+      "current_equity": 283.89,
+      "net_trading_gain": -16.11,
+      "net_trading_gain_pct": -5.37,
+      "spy_live_price": 761.68,
+      "spy_live_pct": -0.76,
+      "prices_last_updated": "9:54 AM ET",
+      "prices_after_hours": false
     }
   ]
 }
