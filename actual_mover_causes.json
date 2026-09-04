@@ -1661,6 +1661,84 @@
       "tickers": [],
       "error_type": "overloaded_error",
       "error_message": "Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}, 'request_id': 'req_011CegbjXsoVAg4qDRhzFzJW'}"
+    },
+    {
+      "date": "2026-09-03",
+      "generated_at": "2026-09-04T13:41:39.930261+00:00",
+      "model": "claude-opus-5",
+      "status": "ok",
+      "tickers": [
+        {
+          "ticker": "HOOD",
+          "cause_summary": "Robinhood jumped after a wave of bullish analyst commentary on its prediction-markets business: Piper Sandler's Patrick Moley raised his target to $145 from $135 (projecting ~29.7bn event contracts Sept-Dec as football season starts) and Deutsche Bank published a note flagging prediction-market tailwinds for brokers and exchanges, with a crypto-led risk-on tape adding fuel. It closed as the biggest S&P 500 gainer near $125.",
+          "category": "analyst_action",
+          "structural_blind_spot": true,
+          "confidence": "high"
+        },
+        {
+          "ticker": "CLSK",
+          "cause_summary": "CleanSpark rose with the whole bitcoin-miner complex as bitcoin rallied above $80,000-$81,000 on September 3 and traders priced in crypto policy optimism ahead of the Senate's planned mid-September CLARITY Act vote. No CleanSpark-specific announcement drove the move.",
+          "category": "macro_sector",
+          "structural_blind_spot": false,
+          "confidence": "high"
+        },
+        {
+          "ticker": "MARA",
+          "cause_summary": "MARA Holdings gained more than 10% purely on the bitcoin move above $80K and the accompanying crypto-equity rally (HIVE +13%, CleanSpark and Strategy also higher), amplified by miners' leverage to the coin price. No company-specific news that day.",
+          "category": "macro_sector",
+          "structural_blind_spot": false,
+          "confidence": "high"
+        },
+        {
+          "ticker": "COIN",
+          "cause_summary": "Coinbase closed up ~10% to $192.70 on a sharp bitcoin rally plus anticipation of the upcoming Senate vote on federal crypto market-structure legislation; coverage also cited Coinbase's regulatory filings to launch U.S. stock perpetual futures and continued analyst conviction after its record 10.3% volume share.",
+          "category": "macro_sector",
+          "structural_blind_spot": false,
+          "confidence": "high"
+        },
+        {
+          "ticker": "PLTR",
+          "cause_summary": "Palantir surged after announcing an expanded strategic alliance with PwC, and as buyers stepped back in following Wednesday's pullback caused by Alphabet/Google entering the AI-defense market (and renewed Michael Burry short commentary).",
+          "category": "other",
+          "structural_blind_spot": true,
+          "confidence": "high"
+        },
+        {
+          "ticker": "MIR",
+          "cause_summary": "Mirion Technologies jumped after Jefferies initiated coverage with a Buy rating and a $20 price target; volume ran over 3.2 million shares on the initiation.",
+          "category": "analyst_action",
+          "structural_blind_spot": true,
+          "confidence": "high"
+        },
+        {
+          "ticker": "PFG",
+          "cause_summary": "Principal Financial rose after a Korea Economic Daily report that Samsung Life is seeking to acquire roughly a 15% stake in the company; shares were up ~3% premarket on the story and extended gains through the session.",
+          "category": "M&A",
+          "structural_blind_spot": true,
+          "confidence": "high"
+        },
+        {
+          "ticker": "NOW",
+          "cause_summary": "ServiceNow extended a powerful multi-week rebound in beaten-down enterprise software (up ~28% in a month) on a risk-on day of falling Treasury yields after Fed Governor Waller's dovish-leaning comments, helped by a string of recent analyst price-target hikes (BofA to $150, Wells Fargo) rather than any company-specific news.",
+          "category": "macro_sector",
+          "structural_blind_spot": false,
+          "confidence": "medium"
+        },
+        {
+          "ticker": "AHCO",
+          "cause_summary": "No clear company-specific catalyst found for AdaptHealth on September 3, 2026; the move looks like a low-priced small-cap bounce (stock near multi-year lows after its August Q2 miss and guidance cut) on a broadly risk-on, falling-yield session.",
+          "category": "unclear",
+          "structural_blind_spot": false,
+          "confidence": "low"
+        },
+        {
+          "ticker": "P",
+          "cause_summary": "No specific same-day catalyst found for Everpure (formerly Pure Storage, NYSE: P); the gain appears to be a continued rebound from its ~11% post-earnings drop on August 27, supported by a cluster of recent upgrades/target hikes (BofA to Buy, $150) and a strong AI data-infrastructure tape.",
+          "category": "macro_sector",
+          "structural_blind_spot": false,
+          "confidence": "low"
+        }
+      ]
     }
   ]
 }
