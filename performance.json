@@ -208,7 +208,9 @@
           "paper_exit_reason": "Trail stop: +0.38% floor (step) triggered (+0.3%)",
           "paper_exit_time": "11:52 AM ET",
           "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and sector momentum pointed the right direction without enough follow-through.",
-          "paper_exit_date": "2026-07-30"
+          "paper_exit_date": "2026-07-30",
+          "buy_date": "2026-07-30",
+          "slippage_pct": 0.024
         },
         {
           "rank": 2,
@@ -241,7 +243,9 @@
           "paper_exit_reason": "Stop loss (-3.3%)",
           "paper_exit_time": "11:52 AM ET",
           "postmortem": "Hit the stop loss (-3.36%) despite accumulation/volume and relative strength \u2014 worth reviewing if accumulation/volume keeps producing false positives.",
-          "paper_exit_date": "2026-07-31"
+          "paper_exit_date": "2026-07-31",
+          "buy_date": "2026-07-30",
+          "slippage_pct": -0.056
         },
         {
           "rank": 3,
@@ -274,7 +278,9 @@
           "paper_exit_reason": "Trail stop: +0.38% floor (step) triggered (+0.3%)",
           "paper_exit_time": "11:52 AM ET",
           "postmortem": "Modest gain (+0.01%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum pointed the right direction without enough follow-through.",
-          "paper_exit_date": "2026-07-30"
+          "paper_exit_date": "2026-07-30",
+          "buy_date": "2026-07-30",
+          "slippage_pct": -0.334
         },
         {
           "ticker": "TECH",
@@ -308,7 +314,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:56 PM ET",
           "paper_exit_date": "2026-07-31",
-          "postmortem": "Small loss (+0.00%) \u2014 accumulation/volume and relative strength didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (+0.00%) \u2014 accumulation/volume and relative strength didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-07-30",
+          "slippage_pct": -0.007
         },
         {
           "ticker": "TRV",
@@ -342,7 +350,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "1:48 PM ET",
           "paper_exit_date": "2026-07-31",
-          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-07-30",
+          "slippage_pct": -0.01
         }
       ],
       "bench_candidates": [
@@ -488,7 +498,7 @@
       "total_predictions": 0,
       "days_tracked": 0,
       "closed_rounds": [],
-      "prices_last_updated": "12:06 PM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false
     },
     {
@@ -699,7 +709,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "12:50 PM ET",
           "paper_exit_date": "2026-07-31",
-          "postmortem": "Modest gain (+0.32%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.32%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-07-31",
+          "slippage_pct": 0.071
         },
         {
           "rank": 2,
@@ -754,7 +766,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "3:50 PM ET",
           "paper_exit_date": "2026-08-03",
-          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-07-31",
+          "slippage_pct": 0.017
         },
         {
           "ticker": "DIS",
@@ -788,7 +802,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:56 PM ET",
           "paper_exit_date": "2026-07-31",
-          "postmortem": "Modest gain (+0.25%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and sector momentum pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.25%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and sector momentum pointed the right direction without enough follow-through.",
+          "buy_date": "2026-07-31",
+          "slippage_pct": -0.005
         },
         {
           "ticker": "FE",
@@ -822,7 +838,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:34 AM ET",
           "paper_exit_date": "2026-07-31",
-          "postmortem": "Small loss (-0.04%) \u2014 accumulation/volume and news sentiment didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.04%) \u2014 accumulation/volume and news sentiment didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-07-31",
+          "slippage_pct": 0.021
         },
         {
           "ticker": "HD",
@@ -856,7 +874,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:34 AM ET",
           "paper_exit_date": "2026-07-31",
-          "postmortem": "Cleared the trailing-stop floor (+2.00%) \u2014 the relative strength and sector momentum and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
+          "postmortem": "Cleared the trailing-stop floor (+2.00%) \u2014 the relative strength and sector momentum and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats.",
+          "buy_date": "2026-07-31",
+          "slippage_pct": -0.011
         }
       ],
       "bench_candidates": [
@@ -1087,7 +1107,7 @@
       "total_predictions": 6,
       "days_tracked": 2,
       "closed_rounds": [],
-      "prices_last_updated": "3:50 PM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 747.03,
       "spy_live_pct": 0.5
@@ -1334,7 +1354,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "11:41 AM ET",
           "paper_exit_date": "2026-08-03",
-          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-03",
+          "slippage_pct": 0.163
         },
         {
           "ticker": "PFG",
@@ -1368,7 +1390,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "11:41 AM ET",
           "paper_exit_date": "2026-08-03",
-          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-03",
+          "slippage_pct": 0.121
         },
         {
           "ticker": "LTH",
@@ -1396,7 +1420,9 @@
           "price_updated": "9:42 AM ET",
           "paper_exit_time": "9:44 AM ET",
           "paper_exit_date": "2026-08-04",
-          "postmortem": "Hit the -3% stop loss (-3.33%)."
+          "postmortem": "Hit the -3% stop loss (-3.33%).",
+          "buy_date": "2026-08-03",
+          "slippage_pct": 0.067
         },
         {
           "ticker": "FHN",
@@ -1424,7 +1450,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:56 PM ET",
           "paper_exit_date": "2026-08-03",
-          "postmortem": "Modest gain of +0.54%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.54%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-03",
+          "slippage_pct": -0.0
         }
       ],
       "bench_candidates": [
@@ -1660,7 +1688,7 @@
       "total_predictions": 9,
       "days_tracked": 3,
       "closed_rounds": [],
-      "prices_last_updated": "9:44 AM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 757.67,
       "spy_live_pct": 1.81
@@ -1873,7 +1901,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "2:20 PM ET",
           "paper_exit_date": "2026-08-04",
-          "postmortem": "Modest gain (+0.90%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.90%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-04",
+          "slippage_pct": 0.026
         },
         {
           "rank": 2,
@@ -1906,7 +1936,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "12:08 PM ET",
           "paper_exit_date": "2026-08-04",
-          "postmortem": "Hit the stop loss (-3.05%) despite accumulation/volume \u2014 worth reviewing if accumulation/volume keeps producing false positives."
+          "postmortem": "Hit the stop loss (-3.05%) despite accumulation/volume \u2014 worth reviewing if accumulation/volume keeps producing false positives.",
+          "buy_date": "2026-08-04",
+          "slippage_pct": 0.062
         },
         {
           "rank": 3,
@@ -1939,7 +1971,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "3:02 PM ET",
           "paper_exit_date": "2026-08-05",
-          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-04",
+          "slippage_pct": -0.114
         },
         {
           "ticker": "BMY",
@@ -1973,7 +2007,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "3:56 PM ET",
           "paper_exit_date": "2026-08-04",
-          "postmortem": "Cleared the trailing-stop floor (+2.66%) \u2014 the accumulation/volume and relative strength signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
+          "postmortem": "Cleared the trailing-stop floor (+2.66%) \u2014 the accumulation/volume and relative strength signal(s) that drove this pick played out well. Worth leaning into when this profile repeats.",
+          "buy_date": "2026-08-04",
+          "slippage_pct": -0.015
         },
         {
           "ticker": "RVTY",
@@ -2007,7 +2043,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "9:52 AM ET",
           "paper_exit_date": "2026-08-05",
-          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-04",
+          "slippage_pct": -0.316
         }
       ],
       "bench_candidates": [
@@ -2401,7 +2439,7 @@
       "total_predictions": 9,
       "days_tracked": 3,
       "closed_rounds": [],
-      "prices_last_updated": "3:02 PM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 771.33,
       "spy_live_pct": 1.71
@@ -2614,7 +2652,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:48 AM ET",
           "paper_exit_date": "2026-08-05",
-          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-05",
+          "slippage_pct": 0.037
         },
         {
           "rank": 2,
@@ -2648,7 +2688,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:52 AM ET",
           "paper_exit_date": "2026-08-06",
-          "postmortem": "Hit the stop loss (-3.00%) despite relative strength and news sentiment \u2014 worth reviewing if relative strength keeps producing false positives."
+          "postmortem": "Hit the stop loss (-3.00%) despite relative strength and news sentiment \u2014 worth reviewing if relative strength keeps producing false positives.",
+          "buy_date": "2026-08-05",
+          "slippage_pct": 0.093
         },
         {
           "rank": 3,
@@ -2682,7 +2724,9 @@
           "paper_exit_reason": "Retry of previously failed sell",
           "paper_exit_time": "3:56 PM ET",
           "paper_exit_date": "2026-08-05",
-          "postmortem": "Modest gain (+0.17%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.17%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-05",
+          "slippage_pct": -0.017
         },
         {
           "ticker": "SO",
@@ -2716,7 +2760,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:56 PM ET",
           "paper_exit_date": "2026-08-05",
-          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-05",
+          "slippage_pct": -0.011
         }
       ],
       "bench_candidates": [
@@ -2911,7 +2957,7 @@
       "total_predictions": 12,
       "days_tracked": 4,
       "closed_rounds": [],
-      "prices_last_updated": "9:52 AM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 769.79,
       "spy_live_pct": -0.36,
@@ -3104,7 +3150,8 @@
           "paper_exit_dollar": -1.02,
           "paper_exit_reason": "Closed manually (not by the bot)",
           "paper_exit_time": "1:05 PM ET",
-          "paper_exit_date": "2026-08-11"
+          "paper_exit_date": "2026-08-11",
+          "buy_date": "2026-08-06"
         },
         {
           "ticker": "PRU",
@@ -3132,7 +3179,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "4:11 PM ET",
           "paper_exit_date": "2026-08-06",
-          "postmortem": "Modest gain of +0.89%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.89%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-06",
+          "slippage_pct": 0.023
         },
         {
           "ticker": "ELAN",
@@ -3160,7 +3209,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "11:08 AM ET",
           "paper_exit_date": "2026-08-06",
-          "postmortem": "Small loss of -0.12%. Within normal volatility."
+          "postmortem": "Small loss of -0.12%. Within normal volatility.",
+          "buy_date": "2026-08-06",
+          "slippage_pct": -0.041
         },
         {
           "ticker": "NI",
@@ -3188,7 +3239,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "4:11 PM ET",
           "paper_exit_date": "2026-08-06",
-          "postmortem": "Modest gain of +0.28%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.28%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-06",
+          "slippage_pct": -0.012
         },
         {
           "ticker": "VVV",
@@ -3216,7 +3269,8 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:42 AM ET",
           "paper_exit_date": "2026-08-10",
-          "postmortem": "Hit the -3% stop loss (-3.52%)."
+          "postmortem": "Hit the -3% stop loss (-3.52%).",
+          "buy_date": "2026-08-06"
         }
       ],
       "bench_candidates": [
@@ -3357,7 +3411,7 @@
       "net_trading_gain": -3.94,
       "net_trading_gain_pct": -1.31,
       "closed_rounds": [],
-      "prices_last_updated": "1:05 PM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 768.56,
       "spy_live_pct": -0.33
@@ -3570,7 +3624,9 @@
           "paper_exit_reason": "EOD sell (winning position, +1.5%)",
           "paper_exit_time": "3:55 PM ET",
           "paper_exit_date": "2026-08-07",
-          "postmortem": "Cleared the trailing-stop floor (+1.49%) \u2014 the accumulation/volume and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
+          "postmortem": "Cleared the trailing-stop floor (+1.49%) \u2014 the accumulation/volume and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats.",
+          "buy_date": "2026-08-07",
+          "slippage_pct": 0.0
         },
         {
           "rank": 2,
@@ -3660,8 +3716,8 @@
       "net_trading_gain": -2.94,
       "net_trading_gain_pct": -0.98,
       "closed_rounds": [],
-      "prices_last_updated": "11:00 PM ET",
-      "prices_after_hours": true,
+      "prices_last_updated": "3:33 PM ET",
+      "prices_after_hours": false,
       "spy_live_price": 773.26,
       "spy_live_pct": 0.55,
       "pool_shortfall_note": "Bench is short today (2 of the usual 20 candidates) \u2014 48 excluded for upcoming/recent earnings."
@@ -3874,7 +3930,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "2:35 PM ET",
           "paper_exit_date": "2026-08-11",
-          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-10",
+          "slippage_pct": 0.048
         },
         {
           "rank": 2,
@@ -3907,7 +3965,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:54 AM ET",
           "paper_exit_date": "2026-08-10",
-          "postmortem": "Modest gain (+0.31%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.31%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-10",
+          "slippage_pct": -0.012
         },
         {
           "rank": 3,
@@ -3941,7 +4001,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:07 AM ET",
           "paper_exit_date": "2026-08-10",
-          "postmortem": "Modest gain (+0.18%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.18%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-10",
+          "slippage_pct": 0.174
         },
         {
           "ticker": "HALO",
@@ -3975,7 +4037,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "9:54 AM ET",
           "paper_exit_date": "2026-08-11",
-          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-10",
+          "slippage_pct": 0.052
         }
       ],
       "bench_candidates": [
@@ -4335,7 +4399,7 @@
       "net_trading_gain": -7.16,
       "net_trading_gain_pct": -2.39,
       "closed_rounds": [],
-      "prices_last_updated": "2:35 PM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 773.03,
       "spy_live_pct": -0.05
@@ -4548,7 +4612,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "12:52 PM ET",
           "paper_exit_date": "2026-08-11",
-          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-11",
+          "slippage_pct": 0.058
         },
         {
           "rank": 2,
@@ -4582,7 +4648,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "3:49 PM ET",
           "paper_exit_date": "2026-08-11",
-          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-11",
+          "slippage_pct": 0.0
         },
         {
           "rank": 3,
@@ -4616,7 +4684,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "2:49 PM ET",
           "paper_exit_date": "2026-08-11",
-          "postmortem": "Modest gain (+0.26%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.26%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-11",
+          "slippage_pct": 0.016
         },
         {
           "ticker": "ALLY",
@@ -4650,7 +4720,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:56 PM ET",
           "paper_exit_date": "2026-08-12",
-          "postmortem": "Modest gain (+0.18%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.18%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-11",
+          "slippage_pct": -0.034
         },
         {
           "ticker": "EVRG",
@@ -4684,7 +4756,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:38 AM ET",
           "paper_exit_date": "2026-08-12",
-          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-11",
+          "slippage_pct": 0.019
         },
         {
           "ticker": "IBM",
@@ -4718,7 +4792,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:56 PM ET",
           "paper_exit_date": "2026-08-13",
-          "postmortem": "Small loss (-0.88%) \u2014 relative strength and news sentiment didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.88%) \u2014 relative strength and news sentiment didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-11",
+          "slippage_pct": 0.005
         }
       ],
       "bench_candidates": [
@@ -5134,7 +5210,7 @@
       "net_trading_gain_pct": -1.28,
       "spy_live_price": 770.56,
       "spy_live_pct": -0.24,
-      "prices_last_updated": "3:56 PM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "closed_rounds": []
     },
@@ -5346,7 +5422,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:30 AM ET",
           "paper_exit_date": "2026-08-12",
-          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.39%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-12",
+          "slippage_pct": 0.059
         },
         {
           "rank": 2,
@@ -5380,7 +5458,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:57 AM ET",
           "paper_exit_date": "2026-08-13",
-          "postmortem": "Modest gain (+0.26%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.26%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-12",
+          "slippage_pct": 0.057
         },
         {
           "rank": 3,
@@ -5843,7 +5923,7 @@
       "net_trading_gain": -3.37,
       "net_trading_gain_pct": -1.12,
       "closed_rounds": [],
-      "prices_last_updated": "9:57 AM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 772.49,
       "spy_live_pct": 0.2
@@ -6056,7 +6136,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:46 AM ET",
           "paper_exit_date": "2026-08-13",
-          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-13",
+          "slippage_pct": 0.017
         },
         {
           "rank": 2,
@@ -6089,7 +6171,8 @@
           "paper_exit_dollar": -1.41,
           "paper_exit_reason": "Closed manually (not by the bot)",
           "paper_exit_time": "3:56 PM ET",
-          "paper_exit_date": "2026-08-18"
+          "paper_exit_date": "2026-08-18",
+          "buy_date": "2026-08-13"
         },
         {
           "rank": 3,
@@ -6123,7 +6206,9 @@
           "paper_exit_reason": "Trail stop: +0.38% floor (step) triggered (-0.6%)",
           "paper_exit_time": "9:30 AM ET",
           "paper_exit_date": "2026-08-14",
-          "postmortem": "Small loss (-0.66%) \u2014 accumulation/volume and relative strength didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.66%) \u2014 accumulation/volume and relative strength didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-13",
+          "slippage_pct": -0.085
         }
       ],
       "bench_candidates": [
@@ -6499,7 +6584,7 @@
       "net_trading_gain": -2.1,
       "net_trading_gain_pct": -0.7,
       "closed_rounds": [],
-      "prices_last_updated": "3:56 PM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 777.88,
       "spy_live_pct": 0.72
@@ -6712,7 +6797,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:30 AM ET",
           "paper_exit_date": "2026-08-14",
-          "postmortem": "Modest gain (+0.29%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.29%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-14",
+          "slippage_pct": 0.072
         },
         {
           "rank": 2,
@@ -6745,7 +6832,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:33 AM ET",
           "paper_exit_date": "2026-08-14",
-          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-14",
+          "slippage_pct": 0.015
         },
         {
           "rank": 3,
@@ -6799,7 +6888,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "12:28 PM ET",
           "paper_exit_date": "2026-08-14",
-          "postmortem": "Modest gain (+0.92%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.92%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-14",
+          "slippage_pct": 0.086
         },
         {
           "ticker": "CLX",
@@ -6833,7 +6924,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "12:02 PM ET",
           "paper_exit_date": "2026-08-14",
-          "postmortem": "Modest gain (+0.32%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.32%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-14",
+          "slippage_pct": 0.049
         },
         {
           "ticker": "AWK",
@@ -6867,7 +6960,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:19 AM ET",
           "paper_exit_date": "2026-08-18",
-          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-14",
+          "slippage_pct": 0.07
         },
         {
           "ticker": "WELL",
@@ -6901,7 +6996,8 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "9:55 AM ET",
           "paper_exit_date": "2026-08-18",
-          "postmortem": "Cleared the trailing-stop floor (+1.04%) \u2014 the news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
+          "postmortem": "Cleared the trailing-stop floor (+1.04%) \u2014 the news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats.",
+          "buy_date": "2026-08-14"
         }
       ],
       "bench_candidates": [
@@ -7297,7 +7393,7 @@
       "net_trading_gain": -2.24,
       "net_trading_gain_pct": -0.75,
       "closed_rounds": [],
-      "prices_last_updated": "10:19 AM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 776.34,
       "spy_live_pct": -0.23
@@ -8162,14 +8258,15 @@
           "live_price": 77.57,
           "live_pct": -0.93,
           "live_dollar": -0.94,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "prediction_price": 79.0,
           "position_cost": 100.54,
           "days_held": 3,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "sell_error_note": "\u26a0\ufe0f Sell failed \u2014 {\"code\":40010001,\"message\":\"asset WBS is not active\"}"
+          "sell_error_note": "\u26a0\ufe0f Sell failed \u2014 {\"code\":40010001,\"message\":\"asset WBS is not active\"}",
+          "buy_date": "2026-08-18"
         },
         {
           "rank": 2,
@@ -8224,7 +8321,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "12:55 PM ET",
           "paper_exit_date": "2026-08-19",
-          "postmortem": "Small loss (-2.99%) \u2014 relative strength didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-2.99%) \u2014 relative strength didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-18",
+          "slippage_pct": 0.01
         }
       ],
       "bench_candidates": [
@@ -8613,7 +8712,7 @@
       "days_tracked": 13,
       "spy_live_price": 767.45,
       "spy_live_pct": -0.67,
-      "prices_last_updated": "3:32 PM ET",
+      "prices_last_updated": "3:34 PM ET",
       "prices_after_hours": false,
       "total_contributed": 300.0,
       "current_equity": 297.1,
@@ -8830,7 +8929,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "3:20 PM ET",
           "paper_exit_date": "2026-08-19",
-          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-19",
+          "slippage_pct": 0.052
         },
         {
           "rank": 2,
@@ -8883,7 +8984,8 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "11:23 AM ET",
           "paper_exit_date": "2026-08-21",
-          "postmortem": "Hit the stop loss (-3.02%) despite accumulation/volume and relative strength and news sentiment \u2014 worth reviewing if accumulation/volume keeps producing false positives."
+          "postmortem": "Hit the stop loss (-3.02%) despite accumulation/volume and relative strength and news sentiment \u2014 worth reviewing if accumulation/volume keeps producing false positives.",
+          "buy_date": "2026-08-19"
         }
       ],
       "bench_candidates": [
@@ -9258,7 +9360,7 @@
       "net_trading_gain": -5.81,
       "net_trading_gain_pct": -1.94,
       "closed_rounds": [],
-      "prices_last_updated": "11:23 AM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 769.06,
       "spy_live_pct": 0.26
@@ -9472,7 +9574,8 @@
           "paper_exit_reason": "Retry of previously failed sell",
           "paper_exit_time": "9:38 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss (-1.04%) \u2014 accumulation/volume didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-1.04%) \u2014 accumulation/volume didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-20"
         },
         {
           "rank": 2,
@@ -9920,7 +10023,7 @@
       "net_trading_gain": -7.1,
       "net_trading_gain_pct": -2.37,
       "closed_rounds": [],
-      "prices_last_updated": "9:38 AM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 762.6,
       "spy_live_pct": -0.96
@@ -10133,7 +10236,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "11:55 AM ET",
           "paper_exit_date": "2026-08-21",
-          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-21",
+          "slippage_pct": -0.028
         },
         {
           "rank": 2,
@@ -10209,7 +10314,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:58 PM ET",
           "paper_exit_date": "2026-08-21",
-          "postmortem": "Small loss (+0.00%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (+0.00%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-21",
+          "slippage_pct": -0.036
         }
       ],
       "bench_candidates": [
@@ -10585,8 +10692,8 @@
       "net_trading_gain_pct": -3.13,
       "spy_live_price": 765.72,
       "spy_live_pct": 0.37,
-      "prices_last_updated": "11:00 PM ET",
-      "prices_after_hours": true,
+      "prices_last_updated": "3:33 PM ET",
+      "prices_after_hours": false,
       "closed_rounds": []
     },
     {
@@ -10798,7 +10905,8 @@
           "paper_exit_reason": "Closed manually (not by the bot)",
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss (-0.43%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.43%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-24"
         },
         {
           "rank": 2,
@@ -10832,7 +10940,8 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:49 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Modest gain (+0.27%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.27%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-24"
         },
         {
           "rank": 3,
@@ -10866,7 +10975,8 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:23 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-24"
         },
         {
           "ticker": "IR",
@@ -10895,7 +11005,8 @@
           "live_dollar": -0.19,
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss of -1.20%. Within normal volatility."
+          "postmortem": "Small loss of -1.20%. Within normal volatility.",
+          "buy_date": "2026-08-24"
         },
         {
           "ticker": "BEN",
@@ -10924,7 +11035,8 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0075,
           "paper_trail_floor_active": true,
-          "postmortem": "Modest gain of +0.71%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.71%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-24"
         },
         {
           "ticker": "AES",
@@ -10953,7 +11065,8 @@
           "live_dollar": -0.01,
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss of -0.04%. Within normal volatility."
+          "postmortem": "Small loss of -0.04%. Within normal volatility.",
+          "buy_date": "2026-08-24"
         },
         {
           "ticker": "ROST",
@@ -10981,7 +11094,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:51 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Modest gain of +0.20%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.20%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": 0.018
         },
         {
           "ticker": "NDAQ",
@@ -11009,7 +11124,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:51 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": 0.146
         },
         {
           "ticker": "SWKS",
@@ -11037,7 +11154,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss of -1.20%. Within normal volatility."
+          "postmortem": "Small loss of -1.20%. Within normal volatility.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": 0.065
         },
         {
           "ticker": "TSN",
@@ -11065,7 +11184,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss of -1.27%. Within normal volatility."
+          "postmortem": "Small loss of -1.27%. Within normal volatility.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": 0.088
         },
         {
           "ticker": "WAY",
@@ -11093,7 +11214,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "9:52 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss of -0.09%. Within normal volatility."
+          "postmortem": "Small loss of -0.09%. Within normal volatility.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": -0.088
         },
         {
           "ticker": "TECH",
@@ -11121,7 +11244,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss of -0.06%. Within normal volatility."
+          "postmortem": "Small loss of -0.06%. Within normal volatility.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": 0.011
         },
         {
           "ticker": "TRGP",
@@ -11149,7 +11274,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:57 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss of -0.22%. Within normal volatility."
+          "postmortem": "Small loss of -0.22%. Within normal volatility.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": 0.142
         },
         {
           "ticker": "XYZ",
@@ -11177,7 +11304,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "9:57 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Modest gain of +0.34%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.34%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": -0.019
         },
         {
           "ticker": "HE",
@@ -11205,7 +11334,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss of -0.70%. Within normal volatility."
+          "postmortem": "Small loss of -0.70%. Within normal volatility.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": 0.157
         },
         {
           "ticker": "CSX",
@@ -11233,7 +11364,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss of -0.82%. Within normal volatility."
+          "postmortem": "Small loss of -0.82%. Within normal volatility.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": 0.031
         },
         {
           "ticker": "TEL",
@@ -11261,7 +11394,9 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0026,
           "paper_trail_floor_active": false,
-          "postmortem": "Modest gain of +0.26%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.26%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": 0.118
         },
         {
           "ticker": "AEP",
@@ -11295,7 +11430,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss (-0.69%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.69%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-24"
         },
         {
           "ticker": "IBKR",
@@ -11329,7 +11465,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:04 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-24",
+          "slippage_pct": 0.069
         },
         {
           "ticker": "KNX",
@@ -11363,7 +11501,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss (-2.44%) \u2014 relative strength didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-2.44%) \u2014 relative strength didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-24"
         },
         {
           "ticker": "OHI",
@@ -11397,7 +11536,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:15 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Modest gain (+0.32%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.32%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-24"
         },
         {
           "ticker": "RITM",
@@ -11431,7 +11571,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss (-0.54%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.54%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-24"
         },
         {
           "ticker": "OHI",
@@ -11465,7 +11606,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:15 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Modest gain (+0.32%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.32%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-24"
         },
         {
           "ticker": "AEP",
@@ -11499,7 +11641,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "11:21 AM ET",
           "paper_exit_date": "2026-08-24",
-          "postmortem": "Small loss (-0.69%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.69%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-24"
         }
       ],
       "bench_candidates": [
@@ -11768,8 +11911,8 @@
           "sell_time": "2026-08-24T10:01:52.502552-04:00"
         }
       ],
-      "prices_last_updated": "12:00 AM ET",
-      "prices_after_hours": true,
+      "prices_last_updated": "3:33 PM ET",
+      "prices_after_hours": false,
       "spy_live_price": 763.47,
       "spy_live_pct": -0.46
     },
@@ -11982,7 +12125,8 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:37 AM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain (+0.27%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and sector momentum pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.27%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and sector momentum pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-25"
         },
         {
           "rank": 2,
@@ -12016,7 +12160,9 @@
           "paper_exit_reason": "Portfolio drawdown stop (combined book -0.8%)",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss (-1.77%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-1.77%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.024
         },
         {
           "rank": 3,
@@ -12050,7 +12196,9 @@
           "paper_exit_reason": "Portfolio drawdown stop (combined book -0.8%)",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss (-1.22%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-1.22%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.006
         },
         {
           "ticker": "OGN",
@@ -12079,7 +12227,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain of +0.03%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.03%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.022
         },
         {
           "ticker": "ASO",
@@ -12108,7 +12258,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:59 AM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain of +0.19%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.19%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-25"
         },
         {
           "ticker": "AES",
@@ -12137,7 +12288,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss of -0.18%. Within normal volatility."
+          "postmortem": "Small loss of -0.18%. Within normal volatility.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.02
         },
         {
           "ticker": "HAL",
@@ -12166,7 +12319,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss of -1.64%. Within normal volatility."
+          "postmortem": "Small loss of -1.64%. Within normal volatility.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.009
         },
         {
           "ticker": "CTVA",
@@ -12195,7 +12350,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:47 AM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-25"
         },
         {
           "ticker": "CZR",
@@ -12224,7 +12380,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss of -0.02%. Within normal volatility."
+          "postmortem": "Small loss of -0.02%. Within normal volatility.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.01
         },
         {
           "ticker": "PINS",
@@ -12253,7 +12411,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:59 AM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain of +0.34%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.34%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-25"
         },
         {
           "ticker": "CVS",
@@ -12282,7 +12441,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss of -0.54%. Within normal volatility."
+          "postmortem": "Small loss of -0.54%. Within normal volatility.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.01
         },
         {
           "ticker": "D",
@@ -12311,7 +12472,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:26 AM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain of +0.36%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.36%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-25"
         },
         {
           "ticker": "AMCR",
@@ -12340,7 +12502,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss of -0.94%. Within normal volatility."
+          "postmortem": "Small loss of -0.94%. Within normal volatility.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.006
         },
         {
           "ticker": "VICI",
@@ -12369,7 +12533,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss of -1.07%. Within normal volatility."
+          "postmortem": "Small loss of -1.07%. Within normal volatility.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.011
         },
         {
           "ticker": "DIS",
@@ -12398,7 +12564,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "1:01 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain of +0.64%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.64%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-25"
         },
         {
           "ticker": "EXE",
@@ -12427,7 +12594,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "11:41 AM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-25"
         },
         {
           "ticker": "RHI",
@@ -12456,7 +12624,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:56 AM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain of +0.27%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.27%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-25"
         },
         {
           "ticker": "WTRG",
@@ -12485,7 +12654,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss of -0.83%. Within normal volatility."
+          "postmortem": "Small loss of -0.83%. Within normal volatility.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.02
         },
         {
           "ticker": "ACN",
@@ -12513,7 +12684,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:36 AM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": 0.066
         },
         {
           "ticker": "TDC",
@@ -12547,7 +12720,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss (-1.45%) \u2014 relative strength didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-1.45%) \u2014 relative strength didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.022
         },
         {
           "ticker": "ONB",
@@ -12581,7 +12756,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss (-0.41%) \u2014 sector momentum didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.41%) \u2014 sector momentum didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": 0.008
         },
         {
           "ticker": "CNK",
@@ -12615,7 +12792,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss (-1.56%) \u2014 relative strength and sector momentum and news sentiment didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-1.56%) \u2014 relative strength and sector momentum and news sentiment didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.016
         },
         {
           "ticker": "SO",
@@ -12649,7 +12828,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss (-0.16%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.16%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": 0.002
         },
         {
           "ticker": "IP",
@@ -12683,7 +12864,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "2:53 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.052
         },
         {
           "ticker": "LEN",
@@ -12717,7 +12900,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss (-0.85%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.85%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": 0.016
         },
         {
           "ticker": "GOOGL",
@@ -12751,7 +12936,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss (-0.17%) \u2014 sector momentum and news sentiment didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.17%) \u2014 sector momentum and news sentiment didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": 0.001
         },
         {
           "ticker": "CB",
@@ -12785,7 +12972,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Modest gain (+0.02%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.02%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": -0.012
         },
         {
           "ticker": "TTEK",
@@ -12819,7 +13008,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:16 PM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss (-0.20%) \u2014 relative strength didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.20%) \u2014 relative strength didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-25",
+          "slippage_pct": 0.011
         },
         {
           "ticker": "PEB",
@@ -12853,7 +13044,8 @@
           "price_updated": "1:00 AM ET",
           "paper_exit_time": "9:34 AM ET",
           "paper_exit_date": "2026-08-25",
-          "postmortem": "Small loss (-1.90%) \u2014 sector momentum didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-1.90%) \u2014 sector momentum didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-25"
         }
       ],
       "bench_candidates": [
@@ -13392,7 +13584,7 @@
       "net_trading_gain": -12.28,
       "net_trading_gain_pct": -4.09,
       "closed_rounds": [],
-      "prices_last_updated": "9:34 AM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 765.91,
       "spy_live_pct": 0.3
@@ -13605,7 +13797,9 @@
           "paper_exit_reason": "Portfolio drawdown stop (combined book -1.1%)",
           "paper_exit_time": "9:33 AM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Small loss (-1.33%) \u2014 accumulation/volume and relative strength and sector momentum didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-1.33%) \u2014 accumulation/volume and relative strength and sector momentum didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": 0.171
         },
         {
           "rank": 2,
@@ -13638,7 +13832,9 @@
           "paper_exit_reason": "EOD sell (winning position, +0.1%)",
           "paper_exit_time": "3:53 PM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": -0.007
         },
         {
           "rank": 3,
@@ -13671,7 +13867,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "1:33 PM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and sector momentum and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and sector momentum and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": 0.001
         },
         {
           "ticker": "APTV",
@@ -13699,7 +13897,9 @@
           "price_updated": "9:32 AM ET",
           "paper_exit_time": "9:33 AM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Small loss of -1.37%. Within normal volatility."
+          "postmortem": "Small loss of -1.37%. Within normal volatility.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": -0.571
         },
         {
           "ticker": "ARES",
@@ -13727,7 +13927,9 @@
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "12:10 PM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain of +0.30%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.30%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": 0.1
         },
         {
           "ticker": "HR",
@@ -13755,7 +13957,9 @@
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "3:53 PM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain of +0.08%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.08%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": -0.015
         },
         {
           "ticker": "KRG",
@@ -13783,7 +13987,9 @@
           "price_updated": "9:32 AM ET",
           "paper_exit_time": "9:33 AM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Small loss of -0.98%. Within normal volatility."
+          "postmortem": "Small loss of -0.98%. Within normal volatility.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": -0.681
         },
         {
           "ticker": "NKE",
@@ -13811,7 +14017,9 @@
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "10:24 AM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": 0.013
         },
         {
           "ticker": "OPCH",
@@ -13839,7 +14047,9 @@
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "3:33 PM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain of +0.60%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.60%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": -0.008
         },
         {
           "ticker": "UPS",
@@ -13867,7 +14077,9 @@
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "10:21 AM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain of +0.39%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.39%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": 0.009
         },
         {
           "ticker": "DECK",
@@ -13895,7 +14107,9 @@
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "10:29 AM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain of +0.55%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.55%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": -0.042
         },
         {
           "ticker": "RHI",
@@ -13923,7 +14137,9 @@
           "price_updated": "9:32 AM ET",
           "paper_exit_time": "9:33 AM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Small loss of -0.66%. Within normal volatility."
+          "postmortem": "Small loss of -0.66%. Within normal volatility.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": -1.124
         },
         {
           "ticker": "VLY",
@@ -13951,7 +14167,9 @@
           "price_updated": "9:32 AM ET",
           "paper_exit_time": "9:33 AM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Small loss of -1.37%. Within normal volatility."
+          "postmortem": "Small loss of -1.37%. Within normal volatility.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": -0.079
         },
         {
           "ticker": "SMPL",
@@ -13979,7 +14197,9 @@
           "price_updated": "9:32 AM ET",
           "paper_exit_time": "9:33 AM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Small loss of -2.46%. Within normal volatility."
+          "postmortem": "Small loss of -2.46%. Within normal volatility.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": -0.21
         },
         {
           "ticker": "CTAS",
@@ -14007,7 +14227,9 @@
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "3:53 PM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain of +0.07%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.07%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": 0.006
         },
         {
           "ticker": "AMH",
@@ -14035,7 +14257,9 @@
           "price_updated": "9:32 AM ET",
           "paper_exit_time": "9:33 AM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Small loss of -1.66%. Within normal volatility."
+          "postmortem": "Small loss of -1.66%. Within normal volatility.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": -0.083
         },
         {
           "ticker": "LEG",
@@ -14063,7 +14287,9 @@
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "1:26 PM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain of +0.34%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.34%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": 0.246
         },
         {
           "ticker": "MGM",
@@ -14097,7 +14323,9 @@
           "price_updated": "6:07 PM ET",
           "paper_exit_time": "3:49 PM ET",
           "paper_exit_date": "2026-08-26",
-          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-26",
+          "slippage_pct": 0.074
         }
       ],
       "bench_candidates": [
@@ -14727,7 +14955,7 @@
           "sell_time": "2026-08-26T16:01:50.997951-04:00"
         }
       ],
-      "prices_last_updated": "9:33 AM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 766.08,
       "spy_live_pct": 0.15
@@ -14940,7 +15168,9 @@
           "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "paper_exit_time": "3:59 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss (-0.49%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.49%) \u2014 accumulation/volume and sector momentum didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.013
         },
         {
           "rank": 2,
@@ -14973,7 +15203,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:10 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Cleared the trailing-stop floor (+1.20%) \u2014 the accumulation/volume and relative strength and sector momentum and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
+          "postmortem": "Cleared the trailing-stop floor (+1.20%) \u2014 the accumulation/volume and relative strength and sector momentum and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.006
         },
         {
           "rank": 3,
@@ -15006,7 +15238,9 @@
           "paper_exit_reason": "EOD sell (winning position, +0.0%)",
           "paper_exit_time": "3:41 PM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Modest gain (+0.02%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.02%) but didn't clear the floor trigger \u2014 accumulation/volume and sector momentum and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.003
         },
         {
           "ticker": "EQH",
@@ -15034,7 +15268,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:41 PM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Modest gain of +0.30%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.30%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.006
         },
         {
           "ticker": "ROKU",
@@ -15062,7 +15298,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:59 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss of -0.44%. Within normal volatility."
+          "postmortem": "Small loss of -0.44%. Within normal volatility.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.008
         },
         {
           "ticker": "ROL",
@@ -15090,7 +15328,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:03 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": 0.061
         },
         {
           "ticker": "MRSH",
@@ -15116,7 +15356,9 @@
           "paper_current_floor_pct": 0.0064,
           "paper_peak_pct": 0.0096,
           "paper_trail_floor_active": true,
-          "postmortem": "Modest gain of +0.25%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.25%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": 0.06
         },
         {
           "ticker": "UDR",
@@ -15144,7 +15386,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:59 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss of -0.65%. Within normal volatility."
+          "postmortem": "Small loss of -0.65%. Within normal volatility.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.046
         },
         {
           "ticker": "GT",
@@ -15172,7 +15416,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "3:25 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.0
         },
         {
           "ticker": "NOV",
@@ -15200,7 +15446,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "12:27 PM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Modest gain of +0.36%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.36%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": 0.015
         },
         {
           "ticker": "LYFT",
@@ -15228,7 +15476,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "12:10 PM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": 0.01
         },
         {
           "ticker": "KMB",
@@ -15256,7 +15506,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "9:47 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.56%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.56%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.011
         },
         {
           "ticker": "CARR",
@@ -15284,7 +15536,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:41 PM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Modest gain of +0.51%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.51%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.01
         },
         {
           "ticker": "MAS",
@@ -15312,7 +15566,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "9:42 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.50%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.50%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": 0.037
         },
         {
           "ticker": "AMT",
@@ -15340,7 +15596,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:32 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.63%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.63%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": 0.022
         },
         {
           "ticker": "CZR",
@@ -15358,14 +15616,16 @@
           "paper_exit_reason": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "live_price": 29.67,
-          "live_pct": 0.09,
+          "live_price": 29.68,
+          "live_pct": 0.11,
           "live_dollar": 0.01,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "days_held": 1,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0021,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.01
         },
         {
           "ticker": "CNM",
@@ -15399,7 +15659,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "1:02 PM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Modest gain (+0.38%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.38%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": -0.014
         },
         {
           "ticker": "GGG",
@@ -15433,7 +15695,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "2:21 PM ET",
           "paper_exit_date": "2026-08-27",
-          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": 0.02
         },
         {
           "ticker": "FND",
@@ -15467,7 +15731,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:42 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss (-0.32%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.32%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-27",
+          "slippage_pct": 0.028
         }
       ],
       "bench_candidates": [
@@ -15784,7 +16050,7 @@
       "net_trading_gain_pct": -5.35,
       "spy_live_price": 771.1,
       "spy_live_pct": 0.06,
-      "prices_last_updated": "3:32 PM ET",
+      "prices_last_updated": "3:34 PM ET",
       "prices_after_hours": false,
       "closed_rounds": []
     },
@@ -15996,7 +16262,9 @@
           "paper_exit_reason": "Portfolio drawdown stop (combined book -0.8%)",
           "paper_exit_time": "4:01 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss (-1.72%) \u2014 accumulation/volume and relative strength and news sentiment didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-1.72%) \u2014 accumulation/volume and relative strength and news sentiment didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": -0.027
         },
         {
           "rank": 2,
@@ -16029,7 +16297,8 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:38 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain (+0.61%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.61%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-28"
         },
         {
           "rank": 3,
@@ -16062,7 +16331,8 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:51 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 relative strength and sector momentum and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 relative strength and sector momentum and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-28"
         },
         {
           "ticker": "NWSA",
@@ -16090,7 +16360,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:27 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-28"
         },
         {
           "ticker": "BSY",
@@ -16118,7 +16389,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:51 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.31%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.31%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-28"
         },
         {
           "ticker": "CME",
@@ -16146,7 +16418,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:42 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Strong winner \u2014 gained +1.51%, clearing the trailing-stop's first floor trigger."
+          "postmortem": "Strong winner \u2014 gained +1.51%, clearing the trailing-stop's first floor trigger.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": -0.006
         },
         {
           "ticker": "C",
@@ -16174,7 +16448,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:25 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.32%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.32%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-28"
         },
         {
           "ticker": "EVRG",
@@ -16202,7 +16477,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "4:01 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss of -1.19%. Within normal volatility."
+          "postmortem": "Small loss of -1.19%. Within normal volatility.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": 0.002
         },
         {
           "ticker": "SW",
@@ -16230,7 +16507,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "4:01 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss of -0.94%. Within normal volatility."
+          "postmortem": "Small loss of -0.94%. Within normal volatility.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": -0.006
         },
         {
           "ticker": "AIG",
@@ -16258,7 +16537,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:59 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss of -0.16%. Within normal volatility."
+          "postmortem": "Small loss of -0.16%. Within normal volatility.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": 0.022
         },
         {
           "ticker": "DV",
@@ -16286,7 +16567,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:59 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss of -0.04%. Within normal volatility."
+          "postmortem": "Small loss of -0.04%. Within normal volatility.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": -0.06
         },
         {
           "ticker": "MTG",
@@ -16314,7 +16597,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:59 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss of -0.70%. Within normal volatility."
+          "postmortem": "Small loss of -0.70%. Within normal volatility.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": -0.074
         },
         {
           "ticker": "TOST",
@@ -16342,7 +16627,8 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:40 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.33%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.33%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-28"
         },
         {
           "ticker": "ADT",
@@ -16370,7 +16656,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "11:12 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.40%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.40%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": 0.067
         },
         {
           "ticker": "BKR",
@@ -16398,7 +16686,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:52 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.36%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.36%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-28"
         },
         {
           "ticker": "MPC",
@@ -16426,7 +16715,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "11:09 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain of +0.32%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.32%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": 0.011
         },
         {
           "ticker": "IRT",
@@ -16460,7 +16751,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:59 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss (-0.58%) \u2014 accumulation/volume didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.58%) \u2014 accumulation/volume didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": 0.012
         },
         {
           "ticker": "INVH",
@@ -16494,7 +16787,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:59 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss (-0.46%) \u2014 accumulation/volume didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.46%) \u2014 accumulation/volume didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": -0.01
         },
         {
           "ticker": "GME",
@@ -16528,7 +16823,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:59 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss (-1.30%) \u2014 relative strength didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-1.30%) \u2014 relative strength didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": -0.017
         },
         {
           "ticker": "OMC",
@@ -16562,7 +16859,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:59 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Small loss (-0.30%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.30%) \u2014 relative strength and sector momentum didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": 0.002
         },
         {
           "ticker": "GM",
@@ -16596,7 +16895,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "11:34 AM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": -0.021
         },
         {
           "ticker": "GE",
@@ -16630,7 +16931,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:42 PM ET",
           "paper_exit_date": "2026-08-28",
-          "postmortem": "Modest gain (+0.14%) but didn't clear the floor trigger \u2014 news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.14%) but didn't clear the floor trigger \u2014 news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-28",
+          "slippage_pct": -0.003
         }
       ],
       "bench_candidates": [
@@ -17090,8 +17393,8 @@
       "net_trading_gain": -15.26,
       "net_trading_gain_pct": -5.09,
       "closed_rounds": [],
-      "prices_last_updated": "11:00 PM ET",
-      "prices_after_hours": true,
+      "prices_last_updated": "3:33 PM ET",
+      "prices_after_hours": false,
       "spy_live_price": 769.35,
       "spy_live_pct": -0.06
     },
@@ -17303,7 +17606,8 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "3:26 PM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain (+0.63%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.63%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-31"
         },
         {
           "rank": 2,
@@ -17326,10 +17630,11 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0059,
           "paper_trail_floor_active": true,
-          "live_price": 98.25,
-          "live_pct": -0.42,
+          "live_price": 98.28,
+          "live_pct": -0.39,
           "live_dollar": -0.05,
-          "price_updated": "3:32 PM ET"
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-08-31"
         },
         {
           "rank": 3,
@@ -17362,7 +17667,8 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "12:35 PM ET",
           "paper_exit_date": "2026-09-01",
-          "postmortem": "Hit the stop loss (-3.02%) despite accumulation/volume and sector momentum \u2014 worth reviewing if accumulation/volume keeps producing false positives."
+          "postmortem": "Hit the stop loss (-3.02%) despite accumulation/volume and sector momentum \u2014 worth reviewing if accumulation/volume keeps producing false positives.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "NWSA",
@@ -17388,7 +17694,8 @@
           "live_pct": 0.37,
           "live_dollar": 0.04,
           "price_updated": "9:34 AM ET",
-          "postmortem": "Modest gain of +0.33%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.33%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "APP",
@@ -17416,7 +17723,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:08 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Small loss of -2.99%. Within normal volatility."
+          "postmortem": "Small loss of -2.99%. Within normal volatility.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "WT",
@@ -17444,7 +17752,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:40 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain of +0.32%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.32%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": -0.391
         },
         {
           "ticker": "CME",
@@ -17472,7 +17782,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:43 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain of +0.64%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.64%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "TTWO",
@@ -17500,7 +17811,9 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0067,
           "paper_trail_floor_active": true,
-          "postmortem": "Hit the -3% stop loss (-3.08%)."
+          "postmortem": "Hit the -3% stop loss (-3.08%).",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.478
         },
         {
           "ticker": "AFL",
@@ -17528,7 +17841,9 @@
           "price_updated": "10:28 AM ET",
           "paper_exit_time": "10:30 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.103
         },
         {
           "ticker": "C",
@@ -17556,7 +17871,8 @@
           "price_updated": "10:29 AM ET",
           "paper_exit_time": "10:30 AM ET",
           "paper_exit_date": "2026-09-01",
-          "postmortem": "Strong winner \u2014 gained +1.18%, clearing the trailing-stop's first floor trigger."
+          "postmortem": "Strong winner \u2014 gained +1.18%, clearing the trailing-stop's first floor trigger.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "MCHP",
@@ -17584,7 +17900,8 @@
           "price_updated": "9:31 AM ET",
           "paper_exit_time": "9:39 AM ET",
           "paper_exit_date": "2026-09-01",
-          "postmortem": "Hit the -3% stop loss (-3.00%)."
+          "postmortem": "Hit the -3% stop loss (-3.00%).",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "ACM",
@@ -17612,7 +17929,8 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.001,
           "paper_trail_floor_active": false,
-          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "SLM",
@@ -17640,7 +17958,9 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0051,
           "paper_trail_floor_active": true,
-          "postmortem": "Modest gain of +0.41%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.41%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.107
         },
         {
           "ticker": "RELY",
@@ -17668,7 +17988,8 @@
           "price_updated": "9:31 AM ET",
           "paper_exit_time": "9:39 AM ET",
           "paper_exit_date": "2026-09-01",
-          "postmortem": "Small loss of -2.99%. Within normal volatility."
+          "postmortem": "Small loss of -2.99%. Within normal volatility.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "FITB",
@@ -17696,7 +18017,8 @@
           "price_updated": "11:02 AM ET",
           "paper_exit_time": "11:03 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.34%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.34%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "SGI",
@@ -17724,7 +18046,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:38 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain of +0.11%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.11%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "SCHW",
@@ -17752,7 +18075,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:47 PM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain of +0.06%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.06%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": -0.004
         },
         {
           "ticker": "SHO",
@@ -17780,7 +18105,8 @@
           "price_updated": "1:51 PM ET",
           "paper_exit_time": "1:53 PM ET",
           "paper_exit_date": "2026-09-01",
-          "postmortem": "Small loss of -2.99%. Within normal volatility."
+          "postmortem": "Small loss of -2.99%. Within normal volatility.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "RSI",
@@ -17814,7 +18140,8 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "9:58 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Cleared the trailing-stop floor (+1.33%) \u2014 the accumulation/volume and relative strength signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
+          "postmortem": "Cleared the trailing-stop floor (+1.33%) \u2014 the accumulation/volume and relative strength signal(s) that drove this pick played out well. Worth leaning into when this profile repeats.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "PYPL",
@@ -17848,7 +18175,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:12 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain (+0.67%) but didn't clear the floor trigger \u2014 sector momentum and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.67%) but didn't clear the floor trigger \u2014 sector momentum and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": -0.008
         },
         {
           "ticker": "RSI",
@@ -17882,7 +18211,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:58 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Cleared the trailing-stop floor (+1.33%) \u2014 the accumulation/volume and relative strength signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
+          "postmortem": "Cleared the trailing-stop floor (+1.33%) \u2014 the accumulation/volume and relative strength signal(s) that drove this pick played out well. Worth leaning into when this profile repeats.",
+          "buy_date": "2026-08-31"
         },
         {
           "ticker": "PYPL",
@@ -17916,7 +18246,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:12 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain (+0.67%) but didn't clear the floor trigger \u2014 sector momentum and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.67%) but didn't clear the floor trigger \u2014 sector momentum and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": -0.008
         },
         {
           "ticker": "AMZN",
@@ -17950,7 +18282,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:30 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Hit the stop loss (-3.01%) despite relative strength and news sentiment \u2014 worth reviewing if relative strength keeps producing false positives."
+          "postmortem": "Hit the stop loss (-3.01%) despite relative strength and news sentiment \u2014 worth reviewing if relative strength keeps producing false positives.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.021
         },
         {
           "ticker": "SRE",
@@ -17984,7 +18318,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:30 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain (+0.88%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.88%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.071
         },
         {
           "ticker": "EBAY",
@@ -18018,7 +18354,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:14 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain (+0.84%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.84%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.054
         },
         {
           "ticker": "EXLS",
@@ -18052,7 +18390,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:20 AM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.33%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.039
         },
         {
           "ticker": "CYTK",
@@ -18086,7 +18426,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:55 PM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.05%) but didn't clear the floor trigger \u2014 accumulation/volume and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.265
         },
         {
           "ticker": "ARR",
@@ -18120,7 +18462,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:35 PM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Small loss (-0.97%) \u2014 relative strength didn't convert this time; within normal volatility for now."
+          "postmortem": "Small loss (-0.97%) \u2014 relative strength didn't convert this time; within normal volatility for now.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.049
         },
         {
           "ticker": "WTRG",
@@ -18154,7 +18498,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "12:47 PM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain (+0.65%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.65%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.015
         },
         {
           "ticker": "PEG",
@@ -18188,7 +18534,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "12:27 PM ET",
           "paper_exit_date": "2026-08-31",
-          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-08-31",
+          "slippage_pct": 0.057
         }
       ],
       "bench_candidates": [
@@ -18701,7 +19049,7 @@
       "net_trading_gain": -15.66,
       "net_trading_gain_pct": -5.22,
       "closed_rounds": [],
-      "prices_last_updated": "3:32 PM ET",
+      "prices_last_updated": "3:34 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 767.05,
       "spy_live_pct": -0.3
@@ -19820,7 +20168,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:00 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain (+0.58%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.58%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": 0.429
         },
         {
           "ticker": "FLR",
@@ -19848,7 +20198,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:05 PM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.36%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.36%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": 0.556
         },
         {
           "ticker": "TEL",
@@ -19876,7 +20228,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:48 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Small loss of -0.34%. Within normal volatility."
+          "postmortem": "Small loss of -0.34%. Within normal volatility.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": -0.023
         },
         {
           "ticker": "RYN",
@@ -19904,7 +20258,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "4:02 PM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Hit the -3% stop loss (-3.01%)."
+          "postmortem": "Hit the -3% stop loss (-3.01%).",
+          "buy_date": "2026-09-02",
+          "slippage_pct": -0.201
         },
         {
           "ticker": "VICI",
@@ -19932,7 +20288,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:30 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": 0.09
         },
         {
           "ticker": "UPWK",
@@ -19960,7 +20318,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:37 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Small loss of -0.56%. Within normal volatility."
+          "postmortem": "Small loss of -0.56%. Within normal volatility.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": -0.595
         },
         {
           "ticker": "TECH",
@@ -19988,7 +20348,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:38 PM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.13%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.13%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": -0.004
         },
         {
           "ticker": "LZ",
@@ -20016,7 +20378,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:05 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.42%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.42%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": -0.0
         },
         {
           "ticker": "RRC",
@@ -20044,7 +20408,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:40 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.07%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.07%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": -0.028
         },
         {
           "ticker": "PGR",
@@ -20072,7 +20438,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:00 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.30%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.30%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": 0.111
         },
         {
           "ticker": "NI",
@@ -20100,7 +20468,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:33 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": 0.069
         },
         {
           "ticker": "LNT",
@@ -20128,7 +20498,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "11:03 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.37%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": 0.091
         },
         {
           "ticker": "PEB",
@@ -20156,7 +20528,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:37 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.31%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.31%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": 0.628
         },
         {
           "ticker": "GNL",
@@ -20184,7 +20558,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "12:35 PM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.31%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.31%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": -0.033
         },
         {
           "ticker": "GME",
@@ -20212,7 +20588,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "3:50 PM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.03%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.03%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": -0.007
         },
         {
           "ticker": "PAYO",
@@ -20240,7 +20618,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:35 PM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain of +0.17%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.17%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": -0.07
         },
         {
           "ticker": "STAG",
@@ -20274,7 +20654,8 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:27 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-02"
         },
         {
           "ticker": "SRE",
@@ -20308,7 +20689,8 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:46 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain (+0.64%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.64%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-02"
         },
         {
           "ticker": "STAG",
@@ -20342,7 +20724,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:27 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-02"
         },
         {
           "ticker": "USFD",
@@ -20376,7 +20759,8 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:30 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Hit the stop loss (-3.45%) despite composite score, with no single dominant signal \u2014 worth reviewing if this signal profile keeps producing false positives."
+          "postmortem": "Hit the stop loss (-3.45%) despite composite score, with no single dominant signal \u2014 worth reviewing if this signal profile keeps producing false positives.",
+          "buy_date": "2026-09-02"
         },
         {
           "ticker": "FE",
@@ -20410,7 +20794,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:23 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-02"
         },
         {
           "ticker": "PPL",
@@ -20444,7 +20829,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:30 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-02"
         },
         {
           "ticker": "WEC",
@@ -20478,7 +20864,8 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:23 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain (+0.38%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.38%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-02"
         },
         {
           "ticker": "LEN",
@@ -20512,7 +20899,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "2:26 PM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain (+0.31%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.31%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": 0.139
         },
         {
           "ticker": "XEL",
@@ -20546,7 +20935,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "11:13 AM ET",
           "paper_exit_date": "2026-09-02",
-          "postmortem": "Modest gain (+0.38%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.38%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-02",
+          "slippage_pct": 0.075
         }
       ],
       "bench_candidates": [
@@ -20846,7 +21237,7 @@
           "sell_time": "2026-09-02T09:40:07.731000-04:00"
         }
       ],
-      "prices_last_updated": "9:30 AM ET",
+      "prices_last_updated": "3:33 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 765.16,
       "spy_live_pct": 0.43
@@ -21059,7 +21450,9 @@
           "paper_exit_reason": "EOD sell (winning position, +0.1%)",
           "paper_exit_time": "4:02 PM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.06%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.06%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": -0.005
         },
         {
           "rank": 2,
@@ -21092,7 +21485,9 @@
           "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "paper_exit_time": "3:36 PM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.45%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.45%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": -0.028
         },
         {
           "rank": 3,
@@ -21125,7 +21520,9 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "1:24 PM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.38%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.38%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.431
         },
         {
           "ticker": "APG",
@@ -21153,7 +21550,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:57 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain of +0.32%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.32%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.236
         },
         {
           "ticker": "ETR",
@@ -21181,7 +21580,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:57 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.35%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.251
         },
         {
           "ticker": "EXC",
@@ -21209,7 +21610,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:36 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain of +0.38%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.38%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.027
         },
         {
           "ticker": "SIRI",
@@ -21237,7 +21640,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:37 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain of +0.31%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.31%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.07
         },
         {
           "ticker": "CFG",
@@ -21265,7 +21670,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:39 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain of +0.30%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.30%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": -0.111
         },
         {
           "ticker": "BNL",
@@ -21287,10 +21694,12 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0006,
           "paper_trail_floor_active": false,
-          "live_price": 20.83,
-          "live_pct": -1.78,
-          "live_dollar": -0.16,
-          "price_updated": "3:32 PM ET"
+          "live_price": 20.84,
+          "live_pct": -1.74,
+          "live_dollar": -0.15,
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-03",
+          "slippage_pct": -0.057
         },
         {
           "ticker": "EBC",
@@ -21312,10 +21721,12 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0044,
           "paper_trail_floor_active": false,
-          "live_price": 22.23,
-          "live_pct": -0.01,
-          "live_dollar": -0.0,
-          "price_updated": "3:32 PM ET"
+          "live_price": 22.24,
+          "live_pct": 0.01,
+          "live_dollar": 0.0,
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.325
         },
         {
           "ticker": "PAYX",
@@ -21343,7 +21754,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:42 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain of +0.12%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.12%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.139
         },
         {
           "ticker": "AMRX",
@@ -21371,7 +21784,9 @@
           "price_updated": "1:00 AM ET",
           "paper_exit_time": "9:30 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Hit the -3% stop loss (-3.84%)."
+          "postmortem": "Hit the -3% stop loss (-3.84%).",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.175
         },
         {
           "ticker": "HR",
@@ -21393,10 +21808,12 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0006,
           "paper_trail_floor_active": false,
-          "live_price": 19.19,
-          "live_pct": -0.95,
+          "live_price": 19.18,
+          "live_pct": -1.01,
           "live_dollar": -0.07,
-          "price_updated": "3:32 PM ET"
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-03",
+          "slippage_pct": -0.026
         },
         {
           "ticker": "RSI",
@@ -21424,7 +21841,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "10:20 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain of +0.63%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.63%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 1.49
         },
         {
           "ticker": "ONB",
@@ -21452,7 +21871,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:39 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain of +0.36%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.36%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.058
         },
         {
           "ticker": "BANC",
@@ -21480,7 +21901,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:39 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Small loss of -0.01%. Within normal volatility."
+          "postmortem": "Small loss of -0.01%. Within normal volatility.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": -0.115
         },
         {
           "ticker": "AIG",
@@ -21508,7 +21931,9 @@
           "price_updated": "11:00 PM ET",
           "paper_exit_time": "9:39 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain of +0.61%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.61%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.171
         },
         {
           "ticker": "OGE",
@@ -21536,7 +21961,8 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "2:15 PM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain of +0.88%, but did not clear the +1% floor trigger."
+          "postmortem": "Modest gain of +0.88%, but did not clear the +1% floor trigger.",
+          "buy_date": "2026-09-03"
         },
         {
           "ticker": "AM",
@@ -21560,14 +21986,15 @@
           "paper_exit_reason": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "live_price": 22.55,
-          "live_pct": -0.03,
+          "live_price": 22.56,
+          "live_pct": -0.0,
           "live_dollar": -0.0,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "days_held": 1,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0028,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "buy_date": "2026-09-03"
         },
         {
           "ticker": "BA",
@@ -21601,7 +22028,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:36 PM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.17%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.17%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.039
         },
         {
           "ticker": "COLB",
@@ -21635,7 +22064,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "3:36 PM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.54%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.54%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.01
         },
         {
           "ticker": "ACGL",
@@ -21669,7 +22100,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:19 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.065
         },
         {
           "ticker": "SBRA",
@@ -21703,7 +22136,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "12:00 PM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.62%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.62%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.116
         },
         {
           "ticker": "INDV",
@@ -21737,7 +22172,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "11:40 AM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": -0.011
         },
         {
           "ticker": "FNB",
@@ -21771,7 +22208,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:36 PM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.13%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.13%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.016
         },
         {
           "ticker": "D",
@@ -21805,7 +22244,9 @@
           "paper_trail_floor_active": false,
           "paper_exit_time": "3:36 PM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.16%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.16%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.002
         },
         {
           "ticker": "SYY",
@@ -21839,7 +22280,9 @@
           "paper_trail_floor_active": true,
           "paper_exit_time": "2:05 PM ET",
           "paper_exit_date": "2026-09-03",
-          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 news sentiment pointed the right direction without enough follow-through."
+          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 news sentiment pointed the right direction without enough follow-through.",
+          "buy_date": "2026-09-03",
+          "slippage_pct": 0.083
         }
       ],
       "bench_candidates": [
@@ -22413,7 +22856,7 @@
           "sell_time": "2026-09-03T09:40:34.422700-04:00"
         }
       ],
-      "prices_last_updated": "3:32 PM ET",
+      "prices_last_updated": "3:34 PM ET",
       "prices_after_hours": false,
       "spy_live_price": 773.17,
       "spy_live_pct": 1.02
@@ -22616,10 +23059,11 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "live_price": 98.25,
-          "live_pct": -1.56,
-          "live_dollar": -0.25,
-          "price_updated": "3:32 PM ET"
+          "live_price": 98.28,
+          "live_pct": -1.53,
+          "live_dollar": -0.24,
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-04"
         },
         {
           "rank": 2,
@@ -22642,10 +23086,11 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0042,
           "paper_trail_floor_active": false,
-          "live_price": 19.59,
-          "live_pct": -0.57,
-          "live_dollar": -0.07,
-          "price_updated": "3:32 PM ET"
+          "live_price": 19.58,
+          "live_pct": -0.62,
+          "live_dollar": -0.08,
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-04"
         },
         {
           "rank": 3,
@@ -22669,15 +23114,16 @@
           "paper_peak_pct": 0.0089,
           "paper_trail_floor_active": true,
           "live_price": 10.11,
-          "live_pct": 1.04,
-          "live_dollar": 0.13,
-          "price_updated": "3:32 PM ET",
+          "live_pct": 1.09,
+          "live_dollar": 0.14,
+          "price_updated": "3:34 PM ET",
           "paper_exit_price": 10.07,
           "paper_exit_pct": 0.64,
           "paper_exit_dollar": 0.08,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "11:37 AM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "PFG",
@@ -22699,10 +23145,11 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0026,
           "paper_trail_floor_active": false,
-          "live_price": 116.63,
-          "live_pct": -1.11,
+          "live_price": 116.7,
+          "live_pct": -1.05,
           "live_dollar": -0.13,
-          "price_updated": "3:32 PM ET"
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "ARES",
@@ -22724,12 +23171,14 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0054,
           "paper_trail_floor_active": true,
-          "live_price": 140.13,
-          "live_pct": 0.46,
+          "live_price": 140.09,
+          "live_pct": 0.43,
           "live_dollar": 0.05,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "paper_exit_time": "10:43 AM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04",
+          "slippage_pct": -0.083
         },
         {
           "ticker": "TSN",
@@ -22751,12 +23200,13 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0057,
           "paper_trail_floor_active": true,
-          "live_price": 51.53,
-          "live_pct": 0.8,
+          "live_price": 51.52,
+          "live_pct": 0.78,
           "live_dollar": 0.08,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "paper_exit_time": "9:39 AM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "FDX",
@@ -22778,10 +23228,11 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0006,
           "paper_trail_floor_active": false,
-          "live_price": 322.08,
-          "live_pct": -0.83,
+          "live_price": 322.13,
+          "live_pct": -0.82,
           "live_dollar": -0.08,
-          "price_updated": "3:32 PM ET"
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "GNW",
@@ -22804,9 +23255,10 @@
           "paper_peak_pct": 0.001,
           "paper_trail_floor_active": false,
           "live_price": 10.35,
-          "live_pct": -0.72,
-          "live_dollar": -0.07,
-          "price_updated": "3:32 PM ET"
+          "live_pct": -0.81,
+          "live_dollar": -0.08,
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "ECHO",
@@ -22828,12 +23280,14 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0069,
           "paper_trail_floor_active": true,
-          "live_price": 89.93,
-          "live_pct": 0.89,
-          "live_dollar": 0.08,
-          "price_updated": "3:32 PM ET",
+          "live_price": 90.01,
+          "live_pct": 0.98,
+          "live_dollar": 0.09,
+          "price_updated": "3:34 PM ET",
           "paper_exit_time": "9:37 AM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04",
+          "slippage_pct": -0.236
         },
         {
           "ticker": "PEP",
@@ -22855,12 +23309,13 @@
           "paper_current_floor_pct": 0.0064,
           "paper_peak_pct": 0.0087,
           "paper_trail_floor_active": true,
-          "live_price": 137.71,
-          "live_pct": -0.38,
-          "live_dollar": -0.03,
-          "price_updated": "3:32 PM ET",
+          "live_price": 137.68,
+          "live_pct": -0.4,
+          "live_dollar": -0.04,
+          "price_updated": "3:34 PM ET",
           "paper_exit_time": "10:15 AM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "CWK",
@@ -22882,12 +23337,13 @@
           "paper_current_floor_pct": 0.0064,
           "paper_peak_pct": 0.0115,
           "paper_trail_floor_active": true,
-          "live_price": 13.57,
-          "live_pct": 0.15,
-          "live_dollar": 0.01,
-          "price_updated": "3:32 PM ET",
+          "live_price": 13.61,
+          "live_pct": 0.41,
+          "live_dollar": 0.03,
+          "price_updated": "3:34 PM ET",
           "paper_exit_time": "12:28 PM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "WSC",
@@ -22909,12 +23365,13 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.007,
           "paper_trail_floor_active": true,
-          "live_price": 19.82,
-          "live_pct": 0.8,
-          "live_dollar": 0.06,
-          "price_updated": "3:32 PM ET",
+          "live_price": 19.86,
+          "live_pct": 1.03,
+          "live_dollar": 0.08,
+          "price_updated": "3:34 PM ET",
           "paper_exit_time": "1:20 PM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "AIG",
@@ -22936,12 +23393,13 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0051,
           "paper_trail_floor_active": true,
-          "live_price": 76.36,
-          "live_pct": 0.06,
+          "live_price": 76.35,
+          "live_pct": 0.05,
           "live_dollar": 0.0,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "paper_exit_time": "12:28 PM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "AMRX",
@@ -22966,7 +23424,8 @@
           "live_price": 17.44,
           "live_pct": -1.06,
           "live_dollar": -0.08,
-          "price_updated": "3:32 PM ET"
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "SHC",
@@ -22988,10 +23447,11 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0032,
           "paper_trail_floor_active": false,
-          "live_price": 18.93,
-          "live_pct": -0.21,
-          "live_dollar": -0.01,
-          "price_updated": "3:32 PM ET"
+          "live_price": 18.92,
+          "live_pct": -0.24,
+          "live_dollar": -0.02,
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "FNF",
@@ -23012,13 +23472,15 @@
           "live_price": 45.84,
           "live_pct": -1.89,
           "live_dollar": -0.19,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "days_held": 0,
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.005,
           "paper_trail_floor_active": true,
           "paper_exit_time": "12:28 PM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04",
+          "slippage_pct": 0.133
         },
         {
           "ticker": "PTON",
@@ -23039,13 +23501,15 @@
           "live_price": 5.39,
           "live_pct": 1.26,
           "live_dollar": 0.12,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "days_held": 0,
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0051,
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:50 AM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04",
+          "slippage_pct": -0.094
         },
         {
           "ticker": "COO",
@@ -23067,12 +23531,13 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0059,
           "paper_trail_floor_active": true,
-          "live_price": 69.64,
-          "live_pct": -0.38,
+          "live_price": 69.62,
+          "live_pct": -0.4,
           "live_dollar": -0.08,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "paper_exit_time": "11:33 AM ET",
-          "paper_exit_date": "2026-09-04"
+          "paper_exit_date": "2026-09-04",
+          "buy_date": "2026-09-04"
         },
         {
           "ticker": "NVST",
@@ -23096,14 +23561,16 @@
           "paper_exit_reason": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "live_price": 27.26,
-          "live_pct": -0.12,
-          "live_dollar": -0.02,
-          "price_updated": "3:32 PM ET",
+          "live_price": 27.31,
+          "live_pct": 0.06,
+          "live_dollar": 0.01,
+          "price_updated": "3:34 PM ET",
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0046,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "buy_date": "2026-09-04",
+          "slippage_pct": 0.015
         },
         {
           "ticker": "TECH",
@@ -23130,11 +23597,13 @@
           "live_price": 72.44,
           "live_pct": -0.05,
           "live_dollar": -0.01,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "buy_date": "2026-09-04",
+          "slippage_pct": 0.004
         },
         {
           "ticker": "TDC",
@@ -23158,14 +23627,16 @@
           "paper_exit_reason": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "live_price": 28.12,
-          "live_pct": 0.17,
+          "live_price": 28.14,
+          "live_pct": 0.21,
           "live_dollar": 0.01,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.003,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "buy_date": "2026-09-04",
+          "slippage_pct": -0.05
         },
         {
           "ticker": "UPS",
@@ -23189,14 +23660,16 @@
           "paper_exit_reason": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "live_price": 102.41,
-          "live_pct": -0.47,
+          "live_price": 102.43,
+          "live_pct": -0.45,
           "live_dollar": -0.03,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0034,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "buy_date": "2026-09-04",
+          "slippage_pct": 0.078
         },
         {
           "ticker": "KHC",
@@ -23220,14 +23693,16 @@
           "paper_exit_reason": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "live_price": 24.78,
-          "live_pct": -0.89,
+          "live_price": 24.79,
+          "live_pct": -0.87,
           "live_dollar": -0.08,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "days_held": 0,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "buy_date": "2026-09-04",
+          "slippage_pct": 0.012
         },
         {
           "ticker": "EXC",
@@ -23258,7 +23733,8 @@
           "live_price": 43.69,
           "live_pct": -0.71,
           "live_dollar": -0.06,
-          "price_updated": "3:32 PM ET"
+          "price_updated": "3:34 PM ET",
+          "buy_date": "2026-09-04"
         }
       ],
       "bench_candidates": [
@@ -23278,9 +23754,9 @@
             "gap_pct": 2.46
           },
           "skipped_reason": "Buy order failed: {\"buying_power\":\"0.01\",\"code\":40310000,\"cost_basis\":\"10.44\",\"message\":\"insufficient buying power\"}",
-          "live_price": 27.26,
-          "live_pct": -1.2,
-          "price_updated": "3:32 PM ET"
+          "live_price": 27.31,
+          "live_pct": -1.01,
+          "price_updated": "3:34 PM ET"
         },
         {
           "rank": 22,
@@ -23299,7 +23775,7 @@
           },
           "live_price": 72.44,
           "live_pct": -0.01,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
@@ -23317,9 +23793,9 @@
             "relative_strength_pct": 2.24,
             "gap_pct": -0.8
           },
-          "live_price": 28.12,
-          "live_pct": -2.31,
-          "price_updated": "3:32 PM ET",
+          "live_price": 28.14,
+          "live_pct": -2.28,
+          "price_updated": "3:34 PM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
@@ -23337,9 +23813,9 @@
             "relative_strength_pct": 3.34,
             "gap_pct": null
           },
-          "live_price": 72.0,
-          "live_pct": 3.5,
-          "price_updated": "3:32 PM ET",
+          "live_price": 72.03,
+          "live_pct": 3.54,
+          "price_updated": "3:34 PM ET",
           "skipped_reason": "Opening-gap filter: gapped +2.1% from the $69.57 close signals were scored on \u2014 skipping."
         },
         {
@@ -23357,9 +23833,9 @@
             "relative_strength_pct": 0.31,
             "gap_pct": 0.12
           },
-          "live_price": 102.41,
-          "live_pct": -1.05,
-          "price_updated": "3:32 PM ET",
+          "live_price": 102.43,
+          "live_pct": -1.04,
+          "price_updated": "3:34 PM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
@@ -23377,9 +23853,9 @@
             "relative_strength_pct": 0.94,
             "gap_pct": -1.67
           },
-          "live_price": 24.78,
-          "live_pct": -2.5,
-          "price_updated": "3:32 PM ET",
+          "live_price": 24.79,
+          "live_pct": -2.48,
+          "price_updated": "3:34 PM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
@@ -23399,7 +23875,7 @@
           },
           "live_price": 43.69,
           "live_pct": -1.9,
-          "price_updated": "3:32 PM ET",
+          "price_updated": "3:34 PM ET",
           "skipped_reason": "Buy order failed: {\"buying_power\":\"8.35\",\"code\":40310000,\"cost_basis\":\"8.61\",\"message\":\"insufficient buying power\"}"
         },
         {
@@ -23417,9 +23893,9 @@
             "relative_strength_pct": 1.97,
             "gap_pct": -1.08
           },
-          "live_price": 277.62,
-          "live_pct": -2.08,
-          "price_updated": "3:32 PM ET",
+          "live_price": 277.91,
+          "live_pct": -1.98,
+          "price_updated": "3:34 PM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
@@ -23437,9 +23913,9 @@
             "relative_strength_pct": -4.17,
             "gap_pct": -0.58
           },
-          "live_price": 193.54,
-          "live_pct": -0.81,
-          "price_updated": "3:32 PM ET",
+          "live_price": 193.63,
+          "live_pct": -0.77,
+          "price_updated": "3:34 PM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
@@ -23457,9 +23933,9 @@
             "relative_strength_pct": -1.17,
             "gap_pct": -0.06
           },
-          "live_price": 89.01,
-          "live_pct": -1.2,
-          "price_updated": "3:32 PM ET",
+          "live_price": 88.96,
+          "live_pct": -1.25,
+          "price_updated": "3:34 PM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         }
       ],
@@ -23840,14 +24316,14 @@
       "total_predictions": 80,
       "days_tracked": 27,
       "total_contributed": 300.0,
-      "current_equity": 283.03,
-      "net_trading_gain": -16.97,
-      "net_trading_gain_pct": -5.66,
+      "current_equity": 283.05,
+      "net_trading_gain": -16.95,
+      "net_trading_gain_pct": -5.65,
       "closed_rounds": [],
-      "prices_last_updated": "3:32 PM ET",
+      "prices_last_updated": "3:34 PM ET",
       "prices_after_hours": false,
-      "spy_live_price": 769.94,
-      "spy_live_pct": -0.36
+      "spy_live_price": 770.01,
+      "spy_live_pct": -0.35
     }
   ]
 }
