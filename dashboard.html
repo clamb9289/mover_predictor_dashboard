@@ -1767,6 +1767,18 @@ function buildPickCards(predictions, idPrefix) {
         <div class="signal-mini"><div class="signal-mini-label">News Sentiment</div><div class="signal-mini-value">${signals.news_sentiment ?? '—'}</div></div>
         <div class="signal-mini"><div class="signal-mini-label">Rel. Strength</div><div class="signal-mini-value">${signals.relative_strength_pct != null ? fmt(signals.relative_strength_pct) : '—'}</div></div>
       </div>`;
+    // Trade-fact mini-grid (added 2026-09-04) -- only meaningful once a
+    // real buy happened, so skipped/never-bought picks show none of this.
+    // slippage_pct is already stored as a real percentage (trader.py's
+    // sync computes it as ...*100 at write time) -- unlike paper_peak_pct/
+    // paper_current_floor_pct, which are fractions and need *100 here.
+    // Don't conflate the two conventions when touching this again.
+    const tradeMetaGrid = (isSkipped || isNotBought) ? '' : `
+      <div class="signal-mini-grid" style="margin-top:8px">
+        <div class="signal-mini"><div class="signal-mini-label">Purchased</div><div class="signal-mini-value">${p.buy_date ?? '—'}</div></div>
+        <div class="signal-mini"><div class="signal-mini-label">Entry Slippage</div><div class="signal-mini-value">${p.slippage_pct != null ? fmt(p.slippage_pct, 3) : '—'}</div></div>
+        <div class="signal-mini"><div class="signal-mini-label">Peak Reached</div><div class="signal-mini-value">${p.paper_peak_pct != null ? fmt(p.paper_peak_pct * 100, 2) : '—'}</div></div>
+      </div>`;
 
     // 2026-08-21: converted from a card grid to table rows -- the card
     // layout (one ~200px-tall box per position) worked fine for 3-4
@@ -1824,6 +1836,7 @@ function buildPickCards(predictions, idPrefix) {
         ${badges}
         <div style="margin-top:8px">${p.explainer || 'No explainer available for this pick.'}</div>
         ${signalGrid}
+        ${tradeMetaGrid}
       </td>
     </tr>`;
   }).join('');
