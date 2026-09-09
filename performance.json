@@ -23179,7 +23179,8 @@
           "price_updated": "9:39 AM ET",
           "buy_date": "2026-09-04",
           "paper_exit_time": "9:48 AM ET",
-          "paper_exit_date": "2026-09-09"
+          "paper_exit_date": "2026-09-09",
+          "postmortem": "Hit the -3% stop loss (-3.36%)."
         },
         {
           "ticker": "ARES",
@@ -23650,7 +23651,7 @@
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "live_price": 72.29,
-          "live_pct": -0.27,
+          "live_pct": -0.26,
           "live_dollar": -0.04,
           "price_updated": "9:56 AM ET",
           "days_held": 2,
@@ -23729,7 +23730,8 @@
           "buy_date": "2026-09-04",
           "slippage_pct": 0.078,
           "paper_exit_time": "9:31 AM ET",
-          "paper_exit_date": "2026-09-08"
+          "paper_exit_date": "2026-09-08",
+          "postmortem": "Hit the stop loss (-3.00%) despite relative strength and news sentiment \u2014 worth reviewing if relative strength keeps producing false positives."
         },
         {
           "ticker": "KHC",
@@ -25494,10 +25496,10 @@
     },
     {
       "date": "2026-09-09",
-      "regime": "Market regime OK \u2014 SPY -0.27%",
+      "regime": "Market regime OK \u2014 SPY -0.26%",
       "trading_skipped": false,
       "max_hold_days": 3,
-      "spy_regime_pct": -0.00268,
+      "spy_regime_pct": -0.00264,
       "top_sectors": [
         {
           "etf": "XLU",
@@ -25685,8 +25687,8 @@
             "gap_pct": 0.25
           },
           "skipped_reason": "Opening-gap filter: gapped +2.6% from the $174.09 close signals were scored on \u2014 skipping.",
-          "live_price": 176.04,
-          "live_pct": 1.12,
+          "live_price": 176.52,
+          "live_pct": 1.4,
           "price_updated": "9:56 AM ET"
         },
         {
@@ -25732,8 +25734,8 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "live_price": 83.4,
-          "live_pct": -0.51,
+          "live_price": 83.41,
+          "live_pct": -0.5,
           "live_dollar": -0.06,
           "price_updated": "9:56 AM ET"
         },
@@ -25758,7 +25760,7 @@
           "position_cost": 11.29,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0043,
+          "paper_peak_pct": 0.0044,
           "paper_trail_floor_active": false,
           "live_price": 23.43,
           "live_pct": 0.39,
@@ -25845,7 +25847,7 @@
           "paper_peak_pct": 0.0041,
           "paper_trail_floor_active": false,
           "live_price": 22.06,
-          "live_pct": 0.41,
+          "live_pct": 0.44,
           "live_dollar": 0.04,
           "price_updated": "9:56 AM ET"
         },
@@ -25988,11 +25990,11 @@
           "position_cost": 7.1,
           "days_held": 0,
           "paper_current_floor_pct": 0.015,
-          "paper_peak_pct": 0.0214,
+          "paper_peak_pct": 0.0222,
           "paper_trail_floor_active": true,
-          "live_price": 12.11,
-          "live_pct": 1.97,
-          "live_dollar": 0.14,
+          "live_price": 12.12,
+          "live_pct": 2.05,
+          "live_dollar": 0.15,
           "price_updated": "9:56 AM ET"
         },
         {
@@ -26018,8 +26020,8 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0062,
           "paper_trail_floor_active": true,
-          "live_price": 224.26,
-          "live_pct": 0.42,
+          "live_price": 224.16,
+          "live_pct": 0.38,
           "live_dollar": 0.03,
           "price_updated": "9:56 AM ET",
           "paper_exit_price": 224.52,
@@ -26080,8 +26082,8 @@
           "paper_current_floor_pct": 0.0064,
           "paper_peak_pct": 0.0099,
           "paper_trail_floor_active": true,
-          "live_price": 71.44,
-          "live_pct": 1.01,
+          "live_price": 71.4,
+          "live_pct": 0.95,
           "live_dollar": 0.06,
           "price_updated": "9:56 AM ET",
           "paper_exit_price": 71.27,
@@ -26225,8 +26227,8 @@
             "gap_pct": 1.9
           },
           "skipped_reason": "Opening-gap filter: gapped +1.9% from the $14.19 close signals were scored on \u2014 skipping.",
-          "live_price": 14.32,
-          "live_pct": 0.92,
+          "live_price": 14.33,
+          "live_pct": 0.99,
           "price_updated": "9:56 AM ET"
         },
         {
@@ -26251,9 +26253,9 @@
           "paper_exit_reason": null,
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
-          "live_price": 61.87,
-          "live_pct": -0.76,
-          "live_dollar": -0.09,
+          "live_price": 61.78,
+          "live_pct": -0.91,
+          "live_dollar": -0.1,
           "price_updated": "9:56 AM ET",
           "buy_date": "2026-09-09",
           "days_held": 0,
@@ -26364,8 +26366,8 @@
             "relative_strength_pct": 9.12,
             "gap_pct": -0.14
           },
-          "live_price": 61.87,
-          "live_pct": -1.1,
+          "live_price": 61.78,
+          "live_pct": -1.25,
           "price_updated": "9:56 AM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
@@ -26444,8 +26446,8 @@
             "relative_strength_pct": -3.51,
             "gap_pct": 2.74
           },
-          "live_price": 111.39,
-          "live_pct": 5.47,
+          "live_price": 111.42,
+          "live_pct": 5.5,
           "price_updated": "9:56 AM ET",
           "skipped_reason": "Opening-gap filter: gapped +3.2% from the $105.61 close signals were scored on \u2014 skipping."
         },
@@ -26505,7 +26507,7 @@
             "gap_pct": -1.11
           },
           "live_price": 94.62,
-          "live_pct": 0.43,
+          "live_pct": 0.42,
           "price_updated": "9:56 AM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
@@ -26875,8 +26877,8 @@
       ],
       "hit_rate": 0.0,
       "total_hits": 0,
-      "total_predictions": 83,
-      "days_tracked": 28,
+      "total_predictions": 86,
+      "days_tracked": 29,
       "total_contributed": 300.0,
       "current_equity": 281.48,
       "net_trading_gain": -18.52,
@@ -26884,8 +26886,8 @@
       "closed_rounds": [],
       "prices_last_updated": "9:56 AM ET",
       "prices_after_hours": false,
-      "spy_live_price": 763.89,
-      "spy_live_pct": -0.2
+      "spy_live_price": 763.82,
+      "spy_live_pct": -0.21
     }
   ]
 }
