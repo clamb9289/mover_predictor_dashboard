@@ -207,6 +207,11 @@
      (added 2026-07-25). */
   .closed-notice { display: flex; align-items: center; gap: 10px; margin-top: 16px; padding: 12px 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; font-size: 12px; color: var(--muted); }
   .closed-notice-emoji { font-size: 18px; flex-shrink: 0; }
+  /* Reuses the same --gold "attention" semantic as .pick-card-attention/
+     .attention-badge elsewhere on this dashboard -- a live trading pause
+     is more consequential than the plain-gray informational notices
+     (pool shortfall, etc.) and should read as such at a glance. */
+  #drawdown-pause-notice.closed-notice { background: var(--gold-bg); border-color: rgba(251,191,36,0.35); color: var(--text); }
   .pick-pnl-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 12px 0; }
   .pnl-item { text-align: center; flex: 1; }
   .pnl-label { font-size: 10px; color: var(--muted); margin-bottom: 3px; }
@@ -505,6 +510,7 @@
           <div class="chart-toggle-btn" data-cardview="value" onclick="setCardViewMode('value')">Position $</div>
         </div>
       </div>
+      <div id="drawdown-pause-notice" class="closed-notice" style="display:none;margin-top:0;margin-bottom:16px"></div>
       <div class="closed-notice" style="margin-top:0;margin-bottom:16px;justify-content:flex-start;flex-wrap:wrap;gap:28px">
         <div style="display:flex;align-items:flex-start;gap:10px">
           <span style="font-size:22px">💰</span>
@@ -1542,6 +1548,22 @@ function renderTodayPicks(day, days) {
     shortfallEl.innerHTML = `<span class="closed-notice-emoji">📊</span><span>${day.pool_shortfall_note}</span>`;
   } else {
     shortfallEl.style.display = 'none';
+  }
+  // day.manual_pause_active (added 2026-09-09, trader.py's
+  // update_performance_prices()) -- surfaces the portfolio drawdown-
+  // stop's real live pause state. Found live: the stop was working
+  // exactly as designed (new buys paused for the rest of the day once
+  // the combined book crossed -0.75%, existing positions unaffected)
+  // but nothing on the dashboard said so -- idle cash with open slots
+  // looked identical to a bug. Same "only shown on today", per-day
+  // gating as the shortfall notice above (a past day's pause has
+  // already resolved by definition, nothing live to show for it).
+  const pauseEl = document.getElementById('drawdown-pause-notice');
+  if (day?.manual_pause_active) {
+    pauseEl.style.display = '';
+    pauseEl.innerHTML = `<span class="closed-notice-emoji">⏸️</span><span><strong>Live trading paused for today</strong> — the combined open-book return crossed the -0.75% portfolio drawdown-stop threshold. Existing positions keep their own stop-loss/floor protection; no new positions will be bought until trading resumes automatically tomorrow morning.</span>`;
+  } else {
+    pauseEl.style.display = 'none';
   }
   if (day?.trading_skipped) {
     dateEl.textContent = '';
