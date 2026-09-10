@@ -1,291 +1,291 @@
 {
-  "date": "2026-09-09",
-  "generated_at": "2026-09-09T13:38:11.505762+00:00",
+  "date": "2026-09-10",
+  "generated_at": "2026-09-10T13:38:15.129499+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
-    "QCOM",
-    "MGY",
-    "DXCM"
+    "IRT",
+    "LFST",
+    "RAL"
   ],
   "llm_top3": {
     "tickers": [
-      "MGY",
-      "QCOM",
-      "OVV"
+      "UGI",
+      "SYY",
+      "XYL"
     ],
-    "reasoning": "MGY and QCOM are top-ranked quantitatively and also have the strongest fresh catalysts: a JPMorgan upgrade plus earnings/production beat for MGY, and Qualcomm's $60B Amazon custom-silicon arrangement with a $15B data-center revenue target. I substitute OVV for the lower-ranked names because its S&P outlook upgrade on ~$2.2B debt reduction, multiple price-target hikes, and accretive acreage deals give it the best confirmed fundamental improvement among the energy cohort, whereas DXCM (rank 3) has negative price action, competitive pressure from Abbott, and insider selling."
+    "reasoning": "I deviate from the top-ranked names because IRT (rank 1) is the acquirer in an all-stock deal that already sank the stock with a fixed exchange ratio and a fairness investigation, and LFST (rank 2) just absorbed a 22.25M-share secondary \u2014 both are negative near-term news reads despite strong quant scores. UGI (rank 14) has the single most material catalyst on the board: a live $9B KKR takeover bid at $42.50 plus a Jefferies upgrade to Buy. SYY (rank 6) reaffirmed FY27 guidance while raising mid-term targets and unveiling a $500M AI efficiency program \u2014 a clean, self-generated fundamental upgrade. XYL (rank 4) pairs a good quant rank with genuinely underappreciated data-center water/cooling order growth (300%+ YoY) and an accretive pump acquisition, with the CFO-departure overhang already priced into a 23% drawdown."
   },
   "tickers": {
-    "QCOM": {
+    "IRT": {
       "rank": 1,
       "headline_count": 40,
-      "mentions_24h": 103,
-      "total_distinct_found": 125,
-      "llm_score": 2.5,
-      "materiality": "high",
-      "reasoning": "Amazon custom-silicon collaboration with up to $60B in purchases and a $15B FY29 data center revenue target drove a 9% pop, though Barclays' Underweight $180 PT tempers upside."
+      "mentions_24h": 22,
+      "total_distinct_found": 65,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "All-stock acquisition of Centerspace made IRT the acquirer and shares sank on dilution/no premium, plus a shareholder law-firm investigation; deal terms now fixed."
     },
-    "MGY": {
+    "LFST": {
       "rank": 2,
       "headline_count": 40,
-      "mentions_24h": 3,
+      "mentions_24h": 2,
       "total_distinct_found": 62,
-      "llm_score": 3,
+      "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "JPMorgan upgrade to Overweight, Barron's buy call, strong Q2 beat with raised production guidance, insider buying, and $100 oil tailwind."
+      "reasoning": "22.25M-share secondary by selling stockholders priced at $12.35 pressured the stock, only partly offset by a small 2M-share buyback."
     },
-    "DXCM": {
+    "RAL": {
       "rank": 3,
+      "headline_count": 40,
+      "mentions_24h": 4,
+      "total_distinct_found": 55,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Raised guidance, record free cash flow, dividend initiation and strong Q2 beat with broad institutional accumulation."
+    },
+    "XYL": {
+      "rank": 4,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 60,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Data-center water/cooling orders up 300%+, Cornell/Roper pump acquisition and expanded credit facility offset CFO departure and stock weakness."
+    },
+    "NEOG": {
+      "rank": 5,
       "headline_count": 40,
       "mentions_24h": 2,
       "total_distinct_found": 61,
-      "llm_score": -1,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Stock fell 3.8%, seasonal weakness, insider selling and Abbott CGM FDA first create competitive overhang."
+      "reasoning": "Piper Sandler upgrade, rising estimates and an Oct. 7 investor day on strategic transformation, though revenue remains flat and losses persist."
     },
-    "MAC": {
-      "rank": 4,
-      "headline_count": 40,
-      "mentions_24h": 6,
-      "total_distinct_found": 60,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Headlines are mostly Apple Mac noise; genuine MAC items are a Q2 FFO beat offset by a 7.8% post-earnings decline and bearish chart commentary."
-    },
-    "RSI": {
-      "rank": 5,
-      "headline_count": 40,
-      "mentions_24h": 5,
-      "total_distinct_found": 60,
-      "llm_score": -1.5,
-      "materiality": "medium",
-      "reasoning": "Repeated CEO/CFO/COO insider selling, a Seeking Alpha 'thesis-breaking' downgrade, and Ninth Circuit ruling allowing states to ban sports event contracts."
-    },
-    "FISV": {
+    "SYY": {
       "rank": 6,
       "headline_count": 40,
-      "mentions_24h": 22,
-      "total_distinct_found": 62,
-      "llm_score": -3,
-      "materiality": "high",
-      "reasoning": "Cut 2026 outlook, guidance-driven slide, client attrition chatter, leadership churn and persistent heavy-volume red days."
-    },
-    "HST": {
-      "rank": 7,
-      "headline_count": 40,
-      "mentions_24h": 1,
-      "total_distinct_found": 62,
+      "mentions_24h": 12,
+      "total_distinct_found": 68,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Raised 2026 RevPAR/AFFO guidance, special dividend, Zacks upgrade to Buy and multiple value calls."
+      "reasoning": "Reaffirmed FY27 guidance, raised mid-term targets and introduced a $500M AI-driven efficiency program."
     },
-    "WRB": {
+    "FSLR": {
+      "rank": 7,
+      "headline_count": 40,
+      "mentions_24h": 24,
+      "total_distinct_found": 69,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Piper Sandler initiated at Overweight with $260 target, but choppy trading and policy noise temper the read."
+    },
+    "MAC": {
       "rank": 8,
       "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 61,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "Mixed: Goldman upgrade and dividend hike versus Wells Fargo downgrade to Underweight and commentary that shares look fully valued."
-    },
-    "DV": {
-      "rank": 9,
-      "headline_count": 40,
-      "mentions_24h": 0,
+      "mentions_24h": 8,
       "total_distinct_found": 60,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Acquisition by Nielsen at fixed $13.60 cash caps the stock; deal news already reflected, low forward materiality."
+      "reasoning": "Headlines are mostly Apple-related noise; only minor MAC-specific items (small insider sale, post-earnings 7.8% decline)."
     },
-    "KMI": {
-      "rank": 10,
+    "PENN": {
+      "rank": 9,
       "headline_count": 40,
       "mentions_24h": 8,
-      "total_distinct_found": 56,
-      "llm_score": 0.5,
+      "total_distinct_found": 59,
+      "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Mixed: pipeline dividend-durability praise and export volume growth versus a persistent downtrend and stock lagging oil strength."
+      "reasoning": "Mixed NFL season betting outlook and prediction-market threats offset improving interactive segment losses; no fresh catalyst."
     },
-    "ST": {
+    "EQH": {
+      "rank": 10,
+      "headline_count": 40,
+      "mentions_24h": 4,
+      "total_distinct_found": 62,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "24% three-month rally and price target hikes, but multiple insider sales and Corebridge merger integration risk."
+    },
+    "UDR": {
       "rank": 11,
       "headline_count": 40,
-      "mentions_24h": 22,
+      "mentions_24h": 3,
       "total_distinct_found": 64,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Barclays upgrade to Overweight, OmniNode product launch, Q2 EPS up 70% and debt paydown turnaround story."
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Mizuho trimmed target to $39 with Neutral; otherwise routine conference participation and prior guidance raise."
     },
-    "NEOG": {
+    "NYT": {
       "rank": 12,
       "headline_count": 40,
       "mentions_24h": 1,
-      "total_distinct_found": 60,
-      "llm_score": 0.5,
-      "materiality": "low",
-      "reasoning": "Investor Day announced for Oct 7 on transformation plan plus margin recovery, but sales still declining and valuation debated after a big run."
-    },
-    "NXPI": {
-      "rank": 13,
-      "headline_count": 40,
-      "mentions_24h": 8,
-      "total_distinct_found": 65,
-      "llm_score": 0,
-      "materiality": "low",
-      "reasoning": "No company-specific catalyst; shares dipped more than the market amid generic semi sector headlines."
-    },
-    "WEC": {
-      "rank": 14,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 58,
-      "llm_score": 0.5,
-      "materiality": "low",
-      "reasoning": "Reaffirmed 2026 guidance and data-center demand narrative, but stock down 3.4% since earnings; mostly retail bullish chatter."
-    },
-    "ON": {
-      "rank": 15,
-      "headline_count": 40,
-      "mentions_24h": 27,
-      "total_distinct_found": 65,
-      "llm_score": -1,
-      "materiality": "medium",
-      "reasoning": "Stock making new lows and down 4.4% while peers rally, though an upcoming Investor Day with a $213B TAM could be a catalyst."
-    },
-    "HD": {
-      "rank": 16,
-      "headline_count": 40,
-      "mentions_24h": 27,
-      "total_distinct_found": 92,
-      "llm_score": -0.5,
-      "materiality": "low",
-      "reasoning": "Housing weakness and CEO medical leave weigh, though earnings beat and supply-chain expansion are modest positives."
-    },
-    "ICE": {
-      "rank": 17,
-      "headline_count": 40,
-      "mentions_24h": 6,
-      "total_distinct_found": 65,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "Record August volumes, Bill Ackman stake, and a Seeking Alpha upgrade arguing the AI-driven selloff is overdone."
-    },
-    "UNH": {
-      "rank": 18,
-      "headline_count": 40,
-      "mentions_24h": 32,
-      "total_distinct_found": 87,
-      "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "WellMed stake sale to TPG, Burry call positions and turnaround momentum, though stock remains pinned near $400."
-    },
-    "UDR": {
-      "rank": 19,
-      "headline_count": 40,
-      "mentions_24h": 5,
-      "total_distinct_found": 63,
-      "llm_score": -0.5,
-      "materiality": "low",
-      "reasoning": "Mizuho cut PT to $39 with Neutral rating despite an earlier FFO beat and raised guidance."
-    },
-    "CRGY": {
-      "rank": 20,
-      "headline_count": 40,
-      "mentions_24h": 2,
-      "total_distinct_found": 58,
-      "llm_score": 1.5,
-      "materiality": "medium",
-      "reasoning": "Q2 beat with raised 2026 outlook and 52-week highs on strong oil, though Seaport downgraded to Strong Sell on valuation."
-    },
-    "OVV": {
-      "rank": 21,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 60,
-      "llm_score": 2,
-      "materiality": "medium",
-      "reasoning": "S&P raised outlook to Positive on ~$2.2B debt reduction, multiple PT hikes, and $460M accretive acreage deals at 17-year highs."
-    },
-    "BTSG": {
-      "rank": 22,
-      "headline_count": 40,
-      "mentions_24h": 0,
-      "total_distinct_found": 60,
-      "llm_score": 0.5,
-      "materiality": "low",
-      "reasoning": "Beat and raised guidance with several PT hikes, but shares sold off on stretched valuation and lost momentum."
-    },
-    "XYL": {
-      "rank": 23,
-      "headline_count": 40,
-      "mentions_24h": 3,
-      "total_distinct_found": 60,
-      "llm_score": 0.5,
-      "materiality": "low",
-      "reasoning": "CFO departure to GE HealthCare and a 23% slide offset by data-center orders up 300% and the $1.46B Cornell/Roper pump acquisition."
-    },
-    "SM": {
-      "rank": 24,
-      "headline_count": 40,
-      "mentions_24h": 7,
       "total_distinct_found": 61,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Beat with raised guidance and 52-week highs on oil strength, though a new sell-rated initiation pressured shares."
+      "reasoning": "Berkshire raising its stake is a positive, but subscriber growth slowdown and DOJ/OpenAI backing in the copyright case are offsets."
     },
-    "AMTM": {
-      "rank": 25,
-      "headline_count": 40,
-      "mentions_24h": 27,
-      "total_distinct_found": 55,
-      "llm_score": 0.5,
-      "materiality": "low",
-      "reasoning": "UK grid cybersecurity win and $974M NASA contract are positives, but sentiment is deeply negative and several sell-side pieces flag risk."
-    },
-    "AKAM": {
-      "rank": 26,
+    "TXT": {
+      "rank": 13,
       "headline_count": 40,
       "mentions_24h": 2,
-      "total_distinct_found": 59,
+      "total_distinct_found": 61,
       "llm_score": 1,
-      "materiality": "medium",
-      "reasoning": "Piper Sandler upgrade to Overweight on a Compute segment 'material inflection' plus Deloitte Canada alliance, though PT was trimmed."
+      "materiality": "low",
+      "reasoning": "$231.5M Navy LCAC contract modification and Starlink Hawker connectivity are modest positives amid a 23% valuation discount."
     },
-    "FBRT": {
-      "rank": 27,
+    "UGI": {
+      "rank": 14,
+      "headline_count": 40,
+      "mentions_24h": 5,
+      "total_distinct_found": 60,
+      "llm_score": 3,
+      "materiality": "high",
+      "reasoning": "KKR's reported $9B/$42.50-per-share takeover bid plus a Jefferies upgrade to Buy with $43 target is a live M&A catalyst."
+    },
+    "OGN": {
+      "rank": 15,
       "headline_count": 40,
       "mentions_24h": 0,
-      "total_distinct_found": 60,
-      "llm_score": -2,
-      "materiality": "medium",
-      "reasoning": "Dividend nearly halved, EPS down 37% YoY, revenue miss, and an active shareholder lawsuit."
-    },
-    "EBAY": {
-      "rank": 28,
-      "headline_count": 40,
-      "mentions_24h": 34,
-      "total_distinct_found": 72,
-      "llm_score": 0.5,
-      "materiality": "low",
-      "reasoning": "CEO touts AI listings driving 50% more US listings and collectibles/vehicles growth, but no discrete catalyst."
-    },
-    "ZBH": {
-      "rank": 29,
-      "headline_count": 40,
-      "mentions_24h": 7,
-      "total_distinct_found": 64,
-      "llm_score": 0.5,
-      "materiality": "low",
-      "reasoning": "Reiterated FY26 outlook after Stryker-driven ortho selloff, robotics salesforce expansion and 2027 robot launch."
-    },
-    "PPG": {
-      "rank": 30,
-      "headline_count": 40,
-      "mentions_24h": 2,
       "total_distinct_found": 57,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Reaffirmed FY guidance and new marine coatings launch, but flat EPS YoY and Hold consensus."
+      "reasoning": "Sun Pharma merger already approved by shareholders at a fixed price, so remaining upside is limited arbitrage."
+    },
+    "ROKU": {
+      "rank": 16,
+      "headline_count": 40,
+      "mentions_24h": 23,
+      "total_distinct_found": 73,
+      "llm_score": -2,
+      "materiality": "high",
+      "reasoning": "DOJ second request expands antitrust review of Fox's $22B acquisition, pushing close to 2027 and raising deal-break risk."
+    },
+    "TSCO": {
+      "rank": 17,
+      "headline_count": 40,
+      "mentions_24h": 12,
+      "total_distinct_found": 65,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Shares slid on management commentary about ongoing demand softness and cost pressure, plus loss of a top executive."
+    },
+    "KRG": {
+      "rank": 18,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 60,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "In-line Q2 FFO with affirmed guidance; commentary is split between cheap-valuation and not-cheap-enough views."
+    },
+    "ES": {
+      "rank": 19,
+      "headline_count": 40,
+      "mentions_24h": 5,
+      "total_distinct_found": 61,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Constructive Seeking Alpha coverage of $26.5B capex plan and stable yield; most headlines are S&P futures noise, not the utility."
+    },
+    "WRB": {
+      "rank": 20,
+      "headline_count": 40,
+      "mentions_24h": 0,
+      "total_distinct_found": 61,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Underwriting discipline praised but soft pricing and mixed valuation views (2% overvalued) leave no clear direction."
+    },
+    "OXY": {
+      "rank": 21,
+      "headline_count": 40,
+      "mentions_24h": 15,
+      "total_distinct_found": 64,
+      "llm_score": 2,
+      "materiality": "medium",
+      "reasoning": "Oil breaking out on Iran/Yemen supply disruption with bullish options flow, though some argue pipelines are the better play."
+    },
+    "EBAY": {
+      "rank": 22,
+      "headline_count": 40,
+      "mentions_24h": 13,
+      "total_distinct_found": 77,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "Constructive collectibles/live-commerce/AI growth narrative at Goldman conference, offset by insider selling plans."
+    },
+    "APG": {
+      "rank": 23,
+      "headline_count": 40,
+      "mentions_24h": 5,
+      "total_distinct_found": 61,
+      "llm_score": -2,
+      "materiality": "medium",
+      "reasoning": "Shares fell 8-10% around the Jefferies industrials conference despite record backlog and raised 2026 outlook, signaling negative guidance nuance."
+    },
+    "SBRA": {
+      "rank": 24,
+      "headline_count": 40,
+      "mentions_24h": 5,
+      "total_distinct_found": 62,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "New Huntington coverage and a business update, but CEO sold 200,000 shares (~$4.17M), muddying the signal."
+    },
+    "OHI": {
+      "rank": 25,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 61,
+      "llm_score": 1,
+      "materiality": "low",
+      "reasoning": "PACS leasing 32 Florida skilled nursing facilities from OHI expands the tenant relationship; raised AFFO guidance and dividend increase support."
+    },
+    "UNH": {
+      "rank": 26,
+      "headline_count": 40,
+      "mentions_24h": 69,
+      "total_distinct_found": 104,
+      "llm_score": 0,
+      "materiality": "medium",
+      "reasoning": "Management says Medicare Advantage turnaround is on track, but CVS commentary on rising medical costs drove the stock down ~2-5%."
+    },
+    "DNOW": {
+      "rank": 27,
+      "headline_count": 40,
+      "mentions_24h": 1,
+      "total_distinct_found": 60,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Securities class action over MRC merger proxy ERP disclosures with an October 2 lead-plaintiff deadline offsets strong Q2 revenue growth and raised guidance."
+    },
+    "MGM": {
+      "rank": 28,
+      "headline_count": 40,
+      "mentions_24h": 9,
+      "total_distinct_found": 61,
+      "llm_score": -1,
+      "materiality": "medium",
+      "reasoning": "Diller's $48.50 buyout offer remains unresolved with the stock drifting well below, plus new shareholder legal notices and a Springfield lawsuit."
+    },
+    "BAC": {
+      "rank": 29,
+      "headline_count": 40,
+      "mentions_24h": 23,
+      "total_distinct_found": 72,
+      "llm_score": 0,
+      "materiality": "low",
+      "reasoning": "Jefferies top-pick designation and NII repricing thesis offset by expected ~21-40% Q3 investment banking fee decline and EPS estimate cuts."
+    },
+    "VMRK": {
+      "rank": 30,
+      "headline_count": 25,
+      "mentions_24h": 0,
+      "total_distinct_found": 25,
+      "llm_score": 1,
+      "materiality": "medium",
+      "reasoning": "Mizuho upgrade to Outperform with $73 target following the AvalonBay/Equity Residential merger creating the largest US apartment REIT."
     }
   }
 }
