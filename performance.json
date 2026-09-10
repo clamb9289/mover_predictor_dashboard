@@ -27316,7 +27316,13 @@
           "live_price": 65.42,
           "live_pct": -2.04,
           "live_dollar": -0.26,
-          "price_updated": "1:03 PM ET"
+          "price_updated": "1:03 PM ET",
+          "paper_exit_price": 64.68,
+          "paper_exit_pct": -3.14,
+          "paper_exit_dollar": -0.4,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "3:35 PM ET",
+          "paper_exit_date": "2026-09-10"
         },
         {
           "rank": 4,
@@ -27698,7 +27704,13 @@
           "live_dollar": 0.06,
           "paper_current_floor_pct": 0.0064,
           "paper_peak_pct": 0.0115,
-          "paper_trail_floor_active": true
+          "paper_trail_floor_active": true,
+          "paper_exit_price": 153.68,
+          "paper_exit_pct": 0.64,
+          "paper_exit_dollar": 0.05,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "3:35 PM ET",
+          "paper_exit_date": "2026-09-10"
         },
         {
           "rank": 17,
@@ -28437,11 +28449,11 @@
       "total_predictions": 89,
       "days_tracked": 30,
       "total_contributed": 300.0,
-      "current_equity": 279.72,
-      "net_trading_gain": -20.28,
-      "net_trading_gain_pct": -6.76,
+      "current_equity": 279.54,
+      "net_trading_gain": -20.46,
+      "net_trading_gain_pct": -6.82,
       "closed_rounds": [],
-      "prices_last_updated": "1:03 PM ET",
+      "prices_last_updated": "3:35 PM ET",
       "prices_after_hours": false,
       "manual_pause_active": true,
       "spy_live_price": 758.97,
