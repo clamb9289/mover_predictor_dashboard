@@ -1,6 +1,6 @@
 {
   "date": "2026-09-11",
-  "generated_at": "2026-09-11T13:35:22.946295+00:00",
+  "generated_at": "2026-09-11T13:47:06.159927+00:00",
   "model": "claude-opus-5",
   "status": "ok",
   "model_top3": [
@@ -10,30 +10,30 @@
   ],
   "llm_top3": {
     "tickers": [
-      "DVN",
       "BGC",
+      "DVN",
       "OHI"
     ],
-    "reasoning": "DVN has the cleanest positive catalyst set (52-week high breakout, Stifel Buy/$61 target, Coterra synergies, strong oil tape) despite its mid-pack quant rank. BGC combines the top quant rank with a genuine product catalyst in Fenics AI and FMX share gains against CME plus a Q2 beat. OHI pairs a real revenue-accretive 32-facility lease to PACS with a dividend increase and demographic tailwinds. I skip rank-2 WBD (merger is essentially closed, so upside is capped and insiders are dumping) and rank-3 DBX (breach, flat revenue, Sell ratings, CEO exit)."
+    "reasoning": "BGC (rank 1) is supported by a genuine catalyst stack: the first fully AI-brokered institutional derivatives trade, Fenics AI commercialization in Q4, FMX taking share from CME, and record Q2 revenues with constructive 3Q guidance. DVN offers the cleanest fresh positive news flow \u2014 a Stifel Buy reinstatement at $61, a confirmed technical breakout to 52-week highs on rising crude, and Coterra merger synergies \u2014 despite a lower quant rank. I skip rank-2 WBD (double downgrade after Netflix pulled out, heavy insider selling, deal-capped upside) and rank-3 DBX (breach, ~0% growth, CEO exit, sell ratings) and substitute OHI, where the 32-facility PACS Florida lease expansion, a dividend raise, Mizuho's bullish target and record institutional ownership give a real fundamental tailwind."
   },
   "tickers": {
     "BGC": {
       "rank": 1,
       "headline_count": 40,
-      "mentions_24h": 2,
+      "mentions_24h": 1,
       "total_distinct_found": 61,
-      "llm_score": 2,
+      "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "First fully AI-brokered institutional derivatives trade (Fenics AI) plus Q2 revenue/EPS beat and FMX momentum, tempered by cost concerns and post-earnings weakness."
+      "reasoning": "Fenics AI first fully AI-brokered institutional trade, FMX momentum vs CME, Q2 record revenues and EPS beat with solid 3Q guidance, offset by cost concerns."
     },
     "WBD": {
       "rank": 2,
       "headline_count": 40,
       "mentions_24h": 9,
       "total_distinct_found": 68,
-      "llm_score": 1,
+      "llm_score": -1,
       "materiality": "medium",
-      "reasoning": "Paramount Skydance merger has satisfied all closing conditions with 69 jurisdictions cleared (deal near-complete, so limited upside), offset by a double downgrade after Netflix exited the bidding war and heavy insider selling."
+      "reasoning": "Double downgrade after Netflix exited the bidding war plus heavy insider selling, though the Paramount merger is essentially ready to close, capping both upside and downside."
     },
     "DBX": {
       "rank": 3,
@@ -42,7 +42,7 @@
       "total_distinct_found": 64,
       "llm_score": -3,
       "materiality": "medium",
-      "reasoning": "Security breach affecting ~5,000 accounts, sub-1% revenue growth, Sell ratings, CEO departure and persistent insider selling."
+      "reasoning": "Security breach affecting ~5,000 accounts, sub-1% revenue growth, CEO departure and continuing insider sales with sell-rated commentary and new lows."
     },
     "TECH": {
       "rank": 4,
@@ -51,34 +51,34 @@
       "total_distinct_found": 61,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Headlines are mostly generic sector 'tech stock' noise; Bio-Techne's own news is a modest in-line Q4 with revenue beat."
+      "reasoning": "Headlines are mostly generic 'tech stock' listicles with only vague Bio-Techne earnings-meet references; no clear direction."
     },
     "AAPL": {
       "rank": 5,
       "headline_count": 40,
-      "mentions_24h": 125,
-      "total_distinct_found": 326,
+      "mentions_24h": 123,
+      "total_distinct_found": 325,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Foldable iPhone Duo launch drove a 4% rise and analysts see pricing power holding, though revenue-decline bears persist."
+      "reasoning": "Foldable iPhone Duo launch drove a ~4% gain and strong retail enthusiasm, though skeptics cite high P/E and flat growth."
     },
     "TXN": {
       "rank": 6,
       "headline_count": 40,
-      "mentions_24h": 14,
+      "mentions_24h": 10,
       "total_distinct_found": 73,
       "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "Chip price increases could lift ASPs and margins, but stock has been lagging and fell more than the market recently."
+      "reasoning": "Chip price increases could lift ASPs and margins, but the stock has been underperforming the market recently."
     },
     "KVUE": {
       "rank": 7,
       "headline_count": 40,
       "mentions_24h": 5,
       "total_distinct_found": 64,
-      "llm_score": 0,
+      "llm_score": -1,
       "materiality": "low",
-      "reasoning": "Kimberly-Clark deal spread is only 0.6% so upside is capped, and a new Tylenol-in-pregnancy study adds litigation risk."
+      "reasoning": "Merger spread with Kimberly-Clark is only ~0.6% so upside is capped, and Tylenol-in-pregnancy litigation headlines add residual risk."
     },
     "CFG": {
       "rank": 8,
@@ -87,16 +87,16 @@
       "total_distinct_found": 57,
       "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Mostly routine 13F filings and an earnings-call scheduling notice, with supportive wealth-management hires and analyst fair-value upside."
+      "reasoning": "Mostly routine 13F filings and an earnings-call scheduling notice, with mildly positive wealth-advisor recruiting and analyst 'Moderate Buy'/undervalued commentary."
     },
     "CXW": {
       "rank": 9,
       "headline_count": 40,
       "mentions_24h": 1,
       "total_distinct_found": 60,
-      "llm_score": 2,
+      "llm_score": 1,
       "materiality": "medium",
-      "reasoning": "$500M accelerated buyback after $2.2B facility sales and a Q2 beat, though heavy cluster insider selling ($14M) tempers enthusiasm."
+      "reasoning": "$500M accelerated buyback, facility sales for $2.2B gross and a 52-week high are positive, but eight insiders selling $14.2M in 15 days tempers the read."
     },
     "PAYO": {
       "rank": 10,
@@ -105,25 +105,25 @@
       "total_distinct_found": 60,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Nuvei's $2.75B cash acquisition is essentially fully priced with minimal arbitrage left, plus shareholder suits over merger disclosures."
+      "reasoning": "Fixed-price $2.75B Nuvei cash acquisition leaves little arbitrage and shareholder suits over merger disclosures are noise at this point."
     },
     "CNP": {
       "rank": 11,
       "headline_count": 40,
       "mentions_24h": 2,
       "total_distinct_found": 63,
-      "llm_score": -1,
+      "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Debt tender offers and financing overhang, stock down 7.8% since last earnings with target cuts and insider selling."
+      "reasoning": "Debt tender offers and 13F filings are procedural; stock down 7.8% since last earnings with target cuts offsets dividend-stock praise."
     },
     "ALL": {
       "rank": 12,
       "headline_count": 40,
-      "mentions_24h": 12,
+      "mentions_24h": 13,
       "total_distinct_found": 70,
       "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Zacks #1 Strong Buy value/income screens and high-ROE highlights, but nothing company-specific and material."
+      "reasoning": "Zacks #1 value/income screen inclusion and high-ROE mentions are mildly supportive but non-material."
     },
     "XEL": {
       "rank": 13,
@@ -132,7 +132,7 @@
       "total_distinct_found": 59,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Almost entirely routine institutional-ownership filings; reaffirmed guidance and a Morgan Stanley target cut roughly offset."
+      "reasoning": "Almost entirely routine institutional ownership filings plus a Morgan Stanley target reduction; reaffirmed guidance is neutral."
     },
     "VMRK": {
       "rank": 14,
@@ -141,7 +141,7 @@
       "total_distinct_found": 25,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "Mizuho upgrade to Outperform with target to $73 and newly-largest US apartment REIT status post-merger."
+      "reasoning": "Mizuho upgrade to Outperform with target raised to $73 and status as largest US apartment REIT post-merger."
     },
     "EVRG": {
       "rank": 15,
@@ -150,7 +150,7 @@
       "total_distinct_found": 61,
       "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Data-center-driven load growth (3 GW signed, 5 GW pipeline) and reaffirmed guidance, but shares lost the 50 DMA."
+      "reasoning": "3 GW of signed large loads and a 5 GW generation pipeline plus reaffirmed 6-8% EPS growth, though technicals show sell signals."
     },
     "INVH": {
       "rank": 16,
@@ -159,7 +159,7 @@
       "total_distinct_found": 62,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Routine dividend declaration and 13F filings; oversold-bounce commentary and raised guidance offset a 5% four-week decline."
+      "reasoning": "Routine dividend maintenance at $0.30 and 13F filings; oversold-bounce and buyback presentation are modest positives."
     },
     "CUBE": {
       "rank": 17,
@@ -168,7 +168,7 @@
       "total_distinct_found": 60,
       "llm_score": -1,
       "materiality": "low",
-      "reasoning": "Q2 FFO missed estimates and Seeking Alpha rates it Hold, saying the 5.4% yield isn't enough."
+      "reasoning": "Q2 FFO missed estimates and Seeking Alpha argues the 5.4% yield isn't enough to justify buying."
     },
     "WRB": {
       "rank": 18,
@@ -177,7 +177,7 @@
       "total_distinct_found": 60,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Disciplined underwriting praised but pricing is softening, revenue grew only 1.2%, and shares are seen as fully/over-valued."
+      "reasoning": "Underwriting discipline praised but soft pricing pressure, a prior Wells Fargo downgrade, and near fair value on GF Value leave it neutral."
     },
     "CZR": {
       "rank": 19,
@@ -186,7 +186,7 @@
       "total_distinct_found": 65,
       "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "Management refused to update shareholders on the take-private, canceled the earnings call, rejected a higher Icahn bid, and lost NFL betting-partner status to Fanatics."
+      "reasoning": "Management silence on the take-private, rejection of Icahn's higher $34 offer for a ~$29 deal, a liability verdict, losing NFL official-operator status to Fanatics, and a law-firm fairness investigation."
     },
     "WMG": {
       "rank": 20,
@@ -195,7 +195,7 @@
       "total_distinct_found": 59,
       "llm_score": -1,
       "materiality": "low",
-      "reasoning": "Q2 beat and Sureel AI acquisition are positives, but Sony/Warner's copyright suit against Anthropic and Wall Street's shrug at earnings keep it neutral-to-negative."
+      "reasoning": "Q2 beat and Sureel AI acquisition are positives, but Sony/Warner suing Anthropic is a slow-moving legal item and insiders are planning sales."
     },
     "ARMK": {
       "rank": 21,
@@ -204,7 +204,7 @@
       "total_distinct_found": 61,
       "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Q3 earnings beat and growth-stock endorsements, offset by GuruFocus calling it 36% overvalued amid persistent insider selling; most filings are routine dividend-unit credits."
+      "reasoning": "Q3 earnings and revenue beat plus NFL-season menu expansion, tempered by GF Value calling it 36.5% overvalued with persistent insider selling."
     },
     "ADMA": {
       "rank": 22,
@@ -213,7 +213,7 @@
       "total_distinct_found": 59,
       "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "Securities class action alleging channel-stuffing, BIVIGAM setback, rising 22.7M-share short interest and damaged management credibility despite ASCENIV growth."
+      "reasoning": "Persistent stock decline, ~10.5% short interest, a securities class action alleging channel-stuffing, and credibility damage from the BIVIGAM issue despite strong ASCENIV growth."
     },
     "AES": {
       "rank": 23,
@@ -222,7 +222,7 @@
       "total_distinct_found": 62,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "BlackRock/GIP take-private at $15 received CFIUS approval so upside is capped, though consumer groups are challenging it at FERC."
+      "reasoning": "CFIUS approval advances the $15 take-private, but shareholders are capped at the deal price and consumer groups are challenging at FERC."
     },
     "KEY": {
       "rank": 24,
@@ -231,25 +231,25 @@
       "total_distinct_found": 60,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "Headlines are mostly generic 'key levels' market noise; KeyCorp's own news is a new strategy chief and discount-to-fair-value commentary."
+      "reasoning": "Headlines are mostly unrelated 'key' keyword noise; genuine KeyCorp items are a strategy-chief hire and a discount-to-fair-value note."
     },
     "DVN": {
       "rank": 25,
       "headline_count": 40,
-      "mentions_24h": 19,
+      "mentions_24h": 18,
       "total_distinct_found": 65,
       "llm_score": 3,
       "materiality": "medium",
-      "reasoning": "Stock breaking to 52-week highs on rising oil, Stifel reinstated Buy with a $61 target, and Seaport named it a top upstream pick post-Coterra merger."
+      "reasoning": "Stifel reinstates Buy with $61 target, technical breakout to 52-week highs on rising oil, and Coterra merger synergies with a Seaport top-pick designation."
     },
     "ISRG": {
       "rank": 26,
       "headline_count": 40,
-      "mentions_24h": 8,
+      "mentions_24h": 7,
       "total_distinct_found": 70,
-      "llm_score": -1,
+      "llm_score": -2,
       "materiality": "medium",
-      "reasoning": "Large meta-analysis of 14M surgeries supports da Vinci, but management flagged decelerating US growth and the stock is 41% off its high at decade-cheap multiples."
+      "reasoning": "Management flagged decelerating US growth (60% of business), stock down 25% and 41% off highs, partially offset by a favorable 14-million-procedure meta-analysis."
     },
     "OHI": {
       "rank": 27,
@@ -258,7 +258,7 @@
       "total_distinct_found": 61,
       "llm_score": 2,
       "materiality": "medium",
-      "reasoning": "32-facility Florida lease to PACS, dividend increase, Mizuho forecasting strong appreciation and demographic tailwinds."
+      "reasoning": "32-facility Florida lease expansion with PACS, Mizuho forecasting strong appreciation, dividend raise and record institutional ownership, though Wells Fargo is pessimistic."
     },
     "NLY": {
       "rank": 28,
@@ -267,7 +267,7 @@
       "total_distinct_found": 65,
       "llm_score": 0,
       "materiality": "low",
-      "reasoning": "$0.75 quarterly dividend declared as expected; mortgage rates back above 7% is a mixed signal for mREITs."
+      "reasoning": "Routine $0.75 quarterly dividend declaration; mortgage rates above 7% cut both ways for mREIT spreads and book value."
     },
     "AROC": {
       "rank": 29,
@@ -276,16 +276,16 @@
       "total_distinct_found": 59,
       "llm_score": -3,
       "materiality": "medium",
-      "reasoning": "Earnings miss with guidance tightening, Zacks Bear of the Day and Strong Sell rating, and a sustained multi-month decline."
+      "reasoning": "Tightened guidance, Zacks Bear of the Day and Strong Sell listing, revenue down 3% YoY with a sustained multi-month downtrend."
     },
     "RRC": {
       "rank": 30,
       "headline_count": 40,
       "mentions_24h": 3,
       "total_distinct_found": 61,
-      "llm_score": 0,
+      "llm_score": 1,
       "materiality": "low",
-      "reasoning": "Only a modest Barclays target raise to $42 with an Equal-Weight hold; remaining posts are retail hype with no substance."
+      "reasoning": "Q2 earnings and revenue beat with Barclays nudging its target to $42, but only Equal-Weight and most commentary is retail hype."
     }
   }
 }
