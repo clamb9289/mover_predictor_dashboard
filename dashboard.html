@@ -821,6 +821,14 @@ const PERF_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_da
 // 60 requests/hour per IP and the 60s auto-refresh alone would already
 // exhaust that with just one tab open.
 const PERF_API_URL = "https://api.github.com/repos/clamb9289/mover_predictor_dashboard/contents/performance.json";
+// 2026-09-11: the Contents API above silently stops returning file content
+// once a file crosses ~1MB (encoding becomes "none", content becomes "") --
+// confirmed live, performance.json is now 1,149,145 bytes. Below that
+// threshold Force Refresh worked fine for months; past it, JSON.parse('')
+// throws "Unexpected end of JSON input" every time. The git Blobs API has
+// no such limit (tested up to 100MB) and returns the same base64 content
+// shape -- this is the documented GitHub workaround for exactly this case.
+const PERF_BLOB_API_URL = "https://api.github.com/repos/clamb9289/mover_predictor_dashboard/git/blobs/";
 const MODEL_REVIEW_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/model_review.json";
 const MODEL_REVIEW_SEEN_KEY = "model_review_last_seen";
 const ACTUAL_MOVER_CAUSES_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/actual_mover_causes.json";
@@ -983,7 +991,15 @@ async function loadPerfData(force) {
       // Contents API returns base64-encoded content, not raw JSON directly.
       const res = await fetch(PERF_API_URL, { headers: { 'Accept': 'application/vnd.github+json' } });
       if (!res.ok) throw new Error('HTTP ' + res.status);
-      const body = await res.json();
+      let body = await res.json();
+      if (body.encoding === 'none' || !body.content) {
+        // File is too large for the Contents API to inline (>~1MB) -- fall
+        // back to the git Blobs API using the same response's sha, which
+        // has no such size cap. See PERF_BLOB_API_URL's comment above.
+        const blobRes = await fetch(PERF_BLOB_API_URL + body.sha, { headers: { 'Accept': 'application/vnd.github+json' } });
+        if (!blobRes.ok) throw new Error('HTTP ' + blobRes.status + ' (blob fallback)');
+        body = await blobRes.json();
+      }
       // atob() alone mangles multi-byte UTF-8 (e.g. smart quotes/accents in a
       // real news headline) -- decode the raw bytes properly instead.
       const bytes = Uint8Array.from(atob(body.content), c => c.charCodeAt(0));
