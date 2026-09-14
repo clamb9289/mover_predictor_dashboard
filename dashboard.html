@@ -989,14 +989,29 @@ async function loadPerfData(force) {
     let data;
     if (force) {
       // Contents API returns base64-encoded content, not raw JSON directly.
-      const res = await fetch(PERF_API_URL, { headers: { 'Accept': 'application/vnd.github+json' } });
+      // 2026-09-11: api.github.com sends `Cache-Control: public, max-age=60`
+      // on this endpoint -- confirmed live this lets a browser (or an
+      // intermediate cache) keep serving an OLD cached response (with a
+      // stale blob `sha`) well past 60s in practice. Since a stale sha
+      // then fetches an OLD, IMMUTABLE blob successfully (no error, just
+      // wrong content), this silently defeated the whole point of Force
+      // Refresh -- confirmed live: a user saw "fetched OK, nothing has
+      // changed" repeatedly while the real file had already changed.
+      // `cache: 'no-store'` + a cache-busting query param on BOTH requests
+      // below removes any ambiguity, matching the same intent this
+      // button already existed for.
+      const res = await fetch(PERF_API_URL + '?t=' + Date.now(), {
+        headers: { 'Accept': 'application/vnd.github+json' }, cache: 'no-store',
+      });
       if (!res.ok) throw new Error('HTTP ' + res.status);
       let body = await res.json();
       if (body.encoding === 'none' || !body.content) {
         // File is too large for the Contents API to inline (>~1MB) -- fall
         // back to the git Blobs API using the same response's sha, which
         // has no such size cap. See PERF_BLOB_API_URL's comment above.
-        const blobRes = await fetch(PERF_BLOB_API_URL + body.sha, { headers: { 'Accept': 'application/vnd.github+json' } });
+        const blobRes = await fetch(PERF_BLOB_API_URL + body.sha + '?t=' + Date.now(), {
+          headers: { 'Accept': 'application/vnd.github+json' }, cache: 'no-store',
+        });
         if (!blobRes.ok) throw new Error('HTTP ' + blobRes.status + ' (blob fallback)');
         body = await blobRes.json();
       }
