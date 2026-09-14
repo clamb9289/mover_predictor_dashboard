@@ -30467,10 +30467,10 @@
             "relative_strength_pct": 1.37,
             "gap_pct": 0.26
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 86.52,
+          "paper_exit_pct": 0.2,
+          "paper_exit_dollar": 0.2,
+          "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "live_price": 85.88,
@@ -30482,7 +30482,9 @@
           "days_held": 0,
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0064,
-          "paper_trail_floor_active": true
+          "paper_trail_floor_active": true,
+          "paper_exit_time": "1:28 PM ET",
+          "paper_exit_date": "2026-09-14"
         },
         {
           "ticker": "IR",
@@ -30894,7 +30896,7 @@
       "net_trading_gain": -13.7,
       "net_trading_gain_pct": -0.69,
       "closed_rounds": [],
-      "prices_last_updated": "1:20 PM ET",
+      "prices_last_updated": "1:28 PM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 758.18,
