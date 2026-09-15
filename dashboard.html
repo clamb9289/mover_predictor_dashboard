@@ -1829,6 +1829,7 @@ function buildPickCards(predictions, idPrefix) {
     const tradeMetaGrid = (isSkipped || isNotBought) ? '' : `
       <div class="signal-mini-grid" style="margin-top:8px">
         <div class="signal-mini"><div class="signal-mini-label">Purchased</div><div class="signal-mini-value">${p.buy_date ?? '—'}</div></div>
+        ${isExited ? `<div class="signal-mini"><div class="signal-mini-label">Sold</div><div class="signal-mini-value">${p.paper_exit_date ?? '—'}</div></div>` : ''}
         <div class="signal-mini"><div class="signal-mini-label">Entry Slippage</div><div class="signal-mini-value">${p.slippage_pct != null ? fmt(p.slippage_pct, 3) : '—'}</div></div>
         <div class="signal-mini"><div class="signal-mini-label">Peak Reached</div><div class="signal-mini-value">${p.paper_peak_pct != null ? fmt(p.paper_peak_pct * 100, 2) : '—'}</div></div>
       </div>`;
