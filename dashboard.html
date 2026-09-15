@@ -837,6 +837,19 @@ const LLM_SENTIMENT_URL = "https://raw.githubusercontent.com/clamb9289/mover_pre
 const TAX_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/tax_liability.json";
 const CUMULATIVE_STATS_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/cumulative_trade_stats.json";
 const REFRESH_INTERVAL = 60;
+// History chart cutoff -- added 2026-09-15. The account was fully reset on
+// this date ($300 old account -> $2,000 new seed, see project history/
+// capital_contributions), and a real WBS write-off (-100% on 2026-08-18,
+// the Santander-merger delisting, a single already-known event) sits in
+// the OLD account's data. The Combined/Cumulative chart used to naively
+// average that day's tiny prediction sample (n=2) and sum it forever,
+// permanently showing the whole portfolio down ~58% when the REAL account
+// (net_trading_gain_pct, dollar-weighted) only ever moved about -1% that
+// day. Starting the History tab here removes the old, superseded account
+// entirely rather than trying to splice two different capital bases into
+// one series. See the Combined-mode rewrite in renderChart() for the
+// other half of this fix (real equity-based math, not just this cutoff).
+const HISTORY_CHART_START_DATE = "2026-09-11";
 // Fallback only -- render() below overwrites this from the latest day's own
 // max_hold_days field (emitted by predictor.py, sourced from trader.py's
 // real MAX_HOLD_DAYS) whenever it's present, so this hardcoded copy can't
@@ -2740,7 +2753,13 @@ function renderChart() {
   const canvas = document.getElementById('perf-chart');
   if (!canvas || !perfData) return;
   updateOverlayButtonAvailability();
-  const days = perfData.days || [];
+  // See HISTORY_CHART_START_DATE's own comment -- drops the old, fully
+  // superseded pre-reset account from this chart entirely (both Combined
+  // and By Stock), rather than showing two different capital bases as one
+  // continuous line.
+  const days = (perfData.days || []).filter(d => d.date >= HISTORY_CHART_START_DATE);
+  const dayByDate = {};
+  days.forEach(d => { dayByDate[d.date] = d; });
   const { byDate, tickers, dates } = buildDailyMoveData(days);
 
   if (!dates.length) {
@@ -2753,19 +2772,36 @@ function renderChart() {
   let legendHtml = '';
 
   if (chartMode === 'combined') {
-    // Average the 3 picks' moves per day
-    let cumulative = 0;
-    const dataPoints = dates.map(d => {
-      const moves = Object.values(byDate[d]);
-      const avg = moves.reduce((a,b) => a+b, 0) / moves.length;
-      if (chartView === 'cumulative') {
-        cumulative += avg;
-        return cumulative;
-      }
-      return avg;
+    // Rewritten 2026-09-15 -- this used to average that day's predictions[]
+    // moves (an equal-weighted mean over whatever tiny sample happened to
+    // resolve that day, sometimes as few as 1-2) and sum the daily averages
+    // into a running total. A single real write-off (WBS, -100% on one
+    // position, averaged over n=2 that day) produced a permanent ~-52
+    // percentage-point phantom crash that a running SUM has no way to ever
+    // recover from -- see HISTORY_CHART_START_DATE's comment for the full
+    // incident. Real account performance was never actually down anywhere
+    // near that (net_trading_gain_pct that same day was -0.97%, a properly
+    // dollar-weighted number across the WHOLE real account, not 2 handpicked
+    // tickers). Now sources directly from each day's own already-correct
+    // net_trading_gain_pct/current_equity (written by trader.py's
+    // sync_real_trades_to_performance(), same numbers the Account cards
+    // elsewhere on this page already show) instead of re-deriving anything
+    // from predictions[] -- properly dollar-weighted and naturally immune to
+    // one thin-sample outlier day ever again.
+    const dataPoints = dates.map((d, i) => {
+      const day = dayByDate[d];
+      if (!day || day.net_trading_gain_pct == null) return null;
+      if (chartView === 'cumulative') return day.net_trading_gain_pct;
+      // Daily %: real day-over-day equity change, not a re-derived pick
+      // average. First point on the (now HISTORY_CHART_START_DATE-anchored)
+      // axis has no prior day to diff against.
+      if (i === 0) return 0;
+      const prevDay = dayByDate[dates[i - 1]];
+      if (!prevDay || prevDay.current_equity == null || !prevDay.current_equity) return null;
+      return ((day.current_equity - prevDay.current_equity) / prevDay.current_equity) * 100;
     });
     datasets = [{
-      label: 'Portfolio Avg',
+      label: 'Net Trading Gain',
       data: dataPoints,
       borderColor: '#5b7fff',
       backgroundColor: 'rgba(91,127,255,0.1)',
@@ -2773,8 +2809,9 @@ function renderChart() {
       tension: 0.3,
       pointRadius: 4,
       pointBackgroundColor: '#5b7fff',
+      spanGaps: true,
     }];
-    legendHtml = `<div class="chart-legend-item"><div class="chart-legend-dot" style="background:#5b7fff"></div>Portfolio Average (3-pick mean)</div>`;
+    legendHtml = `<div class="chart-legend-item"><div class="chart-legend-dot" style="background:#5b7fff"></div>Net Trading Gain (real account %, dollar-weighted)</div>`;
   } else {
     tickers.forEach((ticker, i) => {
       const color = STOCK_COLORS[i % STOCK_COLORS.length];
@@ -2912,7 +2949,13 @@ function renderChart() {
       scales: {
         y: {
           grid: { color: 'rgba(255,255,255,0.05)' },
-          ticks: { color: '#6b6f84', callback: (v) => v + '%' },
+          // .toFixed(2) here (matching the tooltip's own formatting a few
+          // lines up) -- found live 2026-09-15 while rewriting the Combined
+          // dataset to real equity deltas: an unrounded raw tick value
+          // renders floating-point noise like "-0.19999999999998999%".
+          // Chart.js still auto-picks which computed tick VALUES to show;
+          // this only controls how each one is displayed.
+          ticks: { color: '#6b6f84', callback: (v) => Number(v).toFixed(2) + '%' },
           // Center on zero
           grace: '10%',
         },
