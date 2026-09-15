@@ -362,6 +362,16 @@
   .chart-legend-item { display: flex; align-items: center; gap: 5px; }
   .chart-legend-dot { width: 8px; height: 8px; border-radius: 50%; }
 
+  /* Exit Outcomes by Hold Day (2026-09-15) -- date-range controls.
+     Native <input type="date"> can't be fully re-themed (the calendar-
+     picker icon in particular stays whatever the browser draws), but
+     color-scheme:dark gets Chrome/Edge/Firefox to draw that icon and
+     the native popup in a dark palette instead of a jarring white box
+     against this page's dark theme -- cheap, no JS needed. */
+  .date-range-input { background: var(--surface2); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 5px 8px; font-size: 12px; font-family: inherit; color-scheme: dark; }
+  .date-range-sep { color: var(--muted); font-size: 12px; }
+  .exit-outcomes-empty { display: flex; align-items: center; justify-content: center; height: 100%; color: var(--muted); font-size: 12px; }
+
   /* Model tab */
   .model-section { margin-bottom: 28px; }
   .model-section h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
@@ -614,6 +624,21 @@
       </div>
       <div class="chart-wrap"><canvas id="perf-chart"></canvas></div>
       <div class="chart-legend" id="chart-legend"></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Exit Outcomes by Hold Day</div>
+      <div class="chart-controls">
+        <div class="chart-toggle-group" id="exit-outcomes-preset-group">
+          <div class="chart-toggle-btn" onclick="setExitOutcomesRangePreset(7)">7D</div>
+          <div class="chart-toggle-btn active" onclick="setExitOutcomesRangePreset(30)">30D</div>
+          <div class="chart-toggle-btn" onclick="setExitOutcomesRangePreset('all')">All</div>
+        </div>
+        <input type="date" id="exit-outcomes-start" class="date-range-input" onchange="onExitOutcomesDateInputChange()">
+        <span class="date-range-sep">&ndash;</span>
+        <input type="date" id="exit-outcomes-end" class="date-range-input" onchange="onExitOutcomesDateInputChange()">
+      </div>
+      <div class="chart-wrap"><canvas id="exit-outcomes-chart"></canvas></div>
+      <div class="chart-legend" id="exit-outcomes-legend"></div>
     </div>
     <div class="card">
       <div class="card-title">Full Trade History</div>
@@ -900,7 +925,7 @@ function showTab(name) {
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
   if (name === 'today') fitStatValues(document.getElementById('tab-today'));
-  if (name === 'history' && perfData) renderChart();
+  if (name === 'history' && perfData) { renderChart(); renderExitOutcomesChart(); }
   if (name === 'research') loadResearchResults();
   if (name === 'modelreview') loadModelReview();
   if (name === 'tax') loadTaxData();
@@ -1433,6 +1458,7 @@ function render(data) {
   renderHistory(days);
   if (document.getElementById('tab-history').classList.contains('active')) {
     renderChart();
+    renderExitOutcomesChart();
   }
 }
 
@@ -2966,6 +2992,239 @@ function renderChart() {
       }
     }
   });
+}
+
+// ============================================================
+// Exit Outcomes by Hold Day (2026-09-15) -- a scatter of every
+// resolved exit this session, x = which day of the hold it closed on
+// (1..MAX_HOLD_DAYS, matching the "Day N of M" badge language used
+// elsewhere on this page), y = the real exit %. Built entirely from
+// fields performance.json's predictions[] already carries per position
+// (paper_exit_pct/paper_exit_date/paper_exit_reason/days_held, all
+// synced by trader.py's sync_real_trades_to_performance() -- see
+// paper_exit_reason's own trader.py comments) -- no new tracking
+// needed. Point color/shape is keyed off paper_exit_reason's real text
+// so a genuine after-hours rescue fill (currently zero -- none have
+// filled yet, see project history) gets its own distinct marker the
+// moment one does, without this code needing to change.
+// Real reason-text audit (2026-09-15, against the actual live data, not
+// just reading trader.py's source) found the naive "match by reason
+// prefix alone" scheme insufficient: 193 of ~220 real broker-side exits
+// share ONE generic reason, "Trailing stop order filled (broker-side,
+// ahead of the next poll)" -- sync_trailing_stop() arms a resting order
+// at EITHER a TRAIL_STEPS floor (always positive) OR exactly
+// STOP_LOSS_PCT (a fixed -3%, see trader.py's target_stop_pct), and the
+// reconciliation path that detects a broker-side fill doesn't carry
+// forward which of the two it was. Explicit "Stop loss (...)" text
+// exists but is vanishingly rare in practice (n=1) -- almost every real
+// stop-loss hit is invisible under this generic label unless disambiguated
+// by the exit % itself, which is done below.
+const STOP_LOSS_PCT_APPROX = -2.5; // trader.py's real STOP_LOSS_PCT is exactly -3.0% -- -2.5% gives slippage/gap-fill room without risking a real floor breach (always positive) ever crossing this line
+
+const EXIT_REASON_CATEGORIES = [
+  // Order matters -- first match wins, most specific patterns first.
+  { key: 'rescue', label: 'After-Hours Rescue', color: '#fbbf24', pointStyle: 'star', pointRadius: 8,
+    match: r => r.startsWith('After-hours rescue') },
+  { key: 'floor', label: 'Trailing Floor', color: '#34d399', pointStyle: 'circle', pointRadius: 5,
+    match: r => r.startsWith('Trail stop:') },
+  { key: 'stop', label: 'Stop Loss', color: '#f87171', pointStyle: 'circle', pointRadius: 5,
+    match: r => r.startsWith('Stop loss') },
+  { key: 'maxhold', label: 'Max Hold (Forced)', color: '#d97757', pointStyle: 'rectRot', pointRadius: 6,
+    match: r => r.startsWith('Max hold') },
+  { key: 'eod', label: 'EOD Sell (Winner)', color: '#5b7fff', pointStyle: 'circle', pointRadius: 5,
+    match: r => r.startsWith('EOD sell') },
+  { key: 'portfolio', label: 'Portfolio/Account-Level', color: '#cbd5e1', pointStyle: 'triangle', pointRadius: 6,
+    match: r => r.startsWith('Portfolio profit lock') || r.startsWith('Portfolio drawdown stop') ||
+                r.startsWith('Risk limit triggered') || r.startsWith('Trading disabled') ||
+                r.startsWith('Manual sell-all') ||
+                (r.startsWith('Closed by automated market-order sell') && / other position/.test(r)) },
+];
+// Genuinely uncertain/unattributable closes AND the disambiguated-by-%
+// broker-fill fallback below both land here -- kept as one bucket rather
+// than splitting hairs the underlying data can't actually support.
+const EXIT_REASON_EXTERNAL = { key: 'external', label: 'External / Reconciled', color: '#6b6f84', pointStyle: 'rectRot', pointRadius: 5 };
+const EXIT_REASON_FLOOR = EXIT_REASON_CATEGORIES[1];
+const EXIT_REASON_STOP = EXIT_REASON_CATEGORIES[2];
+
+// "Paper account reset (administrative action, not a real trading exit)"
+// -- explicitly NOT a real exit per its own text (includes WBS's -100%
+// write-off, see project history). Plotting these would repeat the exact
+// mistake the Performance Over Time chart made with the same write-off:
+// a non-representative administrative event distorting a real
+// distribution. Filtered out entirely in buildExitOutcomesPoints(), not
+// just recolored -- there's no "category" that makes this belong here.
+function isAdministrativeReason(reason) {
+  return !!reason && reason.startsWith('Paper account reset');
+}
+
+function categorizeExitReason(reason, pct) {
+  if (!reason) return EXIT_REASON_EXTERNAL;
+  const explicit = EXIT_REASON_CATEGORIES.find(c => c.match(reason));
+  if (explicit) return explicit;
+  if (reason.startsWith('Trailing stop order filled')) {
+    return pct <= STOP_LOSS_PCT_APPROX ? EXIT_REASON_STOP : EXIT_REASON_FLOOR;
+  }
+  return EXIT_REASON_EXTERNAL; // "Closed outside this run", "Closed by a real market-order sell",
+                                // "Reconstructed by reconcile...", "Retry of previously failed sell", etc.
+}
+
+// Deterministic pseudo-random jitter (NOT Math.random()) -- keyed off
+// ticker+exitDate so the same point sits at the same x every render.
+// Math.random() here would make every point visibly jump on each 60s
+// auto-refresh, which is worse than the overlap it would be avoiding.
+function jitterFor(key) {
+  let h = 0;
+  for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) | 0;
+  return ((h % 1000) / 1000 - 0.5) * 0.5; // +/- 0.25 days
+}
+
+let exitOutcomesChartInstance = null;
+let exitOutcomesRangeStart = null; // "YYYY-MM-DD" or null (unset -- defaults applied on first render)
+let exitOutcomesRangeEnd = null;
+
+function buildExitOutcomesPoints(days, startDate, endDate) {
+  const byCategory = {};
+  days.forEach(day => {
+    (day.predictions || []).forEach(p => {
+      if (!p.paper_exit_date || p.paper_exit_pct == null) return; // still open, or never resolved
+      if (p.paper_exit_date < startDate || p.paper_exit_date > endDate) return;
+      if (isAdministrativeReason(p.paper_exit_reason)) return; // account reset, WBS write-off, etc. -- not a real exit, see isAdministrativeReason()'s own comment
+      const cat = categorizeExitReason(p.paper_exit_reason, p.paper_exit_pct);
+      const daysHeld = (p.days_held ?? 0) + 1; // 0-indexed internally; "Day 1" to match the "Day N of M" badge elsewhere
+      const jitterKey = `${p.ticker}|${p.paper_exit_date}`;
+      (byCategory[cat.key] ||= { cat, points: [] }).points.push({
+        x: daysHeld + jitterFor(jitterKey),
+        y: p.paper_exit_pct,
+        ticker: p.ticker,
+        exitDate: p.paper_exit_date,
+        reason: p.paper_exit_reason,
+      });
+    });
+  });
+  return byCategory;
+}
+
+function setExitOutcomesRangePreset(preset) {
+  document.getElementById('exit-outcomes-preset-group').querySelectorAll('.chart-toggle-btn')
+    .forEach((b, i) => b.classList.toggle('active', (preset === 7 && i === 0) || (preset === 30 && i === 1) || (preset === 'all' && i === 2)));
+  if (!perfData) return;
+  const dates = (perfData.days || []).map(d => d.date).sort();
+  if (!dates.length) return;
+  const latest = dates[dates.length - 1];
+  if (preset === 'all') {
+    exitOutcomesRangeStart = dates[0];
+  } else {
+    const d = new Date(latest + 'T00:00:00Z');
+    d.setUTCDate(d.getUTCDate() - preset);
+    exitOutcomesRangeStart = d.toISOString().slice(0, 10);
+  }
+  exitOutcomesRangeEnd = latest;
+  document.getElementById('exit-outcomes-start').value = exitOutcomesRangeStart;
+  document.getElementById('exit-outcomes-end').value = exitOutcomesRangeEnd;
+  renderExitOutcomesChart();
+}
+
+function onExitOutcomesDateInputChange() {
+  exitOutcomesRangeStart = document.getElementById('exit-outcomes-start').value || exitOutcomesRangeStart;
+  exitOutcomesRangeEnd = document.getElementById('exit-outcomes-end').value || exitOutcomesRangeEnd;
+  // Manual edit no longer matches any preset -- deselect all three rather
+  // than leave a stale one looking active.
+  document.getElementById('exit-outcomes-preset-group').querySelectorAll('.chart-toggle-btn')
+    .forEach(b => b.classList.remove('active'));
+  renderExitOutcomesChart();
+}
+
+function renderExitOutcomesChart() {
+  const canvas = document.getElementById('exit-outcomes-chart');
+  if (!canvas || !perfData) return;
+  const days = perfData.days || [];
+
+  // Lazy default on first render: last 30 real days, same as the 30D
+  // preset -- full history can be 40+ trading days deep and hundreds of
+  // exits, too dense to be a useful DEFAULT view even though it's one
+  // click away via the All preset.
+  if (exitOutcomesRangeStart == null) {
+    setExitOutcomesRangePreset(30);
+    return; // setExitOutcomesRangePreset() calls back into this function
+  }
+
+  const byCategory = buildExitOutcomesPoints(days, exitOutcomesRangeStart, exitOutcomesRangeEnd);
+  const totalPoints = Object.values(byCategory).reduce((n, c) => n + c.points.length, 0);
+  const legendEl = document.getElementById('exit-outcomes-legend');
+
+  if (!totalPoints) {
+    if (exitOutcomesChartInstance) { exitOutcomesChartInstance.destroy(); exitOutcomesChartInstance = null; }
+    canvas.parentElement.innerHTML = '<div class="exit-outcomes-empty">No exits resolved in this date range.</div>' +
+      '<canvas id="exit-outcomes-chart"></canvas>'; // keep the canvas id alive for the next render
+    legendEl.innerHTML = '';
+    return;
+  }
+
+  const datasets = EXIT_REASON_CATEGORIES.concat([EXIT_REASON_EXTERNAL])
+    .filter(cat => byCategory[cat.key])
+    .map(cat => ({
+      label: cat.label,
+      data: byCategory[cat.key].points,
+      backgroundColor: cat.color,
+      borderColor: cat.color,
+      pointStyle: cat.pointStyle,
+      pointRadius: cat.pointRadius,
+      pointHoverRadius: cat.pointRadius + 2,
+    }));
+
+  if (exitOutcomesChartInstance) exitOutcomesChartInstance.destroy();
+  exitOutcomesChartInstance = new Chart(canvas.getContext('2d'), {
+    type: 'scatter',
+    data: { datasets },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      animation: false,
+      plugins: {
+        legend: { display: false }, // custom legend below, same house style as the Performance chart
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const p = ctx.raw;
+              return `${p.ticker}: ${p.y >= 0 ? '+' : ''}${p.y.toFixed(2)}% on ${p.exitDate} (${p.reason})`;
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          type: 'linear',
+          min: 0.5, max: MAX_HOLD_DAYS + 0.5,
+          ticks: { stepSize: 1, color: '#6b6f84', callback: (v) => Number.isInteger(v) ? `Day ${v}` : '' },
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          title: { display: true, text: 'Day of hold exited', color: '#6b6f84', font: { size: 11 } },
+        },
+        y: {
+          ticks: { color: '#6b6f84', callback: (v) => Number(v).toFixed(2) + '%' },
+          grid: { color: 'rgba(255,255,255,0.05)' },
+          title: { display: true, text: 'Exit %', color: '#6b6f84', font: { size: 11 } },
+        },
+      },
+    },
+  });
+
+  // Rescue is always listed even at zero -- per its own comment above, no
+  // real order has ever filled yet (see project history), and an absent
+  // legend entry would look identical to "this isn't tracked" rather than
+  // "tracked, hasn't happened." Every other empty category is skipped as
+  // usual -- only rescue carries enough standing significance to earn a
+  // permanent zero-count line.
+  const legendCats = EXIT_REASON_CATEGORIES.concat([EXIT_REASON_EXTERNAL])
+    .filter(cat => byCategory[cat.key] || cat.key === 'rescue');
+  legendEl.innerHTML = legendCats.map(cat => {
+    const shape = cat.pointStyle === 'star' ? '50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%'
+      : cat.pointStyle === 'triangle' ? '50% 0%, 0% 100%, 100% 100%'
+      : cat.pointStyle === 'rectRot' ? '50% 0%, 100% 50%, 50% 100%, 0% 50%'
+      : null;
+    const dotStyle = shape ? `clip-path: polygon(${shape});` : 'border-radius:50%;';
+    const count = byCategory[cat.key] ? byCategory[cat.key].points.length : 0;
+    return `<div class="chart-legend-item"><div class="chart-legend-dot" style="background:${cat.color};${dotStyle}"></div>${cat.label} (${count})</div>`;
+  }).join('');
 }
 
 const BACKTEST_BASE_URL = "https://api.github.com/repos/clamb9289/mover_predictor_dashboard/contents/backtest_results";
