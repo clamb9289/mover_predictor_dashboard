@@ -1,8 +1,8 @@
 {
-  "total_closed": 10,
+  "total_closed": 11,
   "total_wins": 6,
-  "total_pnl": -6.7769,
-  "total_pct_sum": -1.7278,
+  "total_pnl": -30.0885,
+  "total_pct_sum": -4.095,
   "since": "2026-09-14",
   "account_created_at": "2026-09-14T15:05:49Z",
   "note": "Display-only reset, NOT a new Alpaca account -- same $2,000 paper account opened 2026-09-11 continues unchanged, all real open/closed positions untouched. Re-scoped this headline counter to start fresh from 2026-09-14 at the user's request, marking the point after which the same-day runner-crash/stale-universe incident (warm_universe fix), the DASHBOARD_REPO_TOKEN secret (deleted+recreated), and track_post_sell_drift()'s unbatched-fetch bug (the real cause of a 21-minute buy_only hang) were all found and fixed -- a clean baseline to measure against going forward rather than folding a rocky first few days into the same running total. account_created_at is this reset's real wall-clock time, not a queried Alpaca value. Prior real activity, preserved for reference: the 2026-09-11-to-09-14 window under this SAME account had 1 real closed trade (1 win, +$0.33 total P&L, +0.28% total_pct_sum). Before that, the PRIOR account (2026-07-30 to 2026-09-11, 306 real closed trades, 200 wins, -$17.22 total P&L) was reset 2026-09-11 to seed this $2,000 baseline. Both prior periods' real trades remain fully intact in trade_log.json/performance.json for research -- only this durable full-history counter is being re-scoped, same non-destructive convention as the 2026-07-29 and 2026-09-11 resets before it (see project_stock_predictor_app_capital_contributions memory)."
