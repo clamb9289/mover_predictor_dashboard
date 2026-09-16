@@ -30690,7 +30690,8 @@
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:35 AM ET",
-          "paper_exit_date": "2026-09-16"
+          "paper_exit_date": "2026-09-16",
+          "postmortem": "Hit the stop loss (-3.09%) despite relative strength \u2014 worth reviewing if relative strength keeps producing false positives."
         },
         {
           "ticker": "VTR",
@@ -30716,9 +30717,9 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-09-14",
           "days_held": 2,
-          "live_price": 89.33,
-          "live_pct": -0.72,
-          "live_dollar": -7.09,
+          "live_price": 89.32,
+          "live_pct": -0.74,
+          "live_dollar": -7.29,
           "price_updated": "9:44 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
@@ -31386,9 +31387,9 @@
             "relative_strength_pct": -8.79,
             "gap_pct": -1.09
           },
-          "live_price": 24.31,
-          "live_pct": -1.49,
-          "live_dollar": -0.53,
+          "live_price": 24.33,
+          "live_pct": -1.41,
+          "live_dollar": -0.51,
           "price_updated": "9:44 AM ET",
           "buy_date": "2026-09-15",
           "prediction_price": 24.88,
@@ -31490,9 +31491,9 @@
             "relative_strength_pct": 2.8,
             "gap_pct": -0.37
           },
-          "live_price": 35.04,
-          "live_pct": -0.09,
-          "live_dollar": -0.03,
+          "live_price": 35.07,
+          "live_pct": -0.02,
+          "live_dollar": -0.01,
           "price_updated": "9:44 AM ET",
           "buy_date": "2026-09-15",
           "prediction_price": 34.8,
@@ -31535,7 +31536,8 @@
           "paper_exit_dollar": 0.38,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:33 AM ET",
-          "paper_exit_date": "2026-09-16"
+          "paper_exit_date": "2026-09-16",
+          "postmortem": "Cleared the trailing-stop floor (+1.11%) \u2014 the relative strength and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats."
         },
         {
           "rank": 15,
@@ -31583,7 +31585,7 @@
           "position_cost": 45.22,
           "days_held": 1,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0001,
+          "paper_peak_pct": 0.0003,
           "paper_trail_floor_active": false
         },
         {
@@ -31637,9 +31639,9 @@
             "gap_pct": -0.05
           },
           "live_price": 41.76,
-          "live_pct": 0.52,
-          "live_dollar": 0.08,
-          "price_updated": "9:39 AM ET",
+          "live_pct": 0.5,
+          "live_dollar": 0.07,
+          "price_updated": "9:44 AM ET",
           "skipped_reason": null,
           "buy_date": "2026-09-15",
           "prediction_price": 41.61,
@@ -32584,10 +32586,10 @@
     },
     {
       "date": "2026-09-16",
-      "regime": "Market regime OK \u2014 SPY +0.26%",
+      "regime": "Market regime OK \u2014 SPY +0.19%",
       "trading_skipped": false,
       "max_hold_days": 3,
-      "spy_regime_pct": 0.0026,
+      "spy_regime_pct": 0.00194,
       "top_sectors": [
         {
           "etf": "XLC",
@@ -32717,7 +32719,7 @@
           "signals": {
             "accumulation": 1.525,
             "sector_momentum_pct": 0.0,
-            "news_sentiment": 5.0,
+            "news_sentiment": 4.0,
             "relative_strength_pct": -5.3
           },
           "our_rank": null,
@@ -32757,7 +32759,7 @@
           "made_shortlist": false
         }
       ],
-      "model_insight": "Actual top movers had notably lower relative strength (-2.21 vs our picks' 1.02) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.00 vs our picks' 0.36) \u2014 possible signal to decrease weighting on sector momentum. Actual top movers had notably higher news sentiment (2.15 vs our picks' 0.85) \u2014 possible signal to increase weighting on news sentiment. SWKS (#139 of 655), QRVO (#219 of 655), RVTY (#182 of 655), VAL (#575 of 655), KRMN (#283 of 655), ILMN (#172 of 655), BRKR (#101 of 655), SM (#129 of 655) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap. WAY (accumulation #8), PBF (accumulation #13) made the top-50 shortlist but didn't score high enough on the full composite to reach our top picks.",
+      "model_insight": "Actual top movers had notably lower relative strength (-2.21 vs our picks' 1.02) \u2014 possible signal to decrease weighting on relative strength. Actual top movers had notably lower sector momentum (0.00 vs our picks' 0.36) \u2014 possible signal to decrease weighting on sector momentum. Actual top movers had notably higher news sentiment (2.05 vs our picks' 0.85) \u2014 possible signal to increase weighting on news sentiment. SWKS (#139 of 655), QRVO (#219 of 655), RVTY (#182 of 655), VAL (#575 of 655), KRMN (#283 of 655), ILMN (#172 of 655), BRKR (#101 of 655), SM (#129 of 655) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap. WAY (accumulation #8), PBF (accumulation #13) made the top-50 shortlist but didn't score high enough on the full composite to reach our top picks.",
       "predictions": [
         {
           "rank": 2,
@@ -32774,8 +32776,8 @@
           "paper_peak_pct": 0.0044,
           "paper_trail_floor_active": false,
           "days_held": 0,
-          "live_price": 29.61,
-          "live_pct": -0.8,
+          "live_price": 29.6,
+          "live_pct": -0.82,
           "live_dollar": -0.24,
           "price_updated": "9:44 AM ET"
         },
@@ -32789,7 +32791,7 @@
           "explainer": "Reconstructed from real trade data after a prior run's commit failed \u2014 original prediction metadata unavailable.",
           "signals": {},
           "buy_date": "2026-09-16",
-          "live_price": 17.78,
+          "live_price": 17.82,
           "live_pct": null,
           "live_dollar": null,
           "price_updated": "9:44 AM ET"
@@ -32804,7 +32806,7 @@
           "explainer": "Reconstructed from real trade data after a prior run's commit failed \u2014 original prediction metadata unavailable.",
           "signals": {},
           "buy_date": "2026-09-16",
-          "live_price": 28.03,
+          "live_price": 28.08,
           "live_pct": null,
           "live_dollar": null,
           "price_updated": "9:44 AM ET"
@@ -32819,7 +32821,7 @@
           "explainer": "Reconstructed from real trade data after a prior run's commit failed \u2014 original prediction metadata unavailable.",
           "signals": {},
           "buy_date": "2026-09-16",
-          "live_price": 40.58,
+          "live_price": 40.77,
           "live_pct": null,
           "live_dollar": null,
           "price_updated": "9:44 AM ET"
@@ -32840,9 +32842,9 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "live_price": 16.58,
-          "live_pct": -0.18,
-          "live_dollar": -0.03,
+          "live_price": 16.59,
+          "live_pct": -0.09,
+          "live_dollar": -0.01,
           "price_updated": "9:44 AM ET"
         },
         {
@@ -32855,7 +32857,7 @@
           "explainer": "Reconstructed from real trade data after a prior run's commit failed \u2014 original prediction metadata unavailable.",
           "signals": {},
           "buy_date": "2026-09-16",
-          "live_price": 21.55,
+          "live_price": 21.57,
           "live_pct": null,
           "live_dollar": null,
           "price_updated": "9:44 AM ET"
@@ -32946,7 +32948,7 @@
             "gap_pct": -0.4
           },
           "live_price": 10.09,
-          "live_pct": 0.8,
+          "live_pct": 0.75,
           "price_updated": "9:44 AM ET"
         },
         {
@@ -32964,8 +32966,8 @@
             "relative_strength_pct": 2.71,
             "gap_pct": -0.19
           },
-          "live_price": 95.2,
-          "live_pct": -0.71,
+          "live_price": 95.18,
+          "live_pct": -0.74,
           "price_updated": "9:44 AM ET"
         },
         {
@@ -32983,8 +32985,8 @@
             "relative_strength_pct": -1.24,
             "gap_pct": 0.3
           },
-          "live_price": 23.34,
-          "live_pct": -0.77,
+          "live_price": 23.32,
+          "live_pct": -0.85,
           "price_updated": "9:44 AM ET"
         },
         {
@@ -33002,8 +33004,8 @@
             "relative_strength_pct": 0.12,
             "gap_pct": -0.59
           },
-          "live_price": 274.03,
-          "live_pct": -0.39,
+          "live_price": 274.0,
+          "live_pct": -0.4,
           "price_updated": "9:44 AM ET"
         },
         {
@@ -33041,7 +33043,7 @@
             "gap_pct": 0.07
           },
           "live_price": 13.66,
-          "live_pct": -0.0,
+          "live_pct": 0.04,
           "price_updated": "9:44 AM ET"
         },
         {
@@ -33207,8 +33209,8 @@
         {
           "rank": 14,
           "ticker": "TXN",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": 1.11,
+          "dollar_change": 0.38,
           "position_size": 33.9,
           "actual_rank": 231,
           "total_ranked": 655,
@@ -33219,7 +33221,7 @@
             "relative_strength_pct": 3.53,
             "gap_pct": 0.64
           },
-          "postmortem": null
+          "postmortem": "Cleared the trailing-stop floor (+1.11%) \u2014 the relative strength and news sentiment signal(s) that drove this pick played out well. Worth leaning into when this profile repeats. The stock itself ranked #231 of 655 tracked that day, for context."
         },
         {
           "rank": 16,
@@ -33431,14 +33433,14 @@
       "total_predictions": 98,
       "days_tracked": 33,
       "total_contributed": 2000.0,
-      "current_equity": 1984.37,
-      "net_trading_gain": -15.63,
-      "net_trading_gain_pct": -0.78,
+      "current_equity": 1987.4,
+      "net_trading_gain": -12.6,
+      "net_trading_gain_pct": -0.63,
       "closed_rounds": [],
       "prices_last_updated": "9:44 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
-      "spy_live_price": 758.87,
+      "spy_live_price": 758.86,
       "spy_live_pct": 0.08
     }
   ]
