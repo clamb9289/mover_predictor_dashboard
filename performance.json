@@ -35047,7 +35047,7 @@
           "buy_date": "2026-09-18",
           "position_cost": 54.96,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": null,
           "paper_trail_floor_active": false,
           "days_held": 1,
           "live_price": 54.84,
@@ -35516,7 +35516,7 @@
           "sell_time": "2026-09-21T09:35:55.806127-04:00"
         }
       ],
-      "prices_last_updated": "9:36 AM ET",
+      "prices_last_updated": "9:37 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 761.69,
@@ -35773,7 +35773,13 @@
           "days_held": 0,
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0053,
-          "paper_trail_floor_active": true
+          "paper_trail_floor_active": true,
+          "paper_exit_price": 112.1,
+          "paper_exit_pct": 0.26,
+          "paper_exit_dollar": 0.35,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "9:37 AM ET",
+          "paper_exit_date": "2026-09-21"
         },
         {
           "rank": 4,
@@ -36605,7 +36611,7 @@
       "manual_pause_active": false,
       "spy_live_price": 766.5,
       "spy_live_pct": 0.47,
-      "prices_last_updated": "9:36 AM ET",
+      "prices_last_updated": "9:37 AM ET",
       "prices_after_hours": false,
       "closed_rounds": []
     }
