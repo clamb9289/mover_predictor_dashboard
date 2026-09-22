@@ -35022,20 +35022,17 @@
           "buy_date": "2026-09-18",
           "prediction_price": null,
           "position_cost": 56.16,
-          "days_held": 0,
-          "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false,
+          "days_held": 2,
           "live_price": 27.8,
           "live_pct": -1.0,
           "live_dollar": -0.56,
           "price_updated": "11:59 PM ET",
-          "paper_exit_price": 28.27,
-          "paper_exit_pct": 0.68,
-          "paper_exit_dollar": 0.38,
-          "paper_exit_reason": "Closed outside this run (ordertype.limit order -- possibly a concurrent bot process or a manual close)",
-          "paper_exit_time": "6:04 PM ET",
-          "paper_exit_date": "2026-09-18",
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "paper_exit_time": null,
+          "paper_exit_date": null,
           "postmortem": "Modest gain of +0.68%, but did not clear the +1% floor trigger."
         },
         {
@@ -35518,6 +35515,17 @@
           "sell_time": "2026-09-18T18:04:31.055186-04:00"
         },
         {
+          "ticker": "WBD",
+          "score": 0,
+          "entry_price": 28.08,
+          "paper_exit_price": 28.27,
+          "paper_exit_pct": 0.68,
+          "paper_exit_dollar": 0.38,
+          "paper_exit_reason": "After-hours rescue limit sell filled (+0.25% threshold)",
+          "buy_time": null,
+          "sell_time": "2026-09-18T18:04:34.617467-04:00"
+        },
+        {
           "ticker": "FLR",
           "score": 0,
           "entry_price": 54.96,
@@ -35540,7 +35548,7 @@
           "sell_time": "2026-09-21T09:35:55.806127-04:00"
         }
       ],
-      "prices_last_updated": "11:27 AM ET",
+      "prices_last_updated": "9:33 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 761.69,
@@ -36099,12 +36107,18 @@
           "price_updated": "9:31 AM ET",
           "buy_date": "2026-09-21",
           "prediction_price": 65.37,
-          "slippage_pct": 0.218,
+          "slippage_pct": -0.753,
           "position_cost": 75.84,
           "days_held": 1,
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0058,
-          "paper_trail_floor_active": true
+          "paper_trail_floor_active": true,
+          "paper_exit_price": 65.24,
+          "paper_exit_pct": -0.94,
+          "paper_exit_dollar": -0.71,
+          "paper_exit_reason": "Trail stop: +0.38% floor (step) triggered (-0.2%)",
+          "paper_exit_time": "9:32 AM ET",
+          "paper_exit_date": "2026-09-22"
         },
         {
           "rank": 14,
@@ -36178,7 +36192,7 @@
           "prediction_price": 32.68,
           "position_cost": 98.77,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0035,
           "paper_trail_floor_active": false,
           "days_held": 1
         },
@@ -36269,9 +36283,8 @@
           "position_cost": 397.05,
           "days_held": 1,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false,
-          "sell_error_note": "\u26a0\ufe0f Sell failed \u2014 {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"13.274824473\",\"held_for_orders\":\"13.274824473\",\"message\":\"insufficient qty available for order (requested: 13.274824473, available: 0)\",\"related_orders\":[\"5edd3072-ffd8-40d8-a7b7-34c3b49ba301\"],\"symbol\":\"NWSA\"}"
+          "paper_peak_pct": null,
+          "paper_trail_floor_active": false
         },
         {
           "rank": 20,
@@ -36530,9 +36543,9 @@
           "live_pct": 0.78,
           "live_dollar": 0.1,
           "price_updated": "9:31 AM ET",
-          "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0033,
-          "paper_trail_floor_active": false
+          "paper_current_floor_pct": 0.0037,
+          "paper_peak_pct": 0.0078,
+          "paper_trail_floor_active": true
         }
       ],
       "bench_candidates": [
@@ -36926,8 +36939,20 @@
       "current_equity": 1937.53,
       "net_trading_gain": -62.47,
       "net_trading_gain_pct": -3.12,
-      "closed_rounds": [],
-      "prices_last_updated": "9:31 AM ET",
+      "closed_rounds": [
+        {
+          "ticker": "NWSA",
+          "score": 0,
+          "entry_price": 29.91,
+          "paper_exit_price": 29.85,
+          "paper_exit_pct": -0.2,
+          "paper_exit_dollar": -0.8,
+          "paper_exit_reason": "Retry of previously failed sell",
+          "buy_time": null,
+          "sell_time": "2026-09-22T09:31:37.861924-04:00"
+        }
+      ],
+      "prices_last_updated": "9:33 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 773.5,
