@@ -37867,10 +37867,10 @@
             "relative_strength_pct": 0.31,
             "gap_pct": 1.14
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 45.21,
+          "paper_exit_pct": -3.23,
+          "paper_exit_dollar": -4.85,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "skipped_reason": null,
@@ -37882,7 +37882,9 @@
           "price_updated": "10:10 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0001,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "paper_exit_time": "10:11 AM ET",
+          "paper_exit_date": "2026-09-23"
         }
       ],
       "bench_candidates": [
@@ -38507,7 +38509,7 @@
       "net_trading_gain": -68.79,
       "net_trading_gain_pct": -3.44,
       "closed_rounds": [],
-      "prices_last_updated": "10:10 AM ET",
+      "prices_last_updated": "10:11 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 773.38,
