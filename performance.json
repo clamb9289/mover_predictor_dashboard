@@ -38967,7 +38967,13 @@
           "live_price": 58.43,
           "live_pct": 0.76,
           "live_dollar": 0.72,
-          "price_updated": "9:35 AM ET"
+          "price_updated": "9:35 AM ET",
+          "paper_exit_price": 57.78,
+          "paper_exit_pct": -0.36,
+          "paper_exit_dollar": -0.34,
+          "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
+          "paper_exit_time": "9:39 AM ET",
+          "paper_exit_date": "2026-09-24"
         },
         {
           "rank": 9,
@@ -39202,7 +39208,7 @@
             "relative_strength_pct": -8.21,
             "gap_pct": -0.02
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 268.18,
           "live_pct": -0.03,
           "price_updated": "9:35 AM ET",
@@ -39793,7 +39799,7 @@
       "net_trading_gain": -81.6,
       "net_trading_gain_pct": -4.08,
       "closed_rounds": [],
-      "prices_last_updated": "9:38 AM ET",
+      "prices_last_updated": "9:39 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 764.86,
