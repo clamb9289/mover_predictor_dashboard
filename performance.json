@@ -42430,9 +42430,9 @@
           "buy_date": "2026-09-28",
           "prediction_price": 40.0,
           "position_cost": 99.84,
-          "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0048,
-          "paper_trail_floor_active": false,
+          "paper_current_floor_pct": 0.0037,
+          "paper_peak_pct": 0.0073,
+          "paper_trail_floor_active": true,
           "days_held": 0
         },
         {
@@ -42855,7 +42855,7 @@
           "days_held": 0,
           "live_dollar": 0.28,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0026,
+          "paper_peak_pct": 0.0044,
           "paper_trail_floor_active": false
         },
         {
@@ -42940,9 +42940,9 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-09-28",
           "days_held": 0,
-          "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0043,
-          "paper_trail_floor_active": false,
+          "paper_current_floor_pct": 0.0037,
+          "paper_peak_pct": 0.0065,
+          "paper_trail_floor_active": true,
           "live_price": 246.26,
           "live_pct": 0.48,
           "live_dollar": 0.41,
@@ -43007,7 +43007,79 @@
           "live_price": 27.97,
           "live_pct": -0.04,
           "live_dollar": -0.1,
-          "price_updated": "10:17 AM ET"
+          "price_updated": "10:17 AM ET",
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false
+        },
+        {
+          "ticker": "JPM",
+          "rank": 24,
+          "score": 0.1244,
+          "entry_price": 340.63,
+          "position_cost": 87.25,
+          "headline": "JPMorgan Stock Sits 6% Below Its High After a Record Year. Here\u2019s What Q3 Earnings Must Prove",
+          "sector": "Financials",
+          "explainer": "Recent news skewed positive, including: \u201cJPMorgan Stock Sits 6% Below Its High After a Record Year. Here\u2019s What Q3 Earnings Must Prove\u201d",
+          "signals": {
+            "accumulation": 1.047,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.5,
+            "relative_strength_pct": -0.41,
+            "gap_pct": -0.51
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+        },
+        {
+          "ticker": "RBA",
+          "rank": 26,
+          "score": 0.1217,
+          "entry_price": 81.23,
+          "position_cost": 85.82,
+          "headline": null,
+          "sector": "Industrials",
+          "explainer": "Its sector (Industrials) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 0.995,
+            "sector_momentum_pct": 0.67,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.52,
+            "gap_pct": -0.7
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+        },
+        {
+          "ticker": "CVBF",
+          "rank": 25,
+          "score": 0.1218,
+          "entry_price": 22.35,
+          "position_cost": 85.87,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.0,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.73,
+            "gap_pct": -0.24
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
         }
       ],
       "bench_candidates": [
@@ -43683,7 +43755,7 @@
       "net_trading_gain": -95.94,
       "net_trading_gain_pct": -4.8,
       "closed_rounds": [],
-      "prices_last_updated": "10:17 AM ET",
+      "prices_last_updated": "10:18 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 767.3,
