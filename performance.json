@@ -42433,7 +42433,13 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0073,
           "paper_trail_floor_active": true,
-          "days_held": 0
+          "days_held": 0,
+          "paper_exit_price": 39.7,
+          "paper_exit_pct": 0.58,
+          "paper_exit_dollar": 0.58,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "10:20 AM ET",
+          "paper_exit_date": "2026-09-28"
         },
         {
           "rank": 6,
@@ -43033,7 +43039,9 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-09-28",
+          "days_held": 0
         },
         {
           "ticker": "RBA",
@@ -43056,7 +43064,9 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-09-28",
+          "days_held": 0
         },
         {
           "ticker": "CVBF",
@@ -43079,7 +43089,9 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-09-28",
+          "days_held": 0
         }
       ],
       "bench_candidates": [
@@ -43755,7 +43767,7 @@
       "net_trading_gain": -95.94,
       "net_trading_gain_pct": -4.8,
       "closed_rounds": [],
-      "prices_last_updated": "10:18 AM ET",
+      "prices_last_updated": "10:20 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 767.3,
