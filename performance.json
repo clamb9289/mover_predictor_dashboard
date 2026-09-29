@@ -39316,7 +39316,8 @@
           "paper_exit_date": "2026-09-28",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "postmortem": "Small loss (-1.80%) \u2014 sector momentum didn't convert this time; within normal volatility for now."
         },
         {
           "rank": 16,
@@ -39420,7 +39421,8 @@
           "paper_exit_dollar": -2.08,
           "paper_exit_reason": "Max hold (3 trading days) reached",
           "paper_exit_time": "3:36 PM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Small loss (-2.20%) \u2014 relative strength didn't convert this time; within normal volatility for now."
         },
         {
           "rank": 19,
@@ -39601,7 +39603,8 @@
           "paper_trail_floor_active": false,
           "slippage_pct": -0.041,
           "paper_exit_time": "3:36 PM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Small loss (-1.24%) \u2014 composite score, with no single dominant signal didn't convert this time; within normal volatility for now."
         },
         {
           "ticker": "WPC",
@@ -39776,7 +39779,8 @@
           "paper_peak_pct": 0.0079,
           "paper_trail_floor_active": true,
           "paper_exit_time": "11:44 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.59%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through."
         }
       ],
       "bench_candidates": [
@@ -40534,9 +40538,9 @@
           "position_cost": 126.92,
           "days_held": 2,
           "slippage_pct": 0.736,
-          "live_price": 219.29,
-          "live_pct": -1.52,
-          "live_dollar": -1.93,
+          "live_price": 220.22,
+          "live_pct": -1.1,
+          "live_dollar": -1.4,
           "price_updated": "9:33 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
@@ -41277,7 +41281,8 @@
           "paper_peak_pct": 0.0068,
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:41 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "ticker": "IRT",
@@ -42357,7 +42362,8 @@
           "paper_exit_dollar": 0.58,
           "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "paper_exit_time": "9:54 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through."
         },
         {
           "rank": 2,
@@ -42411,7 +42417,8 @@
           "paper_exit_dollar": -3.27,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "11:24 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Hit the stop loss (-3.06%) despite accumulation/volume and sector momentum \u2014 worth reviewing if accumulation/volume keeps producing false positives."
         },
         {
           "rank": 4,
@@ -42445,7 +42452,8 @@
           "paper_exit_dollar": 0.38,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:34 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.38%) but didn't clear the floor trigger \u2014 relative strength and sector momentum and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "rank": 5,
@@ -42478,7 +42486,8 @@
           "paper_exit_dollar": 0.58,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:20 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.58%) but didn't clear the floor trigger \u2014 relative strength and sector momentum and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "rank": 6,
@@ -42511,7 +42520,8 @@
           "paper_exit_dollar": 0.25,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:41 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "rank": 7,
@@ -42544,7 +42554,8 @@
           "paper_exit_dollar": 0.51,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:06 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.60%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through."
         },
         {
           "rank": 8,
@@ -42577,7 +42588,8 @@
           "paper_exit_dollar": -0.02,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:06 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Small loss (-0.03%) \u2014 sector momentum didn't convert this time; within normal volatility for now."
         },
         {
           "rank": 9,
@@ -42611,7 +42623,8 @@
           "paper_exit_dollar": 0.09,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:17 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.12%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through."
         },
         {
           "rank": 10,
@@ -42645,7 +42658,8 @@
           "paper_exit_dollar": 0.24,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:54 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.31%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through."
         },
         {
           "rank": 11,
@@ -42679,7 +42693,8 @@
           "paper_exit_dollar": -3.19,
           "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "paper_exit_time": "11:04 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Hit the stop loss (-4.20%) despite relative strength \u2014 worth reviewing if relative strength keeps producing false positives."
         },
         {
           "rank": 12,
@@ -42711,7 +42726,8 @@
           "paper_exit_dollar": 0.16,
           "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "paper_exit_time": "9:41 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.22%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through."
         },
         {
           "rank": 13,
@@ -42744,7 +42760,8 @@
           "paper_exit_dollar": 0.35,
           "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "paper_exit_time": "10:17 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through."
         },
         {
           "rank": 14,
@@ -42779,7 +42796,8 @@
           "paper_exit_dollar": 0.86,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:44 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through."
         },
         {
           "rank": 15,
@@ -42814,7 +42832,8 @@
           "paper_exit_dollar": 0.18,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:13 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.24%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through."
         },
         {
           "rank": 16,
@@ -42849,7 +42868,8 @@
           "paper_exit_dollar": 0.53,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:17 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
         },
         {
           "rank": 17,
@@ -42867,15 +42887,15 @@
             "gap_pct": -1.09
           },
           "skipped_reason": null,
-          "live_price": 353.96,
-          "live_pct": -2.59,
+          "live_price": 353.22,
+          "live_pct": -2.79,
           "price_updated": "9:33 AM ET",
           "buy_date": "2026-09-28",
           "prediction_price": 372.11,
           "slippage_pct": 0.112,
           "position_cost": 157.63,
           "days_held": 1,
-          "live_dollar": -4.08,
+          "live_dollar": -4.4,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0012,
           "paper_trail_floor_active": false
@@ -42913,7 +42933,8 @@
           "paper_exit_dollar": 0.27,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "10:33 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 news sentiment pointed the right direction without enough follow-through."
         },
         {
           "rank": 19,
@@ -42948,7 +42969,8 @@
           "paper_exit_dollar": 0.36,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "12:28 PM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.41%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
         },
         {
           "rank": 20,
@@ -42983,7 +43005,8 @@
           "paper_exit_dollar": 0.08,
           "paper_exit_reason": "EOD sell (winning position, +0.2%)",
           "paper_exit_time": "3:36 PM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.09%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through."
         },
         {
           "ticker": "VMC",
@@ -43017,7 +43040,8 @@
           "live_dollar": 0.37,
           "price_updated": "11:59 PM ET",
           "paper_exit_time": "10:46 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.89%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through."
         },
         {
           "ticker": "PAYO",
@@ -43080,11 +43104,9 @@
           "live_dollar": -0.81,
           "price_updated": "9:33 AM ET",
           "slippage_pct": -0.018,
-          "paper_exit_time": null,
-          "paper_exit_date": null,
-          "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false
+          "paper_exit_time": "3:36 PM ET",
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.07%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
         },
         {
           "ticker": "JPM",
@@ -43110,9 +43132,9 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-09-28",
           "days_held": 1,
-          "live_price": 336.9,
-          "live_pct": -1.09,
-          "live_dollar": -0.95,
+          "live_price": 337.0,
+          "live_pct": -1.07,
+          "live_dollar": -0.93,
           "price_updated": "9:33 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0004,
@@ -43150,7 +43172,8 @@
           "paper_peak_pct": 0.0047,
           "paper_trail_floor_active": false,
           "paper_exit_time": "10:55 AM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.32%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through."
         },
         {
           "ticker": "CVBF",
@@ -43217,7 +43240,8 @@
           "paper_trail_floor_active": true,
           "slippage_pct": -0.007,
           "paper_exit_time": "3:36 PM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.97%) but didn't clear the floor trigger \u2014 sector momentum and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "ticker": "VST",
@@ -43251,7 +43275,8 @@
           "paper_peak_pct": 0.0058,
           "paper_trail_floor_active": true,
           "paper_exit_time": "12:32 PM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "ticker": "AMH",
@@ -43285,7 +43310,8 @@
           "paper_peak_pct": 0.0054,
           "paper_trail_floor_active": true,
           "paper_exit_time": "3:17 PM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
         },
         {
           "ticker": "AEE",
@@ -43320,7 +43346,8 @@
           "paper_trail_floor_active": false,
           "slippage_pct": -0.006,
           "paper_exit_time": "3:36 PM ET",
-          "paper_exit_date": "2026-09-28"
+          "paper_exit_date": "2026-09-28",
+          "postmortem": "Modest gain (+0.03%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
         }
       ],
       "bench_candidates": [
@@ -43995,24 +44022,1399 @@
       "current_equity": 1900.63,
       "net_trading_gain": -99.37,
       "net_trading_gain_pct": -4.97,
-      "closed_rounds": [
-        {
-          "ticker": "BRX",
-          "score": 0,
-          "entry_price": 27.98,
-          "paper_exit_price": 28.0,
-          "paper_exit_pct": 0.07,
-          "paper_exit_dollar": 0.18,
-          "paper_exit_reason": "EOD sell (winning position, +0.1%)",
-          "buy_time": null,
-          "sell_time": "2026-09-28T15:36:09.166995-04:00"
-        }
-      ],
+      "closed_rounds": [],
       "prices_last_updated": "9:33 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 765.61,
       "spy_live_pct": -0.83
+    },
+    {
+      "date": "2026-09-29",
+      "regime": "Market regime OK \u2014 SPY +0.09%",
+      "trading_skipped": false,
+      "max_hold_days": 3,
+      "spy_regime_pct": 0.00093,
+      "top_sectors": [
+        {
+          "etf": "XLV",
+          "name": "Healthcare",
+          "pct": 1.33
+        },
+        {
+          "etf": "XLP",
+          "name": "Consumer Staples",
+          "pct": 0.44
+        },
+        {
+          "etf": "XLK",
+          "name": "Technology",
+          "pct": -0.16
+        }
+      ],
+      "actual_top3": [
+        {
+          "ticker": "ADMA",
+          "pct": 7.89,
+          "signals": {
+            "accumulation": 0.559,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.96
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 370,
+          "eligible_pool_size": 667,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "GAP",
+          "pct": 5.18,
+          "signals": {
+            "accumulation": 0.636,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 6.23
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 264,
+          "eligible_pool_size": 667,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "PANW",
+          "pct": 4.63,
+          "signals": {
+            "accumulation": 0.647,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.07
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 249,
+          "eligible_pool_size": 667,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "BURL",
+          "pct": 4.59,
+          "signals": {
+            "accumulation": 0.763,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 7.41
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 110,
+          "eligible_pool_size": 667,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "TNDM",
+          "pct": 4.45,
+          "signals": {
+            "accumulation": 0.561,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -6.82
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 362,
+          "eligible_pool_size": 667,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "AEO",
+          "pct": 4.4,
+          "signals": {
+            "accumulation": 0.57,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 10.09
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 353,
+          "eligible_pool_size": 667,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "WAY",
+          "pct": 4.21,
+          "signals": {
+            "accumulation": 0.52,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.74
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 433,
+          "eligible_pool_size": 667,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "TWLO",
+          "pct": 4.05,
+          "signals": {
+            "accumulation": 0.855,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 13.11
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 63,
+          "eligible_pool_size": 667,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "CBRL",
+          "pct": 3.71,
+          "signals": {
+            "accumulation": 0.268,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 14.98
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 654,
+          "eligible_pool_size": 667,
+          "made_shortlist": false
+        },
+        {
+          "ticker": "AMRX",
+          "pct": 3.69,
+          "signals": {
+            "accumulation": 0.625,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 5.67
+          },
+          "our_rank": null,
+          "eligible": true,
+          "accumulation_rank": 280,
+          "eligible_pool_size": 667,
+          "made_shortlist": false
+        }
+      ],
+      "model_insight": "Actual top movers had notably higher relative strength (5.30 vs our picks' 0.97) \u2014 possible signal to increase weighting on relative strength. Actual top movers had notably lower sector momentum (0.00 vs our picks' 0.59) \u2014 possible signal to decrease weighting on sector momentum. Actual top movers had notably lower news sentiment (0.00 vs our picks' 0.28) \u2014 possible signal to decrease weighting on news sentiment. ADMA (#370 of 667), GAP (#264 of 667), PANW (#249 of 667), BURL (#110 of 667), TNDM (#362 of 667), AEO (#353 of 667), WAY (#433 of 667), TWLO (#63 of 667), CBRL (#654 of 667), AMRX (#280 of 667) were fully eligible but never cleared the top-50 accumulation shortlist \u2014 a ranking/scoring issue, not a coverage gap.",
+      "predictions": [
+        {
+          "rank": 1,
+          "ticker": "MDT",
+          "score": 0.806,
+          "entry_price": 88.956,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Volume was running 1.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 1.825,
+            "sector_momentum_pct": 1.33,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.98,
+            "gap_pct": -0.54
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 89.5,
+          "slippage_pct": -0.115,
+          "position_cost": 132.12,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 88.55,
+          "live_pct": -0.46,
+          "live_dollar": -0.61,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 2,
+          "ticker": "POR",
+          "score": 0.625,
+          "entry_price": 44.01,
+          "headline": null,
+          "sector": "Utilities",
+          "explainer": "Volume was running 1.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 1.825,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.55,
+            "gap_pct": -0.07
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 44.18,
+          "slippage_pct": 0.011,
+          "position_cost": 107.69,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 43.9,
+          "live_pct": -0.25,
+          "live_dollar": -0.27,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 3,
+          "ticker": "EVRG",
+          "score": 0.625,
+          "entry_price": 77.348,
+          "headline": null,
+          "sector": "Utilities",
+          "explainer": "Volume was running 1.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.778,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.76,
+            "gap_pct": -0.49
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 77.91,
+          "slippage_pct": -0.093,
+          "position_cost": 107.62,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0009,
+          "paper_trail_floor_active": false,
+          "live_price": 77.42,
+          "live_pct": 0.09,
+          "live_dollar": 0.1,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 4,
+          "ticker": "WMG",
+          "score": 0.577,
+          "entry_price": 27.04,
+          "headline": null,
+          "sector": "Communication Services",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.1% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.739,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.12,
+            "gap_pct": -0.55
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 27.14,
+          "position_cost": 101.15,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0,
+          "live_price": 26.91,
+          "live_pct": -0.5,
+          "live_dollar": -0.51,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 5,
+          "ticker": "CB",
+          "score": 0.572,
+          "entry_price": 330.33,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.732,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.31,
+            "gap_pct": -0.36
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 331.37,
+          "slippage_pct": 0.042,
+          "position_cost": 100.51,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 329.91,
+          "live_pct": -0.13,
+          "live_dollar": -0.13,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 6,
+          "ticker": "NOG",
+          "score": 0.563,
+          "entry_price": 22.76,
+          "headline": null,
+          "sector": "Energy",
+          "explainer": "Volume was running 1.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 1.766,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.82,
+            "gap_pct": -3.17
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 23.21,
+          "position_cost": 99.19,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0,
+          "live_price": 22.74,
+          "live_pct": -0.11,
+          "live_dollar": -0.11,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 7,
+          "ticker": "BRX",
+          "score": 0.528,
+          "entry_price": 27.89,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.6% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.67,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.59,
+            "gap_pct": -0.36
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 28.0,
+          "position_cost": 94.46,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0,
+          "live_price": 27.89,
+          "live_pct": -0.0,
+          "live_dollar": -0.0,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 8,
+          "ticker": "MAT",
+          "score": 0.485,
+          "entry_price": 13.261494,
+          "headline": null,
+          "sector": "Consumer Discretionary",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+4.9% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.597,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.87,
+            "gap_pct": -0.07
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 13.34,
+          "position_cost": 88.74,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0,
+          "live_price": 13.24,
+          "live_pct": -0.13,
+          "live_dollar": -0.12,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 9,
+          "ticker": "TEL",
+          "score": 0.482,
+          "entry_price": 214.32,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.627,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.4,
+            "gap_pct": 0.49
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 214.71,
+          "slippage_pct": -0.084,
+          "position_cost": 88.21,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 214.07,
+          "live_pct": -0.12,
+          "live_dollar": -0.11,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 10,
+          "ticker": "VLY",
+          "score": 0.443,
+          "entry_price": 12.8,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
+          "signals": {
+            "accumulation": 1.644,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.57,
+            "gap_pct": 0.16
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 12.78,
+          "position_cost": 83.0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0,
+          "live_price": 12.8,
+          "live_pct": 0.0,
+          "live_dollar": 0.0,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 11,
+          "ticker": "STAG",
+          "score": 0.436,
+          "entry_price": 36.86,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "Volume was running 1.6x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.6% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.593,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.58,
+            "gap_pct": -0.46
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 37.01,
+          "position_cost": 82.04,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0,
+          "live_price": 36.78,
+          "live_pct": -0.23,
+          "live_dollar": -0.19,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 12,
+          "ticker": "NNN",
+          "score": 0.373,
+          "entry_price": 41.074,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "Volume was running 1.5x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.519,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.36,
+            "gap_pct": -0.65
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 41.4,
+          "slippage_pct": -0.136,
+          "position_cost": 73.49,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 41.05,
+          "live_pct": -0.06,
+          "live_dollar": -0.04,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 13,
+          "ticker": "ABBV",
+          "score": 0.36,
+          "entry_price": 266.72,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 1.35,
+            "sector_momentum_pct": 1.33,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.65,
+            "gap_pct": -0.3
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 266.28,
+          "slippage_pct": 0.096,
+          "position_cost": 71.77,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0002,
+          "paper_trail_floor_active": false,
+          "live_price": 266.87,
+          "live_pct": 0.06,
+          "live_dollar": 0.04,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 14,
+          "ticker": "PK",
+          "score": 0.28,
+          "entry_price": 15.76,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+6.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.367,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 6.67,
+            "gap_pct": 0.22
+          },
+          "buy_date": "2026-09-29",
+          "prediction_price": 15.72,
+          "slippage_pct": -0.063,
+          "position_cost": 60.91,
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "live_price": 15.65,
+          "live_pct": -0.7,
+          "live_dollar": -0.43,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 15,
+          "ticker": "CYTK",
+          "score": 0.249,
+          "entry_price": 66.16,
+          "headline": null,
+          "sector": "Healthcare",
+          "explainer": "Its sector (Healthcare) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 1.278,
+            "sector_momentum_pct": 1.33,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.4,
+            "gap_pct": -0.38
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 66.2,
+          "live_pct": 0.06,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 16,
+          "ticker": "FHN",
+          "score": 0.238,
+          "entry_price": 23.19,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.419,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.03,
+            "gap_pct": -0.17
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 23.17,
+          "live_pct": -0.09,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 17,
+          "ticker": "LNT",
+          "score": 0.234,
+          "entry_price": 63.21,
+          "headline": null,
+          "sector": "Utilities",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.404,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.76,
+            "gap_pct": null
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 62.85,
+          "live_pct": -0.58,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 18,
+          "ticker": "MMM",
+          "score": 0.216,
+          "entry_price": 169.48,
+          "headline": null,
+          "sector": "Industrials",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+3.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.349,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.44,
+            "gap_pct": 0.35
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 169.62,
+          "live_pct": 0.08,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 19,
+          "ticker": "GAP",
+          "score": 0.208,
+          "entry_price": 22.95,
+          "headline": null,
+          "sector": "Consumer Discretionary",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+10.9% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.238,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 10.88,
+            "gap_pct": 0.61
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 22.92,
+          "live_pct": -0.11,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 20,
+          "ticker": "DIS",
+          "score": 0.206,
+          "entry_price": 105.59,
+          "headline": null,
+          "sector": "Communication Services",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+4.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.326,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.42,
+            "gap_pct": -0.04
+          },
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "live_price": 105.25,
+          "live_pct": -0.32,
+          "price_updated": "9:33 AM ET"
+        }
+      ],
+      "bench_candidates": [
+        {
+          "rank": 21,
+          "ticker": "PG",
+          "score": 0.175,
+          "entry_price": 149.03,
+          "headline": null,
+          "sector": "Consumer Staples",
+          "explainer": "Its sector (Consumer Staples) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+1.6% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.269,
+            "sector_momentum_pct": 0.44,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.58,
+            "gap_pct": -0.9
+          },
+          "live_price": 147.01,
+          "live_pct": -1.36,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 22,
+          "ticker": "FIS",
+          "score": 0.172,
+          "entry_price": 34.31,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.6% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.345,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.56,
+            "gap_pct": -0.53
+          },
+          "live_price": 33.92,
+          "live_pct": -1.14,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 23,
+          "ticker": "DV",
+          "score": 0.17,
+          "entry_price": 13.4,
+          "headline": null,
+          "sector": "Communication Services",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.312,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.81,
+            "gap_pct": -0.04
+          },
+          "live_price": 13.4,
+          "live_pct": -0.0,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 24,
+          "ticker": "CRBG",
+          "score": 0.169,
+          "entry_price": 33.78,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.1% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.349,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.13,
+            "gap_pct": -0.24
+          },
+          "live_price": 33.75,
+          "live_pct": -0.09,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 25,
+          "ticker": "SOLS",
+          "score": 0.164,
+          "entry_price": 56.93,
+          "headline": null,
+          "sector": "Materials",
+          "explainer": "Selected primarily on composite score; no single signal was dominant.",
+          "signals": {
+            "accumulation": 1.356,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.83,
+            "gap_pct": -0.12
+          },
+          "live_price": 56.88,
+          "live_pct": -0.09,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 26,
+          "ticker": "NVDA",
+          "score": 0.162,
+          "entry_price": 228.86,
+          "headline": null,
+          "sector": "Technology",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.332,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.82,
+            "gap_pct": 0.93
+          },
+          "live_price": 231.79,
+          "live_pct": 1.28,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 27,
+          "ticker": "LEN",
+          "score": 0.159,
+          "entry_price": 82.03,
+          "headline": null,
+          "sector": "Consumer Discretionary",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+7.9% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.23,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 7.94,
+            "gap_pct": 0.31
+          },
+          "live_price": 82.04,
+          "live_pct": 0.01,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 28,
+          "ticker": "GNTX",
+          "score": 0.144,
+          "entry_price": 22.34,
+          "headline": null,
+          "sector": "Consumer Discretionary",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+3.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.272,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.83,
+            "gap_pct": 0.0
+          },
+          "live_price": 22.14,
+          "live_pct": -0.9,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 29,
+          "ticker": "MDU",
+          "score": 0.12,
+          "entry_price": 18.53,
+          "headline": null,
+          "sector": "Utilities",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+3.3% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.256,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.31,
+            "gap_pct": -0.49
+          },
+          "live_price": 18.4,
+          "live_pct": -0.7,
+          "price_updated": "9:33 AM ET"
+        },
+        {
+          "rank": 30,
+          "ticker": "GO",
+          "score": 0.1,
+          "entry_price": 11.1,
+          "headline": null,
+          "sector": "Consumer Staples",
+          "explainer": "Its sector (Consumer Staples) was among the day's stronger performers, giving it a tailwind.",
+          "signals": {
+            "accumulation": 1.238,
+            "sector_momentum_pct": 0.44,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.6,
+            "gap_pct": 0.86
+          },
+          "live_price": 11.1,
+          "live_pct": 0.0,
+          "price_updated": "9:33 AM ET"
+        }
+      ],
+      "pool_shortfall_note": null,
+      "prior_predictions_actual": [
+        {
+          "rank": 1,
+          "ticker": "NTST",
+          "move_pct": 0.34,
+          "dollar_change": 0.58,
+          "position_size": 169.78,
+          "actual_rank": 273,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 2.3,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.68,
+            "gap_pct": 0.44
+          },
+          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength pointed the right direction without enough follow-through. The stock itself ranked #273 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 3,
+          "ticker": "ACM",
+          "move_pct": -3.06,
+          "dollar_change": -3.27,
+          "position_size": 106.86,
+          "actual_rank": 553,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.664,
+            "sector_momentum_pct": 0.67,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.44,
+            "gap_pct": -2.35
+          },
+          "postmortem": "Hit the stop loss (-3.06%) despite accumulation/volume and sector momentum \u2014 worth reviewing if accumulation/volume keeps producing false positives. The stock itself ranked #553 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 4,
+          "ticker": "MSFT",
+          "move_pct": 0.38,
+          "dollar_change": 0.38,
+          "position_size": 102.09,
+          "actual_rank": 452,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.115,
+            "sector_momentum_pct": 3.64,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": 0.9,
+            "gap_pct": -2.08
+          },
+          "postmortem": "Modest gain (+0.38%) but didn't clear the floor trigger \u2014 relative strength and sector momentum and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #452 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 5,
+          "ticker": "PPLI",
+          "move_pct": 0.58,
+          "dollar_change": 0.58,
+          "position_size": 99.84,
+          "actual_rank": 371,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.002,
+            "sector_momentum_pct": 2.28,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": 8.25,
+            "gap_pct": -1.08
+          },
+          "postmortem": "Modest gain (+0.58%) but didn't clear the floor trigger \u2014 relative strength and sector momentum and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #371 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 6,
+          "ticker": "IVZ",
+          "move_pct": 0.3,
+          "dollar_change": 0.25,
+          "position_size": 85.31,
+          "actual_rank": 485,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.325,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 2.76,
+            "gap_pct": -1.16
+          },
+          "postmortem": "Modest gain (+0.30%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #485 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 7,
+          "ticker": "STAG",
+          "move_pct": 0.6,
+          "dollar_change": 0.51,
+          "position_size": 84.83,
+          "actual_rank": 108,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.442,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.7,
+            "gap_pct": -0.65
+          },
+          "postmortem": "Modest gain (+0.60%) but didn't clear the floor trigger \u2014 composite score, with no single dominant signal pointed the right direction without enough follow-through. The stock itself ranked #108 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 8,
+          "ticker": "RHI",
+          "move_pct": -0.03,
+          "dollar_change": -0.02,
+          "position_size": 83.73,
+          "actual_rank": 256,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.391,
+            "sector_momentum_pct": 0.67,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.98,
+            "gap_pct": -1.79
+          },
+          "postmortem": "Small loss (-0.03%) \u2014 sector momentum didn't convert this time; within normal volatility for now. The stock itself ranked #256 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 9,
+          "ticker": "TREX",
+          "move_pct": 0.12,
+          "dollar_change": 0.09,
+          "position_size": 80.02,
+          "actual_rank": 348,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.128,
+            "sector_momentum_pct": 0.67,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.25,
+            "gap_pct": -1.7
+          },
+          "postmortem": "Modest gain (+0.12%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. The stock itself ranked #348 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 10,
+          "ticker": "CVS",
+          "move_pct": 0.31,
+          "dollar_change": 0.24,
+          "position_size": 76.56,
+          "actual_rank": 469,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.154,
+            "sector_momentum_pct": 1.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.43,
+            "gap_pct": 0.64
+          },
+          "postmortem": "Modest gain (+0.31%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through. The stock itself ranked #469 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 11,
+          "ticker": "POR",
+          "move_pct": -4.2,
+          "dollar_change": -3.19,
+          "position_size": 75.96,
+          "actual_rank": 653,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.194,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.52,
+            "gap_pct": -0.97
+          },
+          "postmortem": "Hit the stop loss (-4.20%) despite relative strength \u2014 worth reviewing if relative strength keeps producing false positives. The stock itself ranked #653 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 12,
+          "ticker": "NEOG",
+          "move_pct": 0.22,
+          "dollar_change": 0.16,
+          "position_size": 41.28,
+          "actual_rank": 246,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 0.941,
+            "sector_momentum_pct": 1.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.09,
+            "gap_pct": -0.07
+          },
+          "postmortem": "Modest gain (+0.22%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. The stock itself ranked #246 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 13,
+          "ticker": "HAYW",
+          "move_pct": 0.36,
+          "dollar_change": 0.35,
+          "position_size": 50.34,
+          "actual_rank": 364,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.291,
+            "sector_momentum_pct": 0.67,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -3.44,
+            "gap_pct": -0.55
+          },
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through. The stock itself ranked #364 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 14,
+          "ticker": "AAL",
+          "move_pct": 0.37,
+          "dollar_change": 0.86,
+          "position_size": 229.23,
+          "actual_rank": 562,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 0.914,
+            "sector_momentum_pct": 0.67,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 6.35,
+            "gap_pct": -2.29
+          },
+          "postmortem": "Modest gain (+0.37%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through. The stock itself ranked #562 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 15,
+          "ticker": "FLS",
+          "move_pct": 0.24,
+          "dollar_change": 0.18,
+          "position_size": 75.08,
+          "actual_rank": 133,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.14,
+            "sector_momentum_pct": 0.67,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -0.46,
+            "gap_pct": null
+          },
+          "postmortem": "Modest gain (+0.24%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through. The stock itself ranked #133 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 16,
+          "ticker": "OGE",
+          "move_pct": 0.34,
+          "dollar_change": 0.53,
+          "position_size": 158.01,
+          "actual_rank": 245,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.131,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.62,
+            "gap_pct": -0.41
+          },
+          "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through. The stock itself ranked #245 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 17,
+          "ticker": "TSLA",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 157.63,
+          "actual_rank": 634,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.104,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -5.0,
+            "relative_strength_pct": 2.36,
+            "gap_pct": -1.09
+          },
+          "postmortem": null
+        },
+        {
+          "rank": 18,
+          "ticker": "KR",
+          "move_pct": 0.35,
+          "dollar_change": 0.27,
+          "position_size": 76.81,
+          "actual_rank": 50,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.224,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.5,
+            "relative_strength_pct": -1.86,
+            "gap_pct": -0.41
+          },
+          "postmortem": "Modest gain (+0.35%) but didn't clear the floor trigger \u2014 news sentiment pointed the right direction without enough follow-through. The stock itself ranked #50 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 19,
+          "ticker": "TOL",
+          "move_pct": 0.41,
+          "dollar_change": 0.36,
+          "position_size": 88.57,
+          "actual_rank": null,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.031,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 3.42,
+            "gap_pct": -1.4
+          },
+          "postmortem": "Modest gain (+0.41%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through."
+        },
+        {
+          "rank": 20,
+          "ticker": "CI",
+          "move_pct": 0.09,
+          "dollar_change": 0.08,
+          "position_size": 81.78,
+          "actual_rank": 212,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 0.992,
+            "sector_momentum_pct": 1.76,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -2.95,
+            "gap_pct": -0.07
+          },
+          "postmortem": "Modest gain (+0.09%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through. The stock itself ranked #212 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 21,
+          "ticker": "VMC",
+          "move_pct": 0.89,
+          "dollar_change": 0.76,
+          "position_size": 85.35,
+          "actual_rank": null,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.036,
+            "sector_momentum_pct": 0.08,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.65,
+            "gap_pct": -1.05
+          },
+          "postmortem": "Modest gain (+0.89%) but didn't clear the floor trigger \u2014 relative strength and sector momentum pointed the right direction without enough follow-through."
+        },
+        {
+          "rank": 22,
+          "ticker": "PAYO",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 83.71,
+          "actual_rank": 269,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.031,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.04,
+            "gap_pct": -0.14
+          },
+          "postmortem": null
+        },
+        {
+          "rank": 23,
+          "ticker": "BRX",
+          "move_pct": 0.07,
+          "dollar_change": 0.18,
+          "position_size": 252.35,
+          "actual_rank": 234,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.023,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.6,
+            "gap_pct": 0.14
+          },
+          "postmortem": "Modest gain (+0.07%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through. The stock itself ranked #234 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 24,
+          "ticker": "JPM",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 87.25,
+          "actual_rank": 506,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.047,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 4.5,
+            "relative_strength_pct": -0.41,
+            "gap_pct": -0.51
+          },
+          "postmortem": null
+        },
+        {
+          "rank": 26,
+          "ticker": "RBA",
+          "move_pct": 0.32,
+          "dollar_change": 0.27,
+          "position_size": 85.82,
+          "actual_rank": null,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 0.995,
+            "sector_momentum_pct": 0.67,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": -1.52,
+            "gap_pct": -0.7
+          },
+          "postmortem": "Modest gain (+0.32%) but didn't clear the floor trigger \u2014 sector momentum pointed the right direction without enough follow-through."
+        },
+        {
+          "rank": 25,
+          "ticker": "CVBF",
+          "move_pct": null,
+          "dollar_change": null,
+          "position_size": 85.87,
+          "actual_rank": null,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 1.0,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.73,
+            "gap_pct": -0.24
+          },
+          "postmortem": null
+        },
+        {
+          "rank": 27,
+          "ticker": "MDT",
+          "move_pct": 0.97,
+          "dollar_change": 0.38,
+          "position_size": 39.07,
+          "actual_rank": 77,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 0.969,
+            "sector_momentum_pct": 1.76,
+            "news_sentiment": 3.0,
+            "relative_strength_pct": -4.76,
+            "gap_pct": -0.37
+          },
+          "postmortem": "Modest gain (+0.97%) but didn't clear the floor trigger \u2014 sector momentum and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #77 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 28,
+          "ticker": "VST",
+          "move_pct": 0.36,
+          "dollar_change": 0.14,
+          "position_size": 38.02,
+          "actual_rank": 252,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 0.952,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 1.0,
+            "relative_strength_pct": 1.75,
+            "gap_pct": -0.57
+          },
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #252 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 29,
+          "ticker": "AMH",
+          "move_pct": 0.36,
+          "dollar_change": 0.36,
+          "position_size": 99.5,
+          "actual_rank": 238,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 0.991,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.23,
+            "gap_pct": 0.0
+          },
+          "postmortem": "Modest gain (+0.36%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through. The stock itself ranked #238 of 667 tracked that day, for context."
+        },
+        {
+          "rank": 30,
+          "ticker": "AEE",
+          "move_pct": 0.03,
+          "dollar_change": 0.02,
+          "position_size": 86.11,
+          "actual_rank": 188,
+          "total_ranked": 667,
+          "signals": {
+            "accumulation": 0.983,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.38,
+            "gap_pct": -0.35
+          },
+          "postmortem": "Modest gain (+0.03%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through. The stock itself ranked #188 of 667 tracked that day, for context."
+        }
+      ],
+      "hit_rate": 0.0086,
+      "total_hits": 1,
+      "total_predictions": 116,
+      "days_tracked": 39,
+      "total_contributed": 2000.0,
+      "current_equity": 1896.95,
+      "net_trading_gain": -103.05,
+      "net_trading_gain_pct": -5.15,
+      "closed_rounds": [],
+      "prices_last_updated": "9:33 AM ET",
+      "prices_after_hours": false,
+      "manual_pause_active": false,
+      "spy_live_price": 765.66,
+      "spy_live_pct": -0.02
     }
   ]
 }
