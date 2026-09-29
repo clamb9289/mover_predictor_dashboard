@@ -44816,8 +44816,31 @@
           "days_held": 0,
           "live_dollar": 0.08,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.002,
+          "paper_peak_pct": 0.0025,
           "paper_trail_floor_active": false
+        },
+        {
+          "ticker": "PG",
+          "rank": 21,
+          "score": 0.1753,
+          "entry_price": 148.074,
+          "position_cost": 88.95,
+          "headline": null,
+          "sector": "Consumer Staples",
+          "explainer": "Its sector (Consumer Staples) was among the day's stronger performers, giving it a tailwind. The stock outperformed its own sector over the past 5 days (+1.6% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.269,
+            "sector_momentum_pct": 0.44,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.58,
+            "gap_pct": -0.9
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
         }
       ],
       "bench_candidates": [
@@ -44959,7 +44982,7 @@
           "live_price": 82.85,
           "live_pct": 1.0,
           "price_updated": "10:09 AM ET",
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
+          "skipped_reason": "Opening-gap filter: gapped +1.0% from the $82.03 close signals were scored on \u2014 skipping."
         },
         {
           "rank": 28,
@@ -45527,7 +45550,7 @@
       "net_trading_gain": -102.2,
       "net_trading_gain_pct": -5.11,
       "closed_rounds": [],
-      "prices_last_updated": "10:09 AM ET",
+      "prices_last_updated": "10:10 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 764.79,
