@@ -44304,7 +44304,7 @@
           "position_cost": 107.62,
           "days_held": 0,
           "paper_current_floor_pct": 0.0064,
-          "paper_peak_pct": 0.0101,
+          "paper_peak_pct": 0.0108,
           "paper_trail_floor_active": true,
           "live_price": 78.23,
           "live_pct": 1.14,
@@ -44486,7 +44486,7 @@
           "position_cost": 88.21,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0022,
+          "paper_peak_pct": 0.0024,
           "paper_trail_floor_active": false,
           "live_price": 214.9,
           "live_pct": 0.27,
@@ -44696,7 +44696,10 @@
           "slippage_pct": -0.267,
           "position_cost": 36.24,
           "days_held": 0,
-          "live_dollar": -0.02
+          "live_dollar": -0.02,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0001,
+          "paper_trail_floor_active": false
         },
         {
           "rank": 17,
@@ -44722,13 +44725,16 @@
           "slippage_pct": 0.066,
           "position_cost": 35.79,
           "days_held": 0,
-          "live_dollar": 0.01
+          "live_dollar": 0.01,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0001,
+          "paper_trail_floor_active": false
         },
         {
           "rank": 18,
           "ticker": "MMM",
           "score": 0.216,
-          "entry_price": 169.48,
+          "entry_price": 169.922,
           "headline": null,
           "sector": "Industrials",
           "explainer": "The stock outperformed its own sector over the past 5 days (+3.4% relative strength), suggesting individual demand beyond just sector momentum.",
@@ -44739,16 +44745,21 @@
             "relative_strength_pct": 3.44,
             "gap_pct": 0.35
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 170.1,
           "live_pct": 0.36,
-          "price_updated": "9:50 AM ET"
+          "price_updated": "9:50 AM ET",
+          "buy_date": "2026-09-29",
+          "prediction_price": 169.48,
+          "slippage_pct": -0.204,
+          "position_cost": 60.37,
+          "days_held": 0
         },
         {
           "rank": 19,
           "ticker": "GAP",
           "score": 0.208,
-          "entry_price": 22.95,
+          "entry_price": 22.81,
           "headline": null,
           "sector": "Consumer Discretionary",
           "explainer": "The stock outperformed its own sector over the past 5 days (+10.9% relative strength), suggesting individual demand beyond just sector momentum.",
@@ -44759,16 +44770,20 @@
             "relative_strength_pct": 10.88,
             "gap_pct": 0.61
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 22.9,
           "live_pct": -0.22,
-          "price_updated": "9:50 AM ET"
+          "price_updated": "9:50 AM ET",
+          "buy_date": "2026-09-29",
+          "prediction_price": 22.95,
+          "position_cost": 58.71,
+          "days_held": 0
         },
         {
           "rank": 20,
           "ticker": "DIS",
           "score": 0.206,
-          "entry_price": 105.59,
+          "entry_price": 105.268,
           "headline": null,
           "sector": "Communication Services",
           "explainer": "The stock outperformed its own sector over the past 5 days (+4.4% relative strength), suggesting individual demand beyond just sector momentum.",
@@ -44779,10 +44794,15 @@
             "relative_strength_pct": 4.42,
             "gap_pct": -0.04
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 105.27,
           "live_pct": -0.3,
-          "price_updated": "9:50 AM ET"
+          "price_updated": "9:50 AM ET",
+          "buy_date": "2026-09-29",
+          "prediction_price": 105.59,
+          "slippage_pct": -0.007,
+          "position_cost": 58.26,
+          "days_held": 0
         }
       ],
       "bench_candidates": [
@@ -45492,7 +45512,7 @@
       "net_trading_gain": -103.05,
       "net_trading_gain_pct": -5.15,
       "closed_rounds": [],
-      "prices_last_updated": "9:50 AM ET",
+      "prices_last_updated": "9:53 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 765.04,
