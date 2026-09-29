@@ -43097,10 +43097,10 @@
             "relative_strength_pct": 1.6,
             "gap_pct": 0.14
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 28.06,
+          "paper_exit_pct": 0.29,
+          "paper_exit_dollar": 0.27,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-09-28",
@@ -43110,8 +43110,8 @@
           "live_dollar": 1.16,
           "price_updated": "9:42 AM ET",
           "slippage_pct": -0.018,
-          "paper_exit_time": "3:36 PM ET",
-          "paper_exit_date": "2026-09-28",
+          "paper_exit_time": "9:49 AM ET",
+          "paper_exit_date": "2026-09-29",
           "postmortem": "Modest gain (+0.07%) but didn't clear the floor trigger \u2014 relative strength pointed the right direction without enough follow-through.",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
@@ -44044,7 +44044,7 @@
           "sell_time": "2026-09-28T15:36:09.166995-04:00"
         }
       ],
-      "prices_last_updated": "9:42 AM ET",
+      "prices_last_updated": "9:49 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 765.61,
@@ -44430,7 +44430,13 @@
           "live_price": 28.11,
           "live_pct": 0.79,
           "live_dollar": 0.75,
-          "price_updated": "9:42 AM ET"
+          "price_updated": "9:42 AM ET",
+          "paper_exit_price": 28.06,
+          "paper_exit_pct": 0.61,
+          "paper_exit_dollar": 0.58,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "9:49 AM ET",
+          "paper_exit_date": "2026-09-29"
         },
         {
           "rank": 8,
@@ -44539,7 +44545,13 @@
           "live_price": 36.99,
           "live_pct": 0.35,
           "live_dollar": 0.29,
-          "price_updated": "9:42 AM ET"
+          "price_updated": "9:42 AM ET",
+          "paper_exit_price": 36.98,
+          "paper_exit_pct": 0.33,
+          "paper_exit_dollar": 0.27,
+          "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
+          "paper_exit_time": "9:49 AM ET",
+          "paper_exit_date": "2026-09-29"
         },
         {
           "rank": 12,
@@ -44596,7 +44608,12 @@
           "live_pct": 0.4,
           "live_dollar": 0.29,
           "price_updated": "9:42 AM ET",
-          "sell_error_note": "\u26a0\ufe0f Sell failed \u2014 {\"code\":40310000,\"message\":\"account is not allowed to short\"}"
+          "paper_exit_price": 267.71,
+          "paper_exit_pct": 0.37,
+          "paper_exit_dollar": 0.27,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "9:49 AM ET",
+          "paper_exit_date": "2026-09-29"
         },
         {
           "rank": 14,
@@ -44670,7 +44687,7 @@
             "relative_strength_pct": -0.03,
             "gap_pct": -0.17
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 23.28,
           "live_pct": 0.39,
           "price_updated": "9:42 AM ET",
@@ -44695,7 +44712,7 @@
             "relative_strength_pct": 0.76,
             "gap_pct": null
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 63.42,
           "live_pct": 0.34,
           "price_updated": "9:42 AM ET",
@@ -45473,7 +45490,7 @@
       "net_trading_gain": -103.05,
       "net_trading_gain_pct": -5.15,
       "closed_rounds": [],
-      "prices_last_updated": "9:48 AM ET",
+      "prices_last_updated": "9:49 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 765.57,
