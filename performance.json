@@ -44892,7 +44892,56 @@
           "live_price": 33.9,
           "live_pct": -0.41,
           "live_dollar": -0.24,
-          "price_updated": "10:25 AM ET"
+          "price_updated": "10:25 AM ET",
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false
+        },
+        {
+          "ticker": "DV",
+          "rank": 23,
+          "score": 0.1704,
+          "entry_price": 13.41,
+          "position_cost": 238.41,
+          "headline": null,
+          "sector": "Communication Services",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.8% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.312,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.81,
+            "gap_pct": -0.04
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+        },
+        {
+          "ticker": "CRBG",
+          "rank": 24,
+          "score": 0.1694,
+          "entry_price": 33.77,
+          "position_cost": 237.36,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.1% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.349,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.13,
+            "gap_pct": -0.24
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
         }
       ],
       "bench_candidates": [
@@ -45034,7 +45083,7 @@
           "live_price": 82.49,
           "live_pct": 0.55,
           "price_updated": "10:25 AM ET",
-          "skipped_reason": "Opening-gap filter: gapped +1.0% from the $82.03 close signals were scored on \u2014 skipping."
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 28,
@@ -45602,7 +45651,7 @@
       "net_trading_gain": -109.52,
       "net_trading_gain_pct": -5.48,
       "closed_rounds": [],
-      "prices_last_updated": "10:25 AM ET",
+      "prices_last_updated": "10:27 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 765.24,
