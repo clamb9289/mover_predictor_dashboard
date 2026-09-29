@@ -44580,7 +44580,13 @@
           "live_price": 41.31,
           "live_pct": 0.57,
           "live_dollar": 0.42,
-          "price_updated": "10:25 AM ET"
+          "price_updated": "10:25 AM ET",
+          "paper_exit_price": 41.34,
+          "paper_exit_pct": 0.65,
+          "paper_exit_dollar": 0.48,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "10:28 AM ET",
+          "paper_exit_date": "2026-09-29"
         },
         {
           "rank": 13,
@@ -44918,7 +44924,9 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-09-29",
+          "days_held": 0
         },
         {
           "ticker": "CRBG",
@@ -44941,7 +44949,9 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-09-29",
+          "days_held": 0
         }
       ],
       "bench_candidates": [
@@ -45651,7 +45661,7 @@
       "net_trading_gain": -109.52,
       "net_trading_gain_pct": -5.48,
       "closed_rounds": [],
-      "prices_last_updated": "10:27 AM ET",
+      "prices_last_updated": "10:28 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 765.24,
