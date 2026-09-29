@@ -44575,7 +44575,7 @@
           "position_cost": 73.49,
           "days_held": 0,
           "paper_current_floor_pct": 0.0064,
-          "paper_peak_pct": 0.009,
+          "paper_peak_pct": 0.0094,
           "paper_trail_floor_active": true,
           "live_price": 41.39,
           "live_pct": 0.77,
@@ -44724,9 +44724,9 @@
           "position_cost": 35.79,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0002,
           "paper_trail_floor_active": false,
-          "live_dollar": -0.06
+          "live_dollar": -0.05
         },
         {
           "rank": 18,
@@ -44783,7 +44783,14 @@
           "live_dollar": -0.13,
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0026,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "slippage_pct": 0.157,
+          "paper_exit_price": 22.98,
+          "paper_exit_pct": 0.73,
+          "paper_exit_dollar": 0.43,
+          "paper_exit_reason": "Trail stop: +0.64% floor (step) triggered (+0.6%)",
+          "paper_exit_time": "10:15 AM ET",
+          "paper_exit_date": "2026-09-29"
         },
         {
           "rank": 20,
@@ -44806,7 +44813,7 @@
           "price_updated": "10:10 AM ET",
           "buy_date": "2026-09-29",
           "prediction_price": 105.59,
-          "slippage_pct": -0.007,
+          "slippage_pct": 0.012,
           "position_cost": 58.26,
           "days_held": 0,
           "live_dollar": 0.1,
