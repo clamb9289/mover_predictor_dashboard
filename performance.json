@@ -43226,10 +43226,10 @@
             "relative_strength_pct": 0.73,
             "gap_pct": -0.24
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 21.76,
+          "paper_exit_pct": -2.64,
+          "paper_exit_dollar": -2.27,
+          "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-09-28",
@@ -43240,7 +43240,9 @@
           "price_updated": "9:32 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "paper_exit_time": "9:34 AM ET",
+          "paper_exit_date": "2026-09-30"
         },
         {
           "ticker": "MDT",
@@ -44081,7 +44083,7 @@
           "sell_time": "2026-09-30T09:31:57.933130-04:00"
         }
       ],
-      "prices_last_updated": "9:33 AM ET",
+      "prices_last_updated": "9:34 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 765.61,
