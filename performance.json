@@ -44774,7 +44774,7 @@
           "position_cost": 36.24,
           "days_held": 1,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0014,
           "paper_trail_floor_active": false,
           "live_dollar": -0.11
         },
@@ -44965,10 +44965,10 @@
             "relative_strength_pct": 0.56,
             "gap_pct": -0.53
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 33.01,
+          "paper_exit_pct": -3.02,
+          "paper_exit_dollar": -1.79,
+          "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-09-29",
@@ -44979,7 +44979,9 @@
           "price_updated": "9:34 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "paper_exit_time": "9:38 AM ET",
+          "paper_exit_date": "2026-09-30"
         },
         {
           "ticker": "DV",
@@ -45960,7 +45962,7 @@
       "net_trading_gain": -113.8,
       "net_trading_gain_pct": -5.69,
       "closed_rounds": [],
-      "prices_last_updated": "9:34 AM ET",
+      "prices_last_updated": "9:38 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 764.2,
@@ -46147,7 +46149,7 @@
           "rank": 1,
           "ticker": "AIG",
           "score": 0.7,
-          "entry_price": 75.27,
+          "entry_price": 75.15,
           "headline": null,
           "sector": "Financials",
           "explainer": "Volume was running 2.9x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+1.6% relative strength), suggesting individual demand beyond just sector momentum.",
@@ -46161,7 +46163,14 @@
           "live_price": 74.98,
           "live_pct": -0.39,
           "live_dollar": null,
-          "price_updated": "9:34 AM ET"
+          "price_updated": "9:34 AM ET",
+          "buy_date": "2026-09-30",
+          "prediction_price": 75.27,
+          "position_cost": 154.75,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0
         },
         {
           "rank": 2,
@@ -46231,7 +46240,7 @@
           "position_cost": 80.87,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0009,
           "paper_trail_floor_active": false,
           "live_price": 83.59,
           "live_pct": -0.18,
@@ -46325,7 +46334,7 @@
           "rank": 8,
           "ticker": "SPGI",
           "score": 0.234,
-          "entry_price": 392.45,
+          "entry_price": 395.446,
           "headline": "Should You Buy The Dip In MongoDB Stock?",
           "sector": "Financials",
           "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. Recent news skewed positive, including: \u201cShould You Buy The Dip In MongoDB Stock?\u201d",
@@ -46336,10 +46345,15 @@
             "relative_strength_pct": -1.04,
             "gap_pct": 0.72
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 394.86,
           "live_pct": 0.61,
-          "price_updated": "9:34 AM ET"
+          "price_updated": "9:34 AM ET",
+          "buy_date": "2026-09-30",
+          "prediction_price": 392.45,
+          "slippage_pct": 0.034,
+          "position_cost": 101.81,
+          "days_held": 0
         },
         {
           "rank": 9,
@@ -46365,7 +46379,7 @@
           "rank": 10,
           "ticker": "EIX",
           "score": 0.226,
-          "entry_price": 53.56,
+          "entry_price": 53.948,
           "headline": null,
           "sector": "Utilities",
           "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout.",
@@ -46376,10 +46390,15 @@
             "relative_strength_pct": -0.68,
             "gap_pct": 1.44
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 53.88,
           "live_pct": 0.6,
-          "price_updated": "9:34 AM ET"
+          "price_updated": "9:34 AM ET",
+          "buy_date": "2026-09-30",
+          "prediction_price": 53.56,
+          "slippage_pct": -0.059,
+          "position_cost": 99.05,
+          "days_held": 0
         },
         {
           "rank": 11,
@@ -46640,7 +46659,8 @@
           },
           "live_price": 114.49,
           "live_pct": 0.25,
-          "price_updated": "9:34 AM ET"
+          "price_updated": "9:34 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 24,
@@ -46659,7 +46679,8 @@
           },
           "live_price": 100.61,
           "live_pct": 0.35,
-          "price_updated": "9:34 AM ET"
+          "price_updated": "9:34 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 25,
@@ -46678,7 +46699,8 @@
           },
           "live_price": 122.82,
           "live_pct": 0.14,
-          "price_updated": "9:34 AM ET"
+          "price_updated": "9:34 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 26,
@@ -46697,7 +46719,8 @@
           },
           "live_price": 122.49,
           "live_pct": 0.08,
-          "price_updated": "9:34 AM ET"
+          "price_updated": "9:34 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 27,
@@ -46716,7 +46739,8 @@
           },
           "live_price": 169.56,
           "live_pct": -0.5,
-          "price_updated": "9:34 AM ET"
+          "price_updated": "9:34 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 28,
@@ -46735,7 +46759,8 @@
           },
           "live_price": 99.9,
           "live_pct": 0.14,
-          "price_updated": "9:34 AM ET"
+          "price_updated": "9:34 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 29,
@@ -47298,7 +47323,7 @@
       "net_trading_gain": -111.25,
       "net_trading_gain_pct": -5.56,
       "closed_rounds": [],
-      "prices_last_updated": "9:34 AM ET",
+      "prices_last_updated": "9:38 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 766.78,
