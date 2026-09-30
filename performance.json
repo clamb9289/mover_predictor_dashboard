@@ -45031,10 +45031,10 @@
             "relative_strength_pct": 0.13,
             "gap_pct": -0.24
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 33.88,
+          "paper_exit_pct": 0.33,
+          "paper_exit_dollar": 0.44,
+          "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-09-29",
@@ -45045,7 +45045,9 @@
           "price_updated": "9:43 AM ET",
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0059,
-          "paper_trail_floor_active": true
+          "paper_trail_floor_active": true,
+          "paper_exit_time": "9:47 AM ET",
+          "paper_exit_date": "2026-09-30"
         },
         {
           "ticker": "SOLS",
@@ -45962,7 +45964,7 @@
       "net_trading_gain": -113.8,
       "net_trading_gain_pct": -5.69,
       "closed_rounds": [],
-      "prices_last_updated": "9:43 AM ET",
+      "prices_last_updated": "9:47 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 764.2,
@@ -46423,7 +46425,7 @@
             "relative_strength_pct": -2.23,
             "gap_pct": -0.11
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 56.96,
           "live_pct": 0.21,
           "price_updated": "9:43 AM ET",
@@ -47338,7 +47340,7 @@
       "net_trading_gain": -111.25,
       "net_trading_gain_pct": -5.56,
       "closed_rounds": [],
-      "prices_last_updated": "9:46 AM ET",
+      "prices_last_updated": "9:47 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 766.52,
