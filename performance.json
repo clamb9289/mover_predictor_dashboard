@@ -48085,7 +48085,13 @@
           "live_price": 103.38,
           "live_pct": 0.73,
           "live_dollar": 0.87,
-          "price_updated": "10:12 AM ET"
+          "price_updated": "10:12 AM ET",
+          "paper_exit_price": 103.22,
+          "paper_exit_pct": 0.58,
+          "paper_exit_dollar": 0.69,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "10:22 AM ET",
+          "paper_exit_date": "2026-10-01"
         },
         {
           "rank": 9,
@@ -49002,7 +49008,7 @@
           "sell_time": "2026-10-01T09:54:44.268124-04:00"
         }
       ],
-      "prices_last_updated": "10:16 AM ET",
+      "prices_last_updated": "10:22 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 760.37,
