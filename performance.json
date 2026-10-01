@@ -46692,7 +46692,13 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "live_dollar": -1.93
+          "live_dollar": -1.93,
+          "paper_exit_price": 82.17,
+          "paper_exit_pct": -2.78,
+          "paper_exit_dollar": -2.2,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "9:37 AM ET",
+          "paper_exit_date": "2026-10-01"
         },
         {
           "rank": 17,
@@ -46889,9 +46895,9 @@
           "live_pct": 1.53,
           "live_dollar": 3.68,
           "price_updated": "9:35 AM ET",
-          "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0023,
-          "paper_trail_floor_active": false
+          "paper_current_floor_pct": 0.012,
+          "paper_peak_pct": 0.0188,
+          "paper_trail_floor_active": true
         },
         {
           "ticker": "DUK",
@@ -47688,7 +47694,7 @@
       "net_trading_gain": -119.7,
       "net_trading_gain_pct": -5.99,
       "closed_rounds": [],
-      "prices_last_updated": "9:35 AM ET",
+      "prices_last_updated": "9:37 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 762.63,
@@ -48011,7 +48017,7 @@
           "rank": 7,
           "ticker": "DRH",
           "score": 0.318,
-          "entry_price": 12.36,
+          "entry_price": 12.306752,
           "headline": null,
           "sector": "Real Estate",
           "explainer": "Volume was running 1.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+4.1% relative strength), suggesting individual demand beyond just sector momentum.",
@@ -48025,7 +48031,14 @@
           "live_price": 12.36,
           "live_pct": -0.0,
           "live_dollar": null,
-          "price_updated": "9:35 AM ET"
+          "price_updated": "9:35 AM ET",
+          "buy_date": "2026-10-01",
+          "prediction_price": 12.36,
+          "position_cost": 83.61,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0035,
+          "paper_trail_floor_active": false,
+          "days_held": 0
         },
         {
           "rank": 8,
@@ -48079,7 +48092,7 @@
           "rank": 10,
           "ticker": "PPL",
           "score": 0.27,
-          "entry_price": 32.89,
+          "entry_price": 32.681431,
           "headline": "Can FE's T&D Investments Support Sustainable Long-Term Growth?",
           "sector": "Utilities",
           "explainer": "Volume was running 1.8x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.8% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cCan FE's T&D Investments Support Sustainable Long-Term Growth?\u201d",
@@ -48090,10 +48103,17 @@
             "relative_strength_pct": 2.76,
             "gap_pct": -0.59
           },
-          "skipped_reason": "Buy order failed: {\"buying_power\":\"114.42\",\"code\":40310000,\"cost_basis\":\"118.86\",\"message\":\"insufficient buying power\"}",
+          "skipped_reason": null,
           "live_price": 32.68,
           "live_pct": -0.64,
-          "price_updated": "9:35 AM ET"
+          "price_updated": "9:35 AM ET",
+          "buy_date": "2026-10-01",
+          "prediction_price": 32.89,
+          "position_cost": 114.42,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0
         },
         {
           "rank": 11,
@@ -48139,7 +48159,7 @@
           "rank": 13,
           "ticker": "WBD",
           "score": 0.247,
-          "entry_price": 30.95,
+          "entry_price": 30.96,
           "headline": "Paramount Settlement of Antitrust Case Approved by Judge",
           "sector": "Communication Services",
           "explainer": "Volume was running 1.7x above average without a matching price move \u2014 a classic accumulation pattern that often precedes a breakout. The stock outperformed its own sector over the past 5 days (+2.0% relative strength), suggesting individual demand beyond just sector momentum. Recent news skewed positive, including: \u201cParamount Settlement of Antitrust Case Approved by Judge\u201d",
@@ -48153,7 +48173,14 @@
           "live_price": 30.95,
           "live_pct": 0.0,
           "live_dollar": null,
-          "price_updated": "9:35 AM ET"
+          "price_updated": "9:35 AM ET",
+          "buy_date": "2026-10-01",
+          "prediction_price": 30.95,
+          "position_cost": 118.85,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0
         },
         {
           "rank": 14,
@@ -48900,7 +48927,7 @@
       "net_trading_gain": -120.43,
       "net_trading_gain_pct": -6.02,
       "closed_rounds": [],
-      "prices_last_updated": "9:35 AM ET",
+      "prices_last_updated": "9:37 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 764.89,
