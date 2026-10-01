@@ -46882,10 +46882,10 @@
             "relative_strength_pct": 1.01,
             "gap_pct": 0.33
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 35.81,
+          "paper_exit_pct": 1.36,
+          "paper_exit_dollar": 3.27,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "skipped_reason": null,
@@ -46897,7 +46897,9 @@
           "price_updated": "9:35 AM ET",
           "paper_current_floor_pct": 0.012,
           "paper_peak_pct": 0.0188,
-          "paper_trail_floor_active": true
+          "paper_trail_floor_active": true,
+          "paper_exit_time": "9:38 AM ET",
+          "paper_exit_date": "2026-10-01"
         },
         {
           "ticker": "DUK",
@@ -47694,7 +47696,7 @@
       "net_trading_gain": -119.7,
       "net_trading_gain_pct": -5.99,
       "closed_rounds": [],
-      "prices_last_updated": "9:37 AM ET",
+      "prices_last_updated": "9:38 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 762.63,
