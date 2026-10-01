@@ -46338,7 +46338,13 @@
           "live_price": 48.22,
           "live_pct": -3.05,
           "live_dollar": -2.42,
-          "price_updated": "9:38 AM ET"
+          "price_updated": "9:38 AM ET",
+          "paper_exit_price": 48.24,
+          "paper_exit_pct": -3.0,
+          "paper_exit_dollar": -2.38,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "9:46 AM ET",
+          "paper_exit_date": "2026-10-01"
         },
         {
           "rank": 6,
@@ -47696,7 +47702,7 @@
       "net_trading_gain": -119.7,
       "net_trading_gain_pct": -5.99,
       "closed_rounds": [],
-      "prices_last_updated": "9:38 AM ET",
+      "prices_last_updated": "9:46 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 762.63,
@@ -48200,7 +48206,7 @@
             "relative_strength_pct": 2.16,
             "gap_pct": -0.61
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 156.09,
           "live_pct": 0.64,
           "price_updated": "9:38 AM ET",
@@ -48225,7 +48231,7 @@
             "relative_strength_pct": 3.19,
             "gap_pct": -0.1
           },
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions).",
+          "skipped_reason": null,
           "live_price": 59.1,
           "live_pct": 1.18,
           "price_updated": "9:38 AM ET",
@@ -48940,7 +48946,7 @@
       "net_trading_gain": -120.43,
       "net_trading_gain_pct": -6.02,
       "closed_rounds": [],
-      "prices_last_updated": "9:41 AM ET",
+      "prices_last_updated": "9:42 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 765.02,
