@@ -44552,10 +44552,10 @@
           "paper_peak_pct": 0.0048,
           "paper_trail_floor_active": false,
           "days_held": 0,
-          "live_price": 15.02,
-          "live_pct": 13.3,
-          "live_dollar": 11.8,
-          "price_updated": "10:10 AM ET"
+          "live_price": 15.0,
+          "live_pct": 13.11,
+          "live_dollar": 11.63,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 9,
@@ -46038,7 +46038,7 @@
       "net_trading_gain": -113.8,
       "net_trading_gain_pct": -5.69,
       "closed_rounds": [],
-      "prices_last_updated": "10:10 AM ET",
+      "prices_last_updated": "10:11 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 764.2,
@@ -46308,7 +46308,8 @@
           "paper_exit_dollar": 0.38,
           "paper_exit_reason": "Trail stop: +0.38% floor (step) triggered (+0.4%)",
           "paper_exit_time": "9:37 AM ET",
-          "paper_exit_date": "2026-10-02"
+          "paper_exit_date": "2026-10-02",
+          "postmortem": "Modest gain (+0.47%) but didn't clear the floor trigger \u2014 accumulation/volume pointed the right direction without enough follow-through."
         },
         {
           "rank": 4,
@@ -46342,7 +46343,8 @@
           "paper_exit_dollar": 0.25,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:31 AM ET",
-          "paper_exit_date": "2026-10-02"
+          "paper_exit_date": "2026-10-02",
+          "postmortem": "Modest gain (+0.31%) but didn't clear the floor trigger \u2014 accumulation/volume and relative strength and news sentiment pointed the right direction without enough follow-through."
         },
         {
           "rank": 5,
@@ -46878,9 +46880,9 @@
             "gap_pct": -0.16
           },
           "skipped_reason": null,
-          "live_price": 129.04,
-          "live_pct": -1.54,
-          "price_updated": "10:10 AM ET",
+          "live_price": 129.06,
+          "live_pct": -1.53,
+          "price_updated": "10:11 AM ET",
           "buy_date": "2026-09-30",
           "prediction_price": 132.61,
           "slippage_pct": 0.008,
@@ -46988,10 +46990,10 @@
           "skipped_reason": null,
           "buy_date": "2026-09-30",
           "days_held": 2,
-          "live_price": 114.78,
-          "live_pct": 0.09,
-          "live_dollar": 0.05,
-          "price_updated": "10:10 AM ET",
+          "live_price": 114.66,
+          "live_pct": -0.01,
+          "live_dollar": -0.01,
+          "price_updated": "10:11 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0042,
           "paper_trail_floor_active": false
@@ -47758,7 +47760,7 @@
       "net_trading_gain": -119.7,
       "net_trading_gain_pct": -5.99,
       "closed_rounds": [],
-      "prices_last_updated": "10:10 AM ET",
+      "prices_last_updated": "10:11 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 762.63,
@@ -47973,7 +47975,8 @@
           "paper_exit_dollar": -5.49,
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:40 AM ET",
-          "paper_exit_date": "2026-10-02"
+          "paper_exit_date": "2026-10-02",
+          "postmortem": "Hit the stop loss (-3.14%) despite accumulation/volume and sector momentum \u2014 worth reviewing if accumulation/volume keeps producing false positives."
         },
         {
           "rank": 2,
@@ -48119,7 +48122,7 @@
           "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "paper_exit_time": "9:43 AM ET",
           "paper_exit_date": "2026-10-02",
-          "postmortem": "Small loss (-0.38%) \u2014 accumulation/volume and relative strength didn't convert this time; within normal volatility for now.",
+          "postmortem": "Cleared the trailing-stop floor (+2.79%) \u2014 the accumulation/volume and relative strength signal(s) that drove this pick played out well. Worth leaning into when this profile repeats.",
           "paper_current_floor_pct": 0.0187,
           "paper_peak_pct": 0.0287,
           "paper_trail_floor_active": true
@@ -48340,9 +48343,9 @@
             "gap_pct": -0.1
           },
           "skipped_reason": null,
-          "live_price": 58.62,
-          "live_pct": -0.93,
-          "price_updated": "10:10 AM ET",
+          "live_price": 58.74,
+          "live_pct": -0.72,
+          "price_updated": "10:11 AM ET",
           "buy_date": "2026-10-01",
           "prediction_price": 58.41,
           "position_cost": 158.95,
@@ -48350,7 +48353,7 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "live_dollar": -1.48
+          "live_dollar": -1.14
         },
         {
           "rank": 16,
@@ -48406,7 +48409,7 @@
           "skipped_reason": null,
           "live_price": 268.29,
           "live_pct": 0.67,
-          "price_updated": "10:10 AM ET",
+          "price_updated": "10:11 AM ET",
           "buy_date": "2026-10-01",
           "prediction_price": 271.83,
           "slippage_pct": 0.045,
@@ -49335,7 +49338,7 @@
           "sell_time": "2026-10-01T10:02:38.001489-04:00"
         }
       ],
-      "prices_last_updated": "10:10 AM ET",
+      "prices_last_updated": "10:11 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 763.99,
@@ -49343,10 +49346,10 @@
     },
     {
       "date": "2026-10-02",
-      "regime": "Market regime OK \u2014 SPY +0.83%",
+      "regime": "Market regime OK \u2014 SPY +0.96%",
       "trading_skipped": false,
       "max_hold_days": 3,
-      "spy_regime_pct": 0.0083,
+      "spy_regime_pct": 0.00955,
       "top_sectors": [
         {
           "etf": "XLK",
@@ -49533,10 +49536,10 @@
             "relative_strength_pct": -5.14,
             "gap_pct": 0.15
           },
-          "live_price": 111.8,
-          "live_pct": -0.05,
-          "live_dollar": -0.12,
-          "price_updated": "10:10 AM ET",
+          "live_price": 111.7,
+          "live_pct": -0.14,
+          "live_dollar": -0.34,
+          "price_updated": "10:11 AM ET",
           "buy_date": "2026-10-02",
           "prediction_price": 112.21,
           "slippage_pct": 0.139,
@@ -49568,9 +49571,9 @@
             "gap_pct": 0.84
           },
           "skipped_reason": "Opening-gap filter: gapped +1.1% from the $16.61 close signals were scored on \u2014 skipping.",
-          "live_price": 16.88,
-          "live_pct": 1.63,
-          "price_updated": "10:10 AM ET"
+          "live_price": 16.89,
+          "live_pct": 1.69,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 3,
@@ -49595,10 +49598,10 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0067,
           "paper_trail_floor_active": true,
-          "live_price": 90.57,
-          "live_pct": 0.63,
-          "live_dollar": 0.75,
-          "price_updated": "10:10 AM ET",
+          "live_price": 90.54,
+          "live_pct": 0.6,
+          "live_dollar": 0.71,
+          "price_updated": "10:11 AM ET",
           "paper_exit_price": 90.3,
           "paper_exit_pct": 0.33,
           "paper_exit_dollar": 0.39,
@@ -49632,7 +49635,7 @@
           "live_price": 130.13,
           "live_pct": -1.27,
           "live_dollar": -1.44,
-          "price_updated": "10:10 AM ET"
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 5,
@@ -49650,9 +49653,9 @@
             "gap_pct": 1.18
           },
           "skipped_reason": "Opening-gap filter: gapped +1.0% from the $57.53 close signals were scored on \u2014 skipping.",
-          "live_price": 57.52,
-          "live_pct": -0.02,
-          "price_updated": "10:10 AM ET"
+          "live_price": 57.43,
+          "live_pct": -0.17,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 6,
@@ -49680,7 +49683,7 @@
           "live_price": 223.89,
           "live_pct": -0.7,
           "live_dollar": -0.66,
-          "price_updated": "10:10 AM ET"
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 7,
@@ -49705,10 +49708,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0035,
           "paper_trail_floor_active": false,
-          "live_price": 22.62,
-          "live_pct": -0.57,
-          "live_dollar": -0.53,
-          "price_updated": "10:10 AM ET"
+          "live_price": 22.58,
+          "live_pct": -0.77,
+          "live_dollar": -0.72,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 8,
@@ -49733,10 +49736,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.003,
           "paper_trail_floor_active": false,
-          "live_price": 43.81,
-          "live_pct": 0.01,
-          "live_dollar": 0.01,
-          "price_updated": "10:10 AM ET"
+          "live_price": 43.76,
+          "live_pct": -0.09,
+          "live_dollar": -0.08,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 9,
@@ -49754,9 +49757,9 @@
             "gap_pct": 2.39
           },
           "skipped_reason": "Opening-gap filter: gapped +2.2% from the $82.11 close signals were scored on \u2014 skipping.",
-          "live_price": 82.05,
-          "live_pct": -0.07,
-          "price_updated": "10:10 AM ET"
+          "live_price": 81.96,
+          "live_pct": -0.18,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 10,
@@ -49781,10 +49784,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "live_price": 81.44,
-          "live_pct": -1.06,
-          "live_dollar": -0.89,
-          "price_updated": "10:10 AM ET"
+          "live_price": 81.39,
+          "live_pct": -1.12,
+          "live_dollar": -0.94,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 11,
@@ -49809,10 +49812,10 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0071,
           "paper_trail_floor_active": true,
-          "live_price": 230.72,
-          "live_pct": -0.07,
-          "live_dollar": -0.06,
-          "price_updated": "10:10 AM ET",
+          "live_price": 230.29,
+          "live_pct": -0.26,
+          "live_dollar": -0.21,
+          "price_updated": "10:11 AM ET",
           "paper_exit_price": 231.74,
           "paper_exit_pct": 0.37,
           "paper_exit_dollar": 0.3,
@@ -49836,9 +49839,9 @@
             "gap_pct": 1.78
           },
           "skipped_reason": "Opening-gap filter: gapped +1.6% from the $258.92 close signals were scored on \u2014 skipping.",
-          "live_price": 250.52,
+          "live_price": 250.53,
           "live_pct": -3.24,
-          "price_updated": "10:10 AM ET"
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 13,
@@ -49863,10 +49866,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0041,
           "paper_trail_floor_active": false,
-          "live_price": 69.78,
-          "live_pct": -0.7,
-          "live_dollar": -0.56,
-          "price_updated": "10:10 AM ET"
+          "live_price": 69.62,
+          "live_pct": -0.93,
+          "live_dollar": -0.75,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 14,
@@ -49891,10 +49894,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0048,
           "paper_trail_floor_active": false,
-          "live_price": 39.21,
-          "live_pct": 0.48,
-          "live_dollar": 0.35,
-          "price_updated": "10:10 AM ET"
+          "live_price": 39.17,
+          "live_pct": 0.37,
+          "live_dollar": 0.27,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 15,
@@ -49918,10 +49921,10 @@
           "paper_peak_pct": 0.0063,
           "paper_trail_floor_active": true,
           "days_held": 0,
-          "live_price": 12.58,
-          "live_pct": -0.16,
-          "live_dollar": -0.04,
-          "price_updated": "10:10 AM ET",
+          "live_price": 12.56,
+          "live_pct": -0.32,
+          "live_dollar": -0.08,
+          "price_updated": "10:11 AM ET",
           "paper_exit_price": 12.65,
           "paper_exit_pct": 0.4,
           "paper_exit_dollar": 0.29,
@@ -49954,7 +49957,7 @@
           "live_price": 16.11,
           "live_pct": 0.12,
           "live_dollar": 0.04,
-          "price_updated": "10:10 AM ET",
+          "price_updated": "10:11 AM ET",
           "paper_exit_price": 16.12,
           "paper_exit_pct": 0.18,
           "paper_exit_dollar": 0.13,
@@ -49979,8 +49982,8 @@
           },
           "skipped_reason": "Opening-gap filter: gapped +1.1% from the $24.98 close signals were scored on \u2014 skipping.",
           "live_price": 25.24,
-          "live_pct": 1.04,
-          "price_updated": "10:10 AM ET"
+          "live_pct": 1.02,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 18,
@@ -50005,16 +50008,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0039,
           "paper_trail_floor_active": false,
-          "live_price": 106.19,
-          "live_pct": 0.51,
-          "live_dollar": 0.47,
-          "price_updated": "10:10 AM ET",
-          "paper_exit_price": 106.24,
-          "paper_exit_pct": 0.56,
-          "paper_exit_dollar": 0.52,
-          "paper_exit_reason": "Trail stop: +0.38% floor (step) triggered (+0.3%)",
-          "paper_exit_time": "10:08 AM ET",
-          "paper_exit_date": "2026-10-02"
+          "live_price": 105.8,
+          "live_pct": 0.15,
+          "live_dollar": 0.14,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 19,
@@ -50032,9 +50029,9 @@
             "gap_pct": -0.06
           },
           "skipped_reason": "Opening-gap filter: gapped +1.5% from the $47.03 close signals were scored on \u2014 skipping.",
-          "live_price": 47.72,
-          "live_pct": 1.47,
-          "price_updated": "10:10 AM ET"
+          "live_price": 47.59,
+          "live_pct": 1.19,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 20,
@@ -50059,10 +50056,10 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0033,
           "paper_trail_floor_active": false,
-          "live_price": 57.14,
-          "live_pct": 0.26,
-          "live_dollar": 0.24,
-          "price_updated": "10:10 AM ET"
+          "live_price": 57.08,
+          "live_pct": 0.16,
+          "live_dollar": 0.15,
+          "price_updated": "10:11 AM ET"
         },
         {
           "ticker": "NBIX",
@@ -50092,10 +50089,10 @@
           "paper_current_floor_pct": 0.009,
           "paper_peak_pct": 0.0134,
           "paper_trail_floor_active": true,
-          "live_price": 143.19,
-          "live_pct": 0.95,
-          "live_dollar": 0.87,
-          "price_updated": "10:10 AM ET"
+          "live_price": 143.73,
+          "live_pct": 1.34,
+          "live_dollar": 1.23,
+          "price_updated": "10:11 AM ET"
         },
         {
           "ticker": "AWK",
@@ -50125,10 +50122,10 @@
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0055,
           "paper_trail_floor_active": true,
-          "live_price": 129.65,
-          "live_pct": 0.51,
-          "live_dollar": 0.47,
-          "price_updated": "10:10 AM ET"
+          "live_price": 129.7,
+          "live_pct": 0.55,
+          "live_dollar": 0.51,
+          "price_updated": "10:11 AM ET"
         },
         {
           "ticker": "BJ",
@@ -50154,10 +50151,10 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-02",
           "days_held": 0,
-          "live_price": 93.44,
-          "live_pct": -1.45,
-          "live_dollar": -1.7,
-          "price_updated": "10:10 AM ET",
+          "live_price": 93.5,
+          "live_pct": -1.39,
+          "live_dollar": -1.63,
+          "price_updated": "10:11 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0016,
           "paper_trail_floor_active": false
@@ -50186,10 +50183,10 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-02",
           "days_held": 0,
-          "live_price": 125.62,
-          "live_pct": -0.31,
-          "live_dollar": -0.11,
-          "price_updated": "10:10 AM ET",
+          "live_price": 125.47,
+          "live_pct": -0.43,
+          "live_dollar": -0.15,
+          "price_updated": "10:11 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false
@@ -50218,10 +50215,10 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-02",
           "days_held": 0,
-          "live_price": 27.1,
-          "live_pct": 1.07,
-          "live_dollar": 0.39,
-          "price_updated": "10:10 AM ET",
+          "live_price": 27.08,
+          "live_pct": 0.99,
+          "live_dollar": 0.36,
+          "price_updated": "10:11 AM ET",
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0084,
           "paper_trail_floor_active": true,
@@ -50252,12 +50249,12 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-02",
           "days_held": 0,
-          "live_price": 30.91,
-          "live_pct": 0.03,
-          "live_dollar": 0.07,
-          "price_updated": "10:10 AM ET",
+          "live_price": 30.88,
+          "live_pct": -0.06,
+          "live_dollar": -0.15,
+          "price_updated": "10:11 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0008,
+          "paper_peak_pct": 0.0002,
           "paper_trail_floor_active": false
         },
         {
@@ -50284,10 +50281,10 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-02",
           "days_held": 0,
-          "live_price": 245.0,
-          "live_pct": 0.12,
-          "live_dollar": 0.13,
-          "price_updated": "10:10 AM ET",
+          "live_price": 244.82,
+          "live_pct": 0.05,
+          "live_dollar": 0.05,
+          "price_updated": "10:11 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0025,
           "paper_trail_floor_active": false
@@ -50309,9 +50306,9 @@
             "relative_strength_pct": -3.6,
             "gap_pct": 0.98
           },
-          "live_price": 129.65,
-          "live_pct": 1.4,
-          "price_updated": "10:10 AM ET"
+          "live_price": 129.7,
+          "live_pct": 1.44,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 22,
@@ -50328,9 +50325,9 @@
             "relative_strength_pct": 3.43,
             "gap_pct": -0.15
           },
-          "live_price": 143.19,
-          "live_pct": 1.76,
-          "price_updated": "10:10 AM ET"
+          "live_price": 143.73,
+          "live_pct": 2.15,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 23,
@@ -50347,10 +50344,10 @@
             "relative_strength_pct": 0.48,
             "gap_pct": 0.32
           },
-          "live_price": 9.49,
-          "live_pct": 1.99,
-          "price_updated": "10:10 AM ET",
-          "skipped_reason": "Opening-gap filter: gapped +2.0% from the $9.31 close signals were scored on \u2014 skipping."
+          "live_price": 9.48,
+          "live_pct": 1.83,
+          "price_updated": "10:11 AM ET",
+          "skipped_reason": "Opening-gap filter: gapped +1.9% from the $9.31 close signals were scored on \u2014 skipping."
         },
         {
           "rank": 24,
@@ -50367,9 +50364,9 @@
             "relative_strength_pct": 4.42,
             "gap_pct": null
           },
-          "live_price": 93.44,
-          "live_pct": -0.97,
-          "price_updated": "10:10 AM ET"
+          "live_price": 93.5,
+          "live_pct": -0.91,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 25,
@@ -50387,9 +50384,9 @@
             "gap_pct": 0.63
           },
           "skipped_reason": "Opening-gap filter: gapped +1.1% from the $76.35 close signals were scored on \u2014 skipping.",
-          "live_price": 77.25,
-          "live_pct": 1.18,
-          "price_updated": "10:10 AM ET"
+          "live_price": 77.17,
+          "live_pct": 1.07,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 26,
@@ -50407,9 +50404,9 @@
             "gap_pct": 1.8
           },
           "skipped_reason": "Opening-gap filter: gapped +2.3% from the $17.49 close signals were scored on \u2014 skipping.",
-          "live_price": 17.94,
-          "live_pct": 2.57,
-          "price_updated": "10:10 AM ET"
+          "live_price": 17.92,
+          "live_pct": 2.46,
+          "price_updated": "10:11 AM ET"
         },
         {
           "rank": 27,
@@ -50426,9 +50423,9 @@
             "relative_strength_pct": 2.0,
             "gap_pct": -0.35
           },
-          "live_price": 125.62,
-          "live_pct": -0.1,
-          "price_updated": "10:10 AM ET",
+          "live_price": 125.47,
+          "live_pct": -0.21,
+          "price_updated": "10:11 AM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
@@ -50446,9 +50443,9 @@
             "relative_strength_pct": 2.67,
             "gap_pct": -0.28
           },
-          "live_price": 27.1,
-          "live_pct": 0.18,
-          "price_updated": "10:10 AM ET",
+          "live_price": 27.08,
+          "live_pct": 0.11,
+          "price_updated": "10:11 AM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
@@ -50466,9 +50463,9 @@
             "relative_strength_pct": 1.78,
             "gap_pct": 0.94
           },
-          "live_price": 30.91,
-          "live_pct": 0.72,
-          "price_updated": "10:10 AM ET",
+          "live_price": 30.88,
+          "live_pct": 0.62,
+          "price_updated": "10:11 AM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
@@ -50486,9 +50483,9 @@
             "relative_strength_pct": 3.24,
             "gap_pct": 1.25
           },
-          "live_price": 245.0,
-          "live_pct": 0.42,
-          "price_updated": "10:10 AM ET",
+          "live_price": 244.82,
+          "live_pct": 0.34,
+          "price_updated": "10:11 AM ET",
           "skipped_reason": "Opening-gap filter: gapped +1.2% from the $243.98 close signals were scored on \u2014 skipping."
         }
       ],
@@ -50497,8 +50494,8 @@
         {
           "rank": 1,
           "ticker": "QRVO",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": -3.14,
+          "dollar_change": -5.49,
           "position_size": 174.88,
           "actual_rank": 624,
           "total_ranked": 686,
@@ -50509,7 +50506,7 @@
             "relative_strength_pct": -4.48,
             "gap_pct": -0.11
           },
-          "postmortem": null
+          "postmortem": "Hit the stop loss (-3.14%) despite accumulation/volume and sector momentum \u2014 worth reviewing if accumulation/volume keeps producing false positives. The stock itself ranked #624 of 686 tracked that day, for context."
         },
         {
           "rank": 5,
@@ -50548,8 +50545,8 @@
         {
           "rank": 7,
           "ticker": "DRH",
-          "move_pct": -0.38,
-          "dollar_change": -0.32,
+          "move_pct": 2.79,
+          "dollar_change": 1.98,
           "position_size": 83.61,
           "actual_rank": 210,
           "total_ranked": 686,
@@ -50560,7 +50557,7 @@
             "relative_strength_pct": 4.1,
             "gap_pct": -0.61
           },
-          "postmortem": "Small loss (-0.38%) \u2014 accumulation/volume and relative strength didn't convert this time; within normal volatility for now. The stock itself ranked #210 of 686 tracked that day, for context."
+          "postmortem": "Cleared the trailing-stop floor (+2.79%) \u2014 the accumulation/volume and relative strength signal(s) that drove this pick played out well. Worth leaning into when this profile repeats. The stock itself ranked #210 of 686 tracked that day, for context."
         },
         {
           "rank": 8,
@@ -50818,20 +50815,20 @@
           "postmortem": "Modest gain (+0.34%) but didn't clear the floor trigger \u2014 relative strength and news sentiment pointed the right direction without enough follow-through. The stock itself ranked #458 of 686 tracked that day, for context."
         }
       ],
-      "hit_rate": 0.008,
+      "hit_rate": 0.0078,
       "total_hits": 1,
-      "total_predictions": 125,
-      "days_tracked": 42,
+      "total_predictions": 128,
+      "days_tracked": 43,
       "total_contributed": 2000.0,
-      "current_equity": 1893.07,
-      "net_trading_gain": -106.93,
-      "net_trading_gain_pct": -5.35,
+      "current_equity": 1894.95,
+      "net_trading_gain": -105.05,
+      "net_trading_gain_pct": -5.25,
       "closed_rounds": [],
       "prices_last_updated": "10:11 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
-      "spy_live_price": 771.63,
-      "spy_live_pct": 0.9
+      "spy_live_price": 770.96,
+      "spy_live_pct": 0.81
     }
   ]
 }
