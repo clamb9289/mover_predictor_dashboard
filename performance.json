@@ -46993,7 +46993,7 @@
           "live_dollar": 0.14,
           "price_updated": "9:44 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0018,
+          "paper_peak_pct": 0.0035,
           "paper_trail_floor_active": false
         },
         {
@@ -47758,7 +47758,7 @@
       "net_trading_gain": -119.7,
       "net_trading_gain_pct": -5.99,
       "closed_rounds": [],
-      "prices_last_updated": "9:44 AM ET",
+      "prices_last_updated": "9:45 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 762.63,
@@ -49541,7 +49541,10 @@
           "prediction_price": 112.21,
           "slippage_pct": 0.139,
           "position_cost": 242.38,
-          "days_held": 0
+          "days_held": 0,
+          "paper_current_floor_pct": 0.0037,
+          "paper_peak_pct": 0.0052,
+          "paper_trail_floor_active": true
         },
         {
           "rank": 2,
@@ -49716,7 +49719,7 @@
           "position_cost": 92.71,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0009,
+          "paper_peak_pct": 0.0023,
           "paper_trail_floor_active": false,
           "live_price": 43.87,
           "live_pct": 0.16,
@@ -49792,7 +49795,7 @@
           "position_cost": 81.99,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0013,
           "paper_trail_floor_active": false,
           "live_price": 230.56,
           "live_pct": -0.14,
@@ -50063,7 +50066,7 @@
           "slippage_pct": 0.951,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0009,
           "paper_trail_floor_active": false,
           "live_price": 142.06,
           "live_pct": 0.16,
@@ -50134,6 +50137,52 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0016,
           "paper_trail_floor_active": false
+        },
+        {
+          "ticker": "HIG",
+          "rank": 27,
+          "score": 0.1907,
+          "entry_price": 126.006,
+          "position_cost": 34.07,
+          "headline": null,
+          "sector": "Financials",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.0% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.405,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.0,
+            "gap_pct": -0.35
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+        },
+        {
+          "ticker": "WMG",
+          "rank": 28,
+          "score": 0.1905,
+          "entry_price": 26.814,
+          "position_cost": 36.19,
+          "headline": null,
+          "sector": "Communication Services",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+2.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.386,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 2.67,
+            "gap_pct": -0.28
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
         }
       ],
       "bench_candidates": [
@@ -50193,7 +50242,7 @@
           "live_price": 9.46,
           "live_pct": 1.61,
           "price_updated": "9:44 AM ET",
-          "skipped_reason": "Opening-gap filter: gapped +1.2% from the $9.31 close signals were scored on \u2014 skipping."
+          "skipped_reason": "Opening-gap filter: gapped +1.7% from the $9.31 close signals were scored on \u2014 skipping."
         },
         {
           "rank": 24,
@@ -50332,7 +50381,7 @@
           "live_price": 246.15,
           "live_pct": 0.89,
           "price_updated": "9:44 AM ET",
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
+          "skipped_reason": "Opening-gap filter: gapped +1.0% from the $243.98 close signals were scored on \u2014 skipping."
         }
       ],
       "pool_shortfall_note": null,
@@ -50670,7 +50719,7 @@
       "net_trading_gain": -106.93,
       "net_trading_gain_pct": -5.35,
       "closed_rounds": [],
-      "prices_last_updated": "9:44 AM ET",
+      "prices_last_updated": "9:45 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 771.47,
