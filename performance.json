@@ -46993,7 +46993,7 @@
           "live_dollar": 0.01,
           "price_updated": "9:38 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0002,
+          "paper_peak_pct": 0.0015,
           "paper_trail_floor_active": false
         },
         {
@@ -47758,7 +47758,7 @@
       "net_trading_gain": -119.7,
       "net_trading_gain_pct": -5.99,
       "closed_rounds": [],
-      "prices_last_updated": "9:38 AM ET",
+      "prices_last_updated": "9:39 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 762.63,
@@ -49573,7 +49573,7 @@
           "position_cost": 118.93,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.001,
+          "paper_peak_pct": 0.0018,
           "paper_trail_floor_active": false,
           "live_price": 90.17,
           "live_pct": 0.18,
@@ -49677,7 +49677,7 @@
           "position_cost": 93.25,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0007,
+          "paper_peak_pct": 0.0035,
           "paper_trail_floor_active": false,
           "live_price": 22.8,
           "live_pct": 0.22,
@@ -49705,7 +49705,7 @@
           "position_cost": 92.71,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0009,
           "paper_trail_floor_active": false,
           "live_price": 43.74,
           "live_pct": -0.14,
@@ -49857,7 +49857,7 @@
           "position_cost": 72.69,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0008,
+          "paper_peak_pct": 0.0009,
           "paper_trail_floor_active": false,
           "live_price": 39.03,
           "live_pct": 0.0,
@@ -49882,9 +49882,9 @@
           "buy_date": "2026-10-02",
           "prediction_price": 12.51,
           "position_cost": 25.2,
-          "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.004,
-          "paper_trail_floor_active": false,
+          "paper_current_floor_pct": 0.0037,
+          "paper_peak_pct": 0.0063,
+          "paper_trail_floor_active": true,
           "days_held": 0,
           "live_price": 12.68,
           "live_pct": 0.6,
@@ -49910,7 +49910,7 @@
           "prediction_price": 15.96,
           "position_cost": 32.18,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0006,
           "paper_trail_floor_active": false,
           "days_held": 0,
           "live_price": 16.08,
@@ -50079,6 +50079,29 @@
           "live_pct": -0.06,
           "live_dollar": -0.06,
           "price_updated": "9:38 AM ET"
+        },
+        {
+          "ticker": "BJ",
+          "rank": 24,
+          "score": 0.2193,
+          "entry_price": 94.818,
+          "position_cost": 117.17,
+          "headline": null,
+          "sector": "Consumer Staples",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+4.4% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.379,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 4.42,
+            "gap_pct": null
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
         }
       ],
       "bench_candidates": [
@@ -50137,7 +50160,8 @@
           },
           "live_price": 9.42,
           "live_pct": 1.18,
-          "price_updated": "9:38 AM ET"
+          "price_updated": "9:38 AM ET",
+          "skipped_reason": "Opening-gap filter: gapped +1.2% from the $9.31 close signals were scored on \u2014 skipping."
         },
         {
           "rank": 24,
@@ -50215,7 +50239,8 @@
           },
           "live_price": 124.94,
           "live_pct": -0.64,
-          "price_updated": "9:38 AM ET"
+          "price_updated": "9:38 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 28,
@@ -50234,7 +50259,8 @@
           },
           "live_price": 27.27,
           "live_pct": 0.81,
-          "price_updated": "9:38 AM ET"
+          "price_updated": "9:38 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 29,
@@ -50253,7 +50279,8 @@
           },
           "live_price": 30.62,
           "live_pct": -0.23,
-          "price_updated": "9:38 AM ET"
+          "price_updated": "9:38 AM ET",
+          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
         {
           "rank": 30,
@@ -50272,7 +50299,8 @@
           },
           "live_price": 246.76,
           "live_pct": 1.14,
-          "price_updated": "9:38 AM ET"
+          "price_updated": "9:38 AM ET",
+          "skipped_reason": "Opening-gap filter: gapped +1.3% from the $243.98 close signals were scored on \u2014 skipping."
         }
       ],
       "pool_shortfall_note": null,
@@ -50610,7 +50638,7 @@
       "net_trading_gain": -106.93,
       "net_trading_gain_pct": -5.35,
       "closed_rounds": [],
-      "prices_last_updated": "9:38 AM ET",
+      "prices_last_updated": "9:39 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 770.66,
