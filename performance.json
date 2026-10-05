@@ -66555,6 +66555,17 @@
           "sell_time": "2026-10-05T09:51:38.359774-04:00"
         },
         {
+          "ticker": "BALL",
+          "score": 0,
+          "entry_price": 56.992,
+          "paper_exit_price": 55.93,
+          "paper_exit_pct": -1.86,
+          "paper_exit_dollar": -1.71,
+          "paper_exit_reason": "Stop loss (-1.9%)",
+          "buy_time": null,
+          "sell_time": "2026-10-05T09:55:18.879561-04:00"
+        },
+        {
           "ticker": "IBM",
           "score": 0,
           "entry_price": 225.468,
@@ -82208,6 +82219,17 @@
           "sell_time": "2026-10-05T09:51:21.109442-04:00"
         },
         {
+          "ticker": "FE",
+          "score": 0,
+          "entry_price": 43.8,
+          "paper_exit_price": 43.09,
+          "paper_exit_pct": -1.61,
+          "paper_exit_dollar": -1.49,
+          "paper_exit_reason": "Stop loss (-1.6%)",
+          "buy_time": null,
+          "sell_time": "2026-10-05T09:55:12.625972-04:00"
+        },
+        {
           "ticker": "KDP",
           "score": 0,
           "entry_price": 30.9,
@@ -90018,7 +90040,7 @@
           "sell_time": "2026-10-05T08:07:04.094050-04:00"
         }
       ],
-      "prices_last_updated": "9:54 AM ET",
+      "prices_last_updated": "9:56 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 769.64,
@@ -90236,7 +90258,7 @@
             "relative_strength_pct": 0.32,
             "gap_pct": 2.87
           },
-          "skipped_reason": "Opening-gap filter: gapped +2.0% from the $140.02 close signals were scored on \u2014 skipping.",
+          "skipped_reason": "Opening-gap filter: gapped +1.7% from the $140.02 close signals were scored on \u2014 skipping.",
           "live_price": 142.09,
           "live_pct": 1.48,
           "price_updated": "9:54 AM ET"
@@ -90578,7 +90600,7 @@
           },
           "buy_date": "2026-10-05",
           "prediction_price": 96.92,
-          "slippage_pct": 2.127,
+          "slippage_pct": 2.25,
           "position_cost": 87.31,
           "days_held": 0,
           "live_price": 95.14,
@@ -90676,7 +90698,7 @@
           "live_pct": 1.33,
           "live_dollar": null,
           "price_updated": "9:54 AM ET",
-          "skipped_reason": "Opening-gap filter: gapped +1.4% from the $131.69 close signals were scored on \u2014 skipping."
+          "skipped_reason": "Opening-gap filter: gapped +1.3% from the $131.69 close signals were scored on \u2014 skipping."
         },
         {
           "rank": 18,
@@ -90704,7 +90726,7 @@
           "live_dollar": 0.07,
           "price_updated": "9:54 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0028,
+          "paper_peak_pct": 0.0049,
           "paper_trail_floor_active": false
         },
         {
@@ -90864,7 +90886,60 @@
           "live_price": 22.62,
           "live_pct": -0.04,
           "live_dollar": -0.07,
-          "price_updated": "9:54 AM ET"
+          "price_updated": "9:54 AM ET",
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false
+        },
+        {
+          "ticker": "DKS",
+          "rank": 24,
+          "score": 0.1725,
+          "entry_price": 133.272,
+          "position_cost": 135.12,
+          "headline": null,
+          "sector": "Consumer Discretionary",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.2% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.38,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.21,
+            "gap_pct": -1.47
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-10-05",
+          "days_held": 0
+        },
+        {
+          "ticker": "REXR",
+          "rank": 25,
+          "score": 0.1481,
+          "entry_price": 36.56,
+          "position_cost": 135.12,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+0.9% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.298,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 0.88,
+            "gap_pct": -0.37
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-10-05",
+          "days_held": 0
         }
       ],
       "bench_candidates": [
@@ -91066,7 +91141,7 @@
           "live_price": 53.34,
           "live_pct": 1.33,
           "price_updated": "9:54 AM ET",
-          "skipped_reason": "Opening-gap filter: gapped +1.2% from the $52.64 close signals were scored on \u2014 skipping."
+          "skipped_reason": "Opening-gap filter: gapped +1.3% from the $52.64 close signals were scored on \u2014 skipping."
         }
       ],
       "pool_shortfall_note": null,
@@ -91438,7 +91513,7 @@
       "net_trading_gain": -116.88,
       "net_trading_gain_pct": -5.84,
       "closed_rounds": [],
-      "prices_last_updated": "9:54 AM ET",
+      "prices_last_updated": "9:57 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 770.6,
