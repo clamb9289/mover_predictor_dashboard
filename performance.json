@@ -90406,7 +90406,7 @@
             "relative_strength_pct": 0.32,
             "gap_pct": 2.87
           },
-          "skipped_reason": "Opening-gap filter: gapped +3.9% from the $140.02 close signals were scored on \u2014 skipping.",
+          "skipped_reason": "Opening-gap filter: gapped +3.6% from the $140.02 close signals were scored on \u2014 skipping.",
           "live_price": 145.0,
           "live_pct": 3.56,
           "price_updated": "10:32 AM ET"
@@ -90561,7 +90561,13 @@
           "price_updated": "10:32 AM ET",
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0059,
-          "paper_trail_floor_active": true
+          "paper_trail_floor_active": true,
+          "paper_exit_price": 119.55,
+          "paper_exit_pct": 0.39,
+          "paper_exit_dollar": 0.27,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "10:33 AM ET",
+          "paper_exit_date": "2026-10-05"
         },
         {
           "rank": 8,
@@ -90734,7 +90740,7 @@
           "live_dollar": 0.38,
           "price_updated": "10:32 AM ET",
           "paper_current_floor_pct": 0.0037,
-          "paper_peak_pct": 0.0058,
+          "paper_peak_pct": 0.0061,
           "paper_trail_floor_active": true
         },
         {
@@ -90754,7 +90760,7 @@
           },
           "buy_date": "2026-10-05",
           "prediction_price": 96.92,
-          "slippage_pct": 1.881,
+          "slippage_pct": 1.689,
           "position_cost": 87.31,
           "days_held": 0,
           "live_price": 95.75,
@@ -91821,7 +91827,7 @@
       "net_trading_gain": -115.69,
       "net_trading_gain_pct": -5.78,
       "closed_rounds": [],
-      "prices_last_updated": "10:32 AM ET",
+      "prices_last_updated": "10:33 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 772.1,
