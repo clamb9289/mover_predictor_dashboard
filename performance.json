@@ -48370,7 +48370,8 @@
           "paper_exit_dollar": -3.22,
           "paper_exit_reason": "Stop loss (-1.6%)",
           "paper_exit_time": "9:35 AM ET",
-          "paper_exit_date": "2026-10-05"
+          "paper_exit_date": "2026-10-05",
+          "postmortem": "Hit the stop loss (-2.03%) despite accumulation/volume and relative strength \u2014 worth reviewing if accumulation/volume keeps producing false positives."
         },
         {
           "rank": 16,
@@ -57459,7 +57460,8 @@
           "paper_exit_dollar": -0.33,
           "paper_exit_reason": "Trail stop: +0.38% floor (step) triggered (+0.4%)",
           "paper_exit_time": "9:44 AM ET",
-          "paper_exit_date": "2026-10-05"
+          "paper_exit_date": "2026-10-05",
+          "postmortem": "Small loss (-0.29%) \u2014 accumulation/volume didn't convert this time; within normal volatility for now."
         },
         {
           "rank": 5,
@@ -57548,7 +57550,8 @@
           "paper_exit_dollar": -1.21,
           "paper_exit_reason": "Stop loss (-1.3%)",
           "paper_exit_time": "9:35 AM ET",
-          "paper_exit_date": "2026-10-05"
+          "paper_exit_date": "2026-10-05",
+          "postmortem": "Hit the stop loss (-1.30%) despite accumulation/volume and relative strength \u2014 worth reviewing if accumulation/volume keeps producing false positives."
         },
         {
           "rank": 8,
@@ -57573,9 +57576,9 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
-          "live_price": 43.58,
-          "live_pct": -0.49,
-          "live_dollar": -0.45,
+          "live_price": 43.6,
+          "live_pct": -0.47,
+          "live_dollar": -0.44,
           "price_updated": "10:29 AM ET"
         },
         {
@@ -57630,7 +57633,8 @@
           "paper_exit_date": "2026-10-05",
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0056,
-          "paper_trail_floor_active": true
+          "paper_trail_floor_active": true,
+          "postmortem": "Small loss (-0.85%) \u2014 accumulation/volume didn't convert this time; within normal volatility for now."
         },
         {
           "rank": 11,
@@ -58139,7 +58143,8 @@
           "paper_peak_pct": null,
           "paper_trail_floor_active": false,
           "paper_exit_time": "9:35 AM ET",
-          "paper_exit_date": "2026-10-05"
+          "paper_exit_date": "2026-10-05",
+          "postmortem": "Hit the stop loss (-1.49%) despite relative strength \u2014 worth reviewing if relative strength keeps producing false positives."
         },
         {
           "ticker": "VMC",
@@ -90191,10 +90196,10 @@
     },
     {
       "date": "2026-10-05",
-      "regime": "Market regime OK \u2014 SPY +0.14%",
+      "regime": "Market regime OK \u2014 SPY +0.40%",
       "trading_skipped": false,
       "max_hold_days": 3,
-      "spy_regime_pct": 0.00135,
+      "spy_regime_pct": 0.00399,
       "top_sectors": [
         {
           "etf": "XLK",
@@ -90401,7 +90406,7 @@
             "relative_strength_pct": 0.32,
             "gap_pct": 2.87
           },
-          "skipped_reason": "Opening-gap filter: gapped +3.8% from the $140.02 close signals were scored on \u2014 skipping.",
+          "skipped_reason": "Opening-gap filter: gapped +3.9% from the $140.02 close signals were scored on \u2014 skipping.",
           "live_price": 145.53,
           "live_pct": 3.94,
           "price_updated": "10:29 AM ET"
@@ -90426,12 +90431,12 @@
           "slippage_pct": 0.014,
           "position_cost": 120.09,
           "days_held": 0,
-          "live_price": 36.53,
-          "live_pct": 0.43,
-          "live_dollar": 0.52,
+          "live_price": 36.54,
+          "live_pct": 0.44,
+          "live_dollar": 0.53,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0047,
+          "paper_peak_pct": 0.0044,
           "paper_trail_floor_active": false
         },
         {
@@ -90454,9 +90459,9 @@
           "slippage_pct": 0.004,
           "position_cost": 101.38,
           "days_held": 0,
-          "live_price": 24.03,
-          "live_pct": 0.46,
-          "live_dollar": 0.47,
+          "live_price": 24.02,
+          "live_pct": 0.42,
+          "live_dollar": 0.43,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
@@ -90516,9 +90521,9 @@
           "slippage_pct": 0.221,
           "position_cost": 83.59,
           "days_held": 0,
-          "live_price": 40.76,
-          "live_pct": -0.34,
-          "live_dollar": -0.28,
+          "live_price": 40.73,
+          "live_pct": -0.42,
+          "live_dollar": -0.35,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
@@ -90555,14 +90560,8 @@
           "live_dollar": 0.37,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": 0.0037,
-          "paper_peak_pct": 0.0069,
-          "paper_trail_floor_active": true,
-          "paper_exit_price": 119.55,
-          "paper_exit_pct": 0.39,
-          "paper_exit_dollar": 0.27,
-          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
-          "paper_exit_time": "10:24 AM ET",
-          "paper_exit_date": "2026-10-05"
+          "paper_peak_pct": 0.0059,
+          "paper_trail_floor_active": true
         },
         {
           "rank": 8,
@@ -90585,8 +90584,8 @@
           "position_cost": 66.68,
           "days_held": 0,
           "live_price": 32.9,
-          "live_pct": -1.19,
-          "live_dollar": -0.79,
+          "live_pct": -1.16,
+          "live_dollar": -0.77,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0047,
@@ -90623,7 +90622,7 @@
           "live_dollar": 0.44,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": 0.0037,
-          "paper_peak_pct": 0.0077,
+          "paper_peak_pct": 0.007,
           "paper_trail_floor_active": true
         },
         {
@@ -90646,9 +90645,9 @@
           "slippage_pct": 0.341,
           "position_cost": 66.08,
           "days_held": 0,
-          "live_price": 221.26,
-          "live_pct": -0.22,
-          "live_dollar": -0.15,
+          "live_price": 221.15,
+          "live_pct": -0.27,
+          "live_dollar": -0.18,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0005,
@@ -90674,12 +90673,12 @@
           "slippage_pct": 0.127,
           "position_cost": 65.76,
           "days_held": 0,
-          "live_price": 361.4,
-          "live_pct": 1.06,
-          "live_dollar": 0.7,
+          "live_price": 361.24,
+          "live_pct": 1.02,
+          "live_dollar": 0.67,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": 0.0064,
-          "paper_peak_pct": 0.0106,
+          "paper_peak_pct": 0.0109,
           "paper_trail_floor_active": true
         },
         {
@@ -90702,9 +90701,9 @@
           "slippage_pct": 0.165,
           "position_cost": 63.65,
           "days_held": 0,
-          "live_price": 261.42,
-          "live_pct": -0.57,
-          "live_dollar": -0.36,
+          "live_price": 261.33,
+          "live_pct": -0.6,
+          "live_dollar": -0.38,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0013,
@@ -90730,9 +90729,9 @@
           "slippage_pct": 0.392,
           "position_cost": 63.57,
           "days_held": 0,
-          "live_price": 68.31,
-          "live_pct": 0.54,
-          "live_dollar": 0.34,
+          "live_price": 68.29,
+          "live_pct": 0.52,
+          "live_dollar": 0.33,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0058,
@@ -90755,19 +90754,19 @@
           },
           "buy_date": "2026-10-05",
           "prediction_price": 96.92,
-          "slippage_pct": 1.78,
+          "slippage_pct": 1.881,
           "position_cost": 87.31,
           "days_held": 0,
           "live_price": 95.6,
           "live_pct": -1.73,
           "live_dollar": -1.51,
           "price_updated": "10:29 AM ET",
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
-          "paper_exit_time": null,
-          "paper_exit_date": null,
+          "paper_exit_price": 95.75,
+          "paper_exit_pct": -1.58,
+          "paper_exit_dollar": -1.38,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "10:27 AM ET",
+          "paper_exit_date": "2026-10-05",
           "skipped_reason": null
         },
         {
@@ -90796,7 +90795,7 @@
           "live_dollar": 0.04,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0021,
+          "paper_peak_pct": 0.0019,
           "paper_trail_floor_active": false
         },
         {
@@ -90820,9 +90819,9 @@
           "slippage_pct": 0.155,
           "position_cost": 18.78,
           "days_held": 0,
-          "live_price": 22.9,
-          "live_pct": 0.97,
-          "live_dollar": 0.18,
+          "live_price": 22.92,
+          "live_pct": 1.04,
+          "live_dollar": 0.2,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0044,
@@ -90853,7 +90852,7 @@
           "live_pct": 1.88,
           "live_dollar": null,
           "price_updated": "10:29 AM ET",
-          "skipped_reason": "Opening-gap filter: gapped +1.9% from the $131.69 close signals were scored on \u2014 skipping."
+          "skipped_reason": "Opening-gap filter: gapped +2.0% from the $131.69 close signals were scored on \u2014 skipping."
         },
         {
           "rank": 18,
@@ -90876,9 +90875,9 @@
           "slippage_pct": -0.142,
           "position_cost": 18.38,
           "days_held": 0,
-          "live_price": 87.85,
-          "live_pct": 1.85,
-          "live_dollar": 0.34,
+          "live_price": 87.87,
+          "live_pct": 1.88,
+          "live_dollar": 0.35,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": 0.009,
           "paper_peak_pct": 0.0153,
@@ -90940,9 +90939,9 @@
           "slippage_pct": -0.332,
           "position_cost": 26.3,
           "days_held": 0,
-          "live_price": 38.02,
-          "live_pct": -0.15,
-          "live_dollar": -0.04,
+          "live_price": 38.0,
+          "live_pct": -0.2,
+          "live_dollar": -0.05,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
@@ -91049,7 +91048,7 @@
           "live_dollar": 1.34,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": 0.0064,
-          "paper_peak_pct": 0.0088,
+          "paper_peak_pct": 0.0102,
           "paper_trail_floor_active": true,
           "paper_exit_time": "10:27 AM ET",
           "paper_exit_date": "2026-10-05"
@@ -91078,9 +91077,9 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-05",
           "days_held": 0,
-          "live_price": 133.54,
-          "live_pct": 0.2,
-          "live_dollar": 0.27,
+          "live_price": 133.6,
+          "live_pct": 0.25,
+          "live_dollar": 0.34,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": 0.0037,
           "paper_peak_pct": 0.0064,
@@ -91117,7 +91116,7 @@
           "live_dollar": 0.22,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0049,
+          "paper_peak_pct": 0.0044,
           "paper_trail_floor_active": false
         },
         {
@@ -91149,7 +91148,7 @@
           "live_dollar": 0.19,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0013,
+          "paper_peak_pct": 0.0017,
           "paper_trail_floor_active": false
         },
         {
@@ -91176,9 +91175,9 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-05",
           "days_held": 0,
-          "live_price": 26.02,
-          "live_pct": 1.03,
-          "live_dollar": 1.23,
+          "live_price": 26.01,
+          "live_pct": 0.97,
+          "live_dollar": 1.16,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0037,
@@ -91210,12 +91209,12 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-05",
           "days_held": 0,
-          "live_price": 18.53,
-          "live_pct": -0.03,
-          "live_dollar": -0.03,
+          "live_price": 18.52,
+          "live_pct": -0.08,
+          "live_dollar": -0.07,
           "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0043,
+          "paper_peak_pct": 0.0027,
           "paper_trail_floor_active": false
         },
         {
@@ -91242,13 +91241,13 @@
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-05",
           "days_held": 0,
-          "live_price": 76.18,
-          "live_pct": -0.15,
-          "live_dollar": -0.15,
-          "price_updated": "10:29 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0014,
-          "paper_trail_floor_active": false
+          "paper_peak_pct": 0.0011,
+          "paper_trail_floor_active": false,
+          "live_price": 76.16,
+          "live_pct": -0.18,
+          "live_dollar": -0.18,
+          "price_updated": "10:29 AM ET"
         }
       ],
       "bench_candidates": [
@@ -91327,8 +91326,8 @@
             "relative_strength_pct": 0.21,
             "gap_pct": -1.47
           },
-          "live_price": 133.54,
-          "live_pct": -1.87,
+          "live_price": 133.6,
+          "live_pct": -1.82,
           "price_updated": "10:29 AM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
@@ -91387,8 +91386,8 @@
             "relative_strength_pct": 1.8,
             "gap_pct": 0.58
           },
-          "live_price": 26.02,
-          "live_pct": 1.19,
+          "live_price": 26.01,
+          "live_pct": 1.13,
           "price_updated": "10:29 AM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
@@ -91407,8 +91406,8 @@
             "relative_strength_pct": 1.5,
             "gap_pct": -0.11
           },
-          "live_price": 18.53,
-          "live_pct": -0.13,
+          "live_price": 18.52,
+          "live_pct": -0.19,
           "price_updated": "10:29 AM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
@@ -91427,8 +91426,8 @@
             "relative_strength_pct": 1.16,
             "gap_pct": -0.1
           },
-          "live_price": 76.18,
-          "live_pct": -1.4,
+          "live_price": 76.16,
+          "live_pct": -1.42,
           "price_updated": "10:29 AM ET",
           "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
         },
@@ -91450,7 +91449,7 @@
           "live_price": 53.76,
           "live_pct": 2.12,
           "price_updated": "10:29 AM ET",
-          "skipped_reason": "Opening-gap filter: gapped +2.1% from the $52.64 close signals were scored on \u2014 skipping."
+          "skipped_reason": "Opening-gap filter: gapped +2.6% from the $52.64 close signals were scored on \u2014 skipping."
         }
       ],
       "pool_shortfall_note": null,
@@ -91492,8 +91491,8 @@
         {
           "rank": 4,
           "ticker": "PODD",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": -0.29,
+          "dollar_change": -0.33,
           "position_size": 113.7,
           "actual_rank": 280,
           "total_ranked": 685,
@@ -91504,7 +91503,7 @@
             "relative_strength_pct": -1.51,
             "gap_pct": 1.16
           },
-          "postmortem": null
+          "postmortem": "Small loss (-0.29%) \u2014 accumulation/volume didn't convert this time; within normal volatility for now. The stock itself ranked #280 of 685 tracked that day, for context."
         },
         {
           "rank": 6,
@@ -91526,8 +91525,8 @@
         {
           "rank": 7,
           "ticker": "HST",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": -1.3,
+          "dollar_change": -1.21,
           "position_size": 93.25,
           "actual_rank": 372,
           "total_ranked": 685,
@@ -91538,7 +91537,7 @@
             "relative_strength_pct": 4.59,
             "gap_pct": 1.07
           },
-          "postmortem": null
+          "postmortem": "Hit the stop loss (-1.30%) despite accumulation/volume and relative strength \u2014 worth reviewing if accumulation/volume keeps producing false positives. The stock itself ranked #372 of 685 tracked that day, for context."
         },
         {
           "rank": 8,
@@ -91560,8 +91559,8 @@
         {
           "rank": 10,
           "ticker": "RBA",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": -0.85,
+          "dollar_change": -0.71,
           "position_size": 84.26,
           "actual_rank": 334,
           "total_ranked": 685,
@@ -91572,7 +91571,7 @@
             "relative_strength_pct": -0.94,
             "gap_pct": 1.42
           },
-          "postmortem": null
+          "postmortem": "Small loss (-0.85%) \u2014 accumulation/volume didn't convert this time; within normal volatility for now. The stock itself ranked #334 of 685 tracked that day, for context."
         },
         {
           "rank": 11,
@@ -91781,8 +91780,8 @@
         {
           "rank": 29,
           "ticker": "KDP",
-          "move_pct": null,
-          "dollar_change": null,
+          "move_pct": -1.49,
+          "dollar_change": -3.64,
           "position_size": 244.99,
           "actual_rank": 579,
           "total_ranked": 685,
@@ -91793,7 +91792,7 @@
             "relative_strength_pct": 1.78,
             "gap_pct": 0.94
           },
-          "postmortem": null
+          "postmortem": "Hit the stop loss (-1.49%) despite relative strength \u2014 worth reviewing if relative strength keeps producing false positives. The stock itself ranked #579 of 685 tracked that day, for context."
         },
         {
           "rank": 30,
@@ -91813,19 +91812,19 @@
           "postmortem": "Hit the stop loss (-1.59%) despite relative strength \u2014 worth reviewing if relative strength keeps producing false positives. The stock itself ranked #495 of 685 tracked that day, for context."
         }
       ],
-      "hit_rate": 0.0078,
+      "hit_rate": 0.0076,
       "total_hits": 1,
-      "total_predictions": 128,
-      "days_tracked": 43,
+      "total_predictions": 131,
+      "days_tracked": 44,
       "total_contributed": 2000.0,
-      "current_equity": 1883.12,
-      "net_trading_gain": -116.88,
-      "net_trading_gain_pct": -5.84,
+      "current_equity": 1884.31,
+      "net_trading_gain": -115.69,
+      "net_trading_gain_pct": -5.78,
       "closed_rounds": [],
-      "prices_last_updated": "10:29 AM ET",
+      "prices_last_updated": "10:30 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
-      "spy_live_price": 772.64,
+      "spy_live_price": 772.62,
       "spy_live_pct": 0.36
     }
   ]
