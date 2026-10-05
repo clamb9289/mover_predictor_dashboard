@@ -90735,7 +90735,13 @@
           "price_updated": "9:46 AM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "paper_exit_price": 37.66,
+          "paper_exit_pct": -1.09,
+          "paper_exit_dollar": -0.29,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "9:50 AM ET",
+          "paper_exit_date": "2026-10-05"
         },
         {
           "ticker": "LTH",
@@ -90790,7 +90796,9 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-10-05",
+          "days_held": 0
         }
       ],
       "bench_candidates": [
@@ -91364,7 +91372,7 @@
       "net_trading_gain": -116.88,
       "net_trading_gain_pct": -5.84,
       "closed_rounds": [],
-      "prices_last_updated": "9:48 AM ET",
+      "prices_last_updated": "9:50 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 770.42,
