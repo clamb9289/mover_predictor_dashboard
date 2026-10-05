@@ -90873,7 +90873,13 @@
           "price_updated": "3:35 PM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0031,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "paper_exit_price": 58.49,
+          "paper_exit_pct": 0.14,
+          "paper_exit_dollar": 0.03,
+          "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
+          "paper_exit_time": "3:37 PM ET",
+          "paper_exit_date": "2026-10-05"
         },
         {
           "rank": 16,
@@ -91222,10 +91228,10 @@
             "relative_strength_pct": 0.67,
             "gap_pct": -0.07
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 29.7,
+          "paper_exit_pct": 0.03,
+          "paper_exit_dollar": 0.04,
+          "paper_exit_reason": "Closed outside this run (ordertype.market order -- possibly a concurrent bot process or a manual close)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-05",
@@ -91236,7 +91242,9 @@
           "price_updated": "3:35 PM ET",
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0027,
-          "paper_trail_floor_active": false
+          "paper_trail_floor_active": false,
+          "paper_exit_time": "3:37 PM ET",
+          "paper_exit_date": "2026-10-05"
         },
         {
           "ticker": "SIRI",
@@ -91908,7 +91916,7 @@
       "net_trading_gain": -115.69,
       "net_trading_gain_pct": -5.78,
       "closed_rounds": [],
-      "prices_last_updated": "3:35 PM ET",
+      "prices_last_updated": "3:37 PM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 775.79,
