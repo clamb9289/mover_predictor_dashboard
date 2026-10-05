@@ -66533,6 +66533,17 @@
           "sell_time": "2026-10-05T09:40:46.134422-04:00"
         },
         {
+          "ticker": "BALL",
+          "score": 0,
+          "entry_price": 56.992,
+          "paper_exit_price": 56.04,
+          "paper_exit_pct": -1.67,
+          "paper_exit_dollar": -1.54,
+          "paper_exit_reason": "Stop loss (-1.7%)",
+          "buy_time": null,
+          "sell_time": "2026-10-05T09:47:34.109211-04:00"
+        },
+        {
           "ticker": "IBM",
           "score": 0,
           "entry_price": 225.468,
@@ -82164,6 +82175,17 @@
           "sell_time": "2026-10-05T09:40:48.359360-04:00"
         },
         {
+          "ticker": "FE",
+          "score": 0,
+          "entry_price": 43.8,
+          "paper_exit_price": 43.12,
+          "paper_exit_pct": -1.55,
+          "paper_exit_dollar": -1.44,
+          "paper_exit_reason": "Stop loss (-1.6%)",
+          "buy_time": null,
+          "sell_time": "2026-10-05T09:47:23.630617-04:00"
+        },
+        {
           "ticker": "KDP",
           "score": 0,
           "entry_price": 30.9,
@@ -89974,7 +89996,7 @@
           "sell_time": "2026-10-05T08:07:04.094050-04:00"
         }
       ],
-      "prices_last_updated": "9:46 AM ET",
+      "prices_last_updated": "9:48 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 769.64,
@@ -90192,7 +90214,7 @@
             "relative_strength_pct": 0.32,
             "gap_pct": 2.87
           },
-          "skipped_reason": "Opening-gap filter: gapped +1.2% from the $140.02 close signals were scored on \u2014 skipping.",
+          "skipped_reason": "Opening-gap filter: gapped +2.1% from the $140.02 close signals were scored on \u2014 skipping.",
           "live_price": 142.29,
           "live_pct": 1.62,
           "price_updated": "9:46 AM ET"
@@ -90222,7 +90244,7 @@
           "live_dollar": 0.08,
           "price_updated": "9:46 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0005,
+          "paper_peak_pct": 0.0008,
           "paper_trail_floor_active": false
         },
         {
@@ -90534,20 +90556,20 @@
           },
           "buy_date": "2026-10-05",
           "prediction_price": 96.92,
-          "slippage_pct": 0.856,
+          "slippage_pct": 2.009,
           "position_cost": 87.31,
           "days_held": 0,
           "live_price": 96.73,
           "live_pct": -0.57,
           "live_dollar": -1.32,
           "price_updated": "9:46 AM ET",
-          "paper_exit_price": 95.75,
-          "paper_exit_pct": -1.58,
-          "paper_exit_dollar": -1.38,
-          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
-          "paper_exit_time": "9:35 AM ET",
-          "paper_exit_date": "2026-10-05",
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "paper_exit_time": null,
+          "paper_exit_date": null,
+          "skipped_reason": null
         },
         {
           "rank": 15,
@@ -90575,7 +90597,7 @@
           "live_dollar": 0.02,
           "price_updated": "9:46 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0007,
+          "paper_peak_pct": 0.0011,
           "paper_trail_floor_active": false
         },
         {
@@ -90604,7 +90626,7 @@
           "live_dollar": 0.07,
           "price_updated": "9:46 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0026,
+          "paper_peak_pct": 0.0044,
           "paper_trail_floor_active": false
         },
         {
@@ -90626,7 +90648,7 @@
           "live_pct": 1.25,
           "live_dollar": null,
           "price_updated": "9:46 AM ET",
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
+          "skipped_reason": "Opening-gap filter: gapped +1.2% from the $131.69 close signals were scored on \u2014 skipping."
         },
         {
           "rank": 18,
@@ -90654,7 +90676,7 @@
           "live_dollar": 0.01,
           "price_updated": "9:46 AM ET",
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0013,
           "paper_trail_floor_active": false
         },
         {
@@ -90746,6 +90768,29 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false
+        },
+        {
+          "ticker": "CURB",
+          "rank": 22,
+          "score": 0.1823,
+          "entry_price": 28.17,
+          "position_cost": 250.83,
+          "headline": null,
+          "sector": "Real Estate",
+          "explainer": "The stock outperformed its own sector over the past 5 days (+1.7% relative strength), suggesting individual demand beyond just sector momentum.",
+          "signals": {
+            "accumulation": 1.339,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.0,
+            "relative_strength_pct": 1.74,
+            "gap_pct": null
+          },
+          "paper_exit_price": null,
+          "paper_exit_pct": null,
+          "paper_exit_dollar": null,
+          "paper_exit_reason": null,
+          "substitute_pick": true,
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
         }
       ],
       "bench_candidates": [
@@ -90947,7 +90992,7 @@
           "live_price": 53.06,
           "live_pct": 0.79,
           "price_updated": "9:46 AM ET",
-          "skipped_reason": "No open slot available (all slots already filled by higher-ranked picks or existing swing positions)."
+          "skipped_reason": "Opening-gap filter: gapped +1.3% from the $52.64 close signals were scored on \u2014 skipping."
         }
       ],
       "pool_shortfall_note": null,
@@ -91319,7 +91364,7 @@
       "net_trading_gain": -116.88,
       "net_trading_gain_pct": -5.84,
       "closed_rounds": [],
-      "prices_last_updated": "9:46 AM ET",
+      "prices_last_updated": "9:48 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 770.42,
