@@ -48360,7 +48360,7 @@
           "position_cost": 158.95,
           "days_held": 2,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": null,
+          "paper_peak_pct": 0.0,
           "paper_trail_floor_active": false,
           "live_dollar": -3.04
         },
@@ -57157,7 +57157,7 @@
           "sell_time": "2026-10-05T09:30:30.444431-04:00"
         }
       ],
-      "prices_last_updated": "9:33 AM ET",
+      "prices_last_updated": "9:34 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 763.99,
@@ -57445,7 +57445,7 @@
           },
           "buy_date": "2026-10-02",
           "prediction_price": 130.79,
-          "slippage_pct": 0.913,
+          "slippage_pct": -0.665,
           "position_cost": 113.7,
           "days_held": 1,
           "paper_current_floor_pct": null,
@@ -57454,7 +57454,13 @@
           "live_price": 132.78,
           "live_pct": 0.74,
           "live_dollar": 0.84,
-          "price_updated": "9:33 AM ET"
+          "price_updated": "9:33 AM ET",
+          "paper_exit_price": 131.42,
+          "paper_exit_pct": -0.29,
+          "paper_exit_dollar": -0.33,
+          "paper_exit_reason": "Trail stop: +0.38% floor (step) triggered (+0.4%)",
+          "paper_exit_time": "9:34 AM ET",
+          "paper_exit_date": "2026-10-05"
         },
         {
           "rank": 5,
@@ -57536,8 +57542,7 @@
           "live_price": 22.44,
           "live_pct": -1.34,
           "live_dollar": -1.25,
-          "price_updated": "9:33 AM ET",
-          "sell_error_note": "\u26a0\ufe0f Sell failed \u2014 {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"4.098901098\",\"held_for_orders\":\"4.098901098\",\"message\":\"insufficient qty available for order (requested: 4.098901098, available: 0)\",\"related_orders\":[\"eb056f53-4dad-4e11-ba28-5e4fbded838d\"],\"symbol\":\"HST\"}"
+          "price_updated": "9:33 AM ET"
         },
         {
           "rank": 8,
@@ -66495,6 +66500,17 @@
           "paper_exit_reason": "Stop loss (-1.1%)",
           "buy_time": null,
           "sell_time": "2026-10-05T09:30:32.702336-04:00"
+        },
+        {
+          "ticker": "BALL",
+          "score": 0,
+          "entry_price": 56.992,
+          "paper_exit_price": 56.37,
+          "paper_exit_pct": -1.1,
+          "paper_exit_dollar": -1.01,
+          "paper_exit_reason": "Stop loss (-1.1%)",
+          "buy_time": null,
+          "sell_time": "2026-10-05T09:33:49.101087-04:00"
         },
         {
           "ticker": "IBM",
@@ -82106,6 +82122,17 @@
           "sell_time": "2026-10-05T09:31:20.491511-04:00"
         },
         {
+          "ticker": "FE",
+          "score": 0,
+          "entry_price": 43.8,
+          "paper_exit_price": 43.27,
+          "paper_exit_pct": -1.21,
+          "paper_exit_dollar": -1.12,
+          "paper_exit_reason": "Stop loss (-1.2%)",
+          "buy_time": null,
+          "sell_time": "2026-10-05T09:33:42.783781-04:00"
+        },
+        {
           "ticker": "KDP",
           "score": 0,
           "entry_price": 30.9,
@@ -89916,6 +89943,17 @@
           "sell_time": "2026-10-05T09:31:19.909169-04:00"
         },
         {
+          "ticker": "KDP",
+          "score": 0,
+          "entry_price": 30.9,
+          "paper_exit_price": 30.49,
+          "paper_exit_pct": -1.33,
+          "paper_exit_dollar": -1.2,
+          "paper_exit_reason": "Stop loss (-1.3%)",
+          "buy_time": null,
+          "sell_time": "2026-10-05T09:34:38.579257-04:00"
+        },
+        {
           "ticker": "RBA",
           "score": 0,
           "entry_price": 82.316,
@@ -89925,9 +89963,20 @@
           "paper_exit_reason": "Closed outside this run (order type unknown -- possibly a concurrent bot process or a manual close)",
           "buy_time": "2026-10-02T09:31:33.134791-04:00",
           "sell_time": "2026-10-05T08:07:04.094050-04:00"
+        },
+        {
+          "ticker": "HST",
+          "score": 0,
+          "entry_price": 22.75,
+          "paper_exit_price": 22.5,
+          "paper_exit_pct": -1.1,
+          "paper_exit_dollar": -1.02,
+          "paper_exit_reason": "Retry of previously failed sell",
+          "buy_time": "2026-10-02T09:31:33.134791-04:00",
+          "sell_time": "2026-10-05T09:33:21.993539-04:00"
         }
       ],
-      "prices_last_updated": "9:33 AM ET",
+      "prices_last_updated": "9:34 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 769.64,
