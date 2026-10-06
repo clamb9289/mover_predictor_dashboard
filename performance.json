@@ -92202,7 +92202,11 @@
           "price_updated": "9:35 AM ET",
           "buy_date": "2026-10-06",
           "prediction_price": 16.27,
-          "position_cost": 142.18
+          "position_cost": 142.18,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0
         },
         {
           "rank": 3,
@@ -92298,7 +92302,7 @@
           "prediction_price": 38.67,
           "position_cost": 89.28,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0003,
           "paper_trail_floor_active": false,
           "days_held": 0,
           "live_price": 38.97,
@@ -92484,7 +92488,7 @@
           "position_cost": 73.86,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0003,
           "paper_trail_floor_active": false,
           "live_price": 84.45,
           "live_pct": 0.21,
@@ -92618,7 +92622,14 @@
           "live_price": 17.5,
           "live_pct": -0.84,
           "live_dollar": -0.8,
-          "price_updated": "9:35 AM ET"
+          "price_updated": "9:35 AM ET",
+          "slippage_pct": -0.863,
+          "paper_exit_price": 17.23,
+          "paper_exit_pct": -2.38,
+          "paper_exit_dollar": -2.26,
+          "paper_exit_reason": "Stop loss (-1.5%)",
+          "paper_exit_time": "9:38 AM ET",
+          "paper_exit_date": "2026-10-06"
         },
         {
           "rank": 19,
@@ -92645,7 +92656,14 @@
           "live_price": 35.81,
           "live_pct": -1.17,
           "live_dollar": -1.11,
-          "price_updated": "9:35 AM ET"
+          "price_updated": "9:35 AM ET",
+          "slippage_pct": -0.307,
+          "paper_exit_price": 35.71,
+          "paper_exit_pct": -1.46,
+          "paper_exit_dollar": -1.39,
+          "paper_exit_reason": "Stop loss (-1.2%)",
+          "paper_exit_time": "9:38 AM ET",
+          "paper_exit_date": "2026-10-06"
         },
         {
           "rank": 20,
@@ -93324,7 +93342,7 @@
       "net_trading_gain": -112.84,
       "net_trading_gain_pct": -5.64,
       "closed_rounds": [],
-      "prices_last_updated": "9:37 AM ET",
+      "prices_last_updated": "9:38 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 778.22,
