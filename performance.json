@@ -92645,7 +92645,13 @@
           "live_price": 16.56,
           "live_pct": 0.36,
           "live_dollar": 0.24,
-          "price_updated": "10:18 AM ET"
+          "price_updated": "10:18 AM ET",
+          "paper_exit_price": 16.56,
+          "paper_exit_pct": 0.36,
+          "paper_exit_dollar": 0.25,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "10:20 AM ET",
+          "paper_exit_date": "2026-10-06"
         },
         {
           "rank": 18,
@@ -92742,7 +92748,13 @@
           "paper_current_floor_pct": null,
           "paper_peak_pct": 0.0018,
           "paper_trail_floor_active": false,
-          "live_dollar": -0.74
+          "live_dollar": -0.74,
+          "paper_exit_price": 99.28,
+          "paper_exit_pct": -1.0,
+          "paper_exit_dollar": -0.78,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
+          "paper_exit_time": "10:20 AM ET",
+          "paper_exit_date": "2026-10-06"
         },
         {
           "ticker": "CVS",
@@ -92760,10 +92772,10 @@
             "relative_strength_pct": 1.32,
             "gap_pct": -0.44
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 85.83,
+          "paper_exit_pct": -1.01,
+          "paper_exit_dollar": -0.76,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-06",
@@ -92775,7 +92787,9 @@
           "live_price": 85.93,
           "live_pct": -0.89,
           "live_dollar": -0.67,
-          "price_updated": "10:18 AM ET"
+          "price_updated": "10:18 AM ET",
+          "paper_exit_time": "10:20 AM ET",
+          "paper_exit_date": "2026-10-06"
         },
         {
           "ticker": "OHI",
@@ -92931,10 +92945,10 @@
             "relative_strength_pct": 0.16,
             "gap_pct": -0.27
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 190.62,
+          "paper_exit_pct": 0.37,
+          "paper_exit_dollar": 0.28,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-06",
@@ -92946,7 +92960,9 @@
           "live_price": 191.0,
           "live_pct": 0.57,
           "live_dollar": 0.43,
-          "price_updated": "10:18 AM ET"
+          "price_updated": "10:18 AM ET",
+          "paper_exit_time": "10:20 AM ET",
+          "paper_exit_date": "2026-10-06"
         },
         {
           "ticker": "CB",
@@ -93706,7 +93722,7 @@
       "net_trading_gain": -112.84,
       "net_trading_gain_pct": -5.64,
       "closed_rounds": [],
-      "prices_last_updated": "10:19 AM ET",
+      "prices_last_updated": "10:20 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 779.82,
