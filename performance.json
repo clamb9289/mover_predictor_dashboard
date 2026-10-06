@@ -92793,10 +92793,10 @@
             "relative_strength_pct": -1.18,
             "gap_pct": 0.04
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 45.37,
+          "paper_exit_pct": 0.56,
+          "paper_exit_dollar": 0.42,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-06",
@@ -92808,7 +92808,9 @@
           "live_price": 45.49,
           "live_pct": 0.82,
           "live_dollar": 0.61,
-          "price_updated": "10:06 AM ET"
+          "price_updated": "10:06 AM ET",
+          "paper_exit_time": "10:09 AM ET",
+          "paper_exit_date": "2026-10-06"
         },
         {
           "ticker": "TTEK",
@@ -93702,7 +93704,7 @@
       "net_trading_gain": -112.84,
       "net_trading_gain_pct": -5.64,
       "closed_rounds": [],
-      "prices_last_updated": "10:08 AM ET",
+      "prices_last_updated": "10:09 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 779.88,
