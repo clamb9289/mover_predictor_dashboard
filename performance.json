@@ -119438,10 +119438,10 @@
             "relative_strength_pct": -0.44,
             "gap_pct": -0.8
           },
-          "paper_exit_price": null,
-          "paper_exit_pct": null,
-          "paper_exit_dollar": null,
-          "paper_exit_reason": null,
+          "paper_exit_price": 36.33,
+          "paper_exit_pct": 0.94,
+          "paper_exit_dollar": 1.58,
+          "paper_exit_reason": "Trailing stop order filled (broker-side, ahead of the next poll)",
           "substitute_pick": true,
           "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
           "buy_date": "2026-10-08",
@@ -119453,7 +119453,9 @@
           "live_price": 36.49,
           "live_pct": 1.39,
           "live_dollar": 2.32,
-          "price_updated": "10:06 AM ET"
+          "price_updated": "10:06 AM ET",
+          "paper_exit_time": "10:08 AM ET",
+          "paper_exit_date": "2026-10-08"
         },
         {
           "ticker": "PEB",
@@ -120276,7 +120278,7 @@
       "net_trading_gain": -138.33,
       "net_trading_gain_pct": -6.92,
       "closed_rounds": [],
-      "prices_last_updated": "10:06 AM ET",
+      "prices_last_updated": "10:08 AM ET",
       "prices_after_hours": false,
       "manual_pause_active": false,
       "spy_live_price": 775.8,
