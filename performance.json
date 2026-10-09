@@ -122901,7 +122901,7 @@
           "slippage_pct": -0.617,
           "position_cost": 111.78,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0016,
+          "paper_peak_pct": 0.0027,
           "paper_trail_floor_active": false,
           "days_held": 0,
           "live_price": 12.89,
@@ -122958,7 +122958,7 @@
           "position_cost": 93.74,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0012,
           "paper_trail_floor_active": false,
           "live_price": 88.18,
           "live_pct": -0.29,
@@ -123019,9 +123019,9 @@
           "slippage_pct": 0.171,
           "position_cost": 83.09,
           "days_held": 0,
-          "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
-          "paper_trail_floor_active": false,
+          "paper_current_floor_pct": 0.0037,
+          "paper_peak_pct": 0.0075,
+          "paper_trail_floor_active": true,
           "live_price": 279.14,
           "live_pct": 0.31,
           "live_dollar": 0.26,
@@ -123122,7 +123122,7 @@
           "position_cost": 74.43,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0003,
+          "paper_peak_pct": 0.0017,
           "paper_trail_floor_active": false,
           "live_price": 236.42,
           "live_pct": -0.17,
@@ -123215,7 +123215,7 @@
           "position_cost": 68.32,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0002,
+          "paper_peak_pct": 0.0016,
           "paper_trail_floor_active": false,
           "live_price": 107.32,
           "live_pct": -0.11,
@@ -123277,7 +123277,7 @@
           "position_cost": 65.5,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0024,
           "paper_trail_floor_active": false,
           "live_price": 84.42,
           "live_pct": -0.08,
@@ -123333,7 +123333,7 @@
           "position_cost": 64.57,
           "days_held": 0,
           "paper_current_floor_pct": null,
-          "paper_peak_pct": 0.0,
+          "paper_peak_pct": 0.0006,
           "paper_trail_floor_active": false,
           "live_price": 61.35,
           "live_pct": -0.26,
@@ -123416,7 +123416,10 @@
           "price_updated": "9:34 AM ET",
           "buy_date": "2026-10-09",
           "slippage_pct": 0.035,
-          "days_held": 0
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0015,
+          "paper_trail_floor_active": false
         },
         {
           "ticker": "CRH",
@@ -123477,7 +123480,10 @@
           "price_updated": "9:34 AM ET",
           "buy_date": "2026-10-09",
           "slippage_pct": 0.0,
-          "days_held": 0
+          "days_held": 0,
+          "paper_current_floor_pct": 0.0037,
+          "paper_peak_pct": 0.0053,
+          "paper_trail_floor_active": true
         },
         {
           "ticker": "FISV",
@@ -123507,7 +123513,10 @@
           "price_updated": "9:34 AM ET",
           "buy_date": "2026-10-09",
           "slippage_pct": 0.058,
-          "days_held": 0
+          "days_held": 0,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false
         },
         {
           "ticker": "EXR",
@@ -123530,7 +123539,13 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-10-09",
+          "slippage_pct": -0.416,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0033,
+          "paper_trail_floor_active": false,
+          "days_held": 0
         },
         {
           "ticker": "AMCR",
@@ -123553,7 +123568,13 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-10-09",
+          "slippage_pct": 0.253,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0
         },
         {
           "ticker": "CE",
@@ -123576,7 +123597,10 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "sell_error_note": "\u26a0\ufe0f Sell failed \u2014 {\"available\":\"0\",\"code\":40310000,\"existing_qty\":\"2.027068661\",\"held_for_orders\":\"2.027068661\",\"message\":\"insufficient qty available for order (requested: 2.027068661, available: 0)\",\"related_orders\":[\"18ba93ed-f057-4508-b6d7-ab27c3a9caad\"],\"symbol\":\"CE\"}",
+          "buy_date": "2026-10-09",
+          "slippage_pct": 1.497
         },
         {
           "ticker": "VTRS",
@@ -123599,7 +123623,13 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-10-09",
+          "slippage_pct": 0.139,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0
         },
         {
           "ticker": "AXP",
@@ -123622,7 +123652,13 @@
           "paper_exit_dollar": null,
           "paper_exit_reason": null,
           "substitute_pick": true,
-          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter."
+          "substitute_note": "Bought from the candidate bench after an original pick was skipped by the opening-move filter.",
+          "buy_date": "2026-10-09",
+          "slippage_pct": 0.232,
+          "paper_current_floor_pct": null,
+          "paper_peak_pct": 0.0,
+          "paper_trail_floor_active": false,
+          "days_held": 0
         }
       ],
       "bench_candidates": [
