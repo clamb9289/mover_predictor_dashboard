@@ -1,0 +1,87 @@
+{
+  "script_name": "sentiment_delta_backtest",
+  "run_timestamp": "2026-09-07T20:38:31.563173+00:00",
+  "title": "Sentiment day-over-day delta (fresh catalyst) vs same-ticker next-day outcome",
+  "params": {
+    "n_pairs": 89,
+    "n_pooled_pairs": 82,
+    "n_llm_pairs": 80,
+    "pooled_delta_correlation": -0.02529557716001472,
+    "llm_delta_correlation": -0.1581186598887676
+  },
+  "tables": [
+    {
+      "name": "Sentiment-delta buckets vs same-ticker next-day real outcome",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct"
+      ],
+      "rows": [
+        [
+          "pooled: sentiment jumped up",
+          18,
+          "61.11%",
+          "65.81%",
+          18,
+          "61.11%",
+          "65.81%"
+        ],
+        [
+          "pooled: sentiment dropped",
+          22,
+          "50.00%",
+          "31.81%",
+          22,
+          "50.00%",
+          "31.81%"
+        ],
+        [
+          "pooled: sentiment flat",
+          42,
+          "47.62%",
+          "-52.65%",
+          42,
+          "47.62%",
+          "-52.65%"
+        ],
+        [
+          "llm: sentiment jumped up",
+          21,
+          "33.33%",
+          "-108.42%",
+          21,
+          "33.33%",
+          "-108.42%"
+        ],
+        [
+          "llm: sentiment dropped",
+          13,
+          "53.85%",
+          "11.34%",
+          13,
+          "53.85%",
+          "11.34%"
+        ],
+        [
+          "llm: sentiment flat",
+          46,
+          "58.70%",
+          "35.07%",
+          46,
+          "58.70%",
+          "35.07%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Genuinely small sample by construction -- requires the SAME ticker to reappear in the daily top-20 shortlist on an adjacent trading day, which is rare (only tickers whose composite score stays high two days running). Bucket thresholds are each source's own median absolute delta (adaptive, not a fixed number pulled from nowhere). Stone #3 of 6 in the user's 2026-08-18 'turn over every stone' sentiment review.",
+  "conclusion": {
+    "verdict": "PROMISING",
+    "summary": "Pooled-sentiment delta correlation: -0.02529557716001472. LLM-score delta correlation: -0.1581186598887676. 'Jumped up' beats 'dropped' on both win-rate and avg-return: pooled=True, llm=False. At n=89 pairs this is a lead at best, not a verdict -- revisit once more repeat-ticker appearances accumulate."
+  }
+}

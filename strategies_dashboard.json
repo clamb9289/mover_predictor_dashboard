@@ -1,0 +1,319 @@
+{
+ "updated": "2026-10-14T10:42-04:00",
+ "today": "2026-10-14",
+ "paper_trading": {
+  "status": "not started",
+  "plan": "One Alpaca paper account per strategy; earnings beats and momentum are the first candidates (Dec 2026) if their reads pass."
+ },
+ "earnings": {
+  "rule": "EPS surprise >= 50% (S&P 1500 + Russell 2000), buy the reaction-session open, sell the close 20 sessions later; vs every tracked reporter the same week; cost 0.10% / 0.40%.",
+  "pass_bar": "mean excess after cost >= +0.5% with 95% CI lower bound > -0.5% (judged on completed events)",
+  "next_decision": "First read mid-to-late Nov 2026; fuller read early Dec",
+  "summary": {
+   "qualifying": 1,
+   "completed": 0,
+   "mean_completed": null,
+   "ci": null,
+   "mean_interim_all": -0.4,
+   "verdict_so_far": "not enough data",
+   "median_atm_spread_pct": null,
+   "n_spreads": 0,
+   "yf_checked": 0,
+   "yf_also_qualify": 0
+  },
+  "watch_arms": {
+   "busy_day": {
+    "n": 0,
+    "mean": null
+   },
+   "high_vol": {
+    "n": 0,
+    "mean": null
+   },
+   "hold40": {
+    "n": 0,
+    "mean": null
+   }
+  },
+  "watch_arms_note": "atr_high / accumulation thirds are computed at review time (need pre-event price bars).",
+  "events": [
+   {
+    "ticker": "NRIX",
+    "universe": "r2000",
+    "surprise_pct": 944.64,
+    "yf_surprise_pct": null,
+    "reaction_date": "2026-10-12",
+    "session": null,
+    "entry": 22.27,
+    "day": 2,
+    "final": false,
+    "ret_pct": 1.57,
+    "control_pct": 1.57,
+    "excess_after_cost": -0.4,
+    "busy_day": false,
+    "high_vol": false,
+    "vol_ratio": 1.77,
+    "hold40_excess": null,
+    "atm_spread_pct_day0": null
+   }
+  ]
+ },
+ "momentum": {
+  "rule": "S&P 1500, 12-1 month return at the last close of the month, top decile (price >= $5, 20d $vol >= $5M), equal weight, first open of the month to the next month's first open; top20/top30 shadow arms.",
+  "next_decision": "Review after 12 scored months (~Oct 2027); paper trading planned Nov/Dec 2026",
+  "summary": {
+   "scored_months": 0,
+   "avg_vs_pool": null,
+   "avg_vs_spy": null,
+   "backtest_avg_vs_pool": 0.74
+  },
+  "months": [
+   {
+    "month": "2026-10",
+    "entry_date": "2026-10-01",
+    "n_picks": 147,
+    "n_eligible": 1473,
+    "momentum_pct": null,
+    "pool_pct": null,
+    "spy_pct": null,
+    "top20_pct": null,
+    "top30_pct": null,
+    "turnover": null
+   }
+  ],
+  "current_top30": [
+   "SNDK",
+   "MU",
+   "LITE",
+   "MRNA",
+   "VICR",
+   "WDC",
+   "MXL",
+   "STX",
+   "DELL",
+   "VSXY",
+   "DOCN",
+   "ICHR",
+   "LQDA",
+   "AMD",
+   "VIAV",
+   "VSTS",
+   "BE",
+   "FORM",
+   "IRDM",
+   "CIEN",
+   "TER",
+   "INTC",
+   "ATI",
+   "MRVL",
+   "COHR",
+   "UCTT",
+   "PTEN",
+   "ARWR",
+   "PBF",
+   "VSAT"
+  ]
+ },
+ "product_events": {
+  "rule": "AAPL: buy the close 21 sessions before a projected iPhone keynote / WWDC session, sell the close the session before. Non-Apple megacaps are watch-only.",
+  "next_decision": "Review after 6 primary events (~mid-2028): mean abnormal run-up > 0 with >= 4/6 positive",
+  "summary": {
+   "primary_scored": 0,
+   "primary_positive": 0,
+   "primary_mean_abnormal": null
+  },
+  "upcoming": [
+   {
+    "id": "MSFT-Ignite-2026",
+    "ticker": "MSFT",
+    "family": "Microsoft Ignite",
+    "event_date": "2026-11-17",
+    "status": "confirmed",
+    "primary": false,
+    "first_seen": "2026-10-13",
+    "event_session": "2026-11-17",
+    "entry_projected20": "2026-10-19",
+    "exit": "2026-11-16"
+   },
+   {
+    "id": "AMZN-reInvent-2026",
+    "ticker": "AMZN",
+    "family": "AWS re:Invent",
+    "event_date": "2026-12-01",
+    "status": "projected",
+    "primary": false,
+    "first_seen": "2026-10-11",
+    "event_session": "2026-12-01",
+    "entry_projected20": "2026-10-30",
+    "exit": "2026-11-30"
+   },
+   {
+    "id": "NVDA-GTCDC-2026",
+    "ticker": "NVDA",
+    "family": "GTC DC",
+    "event_date": "2026-12-01",
+    "status": "confirmed",
+    "primary": false,
+    "first_seen": "2026-10-13",
+    "event_session": "2026-12-01",
+    "entry_projected20": "2026-10-30",
+    "exit": "2026-11-30"
+   },
+   {
+    "id": "NVDA-GTC-2027",
+    "ticker": "NVDA",
+    "family": "GTC",
+    "event_date": "2027-03-15",
+    "status": "confirmed",
+    "primary": false,
+    "first_seen": "2026-10-11",
+    "event_session": "2027-03-15",
+    "entry_projected20": "2027-02-11",
+    "exit": "2027-03-12"
+   },
+   {
+    "id": "GOOGL-IO-2027",
+    "ticker": "GOOGL",
+    "family": "Google I/O",
+    "event_date": "2027-05-18",
+    "status": "projected",
+    "primary": false,
+    "first_seen": "2026-10-11",
+    "event_session": "2027-05-18",
+    "entry_projected20": "2027-04-19",
+    "exit": "2027-05-17"
+   },
+   {
+    "id": "MSFT-Build-2027",
+    "ticker": "MSFT",
+    "family": "Microsoft Build",
+    "event_date": "2027-05-25",
+    "status": "projected",
+    "primary": false,
+    "first_seen": "2026-10-11",
+    "event_session": "2027-05-25",
+    "entry_projected20": "2027-04-26",
+    "exit": "2027-05-24"
+   },
+   {
+    "id": "AAPL-WWDC-2027",
+    "ticker": "AAPL",
+    "family": "WWDC",
+    "event_date": "2027-06-07",
+    "status": "projected",
+    "primary": true,
+    "first_seen": "2026-10-11",
+    "event_session": "2027-06-07",
+    "entry_projected20": "2027-05-06",
+    "exit": "2027-06-04"
+   },
+   {
+    "id": "AAPL-iPhone-2027",
+    "ticker": "AAPL",
+    "family": "iPhone keynote",
+    "event_date": "2027-09-14",
+    "status": "projected",
+    "primary": true,
+    "first_seen": "2026-10-11",
+    "event_session": "2027-09-14",
+    "entry_projected20": "2027-08-13",
+    "exit": "2027-09-13"
+   },
+   {
+    "id": "META-Connect-2027",
+    "ticker": "META",
+    "family": "Meta Connect",
+    "event_date": "2027-09-22",
+    "status": "projected",
+    "primary": false,
+    "first_seen": "2026-10-11",
+    "event_session": "2027-09-23",
+    "entry_projected20": "2027-08-24",
+    "exit": "2027-09-22"
+   }
+  ],
+  "scored": [
+   {
+    "id": "GOOGL-MadeByGoogle-2026",
+    "ticker": "GOOGL",
+    "family": "Made by Google",
+    "event_date": "2026-08-12",
+    "primary": false,
+    "skipped": "added to the calendar after the event"
+   },
+   {
+    "id": "META-Connect-2026",
+    "ticker": "META",
+    "family": "Meta Connect",
+    "event_date": "2026-09-23",
+    "primary": false,
+    "skipped": "added to the calendar after the event"
+   }
+  ]
+ },
+ "brand_trends": {
+  "rule": "103 consumer brands; every 2 weeks buy the top decile by YoY Google search growth (last 13 weeks vs a year earlier), hold 6 months, vs the equal-weight brand pool.",
+  "status": "Monitoring only. Original backtest passed; survivorship-free S&P 500 re-test failed (+1.39%/6mo, CI spans 0). Keep or cut decided from the biweekly reports.",
+  "next_decision": "Formal review at 12 cohorts with 6-month marks (~Oct 2027); interim reads every 2 weeks",
+  "summary": {
+   "1m": {
+    "cohorts": 0,
+    "mean_vs_pool": null,
+    "mean_ex_momentum": null
+   },
+   "3m": {
+    "cohorts": 0,
+    "mean_vs_pool": null,
+    "mean_ex_momentum": null
+   },
+   "6m": {
+    "cohorts": 0,
+    "mean_vs_pool": null,
+    "mean_ex_momentum": null
+   }
+  },
+  "cohorts": [
+   {
+    "snapshot": "2026-10-13",
+    "entry_date": null,
+    "picks": [
+     "DKS",
+     "SN",
+     "FIVE",
+     "CAKE",
+     "CHWY",
+     "HOG",
+     "KDP",
+     "CALY",
+     "WWW",
+     "VFC"
+    ],
+    "n_pool": 103,
+    "momentum_overlap": [
+     "CAKE",
+     "SN"
+    ],
+    "missing_terms": 0,
+    "1m_vs_pool": null,
+    "3m_vs_pool": null,
+    "6m_vs_pool": null,
+    "1m_ex_mom": null,
+    "3m_ex_mom": null,
+    "6m_ex_mom": null
+   }
+  ]
+ },
+ "teen_survey": {
+  "rule": "Brand with a US-listed parent newly in the Piper Sandler upper-income teen top 5 (clothing/footwear); buy 5 trading days after the release, hold 6 months vs XLY.",
+  "status": "Monitoring only; survey is annual (October). Backtest (descriptive): +12.9% vs XLY, n=21.",
+  "next_decision": "Review after 15 events or Oct 2029",
+  "summary": {
+   "updated": "2026-10-13",
+   "events": 0,
+   "scored": 0,
+   "mean_vs_xly": null,
+   "positive": 0
+  },
+  "events": []
+ }
+}

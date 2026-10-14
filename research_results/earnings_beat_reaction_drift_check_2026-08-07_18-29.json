@@ -1,0 +1,130 @@
+{
+  "script_name": "earnings_beat_reaction_drift_check",
+  "run_timestamp": "2026-08-07T18:29:20.539140+00:00",
+  "title": "Does 'earnings beat + strong positive reaction' predict a further 1-2 day drift?",
+  "params": {
+    "beat_threshold_pct": 5.0,
+    "reaction_threshold_pct": 3.0,
+    "sample_size": 1600,
+    "price_period": "3y",
+    "n_case": 1042,
+    "n_control_a": 6669,
+    "n_control_b": 1980
+  },
+  "tables": [
+    {
+      "name": "Forward return by group (CASE = real beat + real strong reaction; both controls real, chronological train/val split)",
+      "columns": [
+        "Metric",
+        "Split",
+        "Group",
+        "N",
+        "Win%",
+        "Avg%"
+      ],
+      "rows": [
+        [
+          "forward_1d",
+          "TRAIN",
+          "CASE (beat+reaction)",
+          699,
+          "51.2%",
+          "+0.66%"
+        ],
+        [
+          "forward_1d",
+          "TRAIN",
+          "CONTROL A (earnings only)",
+          4627,
+          "50.5%",
+          "+0.14%"
+        ],
+        [
+          "forward_1d",
+          "TRAIN",
+          "CONTROL B (far from earnings)",
+          1363,
+          "50.1%",
+          "+0.06%"
+        ],
+        [
+          "forward_1d",
+          "VAL",
+          "CASE (beat+reaction)",
+          343,
+          "50.4%",
+          "+0.61%"
+        ],
+        [
+          "forward_1d",
+          "VAL",
+          "CONTROL A (earnings only)",
+          2042,
+          "47.8%",
+          "-0.00%"
+        ],
+        [
+          "forward_1d",
+          "VAL",
+          "CONTROL B (far from earnings)",
+          617,
+          "54.9%",
+          "+0.26%"
+        ],
+        [
+          "forward_2d",
+          "TRAIN",
+          "CASE (beat+reaction)",
+          699,
+          "55.8%",
+          "+1.02%"
+        ],
+        [
+          "forward_2d",
+          "TRAIN",
+          "CONTROL A (earnings only)",
+          4627,
+          "52.5%",
+          "+0.28%"
+        ],
+        [
+          "forward_2d",
+          "TRAIN",
+          "CONTROL B (far from earnings)",
+          1363,
+          "50.2%",
+          "+0.04%"
+        ],
+        [
+          "forward_2d",
+          "VAL",
+          "CASE (beat+reaction)",
+          343,
+          "47.8%",
+          "+0.44%"
+        ],
+        [
+          "forward_2d",
+          "VAL",
+          "CONTROL A (earnings only)",
+          2042,
+          "48.1%",
+          "+0.04%"
+        ],
+        [
+          "forward_2d",
+          "VAL",
+          "CONTROL B (far from earnings)",
+          617,
+          "56.2%",
+          "+0.45%"
+        ]
+      ]
+    }
+  ],
+  "notes": "CASE = real EPS surprise% (yfinance get_earnings_dates) >= 5.0% AND same/next-trading-day price reaction >= 3% (price reaction is the historically-fetchable proxy for 'reported positively' -- headline archives for past dates aren't fetchable at all, see llm_news_sentiment's finding). CONTROL A = had real earnings but didn't clear the beat+reaction bar (isolates the 'just having earnings' confound flagged by pre_move_news_calibration.py's design notes). CONTROL B = far (>=10 trading days) from any earnings, random 2-day windows (baseline market drift). Verdict requires CASE's 95% bootstrap CI to sit strictly above BOTH controls, on BOTH forward_1d and forward_2d, on BOTH train and validation splits -- same bar as every other signal test in this project (see feedback_stock_predictor_consistency_over_luck).",
+  "conclusion": {
+    "verdict": "PARTIAL",
+    "summary": "4/8 strict checks passed. n_case=1042 (train=699, val=343)."
+  }
+}

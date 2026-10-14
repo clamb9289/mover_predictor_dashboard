@@ -1,0 +1,56 @@
+{
+  "script_name": "sentiment_correlation_significance",
+  "run_timestamp": "2026-08-18T21:17:34.874797+00:00",
+  "title": "Statistical significance (Fisher z-transformation) of the tracked sentiment correlations",
+  "params": {
+    "n_entries": 237
+  },
+  "tables": [
+    {
+      "name": "Correlation, 95% CI, and p-value per signal",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct"
+      ],
+      "rows": [
+        [
+          "Pooled sentiment score vs outcome",
+          225,
+          null,
+          "-7.89%",
+          225,
+          null,
+          "-7.89%"
+        ],
+        [
+          "LLM score vs outcome",
+          206,
+          null,
+          "-5.16%",
+          206,
+          null,
+          "-5.16%"
+        ],
+        [
+          "mentions_24h vs outcome (stone 4)",
+          160,
+          null,
+          "4.20%",
+          160,
+          null,
+          "4.20%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Prior status checks reported correlation coefficients (e.g. 2026-08-17: pooled -0.077 n=223, LLM -0.047 n=204) without a formal significance test -- this fills that gap using Fisher's z-transformation (standard method, computed directly since scipy isn't available in this environment). Stone #5 of 6 in the user's 2026-08-18 'turn over every stone' sentiment review.",
+  "conclusion": {
+    "verdict": "NOT SIGNIFICANT",
+    "summary": "None of the tracked correlations' 95% CIs exclude zero -- every 'weak correlation' finding in this investigation (pooled sentiment, LLM score, mentions_24h) is statistically indistinguishable from noise at current sample sizes. This doesn't prove there's no real effect, just that we don't have enough data yet to tell a real small effect apart from pure chance."
+  }
+}

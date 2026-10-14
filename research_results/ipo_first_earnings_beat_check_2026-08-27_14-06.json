@@ -1,0 +1,66 @@
+{
+  "script_name": "ipo_first_earnings_beat_check",
+  "run_timestamp": "2026-08-27T14:06:14.224817+00:00",
+  "title": "Does a company's FIRST post-IPO earnings report's beat magnitude predict forward directionality?",
+  "params": {
+    "n_ipos": 591,
+    "n_with_first_post_ipo_report": 257,
+    "n_events": 255,
+    "n_train": 165,
+    "n_val": 90
+  },
+  "tables": [
+    {
+      "name": "First-post-IPO-earnings events by beat-magnitude bucket, forward_2d",
+      "columns": [
+        "Bucket",
+        "TRAIN n",
+        "TRAIN win/avg",
+        "VAL n",
+        "VAL win/avg"
+      ],
+      "rows": [
+        [
+          "miss",
+          82,
+          "49%/-1.74%",
+          53,
+          "45%/-1.92%"
+        ],
+        [
+          "small_beat_0_10",
+          16,
+          "25%/-1.39%",
+          4,
+          "n/a"
+        ],
+        [
+          "medium_beat_10_25",
+          15,
+          "27%/-1.70%",
+          5,
+          "40%/-9.17%"
+        ],
+        [
+          "big_beat_25_50",
+          16,
+          "38%/-3.39%",
+          9,
+          "56%/+2.80%"
+        ],
+        [
+          "huge_beat_50plus",
+          36,
+          "47%/-2.39%",
+          19,
+          "32%/-0.34%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Test 2/3 of the IPO-pairing investigation (volume/financial-reporting-strength/sentiment) -- pure research, not scoped for live integration since recent IPOs aren't in the live S&P 1500 trading universe. Reuses earnings_beat_reaction_drift_check.py's event-construction machinery and earnings_drift_tracker.py's magnitude buckets unmodified, applied to just each ticker's single FIRST earnings report strictly after its own IPO date.",
+  "conclusion": {
+    "verdict": "NOT CONFIRMED -- doesn't hold the same monotonic shape on both splits",
+    "summary": "255 first-post-IPO-earnings events (165 train / 90 val)."
+  }
+}

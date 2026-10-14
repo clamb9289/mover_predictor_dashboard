@@ -1,0 +1,106 @@
+{
+  "script_name": "weight_preset_backtest_large_sample",
+  "run_timestamp": "2026-08-03T22:14:59.044184+00:00",
+  "title": "Weight-preset comparison at large sample scale (525 train / 140 val trading days)",
+  "params": {
+    "total_download_days": 650,
+    "val_size": 140,
+    "train_days": 525
+  },
+  "tables": [
+    {
+      "name": "Preset comparison (3 presets)",
+      "columns": [
+        "Config",
+        "train.preset",
+        "train.weights.accumulation",
+        "train.weights.sector_momentum",
+        "train.weights.news_sentiment",
+        "train.weights.relative_strength",
+        "train.hit_rate_3pct",
+        "train.avg_pick_pct",
+        "train.total_pnl",
+        "train.win_day_rate",
+        "val.preset",
+        "val.weights.accumulation",
+        "val.weights.sector_momentum",
+        "val.weights.news_sentiment",
+        "val.weights.relative_strength",
+        "val.hit_rate_3pct",
+        "val.avg_pick_pct",
+        "val.total_pnl",
+        "val.win_day_rate"
+      ],
+      "rows": [
+        [
+          "default",
+          "default",
+          0.6,
+          0.2,
+          0.0,
+          0.2,
+          "20.46%",
+          "+0.53%",
+          "$794.24",
+          "62.37%",
+          "default",
+          0.6,
+          0.2,
+          0.0,
+          0.2,
+          "27.48%",
+          "+1.02%",
+          "$401.95",
+          "64.89%"
+        ],
+        [
+          "low_accum",
+          "low_accum",
+          0.35,
+          0.2,
+          0.0,
+          0.45,
+          "22.13%",
+          "+0.57%",
+          "$844.35",
+          "60.56%",
+          "low_accum",
+          0.35,
+          0.2,
+          0.0,
+          0.45,
+          "27.23%",
+          "+0.94%",
+          "$369.01",
+          "62.60%"
+        ],
+        [
+          "sector_boost",
+          "sector_boost",
+          0.45,
+          0.35,
+          0.0,
+          0.2,
+          "18.51%",
+          "+0.51%",
+          "$763.94",
+          "59.15%",
+          "sector_boost",
+          0.45,
+          0.35,
+          0.0,
+          0.2,
+          "24.43%",
+          "+0.80%",
+          "$314.33",
+          "58.78%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Both low_accum and sector_boost were tested as candidate alternatives to the live default preset at this larger sample depth.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "Both low_accum and sector_boost rejected at 525/140-day scale -- live default weights confirmed solid."
+  }
+}

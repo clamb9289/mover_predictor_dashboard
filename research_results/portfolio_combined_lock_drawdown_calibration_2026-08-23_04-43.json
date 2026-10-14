@@ -1,0 +1,163 @@
+{
+  "script_name": "portfolio_combined_lock_drawdown_calibration",
+  "run_timestamp": "2026-08-23T04:43:58.237299+00:00",
+  "title": "With the live +1.00% profit lock already on, does ALSO adding a portfolio-level drawdown stop improve the worst-day severity and/or the $ outcome further?",
+  "params": {
+    "days": 380,
+    "starting_capital": 300.0,
+    "profit_lock_pct": 0.01,
+    "thresholds": [
+      -0.005,
+      -0.0075,
+      -0.01,
+      -0.015,
+      -0.02,
+      -0.025,
+      -0.03,
+      -0.04,
+      -0.05
+    ]
+  },
+  "tables": [
+    {
+      "name": "Profit lock + drawdown stop vs lock-alone baseline (9 tested)",
+      "columns": [
+        "Config",
+        "train.n_days",
+        "train.red_days",
+        "train.red_pct",
+        "train.worst_day",
+        "train.avg_red_day",
+        "train.reason_counts.trail_floor",
+        "train.reason_counts.portfolio_drawdown_stop",
+        "train.reason_counts.stop_loss",
+        "train.reason_counts.portfolio_profit_lock",
+        "train.reason_counts.max_hold_days"
+      ],
+      "rows": [
+        [
+          "stop=-0.50%",
+          353,
+          182,
+          "51.56%",
+          -3.5227,
+          "-87.11%",
+          2622,
+          2393,
+          160,
+          489,
+          12
+        ],
+        [
+          "stop=-0.75%",
+          355,
+          165,
+          "46.48%",
+          -3.9551,
+          "-111.09%",
+          3039,
+          1761,
+          245,
+          551,
+          37
+        ],
+        [
+          "stop=-1.00%",
+          356,
+          156,
+          "43.82%",
+          -4.4732,
+          "-127.87%",
+          3358,
+          1247,
+          349,
+          519,
+          119
+        ],
+        [
+          "stop=-1.50%",
+          359,
+          158,
+          "44.01%",
+          -6.725,
+          "-118.67%",
+          3863,
+          289,
+          602,
+          405,
+          354
+        ],
+        [
+          "stop=-2.00%",
+          372,
+          161,
+          "43.28%",
+          -5.4307,
+          "-114.38%",
+          3942,
+          45,
+          685,
+          413,
+          426
+        ],
+        [
+          "stop=-2.50%",
+          373,
+          164,
+          "43.97%",
+          -5.4307,
+          "-109.41%",
+          3963,
+          4,
+          703,
+          399,
+          440
+        ],
+        [
+          "stop=-3.00%",
+          373,
+          164,
+          "43.97%",
+          -5.4307,
+          "-109.47%",
+          3963,
+          null,
+          706,
+          399,
+          441
+        ],
+        [
+          "stop=-4.00%",
+          373,
+          164,
+          "43.97%",
+          -5.4307,
+          "-109.47%",
+          3963,
+          null,
+          706,
+          399,
+          441
+        ],
+        [
+          "stop=-5.00%",
+          373,
+          164,
+          "43.97%",
+          -5.4307,
+          "-109.47%",
+          3963,
+          null,
+          706,
+          399,
+          441
+        ]
+      ]
+    }
+  ],
+  "notes": "Direct follow-up closing the gap portfolio_profit_lock_calibration.py's own docstring flagged: 'no calibration run has tested [profit lock + drawdown stop] combination.' Both prior tests (profit lock alone: SHIPPED; drawdown stop alone: NEEDS MORE DATA, re-run 2026-08-22 against the corrected 600-day cache) tested their own rule against a NO-RULE baseline -- this tests the drawdown stop against a baseline that ALREADY has the live profit lock on, since that's the real question for a book that would run both rules simultaneously.",
+  "conclusion": {
+    "verdict": "NEEDS HUMAN REVIEW",
+    "summary": "3/9 drawdown thresholds, layered on top of the already-live +1.00% profit lock, strictly capped the worst single day vs the lock-only baseline -- 1 of those also improved the $ outcome (a genuine win on both axes, not just a trade-off). Needs human review of the specific threshold before considering shipping."
+  }
+}

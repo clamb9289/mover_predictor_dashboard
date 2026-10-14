@@ -1,0 +1,57 @@
+{
+  "days": 250,
+  "results": {
+    "baseline_hold_regardless": {
+      "train": {
+        "n": 499,
+        "win_rate": 0.7234,
+        "avg_pct": 1.4829,
+        "stdev_pct": 3.991,
+        "worst_pct": -3.0,
+        "total_pnl": 739.99,
+        "avg_days_held": 1.63
+      },
+      "val": {
+        "n": 214,
+        "win_rate": 0.6729,
+        "avg_pct": 1.1528,
+        "stdev_pct": 3.7814,
+        "worst_pct": -3.0,
+        "total_pnl": 246.7,
+        "avg_days_held": 1.64
+      },
+      "exit_reasons": {
+        "Stop loss": 195,
+        "Win floor triggered": 488,
+        "Max hold": 29,
+        "Ran out of data": 1
+      }
+    },
+    "eod_sell_winners": {
+      "train": {
+        "n": 499,
+        "win_rate": 0.7355,
+        "avg_pct": 1.0446,
+        "stdev_pct": 3.2349,
+        "worst_pct": -3.0,
+        "total_pnl": 521.27,
+        "avg_days_held": 1.13
+      },
+      "val": {
+        "n": 214,
+        "win_rate": 0.7009,
+        "avg_pct": 0.9329,
+        "stdev_pct": 3.4708,
+        "worst_pct": -3.0,
+        "total_pnl": 199.65,
+        "avg_days_held": 1.16
+      },
+      "exit_reasons": {
+        "Stop loss": 186,
+        "Win floor triggered": 315,
+        "EOD sell": 202,
+        "Max hold": 10
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "script_name": "premarket_volatility_calibration",
+  "run_timestamp": "2026-08-18T20:47:10.869988+00:00",
+  "title": "Pre-market range % as an ADDITIONAL exclusion signal, on top of the live 10-day ATR filter",
+  "params": {
+    "backtest_days": 50,
+    "n_train": 262,
+    "n_val": 118,
+    "threshold_grid": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      8.0
+    ]
+  },
+  "tables": [
+    {
+      "name": "Pre-market exclusion thresholds vs baseline+random-control (9 tested)",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "train.total_dollar",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct",
+        "val.total_dollar"
+      ],
+      "rows": [
+        [
+          "exclude premarket range > 1.0%",
+          89,
+          "69.66%",
+          "0.44%",
+          "$38.77",
+          49,
+          "57.14%",
+          "-0.02%",
+          "$-1.03"
+        ],
+        [
+          "exclude premarket range > 1.5%",
+          152,
+          "65.79%",
+          "0.31%",
+          "$47.20",
+          69,
+          "60.87%",
+          "0.13%",
+          "$9.10"
+        ],
+        [
+          "exclude premarket range > 2.0%",
+          178,
+          "64.61%",
+          "0.20%",
+          "$36.18",
+          84,
+          "61.90%",
+          "0.07%",
+          "$6.05"
+        ],
+        [
+          "exclude premarket range > 2.5%",
+          198,
+          "63.64%",
+          "0.18%",
+          "$36.26",
+          89,
+          "61.80%",
+          "0.10%",
+          "$8.70"
+        ],
+        [
+          "exclude premarket range > 3.0%",
+          215,
+          "64.65%",
+          "0.22%",
+          "$47.95",
+          92,
+          "63.04%",
+          "0.20%",
+          "$18.60"
+        ],
+        [
+          "exclude premarket range > 4.0%",
+          227,
+          "64.32%",
+          "0.20%",
+          "$44.41",
+          102,
+          "62.75%",
+          "0.16%",
+          "$16.23"
+        ],
+        [
+          "exclude premarket range > 5.0%",
+          240,
+          "65.83%",
+          "0.27%",
+          "$63.91",
+          104,
+          "63.46%",
+          "0.16%",
+          "$16.81"
+        ],
+        [
+          "exclude premarket range > 6.0%",
+          246,
+          "65.45%",
+          "0.26%",
+          "$64.18",
+          107,
+          "62.62%",
+          "0.13%",
+          "$13.40"
+        ],
+        [
+          "exclude premarket range > 8.0%",
+          252,
+          "65.08%",
+          "0.25%",
+          "$62.69",
+          110,
+          "61.82%",
+          "0.13%",
+          "$14.69"
+        ]
+      ]
+    }
+  ],
+  "notes": "Exploratory only -- capped at ~40 real trading days by yfinance's prepost intraday history limit (Alpaca IEX has almost no premarket coverage for this project's actual mid-cap candidate pool, checked live before building this). That's the same sample-size range that produced a later-invalidated ORB entry-timing 'win' (orb_300day_backtest.py) -- treat any apparent edge here as a lead for the live tracker (premarket_volatility_tracker.py), not a result to act on directly.",
+  "conclusion": {
+    "verdict": "INCONCLUSIVE",
+    "summary": "0 threshold(s) beat both baseline and their own random-shuffle control on both TRAIN and VAL at ~380-record depth -- no threshold cleared the noise floor at this depth."
+  }
+}

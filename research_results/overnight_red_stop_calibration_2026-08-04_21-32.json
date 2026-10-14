@@ -1,0 +1,160 @@
+{
+  "script_name": "overnight_red_stop_calibration",
+  "run_timestamp": "2026-08-04T21:32:54.655377+00:00",
+  "title": "Should the stop-loss tighten (or exit trigger fire early) after a position closes a day in the red?",
+  "params": {
+    "backtest_days": 150,
+    "candidates_per_day": 12,
+    "max_hold_days": 3,
+    "n_eligible": 223,
+    "n_train": 149,
+    "n_val": 74
+  },
+  "tables": [
+    {
+      "name": "Held-overnight-while-red subset: baseline vs conditional configs (8 tested)",
+      "columns": [
+        "Hypothesis",
+        "Config",
+        "Train N",
+        "Base win% (T)",
+        "Base avg% (T)",
+        "Cfg win% (T)",
+        "Cfg avg% (T)",
+        "Val N",
+        "Base win% (V)",
+        "Base avg% (V)",
+        "Cfg win% (V)",
+        "Cfg avg% (V)",
+        "Beats baseline both splits"
+      ],
+      "rows": [
+        [
+          "A_tighten_after_red",
+          "tighten=-1.0%",
+          149,
+          "42.3%",
+          "-1.12%",
+          "19.5%",
+          "-1.28%",
+          74,
+          "51.4%",
+          "-0.78%",
+          "35.1%",
+          "-0.82%",
+          ""
+        ],
+        [
+          "A_tighten_after_red",
+          "tighten=-1.5%",
+          149,
+          "42.3%",
+          "-1.12%",
+          "25.5%",
+          "-1.35%",
+          74,
+          "51.4%",
+          "-0.78%",
+          "36.5%",
+          "-0.95%",
+          ""
+        ],
+        [
+          "A_tighten_after_red",
+          "tighten=-2.0%",
+          149,
+          "42.3%",
+          "-1.12%",
+          "34.9%",
+          "-1.22%",
+          74,
+          "51.4%",
+          "-0.78%",
+          "40.5%",
+          "-0.92%",
+          ""
+        ],
+        [
+          "A_tighten_after_red",
+          "tighten=-2.5%",
+          149,
+          "42.3%",
+          "-1.12%",
+          "38.9%",
+          "-1.15%",
+          74,
+          "51.4%",
+          "-0.78%",
+          "47.3%",
+          "-0.80%",
+          ""
+        ],
+        [
+          "B_sell_on_green_after_red",
+          "green_exit=+0.00%",
+          149,
+          "42.3%",
+          "-1.12%",
+          "48.3%",
+          "-1.18%",
+          74,
+          "51.4%",
+          "-0.78%",
+          "59.5%",
+          "-0.81%",
+          ""
+        ],
+        [
+          "B_sell_on_green_after_red",
+          "green_exit=+0.10%",
+          149,
+          "42.3%",
+          "-1.12%",
+          "51.0%",
+          "-1.17%",
+          74,
+          "51.4%",
+          "-0.78%",
+          "58.1%",
+          "-0.90%",
+          ""
+        ],
+        [
+          "B_sell_on_green_after_red",
+          "green_exit=+0.25%",
+          149,
+          "42.3%",
+          "-1.12%",
+          "47.7%",
+          "-1.17%",
+          74,
+          "51.4%",
+          "-0.78%",
+          "56.8%",
+          "-0.84%",
+          ""
+        ],
+        [
+          "B_sell_on_green_after_red",
+          "green_exit=+0.50%",
+          149,
+          "42.3%",
+          "-1.12%",
+          "43.6%",
+          "-1.15%",
+          74,
+          "51.4%",
+          "-0.78%",
+          "51.4%",
+          "-0.74%",
+          ""
+        ]
+      ]
+    }
+  ],
+  "notes": "Eligible subset = real candidates that survived day 0 without hitting the baseline stop AND closed day 0 in the red (below entry) -- i.e. genuinely held overnight while red, the exact scenario asked about. Hypothesis A (tighten next day's stop-loss after a red close) is re-evaluated day by day, not sticky. Hypothesis B (exit immediately on first recovery to a green threshold) is sticky for the rest of the hold once any day has closed red. Both leave a position that's never closed red alone -- identical to the live baseline.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "0/8 configs beat the fixed -3% baseline on the held-overnight-while-red subset (win_rate AND avg_pct, both TRAIN and VAL)."
+  }
+}

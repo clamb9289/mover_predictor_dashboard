@@ -1,0 +1,379 @@
+{
+  "run_timestamp": "2026-07-30_14-17",
+  "params": {
+    "days": 5,
+    "fixed_sentiment": 0.0,
+    "weights": {
+      "accumulation": 0.6,
+      "sector_momentum": 0.2,
+      "news_sentiment": 0.0,
+      "relative_strength": 0.2
+    },
+    "weights_preset": "default",
+    "position_size": 100.0,
+    "num_positions": 3
+  },
+  "summary": {
+    "total_days": 3,
+    "skipped_days": 1,
+    "total_pnl": -7.95,
+    "avg_daily_pnl": -2.65,
+    "winning_days": 1,
+    "losing_days": 2,
+    "flat_days": 0,
+    "win_day_rate": 0.3333,
+    "total_picks": 9,
+    "hit_rate_3pct": 0.2222,
+    "avg_pick_pct": -0.8833,
+    "exit_reasons": {
+      "EOD (trail floor active)": 1,
+      "Stop loss (-3%)": 5,
+      "EOD close": 2,
+      "Win floor triggered (+3%)": 1
+    },
+    "accumulation_return_correlation": "+0.501",
+    "best_day": {
+      "predict_date": "2026-07-24",
+      "trade_date": "2026-07-27",
+      "spy_pct": 0.1,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "WKC",
+          "sector": "Energy",
+          "score": 0.72,
+          "entry_price": 38.08,
+          "prior_close": 38.14,
+          "exit_price": 39.79,
+          "exit_reason": "EOD (trail floor active)",
+          "pct_change": 4.49,
+          "dollar_pnl": 4.49,
+          "signals": {
+            "accumulation": 2.709,
+            "sector_momentum_pct": 0.4,
+            "news_sentiment": -0.47,
+            "relative_strength_pct": 4.09,
+            "gap_pct": -0.16
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "DLR",
+          "sector": "Real Estate",
+          "score": 0.667,
+          "entry_price": 200.05,
+          "prior_close": 199.08,
+          "exit_price": 194.05,
+          "exit_reason": "Stop loss (-3%)",
+          "pct_change": -3.0,
+          "dollar_pnl": -3.0,
+          "signals": {
+            "accumulation": 2.002,
+            "sector_momentum_pct": 2.22,
+            "news_sentiment": 0.44,
+            "relative_strength_pct": 12.27,
+            "gap_pct": 0.49
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "GNTX",
+          "sector": "Consumer Discretionary",
+          "score": 0.615,
+          "entry_price": 22.99,
+          "prior_close": 22.9,
+          "exit_price": 22.92,
+          "exit_reason": "EOD close",
+          "pct_change": -0.3,
+          "dollar_pnl": -0.3,
+          "signals": {
+            "accumulation": 2.547,
+            "sector_momentum_pct": 0.6,
+            "news_sentiment": -0.46,
+            "relative_strength_pct": -6.55,
+            "gap_pct": 0.39
+          }
+        }
+      ],
+      "day_total_pnl": 1.19,
+      "day_avg_pct": 0.4,
+      "wins_3pct": 1
+    },
+    "worst_day": {
+      "predict_date": "2026-07-28",
+      "trade_date": "2026-07-29",
+      "spy_pct": 0.24,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "CNC",
+          "sector": "Healthcare",
+          "score": 0.833,
+          "entry_price": 64.4,
+          "prior_close": 63.91,
+          "exit_price": 62.47,
+          "exit_reason": "Stop loss (-3%)",
+          "pct_change": -3.0,
+          "dollar_pnl": -3.0,
+          "signals": {
+            "accumulation": 2.676,
+            "sector_momentum_pct": 2.36,
+            "news_sentiment": -0.04,
+            "relative_strength_pct": -7.81,
+            "gap_pct": 0.77
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "TECH",
+          "sector": "Healthcare",
+          "score": 0.802,
+          "entry_price": 72.13,
+          "prior_close": 72.07,
+          "exit_price": 72.03,
+          "exit_reason": "EOD close",
+          "pct_change": -0.14,
+          "dollar_pnl": -0.14,
+          "signals": {
+            "accumulation": 2.551,
+            "sector_momentum_pct": 2.36,
+            "news_sentiment": -0.24,
+            "relative_strength_pct": -1.75,
+            "gap_pct": 0.08
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "MAS",
+          "sector": "Industrials",
+          "score": 0.683,
+          "entry_price": 75.82,
+          "prior_close": 81.61,
+          "exit_price": 73.55,
+          "exit_reason": "Stop loss (-3%)",
+          "pct_change": -3.0,
+          "dollar_pnl": -3.0,
+          "signals": {
+            "accumulation": 1.974,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.1,
+            "relative_strength_pct": 6.62,
+            "gap_pct": -7.09
+          }
+        }
+      ],
+      "day_total_pnl": -6.14,
+      "day_avg_pct": -2.05,
+      "wins_3pct": 0
+    }
+  },
+  "skipped_days": [
+    {
+      "date": "2026-07-29",
+      "reason": "Regime: SPY -1.54%"
+    }
+  ],
+  "daily_results": [
+    {
+      "predict_date": "2026-07-24",
+      "trade_date": "2026-07-27",
+      "spy_pct": 0.1,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "WKC",
+          "sector": "Energy",
+          "score": 0.72,
+          "entry_price": 38.08,
+          "prior_close": 38.14,
+          "exit_price": 39.79,
+          "exit_reason": "EOD (trail floor active)",
+          "pct_change": 4.49,
+          "dollar_pnl": 4.49,
+          "signals": {
+            "accumulation": 2.709,
+            "sector_momentum_pct": 0.4,
+            "news_sentiment": -0.47,
+            "relative_strength_pct": 4.09,
+            "gap_pct": -0.16
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "DLR",
+          "sector": "Real Estate",
+          "score": 0.667,
+          "entry_price": 200.05,
+          "prior_close": 199.08,
+          "exit_price": 194.05,
+          "exit_reason": "Stop loss (-3%)",
+          "pct_change": -3.0,
+          "dollar_pnl": -3.0,
+          "signals": {
+            "accumulation": 2.002,
+            "sector_momentum_pct": 2.22,
+            "news_sentiment": 0.44,
+            "relative_strength_pct": 12.27,
+            "gap_pct": 0.49
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "GNTX",
+          "sector": "Consumer Discretionary",
+          "score": 0.615,
+          "entry_price": 22.99,
+          "prior_close": 22.9,
+          "exit_price": 22.92,
+          "exit_reason": "EOD close",
+          "pct_change": -0.3,
+          "dollar_pnl": -0.3,
+          "signals": {
+            "accumulation": 2.547,
+            "sector_momentum_pct": 0.6,
+            "news_sentiment": -0.46,
+            "relative_strength_pct": -6.55,
+            "gap_pct": 0.39
+          }
+        }
+      ],
+      "day_total_pnl": 1.19,
+      "day_avg_pct": 0.4,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-07-27",
+      "trade_date": "2026-07-28",
+      "spy_pct": 0.02,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "UDR",
+          "sector": "Real Estate",
+          "score": 0.674,
+          "entry_price": 38.48,
+          "prior_close": 39.27,
+          "exit_price": 39.63,
+          "exit_reason": "Win floor triggered (+3%)",
+          "pct_change": 3.0,
+          "dollar_pnl": 3.0,
+          "signals": {
+            "accumulation": 2.257,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": -0.18,
+            "relative_strength_pct": -0.77,
+            "gap_pct": -2.01
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "TXT",
+          "sector": "Industrials",
+          "score": 0.597,
+          "entry_price": 90.92,
+          "prior_close": 96.13,
+          "exit_price": 88.19,
+          "exit_reason": "Stop loss (-3%)",
+          "pct_change": -3.0,
+          "dollar_pnl": -3.0,
+          "signals": {
+            "accumulation": 1.353,
+            "sector_momentum_pct": 0.3,
+            "news_sentiment": 0.86,
+            "relative_strength_pct": 5.59,
+            "gap_pct": -5.42
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "CNC",
+          "sector": "Healthcare",
+          "score": 0.563,
+          "entry_price": 59.51,
+          "prior_close": 64.08,
+          "exit_price": 57.72,
+          "exit_reason": "Stop loss (-3%)",
+          "pct_change": -3.0,
+          "dollar_pnl": -3.0,
+          "signals": {
+            "accumulation": 1.456,
+            "sector_momentum_pct": 0.51,
+            "news_sentiment": -0.77,
+            "relative_strength_pct": -3.18,
+            "gap_pct": -7.13
+          }
+        }
+      ],
+      "day_total_pnl": -3.0,
+      "day_avg_pct": -1.0,
+      "wins_3pct": 1
+    },
+    {
+      "predict_date": "2026-07-28",
+      "trade_date": "2026-07-29",
+      "spy_pct": 0.24,
+      "picks": [
+        {
+          "rank": 1,
+          "ticker": "CNC",
+          "sector": "Healthcare",
+          "score": 0.833,
+          "entry_price": 64.4,
+          "prior_close": 63.91,
+          "exit_price": 62.47,
+          "exit_reason": "Stop loss (-3%)",
+          "pct_change": -3.0,
+          "dollar_pnl": -3.0,
+          "signals": {
+            "accumulation": 2.676,
+            "sector_momentum_pct": 2.36,
+            "news_sentiment": -0.04,
+            "relative_strength_pct": -7.81,
+            "gap_pct": 0.77
+          }
+        },
+        {
+          "rank": 2,
+          "ticker": "TECH",
+          "sector": "Healthcare",
+          "score": 0.802,
+          "entry_price": 72.13,
+          "prior_close": 72.07,
+          "exit_price": 72.03,
+          "exit_reason": "EOD close",
+          "pct_change": -0.14,
+          "dollar_pnl": -0.14,
+          "signals": {
+            "accumulation": 2.551,
+            "sector_momentum_pct": 2.36,
+            "news_sentiment": -0.24,
+            "relative_strength_pct": -1.75,
+            "gap_pct": 0.08
+          }
+        },
+        {
+          "rank": 3,
+          "ticker": "MAS",
+          "sector": "Industrials",
+          "score": 0.683,
+          "entry_price": 75.82,
+          "prior_close": 81.61,
+          "exit_price": 73.55,
+          "exit_reason": "Stop loss (-3%)",
+          "pct_change": -3.0,
+          "dollar_pnl": -3.0,
+          "signals": {
+            "accumulation": 1.974,
+            "sector_momentum_pct": 0.0,
+            "news_sentiment": 0.1,
+            "relative_strength_pct": 6.62,
+            "gap_pct": -7.09
+          }
+        }
+      ],
+      "day_total_pnl": -6.14,
+      "day_avg_pct": -2.05,
+      "wins_3pct": 0
+    }
+  ]
+}

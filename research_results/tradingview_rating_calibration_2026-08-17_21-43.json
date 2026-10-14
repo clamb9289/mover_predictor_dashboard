@@ -1,0 +1,97 @@
+{
+  "script_name": "tradingview_rating_calibration",
+  "run_timestamp": "2026-08-17T21:43:36.372627+00:00",
+  "title": "Does TradingView's aggregate Technical Rating (Buy/Sell/Neutral basket) predict next-day moves?",
+  "params": {
+    "backtest_days": 300,
+    "n_train_rows": 1576,
+    "n_val_rows": 680
+  },
+  "tables": [
+    {
+      "name": "5-day forward edge by signal (present vs absent)",
+      "columns": [
+        "Signal",
+        "train.present.n",
+        "train.present.avg",
+        "train.present.win_rate",
+        "train.absent.n",
+        "train.absent.avg",
+        "train.absent.win_rate",
+        "val.present.n",
+        "val.present.avg",
+        "val.present.win_rate",
+        "val.absent.n",
+        "val.absent.avg",
+        "val.absent.win_rate"
+      ],
+      "rows": [
+        [
+          "random_control",
+          358,
+          "0.71%",
+          "53.63%",
+          1218,
+          "0.46%",
+          "54.27%",
+          157,
+          "-0.60%",
+          "49.04%",
+          523,
+          "0.47%",
+          "51.63%"
+        ],
+        [
+          "tv_buy_or_better",
+          943,
+          "0.59%",
+          "53.66%",
+          633,
+          "0.40%",
+          "54.82%",
+          438,
+          "0.35%",
+          "51.14%",
+          242,
+          "-0.00%",
+          "50.83%"
+        ],
+        [
+          "tv_oscillators_bullish",
+          355,
+          "0.35%",
+          "54.93%",
+          1221,
+          "0.57%",
+          "53.89%",
+          178,
+          "0.45%",
+          "48.88%",
+          502,
+          "0.14%",
+          "51.79%"
+        ],
+        [
+          "tv_strong_buy",
+          571,
+          "0.81%",
+          "54.82%",
+          1005,
+          "0.35%",
+          "53.73%",
+          235,
+          "0.05%",
+          "48.09%",
+          445,
+          "0.31%",
+          "52.58%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Prompted by github.com/atilaahmettaner/tradingview-mcp. Rating replicated from real OHLCV history (5 oscillators + 5 moving averages, TradingView's own published methodology, since the live rating itself isn't backtestable -- no historical query support). tv_strong_buy sign-flips TRAIN +0.46% -> VAL -0.26% (present win rate also drops below absent's on VAL, 48.1% vs 52.6%) -- the classic overfit signature this project's whole testing discipline exists to catch. tv_oscillators_bullish sign-flips the OTHER direction (TRAIN -0.21% -> VAL +0.31%) -- still a flip, still disqualifying. tv_buy_or_better doesn't flip on avg return (TRAIN +0.19%/VAL +0.35%, both positive) but fails the win-rate half of the bar on TRAIN (present 53.7% < absent 54.8%) -- a bigger-but-less-consistent trade-off this project has rejected elsewhere. random_control itself sign-flips train-to-val too (+0.25% -> -1.07%), confirming the harness is behaving sanely.",
+  "conclusion": {
+    "verdict": "REJECTED",
+    "summary": "None of the 3 real signals clear the bar (beat baseline on both win rate AND avg return, on both splits). 2 of 3 sign-flip train-to-val outright; the third fails the win-rate consistency check on train. Matches the outcome of every other classic single-family technical-indicator signal tested in this project (Bollinger, Fibonacci, MACD/EMA, VWAP/ORB) -- confirms the pre-registered expectation, closed."
+  }
+}

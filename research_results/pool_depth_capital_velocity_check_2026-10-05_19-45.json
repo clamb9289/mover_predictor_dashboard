@@ -1,0 +1,158 @@
+{
+  "script_name": "pool_depth_capital_velocity_check",
+  "run_timestamp": "2026-10-05T19:45:58.371052+00:00",
+  "title": "With the -1% stop recycling capital faster, does a deeper same-day refill bench (candidate pool depth) raise real compounded growth vs live's 30?",
+  "params": {
+    "backtest_days": 150,
+    "starting_capital": 2000.0,
+    "num_positions": 20,
+    "conviction_weight": 0.75,
+    "stop_loss": -0.01,
+    "pool_depth_grid": [
+      20,
+      25,
+      30,
+      40,
+      50
+    ],
+    "n_train_days": 105,
+    "n_val_days": 45
+  },
+  "tables": [
+    {
+      "name": "Pool depth vs compounded growth (TRAIN)",
+      "columns": [
+        "Config",
+        "train.pool_depth",
+        "train.n_trades",
+        "train.win_rate",
+        "train.avg_pct",
+        "train.trades_per_day",
+        "train.ending_cash",
+        "train.total_return_pct"
+      ],
+      "rows": [
+        [
+          "depth=20",
+          20,
+          1594,
+          "72.21%",
+          "0.44%",
+          15.181,
+          2843.9336,
+          "4219.67%"
+        ],
+        [
+          "depth=25",
+          25,
+          1932,
+          "70.55%",
+          "0.38%",
+          18.4,
+          2880.2645,
+          "4401.32%"
+        ],
+        [
+          "depth=30",
+          30,
+          2213,
+          "69.32%",
+          "0.33%",
+          21.0762,
+          2879.932,
+          "4399.66%"
+        ],
+        [
+          "depth=40",
+          40,
+          2377,
+          "68.62%",
+          "0.30%",
+          22.6381,
+          2862.8273,
+          "4314.14%"
+        ],
+        [
+          "depth=50",
+          50,
+          2378,
+          "68.63%",
+          "0.30%",
+          22.6476,
+          2863.4689,
+          "4317.34%"
+        ]
+      ]
+    },
+    {
+      "name": "Pool depth vs compounded growth (VAL)",
+      "columns": [
+        "Config",
+        "val.pool_depth",
+        "val.n_trades",
+        "val.win_rate",
+        "val.avg_pct",
+        "val.trades_per_day",
+        "val.ending_cash",
+        "val.total_return_pct"
+      ],
+      "rows": [
+        [
+          "depth=20",
+          20,
+          746,
+          "65.55%",
+          "0.15%",
+          16.5778,
+          2118.5581,
+          "592.79%"
+        ],
+        [
+          "depth=25",
+          25,
+          908,
+          "63.44%",
+          "0.21%",
+          20.1778,
+          2181.2119,
+          "906.06%"
+        ],
+        [
+          "depth=30",
+          30,
+          1044,
+          "62.16%",
+          "0.15%",
+          23.2,
+          2143.6244,
+          "718.12%"
+        ],
+        [
+          "depth=40",
+          40,
+          1212,
+          "61.39%",
+          "0.10%",
+          26.9333,
+          2098.8984,
+          "494.49%"
+        ],
+        [
+          "depth=50",
+          50,
+          1225,
+          "61.39%",
+          "0.08%",
+          27.2222,
+          2079.3207,
+          "396.60%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Same real compounding engine as stop_loss_capital_velocity_check.py (which shipped -1% with pool_depth=20). Depth capped at 50 by the NEWS_CHECK_TOP_N shortlist.",
+  "conclusion": {
+    "verdict": "GO -- a deeper bench beats live depth 30 on both splits",
+    "summary": "1/4 non-live depths beat depth 30 on both TRAIN and VAL."
+  }
+}

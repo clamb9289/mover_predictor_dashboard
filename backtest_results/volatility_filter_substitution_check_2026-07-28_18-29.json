@@ -1,0 +1,65 @@
+{
+  "days": 250,
+  "p75": 4.085233773623974,
+  "p90": 5.291879810996878,
+  "comparisons": {
+    "unfiltered (live today)": {
+      "train": {
+        "n": 498,
+        "win_rate": 0.7169,
+        "hit_rate_3pct": 0.3574,
+        "avg_pct": 1.4175,
+        "total_pnl": 705.92,
+        "avg_days_held": 3.0
+      },
+      "val": {
+        "n": 216,
+        "win_rate": 0.6713,
+        "hit_rate_3pct": 0.3287,
+        "avg_pct": 1.1739,
+        "total_pnl": 253.55,
+        "avg_days_held": 3.0
+      }
+    },
+    "moderate (75th pct)": {
+      "train": {
+        "n": 498,
+        "win_rate": 0.757,
+        "hit_rate_3pct": 0.3112,
+        "avg_pct": 1.1877,
+        "total_pnl": 591.47,
+        "avg_days_held": 3.0
+      },
+      "val": {
+        "n": 216,
+        "win_rate": 0.8009,
+        "hit_rate_3pct": 0.3009,
+        "avg_pct": 1.2662,
+        "total_pnl": 273.5,
+        "avg_days_held": 3.0
+      }
+    },
+    "strict (90th pct)": {
+      "train": {
+        "n": 498,
+        "win_rate": 0.7369,
+        "hit_rate_3pct": 0.3434,
+        "avg_pct": 1.3527,
+        "total_pnl": 673.64,
+        "avg_days_held": 3.0
+      },
+      "val": {
+        "n": 216,
+        "win_rate": 0.7407,
+        "hit_rate_3pct": 0.338,
+        "avg_pct": 1.3519,
+        "total_pnl": 292.02,
+        "avg_days_held": 3.0
+      }
+    }
+  },
+  "recommended": [
+    "moderate (75th pct)",
+    "strict (90th pct)"
+  ]
+}

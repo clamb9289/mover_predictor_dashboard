@@ -1,0 +1,86 @@
+{
+  "script_name": "swing_trade_calibration",
+  "run_timestamp": "2026-07-30T21:29:33.775090+00:00",
+  "title": "Does holding picks for multiple days (same stop-loss/floor rules, no forced EOD exit) beat today's day-trading?",
+  "params": {
+    "days": 120,
+    "num_positions": 20
+  },
+  "tables": [
+    {
+      "name": "Win rate / avg return by hold period ($300 total capital, per-trade basis, no capital recycling modeled)",
+      "columns": [
+        "Hold",
+        "Train n",
+        "Train win%",
+        "Train hit(3%)",
+        "Train avg%",
+        "Train avg days",
+        "Val n",
+        "Val win%",
+        "Val hit(3%)",
+        "Val avg%",
+        "Val avg days"
+      ],
+      "rows": [
+        [
+          "1d (live baseline)",
+          1568,
+          "68.2%",
+          "21.5%",
+          "+0.65%",
+          "1.0d",
+          672,
+          "71.0%",
+          "18.3%",
+          "+0.71%",
+          "1.0d"
+        ],
+        [
+          "3d",
+          1568,
+          "70.8%",
+          "29.4%",
+          "+0.93%",
+          "1.5d",
+          672,
+          "75.9%",
+          "28.6%",
+          "+1.06%",
+          "1.6d"
+        ],
+        [
+          "5d",
+          1568,
+          "71.0%",
+          "30.9%",
+          "+0.98%",
+          "1.6d",
+          672,
+          "76.8%",
+          "29.8%",
+          "+1.11%",
+          "1.7d"
+        ],
+        [
+          "10d",
+          1568,
+          "71.3%",
+          "31.1%",
+          "+0.99%",
+          "1.7d",
+          672,
+          "76.8%",
+          "30.1%",
+          "+1.13%",
+          "1.7d"
+        ]
+      ]
+    }
+  ],
+  "notes": "Baseline (live, hold=1d): TRAIN win_rate=68.2%, VAL win_rate=71.0%. Recommendation from this run: [3, 5, 10]. Does NOT model capital recycling -- see swing_hold_compounding_check.py for the version that does, which is what actually determined the live MAX_HOLD_DAYS value.",
+  "conclusion": {
+    "verdict": "SHIPPED",
+    "summary": "Swing trading (multi-day hold) shipped 2026-07-24 based on this test. MAX_HOLD_DAYS itself was later revised from 5 to 3 (2026-07-28) once swing_hold_compounding_check.py modeled real capital recycling across a 3-slot portfolio -- this script's own hold-period recommendation didn't account for that."
+  }
+}

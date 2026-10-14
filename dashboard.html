@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Strategy Tracker</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #222535;
+    --border: #2e3147;
+    --text: #e8eaf0;
+    --muted: #6b6f84;
+    --accent: #5b7fff;
+    --green: #34d399;
+    --green-bg: rgba(52,211,153,0.1);
+    --red: #f87171;
+    --red-bg: rgba(248,113,113,0.1);
+    --gold: #fbbf24;
+    --gold-bg: rgba(251,191,36,0.08);
+    --gold-bg-strong: rgba(251,191,36,0.25);
+    --silver: #cbd5e1;
+    --silver-bg: rgba(203,213,225,0.08);
+    --bronze: #d97757;
+    --bronze-bg: rgba(217,119,87,0.08);
+  }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+
+  .header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .header-left h1 { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
+  .header-left p { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .header-right { display: flex; align-items: center; gap: 10px; }
+  .status-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; padding: 5px 12px; border-radius: 20px; font-weight: 500; }
+  .status-paper { background: var(--gold-bg); color: var(--gold); border: 1px solid rgba(251,191,36,0.25); }
+  .status-live { background: var(--green-bg); color: var(--green); border: 1px solid rgba(52,211,153,0.25); }
+  .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+  .dot.pulse { animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+  .refresh-info { font-size: 11px; color: var(--muted); }
+  #refresh-result.ok { color: var(--green); }
+  #refresh-result.fail { color: var(--red); }
+  .force-refresh-btn { font-size: 11px; color: var(--muted); background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 5px 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
+  .force-refresh-btn:hover:not(:disabled) { color: var(--accent); border-color: var(--accent); }
+  .force-refresh-btn:disabled { opacity: 0.5; cursor: default; }
+
+  /* overflow-x:auto -- 2026-08-24 mobile fix: 8 tabs at this padding
+     need well over 375px, and plain flex (no wrap, no scroll) just lets
+     them overflow the viewport with nothing to contain them -- reported
+     live as tabs "floating out into space." Same horizontal-scroll
+     pattern .table-wrap already uses elsewhere on this page, just
+     applied to the tab bar itself. flex-shrink:0 + white-space:nowrap
+     on .tab stop individual tabs from getting squished/wrapped instead
+     of the row scrolling as a whole. */
+  .tabs { display: flex; gap: 2px; padding: 12px 24px 0; background: var(--surface); border-bottom: 1px solid var(--border); overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab { position: relative; padding: 10px 18px; font-size: 13px; font-weight: 500; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; transition: color 0.15s; user-select: none; flex-shrink: 0; white-space: nowrap; }
+  .tab-badge { position: absolute; top: 6px; right: 6px; width: 7px; height: 7px; border-radius: 50%; background: var(--gold); }
+  .tab:hover { color: var(--text); }
+  .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* 1050px was a fixed cap that left a lot of dead margin on wider monitors
+     -- most visible on the positions-table, which is wide enough (9
+     columns) to force its own horizontal scroll INSIDE that cap even
+     though there was plenty of real screen width sitting unused on either
+     side (reported live 2026-08-24). min(1500px, 94vw) scales up to a
+     generous cap on wide screens instead of capping hard at any single
+     desktop width, while still shrinking gracefully on narrower windows --
+     the existing @media rules below (700/900/500px) still govern the
+     actual mobile/tablet reflow independent of this. */
+  .main { padding: 24px; max-width: min(1500px, 94vw); margin: 0 auto; }
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+  .card-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 16px; }
+
+  /* Pick cards */
+  /* .picks-grid REMOVED 2026-08-24 -- was display:grid;
+     grid-template-columns:repeat(auto-fit, minmax(300px,1fr)), left over on
+     #today-picks/#last-session-picks from the pre-2026-08-21 per-pick CARD
+     layout (see .pick-card below, itself now dead/unused). Those two divs
+     hold a single .table-wrap now, not a set of ~300px cards -- harmless
+     while there was only ever one child, but the new positions-filter-note
+     div (2026-08-24 status filter) is a SECOND direct child, and the grid
+     auto-placed it into its own column, shoving the actual table sideways
+     into column 2 instead of stacking above it full-width (reported live:
+     table right-shifted with a blank gap on wide screens, columns clipped
+     instead of reflowing on narrow ones -- this grid was the real cause,
+     not the .main width or the table's own sizing, both of which were
+     already computing correctly). Plain block flow is all either container
+     needs now.
+     .pick-card itself (next line) is now fully unused (no element carries
+     class="pick-card" alone anymore, only the pick-card-win/loss/attention
+     MODIFIER classes on table rows) -- left in place rather than deleted
+     since it's inert either way and this is already a big enough diff. */
+  .pick-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  /* 2026-08-21: positions table (replaces the pick-card grid above for
+     Today's Open Positions / Last Trading Session -- see buildPickCards()).
+     Reuses the why-not-toggle/why-not-cell pattern already established by
+     the Also Considered table for the expandable Details row. */
+  /* table-layout:fixed -- 2026-08-21 fix: without this, a wide Details row
+     (badges/explainer text with nothing forcing them to wrap) could push
+     the WHOLE table wider than its container under the default auto
+     layout, triggering .table-wrap's horizontal scrollbar for every row,
+     not just the expanded one (reported live: header cut off mid-scroll).
+     Fixed layout makes column widths purely a function of the <th> widths
+     below, never of content, so long content wraps in place instead. */
+  /* min-width -- 2026-08-24 mobile fix, REVISED same day: originally a
+     bare (always-on) min-width:620px, added because table-layout:fixed
+     alone computes each column as a % of the CONTAINER, which collapses to
+     unreadable sub-20px columns on a real ~375px phone (reported live:
+     header/cell text visibly overlapping). .table-wrap's overflow-x:auto
+     scroll was already in place for exactly this case, just never
+     triggered since nothing forced the table wider than its (narrow)
+     container -- the min-width did that.
+     Problem: that floor was NOT actually a no-op on desktop the way the
+     original comment assumed -- narrowing an ordinary desktop *window*
+     (not just a phone) below ~670px hit the exact same floor and forced
+     the same horizontal-scroll behavior instead of the columns reflowing
+     smaller, which read as "columns getting covered" rather than resizing
+     (reported live 2026-08-24). Scoping the floor to an actual mobile
+     media query (matching the other 700px breakpoints on this page) keeps
+     the phone fix while letting desktop narrow all the way down normally. */
+  .positions-table { table-layout: fixed; width: 100%; }
+  @media (max-width: 700px) { .positions-table { min-width: 620px; } }
+  /* white-space:normal -- 2026-08-24, the REAL fix the min-width change
+     above didn't fully cover: a page-wide base rule (further down, plain
+     `td { white-space: nowrap }`) was still winning for this property on
+     every cell here, since word-wrap/overflow-wrap only control how a
+     single long token breaks, not whether multi-word text wraps at all.
+     Confirmed live: the rank-label cell ("#1 — Top Pick") was spilling
+     into the Ticker column next to it even after the min-width fix,
+     because "Top Pick" never had permission to wrap onto its own line in
+     the first place. This overrides the base nowrap for every cell in
+     this table, not just the one that happened to get screenshotted. */
+  .positions-table td { vertical-align: top; white-space: normal; word-wrap: break-word; overflow-wrap: break-word; }
+  .positions-row td { border-top: 1px solid var(--border); padding-top: 10px; }
+  .td-status-dot { font-size: 14px; text-align: center; width: 24px; }
+  /* Status column: single-line ellipsis truncation rather than wrapping --
+     full text is already in Details (and in the title tooltip), so this
+     just needs to not visually collide with the Details column next to it
+     (reported live: long exit-reason text overlapped "Details ▾"). */
+  /* .positions-table prefix -- 2026-08-24: needs to outrank the new
+     .positions-table td { white-space: normal } rule above (both were
+     one class vs. one class+element, so the plain td-scoped rule was
+     silently winning on specificity and breaking this column's
+     intentional single-line truncation) -- bare .td-status-text alone
+     is no longer enough now that white-space is contested. */
+  .positions-table td.td-status-text { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  /* Same regression, same fix, found live 2026-08-24 (mobile): the Change%
+     cell (moveClass() returns td-pos/td-neg/td-flat) has no text long
+     enough to legitimately need wrapping, but inherited the new
+     white-space:normal default above and started wrapping a plain number
+     like "+2.34%" onto two lines on narrow viewports. No ellipsis needed
+     here (unlike td-status-text) since the content is never long. */
+  .positions-table td.td-pos, .positions-table td.td-neg, .positions-table td.td-flat { white-space: nowrap; }
+  .positions-detail-row { display: none; }
+  .positions-detail-row.open { display: table-row; }
+  /* Sortable Price/Entry/Change/Score headers + status filter bar
+     (2026-08-24) -- lets a long positions-table (up to NUM_POSITIONS rows,
+     currently 20) be sorted to see its top/bottom extremes and narrowed
+     down to just open/won/lost/not-traded rows, same chart-toggle-btn
+     convention already used for the Price/Position $ and chart-mode
+     toggles elsewhere on this page. */
+  .positions-table th.sortable-th { cursor: pointer; user-select: none; }
+  .positions-table th.sortable-th:hover { color: var(--text); }
+  .positions-filter-bar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+  .positions-filter-note { font-size: 12px; color: var(--muted); }
+  .positions-detail-row td { font-size: 12px; color: var(--muted); line-height: 1.6; padding: 4px 8px 14px 28px; border-bottom: 1px solid var(--border); white-space: normal; }
+  .positions-row.pick-card-win td:first-child { box-shadow: inset 3px 0 0 var(--green); }
+  .positions-row.pick-card-loss td:first-child { box-shadow: inset 3px 0 0 var(--red); }
+  .positions-row.pick-card-attention td:first-child { box-shadow: inset 3px 0 0 var(--gold); }
+  /* Subtle win/loss tint once a position has exited -- layered over
+     --surface2 via background-image rather than replacing background-color
+     outright, so it stays a tint rather than overriding the card's base
+     tone (added 2026-07-24, see buildPickCards()). */
+  .pick-card-win { background-image: linear-gradient(var(--green-bg), var(--green-bg)); }
+  .pick-card-loss { background-image: linear-gradient(var(--red-bg), var(--red-bg)); }
+  /* 2026-08-20: needs attention -- a real sell failure (sell_error_note) or
+     a position that showed up with no matching buy order in our own
+     history (external_position, e.g. a merger/corporate-action stock
+     credit). Deliberately much stronger than the subtle win/loss tint
+     above -- this needs to be unmissable at a glance, not just informative
+     on close reading. */
+  .pick-card-attention { background-image: linear-gradient(var(--gold-bg-strong), var(--gold-bg-strong)); border: 1px solid rgba(251,191,36,0.5); }
+  .attention-badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; background: var(--gold-bg); color: var(--gold); border: 1px solid rgba(251,191,36,0.35); margin-top: 6px; margin-right: 6px; }
+  .pick-round-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .pick-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .pick-rank { font-size: 11px; color: var(--muted); font-weight: 600; letter-spacing: 0.5px; margin-bottom: 4px; }
+  .pick-ticker { font-size: 28px; font-weight: 700; letter-spacing: -1px; }
+  .pick-ticker a { color: var(--text); text-decoration: none; }
+  .pick-ticker a:hover { color: var(--accent); }
+  .pick-live-price { text-align: right; }
+  .live-price-value { font-size: 20px; font-weight: 700; }
+  .live-price-label { font-size: 10px; color: var(--muted); margin-top: 2px; }
+  .live-price-dollar { font-size: 13px; font-weight: 600; margin-top: 4px; }
+  .yesterday-total { font-size: 14px; margin: -4px 0 14px; }
+  .yesterday-total-label { color: var(--muted); }
+  .closed-market-card { text-align: center; padding: 48px 20px; }
+  .closed-market-emoji { font-size: 48px; margin-bottom: 12px; }
+  .closed-market-text { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .closed-market-sub { font-size: 13px; color: var(--muted); }
+  /* Smaller secondary notice used instead of the full closed-market-card
+     when there are still-open swing positions to show -- the positions
+     lead, this just explains why nothing new is being picked today
+     (added 2026-07-25). */
+  .closed-notice { display: flex; align-items: center; gap: 10px; margin-top: 16px; padding: 12px 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; font-size: 12px; color: var(--muted); }
+  .closed-notice-emoji { font-size: 18px; flex-shrink: 0; }
+  /* Reuses the same --gold "attention" semantic as .pick-card-attention/
+     .attention-badge elsewhere on this dashboard -- a live trading pause
+     is more consequential than the plain-gray informational notices
+     (pool shortfall, etc.) and should read as such at a glance. */
+  #drawdown-pause-notice.closed-notice { background: var(--gold-bg); border-color: rgba(251,191,36,0.35); color: var(--text); }
+  .pick-pnl-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); margin: 12px 0; }
+  .pnl-item { text-align: center; flex: 1; }
+  .pnl-label { font-size: 10px; color: var(--muted); margin-bottom: 3px; }
+  .pnl-value { font-size: 15px; font-weight: 600; }
+  .pnl-value.pos { color: var(--green); }
+  .pnl-value.neg { color: var(--red); }
+  .pnl-value.flat { color: var(--muted); }
+  .score-bar-wrap { margin-bottom: 10px; }
+  .score-bar-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .score-bar { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .score-bar-fill { height: 100%; background: var(--accent); border-radius: 2px; }
+  .pick-headline { font-size: 11px; color: var(--muted); line-height: 1.5; margin-top: 8px; }
+  .win-floor-badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; background: var(--green-bg); color: var(--green); border: 1px solid rgba(52,211,153,0.2); margin-top: 6px; margin-right: 6px; }
+  .stop-badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; background: var(--red-bg); color: var(--red); border: 1px solid rgba(248,113,113,0.2); margin-top: 6px; margin-right: 6px; }
+  .exited-badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 10px; background: var(--surface); color: var(--muted); border: 1px solid var(--border); margin-top: 6px; margin-right: 6px; }
+  .skip-badge { display: inline-block; font-size: 11px; padding: 3px 9px; border-radius: 10px; background: var(--red-bg); color: var(--red); border: 1px solid rgba(248,113,113,0.25); }
+
+  .explainer-toggle { font-size: 11px; color: var(--accent); cursor: pointer; margin-top: 10px; user-select: none; display: inline-block; }
+  .explainer-toggle:hover { text-decoration: underline; }
+  .explainer-box { display: none; font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+  .explainer-box.open { display: block; }
+  .why-not-cell { white-space: normal; max-width: 150px; }
+  .why-not-toggle { font-size: 11px; color: var(--accent); cursor: pointer; user-select: none; white-space: nowrap; }
+  .why-not-toggle:hover { text-decoration: underline; }
+  .why-not-text { display: none; font-size: 12px; color: var(--muted); line-height: 1.5; margin-top: 4px; white-space: normal; }
+  .why-not-text.open { display: block; }
+  .archive-grid-header, .archive-row-main {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1.5fr) minmax(0, 3fr) minmax(0, 1fr) minmax(0, 3fr);
+    gap: 12px;
+    align-items: start;
+  }
+  .archive-grid-header {
+    padding: 8px 4px;
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+  }
+  .archive-row-main { cursor: pointer; padding: 12px 4px; border-bottom: 1px solid var(--border); }
+  .archive-row-main:hover { background: var(--surface2); }
+  .archive-row-main > div { overflow-wrap: anywhere; min-width: 0; }
+  .archive-detail-row { display: none; }
+  .archive-detail-row.open { display: block; }
+  .archive-detail { padding: 16px; background: var(--surface2); border-radius: 8px; margin: 8px 0; overflow-wrap: anywhere; }
+  .archive-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+  .archive-cols > div { min-width: 0; }
+  @media (max-width: 700px) { .archive-cols { grid-template-columns: 1fr; } }
+  @media (max-width: 700px) {
+    .archive-grid-header, .archive-row-main { grid-template-columns: 20px 1fr 1fr; }
+    .archive-grid-header > div:nth-child(4), .archive-grid-header > div:nth-child(5),
+    .archive-row-main > div:nth-child(4), .archive-row-main > div:nth-child(5) { display: none; }
+  }
+  .archive-col-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 10px; }
+  .archive-pick { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px; overflow-wrap: anywhere; min-width: 0; }
+  .archive-pick:last-child { border-bottom: none; }
+  .archive-pick-head { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 4px; flex-wrap: wrap; }
+  .archive-insight { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); line-height: 1.6; overflow-wrap: anywhere; }
+  .aggregate-insight-box { background: rgba(91,127,255,0.08); border: 1px solid rgba(91,127,255,0.3); border-left: 3px solid var(--accent); border-radius: 8px; padding: 14px 16px; margin: 4px 0 16px; }
+  .aggregate-insight-title { font-size: 12px; font-weight: 700; letter-spacing: 0.03em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+  .aggregate-insight-box ul { margin: 0; padding-left: 18px; }
+  .aggregate-insight-box li { font-size: 13px; line-height: 1.6; margin-bottom: 4px; }
+  .aggregate-insight-box li:last-child { margin-bottom: 0; }
+  .aggregate-insight-empty { font-size: 12px; color: var(--muted); }
+  .signal-mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+  .signal-mini { background: var(--surface); border-radius: 6px; padding: 8px 10px; }
+  .signal-mini-label { font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
+  .signal-mini-value { font-size: 13px; font-weight: 600; margin-top: 2px; }
+
+  /* Stats */
+  /* Fixed 8-column grid (16 stat-boxes in the Today's Picks row as of
+     2026-08-05 -- two even rows of 8) instead of auto-fit, which wrapped
+     unevenly (7/7/2) depending on viewport width. Responsive fallbacks
+     below keep boxes from getting too cramped on narrower screens,
+     matching this file's existing 700px mobile breakpoint convention. */
+  .stats-row { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+  @media (max-width: 900px) { .stats-row { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (max-width: 500px) { .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  /* 2026-08-21: the Today tab's stats grew to 17 boxes across several
+     genuinely different questions, cluttering the page -- split into 4
+     categories (5 stats max each, see setStatsCategory()). Scoped to
+     .stats-category specifically (not the base .stats-row used elsewhere
+     for Tax/Model Review's own 6-item rows, which still want the wider
+     8-column default) so 5 columns fits each category as one tidy row. */
+  .stats-row.stats-category { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  @media (max-width: 900px) { .stats-row.stats-category { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  .stats-category-nav { margin-bottom: 12px; width: fit-content; }
+  .stat-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .stat-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .stat-value { font-size: 24px; font-weight: 700; }
+  .stat-value.pos { color: var(--green); }
+  .stat-value.neg { color: var(--red); }
+  .stat-value.neutral { color: var(--text); }
+  .stat-value.warn { color: var(--gold); }
+
+  /* Yesterday */
+  .yesterday-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .yest-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .yest-top-row { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .yest-move { font-size: 22px; font-weight: 700; min-width: 72px; text-align: center; }
+  .yest-move.pos { color: var(--green); }
+  .yest-move.neg { color: var(--red); }
+  .yest-move.flat { color: var(--muted); }
+  .yest-ticker { font-size: 16px; font-weight: 600; }
+  .yest-rank { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .yest-detail-row { display: flex; gap: 16px; font-size: 12px; color: var(--muted); padding-top: 10px; border-top: 1px solid var(--border); margin-top: 4px; }
+  .yest-detail-item strong { color: var(--text); display: block; font-size: 13px; }
+  .yest-postmortem { font-size: 12px; color: var(--muted); line-height: 1.6; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+  .gainers-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .gainer-pill { background: var(--green-bg); color: var(--green); border: 1px solid rgba(52,211,153,0.2); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .gainer-label { font-size: 11px; color: var(--muted); margin-bottom: 8px; }
+
+  /* History table */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th { text-align: left; padding: 10px 14px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); border-bottom: 1px solid var(--border); white-space: nowrap; }
+  td { padding: 12px 14px; border-bottom: 1px solid rgba(46,49,71,0.5); vertical-align: middle; white-space: nowrap; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+  .td-ticker { font-weight: 600; font-size: 14px; }
+  .td-pos { color: var(--green); font-weight: 500; }
+  .td-neg { color: var(--red); font-weight: 500; }
+  .td-flat { color: var(--muted); }
+  .mode-badge { font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600; letter-spacing: 0.3px; }
+  .mode-paper { background: var(--gold-bg); color: var(--gold); border: 1px solid rgba(251,191,36,0.2); }
+  .mode-live { background: var(--green-bg); color: var(--green); border: 1px solid rgba(52,211,153,0.2); }
+
+  /* Chart */
+  .chart-controls { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
+  /* overflow-x:auto -- 2026-08-24, same defensive fix as .tabs above:
+     no group here is as wide as the main tab bar, but a longer label
+     (e.g. "Track Record") on a narrow phone could hit the same overflow
+     class of bug -- cheap to guard against now rather than wait for a
+     second report. */
+  .chart-toggle-group { display: flex; background: var(--surface2); border-radius: 8px; padding: 3px; gap: 2px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .chart-toggle-btn { padding: 6px 14px; font-size: 12px; font-weight: 500; color: var(--muted); cursor: pointer; border-radius: 6px; user-select: none; transition: all 0.15s; flex-shrink: 0; white-space: nowrap; }
+  .chart-toggle-btn.active { background: var(--accent); color: white; }
+  .chart-toggle-btn:hover:not(.active) { color: var(--text); }
+  /* Exit Dots / Entry→Exit Lines toggles (2026-08-18) -- only meaningful in
+     By Stock + Daily %, dimmed+unclickable-looking everywhere else instead
+     of silently doing nothing when clicked. Not also overriding :hover
+     here -- .chart-toggle-btn:hover:not(.active) above is more specific
+     (three class-level selectors vs. two) and would win anyway. */
+  .chart-toggle-btn-disabled { opacity: 0.35; cursor: default; }
+  .chart-wrap { position: relative; height: 280px; margin-top: 8px; }
+  .chart-legend { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 12px; font-size: 11px; color: var(--muted); }
+  .chart-legend-item { display: flex; align-items: center; gap: 5px; }
+  .chart-legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* Exit Outcomes by Hold Day (2026-09-15) -- date-range controls.
+     Native <input type="date"> can't be fully re-themed (the calendar-
+     picker icon in particular stays whatever the browser draws), but
+     color-scheme:dark gets Chrome/Edge/Firefox to draw that icon and
+     the native popup in a dark palette instead of a jarring white box
+     against this page's dark theme -- cheap, no JS needed. */
+  .date-range-input { background: var(--surface2); border: 1px solid var(--border); color: var(--text); border-radius: 6px; padding: 5px 8px; font-size: 12px; font-family: inherit; color-scheme: dark; }
+  .date-range-sep { color: var(--muted); font-size: 12px; }
+  .exit-outcomes-empty { display: flex; align-items: center; justify-content: center; height: 100%; color: var(--muted); font-size: 12px; }
+
+  /* Model tab */
+  .model-section { margin-bottom: 28px; }
+  .model-section h3 { font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+  .model-section p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+  .signal-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 12px; }
+  .signal-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 16px; }
+  .signal-name { font-size: 13px; font-weight: 600; margin-bottom: 4px; }
+  .signal-weight { font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+  .signal-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .rule-list { margin-top: 12px; }
+  .rule { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
+  .rule:last-child { border-bottom: none; }
+  .rule-icon { font-size: 16px; flex-shrink: 0; }
+  .rule-text { color: var(--muted); line-height: 1.5; }
+  .rule-text strong { color: var(--text); }
+
+  .loading-msg { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 14px; }
+  .error-msg { text-align: center; padding: 40px 20px; color: var(--red); font-size: 13px; line-height: 1.6; }
+  .llm-alert { background: rgba(248,113,113,0.12); border: 1px solid var(--red); color: var(--red);
+    padding: 10px 20px; font-size: 12.5px; line-height: 1.5; }
+  .llm-alert b { color: var(--red); }
+  .updated-at { font-size: 11px; color: var(--muted); margin-top: 10px; }
+  /* Last-refreshed line reads slightly bolder/larger than the plain
+     .updated-at style above so it's easy to spot at a glance (added
+     2026-07-24). Moved above the picks grid (2026-08-18) so it's visible
+     without scrolling past the cards first, especially on mobile --
+     margin-bottom (rather than the inherited margin-top) now separates it
+     from the grid below instead of the header row above. */
+  #prices-updated { font-size: 12px; font-weight: 600; color: var(--text); margin-top: 0; margin-bottom: 12px; }
+  .after-hours-badge { color: var(--red); font-weight: 700; margin-left: 6px; }
+  .spinning { animation: spin 1s linear infinite; display: inline-block; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* Backtest run sub-tabs */
+  .bt-run-tab {
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.15s;
+  }
+  .bt-run-tab:hover { color: var(--text); border-color: var(--accent); }
+  .bt-run-tab.active { color: var(--accent); border-color: var(--accent); background: rgba(91,127,255,0.08); }
+
+  /* Colored pick percentages in backtest table */
+  .pick-pos { color: var(--green); font-weight: 500; }
+  .pick-neg { color: var(--red); font-weight: 500; }
+  .pick-flat { color: var(--muted); }
+
+  /* Backtest sub-tabs */
+  .bt-run-tab {
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    background: var(--surface2);
+    user-select: none;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .bt-run-tab:hover { color: var(--text); border-color: var(--accent); }
+  .bt-run-tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+  .pick-pos { color: var(--green); font-weight: 500; }
+  .pick-neg { color: var(--red); font-weight: 500; }
+  .pick-flat { color: var(--muted); }
+  .sv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+  .sv-card { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px; cursor: pointer; }
+  .sv-card:hover { border-color: var(--accent); }
+  .sv-card h4 { font-size: 15px; margin-bottom: 6px; }
+  .sv-big { font-size: 22px; font-weight: 600; margin: 6px 0; }
+  .sv-small { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .pill { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); margin-right: 4px; }
+  .pill.shadow { color: var(--gold); border-color: var(--gold); }
+  .pill.monitor { color: var(--silver); }
+  .pill.paper { color: var(--green); border-color: var(--green); }
+  .pos { color: var(--green); } .neg { color: var(--red); }
+  .rule { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+  .kv { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 14px; }
+  .kv div { font-size: 12px; color: var(--muted); } .kv b { display: block; font-size: 18px; color: var(--text); font-weight: 600; }
+  .sv-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .sv-table th { text-align: left; color: var(--muted); font-weight: 500; padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .sv-table td { padding: 6px 8px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  .empty { color: var(--muted); font-size: 13px; padding: 8px 0; }
+  .ticker-list { font-size: 12px; color: var(--muted); line-height: 1.8; word-break: break-word; }
+</style>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  /* PIN gate (2026-10-13): a deterrent for people who stumble on the page, not security -- the
+     repo and its data files are public. Hash of "mover_predictor:" + PIN; remembered per browser. */
+  #pin-gate { display: none; }
+  html.locked body > :not(#pin-gate) { display: none !important; }
+  html.locked #pin-gate { display: flex; position: fixed; inset: 0; align-items: center; justify-content: center; background: #0f1117; z-index: 9999; }
+</style>
+<script>
+  (function () {
+    var H = "ac7d818fb36e1718ec0d075cff1d4b6edb6e9619fd694997f849bbfc7309236f";
+    try { if (localStorage.getItem("sv-pin") === H) return; } catch (e) {}
+    window.__PIN_HASH = H;
+    document.documentElement.classList.add("locked");
+  })();
+</script>
+</head>
+<body>
+<div id="pin-gate">
+  <form onsubmit="return pinTry(event)" style="text-align:center;color:#e8eaf0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+    <div style="margin-bottom:12px;font-size:15px">Enter PIN</div>
+    <input id="pin-in" type="password" inputmode="numeric" maxlength="8" autocomplete="off" autofocus
+      style="font-size:22px;width:130px;text-align:center;padding:8px;border-radius:8px;border:1px solid #2e3147;background:#1a1d27;color:#e8eaf0">
+    <div id="pin-msg" style="margin-top:10px;font-size:12px;color:#f87171;min-height:16px"></div>
+  </form>
+</div>
+<script>
+  async function pinTry(ev) {
+    ev.preventDefault();
+    const v = document.getElementById("pin-in").value;
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode("mover_predictor:" + v));
+    const h = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+    if (h === window.__PIN_HASH) {
+      try { localStorage.setItem("sv-pin", h); } catch (e) {}
+      document.documentElement.classList.remove("locked");
+    } else {
+      document.getElementById("pin-msg").textContent = "Wrong PIN";
+      document.getElementById("pin-in").value = "";
+    }
+    return false;
+  }
+</script>
+
+
+<div class="header">
+  <div class="header-left">
+    <h1>📈 Mover Predictor: strategy tracker</h1>
+    <p id="header-sub">Loading...</p>
+  </div>
+  <div class="header-right">
+    <button class="force-refresh-btn" onclick="loadData(true)" title="Reload the latest data">↻ Refresh</button>
+    <div class="status-badge status-paper"><span class="dot"></span> <span id="mode-badge">Shadow tracking</span></div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showTab('overview')">Overview</div>
+  <div class="tab" onclick="showTab('earnings')">Earnings Beats</div>
+  <div class="tab" onclick="showTab('momentum')">Momentum</div>
+  <div class="tab" onclick="showTab('events')">Product Events</div>
+  <div class="tab" onclick="showTab('brands')">Brand Trends</div>
+  <div class="tab" onclick="showTab('teen')">Teen Survey</div>
+  <div class="tab" onclick="showTab('research')">Research</div>
+</div>
+
+<div class="content">
+  <div id="tab-overview" class="panel active">
+    <div class="card">
+      <div class="card-title">Strategies</div>
+      <div class="rule">The old daily-picks model is retired (it did no better than random picks). These are the ideas being tracked now, each with pass/fail rules written down before the data came in. Nothing here places trades yet; "shadow" means the picks and results are recorded as if traded.</div>
+      <div class="sv-grid" id="overview-grid"><div class="loading-msg">Loading...</div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">Paper trading</div>
+      <div id="paper-box" class="rule"></div>
+    </div>
+  </div>
+
+  <div id="tab-earnings" class="panel"><div class="card"><div class="card-title">Earnings beats</div><div id="earnings-box"></div></div></div>
+  <div id="tab-momentum" class="panel"><div class="card"><div class="card-title">Monthly momentum</div><div id="momentum-box"></div></div></div>
+  <div id="tab-events" class="panel"><div class="card"><div class="card-title">Product-event run-up</div><div id="events-box"></div></div></div>
+  <div id="tab-brands" class="panel"><div class="card"><div class="card-title">Google Trends brands</div><div id="brands-box"></div></div></div>
+  <div id="tab-teen" class="panel"><div class="card"><div class="card-title">Teen survey brands</div><div id="teen-box"></div></div></div>
+
+  <div id="tab-research" class="panel">
+    <div class="card">
+      <div class="card-title">Research &amp; Backtest Results</div>
+      <div class="gainer-label">One-off investigations into whether a new signal or rule would actually help. Most get rejected by design; both shipped and rejected ideas show up here.</div>
+      <div id="research-run-tabs" style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;max-height:220px;overflow-y:auto;padding-right:4px"></div>
+      <div id="research-content"><div class="loading-msg">Loading results...</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const DATA_URL = "https://raw.githubusercontent.com/clamb9289/mover_predictor_dashboard/main/strategies_dashboard.json";
+const DATA_API_URL = "https://api.github.com/repos/clamb9289/mover_predictor_dashboard/contents/strategies_dashboard.json";
+let D = null;
+
+function showTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.getAttribute('onclick') === `showTab('${name}')`));
+  document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === 'tab-' + name));
+  if (name === 'research') loadResearchResults();
+  try { localStorage.setItem('sv-tab', name); } catch (e) {}
+}
+
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function pct(v, digits = 2, plus = true) {
+  if (v === null || v === undefined || Number.isNaN(v)) return '<span class="empty">–</span>';
+  const cls = v > 0 ? 'pos' : (v < 0 ? 'neg' : '');
+  return `<span class="${cls}">${plus && v > 0 ? '+' : ''}${Number(v).toFixed(digits)}%</span>`;
+}
+function table(cols, rows) {
+  if (!rows.length) return '<div class="empty">Nothing yet.</div>';
+  return `<div class="table-wrap"><table class="sv-table"><thead><tr>${cols.map(c => `<th>${c[0]}</th>`).join('')}</tr></thead><tbody>` +
+    rows.map(r => `<tr>${cols.map(c => `<td>${c[1](r)}</td>`).join('')}</tr>`).join('') + '</tbody></table></div>';
+}
+function kv(items) { return `<div class="kv">${items.map(([k, v]) => `<div>${k}<b>${v}</b></div>`).join('')}</div>`; }
+function errBox(s) { return s && s.error ? `<div class="empty">Data error: ${esc(s.error)}</div>` : ''; }
+
+async function loadData(force) {
+  try {
+    let json;
+    if (force) {
+      const r = await fetch(DATA_API_URL + '?t=' + Date.now(), { headers: { Accept: 'application/vnd.github.raw+json' } });
+      json = await r.json();
+    } else {
+      const r = await fetch(DATA_URL + '?t=' + Date.now());
+      json = await r.json();
+    }
+    D = json;
+    render();
+  } catch (e) {
+    document.getElementById('header-sub').textContent = 'Could not load strategies_dashboard.json (' + e + ')';
+  }
+}
+
+function render() {
+  document.getElementById('header-sub').textContent = `Updated ${D.updated.replace('T', ' ')} ET`;
+  const pt = D.paper_trading || {};
+  document.getElementById('mode-badge').textContent = pt.status === 'not started' ? 'Shadow tracking' : 'Paper trading';
+  document.getElementById('paper-box').innerHTML = `Status: <b>${esc(pt.status)}</b>. ${esc(pt.plan || '')}`;
+  renderOverview(); renderEarnings(); renderMomentum(); renderEvents(); renderBrands(); renderTeen();
+}
+
+function card(tab, title, pill, big, small, next) {
+  return `<div class="sv-card" onclick="showTab('${tab}')"><h4>${title} <span class="pill ${pill[0]}">${pill[1]}</span></h4>
+    <div class="sv-big">${big}</div><div class="sv-small">${small}</div><div class="sv-small" style="margin-top:8px">Next: ${esc(next)}</div></div>`;
+}
+
+function renderOverview() {
+  const e = D.earnings || {}, m = D.momentum || {}, p = D.product_events || {}, b = D.brand_trends || {}, t = D.teen_survey || {};
+  const es = e.summary || {}, ms = m.summary || {}, ps = p.summary || {}, bs = (b.summary || {});
+  const longest = ['6m', '3m', '1m'].find(k => bs[k] && bs[k].cohorts) ;
+  const nextEvent = (p.upcoming || []).find(x => x.primary) || (p.upcoming || [])[0];
+  document.getElementById('overview-grid').innerHTML = [
+    card('earnings', 'Earnings beats', ['shadow', 'shadow test'],
+      es.completed ? `${pct(es.mean_completed)} vs control` : `${es.qualifying ?? 0} events`,
+      `${es.qualifying ?? 0} qualifying beats since Oct 12, ${es.completed ?? 0} completed (20 sessions). Pass bar: ≥ +0.5% with CI low > −0.5%.`,
+      e.next_decision || ''),
+    card('momentum', 'Monthly momentum', ['shadow', 'shadow test'],
+      ms.scored_months ? `${pct(ms.avg_vs_pool)}/mo vs pool` : 'first month in progress',
+      `${ms.scored_months ?? 0} scored month(s). Backtest: +0.74%/mo vs pool.`, m.next_decision || ''),
+    card('events', 'Apple product events', ['shadow', 'shadow test'],
+      ps.primary_scored ? `${ps.primary_positive}/${ps.primary_scored} positive` : '0 primary events scored',
+      nextEvent ? `Next: ${esc(nextEvent.ticker)} ${esc(nextEvent.family)} ${esc(nextEvent.event_date)} (${esc(nextEvent.status)})` : 'No upcoming events listed.',
+      p.next_decision || ''),
+    card('brands', 'Google Trends brands', ['monitor', 'monitoring'],
+      longest ? `${pct(bs[longest].mean_vs_pool)} at ${longest}` : `${(b.cohorts || []).length} snapshot(s)`,
+      'Original backtest passed; fair re-test failed. Kept as a free forward log; reviewed every 2 weeks.', b.next_decision || ''),
+    card('teen', 'Teen survey brands', ['monitor', 'monitoring'],
+      `${(t.events || []).length} event(s)`, esc(t.status || ''), t.next_decision || ''),
+  ].join('');
+}
+
+function renderEarnings() {
+  const e = D.earnings || {}, s = e.summary || {}, a = e.watch_arms || {};
+  const el = document.getElementById('earnings-box');
+  if (e.error) { el.innerHTML = errBox(e); return; }
+  el.innerHTML = `<div class="rule">${esc(e.rule)}<br>Pass bar: ${esc(e.pass_bar)}.</div>` +
+    kv([['Qualifying', s.qualifying], ['Completed', s.completed], ['Mean (completed)', pct(s.mean_completed)],
+        ['95% CI', s.ci ? `${s.ci[0]} to ${s.ci[1]}` : '–'], ['Interim mean (all)', pct(s.mean_interim_all)],
+        ['So far', esc(s.verdict_so_far)], ['Also ≥50% on yfinance', s.yf_checked ? `${s.yf_also_qualify} of ${s.yf_checked}` : '–'], ['Median ATM call spread', s.median_atm_spread_pct != null ? s.median_atm_spread_pct.toFixed(0) + '%' : '–']]) +
+    `<div class="rule">Watch arms (reported, can't change the verdict): busy day ${a.busy_day ? `${a.busy_day.n} · ${pct(a.busy_day.mean)}` : '–'}, high volume ${a.high_vol ? `${a.high_vol.n} · ${pct(a.high_vol.mean)}` : '–'}, 40-day hold ${a.hold40 ? `${a.hold40.n} · ${pct(a.hold40.mean)}` : '–'}. ${esc(e.watch_arms_note || '')}</div>` +
+    table([['Ticker', r => esc(r.ticker)], ['Universe', r => esc(r.universe)], ["Beat (Nasdaq)", r => r.surprise_pct + '%'], ['Beat (yfinance)', r => r.yf_surprise_pct != null ? r.yf_surprise_pct + '%' : '<span class="empty">pending</span>'],
+           ['Reaction', r => esc(r.reaction_date)], ['Entry', r => r.entry], ['Day', r => r.final ? '20 ✓' : r.day],
+           ['Return', r => pct(r.ret_pct)], ['Control', r => pct(r.control_pct)], ['Excess after cost', r => pct(r.excess_after_cost)],
+           ['Busy', r => r.busy_day ? '●' : ''], ['High vol', r => r.high_vol ? '●' : ''], ['Call spread d0', r => r.atm_spread_pct_day0 != null ? r.atm_spread_pct_day0.toFixed(0) + '%' : '']],
+          e.events || []);
+}
+
+function renderMomentum() {
+  const m = D.momentum || {}, s = m.summary || {};
+  const el = document.getElementById('momentum-box');
+  if (m.error) { el.innerHTML = errBox(m); return; }
+  el.innerHTML = `<div class="rule">${esc(m.rule)}</div>` +
+    kv([['Scored months', s.scored_months], ['Avg vs pool', pct(s.avg_vs_pool)], ['Avg vs SPY', pct(s.avg_vs_spy)], ['Backtest vs pool', pct(s.backtest_avg_vs_pool)]]) +
+    table([['Month', r => esc(r.month)], ['Entry', r => esc(r.entry_date)], ['Picks', r => `${r.n_picks} of ${r.n_eligible}`],
+           ['Decile', r => pct(r.momentum_pct)], ['Top 30', r => pct(r.top30_pct)], ['Top 20', r => pct(r.top20_pct)],
+           ['Pool', r => pct(r.pool_pct)], ['SPY', r => pct(r.spy_pct)], ['vs pool', r => r.momentum_pct != null ? pct(r.momentum_pct - r.pool_pct) : '<span class="empty">in progress</span>']],
+          (m.months || []).slice().reverse()) +
+    `<div class="card-title" style="margin-top:18px">Current month: top 30 by 12-1 return</div><div class="ticker-list">${(m.current_top30 || []).map(esc).join(' · ')}</div>`;
+}
+
+function renderEvents() {
+  const p = D.product_events || {}, s = p.summary || {};
+  const el = document.getElementById('events-box');
+  if (p.error) { el.innerHTML = errBox(p); return; }
+  el.innerHTML = `<div class="rule">${esc(p.rule)}</div>` +
+    kv([['Primary scored', s.primary_scored], ['Positive', s.primary_positive], ['Mean abnormal run-up', pct(s.primary_mean_abnormal)]]) +
+    '<div class="card-title">Upcoming</div>' +
+    table([['Ticker', r => esc(r.ticker)], ['Event', r => esc(r.family)], ['Date', r => esc(r.event_date)], ['Status', r => esc(r.status)],
+           ['Arm', r => r.primary ? 'primary' : 'watch'], ['Entry (−21)', r => esc(r.entry_projected20 || '')], ['Exit (−1)', r => esc(r.exit || '')]],
+          p.upcoming || []) +
+    '<div class="card-title" style="margin-top:18px">Scored</div>' +
+    table([['Ticker', r => esc(r.ticker)], ['Event', r => esc(r.family)], ['Date', r => esc(r.event_date)], ['Arm', r => r.primary ? 'primary' : 'watch'],
+           ['Run-up (−21→−1)', r => r.skipped ? `<span class="empty">${esc(r.skipped)}</span>` : pct(r.projected20)],
+           ['From announcement', r => pct(r.confirmed)], ['Event day', r => pct(r.day0)]],
+          p.scored || []);
+}
+
+function renderBrands() {
+  const b = D.brand_trends || {}, s = b.summary || {};
+  const el = document.getElementById('brands-box');
+  if (b.error) { el.innerHTML = errBox(b); return; }
+  el.innerHTML = `<div class="rule">${esc(b.rule)}<br>${esc(b.status)}</div>` +
+    kv(['1m', '3m', '6m'].map(k => [`${k}: ${s[k] ? s[k].cohorts : 0} cohort(s)`, s[k] && s[k].mean_vs_pool != null ? `${pct(s[k].mean_vs_pool)} <span class="sv-small">ex-mom ${pct(s[k].mean_ex_momentum)}</span>` : '–'])) +
+    table([['Snapshot', r => esc(r.snapshot)], ['Picks', r => `<span class="ticker-list">${r.picks.map(esc).join(', ')}</span>`],
+           ['Also momentum', r => r.momentum_overlap.map(esc).join(', ')], ['1m', r => pct(r['1m_vs_pool'])], ['3m', r => pct(r['3m_vs_pool'])],
+           ['6m', r => pct(r['6m_vs_pool'])], ['6m ex-mom', r => pct(r['6m_ex_mom'])], ['Missing terms', r => r.missing_terms]],
+          b.cohorts || []);
+}
+
+function renderTeen() {
+  const t = D.teen_survey || {};
+  const el = document.getElementById('teen-box');
+  if (t.error) { el.innerHTML = errBox(t); return; }
+  el.innerHTML = `<div class="rule">${esc(t.rule)}<br>${esc(t.status)}</div>` +
+    table([['Season', r => esc(r.season)], ['Brand', r => esc(r.brand)], ['Ticker', r => esc(r.ticker)], ['Entry', r => esc(r.entry_date || '')],
+           ['6m return', r => pct(r.ret6m)], ['vs XLY', r => pct(r.vs_xly)], ['vs SPY', r => pct(r.vs_spy)]], t.events || []);
+}
+
+loadData(false);
+setInterval(() => loadData(false), 5 * 60 * 1000);
+try { const t = localStorage.getItem('sv-tab'); if (t && document.getElementById('tab-' + t)) showTab(t); } catch (e) {}
+
+const BACKTEST_BASE_URL = "https://api.github.com/repos/clamb9289/mover_predictor_dashboard/contents/backtest_results";
+
+function pickPctHtml(pct) {
+  if (pct == null) return '<span class="pick-flat">—</span>';
+  const cls = pct > 0 ? 'pick-pos' : pct < 0 ? 'pick-neg' : 'pick-flat';
+  return `<span class="${cls}">${pct >= 0 ? '+' : ''}${pct.toFixed(1)}%</span>`;
+}
+
+function renderBacktest(data) {
+  const el = document.getElementById('research-content');
+  const s = data.summary;
+  const p = data.params;
+  const winRate = ((s.win_day_rate||0)*100).toFixed(0);
+  const hitRate = ((s.hit_rate_3pct||0)*100).toFixed(0);
+
+  el.innerHTML = `
+    <div style="font-size:12px;color:var(--muted);margin-bottom:16px">
+      Run: ${data.run_timestamp} &nbsp;|&nbsp; ${p.days} trading days &nbsp;|&nbsp;
+      Sentiment: ${p.fixed_sentiment} &nbsp;|&nbsp;
+      Preset: <strong style="color:var(--text)">${p.weights_preset || 'custom'}</strong> &nbsp;|&nbsp;
+      Weights: Accum ${(p.weights.accumulation*100).toFixed(0)}% /
+      Sector ${(p.weights.sector_momentum*100).toFixed(0)}% /
+      News ${(p.weights.news_sentiment*100).toFixed(0)}% /
+      RS ${(p.weights.relative_strength*100).toFixed(0)}%
+    </div>
+
+    <div class="stats-row" style="margin-bottom:20px">
+      <div class="stat-box"><div class="stat-label">Total P&L</div>
+        <div class="stat-value ${s.total_pnl>=0?'pos':'neg'}">${s.total_pnl>=0?'+':''}$${Math.abs(s.total_pnl).toFixed(2)}</div></div>
+      <div class="stat-box"><div class="stat-label">Avg Daily P&L</div>
+        <div class="stat-value ${s.avg_daily_pnl>=0?'pos':'neg'}">${s.avg_daily_pnl>=0?'+':''}$${Math.abs(s.avg_daily_pnl).toFixed(2)}</div></div>
+      <div class="stat-box"><div class="stat-label">Win Day Rate</div>
+        <div class="stat-value ${winRate>=50?'pos':'neg'}">${winRate}%</div></div>
+      <div class="stat-box"><div class="stat-label">+3% Hit Rate</div>
+        <div class="stat-value ${hitRate>=33?'pos':'warn'}">${hitRate}%</div></div>
+      <div class="stat-box"><div class="stat-label">Avg Pick Return</div>
+        <div class="stat-value ${s.avg_pick_pct>=0?'pos':'neg'}">${s.avg_pick_pct>=0?'+':''}${s.avg_pick_pct.toFixed(2)}%</div></div>
+      <div class="stat-box"><div class="stat-label">Days Skipped</div>
+        <div class="stat-value neutral">${s.skipped_days}</div></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px">
+      <div class="stat-box" style="text-align:left;padding:16px">
+        <div class="card-title">Best Day</div>
+        <div style="font-size:18px;font-weight:700;color:var(--green)">${s.best_day?'+$'+s.best_day.day_total_pnl.toFixed(2):'—'}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">${s.best_day?s.best_day.trade_date+' — '+(s.best_day.picks||[]).map(pk=>pk.ticker).join(', '):''}</div>
+      </div>
+      <div class="stat-box" style="text-align:left;padding:16px">
+        <div class="card-title">Worst Day</div>
+        <div style="font-size:18px;font-weight:700;color:var(--red)">${s.worst_day?'$'+s.worst_day.day_total_pnl.toFixed(2):'—'}</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:4px">${s.worst_day?s.worst_day.trade_date+' — '+(s.worst_day.picks||[]).map(pk=>pk.ticker).join(', '):''}</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:20px">
+      <div class="card-title">Exit Reason Breakdown</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+        ${Object.entries(s.exit_reasons||{}).map(([reason,count])=>
+          `<div style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:12px">
+            <div style="color:var(--muted)">${reason}</div>
+            <div style="font-size:18px;font-weight:600;margin-top:2px">${count}</div>
+          </div>`).join('')}
+      </div>
+      <div style="font-size:11px;color:var(--muted)">
+        Accumulation signal correlation with returns:
+        <strong style="color:var(--text)">${s.accumulation_return_correlation}</strong>
+        (positive = higher accumulation score → better return)
+      </div>
+    </div>
+
+    <div class="card-title">Daily Results</div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Trade Date</th><th>Picks</th><th>Avg %</th><th>Day P&L</th><th>W/L</th></tr></thead>
+        <tbody>
+          ${(data.daily_results||[]).slice().reverse().map(day => {
+            const cls = day.day_total_pnl > 0 ? 'td-pos' : day.day_total_pnl < 0 ? 'td-neg' : 'td-flat';
+            const wl = (day.picks||[]).map(pk =>
+              pk.pct_change > 0 ? '🟢' : pk.pct_change < 0 ? '🔴' : '⚪'
+            ).join('');
+            const picksHtml = (day.picks||[]).map(pk =>
+              `<strong>${pk.ticker}</strong>&nbsp;${pickPctHtml(pk.pct_change)}`
+            ).join('&emsp;');
+            return `<tr>
+              <td style="white-space:nowrap">${day.trade_date}</td>
+              <td style="font-size:12px">${picksHtml}</td>
+              <td class="${cls}">${day.day_avg_pct >= 0 ? '+' : ''}${day.day_avg_pct.toFixed(1)}%</td>
+              <td class="${cls}">${day.day_total_pnl >= 0 ? '+' : ''}$${Math.abs(day.day_total_pnl).toFixed(2)}</td>
+              <td>${wl}</td>
+            </tr>`;
+          }).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+const RESEARCH_BASE_URL = "https://api.github.com/repos/clamb9289/mover_predictor_dashboard/contents/research_results";
+let allResearchFiles = [];
+let researchCache = {};
+
+async function loadResearchResults() {
+  // Merged view (2026-07-30): research_results/ (curated calibration
+  // summaries) and backtest_results/ (raw weight-preset backtest.py runs,
+  // including the ones every calibration script's own bt.run_backtest()
+  // call silently drops there as a side effect) used to be two separate
+  // tabs -- confusing, since a single calibration script run produced an
+  // entry in BOTH, one labeled and one not. One combined, chronologically-
+  // sorted list instead -- selectResearchRun()/renderByShape() dispatch to
+  // the right renderer by inspecting each file's actual JSON shape, not
+  // which folder it came from (backtest_results/ itself mixes true
+  // backtest.py output with older ad-hoc calibration-script JSON that
+  // predates research_report.py's standardized format).
+  const el = document.getElementById('research-content');
+  const tabsEl = document.getElementById('research-run-tabs');
+  el.innerHTML = '<div class="loading-msg">Fetching results...</div>';
+  tabsEl.innerHTML = '';
+
+  try {
+    const [researchRes, backtestRes] = await Promise.all([
+      fetch(RESEARCH_BASE_URL + '?t=' + Date.now()),
+      fetch(BACKTEST_BASE_URL + '?t=' + Date.now()),
+    ]);
+    const researchFiles = researchRes.ok ? (await researchRes.json()) : [];
+    const backtestFiles = backtestRes.ok ? (await backtestRes.json()) : [];
+
+    const combined = [
+      ...researchFiles.filter(f => f.name.endsWith('.json')),
+      ...backtestFiles.filter(f => f.name.endsWith('.json')),
+    ];
+    allResearchFiles = combined.sort((a, b) => b.name.localeCompare(a.name));
+    if (!allResearchFiles.length) throw new Error('No results found yet.');
+
+    allResearchFiles.forEach((f, i) => {
+      const label = f.name.replace('.json', '');
+      const btn = document.createElement('div');
+      btn.className = 'bt-run-tab' + (i === 0 ? ' active' : '');
+      btn.textContent = label;
+      btn.onclick = () => selectResearchRun(f, btn);
+      tabsEl.appendChild(btn);
+    });
+
+    await selectResearchRun(allResearchFiles[0], tabsEl.children[0]);
+  } catch(e) {
+    el.innerHTML = `<div class="error-msg">${e.message}</div>`;
+  }
+}
+
+function formatAutoVal(v) {
+  if (v === null || v === undefined) return '—';
+  if (typeof v === 'number') return Number.isInteger(v) ? String(v) : v.toFixed(4);
+  if (Array.isArray(v)) return v.length <= 6 ? v.join(', ') : `[${v.length} items]`;
+  if (typeof v === 'object') return JSON.stringify(v);
+  return String(v);
+}
+
+function autoTableHtml(cols, rows) {
+  return `
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr>${cols.map(c => `<th>${c}</th>`).join('')}</tr></thead>
+        <tbody>${rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}</tbody>
+      </table>
+    </div>
+  `;
+}
+
+function flattenObject(obj, prefix = '') {
+  const out = {};
+  for (const [k, v] of Object.entries(obj)) {
+    const key = prefix ? `${prefix}.${k}` : k;
+    if (v !== null && typeof v === 'object' && !Array.isArray(v)) Object.assign(out, flattenObject(v, key));
+    else out[key] = v;
+  }
+  return out;
+}
+
+function renderAutoValue(value) {
+  // Best-effort generic renderer for a single field's value, used when
+  // it's itself a nested object/array too complex for the top-level
+  // auto-table -- e.g. renderAutoJson's per-section breakdown below.
+  if (Array.isArray(value)) {
+    if (value.length && typeof value[0] === 'object' && value[0] !== null) {
+      const cols = [...new Set(value.flatMap(o => Object.keys(o)))];
+      return autoTableHtml(cols, value.map(o => cols.map(c => formatAutoVal(o[c]))));
+    }
+    return `<div style="font-size:12px">${formatAutoVal(value)}</div>`;
+  }
+  if (value !== null && typeof value === 'object') {
+    const entries = Object.entries(value);
+    // Common calibration-script shape: {configKey: {train:{...}, val:{...}}} --
+    // flatten each config into one row so train/val stats sit side by side.
+    const allNestedObjects = entries.length && entries.every(([, v]) => v !== null && typeof v === 'object' && !Array.isArray(v));
+    if (allNestedObjects) {
+      const flatRows = entries.map(([k, v]) => ({ key: k, ...flattenObject(v) }));
+      const cols = [...new Set(flatRows.flatMap(r => Object.keys(r)))];
+      return autoTableHtml(cols, flatRows.map(r => cols.map(c => formatAutoVal(r[c]))));
+    }
+    const flat = flattenObject(value);
+    return autoTableHtml(['Field', 'Value'], Object.entries(flat).map(([k, v]) => [k, formatAutoVal(v)]));
+  }
+  return `<div style="font-size:12px">${formatAutoVal(value)}</div>`;
+}
+
+function renderAutoJson(data) {
+  // Fallback for files in backtest_results/ that match neither renderResearch's
+  // {tables:[...]} schema nor backtest.py's own {summary:{...}} schema -- a
+  // real, pre-existing situation: several older calibration scripts wrote
+  // their own bespoke JSON directly into backtest.RESULTS_DIR before
+  // research_report.py existed (2026-07-30), each with a different shape.
+  // Auto-flattens into readable tables on a best-effort basis rather than
+  // dumping raw JSON -- most of these share a "comparisons: {config:
+  // {train:{...}, val:{...}}}" shape that flattens cleanly. Full raw JSON
+  // stays one click away for anything the auto-formatting doesn't capture.
+  const el = document.getElementById('research-content');
+
+  if (data === null || typeof data !== 'object') {
+    el.innerHTML = `<pre style="white-space:pre-wrap;font-size:12px">${JSON.stringify(data)}</pre>`;
+    return;
+  }
+
+  const scalarEntries = [];
+  const complexEntries = [];
+  for (const [k, v] of Object.entries(data)) {
+    if (v !== null && typeof v === 'object') complexEntries.push([k, v]);
+    else scalarEntries.push([k, v]);
+  }
+
+  let html = `<div style="font-size:12px;color:var(--muted);margin-bottom:12px">No matching renderer for this file's shape -- auto-formatted below.</div>`;
+  if (scalarEntries.length) {
+    html += `<div style="font-size:13px;font-weight:600;margin:8px 0">Parameters</div>`;
+    html += autoTableHtml(['Field', 'Value'], scalarEntries.map(([k, v]) => [k, formatAutoVal(v)]));
+  }
+  for (const [k, v] of complexEntries) {
+    html += `<div style="font-size:13px;font-weight:600;margin:16px 0 8px">${k}</div>`;
+    html += renderAutoValue(v);
+  }
+  html += `<details style="margin-top:16px"><summary style="cursor:pointer;font-size:12px;color:var(--muted)">View raw JSON</summary>
+    <pre style="white-space:pre-wrap;font-size:11px;background:var(--surface2);padding:12px;border-radius:8px;overflow-x:auto;margin-top:8px">${JSON.stringify(data, null, 2)}</pre>
+  </details>`;
+
+  el.innerHTML = html;
+}
+
+function renderByShape(data) {
+  // Dispatch on the DATA's actual shape, not which folder it came from --
+  // backtest_results/ mixes true backtest.py output with older ad-hoc
+  // calibration-script JSON that predates the standardized formats.
+  if (data && Array.isArray(data.tables)) return renderResearch(data);
+  if (data && data.summary && data.params) return renderBacktest(data);
+  return renderAutoJson(data);
+}
+
+async function selectResearchRun(file, btnEl) {
+  document.querySelectorAll('#research-run-tabs .bt-run-tab').forEach(b => b.classList.remove('active'));
+  if (btnEl) btnEl.classList.add('active');
+
+  const el = document.getElementById('research-content');
+  if (researchCache[file.name]) {
+    renderByShape(researchCache[file.name]);
+    return;
+  }
+
+  el.innerHTML = '<div class="loading-msg">Loading run...</div>';
+  try {
+    const res = await fetch(file.download_url + '?t=' + Date.now());
+    const data = await res.json();
+    researchCache[file.name] = data;
+    renderByShape(data);
+  } catch(e) {
+    el.innerHTML = `<div class="error-msg">Failed to load ${file.name}: ${e.message}</div>`;
+  }
+}
+
+function researchVerdictBadge(conclusion) {
+  if (!conclusion || !conclusion.verdict) return '';
+  const v = conclusion.verdict.toUpperCase();
+  const colorMap = { SHIPPED: 'var(--green)', REJECTED: 'var(--red)', PROMISING: 'var(--gold)',
+                      INCONCLUSIVE: 'var(--muted)', 'NEEDS MORE DATA': 'var(--muted)' };
+  const color = colorMap[v] || 'var(--muted)';
+  return `<span style="display:inline-block;padding:2px 10px;border-radius:12px;font-size:11px;font-weight:600;
+    color:${color};border:1px solid ${color};background:rgba(255,255,255,0.03)">${v}</span>`;
+}
+
+function renderResearchTable(t) {
+  if (!t.rows || !t.rows.length) return `<div class="loading-msg">No rows.</div>`;
+  return `
+    <div style="font-size:13px;font-weight:600;margin:16px 0 8px">${t.name || ''}</div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead><tr>${t.columns.map(c => `<th>${c}</th>`).join('')}</tr></thead>
+        <tbody>
+          ${t.rows.map(row => `<tr>${row.map(cell => `<td>${cell ?? '—'}</td>`).join('')}</tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+function renderResearch(data) {
+  const el = document.getElementById('research-content');
+  const params = data.params && Object.keys(data.params).length
+    ? Object.entries(data.params).map(([k,v]) => `${k}=${v}`).join(', ')
+    : '';
+
+  el.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:8px">
+      <div>
+        <div style="font-size:15px;font-weight:600;margin-bottom:4px">${data.title || data.script_name}</div>
+        <div style="font-size:12px;color:var(--muted)">
+          ${data.script_name} &nbsp;|&nbsp; ${new Date(data.run_timestamp).toLocaleString()} ${params ? '&nbsp;|&nbsp; ' + params : ''}
+        </div>
+      </div>
+      ${researchVerdictBadge(data.conclusion)}
+    </div>
+    ${data.conclusion && data.conclusion.summary ? `<div style="font-size:13px;margin:12px 0;padding:10px 12px;background:var(--surface2);border-radius:8px;border-left:3px solid var(--accent)">${data.conclusion.summary}</div>` : ''}
+    ${(data.tables || []).map(renderResearchTable).join('')}
+    ${data.notes ? `<div style="font-size:12px;color:var(--muted);margin-top:16px;white-space:pre-wrap">${data.notes}</div>` : ''}
+  `;
+}
+
+</script>
+</body>
+</html>

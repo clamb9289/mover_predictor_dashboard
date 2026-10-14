@@ -1,0 +1,124 @@
+{
+  "script_name": "premarket_volatility_live_validation",
+  "run_timestamp": "2026-10-03T23:27:15.398226+00:00",
+  "title": "October deep re-check: does pre-market range % hold up as a real exclusion filter on live-collected data, now that there's enough depth for a proper threshold-vs-random-control test?",
+  "params": {
+    "n_total_resolved": 446,
+    "n_train": 329,
+    "n_val": 117,
+    "threshold_grid": [
+      1.0,
+      1.5,
+      2.0,
+      2.5,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      8.0
+    ],
+    "random_control_repeats": 20
+  },
+  "tables": [
+    {
+      "name": "Pre-market exclusion thresholds vs baseline+random-control, live data (9 tested)",
+      "columns": [
+        "Config",
+        "train.n",
+        "train.win_rate",
+        "train.avg_pct",
+        "val.n",
+        "val.win_rate",
+        "val.avg_pct"
+      ],
+      "rows": [
+        [
+          "exclude premarket range > 1.0%",
+          171,
+          "45.03%",
+          "-0.46%",
+          66,
+          "37.88%",
+          "-0.89%"
+        ],
+        [
+          "exclude premarket range > 1.5%",
+          218,
+          "45.41%",
+          "-0.51%",
+          79,
+          "39.24%",
+          "-0.73%"
+        ],
+        [
+          "exclude premarket range > 2.0%",
+          256,
+          "45.31%",
+          "-0.56%",
+          96,
+          "40.62%",
+          "-0.59%"
+        ],
+        [
+          "exclude premarket range > 2.5%",
+          279,
+          "45.16%",
+          "-0.60%",
+          106,
+          "40.57%",
+          "-0.66%"
+        ],
+        [
+          "exclude premarket range > 3.0%",
+          286,
+          "45.10%",
+          "-0.60%",
+          107,
+          "41.12%",
+          "-0.65%"
+        ],
+        [
+          "exclude premarket range > 4.0%",
+          299,
+          "45.15%",
+          "-0.62%",
+          109,
+          "40.37%",
+          "-0.69%"
+        ],
+        [
+          "exclude premarket range > 5.0%",
+          305,
+          "44.26%",
+          "-0.65%",
+          110,
+          "40.91%",
+          "-0.68%"
+        ],
+        [
+          "exclude premarket range > 6.0%",
+          309,
+          "44.34%",
+          "-0.67%",
+          112,
+          "40.18%",
+          "-0.68%"
+        ],
+        [
+          "exclude premarket range > 8.0%",
+          316,
+          "44.30%",
+          "-0.66%",
+          115,
+          "40.87%",
+          "-0.61%"
+        ]
+      ]
+    }
+  ],
+  "notes": "September's 3 live reads (r=-0.28 to -0.20, all p<0.001) were all measured as a raw correlation within the accumulation-sourced shortlist, never run through this project's full threshold-vs-random-control bar -- the same gap that produced 6 false positives in the 09-17 signal-discovery batch for OTHER signals. This closes that gap using sentiment_outcome_history.json's real simulated_pct (the live staircase-exit mechanics, not a proxy) joined against premarket_volatility_tracking.json, for a much larger resolved sample (446) than September's performance.json-windowed joins (177-215) could reach.",
+  "conclusion": {
+    "verdict": "DISCARD -- DOES NOT HOLD UP AT REAL DEPTH",
+    "summary": "0 threshold(s) beat both baseline and their own random-shuffle control on both TRAIN and VAL at n=446 real resolved candidate-days -- the correlation does not survive a proper random-control test at real depth."
+  }
+}

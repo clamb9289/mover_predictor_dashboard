@@ -1,0 +1,155 @@
+{
+  "script_name": "ath_pullback_reversal_multiwindow_check",
+  "run_timestamp": "2026-08-03T22:14:59.041939+00:00",
+  "title": "Which piece of the compound reversal setup is doing the work? (3 lookback windows x 4 sub-combinations)",
+  "params": {
+    "total_download_days": 730,
+    "high_windows": [
+      [
+        "quarter",
+        60
+      ],
+      [
+        "half_year",
+        120
+      ],
+      [
+        "year",
+        250
+      ]
+    ],
+    "n_train_rows": 164315,
+    "n_val_rows": 81712
+  },
+  "tables": [
+    {
+      "name": "5-day edge by window x sub-combination",
+      "columns": [
+        "Window/Combo",
+        "train.n",
+        "train.edge",
+        "val.n",
+        "val.edge"
+      ],
+      "rows": [
+        [
+          "half_year_core",
+          12318,
+          "-0.11%",
+          6429,
+          "-0.07%"
+        ],
+        [
+          "half_year_core_both",
+          147,
+          "+0.74%",
+          35,
+          "-0.59%"
+        ],
+        [
+          "half_year_core_sector",
+          2354,
+          "+0.36%",
+          1207,
+          "+0.14%"
+        ],
+        [
+          "half_year_core_volume",
+          808,
+          "-0.74%",
+          296,
+          "-0.81%"
+        ],
+        [
+          "low_reversal",
+          24599,
+          "-0.08%",
+          11323,
+          "-0.04%"
+        ],
+        [
+          "quarter_core",
+          9433,
+          "-0.14%",
+          5386,
+          "-0.15%"
+        ],
+        [
+          "quarter_core_both",
+          91,
+          "-0.04%",
+          20,
+          "-0.66%"
+        ],
+        [
+          "quarter_core_sector",
+          1345,
+          "+0.42%",
+          829,
+          "+0.15%"
+        ],
+        [
+          "quarter_core_volume",
+          669,
+          "-0.98%",
+          246,
+          "-1.27%"
+        ],
+        [
+          "random_control",
+          41149,
+          "+0.04%",
+          20343,
+          "+0.05%"
+        ],
+        [
+          "sector_outperform",
+          80604,
+          "+0.12%",
+          40691,
+          "+0.01%"
+        ],
+        [
+          "volume_spike",
+          7733,
+          "-0.00%",
+          3345,
+          "+0.19%"
+        ],
+        [
+          "year_core",
+          14325,
+          "-0.08%",
+          7090,
+          "-0.05%"
+        ],
+        [
+          "year_core_both",
+          212,
+          "+0.38%",
+          53,
+          "-0.48%"
+        ],
+        [
+          "year_core_sector",
+          3185,
+          "+0.36%",
+          1513,
+          "+0.28%"
+        ],
+        [
+          "year_core_volume",
+          923,
+          "-0.71%",
+          324,
+          "-0.79%"
+        ]
+      ]
+    }
+  ],
+  "notes": "core+volume is meaningfully and consistently NEGATIVE across all 3 windows on both splits (volume during a bounce off a low looks like capitulation, not accumulation). core+sector is the only signal tested this investigation that never flips sign, consistently positive on both TRAIN and VAL across all 3 windows (quarter/half-year/year) -- modest magnitude but genuine directional agreement. Follow-up: sector_reversal_gate_backtest.py tests core+sector as an actual causal gate on live picks.",
+  "conclusion": {
+    "verdict": "PROMISING",
+    "summary": "core+sector never flips sign across 3 independent windows -- volume hurts, sector-outperformance helps. See sector_reversal_gate_backtest.py for the causal follow-up (ultimately also rejected on significance)."
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "script_name": "accumulation_formula_bootstrap",
+  "run_timestamp": "2026-08-20T18:15:30.319232+00:00",
+  "title": "Are accumulation_signal()'s two train-only near-misses (price_window=5, dampening=20) real, or noise?",
+  "params": {
+    "n_bootstrap": 10000,
+    "configs": {
+      "baseline": {
+        "vol_window": 5,
+        "price_window": 3,
+        "dampening": 10
+      },
+      "price_window=5": {
+        "vol_window": 5,
+        "price_window": 5,
+        "dampening": 10
+      },
+      "dampening=20": {
+        "vol_window": 5,
+        "price_window": 3,
+        "dampening": 20
+      }
+    }
+  },
+  "tables": [
+    {
+      "name": "Bootstrap 95% CI + permutation test on (variant - baseline)",
+      "columns": [
+        "Variant",
+        "Split",
+        "Metric",
+        "Observed Diff",
+        "CI Low",
+        "CI High",
+        "Perm p-value"
+      ],
+      "rows": [
+        [
+          "price_window=5",
+          "TRAIN",
+          "avg_pct",
+          "+0.1414%",
+          "-0.0814%",
+          "+0.3935%",
+          "0.2484"
+        ],
+        [
+          "price_window=5",
+          "TRAIN",
+          "win_rate",
+          "+0.0591%",
+          "-4.4050%",
+          "+4.5355%",
+          "1.0000"
+        ],
+        [
+          "price_window=5",
+          "VALIDATION",
+          "avg_pct",
+          "-0.1520%",
+          "-0.4755%",
+          "+0.1643%",
+          "0.3546"
+        ],
+        [
+          "price_window=5",
+          "VALIDATION",
+          "win_rate",
+          "-5.8781%",
+          "-13.2318%",
+          "+1.4515%",
+          "0.1292"
+        ],
+        [
+          "dampening=20",
+          "TRAIN",
+          "avg_pct",
+          "+0.0797%",
+          "-0.1047%",
+          "+0.2625%",
+          "0.3908"
+        ],
+        [
+          "dampening=20",
+          "TRAIN",
+          "win_rate",
+          "+1.4120%",
+          "-2.9392%",
+          "+5.7619%",
+          "0.5491"
+        ],
+        [
+          "dampening=20",
+          "VALIDATION",
+          "avg_pct",
+          "-0.0223%",
+          "-0.3626%",
+          "+0.3163%",
+          "0.9014"
+        ],
+        [
+          "dampening=20",
+          "VALIDATION",
+          "win_rate",
+          "-2.6146%",
+          "-9.8712%",
+          "+4.6418%",
+          "0.5518"
+        ]
+      ]
+    }
+  ],
+  "notes": "Companion significance check to accumulation_formula_internals_calibration.py's item #9 sweep, requested by the user to raise confidence before closing out a signal this central to the model.",
+  "conclusion": {
+    "verdict": "CONFIRMED NOISE -- baseline stands, item #9 stays closed",
+    "summary": "Neither near-miss config's validation-split edge is statistically distinguishable from noise at n_bootstrap=10000."
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "script_name": "ath_entry_calibration",
+  "run_timestamp": "2026-07-30T22:54:17.021650+00:00",
+  "title": "Among picks our model actually made, do ones bought at/near an all-time high (fresh vs. rebound) outperform?",
+  "params": {
+    "days": 500,
+    "num_positions": 20
+  },
+  "tables": [
+    {
+      "name": "Win rate/avg return by ATH bucket (fresh = high set within 10 trading days, else rebound)",
+      "columns": [
+        "Bucket",
+        "Train n",
+        "Train win%",
+        "Train avg%",
+        "Train avgAccum",
+        "Val n",
+        "Val win%",
+        "Val avg%",
+        "Val avgAccum"
+      ],
+      "rows": [
+        [
+          "Fresh ATH \u2014 At/above ATH",
+          100,
+          "86.0%",
+          "+1.14%",
+          "1.630",
+          37,
+          "75.7%",
+          "+0.83%",
+          "1.705"
+        ],
+        [
+          "Fresh ATH \u2014 Within 1%",
+          109,
+          "78.9%",
+          "+0.53%",
+          "1.715",
+          36,
+          "72.2%",
+          "+0.24%",
+          "1.704"
+        ],
+        [
+          "Fresh ATH \u2014 Within 1-3%",
+          321,
+          "77.6%",
+          "+0.82%",
+          "1.847",
+          138,
+          "79.7%",
+          "+0.77%",
+          "1.769"
+        ],
+        [
+          "Fresh ATH \u2014 Within 3-5%",
+          130,
+          "76.9%",
+          "+0.91%",
+          "2.139",
+          95,
+          "71.6%",
+          "+0.54%",
+          "1.875"
+        ],
+        [
+          "Rebound ATH \u2014 At/above ATH",
+          7,
+          "71.4%",
+          "+1.41%",
+          "1.342",
+          4,
+          "50.0%",
+          "+0.31%",
+          "1.952"
+        ],
+        [
+          "Rebound ATH \u2014 Within 1%",
+          7,
+          "71.4%",
+          "+0.66%",
+          "1.505",
+          5,
+          "100.0%",
+          "+1.48%",
+          "1.587"
+        ],
+        [
+          "Rebound ATH \u2014 Within 1-3%",
+          161,
+          "73.9%",
+          "+0.44%",
+          "1.695",
+          63,
+          "77.8%",
+          "+0.92%",
+          "1.845"
+        ],
+        [
+          "Rebound ATH \u2014 Within 3-5%",
+          218,
+          "79.4%",
+          "+0.72%",
+          "1.683",
+          84,
+          "72.6%",
+          "+0.20%",
+          "1.687"
+        ],
+        [
+          "5%+ below ATH (baseline)",
+          5485,
+          "73.0%",
+          "+0.80%",
+          "1.978",
+          2340,
+          "72.1%",
+          "+1.03%",
+          "2.072"
+        ]
+      ]
+    },
+    {
+      "name": "Near-ATH picks by rank bucket (descriptive, full sample)",
+      "columns": [
+        "Rank bucket",
+        "n",
+        "Win rate",
+        "Avg return"
+      ],
+      "rows": [
+        [
+          "1-3 (bought)",
+          184,
+          "75.0%",
+          "+0.99%"
+        ],
+        [
+          "4-8 (bench)",
+          375,
+          "74.7%",
+          "+0.63%"
+        ],
+        [
+          "9-20 (wide bench)",
+          956,
+          "78.9%",
+          "+0.69%"
+        ]
+      ]
+    }
+  ],
+  "notes": "Purely OBSERVATIONAL -- only looks at tickers the model already picked, so it can't distinguish an independent ATH signal from one that's just riding along with accumulation/relative-strength (avgAccum columns are there to check that). See ath_universe_calibration.py for the full-universe version of this question, and ath_boost_calibration.py for the causal (does boosting it actually help) version.",
+  "conclusion": {
+    "verdict": "PROMISING",
+    "summary": "Near-ATH picks beat baseline win rate on both splits in this run. IMPORTANT: an earlier run of this script (2026-07-30, before classify_ath()'s lookahead-bias fix) showed a much stronger apparent positive edge -- an artifact of using the trade day's own closing price as the reference point instead of the last price known before the decision. Trust only runs after the fix."
+  }
+}
