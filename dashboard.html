@@ -662,9 +662,10 @@ function renderMomentum() {
   el.innerHTML = `<div class="rule">${esc(m.rule)}</div>` +
     kv([['Scored months', s.scored_months], ['Avg vs pool', pct(s.avg_vs_pool)], ['Avg vs SPY', pct(s.avg_vs_spy)], ['Backtest vs pool', pct(s.backtest_avg_vs_pool)]]) +
     table([['Month', r => esc(r.month)], ['Entry', r => esc(r.entry_date)], ['Picks', r => `${r.n_picks} of ${r.n_eligible}`],
-           ['Decile', r => pct(r.momentum_pct)], ['Top 30', r => pct(r.top30_pct)], ['Top 20', r => pct(r.top20_pct)],
+           ['Top 1% (paper book)', r => pct(r.top1pct_pct)], ['Decile', r => pct(r.momentum_pct)], ['Top 30', r => pct(r.top30_pct)], ['Top 20', r => pct(r.top20_pct)],
            ['Pool', r => pct(r.pool_pct)], ['SPY', r => pct(r.spy_pct)], ['vs pool', r => r.momentum_pct != null ? pct(r.momentum_pct - r.pool_pct) : '<span class="empty">in progress</span>']],
           (m.months || []).slice().reverse()) +
+    `<div class="card-title" style="margin-top:18px">Current month: paper book (top 1%)</div><div class="ticker-list">${(m.current_top1pct || []).map(esc).join(' · ')}</div>` +
     `<div class="card-title" style="margin-top:18px">Current month: top 30 by 12-1 return</div><div class="ticker-list">${(m.current_top30 || []).map(esc).join(' · ')}</div>`;
 }
 
@@ -680,7 +681,7 @@ function renderEvents() {
           p.upcoming || []) +
     '<div class="card-title" style="margin-top:18px">Scored</div>' +
     table([['Ticker', r => esc(r.ticker)], ['Event', r => esc(r.family)], ['Date', r => esc(r.event_date)], ['Arm', r => r.primary ? 'primary' : 'watch'],
-           ['Run-up (−21→−1)', r => r.skipped ? `<span class="empty">${esc(r.skipped)}</span>` : pct(r.projected20)],
+           ['Run-up (−21→−1)', r => r.skipped ? `<span class="empty">${esc(r.skipped)}</span>` : pct(r.projected20)], ['25-session (side)', r => pct(r.projected25)],
            ['From announcement', r => pct(r.confirmed)], ['Event day', r => pct(r.day0)]],
           p.scored || []);
 }

@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T16:02-04:00",
+ "updated": "2026-10-15T18:41-04:00",
  "today": "2026-10-15",
  "paper_trading": {
   "status": "not started",
@@ -59,7 +59,7 @@
   ]
  },
  "momentum": {
-  "rule": "S&P 1500, 12-1 month return at the last close of the month, top decile (price >= $5, 20d $vol >= $5M), equal weight, first open of the month to the next month's first open; top20/top30 shadow arms.",
+  "rule": "S&P 1500, 12-1 month return at the last close of the month, top decile (price >= $5, 20d $vol >= $5M), equal weight, first open of the month to the next month's first open. PAPER BOOK = top 1% of eligible (~13-15 names, momentum_book_size_study.py); decile/top20/top30 tracked alongside.",
   "next_decision": "Review after 12 scored months (~Oct 2027); paper trading planned Nov/Dec 2026",
   "summary": {
    "scored_months": 0,
@@ -78,6 +78,7 @@
     "spy_pct": null,
     "top20_pct": null,
     "top30_pct": null,
+    "top1pct_pct": null,
     "turnover": null
    }
   ],
@@ -112,6 +113,23 @@
    "ARWR",
    "PBF",
    "VSAT"
+  ],
+  "current_top1pct": [
+   "SNDK",
+   "MU",
+   "LITE",
+   "MRNA",
+   "VICR",
+   "WDC",
+   "MXL",
+   "STX",
+   "DELL",
+   "VSXY",
+   "DOCN",
+   "ICHR",
+   "LQDA",
+   "AMD",
+   "VIAV"
   ]
  },
  "product_events": {
