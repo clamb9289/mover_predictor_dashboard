@@ -538,7 +538,7 @@
     </div>
     <div class="card">
       <div class="card-title">Paper trading</div>
-      <div id="paper-box" class="rule"></div>
+      <div id="paper-box"></div>
     </div>
   </div>
 
@@ -605,8 +605,34 @@ function render() {
   document.getElementById('header-sub').textContent = `Updated ${D.updated.replace('T', ' ')} ET`;
   const pt = D.paper_trading || {};
   document.getElementById('mode-badge').textContent = pt.status === 'not started' ? 'Shadow tracking' : 'Paper trading';
-  document.getElementById('paper-box').innerHTML = `Status: <b>${esc(pt.status)}</b>. ${esc(pt.plan || '')}`;
+  document.getElementById('paper-box').innerHTML = renderPaper(pt);
   renderOverview(); renderEarnings(); renderMomentum(); renderEvents(); renderBrands(); renderTeen();
+}
+
+function renderPaper(pt) {
+  const accts = pt.accounts || {};
+  const names = {earnings: 'Earnings beats', momentum: 'Momentum (top 1%)', apple: 'Apple events'};
+  const rows = Object.entries(accts).map(([k, a]) => ({k, ...a}));
+  let html = `<div class="rule">${esc(pt.plan || '')}</div>`;
+  html += table([['Account', r => esc(names[r.k] || r.k)],
+                 ['Status', r => r.status === 'live' ? (r.enabled ? 'live' : 'paused') : (r.enabled ? 'waiting for first run' : 'not started')],
+                 ['Equity', r => r.equity != null ? '$' + Number(r.equity).toLocaleString(undefined, {maximumFractionDigits: 0}) : ''],
+                 ['Since start', r => pct(r.return_pct)],
+                 ['In SPY', r => r.spy_value != null ? '$' + Number(r.spy_value).toLocaleString(undefined, {maximumFractionDigits: 0}) : ''],
+                 ['Open trades', r => r.open_positions ?? ''],
+                 ['Last run', r => esc((r.last_run || '').replace('T', ' ').slice(0, 16)) + (r.last_phase ? ' (' + esc(r.last_phase) + ')' : '')],
+                 ['Check', r => r.error ? '<span class="neg">error</span>' : ((r.missing || []).length || (r.unexpected || []).length)
+                    ? `<span class="neg">mismatch: ${esc([...(r.missing || []).map(x => 'missing ' + x), ...(r.unexpected || []).map(x => 'extra ' + x)].join(', '))}</span>` : (r.status === 'live' ? 'ok' : '')]],
+                rows);
+  const orders = rows.flatMap(r => (r.recent_orders || []).map(o => ({acct: names[r.k] || r.k, ...o})))
+                     .sort((x, y) => (y.at || '').localeCompare(x.at || '')).slice(0, 15);
+  if (orders.length) {
+    html += '<div class="card-title" style="margin-top:16px">Recent orders</div>' +
+      table([['When', o => esc((o.at || '').replace('T', ' ').slice(0, 16))], ['Account', o => esc(o.acct)], ['Side', o => esc(o.side)],
+             ['Symbol', o => esc(o.symbol)], ['Amount', o => o.notional != null ? '$' + Number(o.notional).toFixed(2) : (o.qty != null ? Number(o.qty).toFixed(4) + ' sh' : '')],
+             ['Status', o => esc(o.status)], ['Why', o => esc(o.note)]], orders);
+  }
+  return html;
 }
 
 function card(tab, title, pill, big, small, next) {

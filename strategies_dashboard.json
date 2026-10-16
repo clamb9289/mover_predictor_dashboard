@@ -1,9 +1,23 @@
 {
- "updated": "2026-10-16T09:47-04:00",
+ "updated": "2026-10-16T14:02-04:00",
  "today": "2026-10-16",
  "paper_trading": {
   "status": "not started",
-  "plan": "One Alpaca paper account per strategy; earnings beats and momentum are the first candidates (Dec 2026) if their reads pass."
+  "plan": "One Alpaca paper account per strategy (PAPER_TRADING_PLAN.md). Started early to test the order plumbing; pass/fail verdicts still come from the shadow trackers.",
+  "accounts": {
+   "earnings": {
+    "enabled": false,
+    "status": "not started"
+   },
+   "momentum": {
+    "enabled": false,
+    "status": "not started"
+   },
+   "apple": {
+    "enabled": false,
+    "status": "not started"
+   }
+  }
  },
  "earnings": {
   "rule": "EPS surprise >= 50% (S&P 1500 + Russell 2000), buy the reaction-session open, sell the close 20 sessions later; vs every tracked reporter the same week; cost 0.10% / 0.40%.",
