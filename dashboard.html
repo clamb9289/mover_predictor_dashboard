@@ -620,7 +620,7 @@ function renderPaper(pt) {
                  ['Since start', r => pct(r.return_pct)],
                  ['In SPY', r => r.spy_value != null ? '$' + Number(r.spy_value).toLocaleString(undefined, {maximumFractionDigits: 0}) : ''],
                  ['Open trades', r => r.open_positions ?? ''],
-                 ['Last run', r => esc((r.last_run || '').replace('T', ' ').slice(0, 16)) + (r.last_phase ? ' (' + esc(r.last_phase) + ')' : '')],
+                 ['As of (Alpaca)', r => esc((r.last_run || '').replace('T', ' ').slice(0, 16)) + (r.last_phase ? ' (' + esc(r.last_phase) + ')' : '')],
                  ['Check', r => r.error ? '<span class="neg">error</span>' : ((r.missing || []).length || (r.unexpected || []).length)
                     ? `<span class="neg">mismatch: ${esc([...(r.missing || []).map(x => 'missing ' + x), ...(r.unexpected || []).map(x => 'extra ' + x)].join(', '))}</span>` : (r.status === 'live' ? 'ok' : '')]],
                 rows);
@@ -630,7 +630,9 @@ function renderPaper(pt) {
     html += '<div class="card-title" style="margin-top:16px">Recent orders</div>' +
       table([['When', o => esc((o.at || '').replace('T', ' ').slice(0, 16))], ['Account', o => esc(o.acct)], ['Side', o => esc(o.side)],
              ['Symbol', o => esc(o.symbol)], ['Amount', o => o.notional != null ? '$' + Number(o.notional).toFixed(2) : (o.qty != null ? Number(o.qty).toFixed(4) + ' sh' : '')],
-             ['Status', o => esc(o.status)], ['Why', o => esc(o.note)]], orders);
+             ['Status', o => esc((o.status || '').replace(/_/g, ' '))],
+             ['Fill', o => o.fill_price != null ? `${Number(o.filled_qty).toFixed(4)} sh @ $${Number(o.fill_price).toFixed(2)}` : ''],
+             ['Why', o => esc(o.note)]], orders);
   }
   return html;
 }

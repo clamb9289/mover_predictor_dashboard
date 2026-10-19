@@ -1,25 +1,32 @@
 {
- "updated": "2026-10-19T09:47-04:00",
+ "updated": "2026-10-19T11:45-04:00",
  "today": "2026-10-19",
  "paper_trading": {
   "status": "live",
-  "plan": "One Alpaca paper account per strategy (PAPER_TRADING_PLAN.md). Started early to test the order plumbing; pass/fail verdicts still come from the shadow trackers.",
+  "plan": "One Alpaca paper account per strategy (PAPER_TRADING_PLAN.md). Started early to test the order plumbing; pass/fail verdicts still come from the shadow trackers. Account values are read from Alpaca at each run (see 'As of'); Alpaca's own page is live, so it will differ between runs.",
   "accounts": {
    "earnings": {
     "enabled": true,
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2998.13,
-    "return_pct": -0.06,
+    "equity": 3008.78,
+    "return_pct": 0.29,
     "cash": 6.01,
-    "spy_value": 2992.12,
+    "spy_value": 3002.77,
     "open_positions": 0,
-    "last_run": "2026-10-19T09:47:30-04:00",
-    "last_phase": "morning",
+    "last_run": "2026-10-19T11:45:37-04:00",
+    "last_phase": "snapshot",
     "error": null,
     "missing": [],
     "unexpected": [],
+    "holdings": {
+     "SPY": {
+      "qty": 3.901167,
+      "price": 769.71,
+      "value": 3002.77
+     }
+    },
     "recent_orders": [
      {
       "at": "2026-10-19T09:16:07-04:00",
@@ -27,8 +34,11 @@
       "symbol": "SPY",
       "notional": 2994.0,
       "qty": null,
-      "status": "OrderStatus.PENDING_NEW",
-      "note": "idle cash -> SPY"
+      "note": "idle cash -> SPY",
+      "fill_price": 767.46,
+      "filled_qty": 3.901167,
+      "filled_at": "2026-10-19T09:33:14-04:00",
+      "status": "filled"
      }
     ]
    },
@@ -37,16 +47,23 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2998.43,
-    "return_pct": -0.05,
+    "equity": 3009.08,
+    "return_pct": 0.3,
     "cash": 6.01,
-    "spy_value": 2992.42,
+    "spy_value": 3003.07,
     "open_positions": 0,
-    "last_run": "2026-10-19T09:47:30-04:00",
-    "last_phase": "morning",
+    "last_run": "2026-10-19T11:45:37-04:00",
+    "last_phase": "snapshot",
     "error": null,
     "missing": [],
     "unexpected": [],
+    "holdings": {
+     "SPY": {
+      "qty": 3.901557,
+      "price": 769.71,
+      "value": 3003.07
+     }
+    },
     "recent_orders": [
      {
       "at": "2026-10-19T09:16:07-04:00",
@@ -54,8 +71,11 @@
       "symbol": "SPY",
       "notional": 2994.0,
       "qty": null,
-      "status": "OrderStatus.PENDING_NEW",
-      "note": "waiting for the first rebalance -> SPY"
+      "note": "waiting for the first rebalance -> SPY",
+      "fill_price": 767.3833,
+      "filled_qty": 3.901557,
+      "filled_at": "2026-10-19T09:33:56-04:00",
+      "status": "filled"
      }
     ]
    },
@@ -64,16 +84,23 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2996.45,
-    "return_pct": -0.12,
+    "equity": 3007.21,
+    "return_pct": 0.24,
     "cash": 6.01,
-    "spy_value": 2990.44,
+    "spy_value": 3001.2,
     "open_positions": 0,
-    "last_run": "2026-10-19T09:47:30-04:00",
-    "last_phase": "morning",
+    "last_run": "2026-10-19T11:45:37-04:00",
+    "last_phase": "snapshot",
     "error": null,
     "missing": [],
     "unexpected": [],
+    "holdings": {
+     "SPY": {
+      "qty": 3.89913,
+      "price": 769.7101,
+      "value": 3001.2
+     }
+    },
     "recent_orders": [
      {
       "at": "2026-10-19T09:16:08-04:00",
@@ -81,8 +108,11 @@
       "symbol": "SPY",
       "notional": 2994.0,
       "qty": null,
-      "status": "OrderStatus.PENDING_NEW",
-      "note": "idle cash -> SPY"
+      "note": "idle cash -> SPY",
+      "fill_price": 767.861,
+      "filled_qty": 3.89913,
+      "filled_at": "2026-10-19T09:33:03-04:00",
+      "status": "filled"
      }
     ]
    }
