@@ -689,9 +689,11 @@ function renderMomentum() {
     kv([['Scored months', s.scored_months], ['Avg vs pool', pct(s.avg_vs_pool)], ['Avg vs SPY', pct(s.avg_vs_spy)], ['Backtest vs pool', pct(s.backtest_avg_vs_pool)]]) +
     table([['Month', r => esc(r.month)], ['Entry', r => esc(r.entry_date)], ['Picks', r => `${r.n_picks} of ${r.n_eligible}`],
            ['Top 1% (paper book)', r => pct(r.top1pct_pct)], ['Decile', r => pct(r.momentum_pct)], ['Top 30', r => pct(r.top30_pct)], ['Top 20', r => pct(r.top20_pct)],
+           ['Risk-adj (watch)', r => pct(r.riskadj_pct)], ['Sector cap (watch)', r => pct(r.sectorcap_pct)],
            ['Pool', r => pct(r.pool_pct)], ['SPY', r => pct(r.spy_pct)], ['vs pool', r => r.momentum_pct != null ? pct(r.momentum_pct - r.pool_pct) : '<span class="empty">in progress</span>']],
           (m.months || []).slice().reverse()) +
     `<div class="card-title" style="margin-top:18px">Current month: paper book (top 1%)</div><div class="ticker-list">${(m.current_top1pct || []).map(esc).join(' · ')}</div>` +
+    Object.entries(m.current_watch_books || {}).map(([k, v]) => `<div class="card-title" style="margin-top:18px">Current month: ${k === 'riskadj' ? 'risk-adjusted' : 'sector-capped'} watch book</div><div class="ticker-list">${(v || []).map(esc).join(' · ')}</div>`).join('') +
     `<div class="card-title" style="margin-top:18px">Current month: top 30 by 12-1 return</div><div class="ticker-list">${(m.current_top30 || []).map(esc).join(' · ')}</div>`;
 }
 
@@ -700,7 +702,8 @@ function renderEvents() {
   const el = document.getElementById('events-box');
   if (p.error) { el.innerHTML = errBox(p); return; }
   el.innerHTML = `<div class="rule">${esc(p.rule)}</div>` +
-    kv([['Primary scored', s.primary_scored], ['Positive', s.primary_positive], ['Mean abnormal run-up', pct(s.primary_mean_abnormal)]]) +
+    kv([['Primary scored', s.primary_scored], ['Positive', s.primary_positive], ['Mean abnormal run-up', pct(s.primary_mean_abnormal)],
+        ['Keynote-day short (watch)', s.keynote_short_n ? `${s.keynote_short_positive}/${s.keynote_short_n} · ${pct(s.keynote_short_mean)}` : '–']]) +
     '<div class="card-title">Upcoming</div>' +
     table([['Ticker', r => esc(r.ticker)], ['Event', r => esc(r.family)], ['Date', r => esc(r.event_date)], ['Status', r => esc(r.status)],
            ['Arm', r => r.primary ? 'primary' : 'watch'], ['Entry (−21)', r => esc(r.entry_projected20 || '')], ['Exit (−1)', r => esc(r.exit || '')]],
