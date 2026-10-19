@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-19T14:30-04:00",
+ "updated": "2026-10-19T15:41-04:00",
  "today": "2026-10-19",
  "paper_trading": {
   "status": "live",
@@ -10,21 +10,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2998.95,
-    "return_pct": -0.04,
+    "equity": 3003.43,
+    "return_pct": 0.11,
     "cash": 6.01,
-    "spy_value": 2992.94,
+    "spy_value": 2997.42,
     "open_positions": 0,
-    "last_run": "2026-10-19T14:30:39-04:00",
-    "last_phase": "snapshot",
+    "last_run": "2026-10-19T15:41:25-04:00",
+    "last_phase": "close",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.901167,
-      "price": 767.19,
-      "value": 2992.94
+      "price": 768.34,
+      "value": 2997.42
      }
     },
     "recent_orders": [
@@ -47,21 +47,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2999.25,
-    "return_pct": -0.02,
+    "equity": 3003.73,
+    "return_pct": 0.12,
     "cash": 6.01,
-    "spy_value": 2993.24,
+    "spy_value": 2997.72,
     "open_positions": 0,
-    "last_run": "2026-10-19T14:30:39-04:00",
-    "last_phase": "snapshot",
+    "last_run": "2026-10-19T15:41:25-04:00",
+    "last_phase": "close",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.901557,
-      "price": 767.19,
-      "value": 2993.24
+      "price": 768.34,
+      "value": 2997.72
      }
     },
     "recent_orders": [
@@ -84,21 +84,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2997.38,
-    "return_pct": -0.09,
+    "equity": 3001.87,
+    "return_pct": 0.06,
     "cash": 6.01,
-    "spy_value": 2991.37,
+    "spy_value": 2995.86,
     "open_positions": 0,
-    "last_run": "2026-10-19T14:30:39-04:00",
-    "last_phase": "snapshot",
+    "last_run": "2026-10-19T15:41:25-04:00",
+    "last_phase": "close",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.89913,
-      "price": 767.19,
-      "value": 2991.37
+      "price": 768.34,
+      "value": 2995.86
      }
     },
     "recent_orders": [
@@ -265,7 +265,42 @@
    "AMD",
    "VIAV"
   ],
-  "current_watch_books": {}
+  "current_watch_books": {
+   "riskadj": [
+    "SNDK",
+    "MU",
+    "LITE",
+    "ATI",
+    "MATX",
+    "WDC",
+    "STX",
+    "INSW",
+    "ECPG",
+    "DAR",
+    "DELL",
+    "VSTS",
+    "VLO",
+    "VICR",
+    "ROIV"
+   ],
+   "sectorcap": [
+    "SNDK",
+    "MU",
+    "LITE",
+    "MRNA",
+    "VICR",
+    "VSXY",
+    "LQDA",
+    "VSTS",
+    "BE",
+    "IRDM",
+    "PTEN",
+    "ARWR",
+    "PBF",
+    "INSW",
+    "ECPG"
+   ]
+  }
  },
  "product_events": {
   "rule": "AAPL: buy the close 21 sessions before a projected iPhone keynote / WWDC session, sell the close the session before. Non-Apple megacaps are watch-only.",
