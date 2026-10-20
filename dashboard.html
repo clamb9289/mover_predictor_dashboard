@@ -676,7 +676,10 @@ function renderEarnings() {
         ['95% CI', s.ci ? `${s.ci[0]} to ${s.ci[1]}` : '–'], ['Interim mean (all)', pct(s.mean_interim_all)],
         ['So far', esc(s.verdict_so_far)], ['Also ≥50% on yfinance', s.yf_checked ? `${s.yf_also_qualify} of ${s.yf_checked}` : '–'], ['Median ATM call spread', s.median_atm_spread_pct != null ? s.median_atm_spread_pct.toFixed(0) + '%' : '–']]) +
     `<div class="rule">Watch arms (reported, can't change the verdict): busy day ${a.busy_day ? `${a.busy_day.n} · ${pct(a.busy_day.mean)}` : '–'}, high volume ${a.high_vol ? `${a.high_vol.n} · ${pct(a.high_vol.mean)}` : '–'}, 40-day hold ${a.hold40 ? `${a.hold40.n} · ${pct(a.hold40.mean)}` : '–'}. ${esc(e.watch_arms_note || '')}</div>` +
-    table([['Ticker', r => esc(r.ticker)], ['Universe', r => esc(r.universe)], ["Beat (Nasdaq)", r => r.surprise_pct + '%'], ['Beat (yfinance)', r => r.yf_surprise_pct != null ? r.yf_surprise_pct + '%' : '<span class="empty">pending</span>'],
+    table([['Ticker', r => esc(r.ticker)],
+           ['Paper', r => !r.paper ? '' : r.paper.status === 'bought' ? `<span class="pos">${esc(r.paper.text)}</span>`
+              : r.paper.status === 'missed' ? `<span class="neg">${esc(r.paper.text)}</span>` : `<span class="empty">${esc(r.paper.text)}</span>`],
+           ['Universe', r => esc(r.universe)], ["Beat (Nasdaq)", r => r.surprise_pct + '%'], ['Beat (yfinance)', r => r.yf_surprise_pct != null ? r.yf_surprise_pct + '%' : '<span class="empty">pending</span>'],
            ['Reaction', r => esc(r.reaction_date)], ['Entry', r => r.entry], ['Day', r => r.final ? '20 ✓' : r.day],
            ['Return', r => pct(r.ret_pct)], ['Control', r => pct(r.control_pct)], ['Excess after cost', r => pct(r.excess_after_cost)],
            ['Busy', r => r.busy_day ? '●' : ''], ['High vol', r => r.high_vol ? '●' : ''], ['Call spread d0', r => r.atm_spread_pct_day0 != null ? r.atm_spread_pct_day0.toFixed(0) + '%' : '']],
