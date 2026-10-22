@@ -624,6 +624,20 @@ function renderPaper(pt) {
                  ['Check', r => r.error ? '<span class="neg">error</span>' : ((r.missing || []).length || (r.unexpected || []).length)
                     ? `<span class="neg">mismatch: ${esc([...(r.missing || []).map(x => 'missing ' + x), ...(r.unexpected || []).map(x => 'extra ' + x)].join(', '))}</span>` : (r.status === 'live' ? 'ok' : '')]],
                 rows);
+  const positions = rows.flatMap(r => (r.positions || []).map(p => ({acct: names[r.k] || r.k, ...p})));
+  const missed = (accts.earnings || {}).missed_late || [];
+  if (missed.length) {
+    html += `<div class="rule"><span class="neg">Missed because yfinance was late at 9:15:</span> ${missed.map(m => esc(m.ticker) + ' ' + esc(m.date) + ' (+' + Number(m.yf_surprise_pct).toFixed(0) + '%)').join(', ')}</div>`;
+  }
+  if (positions.length) {
+    html += '<div class="card-title" style="margin-top:16px">Open positions (besides SPY, as of the last reading)</div>' +
+      table([['Account', p => esc(p.acct)], ['Symbol', p => esc(p.symbol)], ['Bought', p => esc(p.entry_date || '')],
+             ['Beat', p => p.surprise != null ? '+' + Number(p.surprise).toFixed(0) + '%' : ''],
+             ['Fill', p => p.fill_price != null ? '$' + Number(p.fill_price).toFixed(2) : ''],
+             ['Now', p => p.price != null ? '$' + Number(p.price).toFixed(2) : ''],
+             ['Value', p => p.value != null ? '$' + Number(p.value).toFixed(2) : ''],
+             ['P/L', p => pct(p.pl_pct)], ['Exits', p => esc(p.exit_date || '')]], positions);
+  }
   const orders = rows.flatMap(r => (r.recent_orders || []).map(o => ({acct: names[r.k] || r.k, ...o})))
                      .sort((x, y) => (y.at || '').localeCompare(x.at || '')).slice(0, 15);
   if (orders.length) {
