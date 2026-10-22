@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-22T15:40-04:00",
+ "updated": "2026-10-22T18:47-04:00",
  "today": "2026-10-22",
  "paper_trading": {
   "status": "live",
@@ -222,6 +222,40 @@
    }
   },
   "watch_arms_note": "atr_high / accumulation thirds are computed at review time (need pre-event price bars).",
+  "paper_trades": [
+   {
+    "ticker": "SLG",
+    "universe": "sp1500",
+    "report_date": "2026-10-21",
+    "entry_date": "2026-10-22",
+    "exit_date": "2026-11-19",
+    "closed": false,
+    "late_entry": false,
+    "slot": 14.97,
+    "yf_surprise_pct": 401.45,
+    "nasdaq_surprise_pct": -36.48,
+    "counts_in_forward_test": "no (Nasdaq below 50%)",
+    "fill_price": 46.04,
+    "price": 49.59,
+    "pl_pct": 7.71
+   },
+   {
+    "ticker": "EGBN",
+    "universe": "sp1500",
+    "report_date": "2026-10-21",
+    "entry_date": "2026-10-22",
+    "exit_date": "2026-11-19",
+    "closed": false,
+    "late_entry": false,
+    "slot": 14.97,
+    "yf_surprise_pct": 131.22,
+    "nasdaq_surprise_pct": 125.71,
+    "counts_in_forward_test": "yes",
+    "fill_price": 29.76,
+    "price": 32.7475,
+    "pl_pct": 10.04
+   }
+  ],
   "events": [
    {
     "ticker": "HCSG",
