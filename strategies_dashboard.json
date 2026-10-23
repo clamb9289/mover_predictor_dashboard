@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-22T18:47-04:00",
- "today": "2026-10-22",
+ "updated": "2026-10-23T09:23-04:00",
+ "today": "2026-10-23",
  "paper_trading": {
   "status": "live",
   "plan": "One Alpaca paper account per strategy (PAPER_TRADING_PLAN.md). Started early to test the order plumbing; pass/fail verdicts still come from the shadow trackers. Account values are read from Alpaca at each run (see 'As of'); Alpaca's own page is live, so it will differ between runs.",
@@ -10,31 +10,33 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2981.14,
-    "return_pct": -0.63,
-    "cash": 6.0,
-    "spy_value": 2942.55,
-    "open_positions": 2,
-    "last_run": "2026-10-22T15:40:40-04:00",
-    "last_phase": "close",
+    "equity": 2975.65,
+    "return_pct": -0.81,
+    "cash": 5.98,
+    "spy_value": 2937.46,
+    "open_positions": 3,
+    "last_run": "2026-10-23T09:15:34-04:00",
+    "last_phase": "premarket",
     "error": null,
-    "missing": [],
+    "missing": [
+     "WRLD"
+    ],
     "unexpected": [],
     "holdings": {
      "EGBN": {
       "qty": 0.502688,
-      "price": 32.7475,
-      "value": 16.46
+      "price": 32.2818,
+      "value": 16.23
      },
      "SLG": {
       "qty": 0.324935,
-      "price": 49.59,
-      "value": 16.11
+      "price": 49.19,
+      "value": 15.98
      },
      "SPY": {
       "qty": 3.862127,
-      "price": 761.9,
-      "value": 2942.55
+      "price": 760.58,
+      "value": 2937.46
      }
     },
     "positions": [
@@ -44,9 +46,9 @@
       "exit_date": "2026-11-19",
       "surprise": 131.22,
       "fill_price": 29.76,
-      "price": 32.7475,
-      "value": 16.46,
-      "pl_pct": 10.04
+      "price": 32.2818,
+      "value": 16.23,
+      "pl_pct": 8.47
      },
      {
       "symbol": "SLG",
@@ -54,13 +56,37 @@
       "exit_date": "2026-11-19",
       "surprise": 401.45,
       "fill_price": 46.04,
-      "price": 49.59,
-      "value": 16.11,
-      "pl_pct": 7.71
+      "price": 49.19,
+      "value": 15.98,
+      "pl_pct": 6.84
      }
     ],
     "missed_late": [],
     "recent_orders": [
+     {
+      "at": "2026-10-23T09:23:54-04:00",
+      "side": "sell",
+      "symbol": "SPY",
+      "notional": 14.84,
+      "qty": null,
+      "note": "fund earnings slots",
+      "fill_price": null,
+      "filled_qty": null,
+      "filled_at": null,
+      "status": "new"
+     },
+     {
+      "at": "2026-10-23T09:23:54-04:00",
+      "side": "buy",
+      "symbol": "WRLD",
+      "notional": 14.87,
+      "qty": null,
+      "note": "earnings beat +146% (sp1500, reported 2026-10-23, yfinance)",
+      "fill_price": null,
+      "filled_qty": null,
+      "filled_at": null,
+      "status": "new"
+     },
      {
       "at": "2026-10-22T09:16:23-04:00",
       "side": "sell",
@@ -116,21 +142,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2978.6,
-    "return_pct": -0.71,
+    "equity": 2971.92,
+    "return_pct": -0.94,
     "cash": 6.0,
-    "spy_value": 2972.6,
+    "spy_value": 2965.92,
     "open_positions": 0,
-    "last_run": "2026-10-22T15:40:40-04:00",
-    "last_phase": "close",
+    "last_run": "2026-10-23T09:15:34-04:00",
+    "last_phase": "premarket",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.901557,
-      "price": 761.9,
-      "value": 2972.6
+      "price": 760.19,
+      "value": 2965.92
      }
     },
     "positions": [],
@@ -155,21 +181,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2976.79,
-    "return_pct": -0.77,
+    "equity": 2969.96,
+    "return_pct": -1.0,
     "cash": 6.0,
-    "spy_value": 2970.79,
+    "spy_value": 2963.96,
     "open_positions": 0,
-    "last_run": "2026-10-22T15:40:40-04:00",
-    "last_phase": "close",
+    "last_run": "2026-10-23T09:15:34-04:00",
+    "last_phase": "premarket",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.89913,
-      "price": 761.91,
-      "value": 2970.79
+      "price": 760.16,
+      "value": 2963.96
      }
     },
     "positions": [],
@@ -224,6 +250,22 @@
   "watch_arms_note": "atr_high / accumulation thirds are computed at review time (need pre-event price bars).",
   "paper_trades": [
    {
+    "ticker": "WRLD",
+    "universe": "sp1500",
+    "report_date": "2026-10-23",
+    "entry_date": "2026-10-23",
+    "exit_date": "2026-11-20",
+    "closed": false,
+    "late_entry": false,
+    "slot": 14.87,
+    "yf_surprise_pct": 146.15,
+    "nasdaq_surprise_pct": null,
+    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
+    "fill_price": null,
+    "price": null,
+    "pl_pct": null
+   },
+   {
     "ticker": "SLG",
     "universe": "sp1500",
     "report_date": "2026-10-21",
@@ -236,8 +278,8 @@
     "nasdaq_surprise_pct": -36.48,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 46.04,
-    "price": 49.59,
-    "pl_pct": 7.71
+    "price": 49.19,
+    "pl_pct": 6.84
    },
    {
     "ticker": "EGBN",
@@ -252,8 +294,8 @@
     "nasdaq_surprise_pct": 125.71,
     "counts_in_forward_test": "yes",
     "fill_price": 29.76,
-    "price": 32.7475,
-    "pl_pct": 10.04
+    "price": 32.2818,
+    "pl_pct": 8.47
    }
   ],
   "events": [
