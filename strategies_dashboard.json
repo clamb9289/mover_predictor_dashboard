@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T14:30-04:00",
+ "updated": "2026-10-26T15:40-04:00",
  "today": "2026-10-26",
  "paper_trading": {
   "status": "live",
@@ -10,41 +10,41 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2996.08,
-    "return_pct": -0.13,
+    "equity": 2995.41,
+    "return_pct": -0.15,
     "cash": 5.95,
-    "spy_value": 2927.61,
+    "spy_value": 2926.81,
     "open_positions": 4,
-    "last_run": "2026-10-26T14:30:39-04:00",
-    "last_phase": "snapshot",
+    "last_run": "2026-10-26T15:40:43-04:00",
+    "last_phase": "close",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "DEA": {
       "qty": 0.652498,
-      "price": 23.22,
-      "value": 15.15
+      "price": 23.47,
+      "value": 15.31
      },
      "EGBN": {
       "qty": 0.502688,
-      "price": 33.36,
+      "price": 33.355,
       "value": 16.77
      },
      "SLG": {
       "qty": 0.324935,
-      "price": 50.71,
-      "value": 16.48
+      "price": 50.655,
+      "value": 16.46
      },
      "SPY": {
       "qty": 3.823047,
-      "price": 765.78,
-      "value": 2927.61
+      "price": 765.57,
+      "value": 2926.81
      },
      "WRLD": {
       "qty": 0.083333,
-      "price": 169.445,
-      "value": 14.12
+      "price": 169.36,
+      "value": 14.11
      }
     },
     "positions": [
@@ -54,9 +54,9 @@
       "exit_date": "2026-11-23",
       "surprise": 57.14,
       "fill_price": 22.82,
-      "price": 23.22,
-      "value": 15.15,
-      "pl_pct": 1.75
+      "price": 23.47,
+      "value": 15.31,
+      "pl_pct": 2.85
      },
      {
       "symbol": "EGBN",
@@ -64,9 +64,9 @@
       "exit_date": "2026-11-19",
       "surprise": 131.22,
       "fill_price": 29.76,
-      "price": 33.36,
+      "price": 33.355,
       "value": 16.77,
-      "pl_pct": 12.1
+      "pl_pct": 12.08
      },
      {
       "symbol": "SLG",
@@ -74,9 +74,9 @@
       "exit_date": "2026-11-19",
       "surprise": 401.45,
       "fill_price": 46.04,
-      "price": 50.71,
-      "value": 16.48,
-      "pl_pct": 10.14
+      "price": 50.655,
+      "value": 16.46,
+      "pl_pct": 10.02
      },
      {
       "symbol": "WRLD",
@@ -84,9 +84,9 @@
       "exit_date": "2026-11-20",
       "surprise": 146.15,
       "fill_price": 178.32,
-      "price": 169.445,
-      "value": 14.12,
-      "pl_pct": -4.98
+      "price": 169.36,
+      "value": 14.11,
+      "pl_pct": -5.02
      }
     ],
     "missed_late": [],
@@ -194,21 +194,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2993.73,
-    "return_pct": -0.21,
+    "equity": 2992.92,
+    "return_pct": -0.24,
     "cash": 6.0,
-    "spy_value": 2987.73,
+    "spy_value": 2986.92,
     "open_positions": 0,
-    "last_run": "2026-10-26T14:30:39-04:00",
-    "last_phase": "snapshot",
+    "last_run": "2026-10-26T15:40:43-04:00",
+    "last_phase": "close",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.901557,
-      "price": 765.78,
-      "value": 2987.73
+      "price": 765.57,
+      "value": 2986.92
      }
     },
     "positions": [],
@@ -233,21 +233,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2991.88,
-    "return_pct": -0.27,
+    "equity": 2991.06,
+    "return_pct": -0.3,
     "cash": 6.0,
-    "spy_value": 2985.88,
+    "spy_value": 2985.06,
     "open_positions": 0,
-    "last_run": "2026-10-26T14:30:39-04:00",
-    "last_phase": "snapshot",
+    "last_run": "2026-10-26T15:40:43-04:00",
+    "last_phase": "close",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.89913,
-      "price": 765.78,
-      "value": 2985.88
+      "price": 765.57,
+      "value": 2985.06
      }
     },
     "positions": [],
@@ -314,8 +314,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 22.82,
-    "price": 23.22,
-    "pl_pct": 1.75
+    "price": 23.47,
+    "pl_pct": 2.85
    },
    {
     "ticker": "WRLD",
@@ -330,8 +330,8 @@
     "nasdaq_surprise_pct": 147.44,
     "counts_in_forward_test": "yes",
     "fill_price": 178.32,
-    "price": 169.445,
-    "pl_pct": -4.98
+    "price": 169.36,
+    "pl_pct": -5.02
    },
    {
     "ticker": "SLG",
@@ -346,8 +346,8 @@
     "nasdaq_surprise_pct": -36.48,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 46.04,
-    "price": 50.71,
-    "pl_pct": 10.14
+    "price": 50.655,
+    "pl_pct": 10.02
    },
    {
     "ticker": "EGBN",
@@ -362,8 +362,8 @@
     "nasdaq_surprise_pct": 125.71,
     "counts_in_forward_test": "yes",
     "fill_price": 29.76,
-    "price": 33.36,
-    "pl_pct": 12.1
+    "price": 33.355,
+    "pl_pct": 12.08
    }
   ],
   "events": [
