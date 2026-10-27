@@ -693,7 +693,7 @@ function renderEarnings() {
     kv([['Qualifying', s.qualifying], ['Completed', s.completed], ['Mean (completed)', pct(s.mean_completed)],
         ['95% CI', s.ci ? `${s.ci[0]} to ${s.ci[1]}` : '–'], ['Interim mean (all)', pct(s.mean_interim_all)],
         ['So far', esc(s.verdict_so_far)], ['Also ≥50% on yfinance', s.yf_checked ? `${s.yf_also_qualify} of ${s.yf_checked}` : '–'], ['Median ATM call spread', s.median_atm_spread_pct != null ? s.median_atm_spread_pct.toFixed(0) + '%' : '–']]) +
-    `<div class="rule">Watch arms (reported, can't change the verdict): busy day ${a.busy_day ? `${a.busy_day.n} · ${pct(a.busy_day.mean)}` : '–'}, high volume ${a.high_vol ? `${a.high_vol.n} · ${pct(a.high_vol.mean)}` : '–'}, 40-day hold ${a.hold40 ? `${a.hold40.n} · ${pct(a.hold40.mean)}` : '–'}. ${esc(e.watch_arms_note || '')}</div>` +
+    `<div class="rule">Watch arms (reported, can't change the verdict): busy day ${a.busy_day ? `${a.busy_day.n} · ${pct(a.busy_day.mean)}` : '–'}, high volume ${a.high_vol ? `${a.high_vol.n} · ${pct(a.high_vol.mean)}` : '–'}, 40-day hold ${a.hold40 ? `${a.hold40.n} · ${pct(a.hold40.mean)}` : '–'}, short 5-day after a ≥50% miss ${a.miss_short5 ? `${a.miss_short5.n} · ${pct(a.miss_short5.mean)}` : '–'}. ${esc(e.watch_arms_note || '')}</div>` +
     table([['Ticker', r => esc(r.ticker)],
            ['Paper', r => !r.paper ? '' : r.paper.status === 'bought' ? `<span class="pos">${esc(r.paper.text)}</span>`
               : r.paper.status === 'missed' ? `<span class="neg">${esc(r.paper.text)}</span>` : `<span class="empty">${esc(r.paper.text)}</span>`],
