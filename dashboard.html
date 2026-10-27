@@ -703,8 +703,9 @@ function renderEarnings() {
            ['Busy', r => r.busy_day ? '●' : ''], ['High vol', r => r.high_vol ? '●' : ''], ['Call spread d0', r => r.atm_spread_pct_day0 != null ? r.atm_spread_pct_day0.toFixed(0) + '%' : '']],
           e.events || []) +
     `<div class="card-title" style="margin-top:18px">Paper trades (every buy by the earnings paper account)</div>` +
-    `<div class="rule">The paper account buys on yfinance's surprise at 9:15 (since 2026-10-22); the forward test above counts only Nasdaq-defined beats, so some trades count there and some don't.</div>` +
+    `<div class="rule">The paper account buys on yfinance's surprise at 9:15 (since 2026-10-22), or on a Benzinga EPS headline when yfinance still has no number at the cutoff (since 2026-10-28); the forward test above counts only Nasdaq-defined beats, so some trades count there and some don't.</div>` +
     ((e.paper_trades || []).length ? table([['Ticker', r => esc(r.ticker)], ['Universe', r => esc(r.universe || '')], ['Bought', r => esc(r.entry_date || '') + (r.late_entry ? ' (9:45)' : '')],
+           ['Bought on', r => esc(r.source || 'yfinance') + (r.benzinga_surprise_pct != null ? ' (' + r.benzinga_surprise_pct + '%)' : '')],
            ['Beat (yfinance)', r => r.yf_surprise_pct != null ? r.yf_surprise_pct + '%' : ''], ['Beat (Nasdaq)', r => r.nasdaq_surprise_pct != null ? r.nasdaq_surprise_pct + '%' : '<span class="empty">pending</span>'],
            ['In forward test', r => r.counts_in_forward_test === 'yes' ? '<span class="pos">yes</span>' : `<span class="empty">${esc(r.counts_in_forward_test)}</span>`],
            ['Slot', r => r.slot != null ? '$' + Number(r.slot).toFixed(2) : ''], ['Fill', r => r.fill_price != null ? '$' + Number(r.fill_price).toFixed(2) : ''],
