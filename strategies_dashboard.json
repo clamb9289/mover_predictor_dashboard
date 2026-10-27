@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-26T19:23-04:00",
- "today": "2026-10-26",
+ "updated": "2026-10-27T09:24-04:00",
+ "today": "2026-10-27",
  "paper_trading": {
   "status": "live",
   "plan": "One Alpaca paper account per strategy (PAPER_TRADING_PLAN.md). Started early to test the order plumbing; pass/fail verdicts still come from the shadow trackers. Account values are read from Alpaca at each run (see 'As of'); Alpaca's own page is live, so it will differ between runs.",
@@ -10,41 +10,45 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2995.41,
-    "return_pct": -0.15,
-    "cash": 5.95,
-    "spy_value": 2926.81,
-    "open_positions": 4,
-    "last_run": "2026-10-26T15:40:43-04:00",
-    "last_phase": "close",
+    "equity": 3000.92,
+    "return_pct": 0.03,
+    "cash": 5.93,
+    "spy_value": 2932.77,
+    "open_positions": 7,
+    "last_run": "2026-10-27T09:15:31-04:00",
+    "last_phase": "premarket",
     "error": null,
-    "missing": [],
+    "missing": [
+     "CNC",
+     "PII",
+     "SXC"
+    ],
     "unexpected": [],
     "holdings": {
      "DEA": {
       "qty": 0.652498,
-      "price": 23.47,
-      "value": 15.31
+      "price": 23.15,
+      "value": 15.11
      },
      "EGBN": {
       "qty": 0.502688,
-      "price": 33.355,
-      "value": 16.77
+      "price": 33.29,
+      "value": 16.73
      },
      "SLG": {
       "qty": 0.324935,
-      "price": 50.655,
-      "value": 16.46
+      "price": 50.41,
+      "value": 16.38
      },
      "SPY": {
       "qty": 3.823047,
-      "price": 765.57,
-      "value": 2926.81
+      "price": 767.13,
+      "value": 2932.77
      },
      "WRLD": {
       "qty": 0.083333,
-      "price": 169.36,
-      "value": 14.11
+      "price": 168.01,
+      "value": 14.0
      }
     },
     "positions": [
@@ -54,9 +58,9 @@
       "exit_date": "2026-11-23",
       "surprise": 57.14,
       "fill_price": 22.82,
-      "price": 23.47,
-      "value": 15.31,
-      "pl_pct": 2.85
+      "price": 23.15,
+      "value": 15.11,
+      "pl_pct": 1.45
      },
      {
       "symbol": "EGBN",
@@ -64,9 +68,9 @@
       "exit_date": "2026-11-19",
       "surprise": 131.22,
       "fill_price": 29.76,
-      "price": 33.355,
-      "value": 16.77,
-      "pl_pct": 12.08
+      "price": 33.29,
+      "value": 16.73,
+      "pl_pct": 11.86
      },
      {
       "symbol": "SLG",
@@ -74,9 +78,9 @@
       "exit_date": "2026-11-19",
       "surprise": 401.45,
       "fill_price": 46.04,
-      "price": 50.655,
-      "value": 16.46,
-      "pl_pct": 10.02
+      "price": 50.41,
+      "value": 16.38,
+      "pl_pct": 9.49
      },
      {
       "symbol": "WRLD",
@@ -84,13 +88,61 @@
       "exit_date": "2026-11-20",
       "surprise": 146.15,
       "fill_price": 178.32,
-      "price": 169.36,
-      "value": 14.11,
-      "pl_pct": -5.02
+      "price": 168.01,
+      "value": 14.0,
+      "pl_pct": -5.78
      }
     ],
     "missed_late": [],
     "recent_orders": [
+     {
+      "at": "2026-10-27T09:24:01-04:00",
+      "side": "sell",
+      "symbol": "SPY",
+      "notional": 45.03,
+      "qty": null,
+      "note": "fund earnings slots",
+      "fill_price": null,
+      "filled_qty": null,
+      "filled_at": null,
+      "status": "new"
+     },
+     {
+      "at": "2026-10-27T09:24:01-04:00",
+      "side": "buy",
+      "symbol": "SXC",
+      "notional": 15.01,
+      "qty": null,
+      "note": "earnings beat +145% (r2000, reported 2026-10-27, yfinance)",
+      "fill_price": null,
+      "filled_qty": null,
+      "filled_at": null,
+      "status": "new"
+     },
+     {
+      "at": "2026-10-27T09:24:01-04:00",
+      "side": "buy",
+      "symbol": "PII",
+      "notional": 15.01,
+      "qty": null,
+      "note": "earnings beat +84% (sp1500, reported 2026-10-27, yfinance)",
+      "fill_price": null,
+      "filled_qty": null,
+      "filled_at": null,
+      "status": "new"
+     },
+     {
+      "at": "2026-10-27T09:24:01-04:00",
+      "side": "buy",
+      "symbol": "CNC",
+      "notional": 15.01,
+      "qty": null,
+      "note": "earnings beat +497% (sp1500, reported 2026-10-27, yfinance)",
+      "fill_price": null,
+      "filled_qty": null,
+      "filled_at": null,
+      "status": "new"
+     },
      {
       "at": "2026-10-26T09:24:00-04:00",
       "side": "sell",
@@ -194,21 +246,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2992.92,
-    "return_pct": -0.24,
+    "equity": 2999.82,
+    "return_pct": -0.01,
     "cash": 6.0,
-    "spy_value": 2986.92,
+    "spy_value": 2993.82,
     "open_positions": 0,
-    "last_run": "2026-10-26T15:40:43-04:00",
-    "last_phase": "close",
+    "last_run": "2026-10-27T09:15:31-04:00",
+    "last_phase": "premarket",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.901557,
-      "price": 765.57,
-      "value": 2986.92
+      "price": 767.34,
+      "value": 2993.82
      }
     },
     "positions": [],
@@ -233,21 +285,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2991.06,
-    "return_pct": -0.3,
+    "equity": 2997.96,
+    "return_pct": -0.07,
     "cash": 6.0,
-    "spy_value": 2985.06,
+    "spy_value": 2991.96,
     "open_positions": 0,
-    "last_run": "2026-10-26T15:40:43-04:00",
-    "last_phase": "close",
+    "last_run": "2026-10-27T09:15:31-04:00",
+    "last_phase": "premarket",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.89913,
-      "price": 765.57,
-      "value": 2985.06
+      "price": 767.34,
+      "value": 2991.96
      }
     },
     "positions": [],
@@ -302,6 +354,54 @@
   "watch_arms_note": "atr_high / accumulation thirds are computed at review time (need pre-event price bars).",
   "paper_trades": [
    {
+    "ticker": "SXC",
+    "universe": "r2000",
+    "report_date": "2026-10-27",
+    "entry_date": "2026-10-27",
+    "exit_date": "2026-11-24",
+    "closed": false,
+    "late_entry": false,
+    "slot": 15.01,
+    "yf_surprise_pct": 144.73,
+    "nasdaq_surprise_pct": null,
+    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
+    "fill_price": null,
+    "price": null,
+    "pl_pct": null
+   },
+   {
+    "ticker": "PII",
+    "universe": "sp1500",
+    "report_date": "2026-10-27",
+    "entry_date": "2026-10-27",
+    "exit_date": "2026-11-24",
+    "closed": false,
+    "late_entry": false,
+    "slot": 15.01,
+    "yf_surprise_pct": 83.92,
+    "nasdaq_surprise_pct": null,
+    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
+    "fill_price": null,
+    "price": null,
+    "pl_pct": null
+   },
+   {
+    "ticker": "CNC",
+    "universe": "sp1500",
+    "report_date": "2026-10-27",
+    "entry_date": "2026-10-27",
+    "exit_date": "2026-11-24",
+    "closed": false,
+    "late_entry": false,
+    "slot": 15.01,
+    "yf_surprise_pct": 496.65,
+    "nasdaq_surprise_pct": null,
+    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
+    "fill_price": null,
+    "price": null,
+    "pl_pct": null
+   },
+   {
     "ticker": "DEA",
     "universe": "sp1500",
     "report_date": "2026-10-26",
@@ -314,8 +414,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 22.82,
-    "price": 23.47,
-    "pl_pct": 2.85
+    "price": 23.15,
+    "pl_pct": 1.45
    },
    {
     "ticker": "WRLD",
@@ -330,8 +430,8 @@
     "nasdaq_surprise_pct": 147.44,
     "counts_in_forward_test": "yes",
     "fill_price": 178.32,
-    "price": 169.36,
-    "pl_pct": -5.02
+    "price": 168.01,
+    "pl_pct": -5.78
    },
    {
     "ticker": "SLG",
@@ -346,8 +446,8 @@
     "nasdaq_surprise_pct": -36.48,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 46.04,
-    "price": 50.655,
-    "pl_pct": 10.02
+    "price": 50.41,
+    "pl_pct": 9.49
    },
    {
     "ticker": "EGBN",
@@ -362,8 +462,8 @@
     "nasdaq_surprise_pct": 125.71,
     "counts_in_forward_test": "yes",
     "fill_price": 29.76,
-    "price": 33.355,
-    "pl_pct": 12.08
+    "price": 33.29,
+    "pl_pct": 11.86
    }
   ],
   "events": [
