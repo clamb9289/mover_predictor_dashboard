@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-28T09:24-04:00",
+ "updated": "2026-10-28T09:48-04:00",
  "today": "2026-10-28",
  "paper_trading": {
   "status": "live",
@@ -10,60 +10,71 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 3015.94,
-    "return_pct": 0.53,
-    "cash": 5.94,
-    "spy_value": 2903.76,
+    "equity": 3008.23,
+    "return_pct": 0.27,
+    "cash": 5.97,
+    "spy_value": 2851.39,
     "open_positions": 10,
-    "last_run": "2026-10-28T09:15:33-04:00",
-    "last_phase": "premarket",
+    "last_run": "2026-10-28T09:48:48-04:00",
+    "last_phase": "morning",
     "error": null,
-    "missing": [
-     "DINO",
-     "EVR",
-     "IVT"
-    ],
+    "missing": [],
     "unexpected": [],
     "holdings": {
      "CNC": {
       "qty": 0.227342,
-      "price": 68.59,
-      "value": 15.59
+      "price": 68.14,
+      "value": 15.49
      },
      "DEA": {
       "qty": 0.652498,
-      "price": 22.76,
-      "value": 14.85
+      "price": 22.53,
+      "value": 14.7
+     },
+     "DINO": {
+      "qty": 0.128157,
+      "price": 115.16,
+      "value": 14.76
      },
      "EGBN": {
       "qty": 0.502688,
-      "price": 33.15,
-      "value": 16.66
+      "price": 33.102,
+      "value": 16.64
+     },
+     "EVR": {
+      "qty": 0.0548,
+      "price": 288.67,
+      "value": 15.82
+     },
+     "IVT": {
+      "qty": 0.489127,
+      "price": 30.31,
+      "value": 14.83
      },
      "PII": {
       "qty": 0.25172,
-      "price": 58.06,
-      "value": 14.61
+      "price": 56.58,
+      "value": 14.24
      },
      "SLG": {
       "qty": 0.324935,
-      "price": 49.5,
-      "value": 16.08
+      "price": 50.055,
+      "value": 16.26
      },
      "SPY": {
-      "qty": 3.764376,
-      "price": 771.38,
-      "value": 2903.76
+      "qty": 3.705731,
+      "price": 769.455,
+      "value": 2851.39
      },
      "SXC": {
       "qty": 1.386322,
-      "price": 10.3,
-      "value": 14.28
+      "price": 10.065,
+      "value": 13.95
      },
      "WRLD": {
       "qty": 0.083333,
-      "price": 169.83,
-      "value": 14.15
+      "price": 170.07,
+      "value": 14.17
      }
     },
     "positions": [
@@ -73,9 +84,9 @@
       "exit_date": "2026-11-24",
       "surprise": 496.65,
       "fill_price": 65.98,
-      "price": 68.59,
-      "value": 15.59,
-      "pl_pct": 3.96
+      "price": 68.14,
+      "value": 15.49,
+      "pl_pct": 3.27
      },
      {
       "symbol": "DEA",
@@ -83,9 +94,19 @@
       "exit_date": "2026-11-23",
       "surprise": 57.14,
       "fill_price": 22.82,
-      "price": 22.76,
-      "value": 14.85,
-      "pl_pct": -0.26
+      "price": 22.53,
+      "value": 14.7,
+      "pl_pct": -1.27
+     },
+     {
+      "symbol": "DINO",
+      "entry_date": "2026-10-28",
+      "exit_date": "2026-11-25",
+      "surprise": 50.06,
+      "fill_price": 117.59,
+      "price": 115.16,
+      "value": 14.76,
+      "pl_pct": -2.07
      },
      {
       "symbol": "EGBN",
@@ -93,9 +114,29 @@
       "exit_date": "2026-11-19",
       "surprise": 131.22,
       "fill_price": 29.76,
-      "price": 33.15,
-      "value": 16.66,
-      "pl_pct": 11.39
+      "price": 33.102,
+      "value": 16.64,
+      "pl_pct": 11.23
+     },
+     {
+      "symbol": "EVR",
+      "entry_date": "2026-10-28",
+      "exit_date": "2026-11-25",
+      "surprise": 72.92,
+      "fill_price": 275.0,
+      "price": 288.67,
+      "value": 15.82,
+      "pl_pct": 4.97
+     },
+     {
+      "symbol": "IVT",
+      "entry_date": "2026-10-28",
+      "exit_date": "2026-11-25",
+      "surprise": 52.39,
+      "fill_price": 30.81,
+      "price": 30.31,
+      "value": 14.83,
+      "pl_pct": -1.62
      },
      {
       "symbol": "PII",
@@ -103,9 +144,9 @@
       "exit_date": "2026-11-24",
       "surprise": 83.92,
       "fill_price": 59.59,
-      "price": 58.06,
-      "value": 14.61,
-      "pl_pct": -2.57
+      "price": 56.58,
+      "value": 14.24,
+      "pl_pct": -5.05
      },
      {
       "symbol": "SLG",
@@ -113,9 +154,9 @@
       "exit_date": "2026-11-19",
       "surprise": 401.45,
       "fill_price": 46.04,
-      "price": 49.5,
-      "value": 16.08,
-      "pl_pct": 7.52
+      "price": 50.055,
+      "value": 16.26,
+      "pl_pct": 8.72
      },
      {
       "symbol": "SXC",
@@ -123,9 +164,9 @@
       "exit_date": "2026-11-24",
       "surprise": 144.73,
       "fill_price": 10.82,
-      "price": 10.3,
-      "value": 14.28,
-      "pl_pct": -4.81
+      "price": 10.065,
+      "value": 13.95,
+      "pl_pct": -6.98
      },
      {
       "symbol": "WRLD",
@@ -133,12 +174,18 @@
       "exit_date": "2026-11-20",
       "surprise": 146.15,
       "fill_price": 178.32,
-      "price": 169.83,
-      "value": 14.15,
-      "pl_pct": -4.76
+      "price": 170.07,
+      "value": 14.17,
+      "pl_pct": -4.63
      }
     ],
-    "missed_late": [],
+    "missed_late": [
+     {
+      "date": "2026-10-27",
+      "ticker": "KNSA",
+      "yf_surprise_pct": 79.2
+     }
+    ],
     "recent_orders": [
      {
       "at": "2026-10-28T09:24:21-04:00",
@@ -147,10 +194,10 @@
       "notional": 45.24,
       "qty": null,
       "note": "fund earnings slots",
-      "fill_price": null,
-      "filled_qty": null,
-      "filled_at": null,
-      "status": "new"
+      "fill_price": 771.42,
+      "filled_qty": 0.058645,
+      "filled_at": "2026-10-28T09:30:00-04:00",
+      "status": "filled"
      },
      {
       "at": "2026-10-28T09:24:21-04:00",
@@ -159,10 +206,10 @@
       "notional": 15.08,
       "qty": null,
       "note": "earnings beat +52% (sp1500, reported 2026-10-27, yfinance)",
-      "fill_price": null,
-      "filled_qty": null,
-      "filled_at": null,
-      "status": "new"
+      "fill_price": 30.81,
+      "filled_qty": 0.489127,
+      "filled_at": "2026-10-28T09:31:28-04:00",
+      "status": "filled"
      },
      {
       "at": "2026-10-28T09:24:21-04:00",
@@ -171,10 +218,10 @@
       "notional": 15.08,
       "qty": null,
       "note": "earnings beat +73% (sp1500, reported 2026-10-28, yfinance)",
-      "fill_price": null,
-      "filled_qty": null,
-      "filled_at": null,
-      "status": "new"
+      "fill_price": 275.0,
+      "filled_qty": 0.0548,
+      "filled_at": "2026-10-28T09:30:01-04:00",
+      "status": "filled"
      },
      {
       "at": "2026-10-28T09:24:21-04:00",
@@ -183,10 +230,10 @@
       "notional": 15.08,
       "qty": null,
       "note": "earnings beat +50% (sp1500, reported 2026-10-28, yfinance)",
-      "fill_price": null,
-      "filled_qty": null,
-      "filled_at": null,
-      "status": "new"
+      "fill_price": 117.59,
+      "filled_qty": 0.128157,
+      "filled_at": "2026-10-28T09:30:01-04:00",
+      "status": "filled"
      },
      {
       "at": "2026-10-27T09:24:01-04:00",
@@ -291,21 +338,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 3015.9,
-    "return_pct": 0.53,
+    "equity": 3008.07,
+    "return_pct": 0.27,
     "cash": 6.0,
-    "spy_value": 3009.9,
+    "spy_value": 3002.07,
     "open_positions": 0,
-    "last_run": "2026-10-28T09:15:33-04:00",
-    "last_phase": "premarket",
+    "last_run": "2026-10-28T09:48:48-04:00",
+    "last_phase": "morning",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.901557,
-      "price": 771.46,
-      "value": 3009.9
+      "price": 769.455,
+      "value": 3002.07
      }
     },
     "positions": [],
@@ -330,21 +377,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 3014.02,
-    "return_pct": 0.47,
+    "equity": 3006.19,
+    "return_pct": 0.21,
     "cash": 6.0,
-    "spy_value": 3008.02,
+    "spy_value": 3000.19,
     "open_positions": 0,
-    "last_run": "2026-10-28T09:15:33-04:00",
-    "last_phase": "premarket",
+    "last_run": "2026-10-28T09:48:48-04:00",
+    "last_phase": "morning",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.89913,
-      "price": 771.46,
-      "value": 3008.02
+      "price": 769.45,
+      "value": 3000.19
      }
     },
     "positions": [],
@@ -371,16 +418,16 @@
   "pass_bar": "mean excess after cost >= +0.5% with 95% CI lower bound > -0.5% (judged on completed events)",
   "next_decision": "First read mid-to-late Nov 2026; fuller read early Dec",
   "summary": {
-   "qualifying": 7,
+   "qualifying": 11,
    "completed": 0,
    "mean_completed": null,
    "ci": null,
-   "mean_interim_all": 5.14,
+   "mean_interim_all": 2.27,
    "verdict_so_far": "not enough data",
    "median_atm_spread_pct": 103.45,
    "n_spreads": 1,
-   "yf_checked": 7,
-   "yf_also_qualify": 4
+   "yf_checked": 11,
+   "yf_also_qualify": 8
   },
   "watch_arms": {
    "busy_day": {
@@ -414,11 +461,11 @@
     "source": "yfinance",
     "benzinga_surprise_pct": null,
     "yf_surprise_pct": 52.39,
-    "nasdaq_surprise_pct": null,
-    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
-    "fill_price": null,
-    "price": null,
-    "pl_pct": null
+    "nasdaq_surprise_pct": 2.04,
+    "counts_in_forward_test": "no (Nasdaq below 50%)",
+    "fill_price": 30.81,
+    "price": 30.31,
+    "pl_pct": -1.62
    },
    {
     "ticker": "EVR",
@@ -434,9 +481,9 @@
     "yf_surprise_pct": 72.92,
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
-    "fill_price": null,
-    "price": null,
-    "pl_pct": null
+    "fill_price": 275.0,
+    "price": 288.67,
+    "pl_pct": 4.97
    },
    {
     "ticker": "DINO",
@@ -452,9 +499,9 @@
     "yf_surprise_pct": 50.06,
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
-    "fill_price": null,
-    "price": null,
-    "pl_pct": null
+    "fill_price": 117.59,
+    "price": 115.16,
+    "pl_pct": -2.07
    },
    {
     "ticker": "SXC",
@@ -468,11 +515,11 @@
     "source": "yfinance",
     "benzinga_surprise_pct": null,
     "yf_surprise_pct": 144.73,
-    "nasdaq_surprise_pct": null,
-    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
+    "nasdaq_surprise_pct": 72.73,
+    "counts_in_forward_test": "yes",
     "fill_price": 10.82,
-    "price": 10.3,
-    "pl_pct": -4.81
+    "price": 10.065,
+    "pl_pct": -6.98
    },
    {
     "ticker": "PII",
@@ -486,11 +533,11 @@
     "source": "yfinance",
     "benzinga_surprise_pct": null,
     "yf_surprise_pct": 83.92,
-    "nasdaq_surprise_pct": null,
-    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
+    "nasdaq_surprise_pct": 74.19,
+    "counts_in_forward_test": "yes",
     "fill_price": 59.59,
-    "price": 58.06,
-    "pl_pct": -2.57
+    "price": 56.58,
+    "pl_pct": -5.05
    },
    {
     "ticker": "CNC",
@@ -504,11 +551,11 @@
     "source": "yfinance",
     "benzinga_surprise_pct": null,
     "yf_surprise_pct": 496.65,
-    "nasdaq_surprise_pct": null,
-    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
+    "nasdaq_surprise_pct": 728.57,
+    "counts_in_forward_test": "yes",
     "fill_price": 65.98,
-    "price": 68.59,
-    "pl_pct": 3.96
+    "price": 68.14,
+    "pl_pct": 3.27
    },
    {
     "ticker": "DEA",
@@ -525,8 +572,8 @@
     "nasdaq_surprise_pct": -84.81,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 22.82,
-    "price": 22.76,
-    "pl_pct": -0.26
+    "price": 22.53,
+    "pl_pct": -1.27
    },
    {
     "ticker": "WRLD",
@@ -543,8 +590,8 @@
     "nasdaq_surprise_pct": 147.44,
     "counts_in_forward_test": "yes",
     "fill_price": 178.32,
-    "price": 169.83,
-    "pl_pct": -4.76
+    "price": 170.07,
+    "pl_pct": -4.63
    },
    {
     "ticker": "SLG",
@@ -561,8 +608,8 @@
     "nasdaq_surprise_pct": -36.48,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 46.04,
-    "price": 49.5,
-    "pl_pct": 7.52
+    "price": 50.055,
+    "pl_pct": 8.72
    },
    {
     "ticker": "EGBN",
@@ -579,11 +626,103 @@
     "nasdaq_surprise_pct": 125.71,
     "counts_in_forward_test": "yes",
     "fill_price": 29.76,
-    "price": 33.15,
-    "pl_pct": 11.39
+    "price": 33.102,
+    "pl_pct": 11.23
    }
   ],
   "events": [
+   {
+    "ticker": "SXC",
+    "universe": "r2000",
+    "surprise_pct": 72.73,
+    "yf_surprise_pct": 144.73,
+    "reaction_date": "2026-10-27",
+    "session": "pre",
+    "entry": 10.82,
+    "day": 1,
+    "final": false,
+    "ret_pct": -6.65,
+    "control_pct": 0.73,
+    "excess_after_cost": -7.79,
+    "busy_day": false,
+    "high_vol": false,
+    "vol_ratio": 1.8,
+    "hold40_excess": null,
+    "atm_spread_pct_day0": null,
+    "paper": {
+     "status": "bought",
+     "text": "bought $15 @ $10.82"
+    }
+   },
+   {
+    "ticker": "PII",
+    "universe": "sp1500",
+    "surprise_pct": 74.19,
+    "yf_surprise_pct": 83.92,
+    "reaction_date": "2026-10-27",
+    "session": "pre",
+    "entry": 59.59,
+    "day": 1,
+    "final": false,
+    "ret_pct": -4.59,
+    "control_pct": 0.73,
+    "excess_after_cost": -5.42,
+    "busy_day": false,
+    "high_vol": true,
+    "vol_ratio": 2.96,
+    "hold40_excess": null,
+    "atm_spread_pct_day0": null,
+    "paper": {
+     "status": "bought",
+     "text": "bought $15 @ $59.59"
+    }
+   },
+   {
+    "ticker": "KNSA",
+    "universe": "r2000",
+    "surprise_pct": 75.0,
+    "yf_surprise_pct": 79.2,
+    "reaction_date": "2026-10-27",
+    "session": "pre",
+    "entry": 85.0,
+    "day": 1,
+    "final": false,
+    "ret_pct": 4.55,
+    "control_pct": 0.73,
+    "excess_after_cost": 3.42,
+    "busy_day": false,
+    "high_vol": true,
+    "vol_ratio": 3.53,
+    "hold40_excess": null,
+    "atm_spread_pct_day0": null,
+    "paper": {
+     "status": "missed",
+     "text": "not bought"
+    }
+   },
+   {
+    "ticker": "CNC",
+    "universe": "sp1500",
+    "surprise_pct": 728.57,
+    "yf_surprise_pct": 496.65,
+    "reaction_date": "2026-10-27",
+    "session": "pre",
+    "entry": 67.4,
+    "day": 1,
+    "final": false,
+    "ret_pct": 1.16,
+    "control_pct": 0.73,
+    "excess_after_cost": 0.33,
+    "busy_day": false,
+    "high_vol": true,
+    "vol_ratio": 2.78,
+    "hold40_excess": null,
+    "atm_spread_pct_day0": null,
+    "paper": {
+     "status": "bought",
+     "text": "bought $15 @ $65.98"
+    }
+   },
    {
     "ticker": "WRLD",
     "universe": "sp1500",
@@ -594,9 +733,9 @@
     "entry": 178.32,
     "day": 2,
     "final": false,
-    "ret_pct": -5.41,
-    "control_pct": 2.14,
-    "excess_after_cost": -7.66,
+    "ret_pct": -4.76,
+    "control_pct": 2.19,
+    "excess_after_cost": -7.05,
     "busy_day": false,
     "high_vol": false,
     "vol_ratio": 2.51,
@@ -618,8 +757,8 @@
     "day": 2,
     "final": false,
     "ret_pct": 11.86,
-    "control_pct": 2.14,
-    "excess_after_cost": 9.62,
+    "control_pct": 2.19,
+    "excess_after_cost": 9.57,
     "busy_day": false,
     "high_vol": true,
     "vol_ratio": 4.11,
@@ -641,8 +780,8 @@
     "day": 2,
     "final": false,
     "ret_pct": 17.57,
-    "control_pct": 2.14,
-    "excess_after_cost": 15.32,
+    "control_pct": 2.19,
+    "excess_after_cost": 15.28,
     "busy_day": false,
     "high_vol": false,
     "vol_ratio": 2.31,
@@ -664,8 +803,8 @@
     "day": 2,
     "final": false,
     "ret_pct": -1.13,
-    "control_pct": 2.14,
-    "excess_after_cost": -3.38,
+    "control_pct": 2.19,
+    "excess_after_cost": -3.42,
     "busy_day": false,
     "high_vol": false,
     "vol_ratio": 1.97,
@@ -687,8 +826,8 @@
     "day": 2,
     "final": false,
     "ret_pct": 14.48,
-    "control_pct": 2.14,
-    "excess_after_cost": 12.24,
+    "control_pct": 2.19,
+    "excess_after_cost": 12.19,
     "busy_day": false,
     "high_vol": true,
     "vol_ratio": 4.25,
@@ -707,11 +846,11 @@
     "reaction_date": "2026-10-16",
     "session": "pre",
     "entry": 9.33,
-    "day": 7,
+    "day": 8,
     "final": false,
     "ret_pct": -0.43,
-    "control_pct": 2.9,
-    "excess_after_cost": -3.73,
+    "control_pct": 2.71,
+    "excess_after_cost": -3.54,
     "busy_day": false,
     "high_vol": false,
     "vol_ratio": 1.67,
@@ -730,11 +869,11 @@
     "reaction_date": "2026-10-12",
     "session": null,
     "entry": 22.27,
-    "day": 7,
+    "day": 8,
     "final": false,
-    "ret_pct": 16.84,
-    "control_pct": 2.9,
-    "excess_after_cost": 13.54,
+    "ret_pct": 14.55,
+    "control_pct": 2.71,
+    "excess_after_cost": 11.44,
     "busy_day": false,
     "high_vol": false,
     "vol_ratio": 1.77,
