@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-27T19:15-04:00",
- "today": "2026-10-27",
+ "updated": "2026-10-28T09:24-04:00",
+ "today": "2026-10-28",
  "paper_trading": {
   "status": "live",
   "plan": "One Alpaca paper account per strategy (PAPER_TRADING_PLAN.md). Started early to test the order plumbing; pass/fail verdicts still come from the shadow trackers. Account values are read from Alpaca at each run (see 'As of'); Alpaca's own page is live, so it will differ between runs.",
@@ -10,56 +10,60 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 3014.05,
-    "return_pct": 0.47,
-    "cash": 5.96,
-    "spy_value": 2901.36,
-    "open_positions": 7,
-    "last_run": "2026-10-27T15:40:35-04:00",
-    "last_phase": "close",
+    "equity": 3015.94,
+    "return_pct": 0.53,
+    "cash": 5.94,
+    "spy_value": 2903.76,
+    "open_positions": 10,
+    "last_run": "2026-10-28T09:15:33-04:00",
+    "last_phase": "premarket",
     "error": null,
-    "missing": [],
+    "missing": [
+     "DINO",
+     "EVR",
+     "IVT"
+    ],
     "unexpected": [],
     "holdings": {
      "CNC": {
       "qty": 0.227342,
-      "price": 68.142,
-      "value": 15.49
+      "price": 68.59,
+      "value": 15.59
      },
      "DEA": {
       "qty": 0.652498,
-      "price": 22.84,
-      "value": 14.9
+      "price": 22.76,
+      "value": 14.85
      },
      "EGBN": {
       "qty": 0.502688,
-      "price": 32.945,
-      "value": 16.56
+      "price": 33.15,
+      "value": 16.66
      },
      "PII": {
       "qty": 0.25172,
-      "price": 58.74,
-      "value": 14.79
+      "price": 58.06,
+      "value": 14.61
      },
      "SLG": {
       "qty": 0.324935,
-      "price": 49.935,
-      "value": 16.23
+      "price": 49.5,
+      "value": 16.08
      },
      "SPY": {
       "qty": 3.764376,
-      "price": 770.74,
-      "value": 2901.36
+      "price": 771.38,
+      "value": 2903.76
      },
      "SXC": {
       "qty": 1.386322,
-      "price": 10.59,
-      "value": 14.68
+      "price": 10.3,
+      "value": 14.28
      },
      "WRLD": {
       "qty": 0.083333,
-      "price": 169.03,
-      "value": 14.09
+      "price": 169.83,
+      "value": 14.15
      }
     },
     "positions": [
@@ -69,9 +73,9 @@
       "exit_date": "2026-11-24",
       "surprise": 496.65,
       "fill_price": 65.98,
-      "price": 68.142,
-      "value": 15.49,
-      "pl_pct": 3.28
+      "price": 68.59,
+      "value": 15.59,
+      "pl_pct": 3.96
      },
      {
       "symbol": "DEA",
@@ -79,9 +83,9 @@
       "exit_date": "2026-11-23",
       "surprise": 57.14,
       "fill_price": 22.82,
-      "price": 22.84,
-      "value": 14.9,
-      "pl_pct": 0.09
+      "price": 22.76,
+      "value": 14.85,
+      "pl_pct": -0.26
      },
      {
       "symbol": "EGBN",
@@ -89,9 +93,9 @@
       "exit_date": "2026-11-19",
       "surprise": 131.22,
       "fill_price": 29.76,
-      "price": 32.945,
-      "value": 16.56,
-      "pl_pct": 10.7
+      "price": 33.15,
+      "value": 16.66,
+      "pl_pct": 11.39
      },
      {
       "symbol": "PII",
@@ -99,9 +103,9 @@
       "exit_date": "2026-11-24",
       "surprise": 83.92,
       "fill_price": 59.59,
-      "price": 58.74,
-      "value": 14.79,
-      "pl_pct": -1.43
+      "price": 58.06,
+      "value": 14.61,
+      "pl_pct": -2.57
      },
      {
       "symbol": "SLG",
@@ -109,9 +113,9 @@
       "exit_date": "2026-11-19",
       "surprise": 401.45,
       "fill_price": 46.04,
-      "price": 49.935,
-      "value": 16.23,
-      "pl_pct": 8.46
+      "price": 49.5,
+      "value": 16.08,
+      "pl_pct": 7.52
      },
      {
       "symbol": "SXC",
@@ -119,9 +123,9 @@
       "exit_date": "2026-11-24",
       "surprise": 144.73,
       "fill_price": 10.82,
-      "price": 10.59,
-      "value": 14.68,
-      "pl_pct": -2.13
+      "price": 10.3,
+      "value": 14.28,
+      "pl_pct": -4.81
      },
      {
       "symbol": "WRLD",
@@ -129,13 +133,61 @@
       "exit_date": "2026-11-20",
       "surprise": 146.15,
       "fill_price": 178.32,
-      "price": 169.03,
-      "value": 14.09,
-      "pl_pct": -5.21
+      "price": 169.83,
+      "value": 14.15,
+      "pl_pct": -4.76
      }
     ],
     "missed_late": [],
     "recent_orders": [
+     {
+      "at": "2026-10-28T09:24:21-04:00",
+      "side": "sell",
+      "symbol": "SPY",
+      "notional": 45.24,
+      "qty": null,
+      "note": "fund earnings slots",
+      "fill_price": null,
+      "filled_qty": null,
+      "filled_at": null,
+      "status": "new"
+     },
+     {
+      "at": "2026-10-28T09:24:21-04:00",
+      "side": "buy",
+      "symbol": "IVT",
+      "notional": 15.08,
+      "qty": null,
+      "note": "earnings beat +52% (sp1500, reported 2026-10-27, yfinance)",
+      "fill_price": null,
+      "filled_qty": null,
+      "filled_at": null,
+      "status": "new"
+     },
+     {
+      "at": "2026-10-28T09:24:21-04:00",
+      "side": "buy",
+      "symbol": "EVR",
+      "notional": 15.08,
+      "qty": null,
+      "note": "earnings beat +73% (sp1500, reported 2026-10-28, yfinance)",
+      "fill_price": null,
+      "filled_qty": null,
+      "filled_at": null,
+      "status": "new"
+     },
+     {
+      "at": "2026-10-28T09:24:21-04:00",
+      "side": "buy",
+      "symbol": "DINO",
+      "notional": 15.08,
+      "qty": null,
+      "note": "earnings beat +50% (sp1500, reported 2026-10-28, yfinance)",
+      "fill_price": null,
+      "filled_qty": null,
+      "filled_at": null,
+      "status": "new"
+     },
      {
       "at": "2026-10-27T09:24:01-04:00",
       "side": "sell",
@@ -231,54 +283,6 @@
       "filled_qty": 0.083333,
       "filled_at": "2026-10-23T09:30:01-04:00",
       "status": "filled"
-     },
-     {
-      "at": "2026-10-22T09:16:23-04:00",
-      "side": "sell",
-      "symbol": "SPY",
-      "notional": 29.92,
-      "qty": null,
-      "note": "fund earnings slots",
-      "fill_price": 766.38,
-      "filled_qty": 0.039041,
-      "filled_at": "2026-10-22T09:30:00-04:00",
-      "status": "filled"
-     },
-     {
-      "at": "2026-10-22T09:16:23-04:00",
-      "side": "buy",
-      "symbol": "EGBN",
-      "notional": 14.97,
-      "qty": null,
-      "note": "earnings beat +131% (sp1500, reported 2026-10-21, yfinance)",
-      "fill_price": 29.76,
-      "filled_qty": 0.502688,
-      "filled_at": "2026-10-22T09:30:00-04:00",
-      "status": "filled"
-     },
-     {
-      "at": "2026-10-22T09:16:23-04:00",
-      "side": "buy",
-      "symbol": "SLG",
-      "notional": 14.97,
-      "qty": null,
-      "note": "earnings beat +401% (sp1500, reported 2026-10-21, yfinance)",
-      "fill_price": 46.04,
-      "filled_qty": 0.324935,
-      "filled_at": "2026-10-22T09:30:01-04:00",
-      "status": "filled"
-     },
-     {
-      "at": "2026-10-19T09:16:07-04:00",
-      "side": "buy",
-      "symbol": "SPY",
-      "notional": 2994.0,
-      "qty": null,
-      "note": "idle cash -> SPY",
-      "fill_price": 767.46,
-      "filled_qty": 3.901167,
-      "filled_at": "2026-10-19T09:33:14-04:00",
-      "status": "filled"
      }
     ]
    },
@@ -287,21 +291,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 3013.09,
-    "return_pct": 0.44,
+    "equity": 3015.9,
+    "return_pct": 0.53,
     "cash": 6.0,
-    "spy_value": 3007.09,
+    "spy_value": 3009.9,
     "open_positions": 0,
-    "last_run": "2026-10-27T15:40:35-04:00",
-    "last_phase": "close",
+    "last_run": "2026-10-28T09:15:33-04:00",
+    "last_phase": "premarket",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.901557,
-      "price": 770.74,
-      "value": 3007.09
+      "price": 771.46,
+      "value": 3009.9
      }
     },
     "positions": [],
@@ -326,21 +330,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 3011.22,
-    "return_pct": 0.37,
+    "equity": 3014.02,
+    "return_pct": 0.47,
     "cash": 6.0,
-    "spy_value": 3005.22,
+    "spy_value": 3008.02,
     "open_positions": 0,
-    "last_run": "2026-10-27T15:40:35-04:00",
-    "last_phase": "close",
+    "last_run": "2026-10-28T09:15:33-04:00",
+    "last_phase": "premarket",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.89913,
-      "price": 770.74,
-      "value": 3005.22
+      "price": 771.46,
+      "value": 3008.02
      }
     },
     "positions": [],
@@ -399,6 +403,60 @@
   "watch_arms_note": "atr_high / accumulation thirds are computed at review time (need pre-event price bars).",
   "paper_trades": [
    {
+    "ticker": "IVT",
+    "universe": "sp1500",
+    "report_date": "2026-10-27",
+    "entry_date": "2026-10-28",
+    "exit_date": "2026-11-25",
+    "closed": false,
+    "late_entry": false,
+    "slot": 15.08,
+    "source": "yfinance",
+    "benzinga_surprise_pct": null,
+    "yf_surprise_pct": 52.39,
+    "nasdaq_surprise_pct": null,
+    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
+    "fill_price": null,
+    "price": null,
+    "pl_pct": null
+   },
+   {
+    "ticker": "EVR",
+    "universe": "sp1500",
+    "report_date": "2026-10-28",
+    "entry_date": "2026-10-28",
+    "exit_date": "2026-11-25",
+    "closed": false,
+    "late_entry": false,
+    "slot": 15.08,
+    "source": "yfinance",
+    "benzinga_surprise_pct": null,
+    "yf_surprise_pct": 72.92,
+    "nasdaq_surprise_pct": null,
+    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
+    "fill_price": null,
+    "price": null,
+    "pl_pct": null
+   },
+   {
+    "ticker": "DINO",
+    "universe": "sp1500",
+    "report_date": "2026-10-28",
+    "entry_date": "2026-10-28",
+    "exit_date": "2026-11-25",
+    "closed": false,
+    "late_entry": false,
+    "slot": 15.08,
+    "source": "yfinance",
+    "benzinga_surprise_pct": null,
+    "yf_surprise_pct": 50.06,
+    "nasdaq_surprise_pct": null,
+    "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
+    "fill_price": null,
+    "price": null,
+    "pl_pct": null
+   },
+   {
     "ticker": "SXC",
     "universe": "r2000",
     "report_date": "2026-10-27",
@@ -413,8 +471,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 10.82,
-    "price": 10.59,
-    "pl_pct": -2.13
+    "price": 10.3,
+    "pl_pct": -4.81
    },
    {
     "ticker": "PII",
@@ -431,8 +489,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 59.59,
-    "price": 58.74,
-    "pl_pct": -1.43
+    "price": 58.06,
+    "pl_pct": -2.57
    },
    {
     "ticker": "CNC",
@@ -449,8 +507,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 65.98,
-    "price": 68.142,
-    "pl_pct": 3.28
+    "price": 68.59,
+    "pl_pct": 3.96
    },
    {
     "ticker": "DEA",
@@ -467,8 +525,8 @@
     "nasdaq_surprise_pct": -84.81,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 22.82,
-    "price": 22.84,
-    "pl_pct": 0.09
+    "price": 22.76,
+    "pl_pct": -0.26
    },
    {
     "ticker": "WRLD",
@@ -485,8 +543,8 @@
     "nasdaq_surprise_pct": 147.44,
     "counts_in_forward_test": "yes",
     "fill_price": 178.32,
-    "price": 169.03,
-    "pl_pct": -5.21
+    "price": 169.83,
+    "pl_pct": -4.76
    },
    {
     "ticker": "SLG",
@@ -503,8 +561,8 @@
     "nasdaq_surprise_pct": -36.48,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 46.04,
-    "price": 49.935,
-    "pl_pct": 8.46
+    "price": 49.5,
+    "pl_pct": 7.52
    },
    {
     "ticker": "EGBN",
@@ -521,8 +579,8 @@
     "nasdaq_surprise_pct": 125.71,
     "counts_in_forward_test": "yes",
     "fill_price": 29.76,
-    "price": 32.945,
-    "pl_pct": 10.7
+    "price": 33.15,
+    "pl_pct": 11.39
    }
   ],
   "events": [
