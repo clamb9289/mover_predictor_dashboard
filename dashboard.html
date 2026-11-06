@@ -727,6 +727,13 @@ function renderMomentum() {
            ['Risk-adj (watch)', r => pct(r.riskadj_pct)], ['Sector cap (watch)', r => pct(r.sectorcap_pct)],
            ['Pool', r => pct(r.pool_pct)], ['SPY', r => pct(r.spy_pct)], ['vs pool', r => r.momentum_pct != null ? pct(r.momentum_pct - r.pool_pct) : '<span class="empty">in progress</span>']],
           (m.months || []).slice().reverse()) +
+    `<div class="card-title" style="margin-top:18px">Annual decile (tracking only): each month's decile held a year and a day</div>` +
+    `<div class="rule">Long-term capital gains version (momentum_annual_tax_study.py: +1.8 to +2.6 pts/yr after tax vs the monthly decile at a high bracket; mostly the tax rate). One tranche starts each month and is sold at the first open more than a year later. Open tranches are marked at the latest close; returns are before tax. Closed: ${(m.annual_summary || {}).closed || 0}${(m.annual_summary || {}).avg_vs_pool != null ? ', avg vs pool ' + pct(m.annual_summary.avg_vs_pool) : ''}.</div>` +
+    ((m.annual || []).length ? table([['Tranche', r => esc(r.month)], ['Bought', r => esc(r.entry_date)], ['Sells', r => esc(r.exit_date)],
+           ['Status', r => r.closed ? 'closed' : `<span class="empty">open, as of ${esc(r.as_of || '')}</span>`],
+           ['Decile', r => pct(r.decile_pct)], ['Pool', r => pct(r.pool_pct)], ['SPY', r => pct(r.spy_pct)],
+           ['vs pool', r => r.decile_pct != null && r.pool_pct != null ? pct(r.decile_pct - r.pool_pct) : '']],
+          (m.annual || []).slice().reverse()) : '<div class="empty">First marks appear after the next close run.</div>') +
     `<div class="card-title" style="margin-top:18px">Current month: paper book (top 1%)</div><div class="ticker-list">${(m.current_top1pct || []).map(esc).join(' · ')}</div>` +
     Object.entries(m.current_watch_books || {}).map(([k, v]) => `<div class="card-title" style="margin-top:18px">Current month: ${k === 'riskadj' ? 'risk-adjusted' : 'sector-capped'} watch book</div><div class="ticker-list">${(v || []).map(esc).join(' · ')}</div>`).join('') +
     `<div class="card-title" style="margin-top:18px">Current month: top 30 by 12-1 return</div><div class="ticker-list">${(m.current_top30 || []).map(esc).join(' · ')}</div>`;
