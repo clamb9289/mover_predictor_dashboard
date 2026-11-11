@@ -17,6 +17,8 @@
     --green: #34d399;
     --green-bg: rgba(52,211,153,0.1);
     --red: #f87171;
+    --series-1: #3987e5;
+    --series-2: #d95926;
     --red-bg: rgba(248,113,113,0.1);
     --gold: #fbbf24;
     --gold-bg: rgba(251,191,36,0.08);
@@ -340,6 +342,21 @@
   .mode-paper { background: var(--gold-bg); color: var(--gold); border: 1px solid rgba(251,191,36,0.2); }
   .mode-live { background: var(--green-bg); color: var(--green); border: 1px solid rgba(52,211,153,0.2); }
 
+  /* Line charts (2026-11-10): paper accounts vs SPY, live earnings path vs backtest */
+  .lc { position: relative; margin: 8px 0 4px; }
+  .lc svg { width: 100%; height: auto; display: block; }
+  .lc .grid { stroke: var(--border); stroke-width: 1; }
+  .lc .zero { stroke: var(--muted); stroke-width: 1; }
+  .lc .axis { fill: var(--muted); font-size: 11px; }
+  .lc .lbl { fill: var(--text); font-size: 11px; }
+  .lc .cross { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 3 3; }
+  .lc-legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .lc-legend i { display: inline-block; width: 16px; height: 0; border-top: 2px solid; vertical-align: middle; margin-right: 6px; }
+  .lc-tip { position: absolute; pointer-events: none; background: var(--surface2); border: 1px solid var(--border); border-radius: 6px;
+            padding: 6px 8px; font-size: 12px; color: var(--text); white-space: nowrap; display: none; z-index: 2; }
+  .lc-tip b { font-weight: 600; }
+  .lc-tip i { display: inline-block; width: 10px; height: 0; border-top: 2px solid; vertical-align: middle; margin-right: 5px; }
+  details.lc-table summary { font-size: 12px; color: var(--muted); cursor: pointer; margin: 4px 0 8px; }
   /* Chart */
   .chart-controls { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; align-items: center; }
   /* overflow-x:auto -- 2026-08-24, same defensive fix as .tabs above:
@@ -609,8 +626,131 @@ function render() {
   document.getElementById('header-sub').textContent = `Updated ${D.updated.replace('T', ' ')} ET`;
   const pt = D.paper_trading || {};
   document.getElementById('mode-badge').textContent = pt.status === 'not started' ? 'Shadow tracking' : 'Paper trading';
-  document.getElementById('paper-box').innerHTML = renderPaper(pt);
+  document.getElementById('paper-box').innerHTML = paperChart(pt.history) + renderPaper(pt);
   renderOverview(); renderEarnings(); renderMomentum(); renderEvents(); renderBrands(); renderTeen();
+  bindLineCharts();
+}
+
+/* lineChart (2026-11-10): one y-axis (percent), thin 2px lines, legend + end labels, crosshair tooltip.
+   cfg: {id, xs: [labels], series: [{name, short, color, dash, ys: [num|null], notes: [str]}], xFmt, aria} */
+const LC = {};
+function lineChart(cfg) {
+  // drawn at the container's real width so text stays 11px on phones (re-drawn on resize)
+  const box = document.querySelector('.content');
+  const W = Math.max(320, Math.min(960, (box ? box.clientWidth : 720) - 48)), H = W < 500 ? 220 : 260;
+  const narrow = W < 500, L = 44, R = narrow ? 52 : 124, T = 12, B = 26;
+  const ys = cfg.series.flatMap(s => s.ys).filter(v => v != null);
+  if (!ys.length) return '<div class="empty">No data yet.</div>';
+  let lo = Math.min(0, ...ys), hi = Math.max(0, ...ys);
+  const pad = (hi - lo) * 0.08 || 1; lo -= pad; hi += pad;
+  const step = [0.5, 1, 2, 2.5, 5, 10, 20, 25, 50].find(st => (hi - lo) / st <= 6) || 100;
+  const n = cfg.xs.length;
+  const x = i => L + (n > 1 ? i * (W - L - R) / (n - 1) : (W - L - R) / 2);
+  const y = v => T + (hi - v) * (H - T - B) / (hi - lo);
+  let g = '';
+  for (let v = Math.ceil(lo / step) * step; v <= hi; v += step) {
+    g += `<line class="${Math.abs(v) < 1e-9 ? 'zero' : 'grid'}" x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}"/>` +
+         `<text class="axis" x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${v > 0 ? '+' : ''}${+v.toFixed(1)}%</text>`;
+  }
+  const every = Math.max(1, Math.ceil(n / (narrow ? 4 : 8)));
+  cfg.xs.forEach((lab, i) => {   // ticks every few points; the last one only if it has room
+    if (i % every === 0 || (i === n - 1 && i % every >= every / 2)) g += `<text class="axis" x="${x(i)}" y="${H - 8}" text-anchor="middle">${esc(cfg.xFmt ? cfg.xFmt(lab) : lab)}</text>`;
+  });
+  const labels = [];
+  cfg.series.forEach(s => {
+    let d = '', pen = false;
+    s.ys.forEach((v, i) => { if (v == null) { pen = false; return; } d += (pen ? 'L' : 'M') + x(i).toFixed(1) + ',' + y(v).toFixed(1); pen = true; });
+    g += `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"${s.dash ? ' stroke-dasharray="5 4"' : ''}/>`;
+    const idx = s.ys.map((v, i) => v == null ? -1 : i).filter(i => i >= 0);
+    if (idx.length) { const li = idx[idx.length - 1]; labels.push({s, v: s.ys[li], i: li}); }
+  });
+  labels.sort((a, b) => y(a.v) - y(b.v));   // end labels, nudged apart so they don't collide
+  let lastY = -1e9;
+  labels.forEach(o => {
+    const yy = Math.max(y(o.v), lastY + 13); lastY = yy;
+    g += `<circle cx="${x(o.i)}" cy="${y(o.v)}" r="3" fill="${o.s.color}" stroke="var(--surface)" stroke-width="2"/>` +
+         `<text class="lbl" x="${x(o.i) + 8}" y="${yy + 4}">${narrow ? '' : esc(o.s.short || o.s.name) + ' '}${o.v > 0 ? '+' : ''}${o.v.toFixed(1)}%</text>`;
+  });
+  LC[cfg.id] = {cfg, x, n, W, L, R};
+  const legend = `<div class="lc-legend">${cfg.series.map(s => `<span><i style="border-color:${s.color};${s.dash ? 'border-top-style:dashed' : ''}"></i>${esc(s.name)}</span>`).join('')}</div>`;
+  return `<div class="lc" id="${cfg.id}"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(cfg.aria || '')}">${g}` +
+         `<line class="cross" x1="0" x2="0" y1="${T}" y2="${H - B}" style="display:none"/>` +
+         `<rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent"/></svg><div class="lc-tip"></div></div>` + legend;
+}
+
+let lcResize = null;
+window.addEventListener('resize', () => { clearTimeout(lcResize); lcResize = setTimeout(() => { if (typeof D !== 'undefined' && D) { Object.keys(LC).forEach(k => delete LC[k]); render(); } }, 250); });
+
+function bindLineCharts() {
+  Object.keys(LC).forEach(id => {
+    const el = document.getElementById(id);
+    if (!el || el.dataset.bound) return;
+    el.dataset.bound = 1;
+    const {cfg, x, n, W, L, R} = LC[id];
+    const svg = el.querySelector('svg'), cross = svg.querySelector('.cross'), tip = el.querySelector('.lc-tip');
+    const move = ev => {
+      const r = svg.getBoundingClientRect(), px = (ev.clientX - r.left) * W / r.width;
+      const i = Math.max(0, Math.min(n - 1, Math.round((px - L) / ((W - L - R) / Math.max(1, n - 1)))));
+      cross.setAttribute('x1', x(i)); cross.setAttribute('x2', x(i)); cross.style.display = '';
+      tip.innerHTML = `<b>${esc(cfg.xFmt ? cfg.xFmt(cfg.xs[i], true) : cfg.xs[i])}</b><br>` + cfg.series.map(s => s.ys[i] == null ? '' :
+        `<i style="border-color:${s.color}"></i>${esc(s.name)}: ${s.ys[i] > 0 ? '+' : ''}${s.ys[i].toFixed(2)}%` +
+        (s.notes && s.notes[i] ? ` <span style="color:var(--muted)">${esc(s.notes[i])}</span>` : '')).filter(Boolean).join('<br>');
+      tip.style.display = 'block';
+      const left = x(i) * r.width / W, tw = tip.offsetWidth;
+      tip.style.left = Math.min(Math.max(0, left + 12), r.width - tw) + 'px';
+      tip.style.top = '4px';
+    };
+    svg.addEventListener('mousemove', move);
+    svg.addEventListener('mouseleave', () => { tip.style.display = 'none'; cross.style.display = 'none'; });
+  });
+}
+
+function paperChart(h) {
+  if (!h || !(h.dates || []).length) return '';
+  const md = (d, long) => { if (long) return d; const p = d.split('-'); return `${+p[1]}/${+p[2]}`; };
+  const rows = h.dates.map((d, i) => ({d, e: (h.earnings || [])[i], m: (h.momentum || [])[i], a: (h.apple || [])[i], s: (h.spy || [])[i]})).reverse();
+  return `<div class="card-title" style="margin-top:4px">Since paper trading started: % change by account vs SPY</div>` +
+    lineChart({id: 'lc-paper', xs: h.dates, xFmt: md, aria: 'Paper account returns since start vs SPY',
+      series: [{name: 'Earnings beats', short: 'Earnings', color: 'var(--series-1)', ys: h.earnings || []},
+               {name: 'Momentum (top 1%)', short: 'Momentum', color: 'var(--series-2)', ys: h.momentum || []},
+               {name: 'SPY (same start money)', short: 'SPY', color: 'var(--muted)', dash: true, ys: h.spy || []}]}) +
+    `<div class="rule">Last reading of each day. The Apple account hasn't traded yet, so it sits on the SPY line.</div>` +
+    `<details class="lc-table"><summary>Show as a table</summary>` +
+    table([['Date', r => esc(r.d)], ['Earnings', r => pct(r.e)], ['Momentum', r => pct(r.m)], ['Apple', r => pct(r.a)], ['SPY', r => pct(r.s)]], rows) +
+    `</details>`;
+}
+
+function connect(arr) {   // straight lines between the backtest's reported days
+  const out = arr.slice(); let a = null;
+  for (let i = 0; i < out.length; i++) {
+    if (out[i] == null) continue;
+    if (a != null) for (let j = a + 1; j < i; j++) out[j] = +(out[a] + (out[i] - out[a]) * (j - a) / (i - a)).toFixed(2);
+    a = i;
+  }
+  return out;
+}
+
+function pathChart(p) {
+  if (!p) return '';
+  const MIN_N = 20, days = [...Array(21).keys()];
+  const at = (arr, d) => (arr || []).find(o => o.day === d);
+  const live = arr => days.map(d => { const o = at(arr, d); return o && o.mean != null && o.n >= MIN_N ? o.mean : null; });
+  const notes = arr => days.map(d => { const o = at(arr, d); return o ? `(${o.n} trades)` : ''; });
+  const bt = connect(days.map(d => { const o = at(p.backtest, d); return o ? o.mean : null; }));
+  const reached = Math.max(0, ...days.filter(d => (at(p.beats, d) || {}).n >= MIN_N));
+  const rows = days.map(d => ({d, b: (at(p.beats, d) || {}), c: (at(p.control, d) || {}), t: (at(p.backtest, d) || {}).mean}));
+  return `<div class="card-title" style="margin-top:18px">Live trades vs the backtest: average return since the entry open, by day held</div>` +
+    lineChart({id: 'lc-path', xs: days, xFmt: (d, long) => long ? `Day ${d}` : `${d}`, aria: 'Average return by day held: live beats, live control, backtest',
+      series: [{name: 'Live ≥50% beats', short: 'Live beats', color: 'var(--series-1)', ys: live(p.beats), notes: notes(p.beats)},
+               {name: 'Live control (every tracked reporter)', short: 'Control', color: 'var(--muted)', ys: live(p.control), notes: notes(p.control)},
+               {name: 'Backtest ≥50% beats (4,788 trades)', short: 'Backtest', color: 'var(--series-2)', dash: true, ys: bt}]}) +
+    `<div class="rule">Day 0 is the reaction day's close; the trade sells at day 20. A live day is drawn once at least ${MIN_N} trades have reached it ` +
+    `(so far: day ${reached}); hover for the count. The gap between live beats and the control is the edge (market moves hit both). ` +
+    `The dashed line is what the backtest led us to expect, before costs.</div>` +
+    `<details class="lc-table"><summary>Show as a table</summary>` +
+    table([['Day', r => r.d], ['Live beats', r => r.b.mean != null ? pct(r.b.mean) + ` (${r.b.n})` : ''],
+           ['Control', r => r.c.mean != null ? pct(r.c.mean) + ` (${r.c.n})` : ''], ['Backtest', r => r.t != null ? pct(r.t) : '']], rows) +
+    `</details>`;
 }
 
 function renderPaper(pt) {
@@ -693,6 +833,7 @@ function renderEarnings() {
     kv([['Qualifying', s.qualifying], ['Completed', s.completed], ['Mean (completed)', pct(s.mean_completed)],
         ['95% CI', s.ci ? `${s.ci[0]} to ${s.ci[1]}` : '–'], ['Interim mean (all)', pct(s.mean_interim_all)],
         ['So far', esc(s.verdict_so_far)], ['Also ≥50% on yfinance', s.yf_checked ? `${s.yf_also_qualify} of ${s.yf_checked}` : '–'], ['Median ATM call spread', s.median_atm_spread_pct != null ? s.median_atm_spread_pct.toFixed(0) + '%' : '–']]) +
+    pathChart(e.live_path) +
     `<div class="rule">Watch arms (reported, can't change the verdict): busy day ${a.busy_day ? `${a.busy_day.n} · ${pct(a.busy_day.mean)}` : '–'}, high volume ${a.high_vol ? `${a.high_vol.n} · ${pct(a.high_vol.mean)}` : '–'}, 40-day hold ${a.hold40 ? `${a.hold40.n} · ${pct(a.hold40.mean)}` : '–'}, short 5-day after a ≥50% miss ${a.miss_short5 ? `${a.miss_short5.n} · ${pct(a.miss_short5.mean)}` : '–'}, energy beats (favor) ${a.xle ? `${a.xle.n} · ${pct(a.xle.mean)}` : '–'}, consumer-discretionary beats (avoid) ${a.xly ? `${a.xly.n} · ${pct(a.xly.mean)}` : '–'}. ${esc(e.watch_arms_note || '')}</div>` +
     `<div class="rule">Best close / worst low: vs the entry open, days 0-20 so far. For watching the path only; stops and profit targets were tested and rejected (backtest picks that fall 10% or rise 10% both keep drifting up on average).</div>` +
     table([['Ticker', r => esc(r.ticker)],
