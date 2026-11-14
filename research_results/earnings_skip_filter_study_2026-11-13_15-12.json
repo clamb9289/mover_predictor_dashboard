@@ -1,0 +1,71 @@
+{
+ "passers_per_trade": [],
+ "account": [
+  {
+   "variant": "hold20 (no filter)",
+   "TRAIN_cagr": 18.65272075606174,
+   "TRAIN_excess": 3.5458815611298222,
+   "TRAIN_maxdd": -23.357665201051134,
+   "TRAIN_worst12": -12.059793378403404,
+   "VAL_cagr": 25.71478857157042,
+   "VAL_excess": 8.496425849057845,
+   "VAL_maxdd": -21.864861414144112,
+   "VAL_worst12": 3.7299893910240898,
+   "ALL_cagr": 21.086793546465465,
+   "ALL_excess": 5.255798684711652,
+   "ALL_maxdd": -23.357665201051134,
+   "ALL_worst12": -12.059793378403404
+  },
+  {
+   "variant": "skip price < $5",
+   "TRAIN_cagr": 17.820168441670155,
+   "TRAIN_excess": 2.7133292467382355,
+   "TRAIN_maxdd": -23.96632418753091,
+   "TRAIN_worst12": -11.368852634536958,
+   "VAL_cagr": 24.525905375621353,
+   "VAL_excess": 7.307542653108773,
+   "VAL_maxdd": -21.75039389465332,
+   "VAL_worst12": 4.397176450018186,
+   "ALL_cagr": 20.14309501892521,
+   "ALL_excess": 4.312100157171395,
+   "ALL_maxdd": -23.96632418753091,
+   "ALL_worst12": -11.368852634536958,
+   "per_trade_pass": false,
+   "account_pass": false
+  },
+  {
+   "variant": "skip negative estimate",
+   "TRAIN_cagr": 20.03416110546609,
+   "TRAIN_excess": 4.927321910534169,
+   "TRAIN_maxdd": -20.431382817936793,
+   "TRAIN_worst12": -6.241649493851443,
+   "VAL_cagr": 22.198401910994765,
+   "VAL_excess": 4.980039188482182,
+   "VAL_maxdd": -19.837973349461578,
+   "VAL_worst12": 1.8491832929468455,
+   "ALL_cagr": 20.876759366999227,
+   "ALL_excess": 5.045764505245419,
+   "ALL_maxdd": -20.431382817936793,
+   "ALL_worst12": -6.241649493851443,
+   "per_trade_pass": false,
+   "account_pass": false
+  },
+  {
+   "variant": "skip one analyst",
+   "TRAIN_cagr": 16.97553416923468,
+   "TRAIN_excess": 1.868694974302762,
+   "TRAIN_maxdd": -24.734286480687306,
+   "TRAIN_worst12": -12.973458486656238,
+   "VAL_cagr": 26.07601945521454,
+   "VAL_excess": 8.857656732701958,
+   "VAL_maxdd": -21.3043867352698,
+   "VAL_worst12": 5.763608707048144,
+   "ALL_cagr": 19.9601825362163,
+   "ALL_excess": 4.129187674462486,
+   "ALL_maxdd": -24.734286480687306,
+   "ALL_worst12": -12.973458486656238,
+   "per_trade_pass": false,
+   "account_pass": false
+  }
+ ]
+}
