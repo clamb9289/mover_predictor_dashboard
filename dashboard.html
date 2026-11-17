@@ -770,6 +770,10 @@ function renderPaper(pt) {
                 rows);
   const positions = rows.flatMap(r => (r.positions || []).map(p => ({acct: names[r.k] || r.k, ...p})));
   const missed = (accts.earnings || {}).missed_late || [];
+  const warns = Object.entries(accts).flatMap(([k, a]) => (a.warnings || []).map(w => (names[k] || k) + ', ' + w));
+  if (warns.length) {
+    html += `<div class="rule"><span class="neg">Data warnings (last 7 days):</span> ${warns.map(esc).join(' · ')}</div>`;
+  }
   if (missed.length) {
     html += `<div class="rule"><span class="neg">Missed because yfinance was late at 9:15:</span> ${missed.map(m => esc(m.ticker) + ' ' + esc(m.date) + ' (+' + Number(m.yf_surprise_pct).toFixed(0) + '%)').join(', ')}</div>`;
   }
