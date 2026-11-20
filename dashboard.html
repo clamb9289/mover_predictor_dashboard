@@ -736,20 +736,26 @@ function pathChart(p) {
   const at = (arr, d) => (arr || []).find(o => o.day === d);
   const live = arr => days.map(d => { const o = at(arr, d); return o && o.mean != null && o.n >= MIN_N ? o.mean : null; });
   const notes = arr => days.map(d => { const o = at(arr, d); return o ? `(${o.n} trades)` : ''; });
-  const bt = connect(days.map(d => { const o = at(p.backtest, d); return o ? o.mean : null; }));
-  const reached = Math.max(0, ...days.filter(d => (at(p.beats, d) || {}).n >= MIN_N));
-  const rows = days.map(d => ({d, b: (at(p.beats, d) || {}), c: (at(p.control, d) || {}), t: (at(p.backtest, d) || {}).mean}));
-  return `<div class="card-title" style="margin-top:18px">Live trades vs the backtest: average return since the entry open, by day held</div>` +
-    lineChart({id: 'lc-path', xs: days, xFmt: (d, long) => long ? `Day ${d}` : `${d}`, aria: 'Average return by day held: live beats, live control, backtest',
-      series: [{name: 'Live ≥50% beats', short: 'Live beats', color: 'var(--series-1)', ys: live(p.beats), notes: notes(p.beats)},
-               {name: 'Live control (every tracked reporter)', short: 'Control', color: 'var(--muted)', ys: live(p.control), notes: notes(p.control)},
-               {name: 'Backtest ≥50% beats (4,788 trades)', short: 'Backtest', color: 'var(--series-2)', dash: true, ys: bt}]}) +
-    `<div class="rule">Day 0 is the reaction day's close; the trade sells at day 20. A live day is drawn once at least ${MIN_N} trades have reached it ` +
-    `(so far: day ${reached}); hover for the count. The gap between live beats and the control is the edge (market moves hit both). ` +
-    `The dashed line is what the backtest led us to expect, before costs.</div>` +
+  // 2026-11-20: plots the edge itself: live beats minus the average of every stock that reported the SAME week,
+  // at the same day (market moves cancel out), against the backtest on the same measure
+  const exc = p.excess || [];
+  const btx = p.backtest_excess || [];
+  const bt = connect(days.map(d => { const o = at(btx, d); return o ? o.mean : null; }));
+  const reached = Math.max(0, ...days.filter(d => (at(exc, d) || {}).n >= MIN_N));
+  const rows = days.map(d => ({d, b: (at(p.beats, d) || {}), c: (at(p.control, d) || {}), x: (at(exc, d) || {}), t: (at(btx, d) || {}).mean}));
+  return `<div class="card-title" style="margin-top:18px">Live trades vs the backtest: beats minus same-week reporters, by day held</div>` +
+    lineChart({id: 'lc-path', xs: days, xFmt: (d, long) => long ? `Day ${d}` : `${d}`, aria: 'Average excess return over same-week reporters by day held: live beats and backtest',
+      series: [{name: 'Live ≥50% beats minus same-week reporters', short: 'Live', color: 'var(--series-1)', ys: live(exc), notes: notes(exc)},
+               {name: 'Backtest, same measure (4,788 trades)', short: 'Backtest', color: 'var(--series-2)', dash: true, ys: bt}]}) +
+    `<div class="rule">Each beat is compared with the average of every stock that reported the same week, on the same day since entry, ` +
+    `so a market drop that hits everything cancels out; above 0 means the beats are ahead. Day 0 is the reaction day's close; the trade sells at day 20. ` +
+    `A beat counts at a day once its whole reporting week has reached it, and a live day is drawn once at least ${MIN_N} beats have ` +
+    `(so far: day ${reached}); hover for the count. Later days hold fewer, older trades, so a jump between days can be a change in which trades are counted. The dashed line is what the backtest led us to expect. Both are before costs (0.10% / 0.40%). ` +
+    `The table also shows the raw returns, which include the market's moves.</div>` +
     `<details class="lc-table"><summary>Show as a table</summary>` +
-    table([['Day', r => r.d], ['Live beats', r => r.b.mean != null ? pct(r.b.mean) + ` (${r.b.n})` : ''],
-           ['Control', r => r.c.mean != null ? pct(r.c.mean) + ` (${r.c.n})` : ''], ['Backtest', r => r.t != null ? pct(r.t) : '']], rows) +
+    table([['Day', r => r.d], ['Live beats (raw)', r => r.b.mean != null ? pct(r.b.mean) : ''],
+           ['Same-week reporters (raw)', r => r.c.mean != null ? pct(r.c.mean) : ''],
+           ['Live difference', r => r.x.mean != null ? pct(r.x.mean) + ` (${r.x.n})` : ''], ['Backtest difference', r => r.t != null ? pct(r.t) : '']], rows) +
     `</details>`;
 }
 
