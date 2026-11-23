@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T09:49-05:00",
+ "updated": "2026-11-23T10:30-05:00",
  "today": "2026-11-23",
  "paper_trading": {
   "status": "live",
@@ -60,7 +60,7 @@
     -4.89,
     -6.755,
     -10.032,
-    -6.509
+    -5.37
    ],
    "earnings": [
     0.0,
@@ -89,7 +89,7 @@
     -4.518,
     -6.384,
     -9.724,
-    -6.726
+    -6.043
    ],
    "momentum": [
     0.0,
@@ -118,7 +118,7 @@
     -20.256,
     -21.068,
     -33.089,
-    -23.792
+    -20.848
    ],
    "apple": [
     0.0,
@@ -147,7 +147,7 @@
     -4.821,
     -6.684,
     -9.956,
-    -6.438
+    -5.301
    ]
   },
   "plan": "One Alpaca paper account per strategy (PAPER_TRADING_PLAN.md). Started early to test the order plumbing; pass/fail verdicts still come from the shadow trackers. Account values are read from Alpaca at each run (see 'As of'); Alpaca's own page is live, so it will differ between runs.",
@@ -157,13 +157,13 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2798.21,
-    "return_pct": -6.73,
+    "equity": 2818.7,
+    "return_pct": -6.04,
     "cash": 5.59,
-    "spy_value": 510.29,
+    "spy_value": 516.66,
     "open_positions": 162,
-    "last_run": "2026-11-23T09:49:16-05:00",
-    "last_phase": "morning",
+    "last_run": "2026-11-23T10:30:36-05:00",
+    "last_phase": "snapshot",
     "error": null,
     "missing": [],
     "unexpected": [
@@ -174,83 +174,83 @@
     "holdings": {
      "ACAD": {
       "qty": 0.683348,
-      "price": 17.375,
-      "value": 11.87
+      "price": 17.24,
+      "value": 11.78
      },
      "ACCO": {
       "qty": 2.816635,
-      "price": 5.365,
-      "value": 15.11
+      "price": 5.355,
+      "value": 15.08
      },
      "ACRE": {
       "qty": 3.824934,
-      "price": 3.42,
-      "value": 13.08
+      "price": 3.45,
+      "value": 13.2
      },
      "ADCT": {
       "qty": 9.103896,
-      "price": 1.345,
-      "value": 12.24
+      "price": 1.295,
+      "value": 11.79
      },
      "AEHR": {
       "qty": 0.262205,
-      "price": 47.4596,
-      "value": 12.44
+      "price": 49.77,
+      "value": 13.05
      },
      "AGL": {
       "qty": 0.134167,
-      "price": 82.86,
-      "value": 11.12
+      "price": 84.205,
+      "value": 11.3
      },
      "AIP": {
       "qty": 0.849355,
-      "price": 18.85,
-      "value": 16.01
+      "price": 19.41,
+      "value": 16.49
      },
      "ALEC": {
       "qty": 6.615741,
-      "price": 2.41,
-      "value": 15.94
+      "price": 2.4253,
+      "value": 16.05
      },
      "ALGT": {
       "qty": 0.176706,
-      "price": 93.77,
-      "value": 16.57
+      "price": 96.2525,
+      "value": 17.01
      },
      "ALKS": {
       "qty": 0.319905,
-      "price": 46.025,
-      "value": 14.72
+      "price": 45.83,
+      "value": 14.66
      },
      "AMH": {
       "qty": 0.452682,
-      "price": 31.85,
-      "value": 14.42
+      "price": 31.82,
+      "value": 14.4
      },
      "AMN": {
       "qty": 0.337999,
-      "price": 35.78,
-      "value": 12.09
+      "price": 35.9,
+      "value": 12.13
      },
      "AMR": {
       "qty": 0.091035,
-      "price": 136.95,
-      "value": 12.47
+      "price": 133.945,
+      "value": 12.19
      },
      "AMTX": {
       "qty": 8.655172,
-      "price": 0.9348,
-      "value": 8.09
+      "price": 0.9585,
+      "value": 8.3
      },
      "AOSL": {
       "qty": 0.661644,
-      "price": 24.565,
-      "value": 16.25
+      "price": 24.99,
+      "value": 16.53
      },
      "APPN": {
       "qty": 0.275142,
-      "price": 53.5,
-      "value": 14.72
+      "price": 54.44,
+      "value": 14.98
      },
      "ARCT": {
       "qty": 1.449,
@@ -259,628 +259,628 @@
      },
      "ARDT": {
       "qty": 1.025256,
-      "price": 15.325,
-      "value": 15.71
+      "price": 15.42,
+      "value": 15.81
      },
      "ARHS": {
       "qty": 1.174355,
-      "price": 13.29,
-      "value": 15.61
+      "price": 13.27,
+      "value": 15.58
      },
      "ASPN": {
       "qty": 2.956693,
-      "price": 4.77,
-      "value": 14.1
+      "price": 4.8,
+      "value": 14.19
      },
      "ATNI": {
       "qty": 0.573282,
-      "price": 26.335,
-      "value": 15.1
+      "price": 26.23,
+      "value": 15.04
      },
      "BBWI": {
       "qty": 0.786921,
-      "price": 19.06,
-      "value": 15.0
+      "price": 19.4,
+      "value": 15.27
      },
      "BCRX": {
       "qty": 1.756757,
-      "price": 7.39,
-      "value": 12.98
+      "price": 7.375,
+      "value": 12.96
      },
      "BFLY": {
       "qty": 2.050409,
-      "price": 5.865,
-      "value": 12.03
+      "price": 5.88,
+      "value": 12.06
      },
      "BJRI": {
       "qty": 0.256687,
-      "price": 56.68,
-      "value": 14.55
+      "price": 58.56,
+      "value": 15.03
      },
      "BKSY": {
       "qty": 0.811892,
-      "price": 17.865,
-      "value": 14.5
+      "price": 17.76,
+      "value": 14.42
      },
      "BLZE": {
       "qty": 1.527404,
-      "price": 7.38,
-      "value": 11.27
+      "price": 7.655,
+      "value": 11.69
      },
      "BMRN": {
       "qty": 0.281012,
-      "price": 61.165,
-      "value": 17.19
+      "price": 60.88,
+      "value": 17.11
      },
      "BTBT": {
       "qty": 20.03961,
-      "price": 0.5905,
-      "value": 11.83
+      "price": 0.5955,
+      "value": 11.93
      },
      "BULL": {
       "qty": 3.154195,
-      "price": 4.465,
-      "value": 14.08
+      "price": 4.5304,
+      "value": 14.29
      },
      "CALY": {
       "qty": 0.853357,
-      "price": 16.55,
-      "value": 14.12
+      "price": 16.53,
+      "value": 14.11
      },
      "CARS": {
       "qty": 1.120896,
-      "price": 12.11,
-      "value": 13.57
+      "price": 12.42,
+      "value": 13.92
      },
      "CDNA": {
       "qty": 0.180957,
-      "price": 74.375,
-      "value": 13.46
+      "price": 75.0,
+      "value": 13.57
      },
      "CLMT": {
       "qty": 0.318952,
-      "price": 29.42,
-      "value": 9.38
+      "price": 29.61,
+      "value": 9.44
      },
      "CLNE": {
       "qty": 8.15847,
-      "price": 1.541,
-      "value": 12.57
+      "price": 1.505,
+      "value": 12.28
      },
      "CMCO": {
       "qty": 0.800108,
-      "price": 18.65,
-      "value": 14.92
+      "price": 18.975,
+      "value": 15.18
      },
      "CNC": {
       "qty": 0.227342,
-      "price": 63.3,
-      "value": 14.39
+      "price": 63.585,
+      "value": 14.46
      },
      "CNH": {
       "qty": 1.206245,
-      "price": 11.075,
-      "value": 13.36
+      "price": 11.15,
+      "value": 13.45
      },
      "CNO": {
       "qty": 0.260262,
-      "price": 55.575,
-      "value": 14.46
+      "price": 55.43,
+      "value": 14.43
      },
      "CODI": {
       "qty": 1.157165,
-      "price": 12.215,
-      "value": 14.13
+      "price": 12.44,
+      "value": 14.4
      },
      "COIN": {
       "qty": 0.101065,
-      "price": 108.055,
-      "value": 10.92
+      "price": 110.82,
+      "value": 11.2
      },
      "CPT": {
       "qty": 0.147752,
-      "price": 95.45,
-      "value": 14.1
+      "price": 95.22,
+      "value": 14.07
      },
      "CSTL": {
       "qty": 0.419271,
-      "price": 33.72,
-      "value": 14.14
+      "price": 34.21,
+      "value": 14.34
      },
      "CTRI": {
       "qty": 0.697307,
-      "price": 20.63,
-      "value": 14.39
+      "price": 20.98,
+      "value": 14.63
      },
      "CVEO": {
       "qty": 0.419718,
-      "price": 33.33,
-      "value": 13.99
+      "price": 33.055,
+      "value": 13.87
      },
      "DCTH": {
       "qty": 0.7884,
-      "price": 19.57,
-      "value": 15.43
+      "price": 19.64,
+      "value": 15.48
      },
      "DEA": {
       "qty": 0.652498,
-      "price": 21.3401,
-      "value": 13.92
+      "price": 21.22,
+      "value": 13.85
      },
      "DINO": {
       "qty": 0.128157,
-      "price": 86.98,
-      "value": 11.15
+      "price": 88.165,
+      "value": 11.3
      },
      "DOC": {
       "qty": 0.757825,
-      "price": 19.495,
-      "value": 14.77
+      "price": 19.47,
+      "value": 14.75
      },
      "DTIL": {
       "qty": 2.128242,
-      "price": 7.81,
-      "value": 16.62
+      "price": 7.73,
+      "value": 16.45
      },
      "ECPG": {
       "qty": 0.136645,
-      "price": 100.45,
-      "value": 13.73
+      "price": 100.96,
+      "value": 13.8
      },
      "EGBN": {
       "qty": 0.0,
-      "price": 33.0,
+      "price": 32.93,
       "value": 0.0
      },
      "ELF": {
       "qty": 0.131754,
-      "price": 109.425,
-      "value": 14.42
+      "price": 108.115,
+      "value": 14.24
      },
      "ETON": {
       "qty": 0.247692,
-      "price": 62.365,
-      "value": 15.45
+      "price": 62.0,
+      "value": 15.36
      },
      "EVGO": {
       "qty": 8.021858,
-      "price": 1.495,
-      "value": 11.99
+      "price": 1.48,
+      "value": 11.87
      },
      "EVR": {
       "qty": 0.0548,
-      "price": 287.735,
-      "value": 15.77
+      "price": 290.87,
+      "value": 15.94
      },
      "EWTX": {
       "qty": 0.349302,
-      "price": 41.8,
-      "value": 14.6
+      "price": 42.8777,
+      "value": 14.98
      },
      "EYE": {
       "qty": 0.815676,
-      "price": 16.914,
-      "value": 13.8
+      "price": 17.295,
+      "value": 14.11
      },
      "FBIN": {
       "qty": 0.307045,
-      "price": 47.48,
-      "value": 14.58
+      "price": 47.75,
+      "value": 14.66
      },
      "FLGT": {
       "qty": 0.707865,
-      "price": 24.56,
-      "value": 17.39
+      "price": 24.53,
+      "value": 17.36
      },
      "FNKO": {
       "qty": 2.5875,
-      "price": 5.97,
-      "value": 15.45
+      "price": 6.1,
+      "value": 15.78
      },
      "FOXA": {
       "qty": 0.093726,
-      "price": 62.83,
-      "value": 5.89
+      "price": 63.72,
+      "value": 5.97
      },
      "FOXF": {
       "qty": 0.844406,
-      "price": 16.365,
-      "value": 13.82
+      "price": 16.72,
+      "value": 14.12
      },
      "FTK": {
       "qty": 0.515517,
-      "price": 23.5,
-      "value": 12.11
+      "price": 23.11,
+      "value": 11.91
      },
      "FUN": {
       "qty": 1.634385,
-      "price": 11.16,
-      "value": 18.24
+      "price": 11.055,
+      "value": 18.07
      },
      "GCT": {
       "qty": 0.231362,
-      "price": 61.14,
-      "value": 14.15
+      "price": 63.56,
+      "value": 14.71
      },
      "GKOS": {
       "qty": 0.070627,
-      "price": 247.295,
-      "value": 17.47
+      "price": 251.205,
+      "value": 17.74
      },
      "GLUE": {
       "qty": 1.433206,
-      "price": 9.13,
+      "price": 9.135,
       "value": 13.09
      },
      "GNL": {
       "qty": 2.115493,
-      "price": 6.11,
-      "value": 12.93
+      "price": 6.16,
+      "value": 13.03
      },
      "GPRE": {
       "qty": 1.091114,
-      "price": 11.19,
-      "value": 12.21
+      "price": 11.2,
+      "value": 12.22
      },
      "GRAL": {
       "qty": 0.125219,
-      "price": 106.655,
-      "value": 13.36
+      "price": 110.35,
+      "value": 13.82
      },
      "H": {
       "qty": 0.085951,
-      "price": 186.03,
-      "value": 15.99
+      "price": 187.19,
+      "value": 16.09
      },
      "HCI": {
       "qty": 0.071935,
-      "price": 190.2,
-      "value": 13.68
+      "price": 189.37,
+      "value": 13.62
      },
      "HE": {
       "qty": 1.606127,
-      "price": 7.95,
-      "value": 12.77
+      "price": 8.025,
+      "value": 12.89
      },
      "HG": {
       "qty": 0.421738,
-      "price": 38.56,
-      "value": 16.26
+      "price": 38.3265,
+      "value": 16.16
      },
      "HGV": {
       "qty": 0.418056,
-      "price": 44.39,
-      "value": 18.56
+      "price": 44.24,
+      "value": 18.49
      },
      "HL": {
       "qty": 1.033172,
-      "price": 11.1601,
-      "value": 11.53
+      "price": 11.355,
+      "value": 11.73
      },
      "HMN": {
       "qty": 0.286179,
-      "price": 52.27,
-      "value": 14.96
+      "price": 51.86,
+      "value": 14.84
      },
      "HP": {
       "qty": 0.431818,
-      "price": 32.72,
-      "value": 14.13
+      "price": 33.07,
+      "value": 14.28
      },
      "HRTG": {
       "qty": 0.439801,
-      "price": 32.565,
-      "value": 14.32
+      "price": 32.14,
+      "value": 14.14
      },
      "HTFL": {
       "qty": 0.258889,
-      "price": 47.7,
-      "value": 12.35
+      "price": 49.49,
+      "value": 12.81
      },
      "HUT": {
       "qty": 0.281438,
-      "price": 52.95,
-      "value": 14.9
+      "price": 54.77,
+      "value": 15.41
      },
      "IDCC": {
       "qty": 0.044342,
-      "price": 265.675,
-      "value": 11.78
+      "price": 267.42,
+      "value": 11.86
      },
      "IMAX": {
       "qty": 0.283129,
-      "price": 46.555,
-      "value": 13.18
+      "price": 46.655,
+      "value": 13.21
      },
      "INNV": {
       "qty": 1.557292,
-      "price": 9.26,
-      "value": 14.42
+      "price": 9.3801,
+      "value": 14.61
      },
      "INSP": {
       "qty": 0.238149,
-      "price": 55.135,
-      "value": 13.13
+      "price": 54.255,
+      "value": 12.92
      },
      "INSW": {
       "qty": 0.151,
-      "price": 99.07,
-      "value": 14.96
+      "price": 100.0,
+      "value": 15.1
      },
      "INTT": {
       "qty": 1.085393,
-      "price": 12.0,
-      "value": 13.02
+      "price": 12.0653,
+      "value": 13.1
      },
      "IPI": {
       "qty": 0.534119,
-      "price": 29.575,
-      "value": 15.8
+      "price": 29.99,
+      "value": 16.02
      },
      "IVT": {
       "qty": 0.489127,
-      "price": 31.04,
-      "value": 15.18
+      "price": 30.89,
+      "value": 15.11
      },
      "KRO": {
       "qty": 1.96875,
-      "price": 7.285,
-      "value": 14.34
+      "price": 7.265,
+      "value": 14.3
      },
      "KROS": {
       "qty": 1.48768,
-      "price": 11.34,
-      "value": 16.87
+      "price": 11.12,
+      "value": 16.54
      },
      "KTB": {
       "qty": 0.195192,
-      "price": 80.385,
-      "value": 15.69
+      "price": 80.67,
+      "value": 15.75
      },
      "LASR": {
       "qty": 0.385885,
-      "price": 36.265,
-      "value": 13.99
+      "price": 36.83,
+      "value": 14.21
      },
      "LAUR": {
       "qty": 0.401226,
-      "price": 32.91,
-      "value": 13.2
+      "price": 32.63,
+      "value": 13.09
      },
      "LCUT": {
       "qty": 1.683857,
-      "price": 7.05,
-      "value": 11.87
+      "price": 6.96,
+      "value": 11.72
      },
      "LEGH": {
       "qty": 0.40225,
-      "price": 27.71,
-      "value": 11.15
+      "price": 27.525,
+      "value": 11.07
      },
      "LGN": {
       "qty": 0.414788,
-      "price": 35.73,
-      "value": 14.82
+      "price": 36.68,
+      "value": 15.21
      },
      "LION": {
       "qty": 1.153662,
-      "price": 13.49,
-      "value": 15.56
+      "price": 13.58,
+      "value": 15.67
      },
      "LPX": {
       "qty": 0.189359,
-      "price": 74.585,
-      "value": 14.12
+      "price": 74.66,
+      "value": 14.14
      },
      "LUNR": {
       "qty": 1.050836,
-      "price": 9.65,
-      "value": 10.14
+      "price": 9.795,
+      "value": 10.29
      },
      "LXRX": {
       "qty": 9.881579,
-      "price": 1.595,
-      "value": 15.76
+      "price": 1.605,
+      "value": 15.86
      },
      "MAC": {
       "qty": 0.588789,
-      "price": 23.84,
-      "value": 14.04
+      "price": 23.8,
+      "value": 14.01
      },
      "MBC": {
       "qty": 2.18552,
-      "price": 6.11,
-      "value": 13.35
+      "price": 6.07,
+      "value": 13.27
      },
      "MQ": {
       "qty": 0.880966,
-      "price": 16.59,
-      "value": 14.62
+      "price": 16.785,
+      "value": 14.79
      },
      "MRNA": {
       "qty": 0.059143,
-      "price": 210.73,
-      "value": 12.46
+      "price": 210.9958,
+      "value": 12.48
      },
      "NEXT": {
       "qty": 2.1875,
-      "price": 5.885,
-      "value": 12.87
+      "price": 5.85,
+      "value": 12.8
      },
      "NRG": {
       "qty": 0.157005,
-      "price": 91.81,
-      "value": 14.41
+      "price": 93.835,
+      "value": 14.73
      },
      "NTGR": {
       "qty": 0.711511,
-      "price": 18.23,
-      "value": 12.97
+      "price": 18.805,
+      "value": 13.38
      },
      "NVCR": {
       "qty": 1.164861,
-      "price": 11.09,
-      "value": 12.92
+      "price": 11.34,
+      "value": 13.21
      },
      "NVRI": {
       "qty": 0.682727,
-      "price": 23.99,
-      "value": 16.38
+      "price": 24.15,
+      "value": 16.49
      },
      "OFIX": {
       "qty": 2.094151,
-      "price": 6.4,
-      "value": 13.4
+      "price": 6.21,
+      "value": 13.0
      },
      "OLED": {
       "qty": 0.161863,
-      "price": 82.42,
-      "value": 13.34
+      "price": 82.31,
+      "value": 13.32
      },
      "OPTU": {
       "qty": 24.014652,
-      "price": 0.6193,
-      "value": 14.87
+      "price": 0.5897,
+      "value": 14.16
      },
      "ORA": {
       "qty": 0.161332,
-      "price": 86.81,
-      "value": 14.01
+      "price": 86.56,
+      "value": 13.96
      },
      "OSCR": {
       "qty": 0.434984,
-      "price": 25.41,
-      "value": 11.05
+      "price": 26.29,
+      "value": 11.44
      },
      "PANL": {
       "qty": 1.777914,
-      "price": 8.17,
-      "value": 14.53
+      "price": 8.23,
+      "value": 14.63
      },
      "PARR": {
       "qty": 0.203817,
-      "price": 62.86,
-      "value": 12.81
+      "price": 63.615,
+      "value": 12.97
      },
      "PEB": {
       "qty": 0.70283,
-      "price": 21.42,
-      "value": 15.05
+      "price": 21.49,
+      "value": 15.1
      },
      "PENN": {
       "qty": 0.881973,
-      "price": 18.17,
-      "value": 16.03
+      "price": 18.14,
+      "value": 16.0
      },
      "PII": {
       "qty": 0.25172,
-      "price": 64.88,
-      "value": 16.33
+      "price": 66.26,
+      "value": 16.68
      },
      "PRIM": {
       "qty": 0.177028,
-      "price": 58.69,
-      "value": 10.39
+      "price": 59.08,
+      "value": 10.46
      },
      "PRVA": {
       "qty": 0.649092,
-      "price": 25.305,
-      "value": 16.43
+      "price": 25.12,
+      "value": 16.31
      },
      "PTEN": {
       "qty": 1.194444,
-      "price": 9.64,
-      "value": 11.51
+      "price": 9.645,
+      "value": 11.52
      },
      "QDEL": {
       "qty": 1.021175,
-      "price": 8.89,
-      "value": 9.08
+      "price": 9.0,
+      "value": 9.19
      },
      "REAL": {
       "qty": 1.324444,
-      "price": 11.37,
-      "value": 15.06
+      "price": 11.675,
+      "value": 15.46
      },
      "RELY": {
       "qty": 0.668744,
-      "price": 21.06,
-      "value": 14.08
+      "price": 21.38,
+      "value": 14.3
      },
      "RGNX": {
       "qty": 2.02973,
-      "price": 7.52,
-      "value": 15.26
+      "price": 7.455,
+      "value": 15.13
      },
      "RHP": {
       "qty": 0.111573,
-      "price": 135.055,
-      "value": 15.07
+      "price": 135.605,
+      "value": 15.13
      },
      "RIOT": {
       "qty": 0.958333,
-      "price": 17.47,
-      "value": 16.74
+      "price": 18.065,
+      "value": 17.31
      },
      "RLJ": {
       "qty": 1.216194,
-      "price": 12.6,
-      "value": 15.32
+      "price": 12.665,
+      "value": 15.4
      },
      "RNA": {
       "qty": 1.945525,
-      "price": 6.8262,
-      "value": 13.28
+      "price": 7.06,
+      "value": 13.74
      },
      "ROIV": {
       "qty": 0.371082,
-      "price": 39.825,
-      "value": 14.78
+      "price": 40.05,
+      "value": 14.86
      },
      "RUN": {
       "qty": 1.430476,
-      "price": 7.055,
-      "value": 10.09
+      "price": 7.0399,
+      "value": 10.07
      },
      "SABR": {
       "qty": 7.663265,
-      "price": 1.625,
-      "value": 12.45
+      "price": 1.635,
+      "value": 12.53
      },
      "SBGI": {
       "qty": 1.029472,
-      "price": 14.24,
-      "value": 14.66
+      "price": 14.27,
+      "value": 14.69
      },
      "SEDG": {
       "qty": 0.454684,
-      "price": 19.14,
+      "price": 19.135,
       "value": 8.7
      },
      "SEI": {
       "qty": 0.270338,
-      "price": 61.33,
-      "value": 16.58
+      "price": 62.41,
+      "value": 16.87
      },
      "SHAZ": {
       "qty": 0.745259,
-      "price": 20.085,
-      "value": 14.97
+      "price": 21.54,
+      "value": 16.05
      },
      "SLG": {
       "qty": 0.324935,
-      "price": 46.15,
-      "value": 15.0
+      "price": 46.685,
+      "value": 15.17
      },
      "SPY": {
       "qty": 0.71065,
-      "price": 718.06,
-      "value": 510.29
+      "price": 727.03,
+      "value": 516.66
      },
      "SUPN": {
       "qty": 0.354172,
-      "price": 28.86,
-      "value": 10.22
+      "price": 29.4,
+      "value": 10.41
      },
      "SXC": {
       "qty": 1.386322,
@@ -889,118 +889,118 @@
      },
      "TALO": {
       "qty": 0.947402,
-      "price": 14.855,
-      "value": 14.07
+      "price": 14.775,
+      "value": 14.0
      },
      "TARS": {
       "qty": 0.202,
-      "price": 74.19,
-      "value": 14.99
+      "price": 75.28,
+      "value": 15.21
      },
      "TBI": {
       "qty": 1.114243,
-      "price": 11.7894,
-      "value": 13.14
+      "price": 11.42,
+      "value": 12.72
      },
      "TDS": {
       "qty": 0.45409,
-      "price": 30.84,
-      "value": 14.0
+      "price": 31.22,
+      "value": 14.18
      },
      "TMDX": {
       "qty": 0.18365,
-      "price": 89.0,
-      "value": 16.34
+      "price": 90.67,
+      "value": 16.65
      },
      "TNDM": {
       "qty": 0.930636,
-      "price": 18.05,
-      "value": 16.8
+      "price": 17.92,
+      "value": 16.68
      },
      "TNET": {
       "qty": 0.209435,
-      "price": 62.375,
-      "value": 13.06
+      "price": 63.32,
+      "value": 13.26
      },
      "TTI": {
       "qty": 2.44942,
-      "price": 6.095,
-      "value": 14.93
+      "price": 6.06,
+      "value": 14.84
      },
      "TXG": {
       "qty": 0.250302,
-      "price": 56.655,
-      "value": 14.18
+      "price": 57.25,
+      "value": 14.33
      },
      "UDR": {
       "qty": 0.416408,
-      "price": 35.37,
-      "value": 14.73
+      "price": 35.42,
+      "value": 14.75
      },
      "UGI": {
       "qty": 0.39027,
-      "price": 35.77,
-      "value": 13.96
+      "price": 35.34,
+      "value": 13.79
      },
      "ULH": {
       "qty": 0.772822,
-      "price": 28.48,
-      "value": 22.01
+      "price": 28.305,
+      "value": 21.87
      },
      "VCEL": {
       "qty": 0.29719,
-      "price": 58.5,
-      "value": 17.39
+      "price": 58.64,
+      "value": 17.43
      },
      "VIA": {
       "qty": 0.419429,
-      "price": 45.935,
-      "value": 19.27
+      "price": 46.575,
+      "value": 19.53
      },
      "VRNS": {
       "qty": 0.306039,
-      "price": 49.225,
-      "value": 15.06
+      "price": 49.25,
+      "value": 15.07
      },
      "VSNT": {
       "qty": 0.458553,
-      "price": 33.395,
-      "value": 15.31
+      "price": 33.49,
+      "value": 15.36
      },
      "WRLD": {
       "qty": 0.0,
-      "price": 136.61,
+      "price": 135.49,
       "value": 0.0
      },
      "WTI": {
       "qty": 3.616505,
-      "price": 2.865,
-      "value": 10.36
+      "price": 2.845,
+      "value": 10.29
      },
      "WWW": {
       "qty": 0.688098,
-      "price": 25.135,
-      "value": 17.3
+      "price": 25.51,
+      "value": 17.55
      },
      "WY": {
       "qty": 0.745746,
-      "price": 19.625,
+      "price": 19.63,
       "value": 14.64
      },
      "XHR": {
       "qty": 0.678457,
-      "price": 21.815,
-      "value": 14.8
+      "price": 21.915,
+      "value": 14.87
      },
      "XNCR": {
       "qty": 0.422266,
-      "price": 35.105,
-      "value": 14.82
+      "price": 35.205,
+      "value": 14.87
      },
      "XRX": {
       "qty": 8.264045,
-      "price": 0.8898,
-      "value": 7.35
+      "price": 0.895,
+      "value": 7.4
      }
     },
     "positions": [
@@ -1010,9 +1010,9 @@
       "exit_date": "2026-12-04",
       "surprise": 69.86,
       "fill_price": 21.98,
-      "price": 17.375,
-      "value": 11.87,
-      "pl_pct": -20.95
+      "price": 17.24,
+      "value": 11.78,
+      "pl_pct": -21.57
      },
      {
       "symbol": "ACCO",
@@ -1020,9 +1020,9 @@
       "exit_date": "2026-11-30",
       "surprise": 50.0,
       "fill_price": 5.29,
-      "price": 5.365,
-      "value": 15.11,
-      "pl_pct": 1.42
+      "price": 5.355,
+      "value": 15.08,
+      "pl_pct": 1.23
      },
      {
       "symbol": "ACRE",
@@ -1030,9 +1030,9 @@
       "exit_date": "2026-12-07",
       "surprise": 100.0,
       "fill_price": 3.7883,
-      "price": 3.42,
-      "value": 13.08,
-      "pl_pct": -9.72
+      "price": 3.45,
+      "value": 13.2,
+      "pl_pct": -8.93
      },
      {
       "symbol": "ADCT",
@@ -1040,9 +1040,9 @@
       "exit_date": "2026-12-08",
       "surprise": 71.43,
       "fill_price": 1.6125,
-      "price": 1.345,
-      "value": 12.24,
-      "pl_pct": -16.59
+      "price": 1.295,
+      "value": 11.79,
+      "pl_pct": -19.69
      },
      {
       "symbol": "AEHR",
@@ -1050,9 +1050,9 @@
       "exit_date": "2026-12-02",
       "surprise": 121.05,
       "fill_price": 56.33,
-      "price": 47.4596,
-      "value": 12.44,
-      "pl_pct": -15.75
+      "price": 49.77,
+      "value": 13.05,
+      "pl_pct": -11.65
      },
      {
       "symbol": "AGL",
@@ -1060,9 +1060,9 @@
       "exit_date": "2026-12-04",
       "surprise": 234.25,
       "fill_price": 111.95,
-      "price": 82.86,
-      "value": 11.12,
-      "pl_pct": -25.98
+      "price": 84.205,
+      "value": 11.3,
+      "pl_pct": -24.78
      },
      {
       "symbol": "AIP",
@@ -1070,9 +1070,9 @@
       "exit_date": "2026-12-07",
       "surprise": 50.0,
       "fill_price": 17.06,
-      "price": 18.85,
-      "value": 16.01,
-      "pl_pct": 10.49
+      "price": 19.41,
+      "value": 16.49,
+      "pl_pct": 13.77
      },
      {
       "symbol": "ALEC",
@@ -1080,9 +1080,9 @@
       "exit_date": "2026-12-07",
       "surprise": 1690.32,
       "fill_price": 2.1902,
-      "price": 2.41,
-      "value": 15.94,
-      "pl_pct": 10.04
+      "price": 2.4253,
+      "value": 16.05,
+      "pl_pct": 10.73
      },
      {
       "symbol": "ALGT",
@@ -1090,9 +1090,9 @@
       "exit_date": "2026-12-04",
       "surprise": 94.0,
       "fill_price": 85.0,
-      "price": 93.77,
-      "value": 16.57,
-      "pl_pct": 10.32
+      "price": 96.2525,
+      "value": 17.01,
+      "pl_pct": 13.24
      },
      {
       "symbol": "ALKS",
@@ -1100,9 +1100,9 @@
       "exit_date": "2026-12-02",
       "surprise": 250.0,
       "fill_price": 46.17,
-      "price": 46.025,
-      "value": 14.72,
-      "pl_pct": -0.31
+      "price": 45.83,
+      "value": 14.66,
+      "pl_pct": -0.74
      },
      {
       "symbol": "AMH",
@@ -1110,9 +1110,9 @@
       "exit_date": "2026-12-04",
       "surprise": 53.46,
       "fill_price": 33.18,
-      "price": 31.85,
-      "value": 14.42,
-      "pl_pct": -4.01
+      "price": 31.82,
+      "value": 14.4,
+      "pl_pct": -4.1
      },
      {
       "symbol": "AMN",
@@ -1120,9 +1120,9 @@
       "exit_date": "2026-12-07",
       "surprise": 407.39,
       "fill_price": 42.87,
-      "price": 35.78,
-      "value": 12.09,
-      "pl_pct": -16.54
+      "price": 35.9,
+      "value": 12.13,
+      "pl_pct": -16.26
      },
      {
       "symbol": "AMR",
@@ -1130,9 +1130,9 @@
       "exit_date": "2026-12-07",
       "surprise": 63.5,
       "fill_price": 159.17,
-      "price": 136.95,
-      "value": 12.47,
-      "pl_pct": -13.96
+      "price": 133.945,
+      "value": 12.19,
+      "pl_pct": -15.85
      },
      {
       "symbol": "AMTX",
@@ -1140,9 +1140,9 @@
       "exit_date": "2026-12-04",
       "surprise": 90.0,
       "fill_price": 1.7354,
-      "price": 0.9348,
-      "value": 8.09,
-      "pl_pct": -46.13
+      "price": 0.9585,
+      "value": 8.3,
+      "pl_pct": -44.77
      },
      {
       "symbol": "AOSL",
@@ -1150,9 +1150,9 @@
       "exit_date": "2026-12-07",
       "surprise": 50.0,
       "fill_price": 21.9,
-      "price": 24.565,
-      "value": 16.25,
-      "pl_pct": 12.17
+      "price": 24.99,
+      "value": 16.53,
+      "pl_pct": 14.11
      },
      {
       "symbol": "APPN",
@@ -1160,9 +1160,9 @@
       "exit_date": "2026-12-04",
       "surprise": 54.55,
       "fill_price": 54.59,
-      "price": 53.5,
-      "value": 14.72,
-      "pl_pct": -2.0
+      "price": 54.44,
+      "value": 14.98,
+      "pl_pct": -0.27
      },
      {
       "symbol": "ARCT",
@@ -1180,9 +1180,9 @@
       "exit_date": "2026-12-04",
       "surprise": 55.02,
       "fill_price": 14.65,
-      "price": 15.325,
-      "value": 15.71,
-      "pl_pct": 4.61
+      "price": 15.42,
+      "value": 15.81,
+      "pl_pct": 5.26
      },
      {
       "symbol": "ARHS",
@@ -1190,9 +1190,9 @@
       "exit_date": "2026-12-04",
       "surprise": 277.78,
       "fill_price": 12.79,
-      "price": 13.29,
-      "value": 15.61,
-      "pl_pct": 3.91
+      "price": 13.27,
+      "value": 15.58,
+      "pl_pct": 3.75
      },
      {
       "symbol": "ASPN",
@@ -1200,9 +1200,9 @@
       "exit_date": "2026-12-04",
       "surprise": 237.5,
       "fill_price": 5.08,
-      "price": 4.77,
-      "value": 14.1,
-      "pl_pct": -6.1
+      "price": 4.8,
+      "value": 14.19,
+      "pl_pct": -5.51
      },
      {
       "symbol": "ATNI",
@@ -1210,9 +1210,9 @@
       "exit_date": "2026-12-04",
       "surprise": 473.68,
       "fill_price": 26.2,
-      "price": 26.335,
-      "value": 15.1,
-      "pl_pct": 0.52
+      "price": 26.23,
+      "value": 15.04,
+      "pl_pct": 0.11
      },
      {
       "symbol": "BBWI",
@@ -1220,9 +1220,9 @@
       "exit_date": "2026-12-18",
       "surprise": 117.76,
       "fill_price": 18.35,
-      "price": 19.06,
-      "value": 15.0,
-      "pl_pct": 3.87
+      "price": 19.4,
+      "value": 15.27,
+      "pl_pct": 5.72
      },
      {
       "symbol": "BCRX",
@@ -1230,9 +1230,9 @@
       "exit_date": "2026-12-03",
       "surprise": 75.0,
       "fill_price": 8.51,
-      "price": 7.39,
-      "value": 12.98,
-      "pl_pct": -13.16
+      "price": 7.375,
+      "value": 12.96,
+      "pl_pct": -13.34
      },
      {
       "symbol": "BFLY",
@@ -1240,9 +1240,9 @@
       "exit_date": "2026-11-27",
       "surprise": 83.33,
       "fill_price": 7.34,
-      "price": 5.865,
-      "value": 12.03,
-      "pl_pct": -20.1
+      "price": 5.88,
+      "value": 12.06,
+      "pl_pct": -19.89
      },
      {
       "symbol": "BJRI",
@@ -1250,9 +1250,9 @@
       "exit_date": "2026-12-07",
       "surprise": 96.79,
       "fill_price": 56.45,
-      "price": 56.68,
-      "value": 14.55,
-      "pl_pct": 0.41
+      "price": 58.56,
+      "value": 15.03,
+      "pl_pct": 3.74
      },
      {
       "symbol": "BKSY",
@@ -1260,9 +1260,9 @@
       "exit_date": "2026-12-04",
       "surprise": 145.45,
       "fill_price": 18.5,
-      "price": 17.865,
-      "value": 14.5,
-      "pl_pct": -3.43
+      "price": 17.76,
+      "value": 14.42,
+      "pl_pct": -4.0
      },
      {
       "symbol": "BLZE",
@@ -1270,9 +1270,9 @@
       "exit_date": "2026-12-02",
       "surprise": 50.0,
       "fill_price": 9.67,
-      "price": 7.38,
-      "value": 11.27,
-      "pl_pct": -23.68
+      "price": 7.655,
+      "value": 11.69,
+      "pl_pct": -20.84
      },
      {
       "symbol": "BMRN",
@@ -1280,9 +1280,9 @@
       "exit_date": "2026-12-02",
       "surprise": 304.81,
       "fill_price": 52.56,
-      "price": 61.165,
-      "value": 17.19,
-      "pl_pct": 16.37
+      "price": 60.88,
+      "value": 17.11,
+      "pl_pct": 15.83
      },
      {
       "symbol": "BTBT",
@@ -1290,9 +1290,9 @@
       "exit_date": "2026-12-11",
       "surprise": 300.0,
       "fill_price": 0.753,
-      "price": 0.5905,
-      "value": 11.83,
-      "pl_pct": -21.58
+      "price": 0.5955,
+      "value": 11.93,
+      "pl_pct": -20.92
      },
      {
       "symbol": "BULL",
@@ -1300,9 +1300,9 @@
       "exit_date": "2026-12-21",
       "surprise": 62.62,
       "fill_price": 4.41,
-      "price": 4.465,
-      "value": 14.08,
-      "pl_pct": 1.25
+      "price": 4.5304,
+      "value": 14.29,
+      "pl_pct": 2.73
      },
      {
       "symbol": "CALY",
@@ -1310,9 +1310,9 @@
       "exit_date": "2026-12-07",
       "surprise": 1100.0,
       "fill_price": 16.98,
-      "price": 16.55,
-      "value": 14.12,
-      "pl_pct": -2.53
+      "price": 16.53,
+      "value": 14.11,
+      "pl_pct": -2.65
      },
      {
       "symbol": "CARS",
@@ -1320,9 +1320,9 @@
       "exit_date": "2026-12-04",
       "surprise": 132.0,
       "fill_price": 13.4,
-      "price": 12.11,
-      "value": 13.57,
-      "pl_pct": -9.63
+      "price": 12.42,
+      "value": 13.92,
+      "pl_pct": -7.31
      },
      {
       "symbol": "CDNA",
@@ -1330,9 +1330,9 @@
       "exit_date": "2026-11-30",
       "surprise": 174.51,
       "fill_price": 82.34,
-      "price": 74.375,
-      "value": 13.46,
-      "pl_pct": -9.67
+      "price": 75.0,
+      "value": 13.57,
+      "pl_pct": -8.91
      },
      {
       "symbol": "CLMT",
@@ -1340,9 +1340,9 @@
       "exit_date": "2026-12-07",
       "surprise": 83.02,
       "fill_price": 45.43,
-      "price": 29.42,
-      "value": 9.38,
-      "pl_pct": -35.24
+      "price": 29.61,
+      "value": 9.44,
+      "pl_pct": -34.82
      },
      {
       "symbol": "CLNE",
@@ -1350,9 +1350,9 @@
       "exit_date": "2026-12-07",
       "surprise": 175.0,
       "fill_price": 1.7761,
-      "price": 1.541,
-      "value": 12.57,
-      "pl_pct": -13.24
+      "price": 1.505,
+      "value": 12.28,
+      "pl_pct": -15.26
      },
      {
       "symbol": "CMCO",
@@ -1360,9 +1360,9 @@
       "exit_date": "2026-12-02",
       "surprise": 60.58,
       "fill_price": 18.46,
-      "price": 18.65,
-      "value": 14.92,
-      "pl_pct": 1.03
+      "price": 18.975,
+      "value": 15.18,
+      "pl_pct": 2.79
      },
      {
       "symbol": "CNC",
@@ -1370,9 +1370,9 @@
       "exit_date": "2026-11-24",
       "surprise": 496.65,
       "fill_price": 65.98,
-      "price": 63.3,
-      "value": 14.39,
-      "pl_pct": -4.06
+      "price": 63.585,
+      "value": 14.46,
+      "pl_pct": -3.63
      },
      {
       "symbol": "CNH",
@@ -1380,9 +1380,9 @@
       "exit_date": "2026-12-08",
       "surprise": 63.12,
       "fill_price": 12.17,
-      "price": 11.075,
-      "value": 13.36,
-      "pl_pct": -9.0
+      "price": 11.15,
+      "value": 13.45,
+      "pl_pct": -8.38
      },
      {
       "symbol": "CNO",
@@ -1390,9 +1390,9 @@
       "exit_date": "2026-11-30",
       "surprise": 72.34,
       "fill_price": 57.25,
-      "price": 55.575,
-      "value": 14.46,
-      "pl_pct": -2.93
+      "price": 55.43,
+      "value": 14.43,
+      "pl_pct": -3.18
      },
      {
       "symbol": "CODI",
@@ -1400,9 +1400,9 @@
       "exit_date": "2026-12-04",
       "surprise": 114.71,
       "fill_price": 12.98,
-      "price": 12.215,
-      "value": 14.13,
-      "pl_pct": -5.89
+      "price": 12.44,
+      "value": 14.4,
+      "pl_pct": -4.16
      },
      {
       "symbol": "COIN",
@@ -1410,9 +1410,9 @@
       "exit_date": "2026-11-30",
       "surprise": 2975.98,
       "fill_price": 147.43,
-      "price": 108.055,
-      "value": 10.92,
-      "pl_pct": -26.71
+      "price": 110.82,
+      "value": 11.2,
+      "pl_pct": -24.83
      },
      {
       "symbol": "CPT",
@@ -1420,9 +1420,9 @@
       "exit_date": "2026-12-07",
       "surprise": 1288.93,
       "fill_price": 98.07,
-      "price": 95.45,
-      "value": 14.1,
-      "pl_pct": -2.67
+      "price": 95.22,
+      "value": 14.07,
+      "pl_pct": -2.91
      },
      {
       "symbol": "CSTL",
@@ -1430,9 +1430,9 @@
       "exit_date": "2026-12-07",
       "surprise": 62.43,
       "fill_price": 34.56,
-      "price": 33.72,
-      "value": 14.14,
-      "pl_pct": -2.43
+      "price": 34.21,
+      "value": 14.34,
+      "pl_pct": -1.01
      },
      {
       "symbol": "CTRI",
@@ -1440,9 +1440,9 @@
       "exit_date": "2026-12-04",
       "surprise": 82.61,
       "fill_price": 21.54,
-      "price": 20.63,
-      "value": 14.39,
-      "pl_pct": -4.22
+      "price": 20.98,
+      "value": 14.63,
+      "pl_pct": -2.6
      },
      {
       "symbol": "CVEO",
@@ -1450,9 +1450,9 @@
       "exit_date": "2026-11-30",
       "surprise": 306.3,
       "fill_price": 35.5,
-      "price": 33.33,
-      "value": 13.99,
-      "pl_pct": -6.11
+      "price": 33.055,
+      "value": 13.87,
+      "pl_pct": -6.89
      },
      {
       "symbol": "DCTH",
@@ -1460,9 +1460,9 @@
       "exit_date": "2026-12-08",
       "surprise": 288.89,
       "fill_price": 18.62,
-      "price": 19.57,
-      "value": 15.43,
-      "pl_pct": 5.1
+      "price": 19.64,
+      "value": 15.48,
+      "pl_pct": 5.48
      },
      {
       "symbol": "DEA",
@@ -1470,9 +1470,9 @@
       "exit_date": "2026-11-23",
       "surprise": 57.14,
       "fill_price": 22.82,
-      "price": 21.3401,
-      "value": 13.92,
-      "pl_pct": -6.49
+      "price": 21.22,
+      "value": 13.85,
+      "pl_pct": -7.01
      },
      {
       "symbol": "DINO",
@@ -1480,9 +1480,9 @@
       "exit_date": "2026-11-25",
       "surprise": 50.06,
       "fill_price": 117.59,
-      "price": 86.98,
-      "value": 11.15,
-      "pl_pct": -26.03
+      "price": 88.165,
+      "value": 11.3,
+      "pl_pct": -25.02
      },
      {
       "symbol": "DOC",
@@ -1490,9 +1490,9 @@
       "exit_date": "2026-12-02",
       "surprise": 54.4,
       "fill_price": 19.49,
-      "price": 19.495,
-      "value": 14.77,
-      "pl_pct": 0.03
+      "price": 19.47,
+      "value": 14.75,
+      "pl_pct": -0.1
      },
      {
       "symbol": "DTIL",
@@ -1500,9 +1500,9 @@
       "exit_date": "2026-12-02",
       "surprise": 67.06,
       "fill_price": 6.94,
-      "price": 7.81,
-      "value": 16.62,
-      "pl_pct": 12.54
+      "price": 7.73,
+      "value": 16.45,
+      "pl_pct": 11.38
      },
      {
       "symbol": "ECPG",
@@ -1510,9 +1510,9 @@
       "exit_date": "2026-12-04",
       "surprise": 66.39,
       "fill_price": 109.92,
-      "price": 100.45,
-      "value": 13.73,
-      "pl_pct": -8.62
+      "price": 100.96,
+      "value": 13.8,
+      "pl_pct": -8.15
      },
      {
       "symbol": "EGBN",
@@ -1520,9 +1520,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 29.76,
-      "price": 33.0,
+      "price": 32.93,
       "value": 0.0,
-      "pl_pct": 10.89
+      "pl_pct": 10.65
      },
      {
       "symbol": "ELF",
@@ -1530,9 +1530,9 @@
       "exit_date": "2026-12-04",
       "surprise": 102.09,
       "fill_price": 114.0,
-      "price": 109.425,
-      "value": 14.42,
-      "pl_pct": -4.01
+      "price": 108.115,
+      "value": 14.24,
+      "pl_pct": -5.16
      },
      {
       "symbol": "ETON",
@@ -1540,9 +1540,9 @@
       "exit_date": "2026-12-07",
       "surprise": 61.29,
       "fill_price": 58.5,
-      "price": 62.365,
-      "value": 15.45,
-      "pl_pct": 6.61
+      "price": 62.0,
+      "value": 15.36,
+      "pl_pct": 5.98
      },
      {
       "symbol": "EVGO",
@@ -1550,9 +1550,9 @@
       "exit_date": "2026-12-08",
       "surprise": 84.35,
       "fill_price": 1.83,
-      "price": 1.495,
-      "value": 11.99,
-      "pl_pct": -18.31
+      "price": 1.48,
+      "value": 11.87,
+      "pl_pct": -19.13
      },
      {
       "symbol": "EVR",
@@ -1560,9 +1560,9 @@
       "exit_date": "2026-11-25",
       "surprise": 72.92,
       "fill_price": 275.0,
-      "price": 287.735,
-      "value": 15.77,
-      "pl_pct": 4.63
+      "price": 290.87,
+      "value": 15.94,
+      "pl_pct": 5.77
      },
      {
       "symbol": "EWTX",
@@ -1570,9 +1570,9 @@
       "exit_date": "2026-12-04",
       "surprise": 283.98,
       "fill_price": 43.0,
-      "price": 41.8,
-      "value": 14.6,
-      "pl_pct": -2.79
+      "price": 42.8777,
+      "value": 14.98,
+      "pl_pct": -0.28
      },
      {
       "symbol": "EYE",
@@ -1580,9 +1580,9 @@
       "exit_date": "2026-12-11",
       "surprise": 76.47,
       "fill_price": 18.5,
-      "price": 16.914,
-      "value": 13.8,
-      "pl_pct": -8.57
+      "price": 17.295,
+      "value": 14.11,
+      "pl_pct": -6.51
      },
      {
       "symbol": "FBIN",
@@ -1590,9 +1590,9 @@
       "exit_date": "2026-12-03",
       "surprise": 54.46,
       "fill_price": 48.69,
-      "price": 47.48,
-      "value": 14.58,
-      "pl_pct": -2.49
+      "price": 47.75,
+      "value": 14.66,
+      "pl_pct": -1.93
      },
      {
       "symbol": "FLGT",
@@ -1600,9 +1600,9 @@
       "exit_date": "2026-12-07",
       "surprise": 86.15,
       "fill_price": 20.47,
-      "price": 24.56,
-      "value": 17.39,
-      "pl_pct": 19.98
+      "price": 24.53,
+      "value": 17.36,
+      "pl_pct": 19.83
      },
      {
       "symbol": "FNKO",
@@ -1610,9 +1610,9 @@
       "exit_date": "2026-12-07",
       "surprise": 60.0,
       "fill_price": 5.6,
-      "price": 5.97,
-      "value": 15.45,
-      "pl_pct": 6.61
+      "price": 6.1,
+      "value": 15.78,
+      "pl_pct": 8.93
      },
      {
       "symbol": "FOXA",
@@ -1620,8 +1620,8 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": null,
-      "price": 62.83,
-      "value": 5.89,
+      "price": 63.72,
+      "value": 5.97,
       "pl_pct": null
      },
      {
@@ -1630,9 +1630,9 @@
       "exit_date": "2026-12-07",
       "surprise": 69.81,
       "fill_price": 17.16,
-      "price": 16.365,
-      "value": 13.82,
-      "pl_pct": -4.63
+      "price": 16.72,
+      "value": 14.12,
+      "pl_pct": -2.56
      },
      {
       "symbol": "FTK",
@@ -1640,9 +1640,9 @@
       "exit_date": "2026-12-03",
       "surprise": 78.93,
       "fill_price": 29.0,
-      "price": 23.5,
-      "value": 12.11,
-      "pl_pct": -18.97
+      "price": 23.11,
+      "value": 11.91,
+      "pl_pct": -20.31
      },
      {
       "symbol": "FUN",
@@ -1650,9 +1650,9 @@
       "exit_date": "2026-12-04",
       "surprise": 56.92,
       "fill_price": 9.19,
-      "price": 11.16,
-      "value": 18.24,
-      "pl_pct": 21.44
+      "price": 11.055,
+      "value": 18.07,
+      "pl_pct": 20.29
      },
      {
       "symbol": "GCT",
@@ -1660,9 +1660,9 @@
       "exit_date": "2026-12-04",
       "surprise": 54.46,
       "fill_price": 64.92,
-      "price": 61.14,
-      "value": 14.15,
-      "pl_pct": -5.82
+      "price": 63.56,
+      "value": 14.71,
+      "pl_pct": -2.09
      },
      {
       "symbol": "GKOS",
@@ -1670,9 +1670,9 @@
       "exit_date": "2026-11-27",
       "surprise": 618.71,
       "fill_price": 213.09,
-      "price": 247.295,
-      "value": 17.47,
-      "pl_pct": 16.05
+      "price": 251.205,
+      "value": 17.74,
+      "pl_pct": 17.89
      },
      {
       "symbol": "GLUE",
@@ -1680,9 +1680,9 @@
       "exit_date": "2026-12-04",
       "surprise": 110.34,
       "fill_price": 10.48,
-      "price": 9.13,
+      "price": 9.135,
       "value": 13.09,
-      "pl_pct": -12.88
+      "pl_pct": -12.83
      },
      {
       "symbol": "GNL",
@@ -1690,9 +1690,9 @@
       "exit_date": "2026-12-04",
       "surprise": 66.22,
       "fill_price": 7.1,
-      "price": 6.11,
-      "value": 12.93,
-      "pl_pct": -13.94
+      "price": 6.16,
+      "value": 13.03,
+      "pl_pct": -13.24
      },
      {
       "symbol": "GPRE",
@@ -1700,9 +1700,9 @@
       "exit_date": "2026-12-07",
       "surprise": 67.01,
       "fill_price": 13.28,
-      "price": 11.19,
-      "value": 12.21,
-      "pl_pct": -15.74
+      "price": 11.2,
+      "value": 12.22,
+      "pl_pct": -15.66
      },
      {
       "symbol": "GRAL",
@@ -1710,9 +1710,9 @@
       "exit_date": "2026-12-04",
       "surprise": 257.92,
       "fill_price": 119.95,
-      "price": 106.655,
-      "value": 13.36,
-      "pl_pct": -11.08
+      "price": 110.35,
+      "value": 13.82,
+      "pl_pct": -8.0
      },
      {
       "symbol": "H",
@@ -1720,9 +1720,9 @@
       "exit_date": "2026-11-27",
       "surprise": 64.94,
       "fill_price": 175.1,
-      "price": 186.03,
-      "value": 15.99,
-      "pl_pct": 6.24
+      "price": 187.19,
+      "value": 16.09,
+      "pl_pct": 6.9
      },
      {
       "symbol": "HCI",
@@ -1730,9 +1730,9 @@
       "exit_date": "2026-12-04",
       "surprise": 58.87,
       "fill_price": 208.8,
-      "price": 190.2,
-      "value": 13.68,
-      "pl_pct": -8.91
+      "price": 189.37,
+      "value": 13.62,
+      "pl_pct": -9.31
      },
      {
       "symbol": "HE",
@@ -1740,9 +1740,9 @@
       "exit_date": "2026-12-08",
       "surprise": 109.68,
       "fill_price": 9.14,
-      "price": 7.95,
-      "value": 12.77,
-      "pl_pct": -13.02
+      "price": 8.025,
+      "value": 12.89,
+      "pl_pct": -12.2
      },
      {
       "symbol": "HG",
@@ -1750,9 +1750,9 @@
       "exit_date": "2026-11-30",
       "surprise": 96.49,
       "fill_price": 35.33,
-      "price": 38.56,
-      "value": 16.26,
-      "pl_pct": 9.14
+      "price": 38.3265,
+      "value": 16.16,
+      "pl_pct": 8.48
      },
      {
       "symbol": "HGV",
@@ -1760,9 +1760,9 @@
       "exit_date": "2026-11-27",
       "surprise": 280.19,
       "fill_price": 36.0,
-      "price": 44.39,
-      "value": 18.56,
-      "pl_pct": 23.31
+      "price": 44.24,
+      "value": 18.49,
+      "pl_pct": 22.89
      },
      {
       "symbol": "HL",
@@ -1770,9 +1770,9 @@
       "exit_date": "2026-12-03",
       "surprise": 50.85,
       "fill_price": 14.47,
-      "price": 11.1601,
-      "value": 11.53,
-      "pl_pct": -22.87
+      "price": 11.355,
+      "value": 11.73,
+      "pl_pct": -21.53
      },
      {
       "symbol": "HMN",
@@ -1780,9 +1780,9 @@
       "exit_date": "2026-12-03",
       "surprise": 86.14,
       "fill_price": 52.24,
-      "price": 52.27,
-      "value": 14.96,
-      "pl_pct": 0.06
+      "price": 51.86,
+      "value": 14.84,
+      "pl_pct": -0.73
      },
      {
       "symbol": "HP",
@@ -1790,9 +1790,9 @@
       "exit_date": "2026-12-18",
       "surprise": 59.4,
       "fill_price": 33.44,
-      "price": 32.72,
-      "value": 14.13,
-      "pl_pct": -2.15
+      "price": 33.07,
+      "value": 14.28,
+      "pl_pct": -1.11
      },
      {
       "symbol": "HRTG",
@@ -1800,9 +1800,9 @@
       "exit_date": "2026-11-27",
       "surprise": 84.67,
       "fill_price": 34.22,
-      "price": 32.565,
-      "value": 14.32,
-      "pl_pct": -4.84
+      "price": 32.14,
+      "value": 14.14,
+      "pl_pct": -6.08
      },
      {
       "symbol": "HTFL",
@@ -1810,9 +1810,9 @@
       "exit_date": "2026-12-14",
       "surprise": 70.72,
       "fill_price": 57.94,
-      "price": 47.7,
-      "value": 12.35,
-      "pl_pct": -17.67
+      "price": 49.49,
+      "value": 12.81,
+      "pl_pct": -14.58
      },
      {
       "symbol": "HUT",
@@ -1820,9 +1820,9 @@
       "exit_date": "2026-12-03",
       "surprise": 234.25,
       "fill_price": 53.12,
-      "price": 52.95,
-      "value": 14.9,
-      "pl_pct": -0.32
+      "price": 54.77,
+      "value": 15.41,
+      "pl_pct": 3.11
      },
      {
       "symbol": "IDCC",
@@ -1830,9 +1830,9 @@
       "exit_date": "2026-11-27",
       "surprise": 132.09,
       "fill_price": 339.41,
-      "price": 265.675,
-      "value": 11.78,
-      "pl_pct": -21.72
+      "price": 267.42,
+      "value": 11.86,
+      "pl_pct": -21.21
      },
      {
       "symbol": "IMAX",
@@ -1840,9 +1840,9 @@
       "exit_date": "2026-12-04",
       "surprise": 116.67,
       "fill_price": 53.05,
-      "price": 46.555,
-      "value": 13.18,
-      "pl_pct": -12.24
+      "price": 46.655,
+      "value": 13.21,
+      "pl_pct": -12.05
      },
      {
       "symbol": "INNV",
@@ -1850,9 +1850,9 @@
       "exit_date": "2026-12-03",
       "surprise": 88.56,
       "fill_price": 9.6,
-      "price": 9.26,
-      "value": 14.42,
-      "pl_pct": -3.54
+      "price": 9.3801,
+      "value": 14.61,
+      "pl_pct": -2.29
      },
      {
       "symbol": "INSP",
@@ -1860,9 +1860,9 @@
       "exit_date": "2026-12-02",
       "surprise": 54.07,
       "fill_price": 62.02,
-      "price": 55.135,
-      "value": 13.13,
-      "pl_pct": -11.1
+      "price": 54.255,
+      "value": 12.92,
+      "pl_pct": -12.52
      },
      {
       "symbol": "INSW",
@@ -1870,9 +1870,9 @@
       "exit_date": "2026-12-04",
       "surprise": 62.22,
       "fill_price": 99.47,
-      "price": 99.07,
-      "value": 14.96,
-      "pl_pct": -0.4
+      "price": 100.0,
+      "value": 15.1,
+      "pl_pct": 0.53
      },
      {
       "symbol": "INTT",
@@ -1880,9 +1880,9 @@
       "exit_date": "2026-12-07",
       "surprise": 50.0,
       "fill_price": 13.35,
-      "price": 12.0,
-      "value": 13.02,
-      "pl_pct": -10.11
+      "price": 12.0653,
+      "value": 13.1,
+      "pl_pct": -9.62
      },
      {
       "symbol": "IPI",
@@ -1890,9 +1890,9 @@
       "exit_date": "2026-12-03",
       "surprise": 134.19,
       "fill_price": 27.99,
-      "price": 29.575,
-      "value": 15.8,
-      "pl_pct": 5.66
+      "price": 29.99,
+      "value": 16.02,
+      "pl_pct": 7.15
      },
      {
       "symbol": "IVT",
@@ -1900,9 +1900,9 @@
       "exit_date": "2026-11-25",
       "surprise": 52.39,
       "fill_price": 30.81,
-      "price": 31.04,
-      "value": 15.18,
-      "pl_pct": 0.75
+      "price": 30.89,
+      "value": 15.11,
+      "pl_pct": 0.26
      },
      {
       "symbol": "KRO",
@@ -1910,9 +1910,9 @@
       "exit_date": "2026-12-07",
       "surprise": 56.2,
       "fill_price": 7.36,
-      "price": 7.285,
-      "value": 14.34,
-      "pl_pct": -1.02
+      "price": 7.265,
+      "value": 14.3,
+      "pl_pct": -1.29
      },
      {
       "symbol": "KROS",
@@ -1920,9 +1920,9 @@
       "exit_date": "2026-12-07",
       "surprise": 181.4,
       "fill_price": 9.74,
-      "price": 11.34,
-      "value": 16.87,
-      "pl_pct": 16.43
+      "price": 11.12,
+      "value": 16.54,
+      "pl_pct": 14.17
      },
      {
       "symbol": "KTB",
@@ -1930,9 +1930,9 @@
       "exit_date": "2026-12-04",
       "surprise": 52.59,
       "fill_price": 76.95,
-      "price": 80.385,
-      "value": 15.69,
-      "pl_pct": 4.46
+      "price": 80.67,
+      "value": 15.75,
+      "pl_pct": 4.83
      },
      {
       "symbol": "LASR",
@@ -1940,9 +1940,9 @@
       "exit_date": "2026-12-07",
       "surprise": 242.83,
       "fill_price": 37.55,
-      "price": 36.265,
-      "value": 13.99,
-      "pl_pct": -3.42
+      "price": 36.83,
+      "value": 14.21,
+      "pl_pct": -1.92
      },
      {
       "symbol": "LAUR",
@@ -1950,9 +1950,9 @@
       "exit_date": "2026-11-27",
       "surprise": 55.32,
       "fill_price": 37.51,
-      "price": 32.91,
-      "value": 13.2,
-      "pl_pct": -12.26
+      "price": 32.63,
+      "value": 13.09,
+      "pl_pct": -13.01
      },
      {
       "symbol": "LCUT",
@@ -1960,9 +1960,9 @@
       "exit_date": "2026-12-04",
       "surprise": 85.0,
       "fill_price": 8.92,
-      "price": 7.05,
-      "value": 11.87,
-      "pl_pct": -20.96
+      "price": 6.96,
+      "value": 11.72,
+      "pl_pct": -21.97
      },
      {
       "symbol": "LEGH",
@@ -1970,9 +1970,9 @@
       "exit_date": "2026-12-04",
       "surprise": 57.41,
       "fill_price": 37.34,
-      "price": 27.71,
-      "value": 11.15,
-      "pl_pct": -25.79
+      "price": 27.525,
+      "value": 11.07,
+      "pl_pct": -26.29
      },
      {
       "symbol": "LGN",
@@ -1980,9 +1980,9 @@
       "exit_date": "2026-12-11",
       "surprise": 112.96,
       "fill_price": 36.38,
-      "price": 35.73,
-      "value": 14.82,
-      "pl_pct": -1.79
+      "price": 36.68,
+      "value": 15.21,
+      "pl_pct": 0.82
      },
      {
       "symbol": "LION",
@@ -1990,9 +1990,9 @@
       "exit_date": "2026-12-07",
       "surprise": 409.6,
       "fill_price": 12.56,
-      "price": 13.49,
-      "value": 15.56,
-      "pl_pct": 7.4
+      "price": 13.58,
+      "value": 15.67,
+      "pl_pct": 8.12
      },
      {
       "symbol": "LPX",
@@ -2000,9 +2000,9 @@
       "exit_date": "2026-12-02",
       "surprise": 85.71,
       "fill_price": 78.0,
-      "price": 74.585,
-      "value": 14.12,
-      "pl_pct": -4.38
+      "price": 74.66,
+      "value": 14.14,
+      "pl_pct": -4.28
      },
      {
       "symbol": "LUNR",
@@ -2010,9 +2010,9 @@
       "exit_date": "2026-12-11",
       "surprise": 83.33,
       "fill_price": 14.36,
-      "price": 9.65,
-      "value": 10.14,
-      "pl_pct": -32.8
+      "price": 9.795,
+      "value": 10.29,
+      "pl_pct": -31.79
      },
      {
       "symbol": "LXRX",
@@ -2020,9 +2020,9 @@
       "exit_date": "2026-12-04",
       "surprise": 50.0,
       "fill_price": 1.52,
-      "price": 1.595,
-      "value": 15.76,
-      "pl_pct": 4.93
+      "price": 1.605,
+      "value": 15.86,
+      "pl_pct": 5.59
      },
      {
       "symbol": "MAC",
@@ -2030,9 +2030,9 @@
       "exit_date": "2026-12-04",
       "surprise": 320.56,
       "fill_price": 25.51,
-      "price": 23.84,
-      "value": 14.04,
-      "pl_pct": -6.55
+      "price": 23.8,
+      "value": 14.01,
+      "pl_pct": -6.7
      },
      {
       "symbol": "MBC",
@@ -2040,9 +2040,9 @@
       "exit_date": "2026-12-07",
       "surprise": 233.33,
       "fill_price": 6.63,
-      "price": 6.11,
-      "value": 13.35,
-      "pl_pct": -7.84
+      "price": 6.07,
+      "value": 13.27,
+      "pl_pct": -8.45
      },
      {
       "symbol": "MQ",
@@ -2050,9 +2050,9 @@
       "exit_date": "2026-12-03",
       "surprise": 67.2,
       "fill_price": 16.97,
-      "price": 16.59,
-      "value": 14.62,
-      "pl_pct": -2.24
+      "price": 16.785,
+      "value": 14.79,
+      "pl_pct": -1.09
      },
      {
       "symbol": "MRNA",
@@ -2060,9 +2060,9 @@
       "exit_date": "2026-12-07",
       "surprise": 130.16,
       "fill_price": 245.0,
-      "price": 210.73,
-      "value": 12.46,
-      "pl_pct": -13.99
+      "price": 210.9958,
+      "value": 12.48,
+      "pl_pct": -13.88
      },
      {
       "symbol": "NEXT",
@@ -2070,9 +2070,9 @@
       "exit_date": "2026-11-27",
       "surprise": 181.82,
       "fill_price": 6.88,
-      "price": 5.885,
-      "value": 12.87,
-      "pl_pct": -14.46
+      "price": 5.85,
+      "value": 12.8,
+      "pl_pct": -14.97
      },
      {
       "symbol": "NRG",
@@ -2080,9 +2080,9 @@
       "exit_date": "2026-12-08",
       "surprise": 54.53,
       "fill_price": 93.5,
-      "price": 91.81,
-      "value": 14.41,
-      "pl_pct": -1.81
+      "price": 93.835,
+      "value": 14.73,
+      "pl_pct": 0.36
      },
      {
       "symbol": "NTGR",
@@ -2090,9 +2090,9 @@
       "exit_date": "2026-12-04",
       "surprise": 360.0,
       "fill_price": 21.11,
-      "price": 18.23,
-      "value": 12.97,
-      "pl_pct": -13.64
+      "price": 18.805,
+      "value": 13.38,
+      "pl_pct": -10.92
      },
      {
       "symbol": "NVCR",
@@ -2100,9 +2100,9 @@
       "exit_date": "2026-11-27",
       "surprise": 62.5,
       "fill_price": 12.92,
-      "price": 11.09,
-      "value": 12.92,
-      "pl_pct": -14.16
+      "price": 11.34,
+      "value": 13.21,
+      "pl_pct": -12.23
      },
      {
       "symbol": "NVRI",
@@ -2110,9 +2110,9 @@
       "exit_date": "2026-12-04",
       "surprise": 71.43,
       "fill_price": 22.0,
-      "price": 23.99,
-      "value": 16.38,
-      "pl_pct": 9.05
+      "price": 24.15,
+      "value": 16.49,
+      "pl_pct": 9.77
      },
      {
       "symbol": "OFIX",
@@ -2120,9 +2120,9 @@
       "exit_date": "2026-12-08",
       "surprise": 64.73,
       "fill_price": 7.01,
-      "price": 6.4,
-      "value": 13.4,
-      "pl_pct": -8.7
+      "price": 6.21,
+      "value": 13.0,
+      "pl_pct": -11.41
      },
      {
       "symbol": "OLED",
@@ -2130,9 +2130,9 @@
       "exit_date": "2026-11-27",
       "surprise": 50.91,
       "fill_price": 92.98,
-      "price": 82.42,
-      "value": 13.34,
-      "pl_pct": -11.36
+      "price": 82.31,
+      "value": 13.32,
+      "pl_pct": -11.48
      },
      {
       "symbol": "OPTU",
@@ -2140,9 +2140,9 @@
       "exit_date": "2026-12-07",
       "surprise": 1177.78,
       "fill_price": 0.6034,
-      "price": 0.6193,
-      "value": 14.87,
-      "pl_pct": 2.64
+      "price": 0.5897,
+      "value": 14.16,
+      "pl_pct": -2.27
      },
      {
       "symbol": "ORA",
@@ -2150,9 +2150,9 @@
       "exit_date": "2026-12-04",
       "surprise": 61.17,
       "fill_price": 93.1,
-      "price": 86.81,
-      "value": 14.01,
-      "pl_pct": -6.76
+      "price": 86.56,
+      "value": 13.96,
+      "pl_pct": -7.02
      },
      {
       "symbol": "OSCR",
@@ -2160,9 +2160,9 @@
       "exit_date": "2026-12-04",
       "surprise": 345.0,
       "fill_price": 34.53,
-      "price": 25.41,
-      "value": 11.05,
-      "pl_pct": -26.41
+      "price": 26.29,
+      "value": 11.44,
+      "pl_pct": -23.86
      },
      {
       "symbol": "PANL",
@@ -2170,9 +2170,9 @@
       "exit_date": "2026-12-07",
       "surprise": 70.49,
       "fill_price": 8.15,
-      "price": 8.17,
-      "value": 14.53,
-      "pl_pct": 0.25
+      "price": 8.23,
+      "value": 14.63,
+      "pl_pct": 0.98
      },
      {
       "symbol": "PARR",
@@ -2180,9 +2180,9 @@
       "exit_date": "2026-12-03",
       "surprise": 60.57,
       "fill_price": 73.35,
-      "price": 62.86,
-      "value": 12.81,
-      "pl_pct": -14.3
+      "price": 63.615,
+      "value": 12.97,
+      "pl_pct": -13.27
      },
      {
       "symbol": "PEB",
@@ -2190,9 +2190,9 @@
       "exit_date": "2026-11-30",
       "surprise": 811.5,
       "fill_price": 21.2,
-      "price": 21.42,
-      "value": 15.05,
-      "pl_pct": 1.04
+      "price": 21.49,
+      "value": 15.1,
+      "pl_pct": 1.37
      },
      {
       "symbol": "PENN",
@@ -2200,9 +2200,9 @@
       "exit_date": "2026-12-04",
       "surprise": 88.24,
       "fill_price": 17.03,
-      "price": 18.17,
-      "value": 16.03,
-      "pl_pct": 6.69
+      "price": 18.14,
+      "value": 16.0,
+      "pl_pct": 6.52
      },
      {
       "symbol": "PII",
@@ -2210,9 +2210,9 @@
       "exit_date": "2026-11-24",
       "surprise": 83.92,
       "fill_price": 59.59,
-      "price": 64.88,
-      "value": 16.33,
-      "pl_pct": 8.88
+      "price": 66.26,
+      "value": 16.68,
+      "pl_pct": 11.19
      },
      {
       "symbol": "PRIM",
@@ -2220,9 +2220,9 @@
       "exit_date": "2026-12-03",
       "surprise": 53.37,
       "fill_price": 84.45,
-      "price": 58.69,
-      "value": 10.39,
-      "pl_pct": -30.5
+      "price": 59.08,
+      "value": 10.46,
+      "pl_pct": -30.04
      },
      {
       "symbol": "PRVA",
@@ -2230,9 +2230,9 @@
       "exit_date": "2026-12-04",
       "surprise": 110.0,
       "fill_price": 23.14,
-      "price": 25.305,
-      "value": 16.43,
-      "pl_pct": 9.36
+      "price": 25.12,
+      "value": 16.31,
+      "pl_pct": 8.56
      },
      {
       "symbol": "PTEN",
@@ -2240,9 +2240,9 @@
       "exit_date": "2026-11-27",
       "surprise": 86.32,
       "fill_price": 12.6,
-      "price": 9.64,
-      "value": 11.51,
-      "pl_pct": -23.49
+      "price": 9.645,
+      "value": 11.52,
+      "pl_pct": -23.45
      },
      {
       "symbol": "QDEL",
@@ -2250,9 +2250,9 @@
       "exit_date": "2026-12-03",
       "surprise": 73.77,
       "fill_price": 14.64,
-      "price": 8.89,
-      "value": 9.08,
-      "pl_pct": -39.28
+      "price": 9.0,
+      "value": 9.19,
+      "pl_pct": -38.52
      },
      {
       "symbol": "REAL",
@@ -2260,9 +2260,9 @@
       "exit_date": "2026-11-30",
       "surprise": 506.06,
       "fill_price": 11.25,
-      "price": 11.37,
-      "value": 15.06,
-      "pl_pct": 1.07
+      "price": 11.675,
+      "value": 15.46,
+      "pl_pct": 3.78
      },
      {
       "symbol": "RELY",
@@ -2270,9 +2270,9 @@
       "exit_date": "2026-12-04",
       "surprise": 77.32,
       "fill_price": 22.46,
-      "price": 21.06,
-      "value": 14.08,
-      "pl_pct": -6.23
+      "price": 21.38,
+      "value": 14.3,
+      "pl_pct": -4.81
      },
      {
       "symbol": "RGNX",
@@ -2280,9 +2280,9 @@
       "exit_date": "2026-12-04",
       "surprise": 50.79,
       "fill_price": 7.4,
-      "price": 7.52,
-      "value": 15.26,
-      "pl_pct": 1.62
+      "price": 7.455,
+      "value": 15.13,
+      "pl_pct": 0.74
      },
      {
       "symbol": "RHP",
@@ -2290,9 +2290,9 @@
       "exit_date": "2026-12-02",
       "surprise": 134.0,
       "fill_price": 132.38,
-      "price": 135.055,
-      "value": 15.07,
-      "pl_pct": 2.02
+      "price": 135.605,
+      "value": 15.13,
+      "pl_pct": 2.44
      },
      {
       "symbol": "RIOT",
@@ -2300,9 +2300,9 @@
       "exit_date": "2026-12-03",
       "surprise": 103.7,
       "fill_price": 15.6,
-      "price": 17.47,
-      "value": 16.74,
-      "pl_pct": 11.99
+      "price": 18.065,
+      "value": 17.31,
+      "pl_pct": 15.8
      },
      {
       "symbol": "RLJ",
@@ -2310,9 +2310,9 @@
       "exit_date": "2026-12-04",
       "surprise": 75.0,
       "fill_price": 12.35,
-      "price": 12.6,
-      "value": 15.32,
-      "pl_pct": 2.02
+      "price": 12.665,
+      "value": 15.4,
+      "pl_pct": 2.55
      },
      {
       "symbol": "RNA",
@@ -2320,9 +2320,9 @@
       "exit_date": "2026-12-14",
       "surprise": 60.32,
       "fill_price": 7.71,
-      "price": 6.8262,
-      "value": 13.28,
-      "pl_pct": -11.46
+      "price": 7.06,
+      "value": 13.74,
+      "pl_pct": -8.43
      },
      {
       "symbol": "ROIV",
@@ -2330,9 +2330,9 @@
       "exit_date": "2026-12-08",
       "surprise": 58.88,
       "fill_price": 39.56,
-      "price": 39.825,
-      "value": 14.78,
-      "pl_pct": 0.67
+      "price": 40.05,
+      "value": 14.86,
+      "pl_pct": 1.24
      },
      {
       "symbol": "RUN",
@@ -2340,9 +2340,9 @@
       "exit_date": "2026-12-04",
       "surprise": 75.44,
       "fill_price": 10.5,
-      "price": 7.055,
-      "value": 10.09,
-      "pl_pct": -32.81
+      "price": 7.0399,
+      "value": 10.07,
+      "pl_pct": -32.95
      },
      {
       "symbol": "SABR",
@@ -2350,9 +2350,9 @@
       "exit_date": "2026-12-04",
       "surprise": 450.0,
       "fill_price": 1.96,
-      "price": 1.625,
-      "value": 12.45,
-      "pl_pct": -17.09
+      "price": 1.635,
+      "value": 12.53,
+      "pl_pct": -16.58
      },
      {
       "symbol": "SBGI",
@@ -2360,9 +2360,9 @@
       "exit_date": "2026-12-04",
       "surprise": 1100.0,
       "fill_price": 14.59,
-      "price": 14.24,
-      "value": 14.66,
-      "pl_pct": -2.4
+      "price": 14.27,
+      "value": 14.69,
+      "pl_pct": -2.19
      },
      {
       "symbol": "SEDG",
@@ -2370,9 +2370,9 @@
       "exit_date": "2026-12-03",
       "surprise": 625.0,
       "fill_price": 32.88,
-      "price": 19.14,
+      "price": 19.135,
       "value": 8.7,
-      "pl_pct": -41.79
+      "pl_pct": -41.8
      },
      {
       "symbol": "SEI",
@@ -2380,9 +2380,9 @@
       "exit_date": "2026-12-04",
       "surprise": 58.71,
       "fill_price": 55.56,
-      "price": 61.33,
-      "value": 16.58,
-      "pl_pct": 10.39
+      "price": 62.41,
+      "value": 16.87,
+      "pl_pct": 12.33
      },
      {
       "symbol": "SHAZ",
@@ -2390,9 +2390,9 @@
       "exit_date": "2026-12-16",
       "surprise": 53.6,
       "fill_price": 19.51,
-      "price": 20.085,
-      "value": 14.97,
-      "pl_pct": 2.95
+      "price": 21.54,
+      "value": 16.05,
+      "pl_pct": 10.4
      },
      {
       "symbol": "SLG",
@@ -2400,9 +2400,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 46.04,
-      "price": 46.15,
-      "value": 15.0,
-      "pl_pct": 0.24
+      "price": 46.685,
+      "value": 15.17,
+      "pl_pct": 1.4
      },
      {
       "symbol": "SUPN",
@@ -2410,9 +2410,9 @@
       "exit_date": "2026-11-30",
       "surprise": 79.2,
       "fill_price": 42.07,
-      "price": 28.86,
-      "value": 10.22,
-      "pl_pct": -31.4
+      "price": 29.4,
+      "value": 10.41,
+      "pl_pct": -30.12
      },
      {
       "symbol": "SXC",
@@ -2430,9 +2430,9 @@
       "exit_date": "2026-12-03",
       "surprise": 58.6,
       "fill_price": 15.78,
-      "price": 14.855,
-      "value": 14.07,
-      "pl_pct": -5.86
+      "price": 14.775,
+      "value": 14.0,
+      "pl_pct": -6.37
      },
      {
       "symbol": "TARS",
@@ -2440,9 +2440,9 @@
       "exit_date": "2026-12-03",
       "surprise": 50.61,
       "fill_price": 74.01,
-      "price": 74.19,
-      "value": 14.99,
-      "pl_pct": 0.24
+      "price": 75.28,
+      "value": 15.21,
+      "pl_pct": 1.72
      },
      {
       "symbol": "TBI",
@@ -2450,9 +2450,9 @@
       "exit_date": "2026-12-04",
       "surprise": 76.78,
       "fill_price": 13.48,
-      "price": 11.7894,
-      "value": 13.14,
-      "pl_pct": -12.54
+      "price": 11.42,
+      "value": 12.72,
+      "pl_pct": -15.28
      },
      {
       "symbol": "TDS",
@@ -2460,9 +2460,9 @@
       "exit_date": "2026-12-07",
       "surprise": 100.0,
       "fill_price": 31.91,
-      "price": 30.84,
-      "value": 14.0,
-      "pl_pct": -3.35
+      "price": 31.22,
+      "value": 14.18,
+      "pl_pct": -2.16
      },
      {
       "symbol": "TMDX",
@@ -2470,9 +2470,9 @@
       "exit_date": "2026-12-07",
       "surprise": 73.82,
       "fill_price": 78.9,
-      "price": 89.0,
-      "value": 16.34,
-      "pl_pct": 12.8
+      "price": 90.67,
+      "value": 16.65,
+      "pl_pct": 14.92
      },
      {
       "symbol": "TNDM",
@@ -2480,9 +2480,9 @@
       "exit_date": "2026-12-07",
       "surprise": 58.37,
       "fill_price": 15.57,
-      "price": 18.05,
-      "value": 16.8,
-      "pl_pct": 15.93
+      "price": 17.92,
+      "value": 16.68,
+      "pl_pct": 15.09
      },
      {
       "symbol": "TNET",
@@ -2490,9 +2490,9 @@
       "exit_date": "2026-11-27",
       "surprise": 56.67,
       "fill_price": 71.86,
-      "price": 62.375,
-      "value": 13.06,
-      "pl_pct": -13.2
+      "price": 63.32,
+      "value": 13.26,
+      "pl_pct": -11.88
      },
      {
       "symbol": "TTI",
@@ -2500,9 +2500,9 @@
       "exit_date": "2026-12-02",
       "surprise": 50.0,
       "fill_price": 6.03,
-      "price": 6.095,
-      "value": 14.93,
-      "pl_pct": 1.08
+      "price": 6.06,
+      "value": 14.84,
+      "pl_pct": 0.5
      },
      {
       "symbol": "TXG",
@@ -2510,9 +2510,9 @@
       "exit_date": "2026-12-07",
       "surprise": 240.3,
       "fill_price": 57.89,
-      "price": 56.655,
-      "value": 14.18,
-      "pl_pct": -2.13
+      "price": 57.25,
+      "value": 14.33,
+      "pl_pct": -1.11
      },
      {
       "symbol": "UDR",
@@ -2520,9 +2520,9 @@
       "exit_date": "2026-12-02",
       "surprise": 313.45,
       "fill_price": 35.47,
-      "price": 35.37,
-      "value": 14.73,
-      "pl_pct": -0.28
+      "price": 35.42,
+      "value": 14.75,
+      "pl_pct": -0.14
      },
      {
       "symbol": "UGI",
@@ -2530,9 +2530,9 @@
       "exit_date": "2026-12-18",
       "surprise": 81.25,
       "fill_price": 37.0,
-      "price": 35.77,
-      "value": 13.96,
-      "pl_pct": -3.32
+      "price": 35.34,
+      "value": 13.79,
+      "pl_pct": -4.49
      },
      {
       "symbol": "ULH",
@@ -2540,9 +2540,9 @@
       "exit_date": "2026-11-30",
       "surprise": 115.63,
       "fill_price": 19.28,
-      "price": 28.48,
-      "value": 22.01,
-      "pl_pct": 47.72
+      "price": 28.305,
+      "value": 21.87,
+      "pl_pct": 46.81
      },
      {
       "symbol": "VCEL",
@@ -2550,9 +2550,9 @@
       "exit_date": "2026-12-04",
       "surprise": 350.0,
       "fill_price": 50.54,
-      "price": 58.5,
-      "value": 17.39,
-      "pl_pct": 15.75
+      "price": 58.64,
+      "value": 17.43,
+      "pl_pct": 16.03
      },
      {
       "symbol": "VIA",
@@ -2560,9 +2560,9 @@
       "exit_date": "2026-12-08",
       "surprise": 100.0,
       "fill_price": 35.0,
-      "price": 45.935,
-      "value": 19.27,
-      "pl_pct": 31.24
+      "price": 46.575,
+      "value": 19.53,
+      "pl_pct": 33.07
      },
      {
       "symbol": "VRNS",
@@ -2570,9 +2570,9 @@
       "exit_date": "2026-12-03",
       "surprise": 247.62,
       "fill_price": 48.85,
-      "price": 49.225,
-      "value": 15.06,
-      "pl_pct": 0.77
+      "price": 49.25,
+      "value": 15.07,
+      "pl_pct": 0.82
      },
      {
       "symbol": "VSNT",
@@ -2580,9 +2580,9 @@
       "exit_date": "2026-12-02",
       "surprise": 580.0,
       "fill_price": 32.21,
-      "price": 33.395,
-      "value": 15.31,
-      "pl_pct": 3.68
+      "price": 33.49,
+      "value": 15.36,
+      "pl_pct": 3.97
      },
      {
       "symbol": "WRLD",
@@ -2590,9 +2590,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 178.32,
-      "price": 136.61,
+      "price": 135.49,
       "value": 0.0,
-      "pl_pct": -23.39
+      "pl_pct": -24.02
      },
      {
       "symbol": "WTI",
@@ -2600,9 +2600,9 @@
       "exit_date": "2026-11-30",
       "surprise": 121.08,
       "fill_price": 4.12,
-      "price": 2.865,
-      "value": 10.36,
-      "pl_pct": -30.46
+      "price": 2.845,
+      "value": 10.29,
+      "pl_pct": -30.95
      },
      {
       "symbol": "WWW",
@@ -2610,9 +2610,9 @@
       "exit_date": "2026-12-11",
       "surprise": 71.74,
       "fill_price": 21.93,
-      "price": 25.135,
-      "value": 17.3,
-      "pl_pct": 14.61
+      "price": 25.51,
+      "value": 17.55,
+      "pl_pct": 16.32
      },
      {
       "symbol": "WY",
@@ -2620,9 +2620,9 @@
       "exit_date": "2026-11-30",
       "surprise": 128.31,
       "fill_price": 19.98,
-      "price": 19.625,
+      "price": 19.63,
       "value": 14.64,
-      "pl_pct": -1.78
+      "pl_pct": -1.75
      },
      {
       "symbol": "XHR",
@@ -2630,9 +2630,9 @@
       "exit_date": "2026-12-02",
       "surprise": 70.0,
       "fill_price": 21.77,
-      "price": 21.815,
-      "value": 14.8,
-      "pl_pct": 0.21
+      "price": 21.915,
+      "value": 14.87,
+      "pl_pct": 0.67
      },
      {
       "symbol": "XNCR",
@@ -2640,9 +2640,9 @@
       "exit_date": "2026-12-04",
       "surprise": 245.98,
       "fill_price": 35.57,
-      "price": 35.105,
-      "value": 14.82,
-      "pl_pct": -1.31
+      "price": 35.205,
+      "value": 14.87,
+      "pl_pct": -1.03
      },
      {
       "symbol": "XRX",
@@ -2650,9 +2650,9 @@
       "exit_date": "2026-11-27",
       "surprise": 150.0,
       "fill_price": 1.8211,
-      "price": 0.8898,
-      "value": 7.35,
-      "pl_pct": -51.14
+      "price": 0.895,
+      "value": 7.4,
+      "pl_pct": -50.85
      }
     ],
     "missed_late": [
@@ -3075,96 +3075,96 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2286.24,
-    "return_pct": -23.79,
+    "equity": 2374.55,
+    "return_pct": -20.85,
     "cash": 3.98,
     "spy_value": 0.0,
     "open_positions": 15,
-    "last_run": "2026-11-23T09:49:16-05:00",
-    "last_phase": "morning",
+    "last_run": "2026-11-23T10:30:36-05:00",
+    "last_phase": "snapshot",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "COHU": {
       "qty": 3.841983,
-      "price": 41.52,
-      "value": 159.52
+      "price": 42.71,
+      "value": 164.09
      },
      "DELL": {
       "qty": 0.467294,
-      "price": 330.87,
-      "value": 154.61
+      "price": 346.97,
+      "value": 162.14
      },
      "DOCN": {
       "qty": 2.174587,
-      "price": 77.165,
-      "value": 167.8
+      "price": 80.82,
+      "value": 175.75
      },
      "FORM": {
       "qty": 2.196333,
-      "price": 83.3,
-      "value": 182.95
+      "price": 87.07,
+      "value": 191.23
      },
      "INTC": {
       "qty": 3.070838,
-      "price": 57.475,
-      "value": 176.5
+      "price": 59.1111,
+      "value": 181.52
      },
      "LITE": {
       "qty": 0.24705,
-      "price": 543.67,
-      "value": 134.31
+      "price": 566.84,
+      "value": 140.04
      },
      "MRNA": {
       "qty": 0.882455,
-      "price": 210.73,
-      "value": 185.96
+      "price": 210.9958,
+      "value": 186.19
      },
      "MRVL": {
       "qty": 1.030766,
-      "price": 140.27,
-      "value": 144.59
+      "price": 149.69,
+      "value": 154.3
      },
      "MU": {
       "qty": 0.222076,
-      "price": 670.46,
-      "value": 148.89
+      "price": 716.25,
+      "value": 159.06
      },
      "MXL": {
       "qty": 2.918931,
-      "price": 49.9364,
-      "value": 145.76
+      "price": 51.985,
+      "value": 151.74
      },
      "SNDK": {
       "qty": 0.170661,
-      "price": 91.01,
-      "value": 15.53
+      "price": 94.6,
+      "value": 16.14
      },
      "SPY": {
       "qty": 0.0,
-      "price": 718.32,
+      "price": 727.03,
       "value": 0.0
      },
      "STX": {
       "qty": 0.306052,
-      "price": 516.195,
-      "value": 157.98
+      "price": 545.2975,
+      "value": 166.89
      },
      "VIAV": {
       "qty": 6.700477,
-      "price": 29.5,
-      "value": 197.66
+      "price": 30.53,
+      "value": 204.57
      },
      "VICR": {
       "qty": 1.020917,
-      "price": 148.31,
-      "value": 151.41
+      "price": 147.955,
+      "value": 151.05
      },
      "WDC": {
       "qty": 0.539802,
-      "price": 294.191,
-      "value": 158.8
+      "price": 307.2625,
+      "value": 165.86
      }
     },
     "positions": [
@@ -3174,9 +3174,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 51.45,
-      "price": 41.52,
-      "value": 159.52,
-      "pl_pct": -19.3
+      "price": 42.71,
+      "value": 164.09,
+      "pl_pct": -16.99
      },
      {
       "symbol": "DELL",
@@ -3184,9 +3184,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 423.01,
-      "price": 330.87,
-      "value": 154.61,
-      "pl_pct": -21.78
+      "price": 346.97,
+      "value": 162.14,
+      "pl_pct": -17.98
      },
      {
       "symbol": "DOCN",
@@ -3194,9 +3194,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 90.9,
-      "price": 77.165,
-      "value": 167.8,
-      "pl_pct": -15.11
+      "price": 80.82,
+      "value": 175.75,
+      "pl_pct": -11.09
      },
      {
       "symbol": "FORM",
@@ -3204,9 +3204,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 90.0,
-      "price": 83.3,
-      "value": 182.95,
-      "pl_pct": -7.44
+      "price": 87.07,
+      "value": 191.23,
+      "pl_pct": -3.26
      },
      {
       "symbol": "INTC",
@@ -3214,9 +3214,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 64.3701,
-      "price": 57.475,
-      "value": 176.5,
-      "pl_pct": -10.71
+      "price": 59.1111,
+      "value": 181.52,
+      "pl_pct": -8.17
      },
      {
       "symbol": "LITE",
@@ -3224,9 +3224,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 800.12,
-      "price": 543.67,
-      "value": 134.31,
-      "pl_pct": -32.05
+      "price": 566.84,
+      "value": 140.04,
+      "pl_pct": -29.16
      },
      {
       "symbol": "MRNA",
@@ -3234,9 +3234,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 224.0,
-      "price": 210.73,
-      "value": 185.96,
-      "pl_pct": -5.92
+      "price": 210.9958,
+      "value": 186.19,
+      "pl_pct": -5.81
      },
      {
       "symbol": "MRVL",
@@ -3244,9 +3244,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 191.77,
-      "price": 140.27,
-      "value": 144.59,
-      "pl_pct": -26.86
+      "price": 149.69,
+      "value": 154.3,
+      "pl_pct": -21.94
      },
      {
       "symbol": "MU",
@@ -3254,9 +3254,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 890.1,
-      "price": 670.46,
-      "value": 148.89,
-      "pl_pct": -24.68
+      "price": 716.25,
+      "value": 159.06,
+      "pl_pct": -19.53
      },
      {
       "symbol": "MXL",
@@ -3264,9 +3264,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 67.72,
-      "price": 49.9364,
-      "value": 145.76,
-      "pl_pct": -26.26
+      "price": 51.985,
+      "value": 151.74,
+      "pl_pct": -23.24
      },
      {
       "symbol": "SNDK",
@@ -3274,9 +3274,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 1158.26,
-      "price": 91.01,
-      "value": 15.53,
-      "pl_pct": -92.14
+      "price": 94.6,
+      "value": 16.14,
+      "pl_pct": -91.83
      },
      {
       "symbol": "STX",
@@ -3284,9 +3284,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 645.87,
-      "price": 516.195,
-      "value": 157.98,
-      "pl_pct": -20.08
+      "price": 545.2975,
+      "value": 166.89,
+      "pl_pct": -15.57
      },
      {
       "symbol": "VIAV",
@@ -3294,9 +3294,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 29.5009,
-      "price": 29.5,
-      "value": 197.66,
-      "pl_pct": -0.0
+      "price": 30.53,
+      "value": 204.57,
+      "pl_pct": 3.49
      },
      {
       "symbol": "VICR",
@@ -3304,9 +3304,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 193.62,
-      "price": 148.31,
-      "value": 151.41,
-      "pl_pct": -23.4
+      "price": 147.955,
+      "value": 151.05,
+      "pl_pct": -23.58
      },
      {
       "symbol": "WDC",
@@ -3314,9 +3314,9 @@
       "exit_date": null,
       "surprise": null,
       "fill_price": 366.19,
-      "price": 294.191,
-      "value": 158.8,
-      "pl_pct": -19.66
+      "price": 307.2625,
+      "value": 165.86,
+      "pl_pct": -16.09
      }
     ],
     "missed_late": [],
@@ -3473,21 +3473,21 @@
     "status": "live",
     "started": "2026-10-16",
     "start_equity": 3000.0,
-    "equity": 2806.86,
-    "return_pct": -6.44,
+    "equity": 2840.98,
+    "return_pct": -5.3,
     "cash": 6.0,
-    "spy_value": 2800.86,
+    "spy_value": 2834.98,
     "open_positions": 0,
-    "last_run": "2026-11-23T09:49:16-05:00",
-    "last_phase": "morning",
+    "last_run": "2026-11-23T10:30:36-05:00",
+    "last_phase": "snapshot",
     "error": null,
     "missing": [],
     "unexpected": [],
     "holdings": {
      "SPY": {
       "qty": 3.89913,
-      "price": 718.33,
-      "value": 2800.86
+      "price": 727.08,
+      "value": 2834.98
      }
     },
     "positions": [],
@@ -4045,8 +4045,8 @@
     "nasdaq_surprise_pct": 60.0,
     "counts_in_forward_test": "yes",
     "fill_price": 4.41,
-    "price": 4.465,
-    "pl_pct": 1.25
+    "price": 4.5304,
+    "pl_pct": 2.73
    },
    {
     "ticker": "UGI",
@@ -4063,8 +4063,8 @@
     "nasdaq_surprise_pct": 46.88,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 37.0,
-    "price": 35.77,
-    "pl_pct": -3.32
+    "price": 35.34,
+    "pl_pct": -4.49
    },
    {
     "ticker": "HP",
@@ -4081,8 +4081,8 @@
     "nasdaq_surprise_pct": 63.64,
     "counts_in_forward_test": "yes",
     "fill_price": 33.44,
-    "price": 32.72,
-    "pl_pct": -2.15
+    "price": 33.07,
+    "pl_pct": -1.11
    },
    {
     "ticker": "BBWI",
@@ -4099,8 +4099,8 @@
     "nasdaq_surprise_pct": 116.67,
     "counts_in_forward_test": "yes",
     "fill_price": 18.35,
-    "price": 19.06,
-    "pl_pct": 3.87
+    "price": 19.4,
+    "pl_pct": 5.72
    },
    {
     "ticker": "SHAZ",
@@ -4117,8 +4117,8 @@
     "nasdaq_surprise_pct": 22.45,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 19.51,
-    "price": 20.085,
-    "pl_pct": 2.95
+    "price": 21.54,
+    "pl_pct": 10.4
    },
    {
     "ticker": "RNA",
@@ -4135,8 +4135,8 @@
     "nasdaq_surprise_pct": 78.26,
     "counts_in_forward_test": "yes",
     "fill_price": 7.71,
-    "price": 6.8262,
-    "pl_pct": -11.46
+    "price": 7.06,
+    "pl_pct": -8.43
    },
    {
     "ticker": "HTFL",
@@ -4153,8 +4153,8 @@
     "nasdaq_surprise_pct": 33.33,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 57.94,
-    "price": 47.7,
-    "pl_pct": -17.67
+    "price": 49.49,
+    "pl_pct": -14.58
    },
    {
     "ticker": "WWW",
@@ -4171,8 +4171,8 @@
     "nasdaq_surprise_pct": 71.74,
     "counts_in_forward_test": "yes",
     "fill_price": 21.93,
-    "price": 25.135,
-    "pl_pct": 14.61
+    "price": 25.51,
+    "pl_pct": 16.32
    },
    {
     "ticker": "LUNR",
@@ -4189,8 +4189,8 @@
     "nasdaq_surprise_pct": 16.67,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 14.36,
-    "price": 9.65,
-    "pl_pct": -32.8
+    "price": 9.795,
+    "pl_pct": -31.79
    },
    {
     "ticker": "LGN",
@@ -4207,8 +4207,8 @@
     "nasdaq_surprise_pct": 130.0,
     "counts_in_forward_test": "yes",
     "fill_price": 36.38,
-    "price": 35.73,
-    "pl_pct": -1.79
+    "price": 36.68,
+    "pl_pct": 0.82
    },
    {
     "ticker": "EYE",
@@ -4225,8 +4225,8 @@
     "nasdaq_surprise_pct": 283.33,
     "counts_in_forward_test": "yes",
     "fill_price": 18.5,
-    "price": 16.914,
-    "pl_pct": -8.57
+    "price": 17.295,
+    "pl_pct": -6.51
    },
    {
     "ticker": "BTBT",
@@ -4243,8 +4243,8 @@
     "nasdaq_surprise_pct": 220.0,
     "counts_in_forward_test": "yes",
     "fill_price": 0.753,
-    "price": 0.5905,
-    "pl_pct": -21.58
+    "price": 0.5955,
+    "pl_pct": -20.92
    },
    {
     "ticker": "VIA",
@@ -4261,8 +4261,8 @@
     "nasdaq_surprise_pct": 17.39,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 35.0,
-    "price": 45.935,
-    "pl_pct": 31.24
+    "price": 46.575,
+    "pl_pct": 33.07
    },
    {
     "ticker": "ROIV",
@@ -4279,8 +4279,8 @@
     "nasdaq_surprise_pct": 42.31,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 39.56,
-    "price": 39.825,
-    "pl_pct": 0.67
+    "price": 40.05,
+    "pl_pct": 1.24
    },
    {
     "ticker": "OFIX",
@@ -4297,8 +4297,8 @@
     "nasdaq_surprise_pct": 51.61,
     "counts_in_forward_test": "yes",
     "fill_price": 7.01,
-    "price": 6.4,
-    "pl_pct": -8.7
+    "price": 6.21,
+    "pl_pct": -11.41
    },
    {
     "ticker": "NRG",
@@ -4315,8 +4315,8 @@
     "nasdaq_surprise_pct": 36.05,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 93.5,
-    "price": 91.81,
-    "pl_pct": -1.81
+    "price": 93.835,
+    "pl_pct": 0.36
    },
    {
     "ticker": "HE",
@@ -4333,8 +4333,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 9.14,
-    "price": 7.95,
-    "pl_pct": -13.02
+    "price": 8.025,
+    "pl_pct": -12.2
    },
    {
     "ticker": "EVGO",
@@ -4351,8 +4351,8 @@
     "nasdaq_surprise_pct": 22.22,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 1.83,
-    "price": 1.495,
-    "pl_pct": -18.31
+    "price": 1.48,
+    "pl_pct": -19.13
    },
    {
     "ticker": "DCTH",
@@ -4369,8 +4369,8 @@
     "nasdaq_surprise_pct": 270.0,
     "counts_in_forward_test": "yes",
     "fill_price": 18.62,
-    "price": 19.57,
-    "pl_pct": 5.1
+    "price": 19.64,
+    "pl_pct": 5.48
    },
    {
     "ticker": "CNH",
@@ -4387,8 +4387,8 @@
     "nasdaq_surprise_pct": 60.0,
     "counts_in_forward_test": "yes",
     "fill_price": 12.17,
-    "price": 11.075,
-    "pl_pct": -9.0
+    "price": 11.15,
+    "pl_pct": -8.38
    },
    {
     "ticker": "ADCT",
@@ -4405,8 +4405,8 @@
     "nasdaq_surprise_pct": 23.81,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 1.6125,
-    "price": 1.345,
-    "pl_pct": -16.59
+    "price": 1.295,
+    "pl_pct": -19.69
    },
    {
     "ticker": "TXG",
@@ -4423,8 +4423,8 @@
     "nasdaq_surprise_pct": 48.28,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 57.89,
-    "price": 56.655,
-    "pl_pct": -2.13
+    "price": 57.25,
+    "pl_pct": -1.11
    },
    {
     "ticker": "TNDM",
@@ -4441,8 +4441,8 @@
     "nasdaq_surprise_pct": 62.96,
     "counts_in_forward_test": "yes",
     "fill_price": 15.57,
-    "price": 18.05,
-    "pl_pct": 15.93
+    "price": 17.92,
+    "pl_pct": 15.09
    },
    {
     "ticker": "TMDX",
@@ -4459,8 +4459,8 @@
     "nasdaq_surprise_pct": 88.89,
     "counts_in_forward_test": "yes",
     "fill_price": 78.9,
-    "price": 89.0,
-    "pl_pct": 12.8
+    "price": 90.67,
+    "pl_pct": 14.92
    },
    {
     "ticker": "TDS",
@@ -4477,8 +4477,8 @@
     "nasdaq_surprise_pct": 160.0,
     "counts_in_forward_test": "yes",
     "fill_price": 31.91,
-    "price": 30.84,
-    "pl_pct": -3.35
+    "price": 31.22,
+    "pl_pct": -2.16
    },
    {
     "ticker": "PANL",
@@ -4495,8 +4495,8 @@
     "nasdaq_surprise_pct": 67.74,
     "counts_in_forward_test": "yes",
     "fill_price": 8.15,
-    "price": 8.17,
-    "pl_pct": 0.25
+    "price": 8.23,
+    "pl_pct": 0.98
    },
    {
     "ticker": "OPTU",
@@ -4513,8 +4513,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 0.6034,
-    "price": 0.6193,
-    "pl_pct": 2.64
+    "price": 0.5897,
+    "pl_pct": -2.27
    },
    {
     "ticker": "MRNA",
@@ -4531,8 +4531,8 @@
     "nasdaq_surprise_pct": 134.55,
     "counts_in_forward_test": "yes",
     "fill_price": 245.0,
-    "price": 210.73,
-    "pl_pct": -13.99
+    "price": 210.9958,
+    "pl_pct": -13.88
    },
    {
     "ticker": "MBC",
@@ -4549,8 +4549,8 @@
     "nasdaq_surprise_pct": 233.33,
     "counts_in_forward_test": "yes",
     "fill_price": 6.63,
-    "price": 6.11,
-    "pl_pct": -7.84
+    "price": 6.07,
+    "pl_pct": -8.45
    },
    {
     "ticker": "LION",
@@ -4567,8 +4567,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 12.56,
-    "price": 13.49,
-    "pl_pct": 7.4
+    "price": 13.58,
+    "pl_pct": 8.12
    },
    {
     "ticker": "LASR",
@@ -4585,8 +4585,8 @@
     "nasdaq_surprise_pct": 91.67,
     "counts_in_forward_test": "yes",
     "fill_price": 37.55,
-    "price": 36.265,
-    "pl_pct": -3.42
+    "price": 36.83,
+    "pl_pct": -1.92
    },
    {
     "ticker": "KROS",
@@ -4603,8 +4603,8 @@
     "nasdaq_surprise_pct": 172.92,
     "counts_in_forward_test": "yes",
     "fill_price": 9.74,
-    "price": 11.34,
-    "pl_pct": 16.43
+    "price": 11.12,
+    "pl_pct": 14.17
    },
    {
     "ticker": "KRO",
@@ -4621,8 +4621,8 @@
     "nasdaq_surprise_pct": 57.89,
     "counts_in_forward_test": "yes",
     "fill_price": 7.36,
-    "price": 7.285,
-    "pl_pct": -1.02
+    "price": 7.265,
+    "pl_pct": -1.29
    },
    {
     "ticker": "INTT",
@@ -4639,8 +4639,8 @@
     "nasdaq_surprise_pct": 63.64,
     "counts_in_forward_test": "yes",
     "fill_price": 13.35,
-    "price": 12.0,
-    "pl_pct": -10.11
+    "price": 12.0653,
+    "pl_pct": -9.62
    },
    {
     "ticker": "GPRE",
@@ -4657,8 +4657,8 @@
     "nasdaq_surprise_pct": 35.53,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 13.28,
-    "price": 11.19,
-    "pl_pct": -15.74
+    "price": 11.2,
+    "pl_pct": -15.66
    },
    {
     "ticker": "FOXF",
@@ -4675,8 +4675,8 @@
     "nasdaq_surprise_pct": 68.75,
     "counts_in_forward_test": "yes",
     "fill_price": 17.16,
-    "price": 16.365,
-    "pl_pct": -4.63
+    "price": 16.72,
+    "pl_pct": -2.56
    },
    {
     "ticker": "FNKO",
@@ -4693,8 +4693,8 @@
     "nasdaq_surprise_pct": 55.56,
     "counts_in_forward_test": "yes",
     "fill_price": 5.6,
-    "price": 5.97,
-    "pl_pct": 6.61
+    "price": 6.1,
+    "pl_pct": 8.93
    },
    {
     "ticker": "FLGT",
@@ -4711,8 +4711,8 @@
     "nasdaq_surprise_pct": 62.0,
     "counts_in_forward_test": "yes",
     "fill_price": 20.47,
-    "price": 24.56,
-    "pl_pct": 19.98
+    "price": 24.53,
+    "pl_pct": 19.83
    },
    {
     "ticker": "ETON",
@@ -4729,8 +4729,8 @@
     "nasdaq_surprise_pct": 211.76,
     "counts_in_forward_test": "yes",
     "fill_price": 58.5,
-    "price": 62.365,
-    "pl_pct": 6.61
+    "price": 62.0,
+    "pl_pct": 5.98
    },
    {
     "ticker": "CSTL",
@@ -4747,8 +4747,8 @@
     "nasdaq_surprise_pct": 65.79,
     "counts_in_forward_test": "yes",
     "fill_price": 34.56,
-    "price": 33.72,
-    "pl_pct": -2.43
+    "price": 34.21,
+    "pl_pct": -1.01
    },
    {
     "ticker": "CPT",
@@ -4765,8 +4765,8 @@
     "nasdaq_surprise_pct": 1.18,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 98.07,
-    "price": 95.45,
-    "pl_pct": -2.67
+    "price": 95.22,
+    "pl_pct": -2.91
    },
    {
     "ticker": "CLNE",
@@ -4783,8 +4783,8 @@
     "nasdaq_surprise_pct": 62.5,
     "counts_in_forward_test": "yes",
     "fill_price": 1.7761,
-    "price": 1.541,
-    "pl_pct": -13.24
+    "price": 1.505,
+    "pl_pct": -15.26
    },
    {
     "ticker": "CLMT",
@@ -4801,8 +4801,8 @@
     "nasdaq_surprise_pct": 284.3,
     "counts_in_forward_test": "yes",
     "fill_price": 45.43,
-    "price": 29.42,
-    "pl_pct": -35.24
+    "price": 29.61,
+    "pl_pct": -34.82
    },
    {
     "ticker": "CALY",
@@ -4819,8 +4819,8 @@
     "nasdaq_surprise_pct": 1100.0,
     "counts_in_forward_test": "yes",
     "fill_price": 16.98,
-    "price": 16.55,
-    "pl_pct": -2.53
+    "price": 16.53,
+    "pl_pct": -2.65
    },
    {
     "ticker": "BJRI",
@@ -4837,8 +4837,8 @@
     "nasdaq_surprise_pct": 135.71,
     "counts_in_forward_test": "yes",
     "fill_price": 56.45,
-    "price": 56.68,
-    "pl_pct": 0.41
+    "price": 58.56,
+    "pl_pct": 3.74
    },
    {
     "ticker": "ARCT",
@@ -4873,8 +4873,8 @@
     "nasdaq_surprise_pct": 30.23,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 21.9,
-    "price": 24.565,
-    "pl_pct": 12.17
+    "price": 24.99,
+    "pl_pct": 14.11
    },
    {
     "ticker": "AMR",
@@ -4891,8 +4891,8 @@
     "nasdaq_surprise_pct": -151.72,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 159.17,
-    "price": 136.95,
-    "pl_pct": -13.96
+    "price": 133.945,
+    "pl_pct": -15.85
    },
    {
     "ticker": "AMN",
@@ -4909,8 +4909,8 @@
     "nasdaq_surprise_pct": 427.27,
     "counts_in_forward_test": "yes",
     "fill_price": 42.87,
-    "price": 35.78,
-    "pl_pct": -16.54
+    "price": 35.9,
+    "pl_pct": -16.26
    },
    {
     "ticker": "ALEC",
@@ -4927,8 +4927,8 @@
     "nasdaq_surprise_pct": 582.61,
     "counts_in_forward_test": "yes",
     "fill_price": 2.1902,
-    "price": 2.41,
-    "pl_pct": 10.04
+    "price": 2.4253,
+    "pl_pct": 10.73
    },
    {
     "ticker": "AIP",
@@ -4945,8 +4945,8 @@
     "nasdaq_surprise_pct": -31.25,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 17.06,
-    "price": 18.85,
-    "pl_pct": 10.49
+    "price": 19.41,
+    "pl_pct": 13.77
    },
    {
     "ticker": "ACRE",
@@ -4963,8 +4963,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 3.7883,
-    "price": 3.42,
-    "pl_pct": -9.72
+    "price": 3.45,
+    "pl_pct": -8.93
    },
    {
     "ticker": "XNCR",
@@ -4981,8 +4981,8 @@
     "nasdaq_surprise_pct": 242.86,
     "counts_in_forward_test": "yes",
     "fill_price": 35.57,
-    "price": 35.105,
-    "pl_pct": -1.31
+    "price": 35.205,
+    "pl_pct": -1.03
    },
    {
     "ticker": "VCEL",
@@ -4999,8 +4999,8 @@
     "nasdaq_surprise_pct": 1250.0,
     "counts_in_forward_test": "yes",
     "fill_price": 50.54,
-    "price": 58.5,
-    "pl_pct": 15.75
+    "price": 58.64,
+    "pl_pct": 16.03
    },
    {
     "ticker": "TBI",
@@ -5017,8 +5017,8 @@
     "nasdaq_surprise_pct": 57.14,
     "counts_in_forward_test": "yes",
     "fill_price": 13.48,
-    "price": 11.7894,
-    "pl_pct": -12.54
+    "price": 11.42,
+    "pl_pct": -15.28
    },
    {
     "ticker": "SEI",
@@ -5035,8 +5035,8 @@
     "nasdaq_surprise_pct": 104.55,
     "counts_in_forward_test": "yes",
     "fill_price": 55.56,
-    "price": 61.33,
-    "pl_pct": 10.39
+    "price": 62.41,
+    "pl_pct": 12.33
    },
    {
     "ticker": "SBGI",
@@ -5053,8 +5053,8 @@
     "nasdaq_surprise_pct": 134.78,
     "counts_in_forward_test": "yes",
     "fill_price": 14.59,
-    "price": 14.24,
-    "pl_pct": -2.4
+    "price": 14.27,
+    "pl_pct": -2.19
    },
    {
     "ticker": "SABR",
@@ -5071,8 +5071,8 @@
     "nasdaq_surprise_pct": 250.0,
     "counts_in_forward_test": "yes",
     "fill_price": 1.96,
-    "price": 1.625,
-    "pl_pct": -17.09
+    "price": 1.635,
+    "pl_pct": -16.58
    },
    {
     "ticker": "RUN",
@@ -5089,8 +5089,8 @@
     "nasdaq_surprise_pct": 115.38,
     "counts_in_forward_test": "yes",
     "fill_price": 10.5,
-    "price": 7.055,
-    "pl_pct": -32.81
+    "price": 7.0399,
+    "pl_pct": -32.95
    },
    {
     "ticker": "RLJ",
@@ -5107,8 +5107,8 @@
     "nasdaq_surprise_pct": 17.24,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 12.35,
-    "price": 12.6,
-    "pl_pct": 2.02
+    "price": 12.665,
+    "pl_pct": 2.55
    },
    {
     "ticker": "RGNX",
@@ -5125,8 +5125,8 @@
     "nasdaq_surprise_pct": 54.07,
     "counts_in_forward_test": "yes",
     "fill_price": 7.4,
-    "price": 7.52,
-    "pl_pct": 1.62
+    "price": 7.455,
+    "pl_pct": 0.74
    },
    {
     "ticker": "RELY",
@@ -5143,8 +5143,8 @@
     "nasdaq_surprise_pct": 150.0,
     "counts_in_forward_test": "yes",
     "fill_price": 22.46,
-    "price": 21.06,
-    "pl_pct": -6.23
+    "price": 21.38,
+    "pl_pct": -4.81
    },
    {
     "ticker": "PRVA",
@@ -5161,8 +5161,8 @@
     "nasdaq_surprise_pct": 11.11,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 23.14,
-    "price": 25.305,
-    "pl_pct": 9.36
+    "price": 25.12,
+    "pl_pct": 8.56
    },
    {
     "ticker": "PENN",
@@ -5179,8 +5179,8 @@
     "nasdaq_surprise_pct": 52.38,
     "counts_in_forward_test": "yes",
     "fill_price": 17.03,
-    "price": 18.17,
-    "pl_pct": 6.69
+    "price": 18.14,
+    "pl_pct": 6.52
    },
    {
     "ticker": "OSCR",
@@ -5197,8 +5197,8 @@
     "nasdaq_surprise_pct": 545.45,
     "counts_in_forward_test": "yes",
     "fill_price": 34.53,
-    "price": 25.41,
-    "pl_pct": -26.41
+    "price": 26.29,
+    "pl_pct": -23.86
    },
    {
     "ticker": "ORA",
@@ -5215,8 +5215,8 @@
     "nasdaq_surprise_pct": 55.56,
     "counts_in_forward_test": "yes",
     "fill_price": 93.1,
-    "price": 86.81,
-    "pl_pct": -6.76
+    "price": 86.56,
+    "pl_pct": -7.02
    },
    {
     "ticker": "NVRI",
@@ -5233,8 +5233,8 @@
     "nasdaq_surprise_pct": 56.76,
     "counts_in_forward_test": "yes",
     "fill_price": 22.0,
-    "price": 23.99,
-    "pl_pct": 9.05
+    "price": 24.15,
+    "pl_pct": 9.77
    },
    {
     "ticker": "NTGR",
@@ -5251,8 +5251,8 @@
     "nasdaq_surprise_pct": 19.23,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 21.11,
-    "price": 18.23,
-    "pl_pct": -13.64
+    "price": 18.805,
+    "pl_pct": -10.92
    },
    {
     "ticker": "MAC",
@@ -5269,8 +5269,8 @@
     "nasdaq_surprise_pct": -116.67,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 25.51,
-    "price": 23.84,
-    "pl_pct": -6.55
+    "price": 23.8,
+    "pl_pct": -6.7
    },
    {
     "ticker": "LXRX",
@@ -5287,8 +5287,8 @@
     "nasdaq_surprise_pct": 50.0,
     "counts_in_forward_test": "yes",
     "fill_price": 1.52,
-    "price": 1.595,
-    "pl_pct": 4.93
+    "price": 1.605,
+    "pl_pct": 5.59
    },
    {
     "ticker": "LEGH",
@@ -5305,8 +5305,8 @@
     "nasdaq_surprise_pct": 54.55,
     "counts_in_forward_test": "yes",
     "fill_price": 37.34,
-    "price": 27.71,
-    "pl_pct": -25.79
+    "price": 27.525,
+    "pl_pct": -26.29
    },
    {
     "ticker": "LCUT",
@@ -5323,8 +5323,8 @@
     "nasdaq_surprise_pct": 76.19,
     "counts_in_forward_test": "yes",
     "fill_price": 8.92,
-    "price": 7.05,
-    "pl_pct": -20.96
+    "price": 6.96,
+    "pl_pct": -21.97
    },
    {
     "ticker": "KTB",
@@ -5341,8 +5341,8 @@
     "nasdaq_surprise_pct": 11.94,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 76.95,
-    "price": 80.385,
-    "pl_pct": 4.46
+    "price": 80.67,
+    "pl_pct": 4.83
    },
    {
     "ticker": "INSW",
@@ -5359,8 +5359,8 @@
     "nasdaq_surprise_pct": 26.96,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 99.47,
-    "price": 99.07,
-    "pl_pct": -0.4
+    "price": 100.0,
+    "pl_pct": 0.53
    },
    {
     "ticker": "IMAX",
@@ -5377,8 +5377,8 @@
     "nasdaq_surprise_pct": 112.37,
     "counts_in_forward_test": "yes",
     "fill_price": 53.05,
-    "price": 46.555,
-    "pl_pct": -12.24
+    "price": 46.655,
+    "pl_pct": -12.05
    },
    {
     "ticker": "HCI",
@@ -5395,8 +5395,8 @@
     "nasdaq_surprise_pct": 28.74,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 208.8,
-    "price": 190.2,
-    "pl_pct": -8.91
+    "price": 189.37,
+    "pl_pct": -9.31
    },
    {
     "ticker": "GRAL",
@@ -5413,8 +5413,8 @@
     "nasdaq_surprise_pct": 20.5,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 119.95,
-    "price": 106.655,
-    "pl_pct": -11.08
+    "price": 110.35,
+    "pl_pct": -8.0
    },
    {
     "ticker": "GNL",
@@ -5431,8 +5431,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 7.1,
-    "price": 6.11,
-    "pl_pct": -13.94
+    "price": 6.16,
+    "pl_pct": -13.24
    },
    {
     "ticker": "GLUE",
@@ -5449,8 +5449,8 @@
     "nasdaq_surprise_pct": 130.0,
     "counts_in_forward_test": "yes",
     "fill_price": 10.48,
-    "price": 9.13,
-    "pl_pct": -12.88
+    "price": 9.135,
+    "pl_pct": -12.83
    },
    {
     "ticker": "GCT",
@@ -5467,8 +5467,8 @@
     "nasdaq_surprise_pct": 23.68,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 64.92,
-    "price": 61.14,
-    "pl_pct": -5.82
+    "price": 63.56,
+    "pl_pct": -2.09
    },
    {
     "ticker": "FUN",
@@ -5485,8 +5485,8 @@
     "nasdaq_surprise_pct": 50.0,
     "counts_in_forward_test": "yes",
     "fill_price": 9.19,
-    "price": 11.16,
-    "pl_pct": 21.44
+    "price": 11.055,
+    "pl_pct": 20.29
    },
    {
     "ticker": "EWTX",
@@ -5503,8 +5503,8 @@
     "nasdaq_surprise_pct": 252.73,
     "counts_in_forward_test": "yes",
     "fill_price": 43.0,
-    "price": 41.8,
-    "pl_pct": -2.79
+    "price": 42.8777,
+    "pl_pct": -0.28
    },
    {
     "ticker": "ELF",
@@ -5521,8 +5521,8 @@
     "nasdaq_surprise_pct": 116.22,
     "counts_in_forward_test": "yes",
     "fill_price": 114.0,
-    "price": 109.425,
-    "pl_pct": -4.01
+    "price": 108.115,
+    "pl_pct": -5.16
    },
    {
     "ticker": "ECPG",
@@ -5539,8 +5539,8 @@
     "nasdaq_surprise_pct": 61.45,
     "counts_in_forward_test": "yes",
     "fill_price": 109.92,
-    "price": 100.45,
-    "pl_pct": -8.62
+    "price": 100.96,
+    "pl_pct": -8.15
    },
    {
     "ticker": "CTRI",
@@ -5557,8 +5557,8 @@
     "nasdaq_surprise_pct": 78.26,
     "counts_in_forward_test": "yes",
     "fill_price": 21.54,
-    "price": 20.63,
-    "pl_pct": -4.22
+    "price": 20.98,
+    "pl_pct": -2.6
    },
    {
     "ticker": "CODI",
@@ -5575,8 +5575,8 @@
     "nasdaq_surprise_pct": 33.33,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 12.98,
-    "price": 12.215,
-    "pl_pct": -5.89
+    "price": 12.44,
+    "pl_pct": -4.16
    },
    {
     "ticker": "CARS",
@@ -5593,8 +5593,8 @@
     "nasdaq_surprise_pct": 10.87,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 13.4,
-    "price": 12.11,
-    "pl_pct": -9.63
+    "price": 12.42,
+    "pl_pct": -7.31
    },
    {
     "ticker": "BKSY",
@@ -5611,8 +5611,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 18.5,
-    "price": 17.865,
-    "pl_pct": -3.43
+    "price": 17.76,
+    "pl_pct": -4.0
    },
    {
     "ticker": "ATNI",
@@ -5629,8 +5629,8 @@
     "nasdaq_surprise_pct": 473.68,
     "counts_in_forward_test": "yes",
     "fill_price": 26.2,
-    "price": 26.335,
-    "pl_pct": 0.52
+    "price": 26.23,
+    "pl_pct": 0.11
    },
    {
     "ticker": "ASPN",
@@ -5647,8 +5647,8 @@
     "nasdaq_surprise_pct": 222.22,
     "counts_in_forward_test": "yes",
     "fill_price": 5.08,
-    "price": 4.77,
-    "pl_pct": -6.1
+    "price": 4.8,
+    "pl_pct": -5.51
    },
    {
     "ticker": "ARHS",
@@ -5665,8 +5665,8 @@
     "nasdaq_surprise_pct": -37.5,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 12.79,
-    "price": 13.29,
-    "pl_pct": 3.91
+    "price": 13.27,
+    "pl_pct": 3.75
    },
    {
     "ticker": "ARDT",
@@ -5683,8 +5683,8 @@
     "nasdaq_surprise_pct": 29.17,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 14.65,
-    "price": 15.325,
-    "pl_pct": 4.61
+    "price": 15.42,
+    "pl_pct": 5.26
    },
    {
     "ticker": "APPN",
@@ -5701,8 +5701,8 @@
     "nasdaq_surprise_pct": 94.12,
     "counts_in_forward_test": "yes",
     "fill_price": 54.59,
-    "price": 53.5,
-    "pl_pct": -2.0
+    "price": 54.44,
+    "pl_pct": -0.27
    },
    {
     "ticker": "AMTX",
@@ -5719,8 +5719,8 @@
     "nasdaq_surprise_pct": 90.0,
     "counts_in_forward_test": "yes",
     "fill_price": 1.7354,
-    "price": 0.9348,
-    "pl_pct": -46.13
+    "price": 0.9585,
+    "pl_pct": -44.77
    },
    {
     "ticker": "AMH",
@@ -5737,8 +5737,8 @@
     "nasdaq_surprise_pct": 6.38,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 33.18,
-    "price": 31.85,
-    "pl_pct": -4.01
+    "price": 31.82,
+    "pl_pct": -4.1
    },
    {
     "ticker": "ALGT",
@@ -5755,8 +5755,8 @@
     "nasdaq_surprise_pct": 93.62,
     "counts_in_forward_test": "yes",
     "fill_price": 85.0,
-    "price": 93.77,
-    "pl_pct": 10.32
+    "price": 96.2525,
+    "pl_pct": 13.24
    },
    {
     "ticker": "AGL",
@@ -5773,8 +5773,8 @@
     "nasdaq_surprise_pct": 198.01,
     "counts_in_forward_test": "yes",
     "fill_price": 111.95,
-    "price": 82.86,
-    "pl_pct": -25.98
+    "price": 84.205,
+    "pl_pct": -24.78
    },
    {
     "ticker": "ACAD",
@@ -5791,8 +5791,8 @@
     "nasdaq_surprise_pct": 63.16,
     "counts_in_forward_test": "yes",
     "fill_price": 21.98,
-    "price": 17.375,
-    "pl_pct": -20.95
+    "price": 17.24,
+    "pl_pct": -21.57
    },
    {
     "ticker": "VRNS",
@@ -5809,8 +5809,8 @@
     "nasdaq_surprise_pct": -8.33,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 48.85,
-    "price": 49.225,
-    "pl_pct": 0.77
+    "price": 49.25,
+    "pl_pct": 0.82
    },
    {
     "ticker": "TARS",
@@ -5827,8 +5827,8 @@
     "nasdaq_surprise_pct": 45.45,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 74.01,
-    "price": 74.19,
-    "pl_pct": 0.24
+    "price": 75.28,
+    "pl_pct": 1.72
    },
    {
     "ticker": "TALO",
@@ -5845,8 +5845,8 @@
     "nasdaq_surprise_pct": 38.46,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 15.78,
-    "price": 14.855,
-    "pl_pct": -5.86
+    "price": 14.775,
+    "pl_pct": -6.37
    },
    {
     "ticker": "SEDG",
@@ -5863,8 +5863,8 @@
     "nasdaq_surprise_pct": 95.45,
     "counts_in_forward_test": "yes",
     "fill_price": 32.88,
-    "price": 19.14,
-    "pl_pct": -41.79
+    "price": 19.135,
+    "pl_pct": -41.8
    },
    {
     "ticker": "RIOT",
@@ -5881,8 +5881,8 @@
     "nasdaq_surprise_pct": 102.94,
     "counts_in_forward_test": "yes",
     "fill_price": 15.6,
-    "price": 17.47,
-    "pl_pct": 11.99
+    "price": 18.065,
+    "pl_pct": 15.8
    },
    {
     "ticker": "QDEL",
@@ -5899,8 +5899,8 @@
     "nasdaq_surprise_pct": 72.22,
     "counts_in_forward_test": "yes",
     "fill_price": 14.64,
-    "price": 8.89,
-    "pl_pct": -39.28
+    "price": 9.0,
+    "pl_pct": -38.52
    },
    {
     "ticker": "PRIM",
@@ -5917,8 +5917,8 @@
     "nasdaq_surprise_pct": 60.56,
     "counts_in_forward_test": "yes",
     "fill_price": 84.45,
-    "price": 58.69,
-    "pl_pct": -30.5
+    "price": 59.08,
+    "pl_pct": -30.04
    },
    {
     "ticker": "PARR",
@@ -5935,8 +5935,8 @@
     "nasdaq_surprise_pct": 60.9,
     "counts_in_forward_test": "yes",
     "fill_price": 73.35,
-    "price": 62.86,
-    "pl_pct": -14.3
+    "price": 63.615,
+    "pl_pct": -13.27
    },
    {
     "ticker": "MQ",
@@ -5953,8 +5953,8 @@
     "nasdaq_surprise_pct": 42.86,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 16.97,
-    "price": 16.59,
-    "pl_pct": -2.24
+    "price": 16.785,
+    "pl_pct": -1.09
    },
    {
     "ticker": "IPI",
@@ -5971,8 +5971,8 @@
     "nasdaq_surprise_pct": 7.69,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 27.99,
-    "price": 29.575,
-    "pl_pct": 5.66
+    "price": 29.99,
+    "pl_pct": 7.15
    },
    {
     "ticker": "INNV",
@@ -5989,8 +5989,8 @@
     "nasdaq_surprise_pct": 27.27,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 9.6,
-    "price": 9.26,
-    "pl_pct": -3.54
+    "price": 9.3801,
+    "pl_pct": -2.29
    },
    {
     "ticker": "HUT",
@@ -6007,8 +6007,8 @@
     "nasdaq_surprise_pct": -16.04,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 53.12,
-    "price": 52.95,
-    "pl_pct": -0.32
+    "price": 54.77,
+    "pl_pct": 3.11
    },
    {
     "ticker": "HMN",
@@ -6025,8 +6025,8 @@
     "nasdaq_surprise_pct": 108.08,
     "counts_in_forward_test": "yes",
     "fill_price": 52.24,
-    "price": 52.27,
-    "pl_pct": 0.06
+    "price": 51.86,
+    "pl_pct": -0.73
    },
    {
     "ticker": "HL",
@@ -6043,8 +6043,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 14.47,
-    "price": 11.1601,
-    "pl_pct": -22.87
+    "price": 11.355,
+    "pl_pct": -21.53
    },
    {
     "ticker": "FTK",
@@ -6061,8 +6061,8 @@
     "nasdaq_surprise_pct": 54.55,
     "counts_in_forward_test": "yes",
     "fill_price": 29.0,
-    "price": 23.5,
-    "pl_pct": -18.97
+    "price": 23.11,
+    "pl_pct": -20.31
    },
    {
     "ticker": "FBIN",
@@ -6079,8 +6079,8 @@
     "nasdaq_surprise_pct": -4.0,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 48.69,
-    "price": 47.48,
-    "pl_pct": -2.49
+    "price": 47.75,
+    "pl_pct": -1.93
    },
    {
     "ticker": "BCRX",
@@ -6097,8 +6097,8 @@
     "nasdaq_surprise_pct": 40.0,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 8.51,
-    "price": 7.39,
-    "pl_pct": -13.16
+    "price": 7.375,
+    "pl_pct": -13.34
    },
    {
     "ticker": "XHR",
@@ -6115,8 +6115,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 21.77,
-    "price": 21.815,
-    "pl_pct": 0.21
+    "price": 21.915,
+    "pl_pct": 0.67
    },
    {
     "ticker": "VSNT",
@@ -6133,8 +6133,8 @@
     "nasdaq_surprise_pct": 1033.33,
     "counts_in_forward_test": "yes",
     "fill_price": 32.21,
-    "price": 33.395,
-    "pl_pct": 3.68
+    "price": 33.49,
+    "pl_pct": 3.97
    },
    {
     "ticker": "UDR",
@@ -6151,8 +6151,8 @@
     "nasdaq_surprise_pct": 1.56,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 35.47,
-    "price": 35.37,
-    "pl_pct": -0.28
+    "price": 35.42,
+    "pl_pct": -0.14
    },
    {
     "ticker": "TTI",
@@ -6169,8 +6169,8 @@
     "nasdaq_surprise_pct": 20.0,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 6.03,
-    "price": 6.095,
-    "pl_pct": 1.08
+    "price": 6.06,
+    "pl_pct": 0.5
    },
    {
     "ticker": "ROKU",
@@ -6205,8 +6205,8 @@
     "nasdaq_surprise_pct": 10.49,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 132.38,
-    "price": 135.055,
-    "pl_pct": 2.02
+    "price": 135.605,
+    "pl_pct": 2.44
    },
    {
     "ticker": "LPX",
@@ -6223,8 +6223,8 @@
     "nasdaq_surprise_pct": 85.71,
     "counts_in_forward_test": "yes",
     "fill_price": 78.0,
-    "price": 74.585,
-    "pl_pct": -4.38
+    "price": 74.66,
+    "pl_pct": -4.28
    },
    {
     "ticker": "INSP",
@@ -6241,8 +6241,8 @@
     "nasdaq_surprise_pct": 40.0,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 62.02,
-    "price": 55.135,
-    "pl_pct": -11.1
+    "price": 54.255,
+    "pl_pct": -12.52
    },
    {
     "ticker": "DTIL",
@@ -6259,8 +6259,8 @@
     "nasdaq_surprise_pct": 36.27,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 6.94,
-    "price": 7.81,
-    "pl_pct": 12.54
+    "price": 7.73,
+    "pl_pct": 11.38
    },
    {
     "ticker": "DOC",
@@ -6277,8 +6277,8 @@
     "nasdaq_surprise_pct": 2.33,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 19.49,
-    "price": 19.495,
-    "pl_pct": 0.03
+    "price": 19.47,
+    "pl_pct": -0.1
    },
    {
     "ticker": "CMCO",
@@ -6295,8 +6295,8 @@
     "nasdaq_surprise_pct": 64.86,
     "counts_in_forward_test": "yes",
     "fill_price": 18.46,
-    "price": 18.65,
-    "pl_pct": 1.03
+    "price": 18.975,
+    "pl_pct": 2.79
    },
    {
     "ticker": "BMRN",
@@ -6313,8 +6313,8 @@
     "nasdaq_surprise_pct": 106.67,
     "counts_in_forward_test": "yes",
     "fill_price": 52.56,
-    "price": 61.165,
-    "pl_pct": 16.37
+    "price": 60.88,
+    "pl_pct": 15.83
    },
    {
     "ticker": "BLZE",
@@ -6331,8 +6331,8 @@
     "nasdaq_surprise_pct": 57.14,
     "counts_in_forward_test": "yes",
     "fill_price": 9.67,
-    "price": 7.38,
-    "pl_pct": -23.68
+    "price": 7.655,
+    "pl_pct": -20.84
    },
    {
     "ticker": "ALKS",
@@ -6349,8 +6349,8 @@
     "nasdaq_surprise_pct": 212.5,
     "counts_in_forward_test": "yes",
     "fill_price": 46.17,
-    "price": 46.025,
-    "pl_pct": -0.31
+    "price": 45.83,
+    "pl_pct": -0.74
    },
    {
     "ticker": "AEHR",
@@ -6367,8 +6367,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 56.33,
-    "price": 47.4596,
-    "pl_pct": -15.75
+    "price": 49.77,
+    "pl_pct": -11.65
    },
    {
     "ticker": "WY",
@@ -6385,8 +6385,8 @@
     "nasdaq_surprise_pct": 60.0,
     "counts_in_forward_test": "yes",
     "fill_price": 19.98,
-    "price": 19.625,
-    "pl_pct": -1.78
+    "price": 19.63,
+    "pl_pct": -1.75
    },
    {
     "ticker": "WTI",
@@ -6403,8 +6403,8 @@
     "nasdaq_surprise_pct": 114.29,
     "counts_in_forward_test": "yes",
     "fill_price": 4.12,
-    "price": 2.865,
-    "pl_pct": -30.46
+    "price": 2.845,
+    "pl_pct": -30.95
    },
    {
     "ticker": "ULH",
@@ -6421,8 +6421,8 @@
     "nasdaq_surprise_pct": 115.63,
     "counts_in_forward_test": "yes",
     "fill_price": 19.28,
-    "price": 28.48,
-    "pl_pct": 47.72
+    "price": 28.305,
+    "pl_pct": 46.81
    },
    {
     "ticker": "SUPN",
@@ -6439,8 +6439,8 @@
     "nasdaq_surprise_pct": 129.41,
     "counts_in_forward_test": "yes",
     "fill_price": 42.07,
-    "price": 28.86,
-    "pl_pct": -31.4
+    "price": 29.4,
+    "pl_pct": -30.12
    },
    {
     "ticker": "REAL",
@@ -6457,8 +6457,8 @@
     "nasdaq_surprise_pct": -220.0,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 11.25,
-    "price": 11.37,
-    "pl_pct": 1.07
+    "price": 11.675,
+    "pl_pct": 3.78
    },
    {
     "ticker": "PEB",
@@ -6475,8 +6475,8 @@
     "nasdaq_surprise_pct": 18.87,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 21.2,
-    "price": 21.42,
-    "pl_pct": 1.04
+    "price": 21.49,
+    "pl_pct": 1.37
    },
    {
     "ticker": "HG",
@@ -6493,8 +6493,8 @@
     "nasdaq_surprise_pct": 165.67,
     "counts_in_forward_test": "yes",
     "fill_price": 35.33,
-    "price": 38.56,
-    "pl_pct": 9.14
+    "price": 38.3265,
+    "pl_pct": 8.48
    },
    {
     "ticker": "CVEO",
@@ -6511,8 +6511,8 @@
     "nasdaq_surprise_pct": 285.19,
     "counts_in_forward_test": "yes",
     "fill_price": 35.5,
-    "price": 33.33,
-    "pl_pct": -6.11
+    "price": 33.055,
+    "pl_pct": -6.89
    },
    {
     "ticker": "COIN",
@@ -6529,8 +6529,8 @@
     "nasdaq_surprise_pct": 275.0,
     "counts_in_forward_test": "yes",
     "fill_price": 147.43,
-    "price": 108.055,
-    "pl_pct": -26.71
+    "price": 110.82,
+    "pl_pct": -24.83
    },
    {
     "ticker": "CNO",
@@ -6547,8 +6547,8 @@
     "nasdaq_surprise_pct": 74.31,
     "counts_in_forward_test": "yes",
     "fill_price": 57.25,
-    "price": 55.575,
-    "pl_pct": -2.93
+    "price": 55.43,
+    "pl_pct": -3.18
    },
    {
     "ticker": "CDNA",
@@ -6565,8 +6565,8 @@
     "nasdaq_surprise_pct": 642.86,
     "counts_in_forward_test": "yes",
     "fill_price": 82.34,
-    "price": 74.375,
-    "pl_pct": -9.67
+    "price": 75.0,
+    "pl_pct": -8.91
    },
    {
     "ticker": "ACCO",
@@ -6583,8 +6583,8 @@
     "nasdaq_surprise_pct": 47.37,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 5.29,
-    "price": 5.365,
-    "pl_pct": 1.42
+    "price": 5.355,
+    "pl_pct": 1.23
    },
    {
     "ticker": "XRX",
@@ -6601,8 +6601,8 @@
     "nasdaq_surprise_pct": 185.71,
     "counts_in_forward_test": "yes",
     "fill_price": 1.8211,
-    "price": 0.8898,
-    "pl_pct": -51.14
+    "price": 0.895,
+    "pl_pct": -50.85
    },
    {
     "ticker": "TNET",
@@ -6619,8 +6619,8 @@
     "nasdaq_surprise_pct": 62.5,
     "counts_in_forward_test": "yes",
     "fill_price": 71.86,
-    "price": 62.375,
-    "pl_pct": -13.2
+    "price": 63.32,
+    "pl_pct": -11.88
    },
    {
     "ticker": "PTEN",
@@ -6637,8 +6637,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 12.6,
-    "price": 9.64,
-    "pl_pct": -23.49
+    "price": 9.645,
+    "pl_pct": -23.45
    },
    {
     "ticker": "OLED",
@@ -6655,8 +6655,8 @@
     "nasdaq_surprise_pct": 7.89,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 92.98,
-    "price": 82.42,
-    "pl_pct": -11.36
+    "price": 82.31,
+    "pl_pct": -11.48
    },
    {
     "ticker": "NVCR",
@@ -6673,8 +6673,8 @@
     "nasdaq_surprise_pct": 57.14,
     "counts_in_forward_test": "yes",
     "fill_price": 12.92,
-    "price": 11.09,
-    "pl_pct": -14.16
+    "price": 11.34,
+    "pl_pct": -12.23
    },
    {
     "ticker": "NEXT",
@@ -6691,8 +6691,8 @@
     "nasdaq_surprise_pct": null,
     "counts_in_forward_test": "pending (tracker hasn't logged it yet)",
     "fill_price": 6.88,
-    "price": 5.885,
-    "pl_pct": -14.46
+    "price": 5.85,
+    "pl_pct": -14.97
    },
    {
     "ticker": "LAUR",
@@ -6709,8 +6709,8 @@
     "nasdaq_surprise_pct": 8.33,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 37.51,
-    "price": 32.91,
-    "pl_pct": -12.26
+    "price": 32.63,
+    "pl_pct": -13.01
    },
    {
     "ticker": "IDCC",
@@ -6727,8 +6727,8 @@
     "nasdaq_surprise_pct": 73.91,
     "counts_in_forward_test": "yes",
     "fill_price": 339.41,
-    "price": 265.675,
-    "pl_pct": -21.72
+    "price": 267.42,
+    "pl_pct": -21.21
    },
    {
     "ticker": "HRTG",
@@ -6745,8 +6745,8 @@
     "nasdaq_surprise_pct": 65.38,
     "counts_in_forward_test": "yes",
     "fill_price": 34.22,
-    "price": 32.565,
-    "pl_pct": -4.84
+    "price": 32.14,
+    "pl_pct": -6.08
    },
    {
     "ticker": "HGV",
@@ -6763,8 +6763,8 @@
     "nasdaq_surprise_pct": 299.01,
     "counts_in_forward_test": "yes",
     "fill_price": 36.0,
-    "price": 44.39,
-    "pl_pct": 23.31
+    "price": 44.24,
+    "pl_pct": 22.89
    },
    {
     "ticker": "H",
@@ -6781,8 +6781,8 @@
     "nasdaq_surprise_pct": 84.06,
     "counts_in_forward_test": "yes",
     "fill_price": 175.1,
-    "price": 186.03,
-    "pl_pct": 6.24
+    "price": 187.19,
+    "pl_pct": 6.9
    },
    {
     "ticker": "GKOS",
@@ -6799,8 +6799,8 @@
     "nasdaq_surprise_pct": 491.67,
     "counts_in_forward_test": "yes",
     "fill_price": 213.09,
-    "price": 247.295,
-    "pl_pct": 16.05
+    "price": 251.205,
+    "pl_pct": 17.89
    },
    {
     "ticker": "BFLY",
@@ -6817,8 +6817,8 @@
     "nasdaq_surprise_pct": 20.0,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 7.34,
-    "price": 5.865,
-    "pl_pct": -20.1
+    "price": 5.88,
+    "pl_pct": -19.89
    },
    {
     "ticker": "IVT",
@@ -6835,8 +6835,8 @@
     "nasdaq_surprise_pct": 2.04,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 30.81,
-    "price": 31.04,
-    "pl_pct": 0.75
+    "price": 30.89,
+    "pl_pct": 0.26
    },
    {
     "ticker": "EVR",
@@ -6853,8 +6853,8 @@
     "nasdaq_surprise_pct": 63.98,
     "counts_in_forward_test": "yes",
     "fill_price": 275.0,
-    "price": 287.735,
-    "pl_pct": 4.63
+    "price": 290.87,
+    "pl_pct": 5.77
    },
    {
     "ticker": "DINO",
@@ -6871,8 +6871,8 @@
     "nasdaq_surprise_pct": 43.82,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 117.59,
-    "price": 86.98,
-    "pl_pct": -26.03
+    "price": 88.165,
+    "pl_pct": -25.02
    },
    {
     "ticker": "SXC",
@@ -6907,8 +6907,8 @@
     "nasdaq_surprise_pct": 74.19,
     "counts_in_forward_test": "yes",
     "fill_price": 59.59,
-    "price": 64.88,
-    "pl_pct": 8.88
+    "price": 66.26,
+    "pl_pct": 11.19
    },
    {
     "ticker": "CNC",
@@ -6925,8 +6925,8 @@
     "nasdaq_surprise_pct": 728.57,
     "counts_in_forward_test": "yes",
     "fill_price": 65.98,
-    "price": 63.3,
-    "pl_pct": -4.06
+    "price": 63.585,
+    "pl_pct": -3.63
    },
    {
     "ticker": "DEA",
@@ -6943,8 +6943,8 @@
     "nasdaq_surprise_pct": -84.81,
     "counts_in_forward_test": "no (Nasdaq below 50%)",
     "fill_price": 22.82,
-    "price": 21.3401,
-    "pl_pct": -6.49
+    "price": 21.22,
+    "pl_pct": -7.01
    },
    {
     "ticker": "WRLD",
